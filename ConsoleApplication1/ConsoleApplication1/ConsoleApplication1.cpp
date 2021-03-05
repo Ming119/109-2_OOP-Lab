@@ -9,17 +9,13 @@ using namespace std;
 bool Guess(int number) {
 	static int target = -1;
 
-	if (target == -1) {
-		Random r;
-		target = r.Next() % 100 + 1;
+	if (number == target) {
+		std::cout << "Correct !!";
+		target = -1;
+		return true;
 	}
-	if (number > target) {
-		cout << "Smaller" << endl;
-		return false;
-	} else if (number < target) {
-		cout << "Bigger" << endl;
-		return false;
-	}
+	else if (number > target) std::cout << "Smaller" << std::endl;
+	else if (number < target) std::cout << "Bigger" << std::endl;
 	return false;
 }
 
