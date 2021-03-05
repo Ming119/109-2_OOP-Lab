@@ -6,15 +6,19 @@
 
 using namespace std;
 
-int main(){
-	cout << "Hi"<<endl;
+int main() {
+	int guess;
+	do {
+		cin >> guess;
+	} while (!Guess(guess));
+	
 	return 0;
 }
 
 // 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表
 // 偵錯程式: F5 或 [偵錯] > [啟動偵錯] 功能表
 
-// 開始使用的提示: 
+// 開始使用的提示:
 //   1. 使用 [方案總管] 視窗，新增/管理檔案
 //   2. 使用 [Team Explorer] 視窗，連線到原始檔控制
 //   3. 使用 [輸出] 視窗，參閱組建輸出與其他訊息
