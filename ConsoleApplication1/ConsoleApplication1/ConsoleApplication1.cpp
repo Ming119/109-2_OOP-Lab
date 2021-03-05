@@ -3,11 +3,13 @@
 
 #include <string>
 #include <iostream>
+#include <time.h>
 
 using namespace std;
 
 bool Guess(int number) {
-	static int target = -1;
+
+	static int target = rand() % 100 + 1;;
 
 	if (number == target) {
 		std::cout << "Correct !!";
@@ -20,6 +22,8 @@ bool Guess(int number) {
 }
 
 int main() {
+	srand (time(NULL));
+	
 	int guess;
 	do {
 		cout << "Choose a number between 1- 100 :";
