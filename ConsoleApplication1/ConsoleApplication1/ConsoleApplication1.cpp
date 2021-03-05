@@ -3,8 +3,21 @@
 
 #include <string>
 #include <iostream>
+#ic
 
 using namespace std;
+
+bool Guess(int number) {
+	static int target = -1;
+	if (target == -1) {
+		Random r;
+		target = r.Next() % 100 + 1;
+	}
+	if (number == target)return true;
+	return false;
+}
+
+
 
 int main() {
 	int guess;
