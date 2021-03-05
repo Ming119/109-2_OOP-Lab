@@ -3,7 +3,6 @@
 
 #include <string>
 #include <iostream>
-#ic
 
 using namespace std;
 
@@ -22,9 +21,10 @@ bool Guess(int number) {
 int main() {
 	int guess;
 	do {
+		cout << "Choose a number between 1- 100 :";
 		cin >> guess;
 	} while (!Guess(guess));
-	
+
 	return 0;
 }
 
