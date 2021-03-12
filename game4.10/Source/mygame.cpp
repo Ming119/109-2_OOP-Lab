@@ -93,7 +93,6 @@ namespace game_framework {
 		X(20), Y(40),
 		MW(120), MH(100)
 	{
-		random_num = 0;
 		int map_init[4][5] = { {0, 0, 1, 0, 0},
 							   {0, 1, 2, 1, 0},
 							   {1, 2, 1, 2, 1},
@@ -104,6 +103,9 @@ namespace game_framework {
 				map[i][j] = map_init[i][j];
 			}
 		}
+
+		random_num = 0;
+		bballs = NULL;
 	}
 
 	void CGameMap::LoadBitmap() {
@@ -151,6 +153,7 @@ namespace game_framework {
 		const int MAX_RAND_NUM = 10;
 		random_num = (rand() % MAX_RAND_NUM) + 1;
 
+		delete[] bballs;
 		bballs = new CBouncingBall[random_num];
 		int ini_index = 0;
 		for (int row = 0; row < 4; row++) {
@@ -173,7 +176,9 @@ namespace game_framework {
 			bballs[i].OnMove();
 		}
 	}
-
+	CGameMap::~CGameMap() {
+		delete[] bballs;
+	}
 	// 	   
 	//
 	//
