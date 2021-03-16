@@ -58,6 +58,7 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "mygame.h"
+#include "menu.h"
 
 namespace game_framework {
 /////////////////////////////////////////////////////////////////////////////
@@ -215,7 +216,7 @@ void CGameStateInit::OnShow()
 	//
 	// 貼上logo
 	//
-	CAudio::Instance()->Play(AUDIO_TITLE, true);
+	
 	logo.SetTopLeft((SIZE_X - logo.Width())/2, SIZE_Y/8);
 	logo.ShowBitmap();
 	
@@ -261,6 +262,7 @@ CGameStateRun::~CGameStateRun()
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
+	menu = Menu(5);
 
 	c_practice.LoadBitmap();
 	gamemap.LoadBitmap();
@@ -296,7 +298,9 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 	//
 	CAudio::Instance()->Load(AUDIO_TITLE, "sounds\\title.mp3");
+	CAudio::Instance()->Load(AUDIO_OPTIONS, "sounds\\options.mp3");
 	CAudio::Instance()->Load(AUDIO_CHOOSE, "sounds\\choose.wav");
+	CAudio::Instance()->Load(AUDIO_SELECT, "sounds\\select.wav");
 	//
 	// 此OnInit動作會接到CGameStaterOver::OnInit()，所以進度還沒到100%
 	//
@@ -304,6 +308,9 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnBeginState()
 {
+	CAudio::Instance()->Play(AUDIO_TITLE, true);
+	CAudio::Instance()->Stop(AUDIO_OPTIONS);
+	/*
 	const int BALL_GAP = 90;
 	const int BALL_XY_OFFSET = 45;
 	const int BALL_PER_ROW = 7;
@@ -325,10 +332,12 @@ void CGameStateRun::OnBeginState()
 	help.SetTopLeft(0, SIZE_Y - help.Height());			// 設定說明圖的起始座標
 	hits_left.SetInteger(HITS_LEFT);					// 指定剩下的撞擊數
 	hits_left.SetTopLeft(HITS_LEFT_X,HITS_LEFT_Y);		// 指定剩下撞擊數的座標
+	*/
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
 {
+	/*
 	c_practice.OnMove();	//
 	gamemap.OnMove();		//
 
@@ -385,6 +394,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	// 移動彈跳的球
 	//
 	bball.OnMove();
+	*/
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) 
@@ -394,20 +404,52 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	const char KEY_SPACE = 0x20;	// keyboard空白鍵
 	const char KEY_ENTER = 0x0D;	// keyboard ENTER
 	const char KEY_ESC = 0x1B;		// keyboard ESC
-
-
+	
 	if (nChar == KEY_UP) {
 		CAudio::Instance()->Play(AUDIO_CHOOSE, true);
 		CAudio::Instance()->Play(AUDIO_CHOOSE, false);
-	}
-	else if (nChar == KEY_DOWN) {
+		menu.chooseUp();
+	} else if (nChar == KEY_DOWN) {
 		CAudio::Instance()->Play(AUDIO_CHOOSE, true);
 		CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+		menu.chooseDown();
+	} else if (nChar == KEY_ESC) {
+		if (insideMenu == true) {
+			insideMenu = false;
+			GotoGameState(GAME_STATE_RUN);
+		}
+	} else if (nChar == KEY_SPACE || nChar == KEY_ENTER) {
+		CAudio::Instance()->Play(AUDIO_SELECT, true);
+		CAudio::Instance()->Play(AUDIO_SELECT, false);
+
+		switch (menu.getSelection()) {
+		case MENU_START_GAME:
+			break;
+		case MENU_TUTORIAL:
+			break;
+		case MENU_EXTRAS:
+			if (insideMenu == false) {
+				insideMenu = true;
+				// show extras menu
+			}
+			break;
+		case MENU_OPTIONS:
+			// menu = MainMenu(7);
+			CAudio::Instance()->Stop(AUDIO_TITLE);
+			// fade in-out
+			CAudio::Instance()->Play(AUDIO_OPTIONS, true);
+
+			if (insideMenu == false) {
+				insideMenu = true;
+				// show options menu
+			}
+			break;
+		case MENU_EXIT: 
+			GotoGameState(GAME_STATE_OVER);
+			break;
+		}
 	}
 
-	if (nChar == KEY_SPACE || nChar == KEY_ENTER) {
-		GotoGameState(GAME_STATE_RUN);	// 切換至GAME_STATE_RUN
-	}
 	/*
 	const char KEY_LEFT  = 0x25; // keyboard左箭頭
 	const char KEY_UP    = 0x26; // keyboard上箭頭
@@ -428,7 +470,8 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 }
 
 void CGameStateRun::OnShow()
-{
+{	
+
 	//
 	//  注意：Show裡面千萬不要移動任何物件的座標，移動座標的工作應由Move做才對，
 	//        否則當視窗重新繪圖時(OnDraw)，物件就會移動，看起來會很怪。換個術語
@@ -459,6 +502,26 @@ void CGameStateRun::OnShow()
 	c_practice.Onshow();
 	// practice.ShowBitmap();
 	*/
+
+	int test_menu_val = menu.getSelection();
+	CDC* pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC 
+	CFont f,*fp;
+	f.CreatePointFont(160,"Times New Roman");	// 產生 font f; 160表示16 point的字
+	fp=pDC->SelectObject(&f);					// 選用 font f
+	pDC->SetBkColor(RGB(0,0,0));
+	pDC->SetTextColor(RGB(255,255,0));
+	if (test_menu_val == 0)
+		pDC->TextOut(120,220, "0");
+	else if(test_menu_val == 1)
+		pDC->TextOut(120, 220, "1");
+	else if (test_menu_val == 2)
+		pDC->TextOut(120, 220, "2");
+	else if (test_menu_val == 3)
+		pDC->TextOut(120, 220, "3");
+	else if (test_menu_val == 4)
+		pDC->TextOut(120, 220, "4");
+	pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
+	CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
 }
 
 
