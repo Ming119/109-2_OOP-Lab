@@ -66,8 +66,8 @@
 // 定義遊戲可設定的環境與條件
 /////////////////////////////////////////////////////////////////////////////
 
-#define SIZE_X				 1920		// 設定遊戲畫面的解析度為640x480
-#define SIZE_Y				 1080		// 註：若不使用標準的解析度，則不能切換到全螢幕
+#define SIZE_X				 640		// 設定遊戲畫面的解析度為640x480
+#define SIZE_Y				 480		// 註：若不使用標準的解析度，則不能切換到全螢幕
 #define OPEN_AS_FULLSCREEN	 false		// 是否以全螢幕方式開啟遊戲
 #define SHOW_LOAD_PROGRESS   true		// 是否顯示loading(OnInit)的進度
 #define DEFAULT_BG_COLOR	 RGB(0,0,0)	// 遊戲畫面預設的背景顏色(黑色)
@@ -136,6 +136,8 @@ private:
 	static int	 ctimeCount;
 };
 
+
+
 /////////////////////////////////////////////////////////////////////////////
 // 這個class會建立DirectDraw物件，以提供其他class使用
 // 一般的遊戲並不需直接操作這個物件，因此可以不管這個class的使用方法
@@ -189,6 +191,8 @@ private:
 	static int					size_x, size_y;
 };
 
+
+
 /////////////////////////////////////////////////////////////////////////////
 // 這個class提供動態(可以移動)的圖形
 // 每個Public Interface的用法都要懂，Implementation可以不懂
@@ -214,6 +218,8 @@ protected:
 	bool     isBitmapLoaded;	// whether a bitmap has been loaded
 	unsigned SurfaceID;			// the surface id of this bitmap
 };
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // 這個class提供可以移動的動畫
@@ -249,6 +255,8 @@ private:
 	int								x, y;			// 動畫的座標
 };
 
+
+
 /////////////////////////////////////////////////////////////////////////////
 // 這個class提供顯示整數圖形的能力
 // 每個Public Interface的用法都要懂，Implementation可以不懂
@@ -271,6 +279,8 @@ private:
 	bool isBmpLoaded;				// 是否已經載入圖形
 };
 
+
+
 /////////////////////////////////////////////////////////////////////////////
 // 宣告尚未定義的class
 /////////////////////////////////////////////////////////////////////////////
@@ -278,6 +288,7 @@ private:
 class CGame;
 class CGameStateInit;
 class CGameStateRun;
+class CGameStateLevel;
 class CGameStateOver;
 
 /////////////////////////////////////////////////////////////////////////////
