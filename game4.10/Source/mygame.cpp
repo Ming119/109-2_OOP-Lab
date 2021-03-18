@@ -28,10 +28,21 @@ void CGameStateInit::OnInit()
 	// 開始載入資料
 	//
 	// Loading Images
-	background1.LoadBitmap(IDB_OPENING_1, RGB(255, 0, 255));
-	background2.LoadBitmap(IDB_OPENING_2, RGB(255, 0, 255));
-	background3.LoadBitmap(IDB_OPENING_3, RGB(255, 0, 255));
-	background4.LoadBitmap(IDB_OPENING_4, RGB(255, 0, 255));
+	background1.LoadBitmap(IDB_OPENING_BG_1);
+	background2.LoadBitmap(IDB_OPENING_BG_2);
+	background3.LoadBitmap(IDB_OPENING_BG_3);
+	background4.LoadBitmap(IDB_OPENING_BG_4);
+
+	logo1.LoadBitmap(IDB_LOGO_1);
+	logo2.LoadBitmap(IDB_LOGO_2);
+
+	logo.AddBitmap(IDB_LOGO_CHARACTER_1);
+	logo.AddBitmap(IDB_LOGO_CHARACTER_2);
+	logo.AddBitmap(IDB_LOGO_CHARACTER_3);
+	logo.AddBitmap(IDB_LOGO_CHARACTER_4);
+	logo.AddBitmap(IDB_LOGO_CHARACTER_3);
+	logo.AddBitmap(IDB_LOGO_CHARACTER_2);
+	logo.SetDelayCount(3);
 
 	// Loading Audio
 	CAudio::Instance()->Load(AUDIO_TITLE, "sounds\\title.mp3");
@@ -47,6 +58,7 @@ void CGameStateInit::OnInit()
 
 void CGameStateInit::OnBeginState()
 {
+	// CAudio::Instance()->Play(AUDIO_TITLE, true);
 }
 
 void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -67,36 +79,37 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 }
 
 void CGameStateInit::OnMove() {
-
+	logo.OnMove();
 }
 
 void CGameStateInit::OnShow()
 {
 	//
 	// Background
-	//
 	// 1280*960
-	const double scale1 = (double)SIZE_X / background1.Width();
-	const double scale2 = 4;
-	const double scale3 = 4;
-	const double scale4 = 3;
-
+	// 
 	background1.SetTopLeft(0, 0);
-	background2.SetTopLeft(0, (int)(SIZE_Y / 3.2));
-	background3.SetTopLeft(0, (int)(SIZE_Y / 3.2) + (int)((background2.Height()-31) * scale3));
-	background4.SetTopLeft(0, (int)(SIZE_Y - background4.Height() * scale4));
-
-	//TRACE("TEST: %d+%d\n", (int)(SIZE_Y / 3), (int)((background2.Height() - 31) * scale2));
+	background2.SetTopLeft(0, (int)(SIZE_Y / 3));
+	background3.SetTopLeft(0, (int)(SIZE_Y / 3) + (int)((background2.Height()-31) * 4));
+	background4.SetTopLeft(0, (int)(SIZE_Y - background4.Height() * 3));
 	
-	background1.ShowBitmap(scale1);
-	background2.ShowBitmap(scale2);
-	background3.ShowBitmap(scale3);
-	background4.ShowBitmap(scale4);
+	background1.ShowBitmap((double)SIZE_X / background1.Width());
+	background2.ShowBitmap(4);
+	background3.ShowBitmap(4);
+	background4.ShowBitmap(3);
 
 	//
 	// Logo
 	//
+	logo.SetTopLeft((SIZE_X - logo.Width() * 4) / 2, SIZE_Y * 5 / 100);
+	logo1.SetTopLeft((SIZE_X - logo1.Width() * 4) / 2, SIZE_Y * 7/100);
+	logo2.SetTopLeft((SIZE_X - logo2.Width() * 4) / 2, SIZE_Y * 45 / 100);
+	
 
+	logo1.ShowBitmap(4);
+	logo.OnShow(4);
+	logo2.ShowBitmap(4);
+	
 
 	/*
 	//

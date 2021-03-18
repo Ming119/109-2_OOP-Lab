@@ -79,10 +79,10 @@ namespace game_framework {
 		CMovingBitmap background2;
 		CMovingBitmap background3;
 		CMovingBitmap background4;
-		CMovingBitmap logo;					//
+		CMovingBitmap logo1;				//
+		CMovingBitmap logo2;
 
-
-
+		CAnimation logo;
 	};
 
 

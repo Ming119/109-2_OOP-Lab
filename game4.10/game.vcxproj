@@ -324,10 +324,20 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="RES\intro.png" />
+    <Image Include="RES\logo\logo_1.bmp" />
+    <Image Include="RES\logo\logo_2.bmp" />
+    <Image Include="RES\logo\title_bule_character1.bmp" />
+    <Image Include="RES\logo\title_bule_character2.bmp" />
+    <Image Include="RES\logo\title_bule_character3.bmp" />
+    <Image Include="RES\logo\title_bule_character4.bmp" />
     <Image Include="RES\opening\Opening_1.bmp" />
     <Image Include="RES\opening\Opening_2.bmp" />
     <Image Include="RES\opening\Opening_3.bmp" />
     <Image Include="RES\opening\Opening_4.bmp" />
+    <Image Include="RES\opening\Opening_BG_1.bmp" />
+    <Image Include="RES\opening\Opening_BG_2.bmp" />
+    <Image Include="RES\opening\Opening_BG_3.bmp" />
+    <Image Include="RES\opening\Opening_BG_4.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

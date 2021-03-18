@@ -187,5 +187,35 @@
     <Image Include="RES\opening\Opening_4.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\logo\logo_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\opening\Opening_BG_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\opening\Opening_BG_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\opening\Opening_BG_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\opening\Opening_BG_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\logo\logo_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\logo\title_bule_character1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\logo\title_bule_character2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\logo\title_bule_character3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\logo\title_bule_character4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -108,6 +108,13 @@ void CAnimation::OnShow()
 	bmp_iter->ShowBitmap();
 }
 
+void CAnimation::OnShow(double Scale)
+{
+	GAME_ASSERT(bmp.size() != 0, "CAnimation: Bitmaps must be loaded before they are shown.");
+	bmp_iter->SetTopLeft(x, y);
+	bmp_iter->ShowBitmap(Scale);
+}
+
 int CAnimation::Top()
 {
 	GAME_ASSERT(bmp.size() != 0,"CAnimation: Bitmaps must be loaded first.");

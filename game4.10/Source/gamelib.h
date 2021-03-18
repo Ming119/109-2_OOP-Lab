@@ -11,6 +11,7 @@
 #define SHOW_GAME_CYCLE_TIME false		// 是否在debug mode顯示cycle time
 #define ENABLE_GAME_PAUSE	 false		// 是否允許以 Ctrl-Q 暫停遊戲
 #define ENABLE_AUDIO		 true		// 啟動音效介面
+#define DEFAULT_BG_ALPHA	RGB(255,0,255)	// Set the default Background Alpha to (255,0,255)
 
 /////////////////////////////////////////////////////////////////////////////
 // 定義CGame及CGameState所使用的三個狀態常數
@@ -136,12 +137,13 @@ public:
 	int   Width();						// 取得圖形的寬度
 	int   Top();						// 取得圖形的左上角的 y 座標
 	int   Left();						// 取得圖形的左上角的 x 座標
-	void  LoadBitmap(int,COLORREF=CLR_INVALID);		// 載入圖，指定圖的編號(resource)及透明色
-	void  LoadBitmap(char *,COLORREF=CLR_INVALID);	// 載入圖，指定圖的檔名及透明色
+	void  LoadBitmap(int,COLORREF=DEFAULT_BG_ALPHA);		// 載入圖，指定圖的編號(resource)及透明色
+	void  LoadBitmap(char *,COLORREF=DEFAULT_BG_ALPHA);	// 載入圖，指定圖的檔名及透明色
 	void  SetTopLeft(int,int);			// 將圖的左上角座標移至 (x,y)
 	void  ShowBitmap();					// 將圖貼到螢幕
 	void  ShowBitmap(double factor);	// 將圖貼到螢幕 factor < 1時縮小，>1時放大。注意：需要VGA卡硬體的支援，否則會很慢
 	void  ShowBitmap(CMovingBitmap &);	// 將圖貼到到另一張圖上 (僅供特殊用途)
+
 protected:
 	CRect    location;			// location of the bitmap
 	bool     isBitmapLoaded;	// whether a bitmap has been loaded
@@ -156,21 +158,23 @@ protected:
 class CAnimation {
 public:
 	CAnimation(int=10);				// Constructor (預設動畫播放頻率每1/3秒換一張圖)
-	void  AddBitmap(int,COLORREF=CLR_INVALID);
+	void  AddBitmap(int,COLORREF=DEFAULT_BG_ALPHA);
 									// 增加一張圖形至動畫(圖的編號及透明色)
-	void  AddBitmap(char *,COLORREF=CLR_INVALID);
+	void  AddBitmap(char *,COLORREF=DEFAULT_BG_ALPHA);
 									// 增加一張圖形至動畫(圖的編號及透明色)
 	int   GetCurrentBitmapNumber();	// 取得正在撥放的bitmap是第幾個bitmap
 	int   Height();					// 取得動畫的高度
+	int   Width();					// 取得動畫的寬度
 	bool  IsFinalBitmap();			// 回傳正在撥放的bitmap是否為最後一個bitmap
+	int   Top();					// 取得動畫的左上角的 y 座標
 	int   Left();					// 取得動畫的左上角的 x 座標
 	void  OnMove();					// 依頻率更換bitmap
 	void  OnShow();					// 將動畫貼到螢幕
+	void  OnShow(double);			// 將動畫貼到螢幕		with Scale
 	void  Reset();					// 重設播放順序回到第一張圖形
 	void  SetDelayCount(int);		// 設定動畫播放速度的常數(越大越慢)
 	void  SetTopLeft(int,int);		// 將動畫的左上角座標移至 (x,y)
-	int   Top();					// 取得動畫的左上角的 y 座標
-	int   Width();					// 取得動畫的寬度
+	
 private:
 	list<CMovingBitmap>				bmp;			// list of CMovingBitmap
 	list<CMovingBitmap>::iterator	bmp_iter;		// list iterator
