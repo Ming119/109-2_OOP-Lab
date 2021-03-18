@@ -234,8 +234,6 @@ int CAnimation::Width()
 	return bmp_iter->Width();
 }
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 // CInteger: 這個class提供顯示整數圖形的能力
 // 1. 要懂得怎麼呼叫(運用)其各種能力，但是可以不懂下列的程式是什麼意思
@@ -307,8 +305,6 @@ void CInteger::ShowBitmap()
 		digit[10].ShowBitmap();
 	}
 }
-
-
 
 /////////////////////////////////////////////////////////////////////////////
 // CMovingBitmap: Moving Bitmap class
@@ -413,8 +409,6 @@ int CMovingBitmap::Width()
 	return location.right - location.left;
 }
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 // 這個class為遊戲的各種狀態之Base class(是一個abstract class)
 /////////////////////////////////////////////////////////////////////////////
@@ -490,8 +484,6 @@ void CGameState::OnCycle() // Template Method
 	OnShow();
 }
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 // CGame: Game Class
 // 這個class是遊戲的facade，是MFC與各個遊戲狀態的橋樑，如果不增加或減少
@@ -507,7 +499,6 @@ CGame::CGame()
 	suspended = false;
 	gameStateTable[GAME_STATE_INIT] = new CGameStateInit(this);
 	gameStateTable[GAME_STATE_RUN]  = new CGameStateRun(this);
-	// gameStateTable[GAME_STATE_LEVEL] = new CGameStateLevel(this);
 	gameStateTable[GAME_STATE_OVER] = new CGameStateOver(this);
 	gameState = NULL;
 }
@@ -711,8 +702,6 @@ void CGame::SetGameState(int state)
 	running = true;
 }
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 // CSpecialEffect: Specail Effect functions
 // 一般的遊戲並不需直接操作這個物件，因此可以全部略過不看
@@ -753,8 +742,6 @@ int CSpecialEffect::GetCurrentTimeCount()
 {
 	return ctimeCount;
 }
-
-
 
 /////////////////////////////////////////////////////////////////////////////
 // CDDraw: Direct Draw Object
