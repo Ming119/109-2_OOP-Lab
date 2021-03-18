@@ -1,77 +1,13 @@
-/*
- * gamelib.h: 本檔案儲遊戲相關的class的interface
- * Copyright (C) 2002-2008 Woei-Kae Chen <wkc@csie.ntut.edu.tw>
- *
- * This file is part of game, a free game development framework for windows.
- *
- * game is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * game is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- * History:
- *   2002-03-04 V3.1
- *		1. Add ENABLE_AUDIO flag.
- *   2004-03-02 V4.0
- *		1. Add CInteger class.
- *      2. Add CGameState abstract class and adjust CGame to apply
- *         state pattern for switching game states.
- *   2004-03-08 V4.1
- *      1. Add OPEN_AS_FULLSCREEN flag.
- *      2. The Game Engine now becomes a framework.
- *   2005-07-28
- *      1. Add GAME_ASSERT macro to display run time errors gracefully.
- *      2. Remove CDDarw::CheckSystem(). It is useless.
- *   2005-09-08
- *      1. Eliminate CSpecialEffect::Abort. It is useless now.
- *      2. Add SHOW_GAME_CYCLE_TIME flag.
- *      3. Add DEFAULT_BG_COLOR flag;
- *   2005-09-20 V4.2Beta1.
- *   2005-09-29 V4.2Beta2.
- *      1. Add MOUSEMOVE Handler for CGame and CGameState.
- *      2. Add _TRACE preprocessor flag for VC++.net.
- *   2006-02-08 V4.2
- *      1. Rename OnInitialUpdate() -> OnInit().
- *      2. Remove constantness of CAnimation::DELAY_COUNT.
- *      3. Enhance CAnimation to support SetDelayCount(), Reset(), and IsFinalBitmap().
- *      4. Remove CAnimation::GetLocation() and CMovingBitmap::GetLocation().
- *      5. Bitmap coordinate can no longer be set by CMovingBitmap::LoadBitmap().
- *         Defauts to (0,0).
- *   2006-09-09 V4.3
- *      1. Rename Move() and Show() as OnMove and OnShow() to emphasize that they are
- *         event driven.
- *      2. Fix bug: audio is now correctly recovered after a sleep or suspension of windows.
- *      3. Support ENABLE_GAME_PAUSE.
- *   2008-02-15 V4.4
- *      1. Add setup project for Visual studio 2005.
- *      2. Support bitmap scaling when ShowBitmap(scale) is called.
- *      3. Add namespace game_framework.
- *      4. Make the class CGame a singleton so that MFC can access it easily.
- *      5. Support loading of bitmap from bmp file.
- *      6. Support ShowInitProgress(percent) to display loading progress. 
- *   2010-03-23 V4.6
- *      1. Rewrite CAudio with MCI commands to eliminate dependency with DirectMusic.
-*/
-
 /////////////////////////////////////////////////////////////////////////////
 // 定義遊戲可設定的環境與條件
 /////////////////////////////////////////////////////////////////////////////
 
-#define SIZE_X				 640		// 設定遊戲畫面的解析度為640x480
-#define SIZE_Y				 480		// 註：若不使用標準的解析度，則不能切換到全螢幕
+#define SIZE_X				 1280		// 設定遊戲畫面的解析度為640x480
+#define SIZE_Y				 960		// 註：若不使用4:3，則不能切換到全螢幕
 #define OPEN_AS_FULLSCREEN	 false		// 是否以全螢幕方式開啟遊戲
 #define SHOW_LOAD_PROGRESS   true		// 是否顯示loading(OnInit)的進度
 #define DEFAULT_BG_COLOR	 RGB(0,0,0)	// 遊戲畫面預設的背景顏色(黑色)
-#define GAME_CYCLE_TIME		 33		    // 每33ms跑一次Move及Show(每秒30次)
+#define GAME_CYCLE_TIME		 33			// 每33ms跑一次Move及Show(每秒30次)
 #define SHOW_GAME_CYCLE_TIME false		// 是否在debug mode顯示cycle time
 #define ENABLE_GAME_PAUSE	 false		// 是否允許以 Ctrl-Q 暫停遊戲
 #define ENABLE_AUDIO		 true		// 啟動音效介面
@@ -94,7 +30,6 @@ enum GAME_STATES {
 #include <vector>
 #include <map>
 #include <string>
-
 using namespace std;
 
 /////////////////////////////////////////////////////////////////////////////
@@ -135,8 +70,6 @@ private:
 	static DWORD ctime;
 	static int	 ctimeCount;
 };
-
-
 
 /////////////////////////////////////////////////////////////////////////////
 // 這個class會建立DirectDraw物件，以提供其他class使用
@@ -191,8 +124,6 @@ private:
 	static int					size_x, size_y;
 };
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 // 這個class提供動態(可以移動)的圖形
 // 每個Public Interface的用法都要懂，Implementation可以不懂
@@ -205,21 +136,17 @@ public:
 	int   Width();						// 取得圖形的寬度
 	int   Top();						// 取得圖形的左上角的 y 座標
 	int   Left();						// 取得圖形的左上角的 x 座標
-	void  LoadBitmap(int, COLORREF = CLR_INVALID);		// 載入圖，指定圖的編號(resource)及透明色
-	void  LoadBitmap(char *, COLORREF = CLR_INVALID);	// 載入圖，指定圖的檔名及透明色
-	void  SetTopLeft(int, int);			// 將圖的左上角座標移至 (x,y)
+	void  LoadBitmap(int,COLORREF=CLR_INVALID);		// 載入圖，指定圖的編號(resource)及透明色
+	void  LoadBitmap(char *,COLORREF=CLR_INVALID);	// 載入圖，指定圖的檔名及透明色
+	void  SetTopLeft(int,int);			// 將圖的左上角座標移至 (x,y)
 	void  ShowBitmap();					// 將圖貼到螢幕
 	void  ShowBitmap(double factor);	// 將圖貼到螢幕 factor < 1時縮小，>1時放大。注意：需要VGA卡硬體的支援，否則會很慢
 	void  ShowBitmap(CMovingBitmap &);	// 將圖貼到到另一張圖上 (僅供特殊用途)
-	
-	
 protected:
 	CRect    location;			// location of the bitmap
 	bool     isBitmapLoaded;	// whether a bitmap has been loaded
 	unsigned SurfaceID;			// the surface id of this bitmap
 };
-
-
 
 /////////////////////////////////////////////////////////////////////////////
 // 這個class提供可以移動的動畫
@@ -228,24 +155,22 @@ protected:
 
 class CAnimation {
 public:
-	CAnimation(int = 10);				// Constructor (預設動畫播放頻率每1/3秒換一張圖)
-	void  AddBitmap(int, COLORREF = CLR_INVALID);
+	CAnimation(int=10);				// Constructor (預設動畫播放頻率每1/3秒換一張圖)
+	void  AddBitmap(int,COLORREF=CLR_INVALID);
 									// 增加一張圖形至動畫(圖的編號及透明色)
-	void  AddBitmap(char *, COLORREF = CLR_INVALID);
+	void  AddBitmap(char *,COLORREF=CLR_INVALID);
 									// 增加一張圖形至動畫(圖的編號及透明色)
 	int   GetCurrentBitmapNumber();	// 取得正在撥放的bitmap是第幾個bitmap
 	int   Height();					// 取得動畫的高度
-	int   Width();					// 取得動畫的寬度
-	int   Top();					// 取得動畫的左上角的 y 座標
-	int   Left();					// 取得動畫的左上角的 x 座標
 	bool  IsFinalBitmap();			// 回傳正在撥放的bitmap是否為最後一個bitmap
+	int   Left();					// 取得動畫的左上角的 x 座標
 	void  OnMove();					// 依頻率更換bitmap
 	void  OnShow();					// 將動畫貼到螢幕
 	void  Reset();					// 重設播放順序回到第一張圖形
 	void  SetDelayCount(int);		// 設定動畫播放速度的常數(越大越慢)
-	void  SetTopLeft(int, int);		// 將動畫的左上角座標移至 (x,y)
-	
-	
+	void  SetTopLeft(int,int);		// 將動畫的左上角座標移至 (x,y)
+	int   Top();					// 取得動畫的左上角的 y 座標
+	int   Width();					// 取得動畫的寬度
 private:
 	list<CMovingBitmap>				bmp;			// list of CMovingBitmap
 	list<CMovingBitmap>::iterator	bmp_iter;		// list iterator
@@ -255,8 +180,6 @@ private:
 	int								x, y;			// 動畫的座標
 };
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 // 這個class提供顯示整數圖形的能力
 // 每個Public Interface的用法都要懂，Implementation可以不懂
@@ -265,11 +188,11 @@ private:
 class CInteger {
 public:
 	CInteger(int=5);			// default 5 digits
-	int  GetInteger();			// 回傳整數值
 	void Add(int n);			// 增加整數值
+	int  GetInteger();			// 回傳整數值
 	void LoadBitmap();			// 載入0..9及負號之圖形
 	void SetInteger(int);		// 設定整數值
-	void SetTopLeft(int, int);	// 將動畫的左上角座標移至 (x,y)
+	void SetTopLeft(int,int);	// 將動畫的左上角座標移至 (x,y)
 	void ShowBitmap();			// 將動畫貼到螢幕
 private:
 	const int NUMDIGITS;			// 共顯示NUMDIGITS個位數
@@ -279,8 +202,6 @@ private:
 	bool isBmpLoaded;				// 是否已經載入圖形
 };
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 // 宣告尚未定義的class
 /////////////////////////////////////////////////////////////////////////////
@@ -288,7 +209,6 @@ private:
 class CGame;
 class CGameStateInit;
 class CGameStateRun;
-class CGameStateLevel;
 class CGameStateOver;
 
 /////////////////////////////////////////////////////////////////////////////

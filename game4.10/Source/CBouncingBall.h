@@ -11,11 +11,6 @@ namespace game_framework {
 		void LoadBitmap();		// 載入圖形
 		void OnMove();			// 移動
 		void OnShow();			// 將圖形貼到畫面
-
-		void SetFloor(int);
-		void SetXY(int, int);
-		void SetVelocity(int);
-
 	private:
 		int x, y;				// 圖形座標
 		int floor;				// 地板的Y座標

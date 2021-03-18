@@ -66,8 +66,6 @@ IDB_BALL                BITMAP                  "..\\res\\ball.bmp"
 
 IDB_ERASER1             BITMAP                  "..\\res\\eraser1.bmp"
 
-IDB_BACKGROUND          BITMAP                  "..\\res\\ntutcsie.bmp"
-
 IDB_CORNER              BITMAP                  "..\\res\\corner.bmp"
 
 IDB_0                   BITMAP                  "..\\res\\bmp0.bmp"
@@ -431,11 +429,13 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
 // Bitmap
 //
 
-IDB_TEST                BITMAP                  "..\\res\\bitmap3.bmp"
+IDB_OPENING_1           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_1.bmp"
 
-IDB_BLUE                BITMAP                  "..\\res\\bmp00001.bmp"
+IDB_OPENING_2           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_2.bmp"
 
-IDB_GREEN               BITMAP                  "..\\res\\bmp00002.bmp"
+IDB_OPENING_3           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_3.bmp"
+
+IDB_OPENING_4           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_4.bmp"
 
 #endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
