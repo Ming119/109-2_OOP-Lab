@@ -2,14 +2,14 @@
 // 定義遊戲可設定的環境與條件
 /////////////////////////////////////////////////////////////////////////////
 
-#define SIZE_X				 640		// 設定遊戲畫面的解析度為640x480
-#define SIZE_Y				 480		// 註：若不使用標準的解析度，則不能切換到全螢幕
+#define SIZE_X				 1280		// 設定遊戲畫面的解析度為640x480
+#define SIZE_Y				 960		// 註：若不使用4:3，則不能切換到全螢幕
 #define OPEN_AS_FULLSCREEN	 false		// 是否以全螢幕方式開啟遊戲
 #define SHOW_LOAD_PROGRESS   true		// 是否顯示loading(OnInit)的進度
 #define DEFAULT_BG_COLOR	 RGB(0,0,0)	// 遊戲畫面預設的背景顏色(黑色)
-#define GAME_CYCLE_TIME		 33		    // 每33ms跑一次Move及Show(每秒30次)
+#define GAME_CYCLE_TIME		 33			// 每33ms跑一次Move及Show(每秒30次)
 #define SHOW_GAME_CYCLE_TIME false		// 是否在debug mode顯示cycle time
-#define ENABLE_GAME_PAUSE	 true		// 是否允許以 Ctrl-Q 暫停遊戲
+#define ENABLE_GAME_PAUSE	 false		// 是否允許以 Ctrl-Q 暫停遊戲
 #define ENABLE_AUDIO		 true		// 啟動音效介面
 
 /////////////////////////////////////////////////////////////////////////////
@@ -133,6 +133,8 @@ class CMovingBitmap {
 public:
 	CMovingBitmap();
 	int   Height();						// 取得圖形的高度
+	int   Width();						// 取得圖形的寬度
+	int   Top();						// 取得圖形的左上角的 y 座標
 	int   Left();						// 取得圖形的左上角的 x 座標
 	void  LoadBitmap(int,COLORREF=CLR_INVALID);		// 載入圖，指定圖的編號(resource)及透明色
 	void  LoadBitmap(char *,COLORREF=CLR_INVALID);	// 載入圖，指定圖的檔名及透明色
@@ -140,8 +142,6 @@ public:
 	void  ShowBitmap();					// 將圖貼到螢幕
 	void  ShowBitmap(double factor);	// 將圖貼到螢幕 factor < 1時縮小，>1時放大。注意：需要VGA卡硬體的支援，否則會很慢
 	void  ShowBitmap(CMovingBitmap &);	// 將圖貼到到另一張圖上 (僅供特殊用途)
-	int   Top();						// 取得圖形的左上角的 y 座標
-	int   Width();						// 取得圖形的寬度
 protected:
 	CRect    location;			// location of the bitmap
 	bool     isBitmapLoaded;	// whether a bitmap has been loaded

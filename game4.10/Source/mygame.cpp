@@ -28,7 +28,10 @@ void CGameStateInit::OnInit()
 	// 開始載入資料
 	//
 	// Loading Images
-	logo.LoadBitmap(IDB_BACKGROUND);
+	background1.LoadBitmap(IDB_OPENING_1, RGB(255, 0, 255));
+	background2.LoadBitmap(IDB_OPENING_2, RGB(255, 0, 255));
+	background3.LoadBitmap(IDB_OPENING_3, RGB(255, 0, 255));
+	background4.LoadBitmap(IDB_OPENING_4, RGB(255, 0, 255));
 
 	// Loading Audio
 	CAudio::Instance()->Load(AUDIO_TITLE, "sounds\\title.mp3");
@@ -63,13 +66,36 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	// GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
 }
 
+void CGameStateInit::OnMove() {
+
+}
+
 void CGameStateInit::OnShow()
 {
 	//
-	// 貼上logo
+	// Background
 	//
-	logo.SetTopLeft((SIZE_X - logo.Width())/2, SIZE_Y/8);
-	logo.ShowBitmap();
+	// 1280*960
+	const double scale1 = (double)SIZE_X / background1.Width();
+	const double scale2 = 4;
+	const double scale3 = 4;
+	const double scale4 = 3;
+
+	background1.SetTopLeft(0, 0);
+	background2.SetTopLeft(0, (int)(SIZE_Y / 3.2));
+	background3.SetTopLeft(0, (int)(SIZE_Y / 3.2) + (int)((background2.Height()-31) * scale3));
+	background4.SetTopLeft(0, (int)(SIZE_Y - background4.Height() * scale4));
+
+	//TRACE("TEST: %d+%d\n", (int)(SIZE_Y / 3), (int)((background2.Height() - 31) * scale2));
+	
+	background1.ShowBitmap(scale1);
+	background2.ShowBitmap(scale2);
+	background3.ShowBitmap(scale3);
+	background4.ShowBitmap(scale4);
+
+	//
+	// Logo
+	//
 
 
 	/*

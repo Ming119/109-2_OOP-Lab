@@ -173,4 +173,19 @@
       <Filter>MFC</Filter>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="RES\intro.png" />
+    <Image Include="RES\opening\Opening_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\opening\Opening_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\opening\Opening_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\opening\Opening_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
