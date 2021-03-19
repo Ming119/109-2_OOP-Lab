@@ -217,5 +217,83 @@
     <Image Include="RES\logo\title_bule_character4.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\font\gui_white_numA.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numB.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numC.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numD.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numF.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numG.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numH.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numI.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numJ.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numK.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numM.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numN.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numO.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numP.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numQ.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numR.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numS.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numU.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numV.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numW.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numX.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numY.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_white_numZ.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -323,6 +323,32 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="RES\font\gui_white_numA.bmp" />
+    <Image Include="RES\font\gui_white_numB.bmp" />
+    <Image Include="RES\font\gui_white_numC.bmp" />
+    <Image Include="RES\font\gui_white_numD.bmp" />
+    <Image Include="RES\font\gui_white_numE.bmp" />
+    <Image Include="RES\font\gui_white_numF.bmp" />
+    <Image Include="RES\font\gui_white_numG.bmp" />
+    <Image Include="RES\font\gui_white_numH.bmp" />
+    <Image Include="RES\font\gui_white_numI.bmp" />
+    <Image Include="RES\font\gui_white_numJ.bmp" />
+    <Image Include="RES\font\gui_white_numK.bmp" />
+    <Image Include="RES\font\gui_white_numL.bmp" />
+    <Image Include="RES\font\gui_white_numM.bmp" />
+    <Image Include="RES\font\gui_white_numN.bmp" />
+    <Image Include="RES\font\gui_white_numO.bmp" />
+    <Image Include="RES\font\gui_white_numP.bmp" />
+    <Image Include="RES\font\gui_white_numQ.bmp" />
+    <Image Include="RES\font\gui_white_numR.bmp" />
+    <Image Include="RES\font\gui_white_numS.bmp" />
+    <Image Include="RES\font\gui_white_numT.bmp" />
+    <Image Include="RES\font\gui_white_numU.bmp" />
+    <Image Include="RES\font\gui_white_numV.bmp" />
+    <Image Include="RES\font\gui_white_numW.bmp" />
+    <Image Include="RES\font\gui_white_numX.bmp" />
+    <Image Include="RES\font\gui_white_numY.bmp" />
+    <Image Include="RES\font\gui_white_numZ.bmp" />
     <Image Include="RES\intro.png" />
     <Image Include="RES\logo\logo_1.bmp" />
     <Image Include="RES\logo\logo_2.bmp" />

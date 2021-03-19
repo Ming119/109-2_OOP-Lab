@@ -91,6 +91,8 @@ namespace game_framework {
 		CMovingBitmap logo2;
 
 		CAnimation logo;
+
+		CMovingBitmap start_game;
 	};
 
 

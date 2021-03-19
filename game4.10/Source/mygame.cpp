@@ -45,13 +45,15 @@ void CGameStateInit::OnInit()
 	logo.AddBitmap(IDB_LOGO_CHARACTER_2);
 	logo.SetDelayCount(3);
 
+	//
+	start_game.LoadBitmap(FONT_WHITE_SHADOW_UPPER_A);
+
 	// Loading Audio
-	CAudio::Instance()->Load(AUDIO_TITLE, "sounds\\title.mp3");
+	
 	CAudio::Instance()->Load(AUDIO_OPTIONS, "sounds\\options.mp3");
 	CAudio::Instance()->Load(AUDIO_CHOOSE, "sounds\\choose.wav");
 	CAudio::Instance()->Load(AUDIO_SELECT, "sounds\\select.wav");
-	
-	// Sleep(300);				// 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
+
 	//
 	// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
 	//
@@ -59,7 +61,9 @@ void CGameStateInit::OnInit()
 
 void CGameStateInit::OnBeginState()
 {
-	// CAudio::Instance()->Play(AUDIO_TITLE, true);
+	CAudio::Instance()->Load(AUDIO_TITLE, "sounds\\title.mp3");
+	CAudio::Instance()->Play(AUDIO_TITLE, true);
+	
 }
 
 void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -103,8 +107,8 @@ void CGameStateInit::OnShow()
 	//
 	// Logo
 	//
-	logo.SetTopLeft((SIZE_X - logo.Width() * 4) / 2, SIZE_Y * 5 / 100);
-	logo1.SetTopLeft((SIZE_X - logo1.Width() * 4) / 2, SIZE_Y * 5/100);
+	logo.SetTopLeft((SIZE_X - logo.Width() * 4) / 2, SIZE_Y * 2 / 100);
+	logo1.SetTopLeft((SIZE_X - logo1.Width() * 4) / 2, SIZE_Y * 5 / 100);
 	logo2.SetTopLeft((SIZE_X - logo2.Width() * 4) / 2, SIZE_Y * 45 / 100);
 	
 
@@ -112,7 +116,10 @@ void CGameStateInit::OnShow()
 	logo.OnShow();
 	logo2.ShowBitmap();
 	
-	
+	//
+	//
+	//
+	start_game.ShowBitmap();
 
 	/*
 	//
@@ -183,10 +190,10 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	bball.LoadBitmap();										// 載入圖形
 	hits_left.LoadBitmap();
 	*/
-
-	CAudio::Instance()->Load(AUDIO_DING,  "sounds\\ding.wav");	// 載入編號0的聲音ding.wav
-	CAudio::Instance()->Load(AUDIO_LAKE,  "sounds\\lake.mp3");	// 載入編號1的聲音lake.mp3
-	CAudio::Instance()->Load(AUDIO_NTUT,  "sounds\\ntut.mid");	// 載入編號2的聲音ntut.mid
+	
+	// CAudio::Instance()->Load(AUDIO_DING,  "sounds\\ding.wav");	// 載入編號0的聲音ding.wav
+	// CAudio::Instance()->Load(AUDIO_LAKE,  "sounds\\lake.mp3");	// 載入編號1的聲音lake.mp3
+	// CAudio::Instance()->Load(AUDIO_NTUT,  "sounds\\ntut.mid");	// 載入編號2的聲音ntut.mid
 	//
 	// 此OnInit動作會接到CGameStaterOver::OnInit()，所以進度還沒到100%
 	//
@@ -217,9 +224,9 @@ void CGameStateRun::OnBeginState()
 	hits_left.SetTopLeft(HITS_LEFT_X,HITS_LEFT_Y);		// 指定剩下撞擊數的座標
 	*/
 
-	CAudio::Instance()->Play(AUDIO_LAKE, true);			// 撥放 WAVE
-	CAudio::Instance()->Play(AUDIO_DING, false);		// 撥放 WAVE
-	CAudio::Instance()->Play(AUDIO_NTUT, true);			// 撥放 MIDI
+	// CAudio::Instance()->Play(AUDIO_LAKE, true);			// 撥放 WAVE
+	// CAudio::Instance()->Play(AUDIO_DING, false);		// 撥放 WAVE
+	// CAudio::Instance()->Play(AUDIO_NTUT, true);			// 撥放 MIDI
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
