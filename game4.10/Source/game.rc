@@ -429,77 +429,77 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
 // Bitmap
 //
 
-IDB_LOGO_1              BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\logo\\logo_1.bmp"
+IDB_LOGO_1              BITMAP                  "..\\RES\\logo\\logo_1.bmp"
 
-IDB_OPENING_BG_1        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_BG_1.bmp"
+IDB_OPENING_BG_1        BITMAP                  "..\\RES\\opening\\Opening_BG_1.bmp"
 
-IDB_OPENING_BG_2        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_BG_2.bmp"
+IDB_OPENING_BG_2        BITMAP                  "..\\RES\\opening\\Opening_BG_2.bmp"
 
-IDB_OPENING_BG_3        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_BG_3.bmp"
+IDB_OPENING_BG_3        BITMAP                  "..\\RES\\opening\\Opening_BG_3.bmp"
 
-IDB_OPENING_BG_4        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_BG_4.bmp"
+IDB_OPENING_BG_4        BITMAP                  "..\\RES\\opening\\Opening_BG_4.bmp"
 
-IDB_LOGO_2              BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\logo\\logo_2.bmp"
+IDB_LOGO_2              BITMAP                  "..\\RES\\logo\\logo_2.bmp"
 
-IDB_LOGO_CHARACTER_1    BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\logo\\title_bule_character1.bmp"
+IDB_LOGO_CHARACTER_1    BITMAP                  "..\\RES\\logo\\title_bule_character1.bmp"
 
-IDB_LOGO_CHARACTER_2    BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\logo\\title_bule_character2.bmp"
+IDB_LOGO_CHARACTER_2    BITMAP                  "..\\RES\\logo\\title_bule_character2.bmp"
 
-IDB_LOGO_CHARACTER_3    BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\logo\\title_bule_character3.bmp"
+IDB_LOGO_CHARACTER_3    BITMAP                  "..\\RES\\logo\\title_bule_character3.bmp"
 
-IDB_LOGO_CHARACTER_4    BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\logo\\title_bule_character4.bmp"
+IDB_LOGO_CHARACTER_4    BITMAP                  "..\\RES\\logo\\title_bule_character4.bmp"
 
-FONT_WHITE_SHADOW_UPPER_A BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numA.bmp"
+FONT_WHITE_SHADOW_UPPER_A BITMAP                "..\\RES\\font\\gui_white_numA.bmp"
 
-IDB_BITMAP5             BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numB.bmp"
+IDB_BITMAP5             BITMAP                  "..\\RES\\font\\gui_white_numB.bmp"
 
-IDB_BITMAP6             BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numC.bmp"
+IDB_BITMAP6             BITMAP                  "..\\RES\\font\\gui_white_numC.bmp"
 
-IDB_BITMAP7             BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numD.bmp"
+IDB_BITMAP7             BITMAP                  "..\\RES\\font\\gui_white_numD.bmp"
 
-IDB_BITMAP8             BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numE.bmp"
+IDB_BITMAP8             BITMAP                  "..\\RES\\font\\gui_white_numE.bmp"
 
-IDB_BITMAP9             BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numF.bmp"
+IDB_BITMAP9             BITMAP                  "..\\RES\\font\\gui_white_numF.bmp"
 
-IDB_BITMAP10            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numG.bmp"
+IDB_BITMAP10            BITMAP                  "..\\RES\\font\\gui_white_numG.bmp"
 
-IDB_BITMAP11            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numH.bmp"
+IDB_BITMAP11            BITMAP                  "..\\RES\\font\\gui_white_numH.bmp"
 
-IDB_BITMAP12            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numI.bmp"
+IDB_BITMAP12            BITMAP                  "..\\RES\\font\\gui_white_numI.bmp"
 
-IDB_BITMAP13            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numJ.bmp"
+IDB_BITMAP13            BITMAP                  "..\\RES\\font\\gui_white_numJ.bmp"
 
-IDB_BITMAP14            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numK.bmp"
+IDB_BITMAP14            BITMAP                  "..\\RES\\font\\gui_white_numK.bmp"
 
-IDB_BITMAP15            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numL.bmp"
+IDB_BITMAP15            BITMAP                  "..\\RES\\font\\gui_white_numL.bmp"
 
-IDB_BITMAP16            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numM.bmp"
+IDB_BITMAP16            BITMAP                  "..\\RES\\font\\gui_white_numM.bmp"
 
-IDB_BITMAP17            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numN.bmp"
+IDB_BITMAP17            BITMAP                  "..\\RES\\font\\gui_white_numN.bmp"
 
-IDB_BITMAP18            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numO.bmp"
+IDB_BITMAP18            BITMAP                  "..\\RES\\font\\gui_white_numO.bmp"
 
-IDB_BITMAP19            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numP.bmp"
+IDB_BITMAP19            BITMAP                  "..\\RES\\font\\gui_white_numP.bmp"
 
-IDB_BITMAP20            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numQ.bmp"
+IDB_BITMAP20            BITMAP                  "..\\RES\\font\\gui_white_numQ.bmp"
 
-IDB_BITMAP21            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numR.bmp"
+IDB_BITMAP21            BITMAP                  "..\\RES\\font\\gui_white_numR.bmp"
 
-IDB_BITMAP22            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numS.bmp"
+IDB_BITMAP22            BITMAP                  "..\\RES\\font\\gui_white_numS.bmp"
 
-IDB_BITMAP23            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numT.bmp"
+IDB_BITMAP23            BITMAP                  "..\\RES\\font\\gui_white_numT.bmp"
 
-IDB_BITMAP24            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numU.bmp"
+IDB_BITMAP24            BITMAP                  "..\\RES\\font\\gui_white_numU.bmp"
 
-IDB_BITMAP25            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numV.bmp"
+IDB_BITMAP25            BITMAP                  "..\\RES\\font\\gui_white_numV.bmp"
 
-IDB_BITMAP26            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numW.bmp"
+IDB_BITMAP26            BITMAP                  "..\\RES\\font\\gui_white_numW.bmp"
 
-IDB_BITMAP27            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numX.bmp"
+IDB_BITMAP27            BITMAP                  "..\\RES\\font\\gui_white_numX.bmp"
 
-IDB_BITMAP28            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numY.bmp"
+IDB_BITMAP28            BITMAP                  "..\\RES\\font\\gui_white_numY.bmp"
 
-IDB_BITMAP29            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_white_numZ.bmp"
+IDB_BITMAP29            BITMAP                  "..\\RES\\font\\gui_white_numZ.bmp"
 
 #endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
