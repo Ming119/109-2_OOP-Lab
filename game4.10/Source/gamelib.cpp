@@ -139,9 +139,9 @@ int CAnimation::Width()
 
 CMovingBitmap CInteger::digit[10];
 
-CInteger::CInteger(int digits)
-	: NUMDIGITS(digits)
-{
+CInteger::CInteger(int digits):
+	NUMDIGITS(digits)
+{	
 	isBmpLoaded = false;
 }
 
@@ -209,25 +209,32 @@ void CInteger::ShowBitmap(double factor)
 		digit[d].ShowBitmap();
 		nx -= (int)(factor * digit[d].Width());
 	}
+	/*
 	if (n < 0) { // 如果小於0，則顯示負號
 		digit[10].SetTopLeft(nx, y);
 		digit[10].ShowBitmap();
 	}
+	*/
 }
 
 
 
 /////////////////////////////////////////////////////////////////////////////
-// CInteger: 這個class提供顯示字串圖形的能力
+// CString: 這個class提供顯示字串圖形的能力
 // 1. 要懂得怎麼呼叫(運用)其各種能力，但是可以不懂下列的程式是什麼意思
 // 2. 自己寫到運用CMovingBitmap的程式時，可以參考下列程式的寫法
 /////////////////////////////////////////////////////////////////////////////
 CMovingBitmap CString::alphabet[26];
 
-CString::CString(int digits)
-	: NUMDIGITS(digits)
+CString::CString()
 {
 	isBmpLoaded = false;
+	for (int i = 0; i < 26; i++) {
+		if (alphabet[i].isLoad() == true) {
+			isBmpLoaded = true;
+			break;
+		}
+	}
 }
 
 string CString::GetString() {
@@ -288,8 +295,9 @@ void CString::ShowBitmap(double factor)
 {
 	GAME_ASSERT(isBmpLoaded, "CString: 請先執行LoadBitmap，然後才能ShowBitmap");
 	int nx = x;
-	/*
-	for (int i = 0; i < n.length(); i++) {
+	
+	int len = n.length();
+	for (int i = 0; i < len; i++) {
 		if (n.at(i) == ' ') {
 			nx += (int)(factor * alphabet[0].Width());
 		} else {
@@ -300,29 +308,10 @@ void CString::ShowBitmap(double factor)
 			nx += (int)(factor * alphabet[alphabet_num].Width());
 		}
 	}
-	*/
+}
 
-	/*
-	if (n >= 0) {
-		MSB = n;
-		nx = x + digit[0].Width() * (NUMDIGITS - 1);
-	}
-	else {
-		MSB = -n;
-		nx = x + digit[0].Width() * NUMDIGITS;
-	}
-	for (int i = 0; i < NUMDIGITS; i++) {
-		int d = MSB % 10;
-		MSB /= 10;
-		digit[d].SetTopLeft(nx, y);
-		digit[d].ShowBitmap();
-		nx -= digit[d].Width();
-	}
-	if (n < 0) { // 如果小於0，則顯示負號
-		digit[10].SetTopLeft(nx, y);
-		digit[10].ShowBitmap();
-	}
-	*/
+int CString::GetMid() {
+	return (int)(x + n.length() * alphabet[0].Width() * DEFAULT_SCALE) / 2;
 }
 
 
@@ -360,7 +349,7 @@ void CMovingBitmap::LoadBitmap(int IDB_BITMAP, COLORREF color)
 {
 	const int nx = 0;
 	const int ny = 0;
-	GAME_ASSERT(!isBitmapLoaded,"A bitmap has been loaded. You can not load another bitmap !!!");
+	// GAME_ASSERT(!isBitmapLoaded,"A bitmap has been loaded. You can not load another bitmap !!!");
 	CBitmap bitmap;
 	BOOL rval = bitmap.LoadBitmap(IDB_BITMAP);
 	GAME_ASSERT(rval,"Load bitmap failed !!! Please check bitmap ID (IDB_XXX).");
@@ -424,6 +413,10 @@ void CMovingBitmap::ShowBitmap(CMovingBitmap &bm)
 	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before ShowBitmap() is called !!!");
 	GAME_ASSERT(bm.isBitmapLoaded,"A bitmap must be loaded before ShowBitmap() is called !!!");
 	CDDraw::BltBitmapToBitmap(SurfaceID, bm.SurfaceID, location.left,location.top);
+}
+
+bool CMovingBitmap::isLoad() {
+	return isBitmapLoaded;
 }
 
 int CMovingBitmap::Top()

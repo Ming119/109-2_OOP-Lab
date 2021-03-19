@@ -59,7 +59,17 @@ void CGameStateInit::OnInit()
 	logo.SetDelayCount(3);
 
 	//
+	start_game.LoadBitmap();
+	tutorial.LoadBitmap();
+	extras.LoadBitmap();
+	option.LoadBitmap();
+	exit.LoadBitmap();
 	start_game.SetString("START GAME");
+	tutorial.SetString("TUTORIAL");
+	extras.SetString("EXTRAS");
+	option.SetString("OPTION");
+	exit.SetString("EXIT");
+
 	test_int.LoadBitmap();
 	test_int.SetInteger(0);
 
@@ -94,8 +104,10 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 	if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
 		CAudio::Instance()->Play(AUDIO_SELECT, false);
+		test_int.SetInteger(0);
 	} else {
 		CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+		
 	}
 	/*
 	if (nChar == KEY_SPACE)
@@ -159,8 +171,17 @@ void CGameStateInit::OnShow()
 		
 		test_int.SetTopLeft(0, 0);
 		test_int.ShowBitmap();
-		// start_game.SetTopLeft(0, 0);
-		// start_game.ShowBitmap();
+
+		start_game.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * 70 / 100);
+		tutorial.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * 75 / 100);
+		extras.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * 80 / 100);
+		option.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * 85 / 100);
+		exit.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * 90 / 100);
+		start_game.ShowBitmap();
+		tutorial.ShowBitmap();
+		extras.ShowBitmap();
+		option.ShowBitmap();
+		exit.ShowBitmap();
 	}
 
 	/*

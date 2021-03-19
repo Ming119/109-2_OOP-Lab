@@ -95,7 +95,12 @@ namespace game_framework {
 		CAnimation logo;
 
 		CString start_game;
-		CInteger test_int;
+		CString tutorial;
+		CString extras;
+		CString option;
+		CString exit;
+
+		CInteger test_int = CInteger(2);
 	};
 
 

@@ -174,7 +174,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="RES\intro.png" />
     <Image Include="RES\opening\Opening_1.bmp">
       <Filter>Resource Files</Filter>
     </Image>

@@ -360,7 +360,6 @@
     <Image Include="RES\integer\gui_white_7.bmp" />
     <Image Include="RES\integer\gui_white_8.bmp" />
     <Image Include="RES\integer\gui_white_9.bmp" />
-    <Image Include="RES\intro.png" />
     <Image Include="RES\logo\logo_1.bmp" />
     <Image Include="RES\logo\logo_2.bmp" />
     <Image Include="RES\logo\title_black_character1.bmp" />

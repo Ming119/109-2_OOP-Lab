@@ -153,6 +153,8 @@ public:
 	void  ShowBitmap(double factor=DEFAULT_SCALE);	// 將圖貼到螢幕 factor < 1時縮小，>1時放大。注意：需要VGA卡硬體的支援，否則會很慢
 	void  ShowBitmap(CMovingBitmap &);	// 將圖貼到到另一張圖上 (僅供特殊用途)
 
+	bool isLoad();
+
 protected:
 	CRect    location;			// location of the bitmap
 	bool     isBitmapLoaded;	// whether a bitmap has been loaded
@@ -204,15 +206,16 @@ private:
 
 class CInteger {
 public:
-	CInteger(int=2);			// default 5 digits
+	CInteger(int=1);			// default 5 digits
 	void Add(int n);			// 增加整數值
 	int  GetInteger();			// 回傳整數值
 	void LoadBitmap();			// 載入0..9之圖形
 	void SetInteger(int);		// 設定整數值
 	void SetTopLeft(int,int);	// 將動畫的左上角座標移至 (x,y)
 	void ShowBitmap(double factor = DEFAULT_SCALE);			// 將動畫貼到螢幕
+
 private:
-	const int NUMDIGITS;			// 共顯示NUMDIGITS個位數
+	const int NUMDIGITS = 0;			// 共顯示NUMDIGITS個位數
 	static CMovingBitmap digit[10]; // 儲存0..9之圖形(bitmap)
 	int x, y;						// 顯示的座標
 	int n;							// 整數值
@@ -227,15 +230,15 @@ private:
 /////////////////////////////////////////////////////////////////////////////
 class CString {
 public:
-	CString(int = 5);			// default 5 digits
+	CString();			// default 5 digits
 	string GetString();			// 回傳整數值
 	void LoadBitmap();			// 載入A..Z之圖形
 	void SetString(string);		// 設定字串
 	void SetTopLeft(int, int);	// 將動畫的左上角座標移至 (x,y)
 	void ShowBitmap(double factor = DEFAULT_SCALE);			// 將動畫貼到螢幕
+	int GetMid();
 
 private:
-	const int NUMDIGITS;			// 共顯示NUMDIGITS個位數
 	static CMovingBitmap alphabet[26]; // 儲存A..Z之圖形(bitmap)
 	int x, y;						// 顯示的座標
 	string n;						// 字串
