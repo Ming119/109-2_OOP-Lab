@@ -55,8 +55,15 @@ namespace game_framework {
 		AUDIO_SPRING,				// 44
 		AUDIO_SWITCH,				// 45
 		AUDIO_TELEPORTER,			// 46
-		AUDIO_TITLE					// 47
+		AUDIO_TITLE,				// 47
+
+		// Test
+		AUDIO_DING,
+		AUDIO_LAKE,
+		AUDIO_NTUT
 	};
+
+
 
 	/////////////////////////////////////////////////////////////////////////////
 	// 這個class為遊戲的遊戲開頭畫面物件
@@ -75,6 +82,7 @@ namespace game_framework {
 		void OnShow();						// 顯示這個狀態的遊戲畫面
 
 	private:
+		CMovingBitmap background;
 		CMovingBitmap background1;			//
 		CMovingBitmap background2;
 		CMovingBitmap background3;
@@ -96,8 +104,9 @@ namespace game_framework {
 	public:
 		CGameStateRun(CGame *g);
 		~CGameStateRun();
-		void OnBeginState();							// 設定每次重玩所需的變數
+
 		void OnInit();  								// 遊戲的初值及圖形設定
+		void OnBeginState();							// 設定每次重玩所需的變數
 		void OnKeyDown(UINT, UINT, UINT);
 		void OnKeyUp(UINT, UINT, UINT);
 		void OnLButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
@@ -105,9 +114,11 @@ namespace game_framework {
 		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
 		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
 		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
+
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
+
 	private:
 		const int		NUMBALLS;	// 球的總數
 		CMovingBitmap	background;	// 背景圖
@@ -129,13 +140,15 @@ namespace game_framework {
 	class CGameStateOver : public CGameState {
 	public:
 		CGameStateOver(CGame *g);
-		void OnBeginState();							// 設定每次重玩所需的變數
 		void OnInit();
+		void OnBeginState();	// 設定每次重玩所需的變數
+		
 	protected:
-		void OnMove();									// 移動遊戲元素
-		void OnShow();									// 顯示這個狀態的遊戲畫面
+		void OnMove();			// 移動遊戲元素
+		void OnShow();			// 顯示這個狀態的遊戲畫面
+
 	private:
-		int counter;	// 倒數之計數器
+		int counter;			// 倒數之計數器
 	};
 
 }

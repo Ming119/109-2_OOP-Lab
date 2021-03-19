@@ -101,12 +101,14 @@ void CAnimation::SetTopLeft(int nx, int ny)
 	bmp_iter->SetTopLeft(x, y);
 }
 
+/*
 void CAnimation::OnShow()
 {
 	GAME_ASSERT(bmp.size() != 0,"CAnimation: Bitmaps must be loaded before they are shown.");
 	bmp_iter->SetTopLeft(x,y);
 	bmp_iter->ShowBitmap();
 }
+*/
 
 void CAnimation::OnShow(double Scale)
 {
@@ -126,6 +128,8 @@ int CAnimation::Width()
 	GAME_ASSERT(bmp.size() != 0,"CAnimation: Bitmaps must be loaded first.");
 	return bmp_iter->Width();
 }
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // CInteger: 這個class提供顯示整數圖形的能力
@@ -271,11 +275,13 @@ void CMovingBitmap::SetTopLeft(int x, int y)
 	location.bottom -= dy;
 }
 
+/*
 void CMovingBitmap::ShowBitmap()
 {
 	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before ShowBitmap() is called !!!");
 	CDDraw::BltBitmapToBack(SurfaceID,location.left,location.top);
 }
+*/
 
 void CMovingBitmap::ShowBitmap(double factor)
 {
