@@ -5,14 +5,14 @@
 #define SIZE_X				 1280		// 設定遊戲畫面的解析度為640x480
 #define SIZE_Y				 960		// 註：若不使用4:3，則不能切換到全螢幕
 #define OPEN_AS_FULLSCREEN	 false		// 是否以全螢幕方式開啟遊戲
-#define SHOW_LOAD_PROGRESS   true		// 是否顯示loading(OnInit)的進度
+#define SHOW_LOAD_PROGRESS   false		// 是否顯示loading(OnInit)的進度
 #define DEFAULT_BG_COLOR	 RGB(0,0,0)	// 遊戲畫面預設的背景顏色(黑色)
 #define GAME_CYCLE_TIME		 33			// 每33ms跑一次Move及Show(每秒30次)
 #define SHOW_GAME_CYCLE_TIME false		// 是否在debug mode顯示cycle time
 #define ENABLE_GAME_PAUSE	 false		// 是否允許以 Ctrl-Q 暫停遊戲
 #define ENABLE_AUDIO		 true		// 啟動音效介面
 #define DEFAULT_BG_ALPHA	RGB(255,0,255)	// Set the default Background Alpha to (255,0,255)
-#define DEFAULT_SCALE		4			//
+#define DEFAULT_SCALE		SIZE_X/320	//
 
 /////////////////////////////////////////////////////////////////////////////
 // 定義CGame及CGameState所使用的三個狀態常數
@@ -23,6 +23,8 @@ enum GAME_STATES {
 	GAME_STATE_RUN,
 	GAME_STATE_OVER
 };
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // Header for STL (Standard Template Library)
@@ -72,6 +74,8 @@ private:
 	static DWORD ctime;
 	static int	 ctimeCount;
 };
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // 這個class會建立DirectDraw物件，以提供其他class使用
@@ -126,6 +130,8 @@ private:
 	static int					size_x, size_y;
 };
 
+
+
 /////////////////////////////////////////////////////////////////////////////
 // 這個class提供動態(可以移動)的圖形
 // 每個Public Interface的用法都要懂，Implementation可以不懂
@@ -134,6 +140,8 @@ private:
 class CMovingBitmap {
 public:
 	CMovingBitmap();
+	CMovingBitmap(int, COLORREF = DEFAULT_BG_ALPHA);
+
 	int   Height();						// 取得圖形的高度
 	int   Width();						// 取得圖形的寬度
 	int   Top();						// 取得圖形的左上角的 y 座標
@@ -150,6 +158,8 @@ protected:
 	bool     isBitmapLoaded;	// whether a bitmap has been loaded
 	unsigned SurfaceID;			// the surface id of this bitmap
 };
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // 這個class提供可以移動的動畫
@@ -185,6 +195,8 @@ private:
 	int								x, y;			// 動畫的座標
 };
 
+
+
 /////////////////////////////////////////////////////////////////////////////
 // 這個class提供顯示整數圖形的能力
 // 每個Public Interface的用法都要懂，Implementation可以不懂
@@ -192,20 +204,45 @@ private:
 
 class CInteger {
 public:
-	CInteger(int=5);			// default 5 digits
+	CInteger(int=2);			// default 5 digits
 	void Add(int n);			// 增加整數值
 	int  GetInteger();			// 回傳整數值
-	void LoadBitmap();			// 載入0..9及負號之圖形
+	void LoadBitmap();			// 載入0..9之圖形
 	void SetInteger(int);		// 設定整數值
 	void SetTopLeft(int,int);	// 將動畫的左上角座標移至 (x,y)
-	void ShowBitmap();			// 將動畫貼到螢幕
+	void ShowBitmap(double factor = DEFAULT_SCALE);			// 將動畫貼到螢幕
 private:
 	const int NUMDIGITS;			// 共顯示NUMDIGITS個位數
-	static CMovingBitmap digit[11]; // 儲存0..9及負號之圖形(bitmap)
+	static CMovingBitmap digit[10]; // 儲存0..9之圖形(bitmap)
 	int x, y;						// 顯示的座標
 	int n;							// 整數值
 	bool isBmpLoaded;				// 是否已經載入圖形
 };
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 這個class提供顯示字串圖形的能力
+// 每個Public Interface的用法都要懂，Implementation可以不懂
+/////////////////////////////////////////////////////////////////////////////
+class CString {
+public:
+	CString(int = 5);			// default 5 digits
+	string GetString();			// 回傳整數值
+	void LoadBitmap();			// 載入A..Z之圖形
+	void SetString(string);		// 設定字串
+	void SetTopLeft(int, int);	// 將動畫的左上角座標移至 (x,y)
+	void ShowBitmap(double factor = DEFAULT_SCALE);			// 將動畫貼到螢幕
+
+private:
+	const int NUMDIGITS;			// 共顯示NUMDIGITS個位數
+	static CMovingBitmap alphabet[26]; // 儲存A..Z之圖形(bitmap)
+	int x, y;						// 顯示的座標
+	string n;						// 字串
+	bool isBmpLoaded;				// 是否已經載入圖形
+};
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // 宣告尚未定義的class
@@ -215,6 +252,8 @@ class CGame;
 class CGameStateInit;
 class CGameStateRun;
 class CGameStateOver;
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // 這個class為遊戲的各種狀態之Base class(是一個abstract class)
@@ -249,6 +288,8 @@ protected:
 	virtual void OnShow() = 0;								// 顯示這個狀態的遊戲畫面
 	CGame *game;
 };
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // 這個class是遊戲的核心，控制遊戲的進行

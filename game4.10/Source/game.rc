@@ -429,77 +429,105 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
 // Bitmap
 //
 
-IDB_LOGO_1              BITMAP                  "..\\RES\\logo\\logo_1.bmp"
+LOGO_1                  BITMAP                  "..\\RES\\logo\\logo_1.bmp"
 
-IDB_OPENING_BG_1        BITMAP                  "..\\RES\\opening\\Opening_BG_1.bmp"
+BG_OPENING_1            BITMAP                  "..\\RES\\opening\\Opening_BG_1.bmp"
 
-IDB_OPENING_BG_2        BITMAP                  "..\\RES\\opening\\Opening_BG_2.bmp"
+BG_OPENING_2            BITMAP                  "..\\RES\\opening\\Opening_BG_2.bmp"
 
-IDB_OPENING_BG_3        BITMAP                  "..\\RES\\opening\\Opening_BG_3.bmp"
+BG_OPENING_3            BITMAP                  "..\\RES\\opening\\Opening_BG_3.bmp"
 
-IDB_OPENING_BG_4        BITMAP                  "..\\RES\\opening\\Opening_BG_4.bmp"
+BG_OPENING_4            BITMAP                  "..\\RES\\opening\\Opening_BG_4.bmp"
 
-IDB_LOGO_2              BITMAP                  "..\\RES\\logo\\logo_2.bmp"
+LOGO_2                  BITMAP                  "..\\RES\\logo\\logo_2.bmp"
 
-IDB_LOGO_CHARACTER_1    BITMAP                  "..\\RES\\logo\\title_bule_character1.bmp"
+LOGO_CHARACTER_1        BITMAP                  "..\\RES\\logo\\title_bule_character1.bmp"
 
-IDB_LOGO_CHARACTER_2    BITMAP                  "..\\RES\\logo\\title_bule_character2.bmp"
+LOGO_CHARACTER_2        BITMAP                  "..\\RES\\logo\\title_bule_character2.bmp"
 
-IDB_LOGO_CHARACTER_3    BITMAP                  "..\\RES\\logo\\title_bule_character3.bmp"
+LOGO_CHARACTER_3        BITMAP                  "..\\RES\\logo\\title_bule_character3.bmp"
 
-IDB_LOGO_CHARACTER_4    BITMAP                  "..\\RES\\logo\\title_bule_character4.bmp"
+LOGO_CHARACTER_4        BITMAP                  "..\\RES\\logo\\title_bule_character4.bmp"
 
-FONT_WHITE_SHADOW_UPPER_A BITMAP                "..\\RES\\font\\gui_white_numA.bmp"
+FONT_WHITE_SHADOW_UPPER_A BITMAP                  "..\\RES\\font\\gui_white_numA.bmp"
 
-IDB_BITMAP5             BITMAP                  "..\\RES\\font\\gui_white_numB.bmp"
+FONT_WHITE_SHADOW_UPPER_B BITMAP                  "..\\RES\\font\\gui_white_numB.bmp"
 
-IDB_BITMAP6             BITMAP                  "..\\RES\\font\\gui_white_numC.bmp"
+FONT_WHITE_SHADOW_UPPER_C BITMAP                  "..\\RES\\font\\gui_white_numC.bmp"
 
-IDB_BITMAP7             BITMAP                  "..\\RES\\font\\gui_white_numD.bmp"
+FONT_WHITE_SHADOW_UPPER_D BITMAP                  "..\\RES\\font\\gui_white_numD.bmp"
 
-IDB_BITMAP8             BITMAP                  "..\\RES\\font\\gui_white_numE.bmp"
+FONT_WHITE_SHADOW_UPPER_E BITMAP                  "..\\RES\\font\\gui_white_numE.bmp"
 
-IDB_BITMAP9             BITMAP                  "..\\RES\\font\\gui_white_numF.bmp"
+FONT_WHITE_SHADOW_UPPER_F BITMAP                  "..\\RES\\font\\gui_white_numF.bmp"
 
-IDB_BITMAP10            BITMAP                  "..\\RES\\font\\gui_white_numG.bmp"
+FONT_WHITE_SHADOW_UPPER_G BITMAP                  "..\\RES\\font\\gui_white_numG.bmp"
 
-IDB_BITMAP11            BITMAP                  "..\\RES\\font\\gui_white_numH.bmp"
+FONT_WHITE_SHADOW_UPPER_H BITMAP                  "..\\RES\\font\\gui_white_numH.bmp"
 
-IDB_BITMAP12            BITMAP                  "..\\RES\\font\\gui_white_numI.bmp"
+FONT_WHITE_SHADOW_UPPER_I BITMAP                  "..\\RES\\font\\gui_white_numI.bmp"
 
-IDB_BITMAP13            BITMAP                  "..\\RES\\font\\gui_white_numJ.bmp"
+FONT_WHITE_SHADOW_UPPER_J BITMAP                  "..\\RES\\font\\gui_white_numJ.bmp"
 
-IDB_BITMAP14            BITMAP                  "..\\RES\\font\\gui_white_numK.bmp"
+FONT_WHITE_SHADOW_UPPER_K BITMAP                  "..\\RES\\font\\gui_white_numK.bmp"
 
-IDB_BITMAP15            BITMAP                  "..\\RES\\font\\gui_white_numL.bmp"
+FONT_WHITE_SHADOW_UPPER_L BITMAP                  "..\\RES\\font\\gui_white_numL.bmp"
 
-IDB_BITMAP16            BITMAP                  "..\\RES\\font\\gui_white_numM.bmp"
+FONT_WHITE_SHADOW_UPPER_M BITMAP                  "..\\RES\\font\\gui_white_numM.bmp"
 
-IDB_BITMAP17            BITMAP                  "..\\RES\\font\\gui_white_numN.bmp"
+FONT_WHITE_SHADOW_UPPER_N BITMAP                  "..\\RES\\font\\gui_white_numN.bmp"
 
-IDB_BITMAP18            BITMAP                  "..\\RES\\font\\gui_white_numO.bmp"
+FONT_WHITE_SHADOW_UPPER_O BITMAP                  "..\\RES\\font\\gui_white_numO.bmp"
 
-IDB_BITMAP19            BITMAP                  "..\\RES\\font\\gui_white_numP.bmp"
+FONT_WHITE_SHADOW_UPPER_P BITMAP                  "..\\RES\\font\\gui_white_numP.bmp"
 
-IDB_BITMAP20            BITMAP                  "..\\RES\\font\\gui_white_numQ.bmp"
+FONT_WHITE_SHADOW_UPPER_Q BITMAP                  "..\\RES\\font\\gui_white_numQ.bmp"
 
-IDB_BITMAP21            BITMAP                  "..\\RES\\font\\gui_white_numR.bmp"
+FONT_WHITE_SHADOW_UPPER_R BITMAP                  "..\\RES\\font\\gui_white_numR.bmp"
 
-IDB_BITMAP22            BITMAP                  "..\\RES\\font\\gui_white_numS.bmp"
+FONT_WHITE_SHADOW_UPPER_S BITMAP                  "..\\RES\\font\\gui_white_numS.bmp"
 
-IDB_BITMAP23            BITMAP                  "..\\RES\\font\\gui_white_numT.bmp"
+FONT_WHITE_SHADOW_UPPER_T BITMAP                  "..\\RES\\font\\gui_white_numT.bmp"
 
-IDB_BITMAP24            BITMAP                  "..\\RES\\font\\gui_white_numU.bmp"
+FONT_WHITE_SHADOW_UPPER_U BITMAP                  "..\\RES\\font\\gui_white_numU.bmp"
 
-IDB_BITMAP25            BITMAP                  "..\\RES\\font\\gui_white_numV.bmp"
+FONT_WHITE_SHADOW_UPPER_V BITMAP                  "..\\RES\\font\\gui_white_numV.bmp"
 
-IDB_BITMAP26            BITMAP                  "..\\RES\\font\\gui_white_numW.bmp"
+FONT_WHITE_SHADOW_UPPER_W BITMAP                  "..\\RES\\font\\gui_white_numW.bmp"
 
-IDB_BITMAP27            BITMAP                  "..\\RES\\font\\gui_white_numX.bmp"
+FONT_WHITE_SHADOW_UPPER_X BITMAP                  "..\\RES\\font\\gui_white_numX.bmp"
 
-IDB_BITMAP28            BITMAP                  "..\\RES\\font\\gui_white_numY.bmp"
+FONT_WHITE_SHADOW_UPPER_Y BITMAP                  "..\\RES\\font\\gui_white_numY.bmp"
 
-IDB_BITMAP29            BITMAP                  "..\\RES\\font\\gui_white_numZ.bmp"
+FONT_WHITE_SHADOW_UPPER_Z BITMAP                  "..\\RES\\font\\gui_white_numZ.bmp"
+
+INTRO_1                 BITMAP                  "..\\RES\\logo\\title_black_character1.bmp"
+
+INTRO_2                 BITMAP                  "..\\RES\\logo\\title_black_character2.bmp"
+
+INTRO_3                 BITMAP                  "..\\RES\\logo\\title_black_character3.bmp"
+
+INTRO_4                 BITMAP                  "..\\RES\\logo\\title_black_character4.bmp"
+
+INTEGER_WHITE_0         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_0.bmp"
+
+INTEGER_WHITE_1         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_1.bmp"
+
+INTEGER_WHITE_2         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_2.bmp"
+
+INTEGER_WHITE_3         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_3.bmp"
+
+INTEGER_WHITE_4         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_4.bmp"
+
+INTEGER_WHITE_5         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_5.bmp"
+
+INTEGER_WHITE_6         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_6.bmp"
+
+INTEGER_WHITE_7         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_7.bmp"
+
+INTEGER_WHITE_8         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_8.bmp"
+
+INTEGER_WHITE_9         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_9.bmp"
 
 #endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////

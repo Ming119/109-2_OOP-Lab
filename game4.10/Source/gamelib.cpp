@@ -137,10 +137,10 @@ int CAnimation::Width()
 // 2. 自己寫到運用CMovingBitmap的程式時，可以參考下列程式的寫法
 /////////////////////////////////////////////////////////////////////////////
 
-CMovingBitmap CInteger::digit[11];
+CMovingBitmap CInteger::digit[10];
 
 CInteger::CInteger(int digits)
-: NUMDIGITS(digits)
+	: NUMDIGITS(digits)
 {
 	isBmpLoaded = false;
 }
@@ -161,9 +161,20 @@ void CInteger::LoadBitmap()
 	// digit[i]為class varibale，所以必須避免重複LoadBitmap
 	//
 	if (!isBmpLoaded) {
-		int d[11]={IDB_0,IDB_1,IDB_2,IDB_3,IDB_4,IDB_5,IDB_6,IDB_7,IDB_8,IDB_9,IDB_MINUS};
-		for (int i=0; i < 11; i++)
-			digit[i].LoadBitmap(d[i],RGB(255,255,255));
+		int d[10] = {	INTEGER_WHITE_0,
+						INTEGER_WHITE_1,
+						INTEGER_WHITE_2,
+						INTEGER_WHITE_3,
+						INTEGER_WHITE_4,
+						INTEGER_WHITE_5, 
+						INTEGER_WHITE_6,
+						INTEGER_WHITE_7,
+						INTEGER_WHITE_8,
+						INTEGER_WHITE_9
+		};
+
+		for (int i=0; i < 10; i++)
+			digit[i].LoadBitmap(d[i]);
 		isBmpLoaded = true;
 	}
 }
@@ -178,19 +189,129 @@ void CInteger::SetTopLeft(int nx, int ny)		// 將動畫的左上角座標移至 (x,y)
 	x = nx; y = ny;
 }
 
-void CInteger::ShowBitmap()
+void CInteger::ShowBitmap(double factor)
 {
 	GAME_ASSERT(isBmpLoaded, "CInteger: 請先執行LoadBitmap，然後才能ShowBitmap");
 	int nx;		// 待顯示位數的 x 座標
 	int MSB;	// 最左邊(含符號)的位數的數值
+
 	if (n >= 0) {
 		MSB = n;
-		nx = x+digit[0].Width()*(NUMDIGITS-1);
+		nx = (int)(factor * (x+digit[0].Width()*(NUMDIGITS-1)));
 	} else {
 		MSB = -n;
-		nx = x+digit[0].Width()*NUMDIGITS;
+		nx = (int)(factor * (x+digit[0].Width()*NUMDIGITS));
 	}
 	for (int i=0; i < NUMDIGITS; i++) {
+		int d = MSB % 10;
+		MSB /= 10;
+		digit[d].SetTopLeft(nx, y);
+		digit[d].ShowBitmap();
+		nx -= (int)(factor * digit[d].Width());
+	}
+	if (n < 0) { // 如果小於0，則顯示負號
+		digit[10].SetTopLeft(nx, y);
+		digit[10].ShowBitmap();
+	}
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CInteger: 這個class提供顯示字串圖形的能力
+// 1. 要懂得怎麼呼叫(運用)其各種能力，但是可以不懂下列的程式是什麼意思
+// 2. 自己寫到運用CMovingBitmap的程式時，可以參考下列程式的寫法
+/////////////////////////////////////////////////////////////////////////////
+CMovingBitmap CString::alphabet[26];
+
+CString::CString(int digits)
+	: NUMDIGITS(digits)
+{
+	isBmpLoaded = false;
+}
+
+string CString::GetString() {
+	return n;
+}
+
+void CString::LoadBitmap()
+{
+	//
+	// digit[i]為class varibale，所以必須避免重複LoadBitmap
+	//
+	if (!isBmpLoaded) {
+		int d[26] = {	FONT_WHITE_SHADOW_UPPER_A,
+						FONT_WHITE_SHADOW_UPPER_B,
+						FONT_WHITE_SHADOW_UPPER_C,
+						FONT_WHITE_SHADOW_UPPER_D,
+						FONT_WHITE_SHADOW_UPPER_E,
+						FONT_WHITE_SHADOW_UPPER_F,
+						FONT_WHITE_SHADOW_UPPER_G,
+						FONT_WHITE_SHADOW_UPPER_H,
+						FONT_WHITE_SHADOW_UPPER_I,
+						FONT_WHITE_SHADOW_UPPER_J,
+						FONT_WHITE_SHADOW_UPPER_K,
+						FONT_WHITE_SHADOW_UPPER_L,
+						FONT_WHITE_SHADOW_UPPER_M,
+						FONT_WHITE_SHADOW_UPPER_N,
+						FONT_WHITE_SHADOW_UPPER_O,
+						FONT_WHITE_SHADOW_UPPER_P,
+						FONT_WHITE_SHADOW_UPPER_Q,
+						FONT_WHITE_SHADOW_UPPER_R,
+						FONT_WHITE_SHADOW_UPPER_S,
+						FONT_WHITE_SHADOW_UPPER_T,
+						FONT_WHITE_SHADOW_UPPER_U,
+						FONT_WHITE_SHADOW_UPPER_V,
+						FONT_WHITE_SHADOW_UPPER_W,
+						FONT_WHITE_SHADOW_UPPER_X,
+						FONT_WHITE_SHADOW_UPPER_Y,
+						FONT_WHITE_SHADOW_UPPER_Z
+		};
+
+		for (int i = 0; i < 26; i++)
+			alphabet[i].LoadBitmap(d[i]);
+		isBmpLoaded = true;
+	}
+}
+
+void CString::SetString(string i)
+{
+	n = i;
+}
+
+void CString::SetTopLeft(int nx, int ny)		// 將動畫的左上角座標移至 (x,y)
+{
+	x = nx; y = ny;
+}
+
+void CString::ShowBitmap(double factor)
+{
+	GAME_ASSERT(isBmpLoaded, "CString: 請先執行LoadBitmap，然後才能ShowBitmap");
+	int nx = x;
+	/*
+	for (int i = 0; i < n.length(); i++) {
+		if (n.at(i) == ' ') {
+			nx += (int)(factor * alphabet[0].Width());
+		} else {
+			int alphabet_num = int(n.at(i)) - int('A');
+
+			alphabet[alphabet_num].SetTopLeft(nx, y);
+			alphabet[alphabet_num].ShowBitmap();
+			nx += (int)(factor * alphabet[alphabet_num].Width());
+		}
+	}
+	*/
+
+	/*
+	if (n >= 0) {
+		MSB = n;
+		nx = x + digit[0].Width() * (NUMDIGITS - 1);
+	}
+	else {
+		MSB = -n;
+		nx = x + digit[0].Width() * NUMDIGITS;
+	}
+	for (int i = 0; i < NUMDIGITS; i++) {
 		int d = MSB % 10;
 		MSB /= 10;
 		digit[d].SetTopLeft(nx, y);
@@ -201,7 +322,10 @@ void CInteger::ShowBitmap()
 		digit[10].SetTopLeft(nx, y);
 		digit[10].ShowBitmap();
 	}
+	*/
 }
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // CMovingBitmap: Moving Bitmap class
@@ -212,6 +336,12 @@ void CInteger::ShowBitmap()
 CMovingBitmap::CMovingBitmap()
 {
 	isBitmapLoaded = false;
+}
+
+
+CMovingBitmap::CMovingBitmap(int IDB_BITMAP, COLORREF color)
+{
+	LoadBitmap(IDB_BITMAP, color);
 }
 
 int CMovingBitmap::Height()
@@ -307,6 +437,8 @@ int CMovingBitmap::Width()
 	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before Width() is called !!!");
 	return location.right - location.left;
 }
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // 這個class為遊戲的各種狀態之Base class(是一個abstract class)
@@ -601,6 +733,8 @@ void CGame::SetGameState(int state)
 	running = true;
 }
 
+
+
 /////////////////////////////////////////////////////////////////////////////
 // CSpecialEffect: Specail Effect functions
 // 一般的遊戲並不需直接操作這個物件，因此可以全部略過不看
@@ -641,6 +775,8 @@ int CSpecialEffect::GetCurrentTimeCount()
 {
 	return ctimeCount;
 }
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // CDDraw: Direct Draw Object
@@ -1238,5 +1374,7 @@ void CDDraw::CheckDDFail(char *s)
 		GAME_ASSERT(0, "Direct Draw Failed due to unknown error code !!!");
 	}
 }
+
+
 
 }

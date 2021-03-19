@@ -295,5 +295,47 @@
     <Image Include="RES\font\gui_white_numZ.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\logo\title_black_character1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\logo\title_black_character2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\logo\title_black_character3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\logo\title_black_character4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\integer\gui_white_0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\integer\gui_white_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\integer\gui_white_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\integer\gui_white_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\integer\gui_white_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\integer\gui_white_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\integer\gui_white_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\integer\gui_white_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\integer\gui_white_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\integer\gui_white_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

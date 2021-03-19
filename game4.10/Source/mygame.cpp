@@ -28,28 +28,44 @@ void CGameStateInit::OnInit()
 	// 開始載入資料
 	//
 	// Loading Images
-	background.LoadBitmap(IDB_OPENING_BG_1);
-	background1.LoadBitmap(IDB_OPENING_BG_1);
-	background2.LoadBitmap(IDB_OPENING_BG_2);
-	background3.LoadBitmap(IDB_OPENING_BG_3);
-	background4.LoadBitmap(IDB_OPENING_BG_4);
 
-	logo1.LoadBitmap(IDB_LOGO_1);
-	logo2.LoadBitmap(IDB_LOGO_2);
+	// Intro
+	intro.AddBitmap(INTRO_1);
+	intro.AddBitmap(INTRO_1);
+	intro.AddBitmap(INTRO_1);
+	intro.AddBitmap(INTRO_2);
+	intro.AddBitmap(INTRO_3);
+	intro.AddBitmap(INTRO_4);
+	intro.AddBitmap(INTRO_4);
+	intro.SetDelayCount(3);
+	
 
-	logo.AddBitmap(IDB_LOGO_CHARACTER_1);
-	logo.AddBitmap(IDB_LOGO_CHARACTER_2);
-	logo.AddBitmap(IDB_LOGO_CHARACTER_3);
-	logo.AddBitmap(IDB_LOGO_CHARACTER_4);
-	logo.AddBitmap(IDB_LOGO_CHARACTER_3);
-	logo.AddBitmap(IDB_LOGO_CHARACTER_2);
+
+	// Background
+	background1.LoadBitmap(BG_OPENING_1);
+	background2.LoadBitmap(BG_OPENING_2);
+	background3.LoadBitmap(BG_OPENING_3);
+	background4.LoadBitmap(BG_OPENING_4);
+
+	logo1.LoadBitmap(LOGO_1);
+	logo2.LoadBitmap(LOGO_2);
+
+	logo.AddBitmap(LOGO_CHARACTER_1);
+	logo.AddBitmap(LOGO_CHARACTER_2);
+	logo.AddBitmap(LOGO_CHARACTER_3);
+	logo.AddBitmap(LOGO_CHARACTER_4);
+	logo.AddBitmap(LOGO_CHARACTER_3);
+	logo.AddBitmap(LOGO_CHARACTER_2);
 	logo.SetDelayCount(3);
 
 	//
-	start_game.LoadBitmap(FONT_WHITE_SHADOW_UPPER_A);
+	start_game.SetString("START GAME");
+	test_int.LoadBitmap();
+	test_int.SetInteger(0);
+
+
 
 	// Loading Audio
-	
 	CAudio::Instance()->Load(AUDIO_OPTIONS, "sounds\\options.mp3");
 	CAudio::Instance()->Load(AUDIO_CHOOSE, "sounds\\choose.wav");
 	CAudio::Instance()->Load(AUDIO_SELECT, "sounds\\select.wav");
@@ -68,6 +84,7 @@ void CGameStateInit::OnBeginState()
 
 void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
+	const char KEY_ENTER	= 0x0D;	// keyboard ENTER
 	const char KEY_ESC		= 0x1B;	// keyboard ESC
 	const char KEY_SPACE	= 0x20; // keyboard SPACE
 	const char KEY_LEFT		= 0x25; // keyboard左箭頭
@@ -75,15 +92,26 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	const char KEY_RIGHT	= 0x27; // keyboard右箭頭
 	const char KEY_DOWN		= 0x28; // keyboard下箭頭
 
+	if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
+		CAudio::Instance()->Play(AUDIO_SELECT, false);
+	} else {
+		CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+	}
+	/*
 	if (nChar == KEY_SPACE)
 		GotoGameState(GAME_STATE_RUN);						// 切換至GAME_STATE_RUN
 	else if (nChar == KEY_ESC)								// Demo 關閉遊戲的方法
 		PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE,0,0);	// 關閉遊戲
 
 	// GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
+	*/
 }
 
 void CGameStateInit::OnMove() {
+	if (!intro_done) {
+		intro.OnMove();
+	}
+	test_int.Add(1);
 	logo.OnMove();
 	// TRACE("ID: %d - x: %d, y: %d - w: %d, h: %d\n", logo.GetCurrentBitmapNumber(), logo.Left(), logo.Top(), logo.Width(), logo.Height());
 }
@@ -93,33 +121,47 @@ void CGameStateInit::OnShow()
 	//
 	// Background
 	// 1280*960
-	// 
-	background1.SetTopLeft(0, 0);
-	background2.SetTopLeft(0, (int)(SIZE_Y / 3));
-	background3.SetTopLeft(0, (int)(SIZE_Y / 3) + (int)((background2.Height()-31) * 4));
-	background4.SetTopLeft(0, (int)(SIZE_Y - background4.Height() * 3));
-	
-	background1.ShowBitmap((double)SIZE_X / background1.Width());
-	background2.ShowBitmap();
-	background3.ShowBitmap();
-	background4.ShowBitmap();
+	//
+	if (!intro_done) {
+		intro.SetTopLeft((SIZE_X - logo.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 2 / 100);
+		intro.OnShow();
 
-	//
-	// Logo
-	//
-	logo.SetTopLeft((SIZE_X - logo.Width() * 4) / 2, SIZE_Y * 2 / 100);
-	logo1.SetTopLeft((SIZE_X - logo1.Width() * 4) / 2, SIZE_Y * 5 / 100);
-	logo2.SetTopLeft((SIZE_X - logo2.Width() * 4) / 2, SIZE_Y * 45 / 100);
-	
+		if (intro.IsFinalBitmap()) {
+			intro_done = true;
+		}
+	}
+	if (intro_done) {
+		background1.SetTopLeft(0, 0);
+		background2.SetTopLeft(0, (int)(SIZE_Y / 3));
+		background3.SetTopLeft(0, (int)(SIZE_Y / 3) + (int)((background2.Height() - 31) * DEFAULT_SCALE));
+		background4.SetTopLeft(0, (int)(SIZE_Y - background4.Height() * 3));
 
-	logo1.ShowBitmap();
-	logo.OnShow();
-	logo2.ShowBitmap();
-	
-	//
-	//
-	//
-	start_game.ShowBitmap();
+		background1.ShowBitmap((double)SIZE_X / background1.Width());
+		background2.ShowBitmap();
+		background3.ShowBitmap();
+		background4.ShowBitmap();
+
+		//
+		// Logo
+		//
+		logo.SetTopLeft((SIZE_X - logo.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 2 / 100);
+		logo1.SetTopLeft((SIZE_X - logo1.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 5 / 100);
+		logo2.SetTopLeft((SIZE_X - logo2.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 45 / 100);
+
+
+		logo1.ShowBitmap();
+		logo.OnShow();
+		logo2.ShowBitmap();
+
+		//
+		//
+		//
+		
+		test_int.SetTopLeft(0, 0);
+		test_int.ShowBitmap();
+		// start_game.SetTopLeft(0, 0);
+		// start_game.ShowBitmap();
+	}
 
 	/*
 	//

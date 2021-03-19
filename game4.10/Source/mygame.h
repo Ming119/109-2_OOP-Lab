@@ -82,7 +82,9 @@ namespace game_framework {
 		void OnShow();						// 顯示這個狀態的遊戲畫面
 
 	private:
-		CMovingBitmap background;
+		CAnimation	intro;
+		bool		intro_done = false;
+
 		CMovingBitmap background1;			//
 		CMovingBitmap background2;
 		CMovingBitmap background3;
@@ -92,7 +94,8 @@ namespace game_framework {
 
 		CAnimation logo;
 
-		CMovingBitmap start_game;
+		CString start_game;
+		CInteger test_int;
 	};
 
 
