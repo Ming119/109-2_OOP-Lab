@@ -43,9 +43,8 @@
 #define IDB_OPENING_BG_2                165
 #define BG_OPENING_2                    165
 #define IDB_OPENING_BG_3                166
-#define BG_OPENING_3                    166
 #define IDB_OPENING_BG_4                167
-#define BG_OPENING_4                    167
+#define BG_OPENING_5                    167
 #define IDB_LOGO_2                      168
 #define LOGO_2                          168
 #define IDB_LOGO_CHARACTER_1            169
@@ -122,6 +121,9 @@
 #define INTEGER_WHITE_7                 210
 #define INTEGER_WHITE_8                 211
 #define INTEGER_WHITE_9                 212
+#define BG_OPENING_4                    214
+#define IDB_BITMAP4                     215
+#define BG_OPENING_3                    215
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -134,7 +136,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        213
+#define _APS_NEXT_RESOURCE_VALUE        216
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

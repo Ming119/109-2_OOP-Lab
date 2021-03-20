@@ -336,5 +336,11 @@
     <Image Include="RES\integer\gui_white_9.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\opening\Opening_3_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\opening\Opening_3_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

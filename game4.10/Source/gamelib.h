@@ -59,80 +59,6 @@ using namespace std;
 namespace game_framework {
 
 /////////////////////////////////////////////////////////////////////////////
-// 這個class提供時間、錯誤等控制
-// 一般的遊戲並不需直接操作這個物件，因此可以不管這個class的使用方法
-/////////////////////////////////////////////////////////////////////////////
-
-class CSpecialEffect {
-public:
-	static void  SetCurrentTime();					// 儲存目前的時間至ctime
-	static DWORD GetEllipseTime();					// 讀取目前的時間 - ctime
-	static int   GetCurrentTimeCount();				// 讀取儲存ctime的次數
-	static void  Delay(DWORD ms);					// 延遲 x ms
-	static void  DelayFromSetCurrentTime(DWORD ms);	// 自ctime起算，延遲 x ms
-private:
-	static DWORD ctime;
-	static int	 ctimeCount;
-};
-
-
-
-/////////////////////////////////////////////////////////////////////////////
-// 這個class會建立DirectDraw物件，以提供其他class使用
-// 一般的遊戲並不需直接操作這個物件，因此可以不管這個class的使用方法
-/////////////////////////////////////////////////////////////////////////////
-
-class CDDraw {
-	friend class CMovingBitmap;
-public:
-	~CDDraw();
-	static void  BltBackColor(DWORD);		// 將Back plain全部著上指定的顏色
-	static void  BltBackToPrimary();		// 將Back plain貼至Primary plain
-	static CDC*  GetBackCDC();				// 取得Back Plain的DC (device context)
-	static void  GetClientRect(CRect &r);	// 取得設定的解析度
-	static void  Init(int, int);			// Initialize direct draw
-	static void  ReleaseBackCDC();			// 放掉Back Plain的DC (device context)
-	static bool  SetFullScreen(bool);		// 設定為全螢幕模式/視窗模式
-	static bool  IsFullScreen();			// 回答是否為全螢幕模式/視窗模式
-private:
-	CDDraw();								// private constructor
-	static void  BltBitmapToBack(unsigned SurfaceID, int x, int y);
-	static void  BltBitmapToBack(unsigned SurfaceID, int x, int y, double factor);
-	static void  BltBitmapToBitmap(unsigned SourceID, unsigned TargetID, int x, int y);
-	static void	 CheckDDFail(char *s);
-	static bool  CreateSurface();
-	static bool  CreateSurfaceFullScreen();
-	static bool  CreateSurfaceWindowed();
-	static void  LoadBitmap(int i, int IDB_BITMAP);
-	static void  LoadBitmap(int i, char *filename);
-	static DWORD MatchColorKey(LPDIRECTDRAWSURFACE lpDDSurface, COLORREF color);
-	static int   RegisterBitmap(int IDB_BITMAP, COLORREF ColorKey);
-	static int   RegisterBitmap(char *filename, COLORREF ColorKey);
-	static void  ReleaseSurface();
-	static void  RestoreSurface();
-	static void  SetColorKey(unsigned SurfaceID, COLORREF color);
-    static HDC					hdc;
-	static CDC					cdc;
-	static CView				*pCView;
-    static LPDIRECTDRAW2		lpDD;
-	static LPDIRECTDRAWCLIPPER	lpClipperPrimary;   
-	static LPDIRECTDRAWCLIPPER	lpClipperBack;   
-	static LPDIRECTDRAWSURFACE	lpDDSPrimary;
-	static LPDIRECTDRAWSURFACE	lpDDSBack;
-	static vector<LPDIRECTDRAWSURFACE>	lpDDS;
-    static HRESULT				ddrval;
-	static vector<int>			BitmapID;
-	static vector<string>		BitmapName;
-	static vector<CRect>		BitmapRect;
-	static vector<COLORREF>		BitmapColorKey;
-	static bool					fullscreen;
-	static CDDraw				ddraw;
-	static int					size_x, size_y;
-};
-
-
-
-/////////////////////////////////////////////////////////////////////////////
 // 這個class提供動態(可以移動)的圖形
 // 每個Public Interface的用法都要懂，Implementation可以不懂
 /////////////////////////////////////////////////////////////////////////////
@@ -243,6 +169,111 @@ private:
 	int x, y;						// 顯示的座標
 	string n;						// 字串
 	bool isBmpLoaded;				// 是否已經載入圖形
+};
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 這個class提供顯示XX圖形的能力
+// 每個Public Interface的用法都要懂，Implementation可以不懂
+/////////////////////////////////////////////////////////////////////////////
+/*
+class MultiLayerBitmap {
+public:
+	MultiLayerBitmap(const int col=1, const int);
+	~MultiLayerBitmap();
+
+	int Height();					// 取得圖形的高度
+	int Width();					// 取得圖形的寬度
+	int Top();						// 取得圖形的左上角的 y 座標
+	int Left();						// 取得圖形的左上角的 x 座標
+	int	Size();
+
+	void LoadBitmap(COLORREF = DEFAULT_BG_ALPHA);		// 載入圖，指定圖的編號(resource)及透明色
+	void SetTopLeft(int, int);			// 將圖的左上角座標移至 (x,y)
+	void ShowBitmap(double factor = DEFAULT_SCALE);	// 將圖貼到螢幕 factor < 1時縮小，>1時放大。注意：需要VGA卡硬體的支援，否則會很慢
+
+
+private:
+	CMovingBitmap** layer;
+
+	const int row, col;
+	int x, y
+
+};
+*/
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 這個class提供時間、錯誤等控制
+// 一般的遊戲並不需直接操作這個物件，因此可以不管這個class的使用方法
+/////////////////////////////////////////////////////////////////////////////
+
+class CSpecialEffect {
+public:
+	static void  SetCurrentTime();					// 儲存目前的時間至ctime
+	static DWORD GetEllipseTime();					// 讀取目前的時間 - ctime
+	static int   GetCurrentTimeCount();				// 讀取儲存ctime的次數
+	static void  Delay(DWORD ms);					// 延遲 x ms
+	static void  DelayFromSetCurrentTime(DWORD ms);	// 自ctime起算，延遲 x ms
+private:
+	static DWORD ctime;
+	static int	 ctimeCount;
+};
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 這個class會建立DirectDraw物件，以提供其他class使用
+// 一般的遊戲並不需直接操作這個物件，因此可以不管這個class的使用方法
+/////////////////////////////////////////////////////////////////////////////
+
+class CDDraw {
+	friend class CMovingBitmap;
+public:
+	~CDDraw();
+	static void  BltBackColor(DWORD);		// 將Back plain全部著上指定的顏色
+	static void  BltBackToPrimary();		// 將Back plain貼至Primary plain
+	static CDC* GetBackCDC();				// 取得Back Plain的DC (device context)
+	static void  GetClientRect(CRect& r);	// 取得設定的解析度
+	static void  Init(int, int);			// Initialize direct draw
+	static void  ReleaseBackCDC();			// 放掉Back Plain的DC (device context)
+	static bool  SetFullScreen(bool);		// 設定為全螢幕模式/視窗模式
+	static bool  IsFullScreen();			// 回答是否為全螢幕模式/視窗模式
+private:
+	CDDraw();								// private constructor
+	static void  BltBitmapToBack(unsigned SurfaceID, int x, int y);
+	static void  BltBitmapToBack(unsigned SurfaceID, int x, int y, double factor);
+	static void  BltBitmapToBitmap(unsigned SourceID, unsigned TargetID, int x, int y);
+	static void	 CheckDDFail(char* s);
+	static bool  CreateSurface();
+	static bool  CreateSurfaceFullScreen();
+	static bool  CreateSurfaceWindowed();
+	static void  LoadBitmap(int i, int IDB_BITMAP);
+	static void  LoadBitmap(int i, char* filename);
+	static DWORD MatchColorKey(LPDIRECTDRAWSURFACE lpDDSurface, COLORREF color);
+	static int   RegisterBitmap(int IDB_BITMAP, COLORREF ColorKey);
+	static int   RegisterBitmap(char* filename, COLORREF ColorKey);
+	static void  ReleaseSurface();
+	static void  RestoreSurface();
+	static void  SetColorKey(unsigned SurfaceID, COLORREF color);
+	static HDC					hdc;
+	static CDC					cdc;
+	static CView* pCView;
+	static LPDIRECTDRAW2		lpDD;
+	static LPDIRECTDRAWCLIPPER	lpClipperPrimary;
+	static LPDIRECTDRAWCLIPPER	lpClipperBack;
+	static LPDIRECTDRAWSURFACE	lpDDSPrimary;
+	static LPDIRECTDRAWSURFACE	lpDDSBack;
+	static vector<LPDIRECTDRAWSURFACE>	lpDDS;
+	static HRESULT				ddrval;
+	static vector<int>			BitmapID;
+	static vector<string>		BitmapName;
+	static vector<CRect>		BitmapRect;
+	static vector<COLORREF>		BitmapColorKey;
+	static bool					fullscreen;
+	static CDDraw				ddraw;
+	static int					size_x, size_y;
 };
 
 

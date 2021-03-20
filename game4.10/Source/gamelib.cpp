@@ -14,6 +14,122 @@
 namespace game_framework {
 
 /////////////////////////////////////////////////////////////////////////////
+// CMovingBitmap: Moving Bitmap class
+// 硂class矗ㄑ簿笆瓜
+// 璶来眔或㊣(笲ノ)ㄤ贺琌ぃ来祘Α琌ぐ或種
+/////////////////////////////////////////////////////////////////////////////
+
+CMovingBitmap::CMovingBitmap()
+	{
+		isBitmapLoaded = false;
+	}
+
+CMovingBitmap::CMovingBitmap(int IDB_BITMAP, COLORREF color)
+	{
+		LoadBitmap(IDB_BITMAP, color);
+	}
+
+int CMovingBitmap::Height()
+	{
+		GAME_ASSERT(isBitmapLoaded, "A bitmap must be loaded before Height() is called !!!");
+		return location.bottom - location.top;
+	}
+
+int CMovingBitmap::Left()
+	{
+		GAME_ASSERT(isBitmapLoaded, "A bitmap must be loaded before Left() is called !!!");
+		return location.left;
+	}
+
+void CMovingBitmap::LoadBitmap(int IDB_BITMAP, COLORREF color)
+	{
+		const int nx = 0;
+		const int ny = 0;
+		// GAME_ASSERT(!isBitmapLoaded,"A bitmap has been loaded. You can not load another bitmap !!!");
+		CBitmap bitmap;
+		BOOL rval = bitmap.LoadBitmap(IDB_BITMAP);
+		GAME_ASSERT(rval, "Load bitmap failed !!! Please check bitmap ID (IDB_XXX).");
+		BITMAP bitmapSize;
+		bitmap.GetBitmap(&bitmapSize);
+		location.left = nx; location.top = ny;
+		location.right = nx + bitmapSize.bmWidth;
+		location.bottom = ny + bitmapSize.bmHeight;
+		SurfaceID = CDDraw::RegisterBitmap(IDB_BITMAP, color);
+		isBitmapLoaded = true;
+	}
+
+void CMovingBitmap::LoadBitmap(char* filename, COLORREF color)
+	{
+		const int nx = 0;
+		const int ny = 0;
+		GAME_ASSERT(!isBitmapLoaded, "A bitmap has been loaded. You can not load another bitmap !!!");
+		HBITMAP hbitmap = (HBITMAP)LoadImage(NULL, filename, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+		if (hbitmap == NULL) {
+			char error_msg[300];
+			sprintf(error_msg, "Loading bitmap from file \"%s\" failed !!!", filename);
+			GAME_ASSERT(false, error_msg);
+		}
+		CBitmap* bmp = CBitmap::FromHandle(hbitmap); // memory will be deleted automatically
+		BITMAP bitmapSize;
+		bmp->GetBitmap(&bitmapSize);
+		location.left = nx; location.top = ny;
+		location.right = nx + bitmapSize.bmWidth;
+		location.bottom = ny + bitmapSize.bmHeight;
+		SurfaceID = CDDraw::RegisterBitmap(filename, color);
+		isBitmapLoaded = true;
+	}
+
+void CMovingBitmap::SetTopLeft(int x, int y)
+	{
+		GAME_ASSERT(isBitmapLoaded, "A bitmap must be loaded before SetTopLeft() is called !!!");
+		int dx = location.left - x;
+		int dy = location.top - y;
+		location.left = x;
+		location.top = y;
+		location.right -= dx;
+		location.bottom -= dy;
+	}
+
+/*
+	void CMovingBitmap::ShowBitmap()
+	{
+		GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before ShowBitmap() is called !!!");
+		CDDraw::BltBitmapToBack(SurfaceID,location.left,location.top);
+	}
+	*/
+
+void CMovingBitmap::ShowBitmap(double factor)
+	{
+		GAME_ASSERT(isBitmapLoaded, "A bitmap must be loaded before ShowBitmap() is called !!!");
+		CDDraw::BltBitmapToBack(SurfaceID, location.left, location.top, factor);
+	}
+
+void CMovingBitmap::ShowBitmap(CMovingBitmap& bm)
+	{
+		GAME_ASSERT(isBitmapLoaded, "A bitmap must be loaded before ShowBitmap() is called !!!");
+		GAME_ASSERT(bm.isBitmapLoaded, "A bitmap must be loaded before ShowBitmap() is called !!!");
+		CDDraw::BltBitmapToBitmap(SurfaceID, bm.SurfaceID, location.left, location.top);
+	}
+
+bool CMovingBitmap::isLoad() {
+		return isBitmapLoaded;
+	}
+
+int CMovingBitmap::Top()
+	{
+		GAME_ASSERT(isBitmapLoaded, "A bitmap must be loaded before Top() is called !!!");
+		return location.top;
+	}
+
+int CMovingBitmap::Width()
+	{
+		GAME_ASSERT(isBitmapLoaded, "A bitmap must be loaded before Width() is called !!!");
+		return location.right - location.left;
+	}
+
+
+
+/////////////////////////////////////////////////////////////////////////////
 // CAnimation: 矗ㄑ笆礶
 // 1. 璶来眔或㊣(笲ノ)ㄤ贺琌ぃ来祘Α琌ぐ或種
 // 2. 糶笲ノCMovingBitmap祘Α把σ祘Α糶猭
@@ -315,122 +431,63 @@ int CString::GetMid() {
 }
 
 
-
-/////////////////////////////////////////////////////////////////////////////
-// CMovingBitmap: Moving Bitmap class
-// 硂class矗ㄑ簿笆瓜
-// 璶来眔或㊣(笲ノ)ㄤ贺琌ぃ来祘Α琌ぐ或種
-/////////////////////////////////////////////////////////////////////////////
-
-CMovingBitmap::CMovingBitmap()
-{
-	isBitmapLoaded = false;
-}
-
-
-CMovingBitmap::CMovingBitmap(int IDB_BITMAP, COLORREF color)
-{
-	LoadBitmap(IDB_BITMAP, color);
-}
-
-int CMovingBitmap::Height()
-{
-	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before Height() is called !!!");
-	return location.bottom - location.top;
-}
-
-int CMovingBitmap::Left()
-{
-	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before Left() is called !!!");
-	return location.left;
-}
-
-void CMovingBitmap::LoadBitmap(int IDB_BITMAP, COLORREF color)
-{
-	const int nx = 0;
-	const int ny = 0;
-	// GAME_ASSERT(!isBitmapLoaded,"A bitmap has been loaded. You can not load another bitmap !!!");
-	CBitmap bitmap;
-	BOOL rval = bitmap.LoadBitmap(IDB_BITMAP);
-	GAME_ASSERT(rval,"Load bitmap failed !!! Please check bitmap ID (IDB_XXX).");
-	BITMAP bitmapSize;
-	bitmap.GetBitmap(&bitmapSize);
-	location.left = nx; location.top = ny;
-	location.right = nx+bitmapSize.bmWidth;
-	location.bottom = ny+bitmapSize.bmHeight;
-	SurfaceID = CDDraw::RegisterBitmap(IDB_BITMAP, color);
-	isBitmapLoaded = true;
-}
-
-void CMovingBitmap::LoadBitmap(char *filename, COLORREF color)
-{
-	const int nx = 0;
-	const int ny = 0;
-	GAME_ASSERT(!isBitmapLoaded,"A bitmap has been loaded. You can not load another bitmap !!!");
-	HBITMAP hbitmap = (HBITMAP)LoadImage(NULL,filename,IMAGE_BITMAP,0,0,LR_LOADFROMFILE);
-	if (hbitmap == NULL) {
-		char error_msg[300];
-		sprintf(error_msg, "Loading bitmap from file \"%s\" failed !!!", filename);
-		GAME_ASSERT(false, error_msg);
-	}
-	CBitmap *bmp = CBitmap::FromHandle(hbitmap ); // memory will be deleted automatically
-	BITMAP bitmapSize;
-	bmp->GetBitmap(&bitmapSize);
-	location.left = nx; location.top = ny;
-	location.right = nx+bitmapSize.bmWidth;
-	location.bottom = ny+bitmapSize.bmHeight;
-	SurfaceID = CDDraw::RegisterBitmap(filename, color);
-	isBitmapLoaded = true;
-}
-
-void CMovingBitmap::SetTopLeft(int x, int y)
-{
-	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before SetTopLeft() is called !!!");
-	int dx = location.left - x;
-	int dy = location.top - y;
-	location.left = x;
-	location.top = y;
-	location.right -= dx;
-	location.bottom -= dy;
-}
-
 /*
-void CMovingBitmap::ShowBitmap()
+MultiLayerBitmap::MultiLayerBitmap(const int col, const int row) :
+	row(row), col(col)
 {
-	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before ShowBitmap() is called !!!");
-	CDDraw::BltBitmapToBack(SurfaceID,location.left,location.top);
+	layer = new CMovingBitmap*[col];
+	for (int i = 0; i < col; i++) {
+		layer[i] = new CMovingBitmap[row];
+	}
+}
+
+MultiLayerBitmap::~MultiLayerBitmap() {
+	for (int i = 0; i < row; i++) {
+		if (layer[i] != NULL)
+			delete layer[i];
+	}	
+}
+
+int MultiLayerBitmap::Height() {
+	return layer[0][0].Height();
+}
+
+int MultiLayerBitmap::Width() {
+	return layer[0][0].Width();
+}
+
+int MultiLayerBitmap::Top() {
+	return y;
+}
+
+int MultiLayerBitmap::Left() {
+	return x;
+}
+
+int	MultiLayerBitmap::Size() {
+	return row * col;
+}
+
+void MultiLayerBitmap::LoadBitmap(COLORREF = DEFAULT_BG_ALPHA) {
+
+}
+
+void MultiLayerBitmap::SetTopLeft(int _x, int _y) {
+	x = _x;
+	y = _y;
+	
+	for (int c = 0; c < col; c++) {
+		for (int r = 0; r < row; r++) {
+			layer[c][r]
+		}
+		
+	}
+}
+
+void MultiLayerBitmap::ShowBitmap(double factor = DEFAULT_SCALE) {
+
 }
 */
-
-void CMovingBitmap::ShowBitmap(double factor)
-{
-	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before ShowBitmap() is called !!!");
-	CDDraw::BltBitmapToBack(SurfaceID,location.left,location.top,factor);
-}
-
-void CMovingBitmap::ShowBitmap(CMovingBitmap &bm)
-{
-	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before ShowBitmap() is called !!!");
-	GAME_ASSERT(bm.isBitmapLoaded,"A bitmap must be loaded before ShowBitmap() is called !!!");
-	CDDraw::BltBitmapToBitmap(SurfaceID, bm.SurfaceID, location.left,location.top);
-}
-
-bool CMovingBitmap::isLoad() {
-	return isBitmapLoaded;
-}
-
-int CMovingBitmap::Top()
-{
-	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before Top() is called !!!");
-	return location.top;
-}
-
-int CMovingBitmap::Width()
-{
-	GAME_ASSERT(isBitmapLoaded,"A bitmap must be loaded before Width() is called !!!");
-	return location.right - location.left;
-}
-
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -507,6 +564,8 @@ void CGameState::OnCycle() // Template Method
 	OnMove();
 	OnShow();
 }
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // CGame: Game Class

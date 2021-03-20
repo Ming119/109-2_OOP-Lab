@@ -46,6 +46,7 @@ void CGameStateInit::OnInit()
 	background2.LoadBitmap(BG_OPENING_2);
 	background3.LoadBitmap(BG_OPENING_3);
 	background4.LoadBitmap(BG_OPENING_4);
+	background5.LoadBitmap(BG_OPENING_5);
 
 	logo1.LoadBitmap(LOGO_1);
 	logo2.LoadBitmap(LOGO_2);
@@ -58,7 +59,7 @@ void CGameStateInit::OnInit()
 	logo.AddBitmap(LOGO_CHARACTER_2);
 	logo.SetDelayCount(3);
 
-	//
+	// Menu
 	start_game.LoadBitmap();
 	tutorial.LoadBitmap();
 	extras.LoadBitmap();
@@ -121,19 +122,43 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGameStateInit::OnMove() {
 	if (!intro_done) {
+		// Intro animate
 		intro.OnMove();
+	} else {
+
+		// Background animate
+		background1.SetTopLeft(0, 0);
+		background2.SetTopLeft(background2.Left() - 8, (int)(SIZE_Y / 3));
+		background3.SetTopLeft(background3.Left() - 7, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32) * DEFAULT_SCALE));
+		background4.SetTopLeft(background4.Left() - 5, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32 + background3.Height()) * DEFAULT_SCALE));
+		background5.SetTopLeft(background5.Left() - 10, (int)(SIZE_Y - background3.Height() - background4.Height() * 3));
+		
+		if (background2.Left() + background2.Width() * DEFAULT_SCALE / 2 < 0) {
+			background2.SetTopLeft(0, (int)(SIZE_Y / 3));
+		}
+		if (background3.Left() + background3.Width() * DEFAULT_SCALE / 2 < 0) {
+			background3.SetTopLeft(0, (int)(SIZE_Y / 3));
+		}
+		if (background4.Left() + background4.Width() * DEFAULT_SCALE / 2 < 0) {
+			background4.SetTopLeft(0, (int)(SIZE_Y / 3));
+		}
+		if (background5.Left() + background5.Width() * DEFAULT_SCALE / 2 < 0) {
+			background5.SetTopLeft(0, (int)(SIZE_Y / 3));
+		}
+
+
+		// Logo
+		logo.OnMove();
+
+
+		// Test
+		test_int.Add(1);
 	}
-	test_int.Add(1);
-	logo.OnMove();
-	// TRACE("ID: %d - x: %d, y: %d - w: %d, h: %d\n", logo.GetCurrentBitmapNumber(), logo.Left(), logo.Top(), logo.Width(), logo.Height());
 }
 
 void CGameStateInit::OnShow()
 {
-	//
-	// Background
 	// 1280*960
-	//
 	if (!intro_done) {
 		intro.SetTopLeft((SIZE_X - logo.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 2 / 100);
 		intro.OnShow();
@@ -142,20 +167,17 @@ void CGameStateInit::OnShow()
 			intro_done = true;
 		}
 	}
-	if (intro_done) {
-		background1.SetTopLeft(0, 0);
-		background2.SetTopLeft(0, (int)(SIZE_Y / 3));
-		background3.SetTopLeft(0, (int)(SIZE_Y / 3) + (int)((background2.Height() - 31) * DEFAULT_SCALE));
-		background4.SetTopLeft(0, (int)(SIZE_Y - background4.Height() * 3));
 
+	if (intro_done) {
+		
+		// Background
 		background1.ShowBitmap((double)SIZE_X / background1.Width());
 		background2.ShowBitmap();
 		background3.ShowBitmap();
 		background4.ShowBitmap();
+		background5.ShowBitmap();
 
-		//
 		// Logo
-		//
 		logo.SetTopLeft((SIZE_X - logo.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 2 / 100);
 		logo1.SetTopLeft((SIZE_X - logo1.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 5 / 100);
 		logo2.SetTopLeft((SIZE_X - logo2.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 45 / 100);

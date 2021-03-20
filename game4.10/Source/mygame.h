@@ -82,24 +82,30 @@ namespace game_framework {
 		void OnShow();						// 顯示這個狀態的遊戲畫面
 
 	private:
+		// Intro animate
 		CAnimation	intro;
 		bool		intro_done = false;
 
+		// Background
 		CMovingBitmap background1;			//
 		CMovingBitmap background2;
 		CMovingBitmap background3;
 		CMovingBitmap background4;
-		CMovingBitmap logo1;				//
-		CMovingBitmap logo2;
+		CMovingBitmap background5;
+		
+		// Logo
+		CAnimation logo;		// Logo animate
+		CMovingBitmap logo1;	// 
+		CMovingBitmap logo2;	// 
 
-		CAnimation logo;
-
+		// Menu
 		CString start_game;
 		CString tutorial;
 		CString extras;
 		CString option;
 		CString exit;
 
+		// Test
 		CInteger test_int = CInteger(2);
 	};
 

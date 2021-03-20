@@ -433,11 +433,9 @@ LOGO_1                  BITMAP                  "..\\RES\\logo\\logo_1.bmp"
 
 BG_OPENING_1            BITMAP                  "..\\RES\\opening\\Opening_BG_1.bmp"
 
-BG_OPENING_2            BITMAP                  "..\\RES\\opening\\Opening_BG_2.bmp"
+BG_OPENING_2            BITMAP                  "..\\RES\\opening\\Opening_2.bmp"
 
-BG_OPENING_3            BITMAP                  "..\\RES\\opening\\Opening_BG_3.bmp"
-
-BG_OPENING_4            BITMAP                  "..\\RES\\opening\\Opening_BG_4.bmp"
+BG_OPENING_5            BITMAP                  "..\\RES\\opening\\Opening_4.bmp"
 
 LOGO_2                  BITMAP                  "..\\RES\\logo\\logo_2.bmp"
 
@@ -509,25 +507,29 @@ INTRO_3                 BITMAP                  "..\\RES\\logo\\title_black_char
 
 INTRO_4                 BITMAP                  "..\\RES\\logo\\title_black_character4.bmp"
 
-INTEGER_WHITE_0         BITMAP                  "..\\RES\\integer\\gui_white_0.bmp"
+INTEGER_WHITE_0         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_0.bmp"
 
-INTEGER_WHITE_1         BITMAP                  "..\\RES\\integer\\gui_white_1.bmp"
+INTEGER_WHITE_1         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_1.bmp"
 
-INTEGER_WHITE_2         BITMAP                  "..\\RES\\integer\\gui_white_2.bmp"
+INTEGER_WHITE_2         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_2.bmp"
 
-INTEGER_WHITE_3         BITMAP                  "..\\RES\\integer\\gui_white_3.bmp"
+INTEGER_WHITE_3         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_3.bmp"
 
-INTEGER_WHITE_4         BITMAP                  "..\\RES\\integer\\gui_white_4.bmp"
+INTEGER_WHITE_4         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_4.bmp"
 
-INTEGER_WHITE_5         BITMAP                  "..\\RES\\integer\\gui_white_5.bmp"
+INTEGER_WHITE_5         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_5.bmp"
 
-INTEGER_WHITE_6         BITMAP                  "..\\RES\\integer\\gui_white_6.bmp"
+INTEGER_WHITE_6         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_6.bmp"
 
-INTEGER_WHITE_7         BITMAP                  "..\\RES\\integer\\gui_white_7.bmp"
+INTEGER_WHITE_7         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_7.bmp"
 
-INTEGER_WHITE_8         BITMAP                  "..\\RES\\integer\\gui_white_8.bmp"
+INTEGER_WHITE_8         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_8.bmp"
 
-INTEGER_WHITE_9         BITMAP                  "..\\RES\\integer\\gui_white_9.bmp"
+INTEGER_WHITE_9         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\integer\\gui_white_9.bmp"
+
+BG_OPENING_4            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_3_2.bmp"
+
+BG_OPENING_3            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_3_1.bmp"
 
 #endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
