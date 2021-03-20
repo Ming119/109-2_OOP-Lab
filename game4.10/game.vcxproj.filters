@@ -79,9 +79,6 @@
     <None Include="RES\gamecurs.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\gameDoc.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="RES\help.bmp">
       <Filter>Resource Files</Filter>
     </None>
@@ -340,6 +337,90 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\opening\Opening_3_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\intro.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numA.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numB.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numC.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numD.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numF.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numG.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numH.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numI.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numJ.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numK.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numL.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numM.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numN.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numO.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numP.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numQ.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numR.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numS.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numU.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numV.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numW.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numX.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numY.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\font\gui_yellow_numZ.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -5,7 +5,7 @@
 #define SIZE_X				 1280		// 設定遊戲畫面的解析度為640x480
 #define SIZE_Y				 960		// 註：若不使用4:3，則不能切換到全螢幕
 #define OPEN_AS_FULLSCREEN	 false		// 是否以全螢幕方式開啟遊戲
-#define SHOW_LOAD_PROGRESS   false		// 是否顯示loading(OnInit)的進度
+#define SHOW_LOAD_PROGRESS   true		// 是否顯示loading(OnInit)的進度
 #define DEFAULT_BG_COLOR	 RGB(0,0,0)	// 遊戲畫面預設的背景顏色(黑色)
 #define GAME_CYCLE_TIME		 33			// 每33ms跑一次Move及Show(每秒30次)
 #define SHOW_GAME_CYCLE_TIME false		// 是否在debug mode顯示cycle time
@@ -162,13 +162,16 @@ public:
 	void SetString(string);		// 設定字串
 	void SetTopLeft(int, int);	// 將動畫的左上角座標移至 (x,y)
 	void ShowBitmap(double factor = DEFAULT_SCALE);			// 將動畫貼到螢幕
-	int GetMid();
+	bool isFocus();
+	void SetFocus(bool);
 
 private:
-	static CMovingBitmap alphabet[26]; // 儲存A..Z之圖形(bitmap)
-	int x, y;						// 顯示的座標
-	string n;						// 字串
-	bool isBmpLoaded;				// 是否已經載入圖形
+	static CMovingBitmap alphabet[52];	// 儲存A..Z之圖形(bitmap)
+	int x, y;							// 顯示的座標
+	string n;							// 字串
+	bool focus;
+	bool isBmpLoaded;					// 是否已經載入圖形
+
 };
 
 

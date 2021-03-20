@@ -63,7 +63,14 @@ namespace game_framework {
 		AUDIO_NTUT
 	};
 
-
+	enum class MENU {
+		START_GAME,
+		TUTORIAL,
+		EXTRAS,
+		OPTION,
+		EXIT,
+		COUNT
+	};
 
 	/////////////////////////////////////////////////////////////////////////////
 	// 這個class為遊戲的遊戲開頭畫面物件
@@ -99,6 +106,7 @@ namespace game_framework {
 		CMovingBitmap logo2;	// 
 
 		// Menu
+		vector<CString> menu;
 		CString start_game;
 		CString tutorial;
 		CString extras;

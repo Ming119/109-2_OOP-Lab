@@ -340,17 +340,12 @@ void CInteger::ShowBitmap(double factor)
 // 1. 要懂得怎麼呼叫(運用)其各種能力，但是可以不懂下列的程式是什麼意思
 // 2. 自己寫到運用CMovingBitmap的程式時，可以參考下列程式的寫法
 /////////////////////////////////////////////////////////////////////////////
-CMovingBitmap CString::alphabet[26];
+CMovingBitmap CString::alphabet[52];
 
 CString::CString()
 {
 	isBmpLoaded = false;
-	for (int i = 0; i < 26; i++) {
-		if (alphabet[i].isLoad() == true) {
-			isBmpLoaded = true;
-			break;
-		}
-	}
+	focus = false;
 }
 
 string CString::GetString() {
@@ -363,7 +358,7 @@ void CString::LoadBitmap()
 	// digit[i]為class varibale，所以必須避免重複LoadBitmap
 	//
 	if (!isBmpLoaded) {
-		int d[26] = {	FONT_WHITE_SHADOW_UPPER_A,
+		int d[52] = {	FONT_WHITE_SHADOW_UPPER_A,
 						FONT_WHITE_SHADOW_UPPER_B,
 						FONT_WHITE_SHADOW_UPPER_C,
 						FONT_WHITE_SHADOW_UPPER_D,
@@ -388,23 +383,59 @@ void CString::LoadBitmap()
 						FONT_WHITE_SHADOW_UPPER_W,
 						FONT_WHITE_SHADOW_UPPER_X,
 						FONT_WHITE_SHADOW_UPPER_Y,
-						FONT_WHITE_SHADOW_UPPER_Z
+						FONT_WHITE_SHADOW_UPPER_Z,
+
+						FONT_YELLOW_SHADOW_UPPER_A,
+						FONT_YELLOW_SHADOW_UPPER_B,
+						FONT_YELLOW_SHADOW_UPPER_C,
+						FONT_YELLOW_SHADOW_UPPER_D,
+						FONT_YELLOW_SHADOW_UPPER_E,
+						FONT_YELLOW_SHADOW_UPPER_F,
+						FONT_YELLOW_SHADOW_UPPER_G,
+						FONT_YELLOW_SHADOW_UPPER_H,
+						FONT_YELLOW_SHADOW_UPPER_I,
+						FONT_YELLOW_SHADOW_UPPER_J,
+						FONT_YELLOW_SHADOW_UPPER_K,
+						FONT_YELLOW_SHADOW_UPPER_L,
+						FONT_YELLOW_SHADOW_UPPER_M,
+						FONT_YELLOW_SHADOW_UPPER_N,
+						FONT_YELLOW_SHADOW_UPPER_O,
+						FONT_YELLOW_SHADOW_UPPER_P,
+						FONT_YELLOW_SHADOW_UPPER_Q,
+						FONT_YELLOW_SHADOW_UPPER_R,
+						FONT_YELLOW_SHADOW_UPPER_S,
+						FONT_YELLOW_SHADOW_UPPER_T,
+						FONT_YELLOW_SHADOW_UPPER_U,
+						FONT_YELLOW_SHADOW_UPPER_V,
+						FONT_YELLOW_SHADOW_UPPER_W,
+						FONT_YELLOW_SHADOW_UPPER_X,
+						FONT_YELLOW_SHADOW_UPPER_Y,
+						FONT_YELLOW_SHADOW_UPPER_Z,
+
 		};
 
-		for (int i = 0; i < 26; i++)
+		for (int i = 0; i < 52; i++)
 			alphabet[i].LoadBitmap(d[i]);
 		isBmpLoaded = true;
 	}
 }
 
-void CString::SetString(string i)
+void CString::SetString(string s)
 {
-	n = i;
+	n = s;
 }
 
 void CString::SetTopLeft(int nx, int ny)		// 將動畫的左上角座標移至 (x,y)
 {
 	x = nx; y = ny;
+}
+
+bool CString::isFocus() {
+	return focus;
+}
+
+void CString::SetFocus(bool _focus) {
+	focus = _focus;
 }
 
 void CString::ShowBitmap(double factor)
@@ -418,7 +449,10 @@ void CString::ShowBitmap(double factor)
 			nx += (int)(factor * alphabet[0].Width());
 		} else {
 			int alphabet_num = int(n.at(i)) - int('A');
-
+			if (isFocus()) {
+				alphabet_num += 26;
+			}
+			
 			alphabet[alphabet_num].SetTopLeft(nx, y);
 			alphabet[alphabet_num].ShowBitmap();
 			nx += (int)(factor * alphabet[alphabet_num].Width());
@@ -426,9 +460,7 @@ void CString::ShowBitmap(double factor)
 	}
 }
 
-int CString::GetMid() {
-	return (int)(x + n.length() * alphabet[0].Width() * DEFAULT_SCALE) / 2;
-}
+
 
 
 /*
@@ -506,6 +538,20 @@ void CGameState::GotoGameState(int state)
 
 void CGameState::ShowInitProgress(int percent)
 {
+
+	if (!SHOW_LOAD_PROGRESS)
+		return;
+
+	CDDraw::BltBackColor(DEFAULT_BG_COLOR);		// 將 Back Plain 塗上預設的顏色
+	CMovingBitmap loading;						// 貼上loading圖示
+	loading.LoadBitmap(INTRO, RGB(0, 0, 0));
+	loading.SetTopLeft(0, 0);
+	loading.ShowBitmap();
+	CDC* pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC
+	CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
+	CDDraw::BltBackToPrimary();					// 將 Back Plain 貼到螢幕
+
+	/*
 	if (!SHOW_LOAD_PROGRESS)
 		return;
 	const int bar_width = SIZE_X * 2 / 3;
@@ -552,6 +598,7 @@ void CGameState::ShowInitProgress(int percent)
 	// 如果是別的地方用到CDC的話，不要抄以下這行，否則螢幕會閃爍
 	//
 	CDDraw::BltBackToPrimary();					// 將 Back Plain 貼到螢幕
+	*/
 }
 
 void CGameState::OnDraw() // Template Method
@@ -618,7 +665,7 @@ void CGame::OnDraw()
 	CDDraw::BltBackToPrimary();				// 將 Back Plain 貼到螢幕
 }
 
-void  CGame::OnFilePause()
+void CGame::OnFilePause()
 {
 	if (ENABLE_GAME_PAUSE) {
 		if (running)
@@ -1426,7 +1473,5 @@ void CDDraw::CheckDDFail(char *s)
 		GAME_ASSERT(0, "Direct Draw Failed due to unknown error code !!!");
 	}
 }
-
-
 
 }

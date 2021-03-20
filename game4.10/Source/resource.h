@@ -5,7 +5,6 @@
 #define IDD_ABOUTBOX                    100
 #define IDP_SOCKETS_INIT_FAILED         104
 #define IDR_MAINFRAME                   128
-#define IDR_GAMETYPE                    129
 #define IDB_BALL                        130
 #define IDB_RACKET                      131
 #define IDB_ERASER1                     131
@@ -25,7 +24,6 @@
 #define IDB_7                           145
 #define IDB_8                           146
 #define IDB_9                           147
-#define IDB_MINUS                       148
 #define IDB_CENTER                      149
 #define IDB_ERASER2                     150
 #define IDB_ERASER3                     151
@@ -124,6 +122,34 @@
 #define BG_OPENING_4                    214
 #define IDB_BITMAP4                     215
 #define BG_OPENING_3                    215
+#define INTRO                           218
+#define FONT_YELLOW_SHADOW_UPPER_A      219
+#define FONT_YELLOW_SHADOW_UPPER_B      220
+#define FONT_YELLOW_SHADOW_UPPER_C      221
+#define FONT_YELLOW_SHADOW_UPPER_D      222
+#define FONT_YELLOW_SHADOW_UPPER_E      223
+#define FONT_YELLOW_SHADOW_UPPER_F      224
+#define FONT_YELLOW_SHADOW_UPPER_G      225
+#define FONT_YELLOW_SHADOW_UPPER_H      226
+#define FONT_YELLOW_SHADOW_UPPER_I      227
+#define FONT_YELLOW_SHADOW_UPPER_J      228
+#define FONT_YELLOW_SHADOW_UPPER_K      229
+#define FONT_YELLOW_SHADOW_UPPER_L      230
+#define FONT_YELLOW_SHADOW_UPPER_M      231
+#define FONT_YELLOW_SHADOW_UPPER_N      232
+#define FONT_YELLOW_SHADOW_UPPER_O      233
+#define FONT_YELLOW_SHADOW_UPPER_P      234
+#define FONT_YELLOW_SHADOW_UPPER_Q      235
+#define FONT_YELLOW_SHADOW_UPPER_R      236
+#define FONT_YELLOW_SHADOW_UPPER_S      237
+#define FONT_YELLOW_SHADOW_UPPER_T      238
+#define FONT_YELLOW_SHADOW_UPPER_U      239
+#define FONT_YELLOW_SHADOW_UPPER_V      240
+#define FONT_YELLOW_SHADOW_UPPER_W      241
+#define FONT_YELLOW_SHADOW_UPPER_X      242
+#define FONT_YELLOW_SHADOW_UPPER_Y      243
+#define FONT_YELLOW_SHADOW_UPPER_       244
+#define FONT_YELLOW_SHADOW_UPPER_Z      244
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -136,7 +162,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        216
+#define _APS_NEXT_RESOURCE_VALUE        245
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

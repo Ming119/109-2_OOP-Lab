@@ -88,8 +88,6 @@ IDB_8                   BITMAP                  "..\\res\\bmp8.bmp"
 
 IDB_9                   BITMAP                  "..\\res\\bmp9.bmp"
 
-IDB_MINUS               BITMAP                  "..\\res\\bmp10.bmp"
-
 IDB_CENTER              BITMAP                  "..\\res\\center.bmp"
 
 IDB_ERASER2             BITMAP                  "..\\res\\eraser2.bmp"
@@ -127,33 +125,6 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 //
 
 IDR_MAINFRAME           BITMAP                  "..\\res\\Toolbar.bmp"
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Icon
-//
-
-// Icon with lowest ID value placed first to ensure application icon
-// remains consistent on all systems.
-IDR_MAINFRAME           ICON                    "..\\res\\game.ico"
-
-IDR_GAMETYPE            ICON                    "..\\res\\gameDoc.ico"
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Toolbar
-//
-
-IDR_MAINFRAME TOOLBAR 16, 15
-BEGIN
-    BUTTON      ID_BUTTON_FULLSCREEN
-    BUTTON      ID_BUTTON_PAUSE
-    SEPARATOR
-    BUTTON      ID_FILE_OPEN
-    BUTTON      ID_FILE_SAVE
-END
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -280,6 +251,21 @@ BEGIN
     END
 END
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_BUTTON_FULLSCREEN
+    BUTTON      ID_BUTTON_PAUSE
+    SEPARATOR
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+END
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -530,6 +516,70 @@ INTEGER_WHITE_9         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582
 BG_OPENING_4            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_3_2.bmp"
 
 BG_OPENING_3            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\opening\\Opening_3_1.bmp"
+
+INTRO                   BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\intro.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_A BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numA.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_B BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numB.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_C BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numC.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_D BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numD.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_E BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numE.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_F BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numF.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_G BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numG.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_H BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numH.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_I BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numI.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_J BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numJ.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_K BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numK.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_L BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numL.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_M BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numM.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_N BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numN.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_O BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numO.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_P BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numP.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_Q BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numQ.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_R BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numR.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_S BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numS.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_T BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numT.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_U BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numU.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_V BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numV.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_W BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numW.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_X BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numX.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_Y BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numY.bmp"
+
+FONT_YELLOW_SHADOW_UPPER_Z BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numZ.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\icon.ico"
 
 #endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////

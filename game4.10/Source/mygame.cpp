@@ -48,6 +48,7 @@ void CGameStateInit::OnInit()
 	background4.LoadBitmap(BG_OPENING_4);
 	background5.LoadBitmap(BG_OPENING_5);
 
+	// Logo
 	logo1.LoadBitmap(LOGO_1);
 	logo2.LoadBitmap(LOGO_2);
 
@@ -60,17 +61,23 @@ void CGameStateInit::OnInit()
 	logo.SetDelayCount(3);
 
 	// Menu
-	start_game.LoadBitmap();
-	tutorial.LoadBitmap();
-	extras.LoadBitmap();
-	option.LoadBitmap();
-	exit.LoadBitmap();
-	start_game.SetString("START GAME");
-	tutorial.SetString("TUTORIAL");
-	extras.SetString("EXTRAS");
-	option.SetString("OPTION");
-	exit.SetString("EXIT");
+	menu.push_back(start_game);
+	menu.push_back(tutorial);
+	menu.push_back(extras);
+	menu.push_back(option);
+	menu.push_back(exit);
+	int s = menu.size();
+	for (int i = 0; i < s; i++) {
+		menu[i].LoadBitmap();
+	}
+	menu[static_cast<int>(MENU::START_GAME)].SetString("START GAME");
+	menu[static_cast<int>(MENU::TUTORIAL)].SetString("TUTORIAL");
+	menu[static_cast<int>(MENU::EXTRAS)].SetString("EXTRAS");
+	menu[static_cast<int>(MENU::OPTION)].SetString("OPTION");
+	menu[static_cast<int>(MENU::EXIT)].SetString("EXIT");
+	menu[static_cast<int>(MENU::START_GAME)].SetFocus(true);
 
+	// Test
 	test_int.LoadBitmap();
 	test_int.SetInteger(0);
 
@@ -90,7 +97,6 @@ void CGameStateInit::OnBeginState()
 {
 	CAudio::Instance()->Load(AUDIO_TITLE, "sounds\\title.mp3");
 	CAudio::Instance()->Play(AUDIO_TITLE, true);
-	
 }
 
 void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -103,21 +109,50 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	const char KEY_RIGHT	= 0x27; // keyboard右箭頭
 	const char KEY_DOWN		= 0x28; // keyboard下箭頭
 
+	static int curr_select = 0;
 	if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
 		CAudio::Instance()->Play(AUDIO_SELECT, false);
-		test_int.SetInteger(0);
-	} else {
-		CAudio::Instance()->Play(AUDIO_CHOOSE, false);
-		
-	}
-	/*
-	if (nChar == KEY_SPACE)
-		GotoGameState(GAME_STATE_RUN);						// 切換至GAME_STATE_RUN
-	else if (nChar == KEY_ESC)								// Demo 關閉遊戲的方法
-		PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE,0,0);	// 關閉遊戲
 
-	// GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
-	*/
+		switch (curr_select) {
+		case static_cast<int>(MENU::START_GAME) :
+			GotoGameState(GAME_STATE_RUN);
+			break;
+
+		case static_cast<int>(MENU::TUTORIAL) :
+			break;
+
+		case static_cast<int>(MENU::EXTRAS) :
+			break;
+
+		case static_cast<int>(MENU::OPTION) :
+			break;
+
+		case static_cast<int>(MENU::EXIT) :
+			Sleep(500);
+			PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);
+			break;
+		}
+
+	} else if (nChar == KEY_UP) {
+		CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+		curr_select -= 1;
+	} else if (nChar == KEY_DOWN) {
+		CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+		curr_select += 1;
+	}
+
+	if (curr_select < 0) {
+		curr_select = static_cast<int>(MENU::COUNT);
+	} else {
+		curr_select %= static_cast<int>(MENU::COUNT);
+	}
+	
+	int s = menu.size();
+	for (int i = 0; i < s; i++) {
+		menu[i].SetFocus(false);
+	}
+	menu[curr_select].SetFocus(true);
+	test_int.SetInteger(curr_select);
 }
 
 void CGameStateInit::OnMove() {
@@ -128,31 +163,42 @@ void CGameStateInit::OnMove() {
 
 		// Background animate
 		background1.SetTopLeft(0, 0);
+		background2.SetTopLeft(0, (int)(SIZE_Y / 3));
+		background3.SetTopLeft(0, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32) * DEFAULT_SCALE));
+		background4.SetTopLeft(0, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32 + background3.Height()) * DEFAULT_SCALE));
+		background5.SetTopLeft(0, (int)(SIZE_Y - background3.Height() - background4.Height() * 3));
+
+		/* Some Graph BUG Need to Fix
+		background1.SetTopLeft(0, 0);
 		background2.SetTopLeft(background2.Left() - 8, (int)(SIZE_Y / 3));
 		background3.SetTopLeft(background3.Left() - 7, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32) * DEFAULT_SCALE));
 		background4.SetTopLeft(background4.Left() - 5, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32 + background3.Height()) * DEFAULT_SCALE));
 		background5.SetTopLeft(background5.Left() - 10, (int)(SIZE_Y - background3.Height() - background4.Height() * 3));
 		
 		if (background2.Left() + background2.Width() * DEFAULT_SCALE / 2 < 0) {
-			background2.SetTopLeft(0, (int)(SIZE_Y / 3));
+			background2.SetTopLeft(background2.Left() + background2.Width() * DEFAULT_SCALE / 2, (int)(SIZE_Y / 3));
 		}
 		if (background3.Left() + background3.Width() * DEFAULT_SCALE / 2 < 0) {
-			background3.SetTopLeft(0, (int)(SIZE_Y / 3));
+			background3.SetTopLeft(background3.Left() + background2.Width() * DEFAULT_SCALE / 2, (int)(SIZE_Y / 3));
 		}
 		if (background4.Left() + background4.Width() * DEFAULT_SCALE / 2 < 0) {
-			background4.SetTopLeft(0, (int)(SIZE_Y / 3));
+			background4.SetTopLeft(background4.Left() + background2.Width() * DEFAULT_SCALE / 2, (int)(SIZE_Y / 3));
 		}
 		if (background5.Left() + background5.Width() * DEFAULT_SCALE / 2 < 0) {
-			background5.SetTopLeft(0, (int)(SIZE_Y / 3));
+			background5.SetTopLeft(background5.Left() + background2.Width() * DEFAULT_SCALE / 2, (int)(SIZE_Y / 3));
 		}
-
+		*/
 
 		// Logo
+		logo.SetTopLeft((SIZE_X - logo.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 2 / 100);
+		logo1.SetTopLeft((SIZE_X - logo1.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 6 / 100);
+		logo2.SetTopLeft((SIZE_X - logo2.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 46 / 100);
 		logo.OnMove();
 
 
 		// Test
-		test_int.Add(1);
+		test_int.SetTopLeft(0, 0);
+		
 	}
 }
 
@@ -176,34 +222,22 @@ void CGameStateInit::OnShow()
 		background3.ShowBitmap();
 		background4.ShowBitmap();
 		background5.ShowBitmap();
-
+	
 		// Logo
-		logo.SetTopLeft((SIZE_X - logo.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 2 / 100);
-		logo1.SetTopLeft((SIZE_X - logo1.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 5 / 100);
-		logo2.SetTopLeft((SIZE_X - logo2.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 45 / 100);
-
-
 		logo1.ShowBitmap();
 		logo.OnShow();
 		logo2.ShowBitmap();
 
-		//
-		//
-		//
-		
-		test_int.SetTopLeft(0, 0);
+		// Test
 		test_int.ShowBitmap();
 
-		start_game.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * 70 / 100);
-		tutorial.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * 75 / 100);
-		extras.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * 80 / 100);
-		option.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * 85 / 100);
-		exit.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * 90 / 100);
-		start_game.ShowBitmap();
-		tutorial.ShowBitmap();
-		extras.ShowBitmap();
-		option.ShowBitmap();
-		exit.ShowBitmap();
+		// Menu
+		int s = menu.size();
+		for (int i = 0; i < s; i++) {
+			menu[i].SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * (70+5*i) / 100);
+			menu[i].ShowBitmap();
+		}
+
 	}
 
 	/*
