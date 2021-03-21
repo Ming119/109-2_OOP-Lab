@@ -72,6 +72,15 @@ namespace game_framework {
 		COUNT
 	};
 
+	enum class extras {
+		COUNT
+	};
+
+	enum class option {
+		COUNT
+	};
+
+
 	/////////////////////////////////////////////////////////////////////////////
 	// 這個class為遊戲的遊戲開頭畫面物件
 	// 每個Member function的Implementation都要弄懂
@@ -89,6 +98,8 @@ namespace game_framework {
 		void OnShow();						// 顯示這個狀態的遊戲畫面
 
 	private:
+		int page;
+
 		// Intro animate
 		CAnimation	intro;
 		bool		intro_done = false;
@@ -99,6 +110,8 @@ namespace game_framework {
 		CMovingBitmap background3;
 		CMovingBitmap background4;
 		CMovingBitmap background5;
+
+		CMovingBitmap optionBG;
 		
 		// Logo
 		CAnimation logo;		// Logo animate
@@ -106,15 +119,17 @@ namespace game_framework {
 		CMovingBitmap logo2;	// 
 
 		// Menu
-		vector<CString> menu;
-		CString start_game;
-		CString tutorial;
-		CString extras;
-		CString option;
-		CString exit;
+		CString menuHandler;
+		vector<string> menu;
+		int current_select;
+
+		// Option
+		CString optionHandler;
+		vector<string> option;
 
 		// Test
 		CInteger test_int = CInteger(2);
+		// CInteger test_int2 = CInteger(3);
 	};
 
 

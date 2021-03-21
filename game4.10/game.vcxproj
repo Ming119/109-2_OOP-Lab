@@ -407,6 +407,7 @@
     <Image Include="RES\opening\Opening_BG_2.bmp" />
     <Image Include="RES\opening\Opening_BG_3.bmp" />
     <Image Include="RES\opening\Opening_BG_4.bmp" />
+    <Image Include="RES\squarebg.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

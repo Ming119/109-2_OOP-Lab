@@ -45,7 +45,7 @@ void CMovingBitmap::LoadBitmap(int IDB_BITMAP, COLORREF color)
 	{
 		const int nx = 0;
 		const int ny = 0;
-		// GAME_ASSERT(!isBitmapLoaded,"A bitmap has been loaded. You can not load another bitmap !!!");
+		GAME_ASSERT(!isBitmapLoaded,"A bitmap has been loaded. You can not load another bitmap !!!");
 		CBitmap bitmap;
 		BOOL rval = bitmap.LoadBitmap(IDB_BITMAP);
 		GAME_ASSERT(rval, "Load bitmap failed !!! Please check bitmap ID (IDB_XXX).");
@@ -348,8 +348,8 @@ CString::CString()
 	focus = false;
 }
 
-string CString::GetString() {
-	return n;
+CMovingBitmap* CString::GetAlphabet() {
+	return alphabet;
 }
 
 void CString::LoadBitmap()
@@ -420,11 +420,6 @@ void CString::LoadBitmap()
 	}
 }
 
-void CString::SetString(string s)
-{
-	n = s;
-}
-
 void CString::SetTopLeft(int nx, int ny)		// 將動畫的左上角座標移至 (x,y)
 {
 	x = nx; y = ny;
@@ -438,17 +433,17 @@ void CString::SetFocus(bool _focus) {
 	focus = _focus;
 }
 
-void CString::ShowBitmap(double factor)
+void CString::ShowBitmap(string s, double factor)
 {
 	GAME_ASSERT(isBmpLoaded, "CString: 請先執行LoadBitmap，然後才能ShowBitmap");
 	int nx = x;
 	
-	int len = n.length();
+	int len = s.length();
 	for (int i = 0; i < len; i++) {
-		if (n.at(i) == ' ') {
+		if (s.at(i) == ' ') {
 			nx += (int)(factor * alphabet[0].Width());
 		} else {
-			int alphabet_num = int(n.at(i)) - int('A');
+			int alphabet_num = int(s.at(i)) - int('A');
 			if (isFocus()) {
 				alphabet_num += 26;
 			}
@@ -459,7 +454,6 @@ void CString::ShowBitmap(double factor)
 		}
 	}
 }
-
 
 
 
@@ -520,6 +514,7 @@ void MultiLayerBitmap::ShowBitmap(double factor = DEFAULT_SCALE) {
 
 }
 */
+
 
 
 /////////////////////////////////////////////////////////////////////////////

@@ -29,6 +29,8 @@ void CGameStateInit::OnInit()
 	//
 	// Loading Images
 
+	menuHandler.LoadBitmap();
+
 	// Intro
 	intro.AddBitmap(INTRO_1);
 	intro.AddBitmap(INTRO_1);
@@ -48,6 +50,8 @@ void CGameStateInit::OnInit()
 	background4.LoadBitmap(BG_OPENING_4);
 	background5.LoadBitmap(BG_OPENING_5);
 
+	optionBG.LoadBitmap(BG_OPTION);
+
 	// Logo
 	logo1.LoadBitmap(LOGO_1);
 	logo2.LoadBitmap(LOGO_2);
@@ -61,32 +65,33 @@ void CGameStateInit::OnInit()
 	logo.SetDelayCount(3);
 
 	// Menu
-	menu.push_back(start_game);
-	menu.push_back(tutorial);
-	menu.push_back(extras);
-	menu.push_back(option);
-	menu.push_back(exit);
-	int s = menu.size();
-	for (int i = 0; i < s; i++) {
-		menu[i].LoadBitmap();
-	}
-	menu[static_cast<int>(MENU::START_GAME)].SetString("START GAME");
-	menu[static_cast<int>(MENU::TUTORIAL)].SetString("TUTORIAL");
-	menu[static_cast<int>(MENU::EXTRAS)].SetString("EXTRAS");
-	menu[static_cast<int>(MENU::OPTION)].SetString("OPTION");
-	menu[static_cast<int>(MENU::EXIT)].SetString("EXIT");
-	menu[static_cast<int>(MENU::START_GAME)].SetFocus(true);
+	menu.push_back("START GAME");
+	menu.push_back("TUTORIAL");
+	menu.push_back("EXTRAS");
+	menu.push_back("OPTION");
+	menu.push_back("EXIT");
+
+	option.push_back("GRAPHICS");
+	option.push_back("  Resolution");
+	option.push_back("  Fullscreen");
+	option.push_back("  Smooth GFX");
+	option.push_back("  Show FPS");
+	option.push_back("GAME");
+	option.push_back("  Change language");
+	option.push_back("  Stage select");
+	option.push_back("  Credits");
+	option.push_back("BACK");
+
 
 	// Test
 	test_int.LoadBitmap();
-	test_int.SetInteger(0);
-
-
+	test_int.SetInteger(current_select);
 
 	// Loading Audio
-	CAudio::Instance()->Load(AUDIO_OPTIONS, "sounds\\options.mp3");
+	
 	CAudio::Instance()->Load(AUDIO_CHOOSE, "sounds\\choose.wav");
 	CAudio::Instance()->Load(AUDIO_SELECT, "sounds\\select.wav");
+	CAudio::Instance()->Load(AUDIO_RETURN, "sounds\\return.wav");
 
 	//
 	// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
@@ -96,7 +101,13 @@ void CGameStateInit::OnInit()
 void CGameStateInit::OnBeginState()
 {
 	CAudio::Instance()->Load(AUDIO_TITLE, "sounds\\title.mp3");
+	CAudio::Instance()->Load(AUDIO_OPTIONS, "sounds\\options.mp3");
 	CAudio::Instance()->Play(AUDIO_TITLE, true);
+	CAudio::Instance()->Stop(AUDIO_OPTIONS);
+
+	page = static_cast<int>(MENU::START_GAME);
+	current_select = 0;
+
 }
 
 void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -108,51 +119,73 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	const char KEY_UP		= 0x26; // keyboard上箭頭
 	const char KEY_RIGHT	= 0x27; // keyboard右箭頭
 	const char KEY_DOWN		= 0x28; // keyboard下箭頭
+	
+	switch (page) {
+	case static_cast<int>(MENU::START_GAME) :
+		if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
+			CAudio::Instance()->Play(AUDIO_SELECT, false);
 
-	static int curr_select = 0;
-	if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
-		CAudio::Instance()->Play(AUDIO_SELECT, false);
+			switch (current_select) {
+				case static_cast<int>(MENU::START_GAME) :
+					GotoGameState(GAME_STATE_RUN);
+					break;
 
-		switch (curr_select) {
-		case static_cast<int>(MENU::START_GAME) :
-			GotoGameState(GAME_STATE_RUN);
-			break;
+				case static_cast<int>(MENU::TUTORIAL) :
+					break;
 
-		case static_cast<int>(MENU::TUTORIAL) :
-			break;
+				case static_cast<int>(MENU::EXTRAS) :
+					page = static_cast<int>(MENU::EXTRAS);
+					break;
 
-		case static_cast<int>(MENU::EXTRAS) :
-			break;
+				case static_cast<int>(MENU::OPTION) :
+					CAudio::Instance()->Stop(AUDIO_TITLE);
+					CAudio::Instance()->Play(AUDIO_OPTIONS, true);
+					page = static_cast<int>(MENU::OPTION);
+					break;
 
-		case static_cast<int>(MENU::OPTION) :
-			break;
+				case static_cast<int>(MENU::EXIT) :
+					Sleep(500);
+					PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);
+					break;
+			}
 
-		case static_cast<int>(MENU::EXIT) :
-			Sleep(500);
-			PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);
-			break;
+		} else if (nChar == KEY_UP) {
+			CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+			current_select -= 1;
+		} else if (nChar == KEY_DOWN) {
+			CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+			current_select += 1;
 		}
 
-	} else if (nChar == KEY_UP) {
-		CAudio::Instance()->Play(AUDIO_CHOOSE, false);
-		curr_select -= 1;
-	} else if (nChar == KEY_DOWN) {
-		CAudio::Instance()->Play(AUDIO_CHOOSE, false);
-		curr_select += 1;
-	}
+		if (current_select < 0) {
+			current_select = static_cast<int>(MENU::COUNT);
+		} else {
+			current_select %= static_cast<int>(MENU::COUNT);
+		}
+		test_int.SetInteger(current_select);
+		break;
 
-	if (curr_select < 0) {
-		curr_select = static_cast<int>(MENU::COUNT);
-	} else {
-		curr_select %= static_cast<int>(MENU::COUNT);
+	case static_cast<int>(MENU::EXTRAS) :
+		if (nChar == KEY_ESC) {
+			CAudio::Instance()->Play(AUDIO_RETURN, false);
+			page = static_cast<int>(MENU::START_GAME);
+		} else {
+
+		}
+		break;
+
+	case static_cast<int>(MENU::OPTION) :
+		if (nChar == KEY_ESC) {
+			CAudio::Instance()->Play(AUDIO_RETURN, false);
+			CAudio::Instance()->Stop(AUDIO_OPTIONS);
+			CAudio::Instance()->Play(AUDIO_TITLE, true);
+			intro_done = false;
+			page = static_cast<int>(MENU::START_GAME);
+		}
+		break;
+
 	}
 	
-	int s = menu.size();
-	for (int i = 0; i < s; i++) {
-		menu[i].SetFocus(false);
-	}
-	menu[curr_select].SetFocus(true);
-	test_int.SetInteger(curr_select);
 }
 
 void CGameStateInit::OnMove() {
@@ -195,7 +228,6 @@ void CGameStateInit::OnMove() {
 		logo2.SetTopLeft((SIZE_X - logo2.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 46 / 100);
 		logo.OnMove();
 
-
 		// Test
 		test_int.SetTopLeft(0, 0);
 		
@@ -204,40 +236,63 @@ void CGameStateInit::OnMove() {
 
 void CGameStateInit::OnShow()
 {
+	TRACE("page: %d\n", page);
 	// 1280*960
 	if (!intro_done) {
 		intro.SetTopLeft((SIZE_X - logo.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 2 / 100);
 		intro.OnShow();
 
 		if (intro.IsFinalBitmap()) {
+			intro.Reset();
 			intro_done = true;
 		}
 	}
 
 	if (intro_done) {
-		
-		// Background
-		background1.ShowBitmap((double)SIZE_X / background1.Width());
-		background2.ShowBitmap();
-		background3.ShowBitmap();
-		background4.ShowBitmap();
-		background5.ShowBitmap();
-	
-		// Logo
-		logo1.ShowBitmap();
-		logo.OnShow();
-		logo2.ShowBitmap();
 
-		// Test
-		test_int.ShowBitmap();
-
-		// Menu
 		int s = menu.size();
-		for (int i = 0; i < s; i++) {
-			menu[i].SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * (70+5*i) / 100);
-			menu[i].ShowBitmap();
-		}
 
+		switch (page) {
+		case static_cast<int>(MENU::START_GAME):
+			// Background
+			background1.ShowBitmap((double)SIZE_X / background1.Width());
+			background2.ShowBitmap();
+			background3.ShowBitmap();
+			background4.ShowBitmap();
+			background5.ShowBitmap();
+
+			// Logo
+			logo1.ShowBitmap();
+			logo.OnShow();
+			logo2.ShowBitmap();
+
+			// Test
+			test_int.ShowBitmap();
+
+			// Menu
+			for (int i = 0; i < s; i++) {
+				menuHandler.SetTopLeft(SIZE_X * 35 / 100, SIZE_Y * (70 + 5 * i) / 100);
+				menuHandler.SetFocus(i == current_select);
+				menuHandler.ShowBitmap(menu[i]);
+			}
+
+			break;
+
+		//case static_cast<int>(MENU::EXTRAS) :
+		//	break;
+
+		case static_cast<int>(MENU::OPTION) :
+			// Background;
+
+			for (int y = 0; y < SIZE_Y; y += (optionBG.Height() * DEFAULT_SCALE)) {
+				for (int x = 0; x < SIZE_X; x += (optionBG.Width() * DEFAULT_SCALE)) {
+					optionBG.SetTopLeft(x, y);
+					optionBG.ShowBitmap();
+				}
+			}
+
+			break;
+		}
 	}
 
 	/*

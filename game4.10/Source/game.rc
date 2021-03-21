@@ -571,6 +571,8 @@ FONT_YELLOW_SHADOW_UPPER_Y BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283
 
 FONT_YELLOW_SHADOW_UPPER_Z BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_yellow_numZ.bmp"
 
+BG_OPTION               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\squarebg.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
