@@ -423,5 +423,8 @@
     <Image Include="RES\font\gui_yellow_numZ.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\squarebg.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

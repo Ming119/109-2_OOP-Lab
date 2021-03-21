@@ -157,21 +157,18 @@ private:
 class CString {
 public:
 	CString();			// default 5 digits
-	string GetString();			// 回傳整數值
+	CMovingBitmap *GetAlphabet();			// 回傳整數值
 	void LoadBitmap();			// 載入A..Z之圖形
-	void SetString(string);		// 設定字串
 	void SetTopLeft(int, int);	// 將動畫的左上角座標移至 (x,y)
-	void ShowBitmap(double factor = DEFAULT_SCALE);			// 將動畫貼到螢幕
+	void ShowBitmap(string, double factor = DEFAULT_SCALE);			// 將動畫貼到螢幕
 	bool isFocus();
 	void SetFocus(bool);
 
 private:
 	static CMovingBitmap alphabet[52];	// 儲存A..Z之圖形(bitmap)
 	int x, y;							// 顯示的座標
-	string n;							// 字串
 	bool focus;
 	bool isBmpLoaded;					// 是否已經載入圖形
-
 };
 
 
