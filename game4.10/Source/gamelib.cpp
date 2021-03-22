@@ -45,7 +45,7 @@ void CMovingBitmap::LoadBitmap(int IDB_BITMAP, COLORREF color)
 	{
 		const int nx = 0;
 		const int ny = 0;
-		GAME_ASSERT(!isBitmapLoaded,"A bitmap has been loaded. You can not load another bitmap !!!");
+		// GAME_ASSERT(!isBitmapLoaded,"A bitmap has been loaded. You can not load another bitmap !!!");
 		CBitmap bitmap;
 		BOOL rval = bitmap.LoadBitmap(IDB_BITMAP);
 		GAME_ASSERT(rval, "Load bitmap failed !!! Please check bitmap ID (IDB_XXX).");
@@ -62,7 +62,7 @@ void CMovingBitmap::LoadBitmap(char* filename, COLORREF color)
 	{
 		const int nx = 0;
 		const int ny = 0;
-		GAME_ASSERT(!isBitmapLoaded, "A bitmap has been loaded. You can not load another bitmap !!!");
+		// GAME_ASSERT(!isBitmapLoaded, "A bitmap has been loaded. You can not load another bitmap !!!");
 		HBITMAP hbitmap = (HBITMAP)LoadImage(NULL, filename, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
 		if (hbitmap == NULL) {
 			char error_msg[300];

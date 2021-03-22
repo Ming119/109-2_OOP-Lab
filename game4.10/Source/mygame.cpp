@@ -278,8 +278,15 @@ void CGameStateInit::OnShow()
 
 			break;
 
-		//case static_cast<int>(MENU::EXTRAS) :
-		//	break;
+		case static_cast<int>(MENU::EXTRAS) :
+			// Background
+			background1.ShowBitmap((double)SIZE_X / background1.Width());
+			background2.ShowBitmap();
+			background3.ShowBitmap();
+			background4.ShowBitmap();
+			background5.ShowBitmap();
+
+			break;
 
 		case static_cast<int>(MENU::OPTION) :
 			// Background;
@@ -336,6 +343,8 @@ CGameStateRun::~CGameStateRun()
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
+	stringHandler.LoadBitmap();
+
 	/*
 	//
 	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
@@ -513,6 +522,13 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 
 void CGameStateRun::OnShow()
 {
+	stringHandler.SetFocus(true);
+	stringHandler.SetTopLeft(SIZE_X/2 -200, SIZE_Y/2-50);
+	stringHandler.ShowBitmap("COMMING SOON");
+
+
+
+
 	/*
 	//
 	//  注意：Show裡面千萬不要移動任何物件的座標，移動座標的工作應由Move做才對，
