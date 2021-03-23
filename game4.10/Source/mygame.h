@@ -72,11 +72,28 @@ namespace game_framework {
 		COUNT
 	};
 
-	enum class extras {
+	enum class EXTRAS {
 		COUNT
 	};
 
-	enum class option {
+	enum class OPTION {
+		RESOLUTION,
+		FULLSCREEN,
+		SMOOTH_GFX,
+		SHOW_FPS,
+		CHANGE_LANGUAGE,
+		STAGE_SELECT,
+		CREDITS,
+		BACK,
+		COUNT
+	};
+
+	enum class OPTION_SELECT {
+		YES,
+		NO,
+		TINY = 0,
+		NORMAL = 1,
+		MAX,
 		COUNT
 	};
 
@@ -105,7 +122,7 @@ namespace game_framework {
 		bool		intro_done = false;
 
 		// Background
-		CMovingBitmap background1;			//
+		CMovingBitmap background1;
 		CMovingBitmap background2;
 		CMovingBitmap background3;
 		CMovingBitmap background4;
