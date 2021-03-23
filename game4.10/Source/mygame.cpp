@@ -195,13 +195,13 @@ void CGameStateInit::OnMove() {
 	} else {
 
 		// Background animate
-		background1.SetTopLeft(0, 0);
-		background2.SetTopLeft(0, (int)(SIZE_Y / 3));
-		background3.SetTopLeft(0, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32) * DEFAULT_SCALE));
-		background4.SetTopLeft(0, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32 + background3.Height()) * DEFAULT_SCALE));
-		background5.SetTopLeft(0, (int)(SIZE_Y - background3.Height() - background4.Height() * 3));
+		//background1.SetTopLeft(0, 0);
+		//background2.SetTopLeft(0, (int)(SIZE_Y / 3));
+		//background3.SetTopLeft(0, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32) * DEFAULT_SCALE));
+		//background4.SetTopLeft(0, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32 + background3.Height()) * DEFAULT_SCALE));
+		//background5.SetTopLeft(0, (int)(SIZE_Y - background3.Height() - background4.Height() * 3));
 
-		/* Some Graph BUG Need to Fix
+		 //Some Graph BUG Need to Fix
 		background1.SetTopLeft(0, 0);
 		background2.SetTopLeft(background2.Left() - 8, (int)(SIZE_Y / 3));
 		background3.SetTopLeft(background3.Left() - 7, (int)(SIZE_Y / 3) + (int)((background2.Height() - 32) * DEFAULT_SCALE));
@@ -220,7 +220,7 @@ void CGameStateInit::OnMove() {
 		if (background5.Left() + background5.Width() * DEFAULT_SCALE / 2 < 0) {
 			background5.SetTopLeft(background5.Left() + background2.Width() * DEFAULT_SCALE / 2, (int)(SIZE_Y / 3));
 		}
-		*/
+		
 
 		// Logo
 		logo.SetTopLeft((SIZE_X - logo.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 2 / 100);
