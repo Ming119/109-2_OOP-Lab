@@ -89,12 +89,11 @@ namespace game_framework {
 	};
 
 	enum class OPTION_SELECT {
-		YES,
 		NO,
+		YES,
 		TINY = 0,
 		NORMAL = 1,
 		MAX,
-		COUNT
 	};
 
 
@@ -116,6 +115,9 @@ namespace game_framework {
 
 	private:
 		int page;
+		int current_select;
+		int option_select;
+		vector<int> option_sel;
 
 		// Intro animate
 		CAnimation	intro;
@@ -136,14 +138,14 @@ namespace game_framework {
 		CMovingBitmap logo2;	// 
 
 		// Menu
-		CString menuHandler;
+		CString stringHandler;
 		vector<string> menu;
-		int current_select;
-
+		
 		// Option
-		CString optionHandler;
 		vector<string> option;
-
+		vector<string> bin_select;
+		vector<string> tri_select;
+			
 		// Test
 		CInteger test_int = CInteger(2);
 		// CInteger test_int2 = CInteger(3);
