@@ -96,6 +96,24 @@ namespace game_framework {
 		MAX,
 	};
 
+	enum class LEVEL {
+		BULE_OCEAN_1,
+		BULE_OCEAN_2,
+		BULE_OCEAN_3,
+		CHILPOCTLI_TEMPLE,
+		EXOTIC_HELL,
+		EXOTIC_PARADISE_1,
+		EXOTIC_PARADISE_2,
+		EXOTIC_PARADISE_3,
+		PROTOTYPE_1,
+		SUPER_BOSS_1,
+		SUPER_BOSS_2,
+		TEMPLATE,
+		TEST,
+		TUTORIAL_1,
+		TUTORIAL_2,
+		COUNT
+	};
 
 	/////////////////////////////////////////////////////////////////////////////
 	// 這個class為遊戲的遊戲開頭畫面物件
@@ -167,11 +185,6 @@ namespace game_framework {
 		void OnBeginState();							// 設定每次重玩所需的變數
 		void OnKeyDown(UINT, UINT, UINT);
 		void OnKeyUp(UINT, UINT, UINT);
-		void OnLButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
-		void OnLButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
-		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
-		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
-		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
 
 	protected:
 		void OnMove();									// 移動遊戲元素
