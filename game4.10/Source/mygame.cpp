@@ -273,7 +273,7 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 			} else if (nChar == KEY_RIGHT) {
 				CAudio::Instance()->Play(AUDIO_SELECT, false);
 				option_sel.at(current_select) += 1;
-				option_sel.at(current_select) %= (current_select == 1) ? 3 : 2;
+				option_sel.at(current_select) %= (current_select == 0) ? 3 : 2;
 
 			}
 		}
