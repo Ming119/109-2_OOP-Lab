@@ -471,7 +471,7 @@ void CGameStateInit::OnShow()
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateRun::CGameStateRun(CGame *g)
-: CGameState(g), NUMBALLS(28)
+: CGameState(g)
 {
 	// ball = new CBall [NUMBALLS];
 }

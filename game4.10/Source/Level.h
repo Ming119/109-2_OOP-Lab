@@ -1,16 +1,17 @@
-//#pragma once
-//
-//namespace game_framework {
-//	class Level {
-//	private:
-//		//intro;
-//		CMovingBitmap background;
-//
-//		vector<Brick> brick;
-//
-//
-//	public:
-//
-//	};
-//
-//}
+namespace game_framework {
+	class Level {
+	private:
+		//intro;
+		
+		int max_x;
+		int max_y;
+
+		CMovingBitmap background;
+
+		//vector<Brick> brick;
+
+	public:
+
+	};
+
+}

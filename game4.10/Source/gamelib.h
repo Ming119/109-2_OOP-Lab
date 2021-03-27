@@ -312,6 +312,7 @@ public:
 	virtual void OnMouseMove(UINT nFlags, CPoint point) {}  // 處理滑鼠的動作 
 	virtual void OnRButtonDown(UINT nFlags, CPoint point) {}// 處理滑鼠的動作
 	virtual void OnRButtonUp(UINT nFlags, CPoint point) {}	// 處理滑鼠的動作
+
 protected:
 	void GotoGameState(int state);							// 跳躍至指定的state
 	void ShowInitProgress(int percent);						// 顯示初始化的進度
@@ -353,6 +354,7 @@ public:
 	void OnSuspend();								// 處理「待命」的動作
 	void SetGameState(int);
 	static CGame *Instance();
+
 private:
 	bool			running;			// 遊戲是否正在進行中(未被Pause)
 	bool            suspended;			// 遊戲是否被suspended

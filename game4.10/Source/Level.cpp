@@ -1,8 +1,11 @@
 #include "stdafx.h"
-//#include "audio.h"
-//#include "gamelib.h"
-//#include "Level.h"
-//
-//namespace game_framework{
-//
-//}
+#include "Resource.h"
+#include <mmsystem.h>
+#include <ddraw.h>
+#include "audio.h"
+#include "gamelib.h"
+#include "Level.h"
+
+namespace game_framework{
+
+}
