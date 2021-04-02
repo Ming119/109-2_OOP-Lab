@@ -4,9 +4,7 @@
 #define BRICK_MAXVALUES	3
 
 namespace game_framework {
-	/*int brick_images = {
 
-	};*/
 	enum PROPERTY {
 		NONE,
 		OBSTACLE,

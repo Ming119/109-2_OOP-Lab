@@ -2,6 +2,9 @@
 #define _LEVEL_H_
 
 #include "Brick.h"
+#include "Item.h"
+#include "Enemy.h"
+#include "Actor.h"
 
 namespace game_framework {
 
@@ -32,6 +35,10 @@ namespace game_framework {
 
 		CMovingBitmap background;
 		
+		Actor actor1;
+		Actor actor2;
+		Actor actor3;
+
 		vector<Brick> bricks;
 		vector<Item> items;
 		vector<Enemy> enemies;
@@ -42,9 +49,6 @@ namespace game_framework {
 		void OnShow();
 	};
 
-	int test[][][3] = {
-
-	};
 }
 
 #endif

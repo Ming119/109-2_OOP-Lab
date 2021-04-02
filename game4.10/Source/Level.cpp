@@ -6,7 +6,7 @@
 #include "gamelib.h"
 #include "Level.h"
 
-namespace game_framework{
+namespace game_framework {
 	int Level1Bricks[][3] = {
 		// {id, x, y}
 		{25, 3102, 2714},

@@ -467,8 +467,6 @@ void CGameStateInit::OnShow()
 CGameStateRun::CGameStateRun(CGame *g)
 : CGameState(g)
 {
-	levels.push_back(Level1());
-	levels.push_back(Level2());
 	// ball = new CBall [NUMBALLS];
 }
 
@@ -480,8 +478,6 @@ CGameStateRun::~CGameStateRun()
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
 	stringHandler.LoadBitmap();
-
-	levels.at(current_level).OnInit();
 
 	/*
 	//
