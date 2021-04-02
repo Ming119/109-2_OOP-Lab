@@ -259,6 +259,7 @@
     <ClCompile Include="Source\Actor.cpp" />
     <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\Brick.cpp" />
+    <ClCompile Include="Source\Enemy.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -274,6 +275,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Source\Item.cpp" />
     <ClCompile Include="Source\Level.cpp" />
     <ClCompile Include="Source\MainFrm.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -305,9 +307,11 @@
     <ClInclude Include="Source\Actor.h" />
     <ClInclude Include="Source\audio.h" />
     <ClInclude Include="Source\Brick.h" />
+    <ClInclude Include="Source\Enemy.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gameView.h" />
+    <ClInclude Include="Source\Item.h" />
     <ClInclude Include="Source\Level.h" />
     <ClInclude Include="Source\MainFrm.h" />
     <ClInclude Include="Source\Resource.h" />

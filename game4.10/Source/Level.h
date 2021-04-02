@@ -31,12 +31,19 @@ namespace game_framework {
 		int spawnPoint;
 
 		CMovingBitmap background;
+		
 		vector<Brick> bricks;
+		vector<Item> items;
+		vector<Enemy> enemies;
 
 	public:
 		void OnInit(int);
 		void OnMove();
 		void OnShow();
+	};
+
+	int test[][][3] = {
+
 	};
 }
 
