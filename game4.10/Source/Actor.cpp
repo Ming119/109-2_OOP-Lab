@@ -5,7 +5,6 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "Actor.h"
-#include "Brick.h"
 
 namespace game_framework {
 	Actor::Actor() {

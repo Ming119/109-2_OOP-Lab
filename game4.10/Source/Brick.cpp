@@ -7,55 +7,10 @@
 #include "Brick.h"
 
 namespace game_framework {
-	Brick::Brick() {
-		id = -1;
-		x = 0;
-		y = 0;
+	Brick::Brick(int theme, int id) {
+		texture.LoadBitmap(themes[theme][id][0]);
+		property = themes[theme][id][1];
+		behavior = themes[theme][id][2];
+		angel = themes[theme][id][3];
 	}
-
-	Brick::Brick(int _id, int _x, int _y) {
-		id = _id;
-		x = _x;
-		y = _y;
-	}
-
-	void Brick::LoadBitmap() {
-		if (id != -1) {
-
-		}
-	}
-
-	void Brick::OnMove() {
-
-	}
-
-	void Brick::OnShow() {
-
-	}
-
-	int Brick::ID() {
-		return id;
-	}
-
-	int Brick::Angle() {
-		return angle;
-	}
-
-	int Brick::Width() {
-		return width;
-	}
-
-	int Brick::Height() {
-		return height;
-	}
-
-	int Brick::X() {
-		return x;
-	}
-
-	int Brick::Y() {
-		return y;
-	}
-
-
 }

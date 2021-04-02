@@ -1,5 +1,5 @@
-#ifndef _BRICK_H
-#define _BRICK_H
+#ifndef _BRICK_H_
+#define _BRICK_H_
 
 #define BRICK_MAXVALUES	3
 
@@ -18,66 +18,55 @@ namespace game_framework {
 		CIRCULAR,
 		BREAKABLE,
 		FALL,
-		BRICKBEHAVIOR_MAXARGS
+		BRICKBEHAVIOR_MAXARGS = 5,
 
 	};
+	
+	enum THEME {
+		OCEAN,
+		OCEAN2,
+		DESERT1,
+		ISLAND,
+		ISLAND2,
+		ISLAND3,
+	};
 
-	class BrickData {
+	class Brick {
 	private:
 		CMovingBitmap texture;
+
 		int property;
 		int behavior;
 		int angel;		// Degrees, 0 <= angle <= 360
-		float zindex;	// 0.0(background) <= z-index <= 1.0(foreground)
+
 		float behavior_arg[BRICKBEHAVIOR_MAXARGS];
-
-	public:
-		void Load();
-		BrickData* getBrickData(int);
-		int BrickDataSize();
-
-	};
-
-	
-	class Brick {
-	private:
-		BrickData brickRef;
-
-		int x, y;
-		int sx, sy;
-		bool enable;
 		float value[BRICK_MAXVALUES];
-
-		int id;
-		int width;
-		int height;
+		bool enable;
 
 
 	public:
-		Brick();
-		Brick(int, int, int);
-		
-		void LoadBitmap();
-		void OnMove();
-		void OnShow();
-
-		int ID();
-		int X();
-		int Y();
-		int Width();
-		int Height();
-
+		Brick(int, int);
 	};
 
-	class BrickList {
-	private:
-
-	public:
-		Brick* data;
-		BrickList* next;
+	// TEMP
+	int BricksOcean1[][4] = {
+		// {id, propety, behavior, angle}
+		{IDB_BITMAP101, OBSTACLE, DEFAULT, 0}, 
+		{IDB_BITMAP102, OBSTACLE, DEFAULT, 0},
+		{IDB_BITMAP103, OBSTACLE, DEFAULT, 0}
 	};
 
-	
+	// TEMP
+	int BricksOcean2[][4] = {
+		// {id, propety, behavior, angle}
+		{IDB_BITMAP101, OBSTACLE, DEFAULT, 0},
+		{IDB_BITMAP102, OBSTACLE, DEFAULT, 0},
+		{IDB_BITMAP103, OBSTACLE, DEFAULT, 0}
+	};
+
+	// TEMP
+	vector<int**> themes = { BricksOcean1, BricksOcean2 };
+
 }
 
 #endif

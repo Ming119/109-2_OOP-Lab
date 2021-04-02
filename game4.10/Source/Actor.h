@@ -1,3 +1,5 @@
+#include "Brick.h"
+
 namespace game_framework {
 	class Actor {
 	private:
@@ -30,7 +32,7 @@ namespace game_framework {
 
 		// Sensors
 		void render_corners(Actor*, float, float, POINT);
-		void corners(Actor*, float, float, BrickList, Brick, Brick, Brick, Brick, Brick, Brick, Brick, Brick);
+		//void corners(Actor*, float, float, BrickList, Brick, Brick, Brick, Brick, Brick, Brick, Brick, Brick);
 		void corners_ex(Actor*, float, POINT, POINT, POINT, POINT, POINT, POINT, POINT, POINT, Brick, Brick, Brick, Brick, Brick, Brick, Brick, Brick);
 		void corners_set_floor_priority(int);
 		void corners_restore_floor_priority();
@@ -51,7 +53,7 @@ namespace game_framework {
 		void handle_acceleration();
 
 		// Pre-defined Movement Routines
-		POINT platfrom_movement(Actor*, BrickList*, float);
+		//POINT platfrom_movement(Actor*, BrickList*, float);
 		POINT particle_movement(Actor*, float);
 		POINT eightdirections_movement(Actor*);
 		POINT bullet_movement(Actor*);

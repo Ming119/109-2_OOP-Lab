@@ -1,6 +1,6 @@
-#include "Brick.h"
+//#include "Brick.h"
 #include "Level.h"
-#include "Actor.h"
+//#include "Actor.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -96,25 +96,6 @@ namespace game_framework {
 		MAX,
 	};
 
-	enum class LEVEL {
-		BULE_OCEAN_1,
-		BULE_OCEAN_2,
-		BULE_OCEAN_3,
-		CHILPOCTLI_TEMPLE,
-		EXOTIC_HELL,
-		EXOTIC_PARADISE_1,
-		EXOTIC_PARADISE_2,
-		EXOTIC_PARADISE_3,
-		PROTOTYPE_1,
-		SUPER_BOSS_1,
-		SUPER_BOSS_2,
-		TEMPLATE,
-		TEST,
-		TUTORIAL_1,
-		TUTORIAL_2,
-		COUNT
-	};
-
 	/////////////////////////////////////////////////////////////////////////////
 	// 這個class為遊戲的遊戲開頭畫面物件
 	// 每個Member function的Implementation都要弄懂
@@ -192,6 +173,9 @@ namespace game_framework {
 
 	private:
 		CString stringHandler;
+
+		vector<Level> levels;
+		int current_level;
 
 
 		//const int		NUMBALLS;	// 球的總數
