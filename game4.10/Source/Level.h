@@ -39,15 +39,21 @@ namespace game_framework {
 		Actor actor2;
 		Actor actor3;
 
-		vector<Brick> bricks;
-		vector<Item> items;
-		vector<Enemy> enemies;
+		vector<Brick*> bricks;
+		vector<Item*> items;
+		vector<Enemy*> enemies;
 
 	public:
 		void OnInit(int);
 		void OnMove();
 		void OnShow();
 	};
+
+	int items_list[] = {
+		
+	};
+
+
 
 }
 

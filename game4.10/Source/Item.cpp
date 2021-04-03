@@ -5,3 +5,18 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "Item.h"
+
+namespace game_framework {
+	// Item
+	Item::Item() {
+
+	}
+	Item::Item() {
+
+	}
+
+	void Ring::OnInit() {
+
+	}
+}
+

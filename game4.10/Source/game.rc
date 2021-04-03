@@ -741,6 +741,110 @@ IDB_BITMAP113           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582
 
 IDB_BITMAP114           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_right_4_2.bmp"
 
+IDB_BITMAP31            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Bamboo dragonfly1.bmp"
+
+IDB_BITMAP32            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Bamboo dragonfly2.bmp"
+
+IDB_BITMAP68            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Bamboo dragonfly3.bmp"
+
+IDB_BITMAP75            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Bamboo dragonfly4.bmp"
+
+IDB_BITMAP80            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_chef1.bmp"
+
+IDB_BITMAP87            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_chef2.bmp"
+
+IDB_BITMAP90            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_chef3.bmp"
+
+IDB_BITMAP92            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_chef4.bmp"
+
+IDB_BITMAP93            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_earthworm1.bmp"
+
+IDB_BITMAP97            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_earthworm2.bmp"
+
+IDB_BITMAP100           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_fly_red1.bmp"
+
+IDB_BITMAP115           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_fly_red2.bmp"
+
+IDB_BITMAP116           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Groundhog1.bmp"
+
+IDB_BITMAP117           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Groundhog2.bmp"
+
+IDB_BITMAP118           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Groundhog3.bmp"
+
+IDB_BITMAP119           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_insect1.bmp"
+
+IDB_BITMAP120           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_insect2.bmp"
+
+IDB_BITMAP121           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_insect3.bmp"
+
+IDB_BITMAP122           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_ladybug1.bmp"
+
+IDB_BITMAP123           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_ladybug2.bmp"
+
+IDB_BITMAP124           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_ladybug3.bmp"
+
+IDB_BITMAP125           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Mosquito1.bmp"
+
+IDB_BITMAP126           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Mosquito2.bmp"
+
+IDB_BITMAP127           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_penguin1.bmp"
+
+IDB_BITMAP128           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_penguin2.bmp"
+
+IDB_BITMAP129           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_penguin3.bmp"
+
+IDB_BITMAP130           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_penguin4.bmp"
+
+IDB_BITMAP131           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_penguin5.bmp"
+
+IDB_BITMAP132           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Pink_monster1.bmp"
+
+IDB_BITMAP133           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Pink_monster2.bmp"
+
+IDB_BITMAP134           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Pink_monster3.bmp"
+
+IDB_BITMAP135           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_rocket1.bmp"
+
+IDB_BITMAP136           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_rocket2.bmp"
+
+IDB_BITMAP137           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_shark1.bmp"
+
+IDB_BITMAP138           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_shark2.bmp"
+
+IDB_BITMAP139           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_snails1.bmp"
+
+IDB_BITMAP140           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_snails2.bmp"
+
+IDB_BITMAP141           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_spider1.bmp"
+
+IDB_BITMAP142           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_spider2.bmp"
+
+IDB_BITMAP143           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue1.bmp"
+
+IDB_BITMAP144           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue2.bmp"
+
+IDB_BITMAP145           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue3.bmp"
+
+IDB_BITMAP146           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue4.bmp"
+
+IDB_BITMAP147           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue5.bmp"
+
+IDB_BITMAP148           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue6.bmp"
+
+IDB_BITMAP149           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue7.bmp"
+
+IDB_BITMAP150           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue8.bmp"
+
+IDB_BITMAP151           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_fly_Shield1.bmp"
+
+IDB_BITMAP152           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_fly_Shield2.bmp"
+
+IDB_BITMAP153           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_red1.bmp"
+
+IDB_BITMAP154           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_red2.bmp"
+
+IDB_BITMAP155           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_red3.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

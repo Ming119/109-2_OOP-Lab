@@ -126,10 +126,10 @@
     <ClCompile Include="Source\Actor.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Item.cpp">
+    <ClCompile Include="Source\Enemy.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Enemy.cpp">
+    <ClCompile Include="Source\Item.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -688,6 +688,162 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\Document\images\ocean\ocean_turn_around_right_4_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Bamboo dragonfly1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Bamboo dragonfly2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Bamboo dragonfly3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Bamboo dragonfly4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_chef1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_chef2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_chef3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_chef4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_earthworm1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_earthworm2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_fly_red1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_fly_red2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Groundhog1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Groundhog2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Groundhog3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_insect1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_insect2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_insect3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_ladybug1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_ladybug2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_ladybug3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Mosquito1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Mosquito2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_penguin1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_penguin2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_penguin3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_penguin4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_penguin5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Pink_monster1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Pink_monster2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_Pink_monster3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_rocket1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_rocket2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_shark1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_shark2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_snails1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_snails2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_spider1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine_spider2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_blue1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_blue2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_blue3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_blue4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_blue5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_blue6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_blue7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_blue8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_fly_Shield1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_fly_Shield2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_red1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_red2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\enemies\machine1_red3.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
