@@ -5,7 +5,6 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "Level.h"
-#include "enemy.h"
 
 #define MAX_BRICK_SIZE	2048
 #define MAX_ITEM_SIZE	128
@@ -1525,42 +1524,50 @@ namespace game_framework {
 	//	{51, 693, 2157}
 	//};
 
+	Level::Level() {
+		
+	}
+
+	Level::~Level() {
+
+	}
 
 	void Level::OnInit(int level) {
 
-		int enemyData[][3];
-		Enemy::getEnemiesData(enemyData, level);
+		/*int enemyData[][3];
+		Enemy::getEnemiesData(&enemyData, level);*/
 
-		for (int i = 0; i < _; i++) {
-			int id = ;
-			int x = ;
-			int y = ;
+		//for (int i = 0; i < _; i++) {
+		//	/*int id = ;
+		//	int x = ;
+		//	int y = ;*/
 
-			switch (id) {
-			case static_cast<int>(ENEMIES_LIST::BAMBOO) :
-				enemies.push_back(new Bamboo(x, y, 0));
-				break;
+		//	switch (id) {
+		//	case static_cast<int>(ENEMIES_LIST::BAMBOO) :
+		//		enemies.push_back(new Bamboo(x, y, 0));
+		//		break;
 
-			case static_cast<int>(ENEMIES_LIST::CHEF) :
-				enemies.push_back(new Chef(x, y, 0));
-				break;
+		//	case static_cast<int>(ENEMIES_LIST::CHEF) :
+		//		enemies.push_back(new Chef(x, y, 0));
+		//		break;
 
-			case static_cast<int>(ENEMIES_LIST::EARTHWORM) :
-				enemies.push_back(new Earthworm(x, y, 0));
-				break;
+		//	case static_cast<int>(ENEMIES_LIST::EARTHWORM) :
+		//		enemies.push_back(new Earthworm(x, y, 0));
+		//		break;
 
-			case static_cast<int>(ENEMIES_LIST::FLY) :
-				enemies.push_back(new Fly(x, y, 0));
-				break;
+		//	case static_cast<int>(ENEMIES_LIST::FLY) :
+		//		enemies.push_back(new Fly(x, y, 0));
+		//		break;
 
-			}
+		//	}
 
-		}
+		//}
 
-
-		int bs = bricks.size();
+		enemies.push_back(new Red(0, 0, 0));
+		enemies.push_back(new Red(100, 0, 0));
+		/*int bs = bricks.size();
 		int is = items.size();
-		int es = enemies.size();
+		
 
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->OnInit();
@@ -1569,45 +1576,48 @@ namespace game_framework {
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnInit();
 		}
+		*/
 
+		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->OnInit();
 		}
+
 	}
 	
 	void Level::OnMove() {
-		int bs = bricks.size();
-		int is = items.size();
-		int es = enemies.size();
-
+		/*int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->OnMove();
 		}
 
+		int is = items.size();
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnMove();
-		}
+		}*/
 
+		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->OnMove();
 		}
 	}
 
 	void Level::OnShow() {
-		int bs = bricks.size();
-		int is = items.size();
-		int es = enemies.size();
-
+		/*int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->OnShow();
 		}
 
+		int is = items.size();
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnShow();
-		}
+		}*/
 
+		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->OnShow();
+			TRACE("Enemy: %d %d\n", enemies.at(i)->getTexture().Top(), enemies.at(i)->getTexture().Left());
 		}
 	}
+
 }

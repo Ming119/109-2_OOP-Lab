@@ -51,23 +51,23 @@ namespace game_framework {
 	};
 
 	// TEMP
-	int BricksOcean1[][4] = {
-		// {id, propety, behavior, angle}
-		{IDB_BITMAP101, OBSTACLE, DEFAULT, 0}, 
-		{IDB_BITMAP102, OBSTACLE, DEFAULT, 0},
-		{IDB_BITMAP103, OBSTACLE, DEFAULT, 0}
-	};
+	//int BricksOcean1[][4] = {
+	//	// {id, propety, behavior, angle}
+	//	{IDB_BITMAP101, OBSTACLE, DEFAULT, 0}, 
+	//	{IDB_BITMAP102, OBSTACLE, DEFAULT, 0},
+	//	{IDB_BITMAP103, OBSTACLE, DEFAULT, 0}
+	//};
+
+	//// TEMP
+	//int BricksOcean2[][4] = {
+	//	// {id, propety, behavior, angle}
+	//	{IDB_BITMAP101, OBSTACLE, DEFAULT, 0},
+	//	{IDB_BITMAP102, OBSTACLE, DEFAULT, 0},
+	//	{IDB_BITMAP103, OBSTACLE, DEFAULT, 0}
+	//};
 
 	// TEMP
-	int BricksOcean2[][4] = {
-		// {id, propety, behavior, angle}
-		{IDB_BITMAP101, OBSTACLE, DEFAULT, 0},
-		{IDB_BITMAP102, OBSTACLE, DEFAULT, 0},
-		{IDB_BITMAP103, OBSTACLE, DEFAULT, 0}
-	};
-
-	// TEMP
-	vector<int**> themes = { BricksOcean1, BricksOcean2 };
+	//vector<int**> themes = { BricksOcean1, BricksOcean2 };
 
 }
 

@@ -121,7 +121,7 @@ namespace game_framework {
 
 		// Intro animate
 		CAnimation	intro;
-		bool		intro_done = false;
+		bool		intro_done;
 
 		// Background
 		CMovingBitmap background1;
@@ -175,7 +175,7 @@ namespace game_framework {
 	private:
 		CString stringHandler;
 
-		Level level;
+		Level* level;
 		int current_level;
 
 

@@ -14,6 +14,7 @@ namespace game_framework {
 CGameStateInit::CGameStateInit(CGame *g)
 : CGameState(g)
 {
+	intro_done = false;
 }
 
 void CGameStateInit::OnInit()
@@ -478,7 +479,8 @@ CGameStateRun::~CGameStateRun()
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
 	stringHandler.LoadBitmap();
-
+	
+	
 	/*
 	//
 	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
@@ -518,53 +520,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnBeginState()
 {
-	switch (current_level) {
-	case static_cast<int>(LEVELS::BULE_OCEAN_1) :
-		break;
-	
-	case static_cast<int>(LEVELS::BULE_OCEAN_2) :
-		break;
-
-	case static_cast<int>(LEVELS::BULE_OCEAN_3) :
-		break;
-	
-	case static_cast<int>(LEVELS::CHILPOCTLI_TEMPLE) :
-		break;
-
-	case static_cast<int>(LEVELS::EXOTIC_HELL) :
-		break;
-
-	case static_cast<int>(LEVELS::EXOTIC_PARADISE_1) :
-		break;
-
-	case static_cast<int>(LEVELS::EXOTIC_PARADISE_2) :
-		break;
-
-	case static_cast<int>(LEVELS::EXOTIC_PARADISE_3) :
-		break;
-
-	case static_cast<int>(LEVELS::PROTOTYPE_1) :
-		break;
-
-	case static_cast<int>(LEVELS::SUPER_BOSS_1) :
-		break;
-
-	case static_cast<int>(LEVELS::SUPER_BOSS_2) :
-		break;
-
-	case static_cast<int>(LEVELS::TEMPLATE) :
-		break;
-
-	case static_cast<int>(LEVELS::TEST) :
-		break;
-
-	case static_cast<int>(LEVELS::TUTORIAL_1) :
-		break;
-
-	case static_cast<int>(LEVELS::TUTORIAL_2) :
-		break;
-	}
-	
+	level = new Level();
+	level->OnInit(current_level);
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -648,11 +605,14 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	//
 	bball.OnMove();
 	*/
+
+	level->OnMove();
+
 }
 
 void CGameStateRun::OnShow()
 {
-	CInteger test;
+	/*CInteger test;
 	test.LoadBitmapA();
 	test.SetTopLeft(0,0);
 	test.SetInteger(static_cast<int>(OPTION_SELECT::YES));
@@ -672,10 +632,10 @@ void CGameStateRun::OnShow()
 
 	stringHandler.SetFocus(true);
 	stringHandler.SetTopLeft(SIZE_X/2 -200, SIZE_Y/2-50);
-	stringHandler.ShowBitmap("COMMING SOON");
+	stringHandler.ShowBitmap("COMMING SOON");*/
 
 
-
+	level->OnShow();
 
 	/*
 	//

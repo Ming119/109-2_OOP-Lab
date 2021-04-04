@@ -8,21 +8,6 @@
 
 namespace game_framework {
 	// Enemy
-	Enemy::Enemy() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
-
-	Enemy::Enemy(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
-
-	Enemy::~Enemy() {
-	}
-
 	void Enemy::setPos(int x, int y) {
 		posX = x;
 		posY = y;
@@ -32,24 +17,30 @@ namespace game_framework {
 		angle = ang;
 	}
 
-	void Enemy::getEnemiesData(int (&array)[][MAX_ENEMY_SIZE][3]) {
-		for (int i = 0; i < static_cast<int>(LEVELS::COUNT); ++i)
-			for (int j = 0; j < MAX_ENEMY_SIZE; ++j)
-				for (int k = 0; k < 3; k++) 
-					array[i][j][k] = enemiesData[i][j][k];
-	}
+	//void Enemy::getEnemiesData(int (&array)[][MAX_ENEMY_SIZE][3]) {
+	//	for (int i = 0; i < static_cast<int>(LEVELS::COUNT); ++i)
+	//		for (int j = 0; j < MAX_ENEMY_SIZE; ++j)
+	//			for (int k = 0; k < 3; k++) 
+	//				array[i][j][k] = enemiesData[i][j][k];
+	//}
 
-	void Enemy::getEnemiesData(int (&array)[][3], int level) {
-		for (int i = 0; i < MAX_ENEMY_SIZE; ++i)
-			for (int j = 0; j < 3; ++j)
-				array[i][j] = enemiesData[level][i][j];
-	}
+	//void Enemy::getEnemiesData(int (&array)[][3], int level) {
+	//	for (int i = 0; i < MAX_ENEMY_SIZE; ++i)
+	//		for (int j = 0; j < 3; ++j)
+	//			array[i][j] = enemiesData[level][i][j];
+	//}
 
 	// Bamboo
 	Bamboo::Bamboo() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Bamboo::Bamboo(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Bamboo::OnInit() {
@@ -69,9 +60,15 @@ namespace game_framework {
 
 	// Chef
 	Chef::Chef() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Chef::Chef(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Chef::OnInit() {
@@ -90,9 +87,15 @@ namespace game_framework {
 
 	// Earthworm
 	Earthworm::Earthworm() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Earthworm::Earthworm(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Earthworm::OnInit() {
@@ -111,9 +114,15 @@ namespace game_framework {
 
 	// Fly
 	Fly::Fly() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Fly::Fly(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Fly::OnInit() {
@@ -132,9 +141,15 @@ namespace game_framework {
 
 	// Groundhog
 	Groundhog::Groundhog() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Groundhog::Groundhog(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Groundhog::OnInit() {
@@ -155,9 +170,15 @@ namespace game_framework {
 
 	// Insect
 	Insect::Insect() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Insect::Insect(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Insect::OnInit() {
@@ -178,9 +199,15 @@ namespace game_framework {
 
 	// Ladybug
 	Ladybug::Ladybug() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Ladybug::Ladybug(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Ladybug::OnInit() {
@@ -201,9 +228,15 @@ namespace game_framework {
 
 	// Mosquito
 	Mosquito::Mosquito() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Mosquito::Mosquito(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Mosquito::OnInit() {
@@ -223,9 +256,15 @@ namespace game_framework {
 
 	// Penguin
 	Penguin::Penguin() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Penguin::Penguin(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Penguin::OnInit() {
@@ -248,9 +287,15 @@ namespace game_framework {
 
 	// PinkMonster
 	PinkMonster::PinkMonster() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	PinkMonster::PinkMonster(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void PinkMonster::OnInit() {
@@ -271,9 +316,15 @@ namespace game_framework {
 
 	// Rocket
 	Rocket::Rocket() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Rocket::Rocket(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Rocket::OnInit() {
@@ -293,9 +344,15 @@ namespace game_framework {
 
 	// Shark
 	Shark::Shark() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Shark::Shark(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Shark::OnInit() {
@@ -315,9 +372,15 @@ namespace game_framework {
 
 	// Snails
 	Snails::Snails() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Snails::Snails(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Snails::OnInit() {
@@ -337,9 +400,15 @@ namespace game_framework {
 
 	// Spider
 	Spider::Spider() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Spider::Spider(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Spider::OnInit() {
@@ -359,9 +428,15 @@ namespace game_framework {
 
 	// Blue
 	Blue::Blue() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
 	Blue::Blue(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Blue::OnInit() {
@@ -387,9 +462,15 @@ namespace game_framework {
 
 	// FlyShield
 	FlyShield::FlyShield() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
-	FlyShield::FlyShield(int x, int y, int ang) {
+	FlyShield::FlyShield(int x, int y, int ang){
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void FlyShield::OnInit() {
@@ -409,15 +490,23 @@ namespace game_framework {
 
 	// Red
 	Red::Red() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
 	}
 
-	Red::Red(int x, int y, int ang) {
+	Red::Red(int x, int y, int ang){
+		posX = x;
+		posY = y;
+		angle = ang;
 	}
 
 	void Red::OnInit() {
 		texture.AddBitmap(IDB_BITMAP153);
 		texture.AddBitmap(IDB_BITMAP154);
 		texture.AddBitmap(IDB_BITMAP155);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Red::OnMove() {
@@ -425,6 +514,10 @@ namespace game_framework {
 	}
 
 	void Red::OnShow() {
-		texture.OnShow();
+		texture.OnShow(DEFAULT_SCALE);
+	}
+
+	CAnimation Red::getTexture() {
+		return texture;
 	}
 }

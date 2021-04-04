@@ -8,9 +8,21 @@
 
 namespace game_framework {
 	Brick::Brick(int theme, int id) {
-		texture.LoadBitmap(themes[theme][id][0]);
+		/*texture.LoadBitmap(themes[theme][id][0]);
 		property = themes[theme][id][1];
 		behavior = themes[theme][id][2];
-		angel = themes[theme][id][3];
+		angel = themes[theme][id][3];*/
+	}
+
+	void Brick::OnInit() {
+
+	}
+
+	void Brick::OnMove() {
+
+	}
+
+	void Brick::OnShow() {
+
 	}
 }

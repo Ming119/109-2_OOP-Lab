@@ -573,277 +573,277 @@ FONT_YELLOW_SHADOW_UPPER_Z BITMAP                  "..\\RES\\font\\gui_yellow_nu
 
 BG_OPTION               BITMAP                  "..\\RES\\squarebg.bmp"
 
-OCEAN_1                 BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_1.bmp"
+OCEAN_1                 BITMAP                  "..\\RES\\ocean\\ocean_1.bmp"
 
-OCEAN_2                 BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_2.bmp"
+OCEAN_2                 BITMAP                  "..\\RES\\ocean\\ocean_2.bmp"
 
-IDB_BITMAP33            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_3.bmp"
+IDB_BITMAP33            BITMAP                  "..\\RES\\ocean\\ocean_3.bmp"
 
-IDB_BITMAP34            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_4.bmp"
+IDB_BITMAP34            BITMAP                  "..\\RES\\ocean\\ocean_4.bmp"
 
-IDB_BITMAP35            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_4_1.bmp"
+IDB_BITMAP35            BITMAP                  "..\\RES\\ocean\\ocean_4_1.bmp"
 
-IDB_BITMAP36            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_4_2.bmp"
+IDB_BITMAP36            BITMAP                  "..\\RES\\ocean\\ocean_4_2.bmp"
 
-IDB_BITMAP37            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_5.bmp"
+IDB_BITMAP37            BITMAP                  "..\\RES\\ocean\\ocean_5.bmp"
 
-IDB_BITMAP38            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_5_1.bmp"
+IDB_BITMAP38            BITMAP                  "..\\RES\\ocean\\ocean_5_1.bmp"
 
-IDB_BITMAP39            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_5_2.bmp"
+IDB_BITMAP39            BITMAP                  "..\\RES\\ocean\\ocean_5_2.bmp"
 
-IDB_BITMAP40            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_6.bmp"
+IDB_BITMAP40            BITMAP                  "..\\RES\\ocean\\ocean_6.bmp"
 
-IDB_BITMAP41            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_7.bmp"
+IDB_BITMAP41            BITMAP                  "..\\RES\\ocean\\ocean_7.bmp"
 
-IDB_BITMAP42            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_8.bmp"
+IDB_BITMAP42            BITMAP                  "..\\RES\\ocean\\ocean_8.bmp"
 
-IDB_BITMAP43            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_9.bmp"
+IDB_BITMAP43            BITMAP                  "..\\RES\\ocean\\ocean_9.bmp"
 
-IDB_BITMAP44            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_10.bmp"
+IDB_BITMAP44            BITMAP                  "..\\RES\\ocean\\ocean_10.bmp"
 
-IDB_BITMAP45            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_11.bmp"
+IDB_BITMAP45            BITMAP                  "..\\RES\\ocean\\ocean_11.bmp"
 
-IDB_BITMAP46            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_12.bmp"
+IDB_BITMAP46            BITMAP                  "..\\RES\\ocean\\ocean_12.bmp"
 
-IDB_BITMAP47            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_13.bmp"
+IDB_BITMAP47            BITMAP                  "..\\RES\\ocean\\ocean_13.bmp"
 
-IDB_BITMAP48            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_13_1.bmp"
+IDB_BITMAP48            BITMAP                  "..\\RES\\ocean\\ocean_13_1.bmp"
 
-IDB_BITMAP49            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_13_2.bmp"
+IDB_BITMAP49            BITMAP                  "..\\RES\\ocean\\ocean_13_2.bmp"
 
-IDB_BITMAP50            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_14.bmp"
+IDB_BITMAP50            BITMAP                  "..\\RES\\ocean\\ocean_14.bmp"
 
-IDB_BITMAP51            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_15.bmp"
+IDB_BITMAP51            BITMAP                  "..\\RES\\ocean\\ocean_15.bmp"
 
-IDB_BITMAP52            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_16.bmp"
+IDB_BITMAP52            BITMAP                  "..\\RES\\ocean\\ocean_16.bmp"
 
-IDB_BITMAP53            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_17.bmp"
+IDB_BITMAP53            BITMAP                  "..\\RES\\ocean\\ocean_17.bmp"
 
-IDB_BITMAP54            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_18.bmp"
+IDB_BITMAP54            BITMAP                  "..\\RES\\ocean\\ocean_18.bmp"
 
-IDB_BITMAP55            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_19.bmp"
+IDB_BITMAP55            BITMAP                  "..\\RES\\ocean\\ocean_19.bmp"
 
-IDB_BITMAP56            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_20.bmp"
+IDB_BITMAP56            BITMAP                  "..\\RES\\ocean\\ocean_20.bmp"
 
-IDB_BITMAP57            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_arrow_left.bmp"
+IDB_BITMAP57            BITMAP                  "..\\RES\\ocean\\ocean_arrow_left.bmp"
 
-IDB_BITMAP58            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_arrow_right.bmp"
+IDB_BITMAP58            BITMAP                  "..\\RES\\ocean\\ocean_arrow_right.bmp"
 
-IDB_BITMAP59            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_arrow_up.bmp"
+IDB_BITMAP59            BITMAP                  "..\\RES\\ocean\\ocean_arrow_up.bmp"
 
-IDB_BITMAP60            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_arrow_uuder.bmp"
+IDB_BITMAP60            BITMAP                  "..\\RES\\ocean\\ocean_arrow_uuder.bmp"
 
-IDB_BITMAP61            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_background_bottom.bmp"
+IDB_BITMAP61            BITMAP                  "..\\RES\\ocean\\ocean_background_bottom.bmp"
 
-IDB_BITMAP62            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_background_ferry.bmp"
+IDB_BITMAP62            BITMAP                  "..\\RES\\ocean\\ocean_background_ferry.bmp"
 
-IDB_BITMAP63            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_background_sea1.bmp"
+IDB_BITMAP63            BITMAP                  "..\\RES\\ocean\\ocean_background_sea1.bmp"
 
-IDB_BITMAP64            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_background_sea2.bmp"
+IDB_BITMAP64            BITMAP                  "..\\RES\\ocean\\ocean_background_sea2.bmp"
 
-IDB_BITMAP65            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_background_sea3.bmp"
+IDB_BITMAP65            BITMAP                  "..\\RES\\ocean\\ocean_background_sea3.bmp"
 
-IDB_BITMAP66            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_background_top.bmp"
+IDB_BITMAP66            BITMAP                  "..\\RES\\ocean\\ocean_background_top.bmp"
 
-IDB_BITMAP67            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_background1.bmp"
+IDB_BITMAP67            BITMAP                  "..\\RES\\ocean\\ocean_background1.bmp"
 
-OCEAN_BG_2              BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_background2.bmp"
+OCEAN_BG_2              BITMAP                  "..\\RES\\ocean\\ocean_background2.bmp"
 
-IDB_BITMAP69            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_grass.bmp"
+IDB_BITMAP69            BITMAP                  "..\\RES\\ocean\\ocean_grass.bmp"
 
-IDB_BITMAP70            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_green1.bmp"
+IDB_BITMAP70            BITMAP                  "..\\RES\\ocean\\ocean_green1.bmp"
 
-IDB_BITMAP71            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_green2.bmp"
+IDB_BITMAP71            BITMAP                  "..\\RES\\ocean\\ocean_green2.bmp"
 
-IDB_BITMAP72            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_green3.bmp"
+IDB_BITMAP72            BITMAP                  "..\\RES\\ocean\\ocean_green3.bmp"
 
-IDB_BITMAP73            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_green4.bmp"
+IDB_BITMAP73            BITMAP                  "..\\RES\\ocean\\ocean_green4.bmp"
 
-IDB_BITMAP74            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_green5.bmp"
+IDB_BITMAP74            BITMAP                  "..\\RES\\ocean\\ocean_green5.bmp"
 
-OCEAN_LEFT_UPHILL_ROAD_1 BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_left_uphill_road1.bmp"
+OCEAN_LEFT_UPHILL_ROAD_1 BITMAP                  "..\\RES\\ocean\\ocean_left_uphill_road1.bmp"
 
-IDB_BITMAP76            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_left_uphill_road1_1.bmp"
+IDB_BITMAP76            BITMAP                  "..\\RES\\ocean\\ocean_left_uphill_road1_1.bmp"
 
-IDB_BITMAP77            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_pillar1.bmp"
+IDB_BITMAP77            BITMAP                  "..\\RES\\ocean\\ocean_pillar1.bmp"
 
-IDB_BITMAP78            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_pillar2.bmp"
+IDB_BITMAP78            BITMAP                  "..\\RES\\ocean\\ocean_pillar2.bmp"
 
-IDB_BITMAP79            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_pillar3.bmp"
+IDB_BITMAP79            BITMAP                  "..\\RES\\ocean\\ocean_pillar3.bmp"
 
-OCEAN_PINEAPPLE_TREE_1  BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_pineapple_tree1.bmp"
+OCEAN_PINEAPPLE_TREE_1  BITMAP                  "..\\RES\\ocean\\ocean_pineapple_tree1.bmp"
 
-IDB_BITMAP81            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_pineapple_tree2.bmp"
+IDB_BITMAP81            BITMAP                  "..\\RES\\ocean\\ocean_pineapple_tree2.bmp"
 
-IDB_BITMAP82            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_railing1.bmp"
+IDB_BITMAP82            BITMAP                  "..\\RES\\ocean\\ocean_railing1.bmp"
 
-IDB_BITMAP83            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_railing2.bmp"
+IDB_BITMAP83            BITMAP                  "..\\RES\\ocean\\ocean_railing2.bmp"
 
-IDB_BITMAP84            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_railing3.bmp"
+IDB_BITMAP84            BITMAP                  "..\\RES\\ocean\\ocean_railing3.bmp"
 
-IDB_BITMAP85            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_right_uphill_road1.bmp"
+IDB_BITMAP85            BITMAP                  "..\\RES\\ocean\\ocean_right_uphill_road1.bmp"
 
-IDB_BITMAP86            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_right_uphill_road1_1.bmp"
+IDB_BITMAP86            BITMAP                  "..\\RES\\ocean\\ocean_right_uphill_road1_1.bmp"
 
-OCEAN_ROAD_1            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road1.bmp"
+OCEAN_ROAD_1            BITMAP                  "..\\RES\\ocean\\ocean_road1.bmp"
 
-IDB_BITMAP88            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road1_1.bmp"
+IDB_BITMAP88            BITMAP                  "..\\RES\\ocean\\ocean_road1_1.bmp"
 
-IDB_BITMAP89            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road2.bmp"
+IDB_BITMAP89            BITMAP                  "..\\RES\\ocean\\ocean_road2.bmp"
 
-OCEAN_ROAD2_1           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road2_1.bmp"
+OCEAN_ROAD2_1           BITMAP                  "..\\RES\\ocean\\ocean_road2_1.bmp"
 
-IDB_BITMAP91            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road3.bmp"
+IDB_BITMAP91            BITMAP                  "..\\RES\\ocean\\ocean_road3.bmp"
 
-OCEAN_ROAD_3_1          BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road3_1.bmp"
+OCEAN_ROAD_3_1          BITMAP                  "..\\RES\\ocean\\ocean_road3_1.bmp"
 
-OCEAN_ROAD_4            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road4.bmp"
+OCEAN_ROAD_4            BITMAP                  "..\\RES\\ocean\\ocean_road4.bmp"
 
-IDB_BITMAP94            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road4_1.bmp"
+IDB_BITMAP94            BITMAP                  "..\\RES\\ocean\\ocean_road4_1.bmp"
 
-IDB_BITMAP95            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road5.bmp"
+IDB_BITMAP95            BITMAP                  "..\\RES\\ocean\\ocean_road5.bmp"
 
-IDB_BITMAP96            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road5_1.bmp"
+IDB_BITMAP96            BITMAP                  "..\\RES\\ocean\\ocean_road5_1.bmp"
 
-OCEAN_ROAD_6            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road6.bmp"
+OCEAN_ROAD_6            BITMAP                  "..\\RES\\ocean\\ocean_road6.bmp"
 
-IDB_BITMAP98            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_road6_1.bmp"
+IDB_BITMAP98            BITMAP                  "..\\RES\\ocean\\ocean_road6_1.bmp"
 
-IDB_BITMAP99            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_left_1.bmp"
+IDB_BITMAP99            BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_1.bmp"
 
-OCEAN_TURN_AROUND_LEFT_1_1 BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_left_1_1.bmp"
+OCEAN_TURN_AROUND_LEFT_1_1 BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_1_1.bmp"
 
-IDB_BITMAP101           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_left_1_2.bmp"
+IDB_BITMAP101           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_1_2.bmp"
 
-IDB_BITMAP102           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_left_2.bmp"
+IDB_BITMAP102           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_2.bmp"
 
-IDB_BITMAP103           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_left_3.bmp"
+IDB_BITMAP103           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_3.bmp"
 
-IDB_BITMAP104           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_left_4.bmp"
+IDB_BITMAP104           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_4.bmp"
 
-IDB_BITMAP105           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_left_4_1.bmp"
+IDB_BITMAP105           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_4_1.bmp"
 
-IDB_BITMAP106           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_left_4_2.bmp"
+IDB_BITMAP106           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_4_2.bmp"
 
-IDB_BITMAP107           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_right_1.bmp"
+IDB_BITMAP107           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_right_1.bmp"
 
-IDB_BITMAP108           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_right_1_1.bmp"
+IDB_BITMAP108           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_right_1_1.bmp"
 
-IDB_BITMAP109           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_right_1_2.bmp"
+IDB_BITMAP109           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_right_1_2.bmp"
 
-IDB_BITMAP110           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_right_2.bmp"
+IDB_BITMAP110           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_right_2.bmp"
 
-IDB_BITMAP111           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_right_3.bmp"
+IDB_BITMAP111           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_right_3.bmp"
 
-IDB_BITMAP112           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_right_4.bmp"
+IDB_BITMAP112           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_right_4.bmp"
 
-IDB_BITMAP113           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_right_4_1.bmp"
+IDB_BITMAP113           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_right_4_1.bmp"
 
-IDB_BITMAP114           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\Document\\images\\ocean\\ocean_turn_around_right_4_2.bmp"
+IDB_BITMAP114           BITMAP                  "..\\RES\\ocean\\ocean_turn_around_right_4_2.bmp"
 
-IDB_BITMAP31            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Bamboo dragonfly1.bmp"
+IDB_BITMAP31            BITMAP                  "..\\RES\\enemies\\machine_Bamboo dragonfly1.bmp"
 
-IDB_BITMAP32            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Bamboo dragonfly2.bmp"
+IDB_BITMAP32            BITMAP                  "..\\RES\\enemies\\machine_Bamboo dragonfly2.bmp"
 
-IDB_BITMAP68            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Bamboo dragonfly3.bmp"
+IDB_BITMAP68            BITMAP                  "..\\RES\\enemies\\machine_Bamboo dragonfly3.bmp"
 
-IDB_BITMAP75            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Bamboo dragonfly4.bmp"
+IDB_BITMAP75            BITMAP                  "..\\RES\\enemies\\machine_Bamboo dragonfly4.bmp"
 
-IDB_BITMAP80            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_chef1.bmp"
+IDB_BITMAP80            BITMAP                  "..\\RES\\enemies\\machine_chef1.bmp"
 
-IDB_BITMAP87            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_chef2.bmp"
+IDB_BITMAP87            BITMAP                  "..\\RES\\enemies\\machine_chef2.bmp"
 
-IDB_BITMAP90            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_chef3.bmp"
+IDB_BITMAP90            BITMAP                  "..\\RES\\enemies\\machine_chef3.bmp"
 
-IDB_BITMAP92            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_chef4.bmp"
+IDB_BITMAP92            BITMAP                  "..\\RES\\enemies\\machine_chef4.bmp"
 
-IDB_BITMAP93            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_earthworm1.bmp"
+IDB_BITMAP93            BITMAP                  "..\\RES\\enemies\\machine_earthworm1.bmp"
 
-IDB_BITMAP97            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_earthworm2.bmp"
+IDB_BITMAP97            BITMAP                  "..\\RES\\enemies\\machine_earthworm2.bmp"
 
-IDB_BITMAP100           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_fly_red1.bmp"
+IDB_BITMAP100           BITMAP                  "..\\RES\\enemies\\machine_fly_red1.bmp"
 
-IDB_BITMAP115           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_fly_red2.bmp"
+IDB_BITMAP115           BITMAP                  "..\\RES\\enemies\\machine_fly_red2.bmp"
 
-IDB_BITMAP116           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Groundhog1.bmp"
+IDB_BITMAP116           BITMAP                  "..\\RES\\enemies\\machine_Groundhog1.bmp"
 
-IDB_BITMAP117           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Groundhog2.bmp"
+IDB_BITMAP117           BITMAP                  "..\\RES\\enemies\\machine_Groundhog2.bmp"
 
-IDB_BITMAP118           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Groundhog3.bmp"
+IDB_BITMAP118           BITMAP                  "..\\RES\\enemies\\machine_Groundhog3.bmp"
 
-IDB_BITMAP119           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_insect1.bmp"
+IDB_BITMAP119           BITMAP                  "..\\RES\\enemies\\machine_insect1.bmp"
 
-IDB_BITMAP120           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_insect2.bmp"
+IDB_BITMAP120           BITMAP                  "..\\RES\\enemies\\machine_insect2.bmp"
 
-IDB_BITMAP121           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_insect3.bmp"
+IDB_BITMAP121           BITMAP                  "..\\RES\\enemies\\machine_insect3.bmp"
 
-IDB_BITMAP122           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_ladybug1.bmp"
+IDB_BITMAP122           BITMAP                  "..\\RES\\enemies\\machine_ladybug1.bmp"
 
-IDB_BITMAP123           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_ladybug2.bmp"
+IDB_BITMAP123           BITMAP                  "..\\RES\\enemies\\machine_ladybug2.bmp"
 
-IDB_BITMAP124           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_ladybug3.bmp"
+IDB_BITMAP124           BITMAP                  "..\\RES\\enemies\\machine_ladybug3.bmp"
 
-IDB_BITMAP125           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Mosquito1.bmp"
+IDB_BITMAP125           BITMAP                  "..\\RES\\enemies\\machine_Mosquito1.bmp"
 
-IDB_BITMAP126           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Mosquito2.bmp"
+IDB_BITMAP126           BITMAP                  "..\\RES\\enemies\\machine_Mosquito2.bmp"
 
-IDB_BITMAP127           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_penguin1.bmp"
+IDB_BITMAP127           BITMAP                  "..\\RES\\enemies\\machine_penguin1.bmp"
 
-IDB_BITMAP128           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_penguin2.bmp"
+IDB_BITMAP128           BITMAP                  "..\\RES\\enemies\\machine_penguin2.bmp"
 
-IDB_BITMAP129           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_penguin3.bmp"
+IDB_BITMAP129           BITMAP                  "..\\RES\\enemies\\machine_penguin3.bmp"
 
-IDB_BITMAP130           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_penguin4.bmp"
+IDB_BITMAP130           BITMAP                  "..\\RES\\enemies\\machine_penguin4.bmp"
 
-IDB_BITMAP131           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_penguin5.bmp"
+IDB_BITMAP131           BITMAP                  "..\\RES\\enemies\\machine_penguin5.bmp"
 
-IDB_BITMAP132           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Pink_monster1.bmp"
+IDB_BITMAP132           BITMAP                  "..\\RES\\enemies\\machine_Pink_monster1.bmp"
 
-IDB_BITMAP133           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Pink_monster2.bmp"
+IDB_BITMAP133           BITMAP                  "..\\RES\\enemies\\machine_Pink_monster2.bmp"
 
-IDB_BITMAP134           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_Pink_monster3.bmp"
+IDB_BITMAP134           BITMAP                  "..\\RES\\enemies\\machine_Pink_monster3.bmp"
 
-IDB_BITMAP135           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_rocket1.bmp"
+IDB_BITMAP135           BITMAP                  "..\\RES\\enemies\\machine_rocket1.bmp"
 
-IDB_BITMAP136           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_rocket2.bmp"
+IDB_BITMAP136           BITMAP                  "..\\RES\\enemies\\machine_rocket2.bmp"
 
-IDB_BITMAP137           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_shark1.bmp"
+IDB_BITMAP137           BITMAP                  "..\\RES\\enemies\\machine_shark1.bmp"
 
-IDB_BITMAP138           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_shark2.bmp"
+IDB_BITMAP138           BITMAP                  "..\\RES\\enemies\\machine_shark2.bmp"
 
-IDB_BITMAP139           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_snails1.bmp"
+IDB_BITMAP139           BITMAP                  "..\\RES\\enemies\\machine_snails1.bmp"
 
-IDB_BITMAP140           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_snails2.bmp"
+IDB_BITMAP140           BITMAP                  "..\\RES\\enemies\\machine_snails2.bmp"
 
-IDB_BITMAP141           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_spider1.bmp"
+IDB_BITMAP141           BITMAP                  "..\\RES\\enemies\\machine_spider1.bmp"
 
-IDB_BITMAP142           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine_spider2.bmp"
+IDB_BITMAP142           BITMAP                  "..\\RES\\enemies\\machine_spider2.bmp"
 
-IDB_BITMAP143           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue1.bmp"
+IDB_BITMAP143           BITMAP                  "..\\RES\\enemies\\machine1_blue1.bmp"
 
-IDB_BITMAP144           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue2.bmp"
+IDB_BITMAP144           BITMAP                  "..\\RES\\enemies\\machine1_blue2.bmp"
 
-IDB_BITMAP145           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue3.bmp"
+IDB_BITMAP145           BITMAP                  "..\\RES\\enemies\\machine1_blue3.bmp"
 
-IDB_BITMAP146           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue4.bmp"
+IDB_BITMAP146           BITMAP                  "..\\RES\\enemies\\machine1_blue4.bmp"
 
-IDB_BITMAP147           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue5.bmp"
+IDB_BITMAP147           BITMAP                  "..\\RES\\enemies\\machine1_blue5.bmp"
 
-IDB_BITMAP148           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue6.bmp"
+IDB_BITMAP148           BITMAP                  "..\\RES\\enemies\\machine1_blue6.bmp"
 
-IDB_BITMAP149           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue7.bmp"
+IDB_BITMAP149           BITMAP                  "..\\RES\\enemies\\machine1_blue7.bmp"
 
-IDB_BITMAP150           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_blue8.bmp"
+IDB_BITMAP150           BITMAP                  "..\\RES\\enemies\\machine1_blue8.bmp"
 
-IDB_BITMAP151           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_fly_Shield1.bmp"
+IDB_BITMAP151           BITMAP                  "..\\RES\\enemies\\machine1_fly_Shield1.bmp"
 
-IDB_BITMAP152           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_fly_Shield2.bmp"
+IDB_BITMAP152           BITMAP                  "..\\RES\\enemies\\machine1_fly_Shield2.bmp"
 
-IDB_BITMAP153           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_red1.bmp"
+IDB_BITMAP153           BITMAP                  "..\\RES\\enemies\\machine1_red1.bmp"
 
-IDB_BITMAP154           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_red2.bmp"
+IDB_BITMAP154           BITMAP                  "..\\RES\\enemies\\machine1_red2.bmp"
 
-IDB_BITMAP155           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\enemies\\machine1_red3.bmp"
+IDB_BITMAP155           BITMAP                  "..\\RES\\enemies\\machine1_red3.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
