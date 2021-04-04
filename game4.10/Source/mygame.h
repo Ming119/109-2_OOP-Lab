@@ -96,6 +96,7 @@ namespace game_framework {
 		MAX,
 	};
 
+
 	/////////////////////////////////////////////////////////////////////////////
 	// 這個class為遊戲的遊戲開頭畫面物件
 	// 每個Member function的Implementation都要弄懂
@@ -174,7 +175,7 @@ namespace game_framework {
 	private:
 		CString stringHandler;
 
-		vector<Level> levels;
+		Level level;
 		int current_level;
 
 

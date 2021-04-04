@@ -20,6 +20,9 @@ namespace game_framework {
 		angle = ang;
 	}
 
+	Enemy::~Enemy() {
+	}
+
 	void Enemy::setPos(int x, int y) {
 		posX = x;
 		posY = y;
@@ -29,7 +32,18 @@ namespace game_framework {
 		angle = ang;
 	}
 
+	void Enemy::getEnemiesData(int (&array)[][MAX_ENEMY_SIZE][3]) {
+		for (int i = 0; i < static_cast<int>(LEVELS::COUNT); ++i)
+			for (int j = 0; j < MAX_ENEMY_SIZE; ++j)
+				for (int k = 0; k < 3; k++) 
+					array[i][j][k] = enemiesData[i][j][k];
+	}
 
+	void Enemy::getEnemiesData(int (&array)[][3], int level) {
+		for (int i = 0; i < MAX_ENEMY_SIZE; ++i)
+			for (int j = 0; j < 3; ++j)
+				array[i][j] = enemiesData[level][i][j];
+	}
 
 	// Bamboo
 	Bamboo::Bamboo() {

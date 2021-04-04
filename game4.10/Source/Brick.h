@@ -44,6 +44,10 @@ namespace game_framework {
 
 	public:
 		Brick(int, int);
+
+		void OnInit();
+		void OnMove();
+		void OnShow();
 	};
 
 	// TEMP

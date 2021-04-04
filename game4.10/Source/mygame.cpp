@@ -518,34 +518,53 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnBeginState()
 {
-
+	switch (current_level) {
+	case static_cast<int>(LEVELS::BULE_OCEAN_1) :
+		break;
 	
-	/*
-	const int BALL_GAP = 90;
-	const int BALL_XY_OFFSET = 45;
-	const int BALL_PER_ROW = 7;
-	const int HITS_LEFT = 10;
-	const int HITS_LEFT_X = 590;
-	const int HITS_LEFT_Y = 0;
-	const int BACKGROUND_X = 60;
-	const int ANIMATION_SPEED = 15;
-	for (int i = 0; i < NUMBALLS; i++) {				// 設定球的起始座標
-		int x_pos = i % BALL_PER_ROW;
-		int y_pos = i / BALL_PER_ROW;
-		ball[i].SetXY(x_pos * BALL_GAP + BALL_XY_OFFSET, y_pos * BALL_GAP + BALL_XY_OFFSET);
-		ball[i].SetDelay(x_pos);
-		ball[i].SetIsAlive(true);
-	}
-	eraser.Initialize();
-	background.SetTopLeft(BACKGROUND_X,0);				// 設定背景的起始座標
-	help.SetTopLeft(0, SIZE_Y - help.Height());			// 設定說明圖的起始座標
-	hits_left.SetInteger(HITS_LEFT);					// 指定剩下的撞擊數
-	hits_left.SetTopLeft(HITS_LEFT_X,HITS_LEFT_Y);		// 指定剩下撞擊數的座標
-	*/
+	case static_cast<int>(LEVELS::BULE_OCEAN_2) :
+		break;
 
-	// CAudio::Instance()->Play(AUDIO_LAKE, true);			// 撥放 WAVE
-	// CAudio::Instance()->Play(AUDIO_DING, false);		// 撥放 WAVE
-	// CAudio::Instance()->Play(AUDIO_NTUT, true);			// 撥放 MIDI
+	case static_cast<int>(LEVELS::BULE_OCEAN_3) :
+		break;
+	
+	case static_cast<int>(LEVELS::CHILPOCTLI_TEMPLE) :
+		break;
+
+	case static_cast<int>(LEVELS::EXOTIC_HELL) :
+		break;
+
+	case static_cast<int>(LEVELS::EXOTIC_PARADISE_1) :
+		break;
+
+	case static_cast<int>(LEVELS::EXOTIC_PARADISE_2) :
+		break;
+
+	case static_cast<int>(LEVELS::EXOTIC_PARADISE_3) :
+		break;
+
+	case static_cast<int>(LEVELS::PROTOTYPE_1) :
+		break;
+
+	case static_cast<int>(LEVELS::SUPER_BOSS_1) :
+		break;
+
+	case static_cast<int>(LEVELS::SUPER_BOSS_2) :
+		break;
+
+	case static_cast<int>(LEVELS::TEMPLATE) :
+		break;
+
+	case static_cast<int>(LEVELS::TEST) :
+		break;
+
+	case static_cast<int>(LEVELS::TUTORIAL_1) :
+		break;
+
+	case static_cast<int>(LEVELS::TUTORIAL_2) :
+		break;
+	}
+	
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)

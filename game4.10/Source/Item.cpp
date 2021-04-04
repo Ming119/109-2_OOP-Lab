@@ -7,14 +7,15 @@
 #include "Item.h"
 
 namespace game_framework {
-	// Item
+	int items_list[] = {
+
+	};
+
+
+
 	Item::Item() {
 
 	}
-	Item::Item() {
-
-	}
-
 	void Ring::OnInit() {
 
 	}

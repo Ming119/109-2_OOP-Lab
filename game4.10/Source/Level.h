@@ -44,14 +44,15 @@ namespace game_framework {
 		vector<Enemy*> enemies;
 
 	public:
+		Level();
+		~Level();
+
 		void OnInit(int);
 		void OnMove();
 		void OnShow();
 	};
 
-	int items_list[] = {
-		
-	};
+
 
 
 
