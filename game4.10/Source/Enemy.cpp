@@ -8,6 +8,18 @@
 
 namespace game_framework {
 	// Enemy
+	Enemy::Enemy() {
+		posX = 0;
+		posY = 0;
+		angle = 0;
+	}
+
+	Enemy::Enemy(int x, int y, int ang) {
+		posX = x;
+		posY = y;
+		angle = ang;
+	}
+
 	void Enemy::setPos(int x, int y) {
 		posX = x;
 		posY = y;
@@ -15,6 +27,10 @@ namespace game_framework {
 
 	void Enemy::setAngle(int ang) {
 		angle = ang;
+	}
+
+	CAnimation Enemy::getTexture() {
+		return texture;
 	}
 
 	//void Enemy::getEnemiesData(int (&array)[][MAX_ENEMY_SIZE][3]) {
@@ -31,17 +47,9 @@ namespace game_framework {
 	//}
 
 	// Bamboo
-	Bamboo::Bamboo() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Bamboo::Bamboo() : Enemy::Enemy() {}
 
-	Bamboo::Bamboo(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Bamboo::Bamboo(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Bamboo::OnInit() {
 		//texture.AddBitmap(IDB_BITMAP115);
@@ -59,17 +67,9 @@ namespace game_framework {
 
 
 	// Chef
-	Chef::Chef() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Chef::Chef() : Enemy::Enemy() {}
 
-	Chef::Chef(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Chef::Chef(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Chef::OnInit() {
 
@@ -86,17 +86,9 @@ namespace game_framework {
 
 
 	// Earthworm
-	Earthworm::Earthworm() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Earthworm::Earthworm() : Enemy::Enemy() {}
 
-	Earthworm::Earthworm(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Earthworm::Earthworm(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Earthworm::OnInit() {
 
@@ -113,17 +105,9 @@ namespace game_framework {
 
 
 	// Fly
-	Fly::Fly() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Fly::Fly() : Enemy::Enemy() {}
 
-	Fly::Fly(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Fly::Fly(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Fly::OnInit() {
 
@@ -140,22 +124,16 @@ namespace game_framework {
 
 
 	// Groundhog
-	Groundhog::Groundhog() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Groundhog::Groundhog() : Enemy::Enemy() {}
 
-	Groundhog::Groundhog(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Groundhog::Groundhog(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Groundhog::OnInit() {
 		texture.AddBitmap(IDB_BITMAP116);
 		texture.AddBitmap(IDB_BITMAP117);
 		texture.AddBitmap(IDB_BITMAP118);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Groundhog::OnMove() {
@@ -169,22 +147,16 @@ namespace game_framework {
 
 
 	// Insect
-	Insect::Insect() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Insect::Insect() : Enemy::Enemy() {}
 
-	Insect::Insect(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Insect::Insect(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Insect::OnInit() {
 		texture.AddBitmap(IDB_BITMAP119);
 		texture.AddBitmap(IDB_BITMAP120);
 		texture.AddBitmap(IDB_BITMAP121);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Insect::OnMove() {
@@ -198,22 +170,16 @@ namespace game_framework {
 
 
 	// Ladybug
-	Ladybug::Ladybug() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Ladybug::Ladybug() : Enemy::Enemy() {}
 
-	Ladybug::Ladybug(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Ladybug::Ladybug(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Ladybug::OnInit() {
 		texture.AddBitmap(IDB_BITMAP122);
 		texture.AddBitmap(IDB_BITMAP123);
 		texture.AddBitmap(IDB_BITMAP124);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Ladybug::OnMove() {
@@ -227,21 +193,15 @@ namespace game_framework {
 
 
 	// Mosquito
-	Mosquito::Mosquito() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Mosquito::Mosquito() : Enemy::Enemy() {}
 
-	Mosquito::Mosquito(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Mosquito::Mosquito(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Mosquito::OnInit() {
 		texture.AddBitmap(IDB_BITMAP125);
 		texture.AddBitmap(IDB_BITMAP126);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Mosquito::OnMove() {
@@ -255,17 +215,9 @@ namespace game_framework {
 
 
 	// Penguin
-	Penguin::Penguin() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Penguin::Penguin() : Enemy::Enemy() {}
 
-	Penguin::Penguin(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Penguin::Penguin(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Penguin::OnInit() {
 		texture.AddBitmap(IDB_BITMAP127);
@@ -273,6 +225,8 @@ namespace game_framework {
 		texture.AddBitmap(IDB_BITMAP129);
 		texture.AddBitmap(IDB_BITMAP130);
 		texture.AddBitmap(IDB_BITMAP131);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Penguin::OnMove() {
@@ -286,22 +240,16 @@ namespace game_framework {
 
 
 	// PinkMonster
-	PinkMonster::PinkMonster() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	PinkMonster::PinkMonster() : Enemy::Enemy() {}
 
-	PinkMonster::PinkMonster(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	PinkMonster::PinkMonster(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void PinkMonster::OnInit() {
 		texture.AddBitmap(IDB_BITMAP132);
 		texture.AddBitmap(IDB_BITMAP133);
 		texture.AddBitmap(IDB_BITMAP134);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void PinkMonster::OnMove() {
@@ -315,21 +263,15 @@ namespace game_framework {
 
 
 	// Rocket
-	Rocket::Rocket() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Rocket::Rocket() : Enemy::Enemy() {}
 
-	Rocket::Rocket(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Rocket::Rocket(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Rocket::OnInit() {
 		texture.AddBitmap(IDB_BITMAP135);
 		texture.AddBitmap(IDB_BITMAP136);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Rocket::OnMove() {
@@ -343,21 +285,15 @@ namespace game_framework {
 
 
 	// Shark
-	Shark::Shark() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Shark::Shark() : Enemy::Enemy() {}
 
-	Shark::Shark(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Shark::Shark(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Shark::OnInit() {
 		texture.AddBitmap(IDB_BITMAP137);
 		texture.AddBitmap(IDB_BITMAP138);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Shark::OnMove() {
@@ -371,21 +307,15 @@ namespace game_framework {
 
 
 	// Snails
-	Snails::Snails() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Snails::Snails() : Enemy::Enemy() {}
 
-	Snails::Snails(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Snails::Snails(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Snails::OnInit() {
 		texture.AddBitmap(IDB_BITMAP139);
 		texture.AddBitmap(IDB_BITMAP140);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Snails::OnMove() {
@@ -399,21 +329,15 @@ namespace game_framework {
 
 
 	// Spider
-	Spider::Spider() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	Spider::Spider() : Enemy::Enemy() {}
 
-	Spider::Spider(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Spider::Spider(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Spider::OnInit() {
 		texture.AddBitmap(IDB_BITMAP141);
 		texture.AddBitmap(IDB_BITMAP142);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Spider::OnMove() {
@@ -426,18 +350,10 @@ namespace game_framework {
 
 
 
-	// Blue
-	Blue::Blue() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	//// Blue
+	Blue::Blue() : Enemy::Enemy() {}
 
-	Blue::Blue(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Blue::Blue(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Blue::OnInit() {
 		texture.AddBitmap(IDB_BITMAP143);
@@ -448,6 +364,8 @@ namespace game_framework {
 		texture.AddBitmap(IDB_BITMAP148);
 		texture.AddBitmap(IDB_BITMAP149);
 		texture.AddBitmap(IDB_BITMAP150);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Blue::OnMove() {
@@ -461,21 +379,15 @@ namespace game_framework {
 
 
 	// FlyShield
-	FlyShield::FlyShield() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	FlyShield::FlyShield() : Enemy::Enemy() {}
 
-	FlyShield::FlyShield(int x, int y, int ang){
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	FlyShield::FlyShield(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void FlyShield::OnInit() {
 		texture.AddBitmap(IDB_BITMAP151);
 		texture.AddBitmap(IDB_BITMAP152);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void FlyShield::OnMove() {
@@ -488,18 +400,10 @@ namespace game_framework {
 
 
 
-	// Red
-	Red::Red() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-	}
+	//// Red
+	Red::Red() : Enemy::Enemy() {}
 
-	Red::Red(int x, int y, int ang){
-		posX = x;
-		posY = y;
-		angle = ang;
-	}
+	Red::Red(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Red::OnInit() {
 		texture.AddBitmap(IDB_BITMAP153);
@@ -517,7 +421,5 @@ namespace game_framework {
 		texture.OnShow(DEFAULT_SCALE);
 	}
 
-	CAnimation Red::getTexture() {
-		return texture;
-	}
+
 }

@@ -1564,7 +1564,27 @@ namespace game_framework {
 		//}
 
 		enemies.push_back(new Red(0, 0, 0));
-		enemies.push_back(new Red(100, 0, 0));
+		enemies.push_back(new FlyShield(150, 0, 0));
+		enemies.push_back(new Blue(300, 0, 0));
+		enemies.push_back(new Spider(450, 0, 0));
+		enemies.push_back(new Snails(550, 0, 0));
+		enemies.push_back(new Shark(0, 150, 0));
+		enemies.push_back(new Rocket(150, 150, 0));
+		enemies.push_back(new PinkMonster(300, 150, 0));
+		enemies.push_back(new Penguin(450, 150, 0));
+		enemies.push_back(new Mosquito(550, 150, 0));
+		enemies.push_back(new Ladybug(0, 300, 0));
+		enemies.push_back(new Insect(150, 300, 0));
+		enemies.push_back(new Groundhog(300, 300, 0));
+
+
+		/*enemies.push_back(new Fly(450, 300, 0));
+		enemies.push_back(new Earthworm(600, 300, 0));
+		enemies.push_back(new Chef(150, 300, 0));
+		enemies.push_back(new Bamboo(150, 300, 0));*/
+
+
+
 		/*int bs = bricks.size();
 		int is = items.size();
 		

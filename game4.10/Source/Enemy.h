@@ -103,12 +103,19 @@ namespace game_framework {
 
 		//};
 
-	public:
+	protected:
+		CAnimation texture;
 		int posX, posY;
 		int angle;
 
+	public:
+		Enemy();
+		Enemy(int, int, int);
+
 		void setPos(int, int);
 		void setAngle(int);
+
+		CAnimation getTexture();
 
 		//void getEnemiesData(int (&array)[][MAX_ENEMY_SIZE][3]);
 		//void getEnemiesData(int (&array)[][3], int);
@@ -116,17 +123,9 @@ namespace game_framework {
 		virtual void OnInit() = 0;
 		virtual void OnMove() = 0;
 		virtual void OnShow() = 0;
-
-		virtual CAnimation getTexture() = 0;
 	};
 
 	class Bamboo : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Bamboo();
 		Bamboo(int, int, int);
@@ -138,12 +137,6 @@ namespace game_framework {
 	};
 
 	class Chef : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Chef();
 		Chef(int, int, int);
@@ -155,12 +148,6 @@ namespace game_framework {
 	};
 
 	class Earthworm : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Earthworm();
 		Earthworm(int, int, int);
@@ -172,12 +159,6 @@ namespace game_framework {
 	};
 
 	class Fly : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Fly();
 		Fly(int, int, int);
@@ -189,12 +170,6 @@ namespace game_framework {
 	};
 	
 	class Groundhog : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Groundhog();
 		Groundhog(int, int, int);
@@ -206,12 +181,6 @@ namespace game_framework {
 	};
 
 	class Insect : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Insect();
 		Insect(int, int, int);
@@ -223,12 +192,6 @@ namespace game_framework {
 	};
 
 	class Ladybug : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Ladybug();
 		Ladybug(int, int, int);
@@ -240,12 +203,6 @@ namespace game_framework {
 	};
 
 	class Mosquito : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Mosquito();
 		Mosquito(int, int, int);
@@ -257,12 +214,6 @@ namespace game_framework {
 	};
 
 	class Penguin : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Penguin();
 		Penguin(int, int, int);
@@ -274,12 +225,6 @@ namespace game_framework {
 	};
 
 	class PinkMonster : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		PinkMonster();
 		PinkMonster(int, int, int);
@@ -291,12 +236,6 @@ namespace game_framework {
 	};
 
 	class Rocket : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Rocket();
 		Rocket(int, int, int);
@@ -308,12 +247,6 @@ namespace game_framework {
 	};
 
 	class Shark : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Shark();
 		Shark(int, int, int);
@@ -325,12 +258,6 @@ namespace game_framework {
 	};
 
 	class Snails : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Snails();
 		Snails(int, int, int);
@@ -343,11 +270,6 @@ namespace game_framework {
 
 	class Spider : public Enemy {
 	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Spider();
 		Spider(int, int, int);
@@ -359,12 +281,6 @@ namespace game_framework {
 	};
 
 	class Blue : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Blue();
 		Blue(int, int, int);
@@ -376,12 +292,6 @@ namespace game_framework {
 	};
 
 	class FlyShield : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		FlyShield();
 		FlyShield(int, int, int);
@@ -393,12 +303,6 @@ namespace game_framework {
 	};
 
 	class Red : public Enemy {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
-
 	public:
 		Red();
 		Red(int, int, int);
@@ -408,7 +312,6 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow() override;
 
-		CAnimation getTexture();
 	};
 
 }
