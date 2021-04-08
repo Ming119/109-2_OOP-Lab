@@ -125,9 +125,9 @@ namespace game_framework {
 		//void getEnemiesData(int (&array)[][MAX_ENEMY_SIZE][3]);
 		//void getEnemiesData(int (&array)[][3], int);
 
-		virtual void OnInit() = 0;
-		void OnMove();
-		void OnShow();
+		virtual void OnInit()=0;
+		virtual void OnMove()=0;
+		virtual void OnShow()=0;
 	};
 
 	class Bamboo : public Enemy {
@@ -202,9 +202,9 @@ namespace game_framework {
 		Ladybug(int, int, int);
 		~Ladybug();
 
-		void OnInit() ;
-		void OnMove() ;
-		void OnShow() ;
+		void OnInit();
+		void OnMove();
+		void OnShow();
 	};
 
 	class Mosquito : public Enemy {
@@ -291,9 +291,9 @@ namespace game_framework {
 		Blue(int, int, int);
 		~Blue();
 
-		void OnInit();
-		void OnMove();
-		void OnShow();
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow() override;
 	};
 
 	class FlyShield : public Enemy {
@@ -302,9 +302,9 @@ namespace game_framework {
 		FlyShield(int, int, int);
 		~FlyShield();
 
-		void OnInit() ;
-		void OnMove() ;
-		void OnShow() ;
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow() override;
 	};
 
 	class Red : public Enemy {
@@ -313,10 +313,9 @@ namespace game_framework {
 		Red(int, int, int);
 		~Red();
 
-		void OnInit();
-		void OnMove();
-		void OnShow();
-
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow() override;
 	};
 
 }

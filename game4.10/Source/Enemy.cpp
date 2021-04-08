@@ -75,24 +75,20 @@ namespace game_framework {
 
 
 		// 移動
-		if (direction == true) {
+		if (direction == true)
 			posX += 5;
-		}
-		else if (direction == false) {
+		else if (direction == false)
 			posX -= 5;
-		}
-
-
-
-
-
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
 	void Enemy::OnShow() {
-		texture.OnShow();
+		if (!direction)
+			texture.OnShow(DEFAULT_SCALE, true);
+		else
+			texture.OnShow();
 	}
 
 
@@ -126,15 +122,25 @@ namespace game_framework {
 
 	void Ladybug::OnMove() {
 		
-		//// 落地檢查
-		//if () {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
 
-		//}
+			// 移動
+			if (direction == true) 
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
 
-		// 方向檢查
-		if (posX < 0 || posX > SIZE_X - (Width()*DEFAULT_SCALE)) {
-			direction = !direction;
 		}
+
+		setTopLeft(posX, posY);
+		texture.OnMove();
+		
 
 		//// 碰撞檢查
 		//if () {
@@ -146,28 +152,11 @@ namespace game_framework {
 
 		//}
 
-
-		// 移動
-		if (direction == true) {
-			posX += 5;
-		} else if (direction == false) {
-			posX -= 5;
-		}
-
-
-
-
-
-
-		setTopLeft(posX, posY);
-		texture.OnMove();
+		
 	}
 
 	void Ladybug::OnShow() {
-		if (!direction)
-			texture.OnShow(DEFAULT_SCALE, true);
-		else
-			texture.OnShow();
+		texture.OnShow();
 	}
 
 
@@ -182,10 +171,29 @@ namespace game_framework {
 	}
 
 	void Fly::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
 	void Fly::OnShow() {
+
+
 		texture.OnShow();
 	}
 
@@ -202,6 +210,23 @@ namespace game_framework {
 	}
 
 	void Bamboo::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -224,6 +249,23 @@ namespace game_framework {
 	}
 
 	void Spider::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -246,7 +288,24 @@ namespace game_framework {
 	}
 
 	void Rocket::OnMove() {
-		texture.OnMove();
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
+		texture.OnMove();;
 	}
 
 	void Rocket::OnShow() {
@@ -268,6 +327,23 @@ namespace game_framework {
 	}
 
 	void Shark::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -290,6 +366,23 @@ namespace game_framework {
 	}
 
 	void Mosquito::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -313,6 +406,23 @@ namespace game_framework {
 	}
 
 	void Groundhog::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -336,13 +446,29 @@ namespace game_framework {
 	}
 
 	void Red::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
 	void Red::OnShow() {
-		texture.OnShow(DEFAULT_SCALE);
+		texture.OnShow();
 	}
-
 
 
 	// Chef
@@ -355,14 +481,29 @@ namespace game_framework {
 	}
 
 	void Chef::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
 	void Chef::OnShow() {
 		texture.OnShow();
 	}
-
-
 
 
 
@@ -376,6 +517,23 @@ namespace game_framework {
 	}
 
 	void Earthworm::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -391,14 +549,31 @@ namespace game_framework {
 	Insect::Insect(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Insect::OnInit() {
-		texture.AddBitmap(IDB_BITMAP119);
-		texture.AddBitmap(IDB_BITMAP120);
-		texture.AddBitmap(IDB_BITMAP121);
+		texture.AddBitmap(IDB_BITMAP119, RGB(0,128,128));
+		texture.AddBitmap(IDB_BITMAP120, RGB(0,128,128));
+		texture.AddBitmap(IDB_BITMAP121, RGB(0,128,128));
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void Insect::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -424,6 +599,23 @@ namespace game_framework {
 	}
 
 	void Penguin::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -439,14 +631,31 @@ namespace game_framework {
 	PinkMonster::PinkMonster(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void PinkMonster::OnInit() {
-		texture.AddBitmap(IDB_BITMAP132);
-		texture.AddBitmap(IDB_BITMAP133);
-		texture.AddBitmap(IDB_BITMAP134);
+		texture.AddBitmap(IDB_BITMAP132, RGB(0,128,64));
+		texture.AddBitmap(IDB_BITMAP133, RGB(0,128,64));
+		texture.AddBitmap(IDB_BITMAP134, RGB(0,128,64));
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void PinkMonster::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -462,13 +671,30 @@ namespace game_framework {
 	Snails::Snails(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Snails::OnInit() {
-		texture.AddBitmap(IDB_BITMAP139);
-		texture.AddBitmap(IDB_BITMAP140);
+		texture.AddBitmap(IDB_BITMAP139, RGB(0,128,64));
+		texture.AddBitmap(IDB_BITMAP140, RGB(0,128,64));
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void Snails::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -478,7 +704,7 @@ namespace game_framework {
 
 
 
-	//// Blue
+	// Blue
 	Blue::Blue() : Enemy::Enemy() {}
 
 	Blue::Blue(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
@@ -497,6 +723,23 @@ namespace game_framework {
 	}
 
 	void Blue::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
@@ -512,13 +755,30 @@ namespace game_framework {
 	FlyShield::FlyShield(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void FlyShield::OnInit() {
-		texture.AddBitmap(IDB_BITMAP151);
-		texture.AddBitmap(IDB_BITMAP152);
+		texture.AddBitmap(IDB_BITMAP151, RGB(0,128,128));
+		texture.AddBitmap(IDB_BITMAP152, RGB(0,128,128));
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void FlyShield::OnMove() {
+		// 落地檢查
+		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+			posY += 10;
+		else {
+			// 方向檢查
+			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		setTopLeft(posX, posY);
 		texture.OnMove();
 	}
 
