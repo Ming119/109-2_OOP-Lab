@@ -20,15 +20,6 @@ namespace game_framework {
 		BRICKBEHAVIOR_MAXARGS = 5,
 
 	};
-	
-	enum THEME {
-		OCEAN,
-		OCEAN2,
-		DESERT1,
-		ISLAND,
-		ISLAND2,
-		ISLAND3,
-	};
 
 	class Brick {
 	private:
@@ -49,7 +40,7 @@ namespace game_framework {
 	public:
 		Brick(int, int, int);
 
-		void OnInit();
+		void OnInit(int);
 		void OnMove();
 		void OnShow();
 
