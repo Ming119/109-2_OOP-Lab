@@ -1538,6 +1538,13 @@ namespace game_framework {
 		switch (level) {
 			case static_cast<int>(LEVELS::BULE_OCEAN_1) :
 				background.LoadBitmap(LEVEL1_BG);
+				//bricks.push_back(new Brick(0, 0, 0));
+				//bricks.push_back(new Brick(0, 100, 0));
+				//bricks.push_back(new Brick(1, 100, 100));
+				//bricks.push_back(new Brick(1, 200, 100));
+				bricks.push_back(new Brick(7, 0, 200));
+				bricks.push_back(new Brick(7, 120, 200));
+				bricks.push_back(new Brick(7, 237, 200));
 			break;
 
 		case static_cast<int>(LEVELS::BULE_OCEAN_2) :
@@ -1633,19 +1640,18 @@ namespace game_framework {
 		enemies.push_back(new PinkMonster(300, 150, 0));
 		enemies.push_back(new Penguin(450, 150, 0));
 		enemies.push_back(new Insect(150, 300, 0));
-		//enemies.push_back(new Earthworm(600, 300, 0));
+		// enemies.push_back(new Earthworm(600, 300, 0));
 		
 
 
 
-		/*int bs = bricks.size();
-		int is = items.size();
-		
-
+		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->OnInit();
 		}
 
+		/*
+		* int is = items.size();
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnInit();
 		}
@@ -1662,11 +1668,12 @@ namespace game_framework {
 		// Background
 		background.SetTopLeft(0, 0);
 
-		/*int bs = bricks.size();
+		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->OnMove();
 		}
 
+		/*
 		int is = items.size();
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnMove();
@@ -1682,11 +1689,12 @@ namespace game_framework {
 		// Background
 		background.ShowBitmap();
 
-		/*int bs = bricks.size();
+		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->OnShow();
 		}
 
+		/*
 		int is = items.size();
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnShow();

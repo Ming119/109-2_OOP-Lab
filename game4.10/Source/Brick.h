@@ -8,6 +8,7 @@ namespace game_framework {
 	enum PROPERTY {
 		NONE,
 		OBSTACLE,
+		CLOUD,
 		PASSABLE,
 	};
 
@@ -41,6 +42,8 @@ namespace game_framework {
 		int behavior;
 		int angel;		// Degrees, 0 <= angle <= 360
 		
+		int maxX, maxY;
+		double speed, gravity;
 		
 
 	public:
@@ -49,6 +52,11 @@ namespace game_framework {
 		void OnInit();
 		void OnMove();
 		void OnShow();
+
+		void setProperty(int);
+		void setBehavior(int);
+		void setBehavior(int, int, int, double, int);
+		void setAngle(int);
 	};
 
 	// TEMP

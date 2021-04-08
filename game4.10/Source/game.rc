@@ -689,11 +689,11 @@ OCEAN_ROAD_1            BITMAP                  "..\\RES\\ocean\\ocean_road1.bmp
 
 IDB_BITMAP88            BITMAP                  "..\\RES\\ocean\\ocean_road1_1.bmp"
 
-IDB_BITMAP89            BITMAP                  "..\\RES\\ocean\\ocean_road2.bmp"
+OCEAN_ROAD_2            BITMAP                  "..\\RES\\ocean\\ocean_road2.bmp"
 
 OCEAN_ROAD2_1           BITMAP                  "..\\RES\\ocean\\ocean_road2_1.bmp"
 
-IDB_BITMAP91            BITMAP                  "..\\RES\\ocean\\ocean_road3.bmp"
+OCEAN_ROAD_3            BITMAP                  "..\\RES\\ocean\\ocean_road3.bmp"
 
 OCEAN_ROAD_3_1          BITMAP                  "..\\RES\\ocean\\ocean_road3_1.bmp"
 
@@ -701,7 +701,7 @@ OCEAN_ROAD_4            BITMAP                  "..\\RES\\ocean\\ocean_road4.bmp
 
 IDB_BITMAP94            BITMAP                  "..\\RES\\ocean\\ocean_road4_1.bmp"
 
-IDB_BITMAP95            BITMAP                  "..\\RES\\ocean\\ocean_road5.bmp"
+OCEAN_ROAD_5            BITMAP                  "..\\RES\\ocean\\ocean_road5.bmp"
 
 IDB_BITMAP96            BITMAP                  "..\\RES\\ocean\\ocean_road5_1.bmp"
 

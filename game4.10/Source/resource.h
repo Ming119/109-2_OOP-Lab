@@ -210,12 +210,15 @@
 #define OCEAN_ROAD_1                    302
 #define IDB_BITMAP88                    303
 #define IDB_BITMAP89                    304
+#define OCEAN_ROAD_2                    304
 #define OCEAN_ROAD2_1                   305
 #define IDB_BITMAP91                    306
+#define OCEAN_ROAD_3                    306
 #define OCEAN_ROAD_3_1                  307
 #define OCEAN_ROAD_4                    308
 #define IDB_BITMAP94                    309
 #define IDB_BITMAP95                    310
+#define OCEAN_ROAD_5                    310
 #define IDB_BITMAP96                    311
 #define OCEAN_ROAD_6                    312
 #define IDB_BITMAP98                    313
@@ -287,7 +290,6 @@
 #define IDB_BITMAP153                   379
 #define IDB_BITMAP154                   380
 #define IDB_BITMAP155                   381
-#define IDB_BITMAP156                   382
 #define LEVEL1_BG                       382
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
