@@ -18,20 +18,83 @@ namespace game_framework {
 		posX = x;
 		posY = y;
 		angle = ang;
+
+		direction = false;
 	}
 
-	void Enemy::setPos(int x, int y) {
+	void Enemy::setTopLeft(int x, int y) {
 		posX = x;
 		posY = y;
+		texture.SetTopLeft(x, y);
 	}
 
 	void Enemy::setAngle(int ang) {
 		angle = ang;
 	}
 
-	CAnimation Enemy::getTexture() {
-		return texture;
+	int Enemy::Top() {
+		return texture.Top();
 	}
+
+	int Enemy::Left() {
+		return texture.Left();
+	}
+
+	int Enemy::Angle() {
+		return angle;
+	}
+
+	int Enemy::Height() {
+		return texture.Height();
+	}
+
+	int Enemy::Width() {
+		return texture.Width();
+	}
+
+	void Enemy::OnMove() {
+		//// 落地檢查
+		//if () {
+
+		//}
+
+		// 方向檢查
+		if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE)) {
+			direction = !direction;
+		}
+
+		//// 碰撞檢查
+		//if () {
+
+		//}
+
+		//// 死亡檢查
+		//if () {
+
+		//}
+
+
+		// 移動
+		if (direction == true) {
+			posX += 5;
+		}
+		else if (direction == false) {
+			posX -= 5;
+		}
+
+
+
+
+
+
+		setTopLeft(posX, posY);
+		texture.OnMove();
+	}
+
+	void Enemy::OnShow() {
+		texture.OnShow();
+	}
+
 
 	//void Enemy::getEnemiesData(int (&array)[][MAX_ENEMY_SIZE][3]) {
 	//	for (int i = 0; i < static_cast<int>(LEVELS::COUNT); ++i)
@@ -45,6 +108,88 @@ namespace game_framework {
 	//		for (int j = 0; j < 3; ++j)
 	//			array[i][j] = enemiesData[level][i][j];
 	//}
+
+
+
+	// Ladybug
+	Ladybug::Ladybug() : Enemy::Enemy() {}
+
+	Ladybug::Ladybug(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
+
+	void Ladybug::OnInit() {
+		texture.AddBitmap(IDB_BITMAP122);
+		texture.AddBitmap(IDB_BITMAP123);
+		texture.AddBitmap(IDB_BITMAP124);
+		texture.SetDelayCount(3);
+		setTopLeft(posX, posY);
+	}
+
+	void Ladybug::OnMove() {
+		
+		//// 落地檢查
+		//if () {
+
+		//}
+
+		// 方向檢查
+		if (posX < 0 || posX > SIZE_X - (Width()*DEFAULT_SCALE)) {
+			direction = !direction;
+		}
+
+		//// 碰撞檢查
+		//if () {
+
+		//}
+
+		//// 死亡檢查
+		//if () {
+
+		//}
+
+
+		// 移動
+		if (direction == true) {
+			posX += 5;
+		} else if (direction == false) {
+			posX -= 5;
+		}
+
+
+
+
+
+
+		setTopLeft(posX, posY);
+		texture.OnMove();
+	}
+
+	void Ladybug::OnShow() {
+		if (!direction)
+			texture.OnShow(DEFAULT_SCALE, true);
+		else
+			texture.OnShow();
+	}
+
+
+
+	// Fly
+	Fly::Fly() : Enemy::Enemy() {}
+
+	Fly::Fly(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
+
+	void Fly::OnInit() {
+
+	}
+
+	void Fly::OnMove() {
+		texture.OnMove();
+	}
+
+	void Fly::OnShow() {
+		texture.OnShow();
+	}
+
+
 
 	// Bamboo
 	Bamboo::Bamboo() : Enemy::Enemy() {}
@@ -66,58 +211,89 @@ namespace game_framework {
 
 
 
-	// Chef
-	Chef::Chef() : Enemy::Enemy() {}
+	// Spider
+	Spider::Spider() : Enemy::Enemy() {}
 
-	Chef::Chef(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
+	Spider::Spider(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Chef::OnInit() {
-
+	void Spider::OnInit() {
+		texture.AddBitmap(IDB_BITMAP141);
+		texture.AddBitmap(IDB_BITMAP142);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
-	void Chef::OnMove() {
+	void Spider::OnMove() {
 		texture.OnMove();
 	}
 
-	void Chef::OnShow() {
+	void Spider::OnShow() {
 		texture.OnShow();
 	}
 
 
 
-	// Earthworm
-	Earthworm::Earthworm() : Enemy::Enemy() {}
+	// Rocket
+	Rocket::Rocket() : Enemy::Enemy() {}
 
-	Earthworm::Earthworm(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
+	Rocket::Rocket(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Earthworm::OnInit() {
-
+	void Rocket::OnInit() {
+		texture.AddBitmap(IDB_BITMAP135);
+		texture.AddBitmap(IDB_BITMAP136);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
-	void Earthworm::OnMove() {
+	void Rocket::OnMove() {
 		texture.OnMove();
 	}
 
-	void Earthworm::OnShow() {
+	void Rocket::OnShow() {
 		texture.OnShow();
 	}
 
 
 
-	// Fly
-	Fly::Fly() : Enemy::Enemy() {}
+	// Shark
+	Shark::Shark() : Enemy::Enemy() {}
 
-	Fly::Fly(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
+	Shark::Shark(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Fly::OnInit() {
-
+	void Shark::OnInit() {
+		texture.AddBitmap(IDB_BITMAP137);
+		texture.AddBitmap(IDB_BITMAP138);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
 	}
 
-	void Fly::OnMove() {
+	void Shark::OnMove() {
 		texture.OnMove();
 	}
 
-	void Fly::OnShow() {
+	void Shark::OnShow() {
+		texture.OnShow();
+	}
+
+
+
+	// Mosquito
+	Mosquito::Mosquito() : Enemy::Enemy() {}
+
+	Mosquito::Mosquito(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
+
+	void Mosquito::OnInit() {
+		texture.AddBitmap(IDB_BITMAP125);
+		texture.AddBitmap(IDB_BITMAP126);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
+	}
+
+	void Mosquito::OnMove() {
+		texture.OnMove();
+	}
+
+	void Mosquito::OnShow() {
 		texture.OnShow();
 	}
 
@@ -146,6 +322,69 @@ namespace game_framework {
 
 
 
+	// Red
+	Red::Red() : Enemy::Enemy() {}
+
+	Red::Red(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
+
+	void Red::OnInit() {
+		texture.AddBitmap(IDB_BITMAP153);
+		texture.AddBitmap(IDB_BITMAP154);
+		texture.AddBitmap(IDB_BITMAP155);
+		texture.SetDelayCount(3);
+		texture.SetTopLeft(posX, posY);
+	}
+
+	void Red::OnMove() {
+		texture.OnMove();
+	}
+
+	void Red::OnShow() {
+		texture.OnShow(DEFAULT_SCALE);
+	}
+
+
+
+	// Chef
+	Chef::Chef() : Enemy::Enemy() {}
+
+	Chef::Chef(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
+
+	void Chef::OnInit() {
+
+	}
+
+	void Chef::OnMove() {
+		texture.OnMove();
+	}
+
+	void Chef::OnShow() {
+		texture.OnShow();
+	}
+
+
+
+
+
+	// Earthworm
+	Earthworm::Earthworm() : Enemy::Enemy() {}
+
+	Earthworm::Earthworm(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
+
+	void Earthworm::OnInit() {
+
+	}
+
+	void Earthworm::OnMove() {
+		texture.OnMove();
+	}
+
+	void Earthworm::OnShow() {
+		texture.OnShow();
+	}
+
+
+
 	// Insect
 	Insect::Insect() : Enemy::Enemy() {}
 
@@ -164,51 +403,6 @@ namespace game_framework {
 	}
 
 	void Insect::OnShow() {
-		texture.OnShow();
-	}
-
-
-
-	// Ladybug
-	Ladybug::Ladybug() : Enemy::Enemy() {}
-
-	Ladybug::Ladybug(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
-
-	void Ladybug::OnInit() {
-		texture.AddBitmap(IDB_BITMAP122);
-		texture.AddBitmap(IDB_BITMAP123);
-		texture.AddBitmap(IDB_BITMAP124);
-		texture.SetDelayCount(3);
-		texture.SetTopLeft(posX, posY);
-	}
-
-	void Ladybug::OnMove() {
-		texture.OnMove();
-	}
-
-	void Ladybug::OnShow() {
-		texture.OnShow();
-	}
-
-
-
-	// Mosquito
-	Mosquito::Mosquito() : Enemy::Enemy() {}
-
-	Mosquito::Mosquito(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
-
-	void Mosquito::OnInit() {
-		texture.AddBitmap(IDB_BITMAP125);
-		texture.AddBitmap(IDB_BITMAP126);
-		texture.SetDelayCount(3);
-		texture.SetTopLeft(posX, posY);
-	}
-
-	void Mosquito::OnMove() {
-		texture.OnMove();
-	}
-
-	void Mosquito::OnShow() {
 		texture.OnShow();
 	}
 
@@ -262,50 +456,6 @@ namespace game_framework {
 
 
 
-	// Rocket
-	Rocket::Rocket() : Enemy::Enemy() {}
-
-	Rocket::Rocket(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
-
-	void Rocket::OnInit() {
-		texture.AddBitmap(IDB_BITMAP135);
-		texture.AddBitmap(IDB_BITMAP136);
-		texture.SetDelayCount(3);
-		texture.SetTopLeft(posX, posY);
-	}
-
-	void Rocket::OnMove() {
-		texture.OnMove();
-	}
-
-	void Rocket::OnShow() {
-		texture.OnShow();
-	}
-
-
-
-	// Shark
-	Shark::Shark() : Enemy::Enemy() {}
-
-	Shark::Shark(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
-
-	void Shark::OnInit() {
-		texture.AddBitmap(IDB_BITMAP137);
-		texture.AddBitmap(IDB_BITMAP138);
-		texture.SetDelayCount(3);
-		texture.SetTopLeft(posX, posY);
-	}
-
-	void Shark::OnMove() {
-		texture.OnMove();
-	}
-
-	void Shark::OnShow() {
-		texture.OnShow();
-	}
-
-
-
 	// Snails
 	Snails::Snails() : Enemy::Enemy() {}
 
@@ -323,28 +473,6 @@ namespace game_framework {
 	}
 
 	void Snails::OnShow() {
-		texture.OnShow();
-	}
-
-
-
-	// Spider
-	Spider::Spider() : Enemy::Enemy() {}
-
-	Spider::Spider(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
-
-	void Spider::OnInit() {
-		texture.AddBitmap(IDB_BITMAP141);
-		texture.AddBitmap(IDB_BITMAP142);
-		texture.SetDelayCount(3);
-		texture.SetTopLeft(posX, posY);
-	}
-
-	void Spider::OnMove() {
-		texture.OnMove();
-	}
-
-	void Spider::OnShow() {
 		texture.OnShow();
 	}
 
@@ -397,29 +525,5 @@ namespace game_framework {
 	void FlyShield::OnShow() {
 		texture.OnShow();
 	}
-
-
-
-	//// Red
-	Red::Red() : Enemy::Enemy() {}
-
-	Red::Red(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
-
-	void Red::OnInit() {
-		texture.AddBitmap(IDB_BITMAP153);
-		texture.AddBitmap(IDB_BITMAP154);
-		texture.AddBitmap(IDB_BITMAP155);
-		texture.SetDelayCount(3);
-		texture.SetTopLeft(posX, posY);
-	}
-
-	void Red::OnMove() {
-		texture.OnMove();
-	}
-
-	void Red::OnShow() {
-		texture.OnShow(DEFAULT_SCALE);
-	}
-
 
 }

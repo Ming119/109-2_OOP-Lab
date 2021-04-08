@@ -31,19 +31,20 @@ namespace game_framework {
 
 	class Brick {
 	private:
-		CMovingBitmap texture;
+		CAnimation texture;
+
+		int id;
+		int posX, posY;
+		int angle;
 
 		int property;
 		int behavior;
 		int angel;		// Degrees, 0 <= angle <= 360
-
-		float behavior_arg[BRICKBEHAVIOR_MAXARGS];
-		float value[BRICK_MAXVALUES];
-		bool enable;
-
+		
+		
 
 	public:
-		Brick(int, int);
+		Brick(int, int, int);
 
 		void OnInit();
 		void OnMove();

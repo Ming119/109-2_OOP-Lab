@@ -846,5 +846,260 @@
     <Image Include="RES\enemies\machine1_red3.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\ocean\Untitled.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_4_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_4_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_5_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_5_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_13_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_13_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_20.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_arrow_left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_arrow_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_arrow_up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_arrow_uuder.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_background_bottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_background_ferry.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_background_sea1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_background_sea2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_background_sea3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_background_top.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_background1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_background2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_grass.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_green1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_green2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_green3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_green4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_green5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_left_uphill_road1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_left_uphill_road1_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_pillar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_pillar2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_pillar3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_pineapple_tree1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_pineapple_tree2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_railing1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_railing2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_railing3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_right_uphill_road1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_right_uphill_road1_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road1_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road2_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road3_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road4_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road5_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_road6_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_left_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_left_1_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_left_1_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_left_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_left_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_left_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_left_4_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_left_4_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_right_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_right_1_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_right_1_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_right_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_right_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_right_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_right_4_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_turn_around_right_4_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

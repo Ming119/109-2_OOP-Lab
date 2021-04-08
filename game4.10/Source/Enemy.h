@@ -5,26 +5,26 @@ namespace game_framework {
 
 	enum class ENEMIES_LIST {
 		// *ID (115 ~ 155) Needed to be changed*
-		BAMBOO,
-		CHEF,
-		EARTHWORM,
-		FLY,
-		GROUNDHOG,
-		INSECT,
 		LADYBUG,
-		MOSQUITO,
-		PENGUIN,
-		PINKMONSTER,
+		FLY,
+		BAMBOO,
+		SPIDER,
 		ROCKET,
 		SHARK,
+		MOSQUITO,
+		GROUNDHOG,
+		RED,
+		CHEF,
+
+		EARTHWORM,
+		INSECT,
+		PENGUIN,
+		PINKMONSTER,
 		SNAILS,
-		SPIDER,
 		BLUE,
 		FLYSHIELD,
-		RED,
 		COUNT
 	};
-
 
 	class Enemy {
 		// Data for all enemies
@@ -107,22 +107,27 @@ namespace game_framework {
 		CAnimation texture;
 		int posX, posY;
 		int angle;
+		bool direction;
 
 	public:
 		Enemy();
 		Enemy(int, int, int);
 
-		void setPos(int, int);
+		void setTopLeft(int, int);
 		void setAngle(int);
 
-		CAnimation getTexture();
+		int Top();
+		int Left();
+		int Angle();
+		int Height();	
+		int Width();
 
 		//void getEnemiesData(int (&array)[][MAX_ENEMY_SIZE][3]);
 		//void getEnemiesData(int (&array)[][3], int);
 
 		virtual void OnInit() = 0;
-		virtual void OnMove() = 0;
-		virtual void OnShow() = 0;
+		void OnMove();
+		void OnShow();
 	};
 
 	class Bamboo : public Enemy {
@@ -131,9 +136,9 @@ namespace game_framework {
 		Bamboo(int, int, int);
 		~Bamboo();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Chef : public Enemy {
@@ -142,9 +147,9 @@ namespace game_framework {
 		Chef(int, int, int);
 		~Chef();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Earthworm : public Enemy {
@@ -153,9 +158,9 @@ namespace game_framework {
 		Earthworm(int, int, int);
 		~Earthworm();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Fly : public Enemy {
@@ -164,9 +169,9 @@ namespace game_framework {
 		Fly(int, int, int);
 		~Fly();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 	
 	class Groundhog : public Enemy {
@@ -175,9 +180,9 @@ namespace game_framework {
 		Groundhog(int, int, int);
 		~Groundhog();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Insect : public Enemy {
@@ -186,9 +191,9 @@ namespace game_framework {
 		Insect(int, int, int);
 		~Insect();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Ladybug : public Enemy {
@@ -197,9 +202,9 @@ namespace game_framework {
 		Ladybug(int, int, int);
 		~Ladybug();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Mosquito : public Enemy {
@@ -208,9 +213,9 @@ namespace game_framework {
 		Mosquito(int, int, int);
 		~Mosquito();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Penguin : public Enemy {
@@ -219,9 +224,9 @@ namespace game_framework {
 		Penguin(int, int, int);
 		~Penguin();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class PinkMonster : public Enemy {
@@ -230,9 +235,9 @@ namespace game_framework {
 		PinkMonster(int, int, int);
 		~PinkMonster();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Rocket : public Enemy {
@@ -241,9 +246,9 @@ namespace game_framework {
 		Rocket(int, int, int);
 		~Rocket();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Shark : public Enemy {
@@ -252,9 +257,9 @@ namespace game_framework {
 		Shark(int, int, int);
 		~Shark();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Snails : public Enemy {
@@ -263,9 +268,9 @@ namespace game_framework {
 		Snails(int, int, int);
 		~Snails();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit();
+		void OnMove();
+		void OnShow();
 	};
 
 	class Spider : public Enemy {
@@ -275,9 +280,9 @@ namespace game_framework {
 		Spider(int, int, int);
 		~Spider();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit();
+		void OnMove();
+		void OnShow();
 	};
 
 	class Blue : public Enemy {
@@ -286,9 +291,9 @@ namespace game_framework {
 		Blue(int, int, int);
 		~Blue();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit();
+		void OnMove();
+		void OnShow();
 	};
 
 	class FlyShield : public Enemy {
@@ -297,9 +302,9 @@ namespace game_framework {
 		FlyShield(int, int, int);
 		~FlyShield();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit() ;
+		void OnMove() ;
+		void OnShow() ;
 	};
 
 	class Red : public Enemy {
@@ -308,9 +313,9 @@ namespace game_framework {
 		Red(int, int, int);
 		~Red();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void OnInit();
+		void OnMove();
+		void OnShow();
 
 	};
 

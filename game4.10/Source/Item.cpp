@@ -33,11 +33,9 @@ namespace game_framework {
 	}
 
 	// Ring
-	Ring::Ring() : Item::Item() {
-	}
+	Ring::Ring() : Item::Item() {}
 
-	Ring::Ring(int x, int y, int ang) : Item::Item(x, y, ang) {
-	}
+	Ring::Ring(int x, int y, int ang) : Item::Item(x, y, ang) {}
 
 	void Ring::OnInit() {
 		

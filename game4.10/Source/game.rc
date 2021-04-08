@@ -845,6 +845,8 @@ IDB_BITMAP154           BITMAP                  "..\\RES\\enemies\\machine1_red2
 
 IDB_BITMAP155           BITMAP                  "..\\RES\\enemies\\machine1_red3.bmp"
 
+LEVEL1_BG               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\Untitled.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

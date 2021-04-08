@@ -334,6 +334,7 @@ void CGameStateInit::OnMove() {
 
 void CGameStateInit::OnShow()
 {
+
 	// 1280*960
 	if (!intro_done) {
 		intro.SetTopLeft((SIZE_X - logo.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 2 / 100);
@@ -467,7 +468,8 @@ void CGameStateInit::OnShow()
 
 CGameStateRun::CGameStateRun(CGame *g)
 : CGameState(g)
-{
+{	
+	current_level = 0;
 	// ball = new CBall [NUMBALLS];
 }
 
@@ -520,6 +522,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnBeginState()
 {
+	TRACE("%d\n", current_level);
 	level = new Level();
 	level->OnInit(current_level);
 }

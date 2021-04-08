@@ -98,10 +98,13 @@ void CMovingBitmap::SetTopLeft(int x, int y)
 	}
 	*/
 
-void CMovingBitmap::ShowBitmap(double factor)
+void CMovingBitmap::ShowBitmap(double factor, bool flip)
 	{
 		GAME_ASSERT(isBitmapLoaded, "A bitmap must be loaded before ShowBitmap() is called !!!");
-		CDDraw::BltBitmapToBack(SurfaceID, location.left, location.top, factor);
+		if (flip) 
+			CDDraw::BltBitmapToBack(SurfaceID, location.left, location.top, factor, true);
+		else
+			CDDraw::BltBitmapToBack(SurfaceID, location.left, location.top, factor);
 	}
 
 void CMovingBitmap::ShowBitmap(CMovingBitmap& bm)
@@ -226,11 +229,14 @@ void CAnimation::OnShow()
 }
 */
 
-void CAnimation::OnShow(double Scale)
+void CAnimation::OnShow(double Scale, bool flip)
 {
 	GAME_ASSERT(bmp.size() != 0, "CAnimation: Bitmaps must be loaded before they are shown.");
 	bmp_iter->SetTopLeft(x, y);
-	bmp_iter->ShowBitmap(Scale);
+	if (flip)
+		bmp_iter->ShowBitmap(Scale, true);
+	else 
+		bmp_iter->ShowBitmap(Scale);
 }
 
 int CAnimation::Top()
@@ -979,14 +985,15 @@ void CDDraw::BltBitmapToBack(unsigned SurfaceID, int x, int y)
 	CheckDDFail("Blt Bitmap to Back Failed");
 }
 
-void CDDraw::BltBitmapToBack(unsigned SurfaceID, int x, int y, double factor)
+void CDDraw::BltBitmapToBack(unsigned SurfaceID, int x, int y, double factor, bool flip)
 {
 	GAME_ASSERT(lpDDSBack && (SurfaceID < lpDDS.size()) && lpDDS[SurfaceID], "Internal Error: Incorrect SurfaceID in BltBitmapToBack");
 	CRect TargetRect;
 	TargetRect.left = x;
 	TargetRect.top = y;
 	TargetRect.right = x + (int) ((BitmapRect[SurfaceID].right-BitmapRect[SurfaceID].left)*factor);
-	TargetRect.bottom = y + (int) ((BitmapRect[SurfaceID].bottom-BitmapRect[SurfaceID].top)*factor);
+	TargetRect.bottom = y + (int) ((BitmapRect[SurfaceID].bottom-BitmapRect[SurfaceID].top)*factor);	
+
 	int blt_flag;
 	if (BitmapColorKey[SurfaceID] != CLR_INVALID)
 		blt_flag = DDBLT_WAIT | DDBLT_KEYSRC;
@@ -996,7 +1003,13 @@ void CDDraw::BltBitmapToBack(unsigned SurfaceID, int x, int y, double factor)
 		RestoreSurface();
 	if (lpDDS[SurfaceID]->IsLost())
 		RestoreSurface();
+	
 	ddrval = lpDDSBack->Blt(TargetRect, lpDDS[SurfaceID],NULL, blt_flag, NULL);
+	
+	/*if (flip)
+		ddrval = lpDDSBack->Flip(lpDDS[SurfaceID], blt_flag);*/
+
+
 	CheckDDFail("Blt Bitmap to Back Failed");
 }
 

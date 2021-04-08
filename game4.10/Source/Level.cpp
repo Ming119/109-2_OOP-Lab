@@ -1534,6 +1534,23 @@ namespace game_framework {
 
 	void Level::OnInit(int level) {
 
+		// Background
+		switch (level) {
+			case static_cast<int>(LEVELS::BULE_OCEAN_1) :
+				background.LoadBitmap(LEVEL1_BG);
+			break;
+
+		case static_cast<int>(LEVELS::BULE_OCEAN_2) :
+			break;
+
+		case  static_cast<int>(LEVELS::BULE_OCEAN_3) :
+			break;
+
+		case 3:
+			break;
+		}
+
+
 		/*int enemyData[][3];
 		Enemy::getEnemiesData(&enemyData, level);*/
 
@@ -1563,25 +1580,61 @@ namespace game_framework {
 
 		//}
 
-		enemies.push_back(new Red(0, 0, 0));
+		/*switch (enemyID) {
+			case static_cast<int>(ENEMIES_LIST::LADYBUG) :
+				enemies.push_back(new Ladybug(x, y, 0));
+				break;
+
+			case static_cast<int>(ENEMIES_LIST::FLY) :
+				enemies.push_back(new Fly(x, y, 0));
+				break;
+			
+			case static_cast<int>(ENEMIES_LIST::BAMBOO) :
+				enemies.push_back(new Bamboo(x, y, 0));
+				break;
+
+			case static_cast<int>(ENEMIES_LIST::SPIDER) :
+				enemies.push_back(new Spider(x, y, 0));
+				break;
+
+			case static_cast<int>(ENEMIES_LIST::ROCKET) :
+				enemies.push_back(new Rocket(x, y, 0));
+				break;
+
+			case static_cast<int>(ENEMIES_LIST::SHARK) :
+				enemies.push_back(new Shark(x, y, 0));
+				break;
+
+			case static_cast<int>(ENEMIES_LIST::MOSQUITO) :
+				enemies.push_back(new Mosquito(x, y, 0));
+				break;
+
+			case static_cast<int>(ENEMIES_LIST::GROUNDHOG) :
+				enemies.push_back(new Groundhog(x, y, 0));
+				break;
+
+			case static_cast<int>(ENEMIES_LIST::RED) :
+				enemies.push_back(new Red(x, y, 0));
+				break;
+
+			case static_cast<int>(ENEMIES_LIST::CHEF) :
+				enemies.push_back(new Chef(x, y, 0));
+				break;
+		}*/
+
+
+
+		enemies.push_back(new Ladybug(0, 0, 0));
+
+		
 		enemies.push_back(new FlyShield(150, 0, 0));
 		enemies.push_back(new Blue(300, 0, 0));
-		enemies.push_back(new Spider(450, 0, 0));
 		enemies.push_back(new Snails(550, 0, 0));
-		enemies.push_back(new Shark(0, 150, 0));
-		enemies.push_back(new Rocket(150, 150, 0));
 		enemies.push_back(new PinkMonster(300, 150, 0));
 		enemies.push_back(new Penguin(450, 150, 0));
-		enemies.push_back(new Mosquito(550, 150, 0));
-		enemies.push_back(new Ladybug(0, 300, 0));
 		enemies.push_back(new Insect(150, 300, 0));
-		enemies.push_back(new Groundhog(300, 300, 0));
-
-
-		/*enemies.push_back(new Fly(450, 300, 0));
-		enemies.push_back(new Earthworm(600, 300, 0));
-		enemies.push_back(new Chef(150, 300, 0));
-		enemies.push_back(new Bamboo(150, 300, 0));*/
+		//enemies.push_back(new Earthworm(600, 300, 0));
+		
 
 
 
@@ -1606,6 +1659,9 @@ namespace game_framework {
 	}
 	
 	void Level::OnMove() {
+		// Background
+		background.SetTopLeft(0, 0);
+
 		/*int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->OnMove();
@@ -1623,6 +1679,9 @@ namespace game_framework {
 	}
 
 	void Level::OnShow() {
+		// Background
+		background.ShowBitmap();
+
 		/*int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->OnShow();
@@ -1636,7 +1695,7 @@ namespace game_framework {
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->OnShow();
-			TRACE("Enemy: %d %d\n", enemies.at(i)->getTexture().Top(), enemies.at(i)->getTexture().Left());
+			TRACE("Enemy: %d %d\n", enemies.at(i)->Top(), enemies.at(i)->Left());
 		}
 	}
 

@@ -7,11 +7,23 @@
 #include "Brick.h"
 
 namespace game_framework {
-	Brick::Brick(int theme, int id) {
-		/*texture.LoadBitmap(themes[theme][id][0]);
-		property = themes[theme][id][1];
-		behavior = themes[theme][id][2];
-		angel = themes[theme][id][3];*/
+	Brick::Brick(int _id, int x, int y) {
+		id = _id;
+		posX = x;
+		posY = y;
+
+		/*switch (id) {
+		case 0:
+			texture.AddBitmap();
+			break;
+		case 1:
+			texture.AddBitmap();
+			break;
+		case 2:
+			texture.AddBitmap();
+			break;
+
+		}*/
 	}
 
 	void Brick::OnInit() {
@@ -19,10 +31,11 @@ namespace game_framework {
 	}
 
 	void Brick::OnMove() {
-
+		texture.SetTopLeft(posX, posY);
+		texture.OnMove();
 	}
 
 	void Brick::OnShow() {
-
+		texture.OnShow();
 	}
 }
