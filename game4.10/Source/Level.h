@@ -31,7 +31,7 @@ namespace game_framework {
 	private:
 		int max_x;
 		int max_y;
-		int spawnPoint;
+		POINT spawnPoint;
 
 		CMovingBitmap background;
 		
@@ -50,6 +50,11 @@ namespace game_framework {
 		void OnInit(int);
 		void OnMove();
 		void OnShow();
+
+		void SetMoveLeft(bool);
+		void SetMoveRight(bool);
+		void SetMoveUp(bool);
+		void SetMoveDown(bool);
 	};
 
 

@@ -109,6 +109,13 @@ namespace game_framework {
 		int angle;
 		bool direction;
 
+		int maxSpeed, speed;
+		bool isMovingLeft;
+		bool isMovingRight;
+		bool isMovingUp;
+		bool isMovingDown;
+
+
 	public:
 		Enemy();
 		Enemy(int, int, int);
@@ -122,8 +129,10 @@ namespace game_framework {
 		int Height();	
 		int Width();
 
-		//void getEnemiesData(int (&array)[][MAX_ENEMY_SIZE][3]);
-		//void getEnemiesData(int (&array)[][3], int);
+		void SetMoveLeft(bool);
+		void SetMoveRight(bool);
+		void SetMoveUp(bool);
+		void SetMoveDown(bool);
 
 		virtual void OnInit()=0;
 		virtual void OnMove()=0;
