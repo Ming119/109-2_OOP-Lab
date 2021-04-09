@@ -12,14 +12,20 @@ namespace game_framework {
 		posX = 0;
 		posY = 0;
 		angle = 0;
+
+		maxSpeed = 50;
+		speed = 0;
+		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
 	Enemy::Enemy(int x, int y, int ang) {
 		posX = x;
 		posY = y;
 		angle = ang;
-
+		maxSpeed = 50;
+		speed = 0;
 		direction = false;
+		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
 	void Enemy::setTopLeft(int x, int y) {
@@ -52,58 +58,21 @@ namespace game_framework {
 		return texture.Width();
 	}
 
-	void Enemy::OnMove() {
-		//// 落地檢查
-		//if () {
-
-		//}
-
-		// 方向檢查
-		if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE)) {
-			direction = !direction;
-		}
-
-		//// 碰撞檢查
-		//if () {
-
-		//}
-
-		//// 死亡檢查
-		//if () {
-
-		//}
-
-
-		// 移動
-		if (direction == true)
-			posX += 5;
-		else if (direction == false)
-			posX -= 5;
-
-		setTopLeft(posX, posY);
-		texture.OnMove();
+	void Enemy::SetMoveLeft(bool m) {
+		isMovingLeft = m;
 	}
 
-	void Enemy::OnShow() {
-		if (!direction)
-			texture.OnShow(DEFAULT_SCALE, true);
-		else
-			texture.OnShow();
+	void Enemy::SetMoveRight(bool m) {
+		isMovingRight = m;
 	}
 
+	void Enemy::SetMoveUp(bool m) {
+		isMovingUp = m;
+	}
 
-	//void Enemy::getEnemiesData(int (&array)[][MAX_ENEMY_SIZE][3]) {
-	//	for (int i = 0; i < static_cast<int>(LEVELS::COUNT); ++i)
-	//		for (int j = 0; j < MAX_ENEMY_SIZE; ++j)
-	//			for (int k = 0; k < 3; k++) 
-	//				array[i][j][k] = enemiesData[i][j][k];
-	//}
-
-	//void Enemy::getEnemiesData(int (&array)[][3], int level) {
-	//	for (int i = 0; i < MAX_ENEMY_SIZE; ++i)
-	//		for (int j = 0; j < 3; ++j)
-	//			array[i][j] = enemiesData[level][i][j];
-	//}
+	void Enemy::SetMoveDown(bool m) {
+		isMovingDown = m;
+	}
 
 
 
@@ -113,9 +82,9 @@ namespace game_framework {
 	Ladybug::Ladybug(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Ladybug::OnInit() {
-		texture.AddBitmap(IDB_BITMAP122);
-		texture.AddBitmap(IDB_BITMAP123);
-		texture.AddBitmap(IDB_BITMAP124);
+		texture.AddBitmap(ENEMY_LADYBUG_1);
+		texture.AddBitmap(ENEMY_LADYBUG_2);
+		texture.AddBitmap(ENEMY_LADYBUG_3);
 		texture.SetDelayCount(3);
 		setTopLeft(posX, posY);
 	}
@@ -123,20 +92,30 @@ namespace game_framework {
 	void Ladybug::OnMove() {
 		
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true) 
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
+
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -167,7 +146,10 @@ namespace game_framework {
 	Fly::Fly(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Fly::OnInit() {
-
+		texture.AddBitmap(ENEMY_FLY_1);
+		texture.AddBitmap(ENEMY_FLY_2);
+		texture.SetDelayCount(3);
+		setTopLeft(posX, posY);
 	}
 
 	void Fly::OnMove() {
@@ -192,8 +174,6 @@ namespace game_framework {
 	}
 
 	void Fly::OnShow() {
-
-
 		texture.OnShow();
 	}
 
@@ -205,26 +185,39 @@ namespace game_framework {
 	Bamboo::Bamboo(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Bamboo::OnInit() {
-		//texture.AddBitmap(IDB_BITMAP115);
-
+		texture.AddBitmap(ENEMY_BAMBOO_1);
+		texture.AddBitmap(ENEMY_BAMBOO_2);
+		texture.AddBitmap(ENEMY_BAMBOO_3);
+		texture.AddBitmap(ENEMY_BAMBOO_4);
+		texture.SetDelayCount(3);
+		setTopLeft(posX, posY);
 	}
 
 	void Bamboo::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -242,28 +235,37 @@ namespace game_framework {
 	Spider::Spider(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Spider::OnInit() {
-		texture.AddBitmap(IDB_BITMAP141);
-		texture.AddBitmap(IDB_BITMAP142);
+		texture.AddBitmap(ENEMY_SPIDER_1);
+		texture.AddBitmap(ENEMY_SPIDER_2);
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void Spider::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -281,28 +283,37 @@ namespace game_framework {
 	Rocket::Rocket(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Rocket::OnInit() {
-		texture.AddBitmap(IDB_BITMAP135);
-		texture.AddBitmap(IDB_BITMAP136);
+		texture.AddBitmap(ENEMY_ROCKET_1);
+		texture.AddBitmap(ENEMY_ROCKET_2);
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void Rocket::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();;
@@ -320,28 +331,37 @@ namespace game_framework {
 	Shark::Shark(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Shark::OnInit() {
-		texture.AddBitmap(IDB_BITMAP137);
-		texture.AddBitmap(IDB_BITMAP138);
+		texture.AddBitmap(ENEMY_SHARK_1);
+		texture.AddBitmap(ENEMY_SHARK_2);
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void Shark::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -359,28 +379,37 @@ namespace game_framework {
 	Mosquito::Mosquito(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Mosquito::OnInit() {
-		texture.AddBitmap(IDB_BITMAP125);
-		texture.AddBitmap(IDB_BITMAP126);
+		texture.AddBitmap(ENEMY_MOSQUITO_1);
+		texture.AddBitmap(ENEMY_MOSQUITO_2);
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void Mosquito::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -398,29 +427,38 @@ namespace game_framework {
 	Groundhog::Groundhog(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Groundhog::OnInit() {
-		texture.AddBitmap(IDB_BITMAP116);
-		texture.AddBitmap(IDB_BITMAP117);
-		texture.AddBitmap(IDB_BITMAP118);
+		texture.AddBitmap(ENEMY_GROUNDHOG_1);
+		texture.AddBitmap(ENEMY_GROUNDHOG_2);
+		texture.AddBitmap(ENEMY_GROUNDHOG_3);
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void Groundhog::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -438,29 +476,38 @@ namespace game_framework {
 	Red::Red(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Red::OnInit() {
-		texture.AddBitmap(IDB_BITMAP153);
-		texture.AddBitmap(IDB_BITMAP154);
-		texture.AddBitmap(IDB_BITMAP155);
+		texture.AddBitmap(ENEMY_RED_1);
+		texture.AddBitmap(ENEMY_RED_2);
+		texture.AddBitmap(ENEMY_RED_3);
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void Red::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -477,25 +524,36 @@ namespace game_framework {
 	Chef::Chef(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Chef::OnInit() {
-
+		texture.AddBitmap(ENEMY_CHEF_1);
+		texture.AddBitmap(ENEMY_CHEF_2);
+		texture.AddBitmap(ENEMY_CHEF_3);
 	}
 
 	void Chef::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -513,25 +571,35 @@ namespace game_framework {
 	Earthworm::Earthworm(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Earthworm::OnInit() {
-
+		texture.AddBitmap(ENEMY_EARTHWORM_1);
+		texture.AddBitmap(ENEMY_EARTHWORM_2);
 	}
 
 	void Earthworm::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -549,29 +617,38 @@ namespace game_framework {
 	Insect::Insect(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Insect::OnInit() {
-		texture.AddBitmap(IDB_BITMAP119, RGB(0,128,128));
-		texture.AddBitmap(IDB_BITMAP120, RGB(0,128,128));
-		texture.AddBitmap(IDB_BITMAP121, RGB(0,128,128));
+		texture.AddBitmap(ENEMY_INSECT_1, RGB(0,128,128));
+		texture.AddBitmap(ENEMY_INSECT_2, RGB(0,128,128));
+		texture.AddBitmap(ENEMY_INSECT_3, RGB(0,128,128));
 		texture.SetDelayCount(3);
 		texture.SetTopLeft(posX, posY);
 	}
 
 	void Insect::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -600,20 +677,29 @@ namespace game_framework {
 
 	void Penguin::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -640,20 +726,29 @@ namespace game_framework {
 
 	void PinkMonster::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -679,20 +774,29 @@ namespace game_framework {
 
 	void Snails::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -724,20 +828,29 @@ namespace game_framework {
 
 	void Blue::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();
@@ -763,20 +876,29 @@ namespace game_framework {
 
 	void FlyShield::OnMove() {
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-			posY += 10;
-		else {
-			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-				direction = !direction;
+		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		//	posY += 10;
+		//else {
+		//	// 方向檢查
+		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+		//		direction = !direction;
 
-			// 移動
-			if (direction == true)
-				posX += 5;
-			else if (direction == false)
-				posX -= 5;
+		//	// 移動
+		//	if (direction == true) 
+		//		posX += 5;
+		//	else if (direction == false)
+		//		posX -= 5;
 
-		}
+		//}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
 		texture.OnMove();

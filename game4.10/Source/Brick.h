@@ -20,15 +20,6 @@ namespace game_framework {
 		BRICKBEHAVIOR_MAXARGS = 5,
 
 	};
-	
-	enum THEME {
-		OCEAN,
-		OCEAN2,
-		DESERT1,
-		ISLAND,
-		ISLAND2,
-		ISLAND3,
-	};
 
 	class Brick {
 	private:
@@ -43,40 +34,31 @@ namespace game_framework {
 		int angel;		// Degrees, 0 <= angle <= 360
 		
 		int maxX, maxY;
-		double speed, gravity;
-		
+		// double speed, gravity;
+		int maxSpeed, speed;
+
+		bool isMovingLeft;
+		bool isMovingRight;
+		bool isMovingUp;
+		bool isMovingDown;
 
 	public:
-		Brick(int, int, int);
+		Brick(int, int, int, POINT);
 
-		void OnInit();
+		void OnInit(int);
 		void OnMove();
 		void OnShow();
+
+		void SetMoveLeft(bool);
+		void SetMoveRight(bool);
+		void SetMoveUp(bool);
+		void SetMoveDown(bool);
 
 		void setProperty(int);
 		void setBehavior(int);
 		void setBehavior(int, int, int, double, int);
 		void setAngle(int);
 	};
-
-	// TEMP
-	//int BricksOcean1[][4] = {
-	//	// {id, propety, behavior, angle}
-	//	{IDB_BITMAP101, OBSTACLE, DEFAULT, 0}, 
-	//	{IDB_BITMAP102, OBSTACLE, DEFAULT, 0},
-	//	{IDB_BITMAP103, OBSTACLE, DEFAULT, 0}
-	//};
-
-	//// TEMP
-	//int BricksOcean2[][4] = {
-	//	// {id, propety, behavior, angle}
-	//	{IDB_BITMAP101, OBSTACLE, DEFAULT, 0},
-	//	{IDB_BITMAP102, OBSTACLE, DEFAULT, 0},
-	//	{IDB_BITMAP103, OBSTACLE, DEFAULT, 0}
-	//};
-
-	// TEMP
-	//vector<int**> themes = { BricksOcean1, BricksOcean2 };
 
 }
 

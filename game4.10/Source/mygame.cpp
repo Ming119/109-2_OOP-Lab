@@ -529,38 +529,36 @@ void CGameStateRun::OnBeginState()
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	/*
 	const char KEY_LEFT  = 0x25; // keyboard左箭頭
 	const char KEY_UP    = 0x26; // keyboard上箭頭
 	const char KEY_RIGHT = 0x27; // keyboard右箭頭
 	const char KEY_DOWN  = 0x28; // keyboard下箭頭
+
 	if (nChar == KEY_LEFT)
-		eraser.SetMovingLeft(true);
+		level->SetMoveLeft(true);
 	if (nChar == KEY_RIGHT)
-		eraser.SetMovingRight(true);
+		level->SetMoveRight(true);
 	if (nChar == KEY_UP)
-		eraser.SetMovingUp(true);
+		level->SetMoveUp(true);
 	if (nChar == KEY_DOWN)
-		eraser.SetMovingDown(true);
-	*/
+		level->SetMoveDown(true);
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	/*
 	const char KEY_LEFT  = 0x25; // keyboard左箭頭
 	const char KEY_UP    = 0x26; // keyboard上箭頭
 	const char KEY_RIGHT = 0x27; // keyboard右箭頭
 	const char KEY_DOWN  = 0x28; // keyboard下箭頭
+
 	if (nChar == KEY_LEFT)
-		eraser.SetMovingLeft(false);
+		level->SetMoveLeft(false);
 	if (nChar == KEY_RIGHT)
-		eraser.SetMovingRight(false);
+		level->SetMoveRight(false);
 	if (nChar == KEY_UP)
-		eraser.SetMovingUp(false);
+		level->SetMoveUp(false);
 	if (nChar == KEY_DOWN)
-		eraser.SetMovingDown(false);
-	*/
+		level->SetMoveDown(false);
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
