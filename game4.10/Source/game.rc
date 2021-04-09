@@ -755,13 +755,6 @@ ENEMY_CHEF_4            BITMAP                  "..\\RES\\enemies\\machine_chef4
 
 ENEMY_EARTHWORM_1       BITMAP                  "..\\RES\\enemies\\machine_earthworm1.bmp"
 
-<<<<<<< HEAD
-machine_earthworm1      BITMAP                  "..\\RES\\enemies\\machine_earthworm1.bmp"
-
-machine_earthworm2      BITMAP                  "..\\RES\\enemies\\machine_earthworm2.bmp"
-
-=======
->>>>>>> e05527b6e5fe7912da55cdb795d95b74e61016e1
 ENEMY_EARTHWORM_2       BITMAP                  "..\\RES\\enemies\\machine_earthworm2.bmp"
 
 ENEMY_FLY_1             BITMAP                  "..\\RES\\enemies\\machine_fly_red2.bmp"
@@ -832,11 +825,8 @@ ENEMY_BLUE_7            BITMAP                  "..\\RES\\enemies\\machine1_blue
 
 ENEMY_BLUE_8            BITMAP                  "..\\RES\\enemies\\machine1_blue8.bmp"
 
-<<<<<<< HEAD
-//ENEMY_SHIELD_1          BITMAP                  "..\\RES\\ocean\\enemy_sh.bmp"
-=======
 ENEMY_SHIELD_1          BITMAP                  "..\\res\\ocean\\enemy_sh.bmp"
->>>>>>> e05527b6e5fe7912da55cdb795d95b74e61016e1
+
 
 ENEMY_RED_1             BITMAP                  "..\\RES\\enemies\\machine1_red1.bmp"
 
@@ -845,6 +835,7 @@ ENEMY_RED_2             BITMAP                  "..\\RES\\enemies\\machine1_red2
 ENEMY_RED_3             BITMAP                  "..\\RES\\enemies\\machine1_red3.bmp"
 
 LEVEL1_BG               BITMAP                  "..\\RES\\ocean\\Untitled.bmp"
+/*
 <<<<<<< HEAD
 
 OCEAN_1                 BITMAP                  "..\\RES\\ocean\\ocean_2.bmp"
@@ -916,7 +907,7 @@ OCEAN_58                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582
 
 OCEAN_62_2              BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\ocean_green2.bmp"
 >>>>>>> e05527b6e5fe7912da55cdb795d95b74e61016e1
-
+*/
 
 /////////////////////////////////////////////////////////////////////////////
 //
