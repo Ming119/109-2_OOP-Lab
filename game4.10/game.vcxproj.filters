@@ -1101,5 +1101,74 @@
     <Image Include="RES\ocean\ocean_turn_around_right_4_2.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\ocean\ocean_21.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_22.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_27.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_28.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_29.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_30.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_31.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_34.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_35.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_36.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_37.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_38.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_41.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_42.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_43.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_44.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_58.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_59.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_621.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_622.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_623.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ocean\enemy_sh.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean\ocean_44_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
