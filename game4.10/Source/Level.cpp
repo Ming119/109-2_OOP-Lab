@@ -1702,9 +1702,6 @@ namespace game_framework {
 	}
 
 	void Level::SetMoveLeft(bool m) {
-		if () {
-
-		}
 
 		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
