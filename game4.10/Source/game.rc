@@ -757,9 +757,9 @@ IDB_BITMAP90            BITMAP                  "..\\RES\\enemies\\machine_chef3
 
 IDB_BITMAP92            BITMAP                  "..\\RES\\enemies\\machine_chef4.bmp"
 
-IDB_BITMAP93            BITMAP                  "..\\RES\\enemies\\machine_earthworm1.bmp"
+machine_earthworm1      BITMAP                  "..\\RES\\enemies\\machine_earthworm1.bmp"
 
-IDB_BITMAP97            BITMAP                  "..\\RES\\enemies\\machine_earthworm2.bmp"
+machine_earthworm2      BITMAP                  "..\\RES\\enemies\\machine_earthworm2.bmp"
 
 IDB_BITMAP100           BITMAP                  "..\\RES\\enemies\\machine_fly_red1.bmp"
 
