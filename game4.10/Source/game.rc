@@ -835,19 +835,6 @@ ENEMY_RED_2             BITMAP                  "..\\RES\\enemies\\machine1_red2
 ENEMY_RED_3             BITMAP                  "..\\RES\\enemies\\machine1_red3.bmp"
 
 LEVEL1_BG               BITMAP                  "..\\RES\\ocean\\Untitled.bmp"
-/*
-<<<<<<< HEAD
-
-OCEAN_1                 BITMAP                  "..\\RES\\ocean\\ocean_2.bmp"
-
-ENEMY_FLY_2             BITMAP                  "..\\RES\\enemies\\machine_fly_red2.bmp"
-
-ENEMY_ROCKET_2          BITMAP                  "..\\RES\\enemies\\machine_rocket2.bmp"
-
-LEVEL1_BG               BITMAP                  "..\\RES\\ocean\\Untitled.bmp"
-
-ENEMY_SHARK_2           BITMAP                  "..\\RES\\enemies\\machine_shark2.bmp"
-=======
 
 OCEAN_1                 BITMAP                  "..\\RES\\ocean\\ocean_2.bmp"
 
@@ -899,15 +886,13 @@ OCEAN_19                BITMAP                  "..\\RES\\ocean\\ocean_622.bmp"
 
 OCEAN_18                BITMAP                  "..\\RES\\ocean\\ocean_623.bmp"
 
-OCEAN_44                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\ocean_44_1.bmp"
+OCEAN_44                BITMAP                  "..\\RES\\ocean\\ocean_44_1.bmp"
 
-OCEAN_57                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\ocean_58.bmp"
+OCEAN_57                BITMAP                  "..\\RES\\ocean\\ocean_58.bmp"
 
-OCEAN_58                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\ocean_59.bmp"
+OCEAN_58                BITMAP                  "..\\RES\\ocean\\ocean_59.bmp"
 
-OCEAN_62_2              BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\ocean_green2.bmp"
->>>>>>> e05527b6e5fe7912da55cdb795d95b74e61016e1
-*/
+OCEAN_62_2              BITMAP                  "..\\RES\\ocean\\ocean_green2.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
 //
