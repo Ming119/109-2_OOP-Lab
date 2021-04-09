@@ -757,9 +757,15 @@ ENEMY_CHEF_4            BITMAP                  "..\\RES\\enemies\\machine_chef4
 
 ENEMY_EARTHWORM_1       BITMAP                  "..\\RES\\enemies\\machine_earthworm1.bmp"
 
+<<<<<<< HEAD
+machine_earthworm1      BITMAP                  "..\\RES\\enemies\\machine_earthworm1.bmp"
+
+machine_earthworm2      BITMAP                  "..\\RES\\enemies\\machine_earthworm2.bmp"
+=======
 ENEMY_EARTHWORM_2       BITMAP                  "..\\RES\\enemies\\machine_earthworm2.bmp"
 
 ENEMY_FLY_1             BITMAP                  "..\\RES\\enemies\\machine_fly_red2.bmp"
+>>>>>>> a6def1775ebbdae3be48e0fefcb5a96db459f924
 
 ENEMY_GROUNDHOG_1       BITMAP                  "..\\RES\\enemies\\machine_Groundhog1.bmp"
 

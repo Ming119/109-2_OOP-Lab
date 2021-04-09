@@ -247,8 +247,8 @@
 #define IDB_BITMAP87                    335
 #define IDB_BITMAP90                    336
 #define IDB_BITMAP92                    337
-#define IDB_BITMAP93                    338
-#define IDB_BITMAP97                    339
+#define machine_earthworm1              338
+#define machine_earthworm2              339
 #define IDB_BITMAP100                   340
 #define IDB_BITMAP115                   341
 #define IDB_BITMAP116                   342
