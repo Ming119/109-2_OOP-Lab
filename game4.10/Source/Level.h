@@ -59,10 +59,6 @@ namespace game_framework {
 		void SetMoveDown(bool);
 	};
 
-
-
-
-
 }
 
 #endif
