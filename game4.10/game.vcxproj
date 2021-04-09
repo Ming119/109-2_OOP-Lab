@@ -571,6 +571,7 @@
     <Image Include="RES\ocean\ocean_42.bmp" />
     <Image Include="RES\ocean\ocean_43.bmp" />
     <Image Include="RES\ocean\ocean_44.bmp" />
+    <Image Include="RES\ocean\ocean_44_1.bmp" />
     <Image Include="RES\ocean\ocean_4_1.bmp" />
     <Image Include="RES\ocean\ocean_4_2.bmp" />
     <Image Include="RES\ocean\ocean_5.bmp" />

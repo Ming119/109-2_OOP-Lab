@@ -1167,5 +1167,8 @@
     <Image Include="res\ocean\enemy_sh.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\ocean\ocean_44_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

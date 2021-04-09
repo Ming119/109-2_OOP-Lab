@@ -345,8 +345,7 @@ namespace game_framework {
 				break;
 
 			case 44:
-				texture.AddBitmap(OCEAN_0);
-				//texture.AddBitmap(OCEAN_44);
+				texture.AddBitmap(OCEAN_44);
 				setProperty(PASSABLE);
 				setBehavior(DEFAULT);
 				setAngle(0);
@@ -440,16 +439,14 @@ namespace game_framework {
 				break;
 
 			case 57:
-				texture.AddBitmap(OCEAN_0);
-				//texture.AddBitmap(OCEAN_57);
+				texture.AddBitmap(OCEAN_57);
 				setProperty(PASSABLE);
 				setBehavior(DEFAULT);
 				setAngle(0);
 				break;
 
 			case 58:
-				texture.AddBitmap(OCEAN_0);
-				//texture.AddBitmap(OCEAN_58);
+				texture.AddBitmap(OCEAN_58);
 				setProperty(PASSABLE);
 				setBehavior(DEFAULT);
 				setAngle(0);
@@ -479,8 +476,11 @@ namespace game_framework {
 				break;
 
 			case 62:
-				texture.AddBitmap(OCEAN_0);
-				//texture.AddBitmap(OCEAN_62);
+				texture.AddBitmap(OCEAN_62_1);
+				texture.AddBitmap(OCEAN_62_2);
+				texture.AddBitmap(OCEAN_62_3);
+				texture.AddBitmap(OCEAN_62_4);
+				texture.AddBitmap(OCEAN_62_5);
 				setProperty(PASSABLE);
 				setBehavior(DEFAULT);
 				setAngle(0);

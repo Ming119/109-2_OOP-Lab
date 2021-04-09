@@ -192,10 +192,13 @@
 #define OCEAN_BG_2                      283
 #define IDB_BITMAP69                    284
 #define IDB_BITMAP70                    285
-#define IDB_BITMAP71                    286
+#define OCEAN_62_1                      285
 #define IDB_BITMAP72                    287
+#define OCEAN_62_3                      287
 #define IDB_BITMAP73                    288
+#define OCEAN_62_4                      288
 #define IDB_BITMAP74                    289
+#define OCEAN_62_5                      289
 #define OCEAN_LEFT_UPHILL_ROAD_1        290
 #define IDB_BITMAP76                    291
 #define IDB_BITMAP77                    292
@@ -444,6 +447,10 @@
 #define OCEAN_37                        530
 #define OCEAN_43                        531
 #define OCEAN_41                        532
+#define OCEAN_44                        533
+#define OCEAN_57                        534
+#define OCEAN_58                        535
+#define OCEAN_62_2                      537
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -456,7 +463,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        533
+#define _APS_NEXT_RESOURCE_VALUE        541
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

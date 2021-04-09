@@ -649,15 +649,13 @@ OCEAN_68                BITMAP                  "..\\RES\\ocean\\ocean_backgroun
 
 OCEAN_8                 BITMAP                  "..\\RES\\ocean\\ocean_grass.bmp"
 
-IDB_BITMAP70            BITMAP                  "..\\RES\\ocean\\ocean_green1.bmp"
+OCEAN_62_1              BITMAP                  "..\\RES\\ocean\\ocean_green1.bmp"
 
-IDB_BITMAP71            BITMAP                  "..\\RES\\ocean\\ocean_green2.bmp"
+OCEAN_62_3              BITMAP                  "..\\RES\\ocean\\ocean_green3.bmp"
 
-IDB_BITMAP72            BITMAP                  "..\\RES\\ocean\\ocean_green3.bmp"
+OCEAN_62_4              BITMAP                  "..\\RES\\ocean\\ocean_green4.bmp"
 
-IDB_BITMAP73            BITMAP                  "..\\RES\\ocean\\ocean_green4.bmp"
-
-IDB_BITMAP74            BITMAP                  "..\\RES\\ocean\\ocean_green5.bmp"
+OCEAN_62_5              BITMAP                  "..\\RES\\ocean\\ocean_green5.bmp"
 
 OCEAN_13                BITMAP                  "..\\RES\\ocean\\ocean_left_uphill_road1.bmp"
 
@@ -757,15 +755,9 @@ ENEMY_CHEF_4            BITMAP                  "..\\RES\\enemies\\machine_chef4
 
 ENEMY_EARTHWORM_1       BITMAP                  "..\\RES\\enemies\\machine_earthworm1.bmp"
 
-<<<<<<< HEAD
-machine_earthworm1      BITMAP                  "..\\RES\\enemies\\machine_earthworm1.bmp"
-
-machine_earthworm2      BITMAP                  "..\\RES\\enemies\\machine_earthworm2.bmp"
-=======
 ENEMY_EARTHWORM_2       BITMAP                  "..\\RES\\enemies\\machine_earthworm2.bmp"
 
 ENEMY_FLY_1             BITMAP                  "..\\RES\\enemies\\machine_fly_red2.bmp"
->>>>>>> a6def1775ebbdae3be48e0fefcb5a96db459f924
 
 ENEMY_GROUNDHOG_1       BITMAP                  "..\\RES\\enemies\\machine_Groundhog1.bmp"
 
@@ -892,6 +884,14 @@ OCEAN_17                BITMAP                  "..\\RES\\ocean\\ocean_621.bmp"
 OCEAN_19                BITMAP                  "..\\RES\\ocean\\ocean_622.bmp"
 
 OCEAN_18                BITMAP                  "..\\RES\\ocean\\ocean_623.bmp"
+
+OCEAN_44                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\ocean_44_1.bmp"
+
+OCEAN_57                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\ocean_58.bmp"
+
+OCEAN_58                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\ocean_59.bmp"
+
+OCEAN_62_2              BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\ocean_green2.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
