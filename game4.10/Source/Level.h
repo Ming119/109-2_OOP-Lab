@@ -31,6 +31,8 @@ namespace game_framework {
 	private:
 		int max_x;
 		int max_y;
+
+
 		POINT spawnPoint;
 
 		CMovingBitmap background;

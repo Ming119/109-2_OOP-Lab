@@ -7,10 +7,6 @@
 #include "gamelib.h"
 #include "Level.h"
 
-#define MAX_BRICK_SIZE	2048
-#define MAX_ITEM_SIZE	128
-
-
 namespace game_framework {
 
 	int Level1Items[][3] = {
@@ -1706,6 +1702,10 @@ namespace game_framework {
 	}
 
 	void Level::SetMoveLeft(bool m) {
+		if () {
+
+		}
+
 		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->SetMoveLeft(m);
