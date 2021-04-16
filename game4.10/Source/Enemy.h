@@ -102,6 +102,7 @@ namespace game_framework {
 		//	}
 
 		//};
+	
 
 	protected:
 		CAnimation texture;
@@ -110,14 +111,18 @@ namespace game_framework {
 		bool direction;
 
 		int maxSpeed, speed;
+		
 		bool isMovingLeft;
 		bool isMovingRight;
 		bool isMovingUp;
 		bool isMovingDown;
 
+		bool isCollisingLeft;
+		bool isCollisingRight;
+		bool isCollisingTop;
+		bool isCollisingBottom;
 
 	public:
-		Enemy();
 		Enemy(int, int, int);
 
 		void setTopLeft(int, int);
@@ -134,9 +139,15 @@ namespace game_framework {
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
 
+		template <class obj> void CollisionDetection(obj);
+		void SetCollisionLeft(bool);
+		void SetCollisionRight(bool);
+		void SetCollisionTop(bool);
+		void SetCollisionBottom(bool);
+
 		virtual void OnInit()=0;
 		virtual void OnMove()=0;
-		virtual void OnShow()=0;
+		virtual void OnShow(int scale = DEFAULT_SCALE)=0;
 	};
 
 	class Bamboo : public Enemy {
@@ -147,7 +158,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 
 	class Chef : public Enemy {
@@ -158,7 +169,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 
 	class Earthworm : public Enemy {
@@ -169,7 +180,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 
 	class Fly : public Enemy {
@@ -180,7 +191,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 	
 	class Groundhog : public Enemy {
@@ -191,7 +202,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 
 	class Insect : public Enemy {
@@ -202,7 +213,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 
 	class Ladybug : public Enemy {
@@ -213,7 +224,7 @@ namespace game_framework {
 
 		void OnInit();
 		void OnMove();
-		void OnShow();
+		void OnShow(int scale = DEFAULT_SCALE);
 	};
 
 	class Mosquito : public Enemy {
@@ -224,7 +235,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 
 	class Penguin : public Enemy {
@@ -235,7 +246,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 
 	class PinkMonster : public Enemy {
@@ -246,7 +257,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 
 	class Rocket : public Enemy {
@@ -257,7 +268,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 
 	class Shark : public Enemy {
@@ -268,7 +279,7 @@ namespace game_framework {
 
 		void OnInit() ;
 		void OnMove() ;
-		void OnShow() ;
+		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
 
 	class Snails : public Enemy {
@@ -279,7 +290,7 @@ namespace game_framework {
 
 		void OnInit();
 		void OnMove();
-		void OnShow();
+		void OnShow(int scale = DEFAULT_SCALE);
 	};
 
 	class Spider : public Enemy {
@@ -291,7 +302,7 @@ namespace game_framework {
 
 		void OnInit();
 		void OnMove();
-		void OnShow();
+		void OnShow(int scale = DEFAULT_SCALE);
 	};
 
 	class Blue : public Enemy {
@@ -302,7 +313,7 @@ namespace game_framework {
 
 		void OnInit() override;
 		void OnMove() override;
-		void OnShow() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
 	class FlyShield : public Enemy {
@@ -313,7 +324,7 @@ namespace game_framework {
 
 		void OnInit() override;
 		void OnMove() override;
-		void OnShow() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
 	class Red : public Enemy {
@@ -324,7 +335,7 @@ namespace game_framework {
 
 		void OnInit() override;
 		void OnMove() override;
-		void OnShow() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 }

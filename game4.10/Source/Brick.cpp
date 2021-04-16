@@ -18,6 +18,26 @@ namespace game_framework {
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
+	int Brick::Top() {
+		return texture.Top();
+	}
+
+	int Brick::Left() {
+		return texture.Left();
+	}
+
+	int Brick::Angle() {
+		return angle;
+	}
+
+	int Brick::Height() {
+		return texture.Height();
+	}
+
+	int Brick::Width() {
+		return texture.Width();
+	}
+
 	void Brick::OnInit(int level) {
 		if (level == static_cast<int>(LEVELS::BULE_OCEAN_1) || level == static_cast<int>(LEVELS::BULE_OCEAN_2) || level == static_cast<int>(LEVELS::SUPER_BOSS_1) || level == static_cast<int>(LEVELS::TEST)) {
 			// OCEAN
@@ -1061,8 +1081,8 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Brick::OnShow() {
-		texture.OnShow();
+	void Brick::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 	void Brick::SetMoveLeft(bool m) {
@@ -1103,5 +1123,21 @@ namespace game_framework {
 
 	void Brick::setAngle(int ang) {
 		angle = ang;
+	}
+
+	void Brick::SetCollisionLeft(bool collide) {
+		isCollisingLeft = collide;
+	}
+
+	void Brick::SetCollisionRight(bool collide) {
+		isCollisingRight = collide;
+	}
+
+	void Brick::SetCollisionTop(bool collide) {
+		isCollisingTop = collide;
+	}
+
+	void Brick::SetCollisionBottom(bool collide) {
+		isCollisingBottom = collide;
 	}
 }

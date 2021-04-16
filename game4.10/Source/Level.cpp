@@ -310,8 +310,6 @@ namespace game_framework {
 		items.clear();
 		enemies.clear();
 
-
-
 		switch (level) {
 			// Level 1
 			case static_cast<int>(LEVELS::BULE_OCEAN_1) :
@@ -322,6 +320,100 @@ namespace game_framework {
 				background.LoadBitmap(LEVEL1_BG);
 
 				// Brick
+				bricks.push_back(new Brick(69, 3804, 2651, spawnPoint));
+				bricks.push_back(new Brick(69, 3109, 2647, spawnPoint));
+				bricks.push_back(new Brick(69, 3204, 2647, spawnPoint));
+				bricks.push_back(new Brick(69, 3710, 2642, spawnPoint));
+				bricks.push_back(new Brick(69, 3522, 2642, spawnPoint));
+				bricks.push_back(new Brick(69, 3426, 2642, spawnPoint));
+				bricks.push_back(new Brick(69, 3330, 2642, spawnPoint));
+				bricks.push_back(new Brick(69, 3235, 2642, spawnPoint));
+				bricks.push_back(new Brick(69, 3617, 2634, spawnPoint));
+				bricks.push_back(new Brick(69, 3805, 2571, spawnPoint));
+				bricks.push_back(new Brick(69, 3108, 2569, spawnPoint));
+				bricks.push_back(new Brick(69, 3204, 2569, spawnPoint));
+				bricks.push_back(new Brick(69, 3711, 2563, spawnPoint));
+				bricks.push_back(new Brick(69, 3520, 2562, spawnPoint));
+				bricks.push_back(new Brick(69, 3424, 2562, spawnPoint));
+				bricks.push_back(new Brick(69, 3328, 2562, spawnPoint));
+				bricks.push_back(new Brick(69, 3232, 2562, spawnPoint));
+				bricks.push_back(new Brick(69, 3617, 2555, spawnPoint));
+				bricks.push_back(new Brick(69, 3805, 2491, spawnPoint));
+				bricks.push_back(new Brick(69, 3108, 2489, spawnPoint));
+				bricks.push_back(new Brick(69, 3204, 2489, spawnPoint));
+				bricks.push_back(new Brick(69, 3488, 2484, spawnPoint));
+				bricks.push_back(new Brick(69, 3711, 2483, spawnPoint));
+				bricks.push_back(new Brick(69, 3678, 2483, spawnPoint));
+				bricks.push_back(new Brick(69, 3580, 2483, spawnPoint));
+				bricks.push_back(new Brick(69, 3582, 2483, spawnPoint));
+				bricks.push_back(new Brick(69, 3299, 2482, spawnPoint));
+				bricks.push_back(new Brick(69, 3392, 2482, spawnPoint));
+				bricks.push_back(new Brick(69, 3805, 2411, spawnPoint));
+				bricks.push_back(new Brick(69, 3108, 2409, spawnPoint));
+				bricks.push_back(new Brick(69, 3204, 2409, spawnPoint));
+				bricks.push_back(new Brick(69, 3711, 2403, spawnPoint));
+				bricks.push_back(new Brick(69, 3615, 2403, spawnPoint));
+				bricks.push_back(new Brick(69, 3519, 2403, spawnPoint));
+				bricks.push_back(new Brick(69, 3423, 2403, spawnPoint));
+				bricks.push_back(new Brick(69, 3300, 2402, spawnPoint));
+				bricks.push_back(new Brick(69, 3328, 2402, spawnPoint));
+				bricks.push_back(new Brick(69, 3805, 2331, spawnPoint));
+				bricks.push_back(new Brick(69, 3108, 2329, spawnPoint));
+				bricks.push_back(new Brick(69, 3204, 2329, spawnPoint));
+				bricks.push_back(new Brick(69, 3550, 2323, spawnPoint));
+				bricks.push_back(new Brick(69, 3711, 2323, spawnPoint));
+				bricks.push_back(new Brick(69, 3615, 2323, spawnPoint));
+				bricks.push_back(new Brick(69, 3388, 2323, spawnPoint));
+				bricks.push_back(new Brick(69, 3482, 2323, spawnPoint));
+				bricks.push_back(new Brick(69, 3300, 2322, spawnPoint));
+				bricks.push_back(new Brick(69, 3805, 2251, spawnPoint));
+				bricks.push_back(new Brick(69, 3109, 2249, spawnPoint));
+				bricks.push_back(new Brick(69, 3204, 2249, spawnPoint));
+				bricks.push_back(new Brick(69, 3549, 2243, spawnPoint));
+				bricks.push_back(new Brick(69, 3711, 2243, spawnPoint));
+				bricks.push_back(new Brick(69, 3615, 2243, spawnPoint));
+				bricks.push_back(new Brick(69, 3394, 2243, spawnPoint));
+				bricks.push_back(new Brick(69, 3490, 2243, spawnPoint));
+				bricks.push_back(new Brick(69, 3549, 2242, spawnPoint));
+				bricks.push_back(new Brick(69, 3300, 2242, spawnPoint));
+				bricks.push_back(new Brick(69, 3805, 2171, spawnPoint));
+				bricks.push_back(new Brick(69, 3109, 2169, spawnPoint));
+				bricks.push_back(new Brick(69, 3204, 2169, spawnPoint));
+				bricks.push_back(new Brick(69, 3711, 2163, spawnPoint));
+				bricks.push_back(new Brick(69, 3615, 2163, spawnPoint));
+				bricks.push_back(new Brick(69, 3396, 2163, spawnPoint));
+				bricks.push_back(new Brick(69, 3492, 2163, spawnPoint));
+				bricks.push_back(new Brick(69, 3300, 2162, spawnPoint));
+				bricks.push_back(new Brick(69, 3587, 2162, spawnPoint));
+				bricks.push_back(new Brick(69, 3806, 2091, spawnPoint));
+				bricks.push_back(new Brick(69, 3109, 2090, spawnPoint));
+				bricks.push_back(new Brick(69, 3395, 2090, spawnPoint));
+				bricks.push_back(new Brick(69, 3204, 2089, spawnPoint));
+				bricks.push_back(new Brick(69, 3491, 2085, spawnPoint));
+				bricks.push_back(new Brick(69, 3712, 2083, spawnPoint));
+				bricks.push_back(new Brick(69, 3617, 2083, spawnPoint));
+				bricks.push_back(new Brick(69, 3300, 2083, spawnPoint));
+				bricks.push_back(new Brick(69, 3301, 2083, spawnPoint));
+				bricks.push_back(new Brick(69, 3553, 2083, spawnPoint));
+				bricks.push_back(new Brick(69, 3805, 2011, spawnPoint));
+				bricks.push_back(new Brick(69, 3775, 2011, spawnPoint));
+				bricks.push_back(new Brick(69, 3681, 2011, spawnPoint));
+				bricks.push_back(new Brick(69, 3588, 2011, spawnPoint));
+				bricks.push_back(new Brick(69, 3493, 2011, spawnPoint));
+				bricks.push_back(new Brick(69, 3397, 2011, spawnPoint));
+				bricks.push_back(new Brick(69, 3301, 2011, spawnPoint));
+				bricks.push_back(new Brick(69, 3300, 2011, spawnPoint));
+				bricks.push_back(new Brick(69, 3108, 2011, spawnPoint));
+				bricks.push_back(new Brick(69, 3204, 2011, spawnPoint));
+				bricks.push_back(new Brick(69, 3777, 1932, spawnPoint));
+				bricks.push_back(new Brick(69, 3681, 1932, spawnPoint));
+				bricks.push_back(new Brick(69, 3586, 1932, spawnPoint));
+				bricks.push_back(new Brick(69, 3491, 1932, spawnPoint));
+				bricks.push_back(new Brick(69, 3806, 1931, spawnPoint));
+				bricks.push_back(new Brick(69, 3396, 1931, spawnPoint));
+				bricks.push_back(new Brick(69, 3301, 1931, spawnPoint));
+				bricks.push_back(new Brick(69, 3205, 1931, spawnPoint));
+				bricks.push_back(new Brick(69, 3109, 1931, spawnPoint));
 				bricks.push_back(new Brick(25, 3102, 2714, spawnPoint));
 				bricks.push_back(new Brick(0, 3238, 2714, spawnPoint));
 				bricks.push_back(new Brick(0, 3638, 2714, spawnPoint));
@@ -1463,101 +1555,7 @@ namespace game_framework {
 				bricks.push_back(new Brick(46, 6974, 446, spawnPoint));
 				bricks.push_back(new Brick(46, 7007, 446, spawnPoint));
 				bricks.push_back(new Brick(46, 7040, 446, spawnPoint));
-				bricks.push_back(new Brick(69, 3804, 2651, spawnPoint));
-				bricks.push_back(new Brick(69, 3109, 2647, spawnPoint));
-				bricks.push_back(new Brick(69, 3204, 2647, spawnPoint));
-				bricks.push_back(new Brick(69, 3710, 2642, spawnPoint));
-				bricks.push_back(new Brick(69, 3522, 2642, spawnPoint));
-				bricks.push_back(new Brick(69, 3426, 2642, spawnPoint));
-				bricks.push_back(new Brick(69, 3330, 2642, spawnPoint));
-				bricks.push_back(new Brick(69, 3235, 2642, spawnPoint));
-				bricks.push_back(new Brick(69, 3617, 2634, spawnPoint));
-				bricks.push_back(new Brick(69, 3805, 2571, spawnPoint));
-				bricks.push_back(new Brick(69, 3108, 2569, spawnPoint));
-				bricks.push_back(new Brick(69, 3204, 2569, spawnPoint));
-				bricks.push_back(new Brick(69, 3711, 2563, spawnPoint));
-				bricks.push_back(new Brick(69, 3520, 2562, spawnPoint));
-				bricks.push_back(new Brick(69, 3424, 2562, spawnPoint));
-				bricks.push_back(new Brick(69, 3328, 2562, spawnPoint));
-				bricks.push_back(new Brick(69, 3232, 2562, spawnPoint));
-				bricks.push_back(new Brick(69, 3617, 2555, spawnPoint));
-				bricks.push_back(new Brick(69, 3805, 2491, spawnPoint));
-				bricks.push_back(new Brick(69, 3108, 2489, spawnPoint));
-				bricks.push_back(new Brick(69, 3204, 2489, spawnPoint));
-				bricks.push_back(new Brick(69, 3488, 2484, spawnPoint));
-				bricks.push_back(new Brick(69, 3711, 2483, spawnPoint));
-				bricks.push_back(new Brick(69, 3678, 2483, spawnPoint));
-				bricks.push_back(new Brick(69, 3580, 2483, spawnPoint));
-				bricks.push_back(new Brick(69, 3582, 2483, spawnPoint));
-				bricks.push_back(new Brick(69, 3299, 2482, spawnPoint));
-				bricks.push_back(new Brick(69, 3392, 2482, spawnPoint));
-				bricks.push_back(new Brick(69, 3805, 2411, spawnPoint));
-				bricks.push_back(new Brick(69, 3108, 2409, spawnPoint));
-				bricks.push_back(new Brick(69, 3204, 2409, spawnPoint));
-				bricks.push_back(new Brick(69, 3711, 2403, spawnPoint));
-				bricks.push_back(new Brick(69, 3615, 2403, spawnPoint));
-				bricks.push_back(new Brick(69, 3519, 2403, spawnPoint));
-				bricks.push_back(new Brick(69, 3423, 2403, spawnPoint));
-				bricks.push_back(new Brick(69, 3300, 2402, spawnPoint));
-				bricks.push_back(new Brick(69, 3328, 2402, spawnPoint));
-				bricks.push_back(new Brick(69, 3805, 2331, spawnPoint));
-				bricks.push_back(new Brick(69, 3108, 2329, spawnPoint));
-				bricks.push_back(new Brick(69, 3204, 2329, spawnPoint));
-				bricks.push_back(new Brick(69, 3550, 2323, spawnPoint));
-				bricks.push_back(new Brick(69, 3711, 2323, spawnPoint));
-				bricks.push_back(new Brick(69, 3615, 2323, spawnPoint));
-				bricks.push_back(new Brick(69, 3388, 2323, spawnPoint));
-				bricks.push_back(new Brick(69, 3482, 2323, spawnPoint));
-				bricks.push_back(new Brick(69, 3300, 2322, spawnPoint));
-				bricks.push_back(new Brick(69, 3805, 2251, spawnPoint));
-				bricks.push_back(new Brick(69, 3109, 2249, spawnPoint));
-				bricks.push_back(new Brick(69, 3204, 2249, spawnPoint));
-				bricks.push_back(new Brick(69, 3549, 2243, spawnPoint));
-				bricks.push_back(new Brick(69, 3711, 2243, spawnPoint));
-				bricks.push_back(new Brick(69, 3615, 2243, spawnPoint));
-				bricks.push_back(new Brick(69, 3394, 2243, spawnPoint));
-				bricks.push_back(new Brick(69, 3490, 2243, spawnPoint));
-				bricks.push_back(new Brick(69, 3549, 2242, spawnPoint));
-				bricks.push_back(new Brick(69, 3300, 2242, spawnPoint));
-				bricks.push_back(new Brick(69, 3805, 2171, spawnPoint));
-				bricks.push_back(new Brick(69, 3109, 2169, spawnPoint));
-				bricks.push_back(new Brick(69, 3204, 2169, spawnPoint));
-				bricks.push_back(new Brick(69, 3711, 2163, spawnPoint));
-				bricks.push_back(new Brick(69, 3615, 2163, spawnPoint));
-				bricks.push_back(new Brick(69, 3396, 2163, spawnPoint));
-				bricks.push_back(new Brick(69, 3492, 2163, spawnPoint));
-				bricks.push_back(new Brick(69, 3300, 2162, spawnPoint));
-				bricks.push_back(new Brick(69, 3587, 2162, spawnPoint));
-				bricks.push_back(new Brick(69, 3806, 2091, spawnPoint));
-				bricks.push_back(new Brick(69, 3109, 2090, spawnPoint));
-				bricks.push_back(new Brick(69, 3395, 2090, spawnPoint));
-				bricks.push_back(new Brick(69, 3204, 2089, spawnPoint));
-				bricks.push_back(new Brick(69, 3491, 2085, spawnPoint));
-				bricks.push_back(new Brick(69, 3712, 2083, spawnPoint));
-				bricks.push_back(new Brick(69, 3617, 2083, spawnPoint));
-				bricks.push_back(new Brick(69, 3300, 2083, spawnPoint));
-				bricks.push_back(new Brick(69, 3301, 2083, spawnPoint));
-				bricks.push_back(new Brick(69, 3553, 2083, spawnPoint));
-				bricks.push_back(new Brick(69, 3805, 2011, spawnPoint));
-				bricks.push_back(new Brick(69, 3775, 2011, spawnPoint));
-				bricks.push_back(new Brick(69, 3681, 2011, spawnPoint));
-				bricks.push_back(new Brick(69, 3588, 2011, spawnPoint));
-				bricks.push_back(new Brick(69, 3493, 2011, spawnPoint));
-				bricks.push_back(new Brick(69, 3397, 2011, spawnPoint));
-				bricks.push_back(new Brick(69, 3301, 2011, spawnPoint));
-				bricks.push_back(new Brick(69, 3300, 2011, spawnPoint));
-				bricks.push_back(new Brick(69, 3108, 2011, spawnPoint));
-				bricks.push_back(new Brick(69, 3204, 2011, spawnPoint));
-				bricks.push_back(new Brick(69, 3777, 1932, spawnPoint));
-				bricks.push_back(new Brick(69, 3681, 1932, spawnPoint));
-				bricks.push_back(new Brick(69, 3586, 1932, spawnPoint));
-				bricks.push_back(new Brick(69, 3491, 1932, spawnPoint));
-				bricks.push_back(new Brick(69, 3806, 1931, spawnPoint));
-				bricks.push_back(new Brick(69, 3396, 1931, spawnPoint));
-				bricks.push_back(new Brick(69, 3301, 1931, spawnPoint));
-				bricks.push_back(new Brick(69, 3205, 1931, spawnPoint));
-				bricks.push_back(new Brick(69, 3109, 1931, spawnPoint));
-
+				
 				// Item
 				for (int i = 0; i < sizeof(items)/sizeof(items[0]); i++) {
 					int id = Level1Items[i][0];
@@ -1576,10 +1574,10 @@ namespace game_framework {
 				}
 
 				// Enemy
-				for (int i = 0; i < sizeof(enemies) / sizeof(enemies[0]); i++) {
+				for (int i = 0; i < sizeof(Level1Enemies) / sizeof(Level1Enemies[0]); i++) {
 					int id = Level1Enemies[i][0];
 					int x = Level1Enemies[i][1];
-					int y = Level1Enemies[i][2] - spawnPoint.y + SIZE_Y / 2;
+					int y = Level1Enemies[i][2] - spawnPoint.y + SIZE_Y/2;
 
 					switch (id) {
 					case static_cast<int>(ENEMIES_LIST::LADYBUG) :
@@ -1657,8 +1655,16 @@ namespace game_framework {
 		// Background
 		background.SetTopLeft(0, 0);
 
-		// Brick
 		int bs = bricks.size();
+		int es = enemies.size();
+		
+		for (int b = 0; b < bs; b++) {
+			for (int e = 0; e < es; e++) {
+				CollisionDetection(enemies.at(e), bricks.at(b));
+			}
+		}
+
+		// Brick
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->OnMove();
 		}
@@ -1671,7 +1677,6 @@ namespace game_framework {
 		}*/
 
 		// Enemy
-		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->OnMove();
 		}
@@ -1767,6 +1772,45 @@ namespace game_framework {
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->SetMoveDown(m);
+		}
+	}
+
+	template <class obj1, class obj2>
+	void Level::CollisionDetection(obj1& a, obj2& b) {
+		// float offset = 0.95;
+		/*TRACE("obj a: (%d, %d) (%d, %d)\n", a->Left(), a->Top(), a->Left() + a->Width(), a->Top() + a->Height());
+		TRACE("obj b: (%d, %d) (%d, %d)\n", b->Left(), b->Top(), b->Left() + b->Width(), b->Top() + b->Height());*/
+
+		if (a->Left() < b->Left() + b->Width() * DEFAULT_SCALE &&
+			a->Left() + a->Width() * DEFAULT_SCALE > b->Left() &&
+			a->Top() < b->Top() + b->Height() * DEFAULT_SCALE &&
+			a->Top() + a->Height() * DEFAULT_SCALE > b->Top())
+		{
+			a->SetCollisionBottom(true);
+			if (a->Left() < b->Left() + b->Width() * DEFAULT_SCALE && a->Left() + a->Width() * DEFAULT_SCALE > b->Left()) {
+				a->SetCollisionRight(true);
+				b->SetCollisionLeft(true);
+			} else {
+				a->SetCollisionLeft(true);
+				b->SetCollisionRight(true);
+			}
+
+			if (a->Top() < b->Top() + b->Height() * DEFAULT_SCALE && a->Top() + a->Height() * DEFAULT_SCALE > b->Top()) {
+				a->SetCollisionBottom(true);
+				b->SetCollisionTop(true);
+			} else {
+				a->SetCollisionTop(true);
+				b->SetCollisionBottom(true);
+			}
+		} else {
+			/*a->SetCollisionLeft(false);
+			a->SetCollisionRight(false);
+			a->SetCollisionTop(false);
+			a->SetCollisionBottom(false);
+			b->SetCollisionLeft(false);
+			b->SetCollisionRight(false);
+			b->SetCollisionTop(false);
+			b->SetCollisionBottom(false);*/
 		}
 	}
 }

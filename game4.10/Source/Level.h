@@ -26,7 +26,7 @@ namespace game_framework {
 		TUTORIAL_2,
 		COUNT
 	};
-
+	
 	class Level {
 	private:
 		int max_x;
@@ -41,9 +41,9 @@ namespace game_framework {
 		Actor actor2;
 		Actor actor3;
 
-		vector<Brick*> bricks;
-		vector<Item*> items;
-		vector<Enemy*> enemies;
+		vector<Brick*>	bricks;
+		vector<Item*>	items;
+		vector<Enemy*>	enemies;
 
 	public:
 		Level();
@@ -57,6 +57,9 @@ namespace game_framework {
 		void SetMoveRight(bool);
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
+
+		template <class obj1, class obj2>
+		void CollisionDetection(obj1&, obj2&);
 	};
 
 }

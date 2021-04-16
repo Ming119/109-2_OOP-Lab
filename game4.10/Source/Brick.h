@@ -42,12 +42,23 @@ namespace game_framework {
 		bool isMovingUp;
 		bool isMovingDown;
 
+		bool isCollisingLeft;
+		bool isCollisingRight;
+		bool isCollisingTop;
+		bool isCollisingBottom;
+
 	public:
 		Brick(int, int, int, POINT);
 
+		int Top();
+		int Left();
+		int Angle();
+		int Height();
+		int Width();
+
 		void OnInit(int);
 		void OnMove();
-		void OnShow();
+		void OnShow(int scale=DEFAULT_SCALE);
 
 		void SetMoveLeft(bool);
 		void SetMoveRight(bool);
@@ -58,6 +69,11 @@ namespace game_framework {
 		void setBehavior(int);
 		void setBehavior(int, int, int, double, int);
 		void setAngle(int);
+
+		void SetCollisionLeft(bool);
+		void SetCollisionRight(bool);
+		void SetCollisionTop(bool);
+		void SetCollisionBottom(bool);
 	};
 
 }

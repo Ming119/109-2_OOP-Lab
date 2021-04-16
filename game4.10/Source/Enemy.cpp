@@ -8,16 +8,6 @@
 
 namespace game_framework {
 	// Enemy
-	Enemy::Enemy() {
-		posX = 0;
-		posY = 0;
-		angle = 0;
-
-		maxSpeed = 50;
-		speed = 0;
-		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
-	}
-
 	Enemy::Enemy(int x, int y, int ang) {
 		posX = x;
 		posY = y;
@@ -26,6 +16,8 @@ namespace game_framework {
 		speed = 0;
 		direction = false;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
+		isCollisingLeft = isCollisingRight = isCollisingTop = isCollisingBottom = false;
+
 	}
 
 	void Enemy::setTopLeft(int x, int y) {
@@ -73,12 +65,52 @@ namespace game_framework {
 	void Enemy::SetMoveDown(bool m) {
 		isMovingDown = m;
 	}
+	
+	template <class obj> void CollisionDetection(obj o) {
+		if (this->Left() < o->Left() + o->Width() &&
+			this->Left() + this->Width() > o->Left() &&
+			this->Top() < o->Top() + o->Height() &&
+			this->Top() + this->Height() > o->Top())
+		{
+			
+			if (this->Left() < o->Left() + o->Width() && this->Left() + o->Width() > o->Left())
+				SetCollisionRight(true);
+			else 
+				SetCollisionLeft(true);
+
+			if (this->Top() < o->Top() + o->Height() && this->Top() + this->Height() > o->Top())
+				SetCollisionBottom(true);
+			else 
+				SetCollisionTop(true);
+			
+		}
+		else {
+			SetCollisionLeft(false);
+			SetCollisionRight(false);
+			SetCollisionTop(false);
+			SetCollisionBottom(false);
+		}
+	}
+
+	void Enemy::SetCollisionLeft(bool collide) {
+		isCollisingLeft = collide;
+	}
+
+	void Enemy::SetCollisionRight(bool collide) {
+		isCollisingRight = collide;
+	}
+
+	void Enemy::SetCollisionTop(bool collide) {
+		isCollisingTop = collide;
+	}
+
+	void Enemy::SetCollisionBottom(bool collide) {
+		isCollisingBottom = collide;
+	}
 
 
 
 	// Ladybug
-	Ladybug::Ladybug() : Enemy::Enemy() {}
-
 	Ladybug::Ladybug(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Ladybug::OnInit() {
@@ -90,22 +122,21 @@ namespace game_framework {
 	}
 
 	void Ladybug::OnMove() {
-		
 		// 落地檢查
-		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-		//	posY += 10;
-		//else {
-		//	// 方向檢查
-		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-		//		direction = !direction;
+		if (!isCollisingBottom)
+			posY += 10;
+		else {
+			// 方向檢查
+			if (isCollisingLeft || isCollisingRight)
+				direction = !direction;
 
-		//	// 移動
-		//	if (direction == true) 
-		//		posX += 5;
-		//	else if (direction == false)
-		//		posX -= 5;
+			// 移動
+			if (direction == true) 
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
 
-		//}
+		}
 
 		if (isMovingLeft)
 			posX += maxSpeed;
@@ -134,15 +165,13 @@ namespace game_framework {
 		
 	}
 
-	void Ladybug::OnShow() {
-		texture.OnShow();
+	void Ladybug::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Fly
-	Fly::Fly() : Enemy::Enemy() {}
-
 	Fly::Fly(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Fly::OnInit() {
@@ -153,12 +182,17 @@ namespace game_framework {
 	}
 
 	void Fly::OnMove() {
+		/*TRACE("Left: %d\n", this->isCollisingLeft);
+		TRACE("Right: %d\n", this->isCollisingRight);
+		TRACE("Top: %d\n", this->isCollisingTop);
+		TRACE("Bottom: %d\n", this->isCollisingBottom);*/
+
 		// 落地檢查
-		if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
+		if (!isCollisingBottom)
 			posY += 10;
 		else {
 			// 方向檢查
-			if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
+			if (isCollisingLeft || isCollisingRight)
 				direction = !direction;
 
 			// 移動
@@ -168,47 +202,6 @@ namespace game_framework {
 				posX -= 5;
 
 		}
-
-		setTopLeft(posX, posY);
-		texture.OnMove();
-	}
-
-	void Fly::OnShow() {
-		texture.OnShow();
-	}
-
-
-
-	// Bamboo
-	Bamboo::Bamboo() : Enemy::Enemy() {}
-
-	Bamboo::Bamboo(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
-
-	void Bamboo::OnInit() {
-		texture.AddBitmap(ENEMY_BAMBOO_1);
-		texture.AddBitmap(ENEMY_BAMBOO_2);
-		texture.AddBitmap(ENEMY_BAMBOO_3);
-		texture.AddBitmap(ENEMY_BAMBOO_4);
-		texture.SetDelayCount(3);
-		setTopLeft(posX, posY);
-	}
-
-	void Bamboo::OnMove() {
-		// 落地檢查
-		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-		//	posY += 10;
-		//else {
-		//	// 方向檢查
-		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-		//		direction = !direction;
-
-		//	// 移動
-		//	if (direction == true) 
-		//		posX += 5;
-		//	else if (direction == false)
-		//		posX -= 5;
-
-		//}
 
 		if (isMovingLeft)
 			posX += maxSpeed;
@@ -223,15 +216,63 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Bamboo::OnShow() {
-		texture.OnShow();
+	void Fly::OnShow(int scale) {
+		texture.OnShow(scale);
+	}
+
+
+
+	// Bamboo
+	Bamboo::Bamboo(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
+
+	void Bamboo::OnInit() {
+		texture.AddBitmap(ENEMY_BAMBOO_1);
+		texture.AddBitmap(ENEMY_BAMBOO_2);
+		texture.AddBitmap(ENEMY_BAMBOO_3);
+		texture.AddBitmap(ENEMY_BAMBOO_4);
+		texture.SetDelayCount(3);
+		setTopLeft(posX, posY);
+	}
+
+	void Bamboo::OnMove() {
+		
+
+		// 落地檢查
+		if (!isCollisingBottom)
+			posY += 10;
+		else {
+			// 方向檢查
+			if (isCollisingLeft || isCollisingRight)
+				direction = !direction;
+
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
+
+		}
+
+		if (isMovingLeft)
+			posX += maxSpeed;
+		if (isMovingRight)
+			posX -= maxSpeed;
+		if (isMovingUp)
+			posY += maxSpeed;
+		if (isMovingDown)
+			posY -= maxSpeed;
+
+		setTopLeft(posX, posY);
+		texture.OnMove();
+	}
+
+	void Bamboo::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Spider
-	Spider::Spider() : Enemy::Enemy() {}
-
 	Spider::Spider(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Spider::OnInit() {
@@ -271,15 +312,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Spider::OnShow() {
-		texture.OnShow();
+	void Spider::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Rocket
-	Rocket::Rocket() : Enemy::Enemy() {}
-
 	Rocket::Rocket(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Rocket::OnInit() {
@@ -319,15 +358,13 @@ namespace game_framework {
 		texture.OnMove();;
 	}
 
-	void Rocket::OnShow() {
-		texture.OnShow();
+	void Rocket::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Shark
-	Shark::Shark() : Enemy::Enemy() {}
-
 	Shark::Shark(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Shark::OnInit() {
@@ -367,15 +404,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Shark::OnShow() {
-		texture.OnShow();
+	void Shark::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Mosquito
-	Mosquito::Mosquito() : Enemy::Enemy() {}
-
 	Mosquito::Mosquito(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Mosquito::OnInit() {
@@ -415,15 +450,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Mosquito::OnShow() {
-		texture.OnShow();
+	void Mosquito::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Groundhog
-	Groundhog::Groundhog() : Enemy::Enemy() {}
-
 	Groundhog::Groundhog(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Groundhog::OnInit() {
@@ -464,15 +497,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Groundhog::OnShow() {
-		texture.OnShow();
+	void Groundhog::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Red
-	Red::Red() : Enemy::Enemy() {}
-
 	Red::Red(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Red::OnInit() {
@@ -513,14 +544,12 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Red::OnShow() {
-		texture.OnShow();
+	void Red::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 	// Chef
-	Chef::Chef() : Enemy::Enemy() {}
-
 	Chef::Chef(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Chef::OnInit() {
@@ -559,15 +588,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Chef::OnShow() {
-		texture.OnShow();
+	void Chef::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Earthworm
-	Earthworm::Earthworm() : Enemy::Enemy() {}
-
 	Earthworm::Earthworm(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Earthworm::OnInit() {
@@ -605,15 +632,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Earthworm::OnShow() {
-		texture.OnShow();
+	void Earthworm::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Insect
-	Insect::Insect() : Enemy::Enemy() {}
-
 	Insect::Insect(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Insect::OnInit() {
@@ -654,15 +679,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Insect::OnShow() {
-		texture.OnShow();
+	void Insect::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Penguin
-	Penguin::Penguin() : Enemy::Enemy() {}
-
 	Penguin::Penguin(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Penguin::OnInit() {
@@ -705,15 +728,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Penguin::OnShow() {
-		texture.OnShow();
+	void Penguin::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// PinkMonster
-	PinkMonster::PinkMonster() : Enemy::Enemy() {}
-
 	PinkMonster::PinkMonster(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void PinkMonster::OnInit() {
@@ -754,15 +775,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void PinkMonster::OnShow() {
-		texture.OnShow();
+	void PinkMonster::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Snails
-	Snails::Snails() : Enemy::Enemy() {}
-
 	Snails::Snails(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Snails::OnInit() {
@@ -802,15 +821,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Snails::OnShow() {
-		texture.OnShow();
+	void Snails::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// Blue
-	Blue::Blue() : Enemy::Enemy() {}
-
 	Blue::Blue(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void Blue::OnInit() {
@@ -856,15 +873,13 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void Blue::OnShow() {
-		texture.OnShow();
+	void Blue::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 
 
 	// FlyShield
-	FlyShield::FlyShield() : Enemy::Enemy() {}
-
 	FlyShield::FlyShield(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
 	void FlyShield::OnInit() {
@@ -904,8 +919,8 @@ namespace game_framework {
 		texture.OnMove();
 	}
 
-	void FlyShield::OnShow() {
-		texture.OnShow();
+	void FlyShield::OnShow(int scale) {
+		texture.OnShow(scale);
 	}
 
 }
