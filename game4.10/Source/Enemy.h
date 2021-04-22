@@ -1,6 +1,8 @@
 #ifndef _ENEMY_H_
 #define _ENEMY_H_
 
+#include "Brick.h"
+
 namespace game_framework {
 
 	enum class ENEMIES_LIST {
@@ -139,7 +141,8 @@ namespace game_framework {
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
 
-		template <class obj> void CollisionDetection(obj);
+		bool CollisionDetection(Brick*);
+
 		void SetCollisionLeft(bool);
 		void SetCollisionRight(bool);
 		void SetCollisionTop(bool);

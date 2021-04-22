@@ -297,7 +297,6 @@ namespace game_framework {
 	};
 
 	Level::Level() {
-		
 	}
 
 	Level::~Level() {
@@ -309,6 +308,9 @@ namespace game_framework {
 		bricks.clear();
 		items.clear();
 		enemies.clear();
+
+		actor1.OnInit();
+
 
 		switch (level) {
 			// Level 1
@@ -1657,6 +1659,8 @@ namespace game_framework {
 	}
 	
 	void Level::OnMove() {
+		actor1.OnMove();
+
 		// Background
 		background.SetTopLeft(0, 0);
 
@@ -1665,7 +1669,7 @@ namespace game_framework {
 		
 		for (int b = 0; b < bs; b++) {
 			for (int e = 0; e < es; e++) {
-				CollisionDetection(enemies.at(e), bricks.at(b));
+				enemies.at(e)->CollisionDetection(bricks.at(b));
 			}
 		}
 
@@ -1688,6 +1692,8 @@ namespace game_framework {
 	}
 
 	void Level::OnShow() {
+		
+
 		// Background
 		background.ShowBitmap();
 
@@ -1709,9 +1715,16 @@ namespace game_framework {
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->OnShow();
 		}
+		actor1.OnShow();
+	}
+
+	Actor* Level::currentActor()
+	{
+		return &actor1;
 	}
 
 	void Level::SetMoveLeft(bool m) {
+		actor1.SetMoveLeft(m);
 
 		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
@@ -1730,6 +1743,8 @@ namespace game_framework {
 	}
 
 	void Level::SetMoveRight(bool m) {
+		actor1.SetMoveRight(m);
+
 		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->SetMoveRight(m);
@@ -1780,42 +1795,4 @@ namespace game_framework {
 		}
 	}
 
-	template <class obj1, class obj2>
-	void Level::CollisionDetection(obj1& a, obj2& b) {
-		// float offset = 0.95;
-		/*TRACE("obj a: (%d, %d) (%d, %d)\n", a->Left(), a->Top(), a->Left() + a->Width(), a->Top() + a->Height());
-		TRACE("obj b: (%d, %d) (%d, %d)\n", b->Left(), b->Top(), b->Left() + b->Width(), b->Top() + b->Height());*/
-
-		if (a->Left() < b->Left() + b->Width() * DEFAULT_SCALE &&
-			a->Left() + a->Width() * DEFAULT_SCALE > b->Left() &&
-			a->Top() < b->Top() + b->Height() * DEFAULT_SCALE &&
-			a->Top() + a->Height() * DEFAULT_SCALE > b->Top())
-		{
-			a->SetCollisionBottom(true);
-			if (a->Left() < b->Left() + b->Width() * DEFAULT_SCALE && a->Left() + a->Width() * DEFAULT_SCALE > b->Left()) {
-				a->SetCollisionRight(true);
-				b->SetCollisionLeft(true);
-			} else {
-				a->SetCollisionLeft(true);
-				b->SetCollisionRight(true);
-			}
-
-			if (a->Top() < b->Top() + b->Height() * DEFAULT_SCALE && a->Top() + a->Height() * DEFAULT_SCALE > b->Top()) {
-				a->SetCollisionBottom(true);
-				b->SetCollisionTop(true);
-			} else {
-				a->SetCollisionTop(true);
-				b->SetCollisionBottom(true);
-			}
-		} else {
-			/*a->SetCollisionLeft(false);
-			a->SetCollisionRight(false);
-			a->SetCollisionTop(false);
-			a->SetCollisionBottom(false);
-			b->SetCollisionLeft(false);
-			b->SetCollisionRight(false);
-			b->SetCollisionTop(false);
-			b->SetCollisionBottom(false);*/
-		}
-	}
 }

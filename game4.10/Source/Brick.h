@@ -55,6 +55,7 @@ namespace game_framework {
 		int Angle();
 		int Height();
 		int Width();
+		int Property();
 
 		void OnInit(int);
 		void OnMove();

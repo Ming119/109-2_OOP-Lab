@@ -1170,5 +1170,155 @@
     <Image Include="RES\ocean\ocean_44_1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_ball1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_ball2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_ball3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_ball4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_ball5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_ball6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_run1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_run2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_run3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_run4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_run5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_run6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_run7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_run8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_accelerate_run9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_Injured1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_Injured2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_jump.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_jump_off1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_jump_off2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_normal_run1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_normal_run2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_normal_run3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_normal_run4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_normal_run5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_normal_run6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_normal_run7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_poss1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_poss2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_poss3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_poss4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_push1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_push2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_push3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_push4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_ready_roll1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_ready_roll2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_ready_roll3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_ready_roll4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_ready_roll5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_run_brakes1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_run_brakes2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_run_brakes3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_squat_roll1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x45\play_blue_squat_roll2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x40\play_blue_stand1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x40\play_blue_stand2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x40\play_blue_stand4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x40\play_blue_stand5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\40x40\play_blue_tand3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
