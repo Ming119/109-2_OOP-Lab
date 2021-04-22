@@ -38,6 +38,10 @@ namespace game_framework {
 		return texture.Width();
 	}
 
+	int Brick::Property() {
+		return property;
+	}
+
 	void Brick::OnInit(int level) {
 		if (level == static_cast<int>(LEVELS::BULE_OCEAN_1) || level == static_cast<int>(LEVELS::BULE_OCEAN_2) || level == static_cast<int>(LEVELS::SUPER_BOSS_1) || level == static_cast<int>(LEVELS::TEST)) {
 			// OCEAN

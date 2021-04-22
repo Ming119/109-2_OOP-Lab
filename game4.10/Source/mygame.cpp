@@ -540,9 +540,9 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	if (nChar == KEY_RIGHT)
 		level->SetMoveRight(true);
 	if (nChar == KEY_UP)
-		level->SetMoveUp(true);
+		level->currentActor()->SetIsLookingUp(true);
 	if (nChar == KEY_DOWN)
-		level->SetMoveDown(true);
+		level->currentActor()->SetIsLookingDown(true);
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -557,9 +557,9 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	if (nChar == KEY_RIGHT)
 		level->SetMoveRight(false);
 	if (nChar == KEY_UP)
-		level->SetMoveUp(false);
+		level->currentActor()->SetIsLookingUp(false);
 	if (nChar == KEY_DOWN)
-		level->SetMoveDown(false);
+		level->currentActor()->SetIsLookingDown(false);
 }
 
 void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À

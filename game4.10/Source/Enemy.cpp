@@ -66,32 +66,6 @@ namespace game_framework {
 		isMovingDown = m;
 	}
 	
-	template <class obj> void CollisionDetection(obj o) {
-		if (this->Left() < o->Left() + o->Width() &&
-			this->Left() + this->Width() > o->Left() &&
-			this->Top() < o->Top() + o->Height() &&
-			this->Top() + this->Height() > o->Top())
-		{
-			
-			if (this->Left() < o->Left() + o->Width() && this->Left() + o->Width() > o->Left())
-				SetCollisionRight(true);
-			else 
-				SetCollisionLeft(true);
-
-			if (this->Top() < o->Top() + o->Height() && this->Top() + this->Height() > o->Top())
-				SetCollisionBottom(true);
-			else 
-				SetCollisionTop(true);
-			
-		}
-		else {
-			SetCollisionLeft(false);
-			SetCollisionRight(false);
-			SetCollisionTop(false);
-			SetCollisionBottom(false);
-		}
-	}
-
 	void Enemy::SetCollisionLeft(bool collide) {
 		isCollisingLeft = collide;
 	}
@@ -106,6 +80,64 @@ namespace game_framework {
 
 	void Enemy::SetCollisionBottom(bool collide) {
 		isCollisingBottom = collide;
+	}
+
+	bool Enemy::CollisionDetection(Brick* brick) {
+
+		if (brick->Property() != OBSTACLE) return false;
+		
+		int Woffset = (int)((this->Left() + this->Width() * DEFAULT_SCALE) * 0.05);
+		int Hoffset = (int)((this->Top() + this->Height() * DEFAULT_SCALE) * 0.05);
+		if ((this->Left()+Woffset) < (brick->Left() + brick->Width() * DEFAULT_SCALE)-Woffset &&
+			(this->Left() + this->Width() * DEFAULT_SCALE)-Woffset > (brick->Left()+Woffset) &&
+			(this->Top()+Hoffset) < (brick->Top() + brick->Height() * DEFAULT_SCALE)-Hoffset &&
+			(this->Top() + this->Height() * DEFAULT_SCALE)-Hoffset > (brick->Top()+Hoffset)) {
+			
+			this->SetCollisionBottom(true);
+
+			if ((this->Top() + Hoffset) < (brick->Top() + brick->Height() * DEFAULT_SCALE) - Hoffset &&
+				(this->Top() + this->Height() * DEFAULT_SCALE) - Hoffset > (brick->Top() + Hoffset))
+				
+			
+
+
+			return true;
+		}
+		else {
+			/*this->SetCollisionLeft(false);
+			this->SetCollisionRight(false);
+			this->SetCollisionTop(false);
+			this->SetCollisionBottom(false);
+			return false;*/
+		}
+		return false;
+		
+
+		/*if (a->Left() < b->Left() + b->Width() * DEFAULT_SCALE &&
+			a->Left() + a->Width() * DEFAULT_SCALE > b->Left() &&
+			a->Top() < b->Top() + b->Height() * DEFAULT_SCALE &&
+			a->Top() + a->Height() * DEFAULT_SCALE > b->Top())
+		{
+			a->SetCollisionBottom(true);
+			if (a->Left() < b->Left() + b->Width() * DEFAULT_SCALE && a->Left() + a->Width() * DEFAULT_SCALE > b->Left()) {
+				a->SetCollisionRight(true);
+				b->SetCollisionLeft(true);
+			}
+			else {
+				a->SetCollisionLeft(true);
+				b->SetCollisionRight(true);
+			}
+
+			if (a->Top() < b->Top() + b->Height() * DEFAULT_SCALE && a->Top() + a->Height() * DEFAULT_SCALE > b->Top()) {
+				a->SetCollisionBottom(true);
+				b->SetCollisionTop(true);
+			}
+			else {
+				a->SetCollisionTop(true);
+				b->SetCollisionBottom(true);
+			}
+		}*/
+		
 	}
 
 
@@ -284,20 +316,20 @@ namespace game_framework {
 
 	void Spider::OnMove() {
 		// 落地檢查
-		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-		//	posY += 10;
-		//else {
-		//	// 方向檢查
-		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-		//		direction = !direction;
+		if (!isCollisingBottom)
+			posY += 10;
+		else {
+			// 方向檢查
+			if (isCollisingLeft || isCollisingRight)
+				direction = !direction;
 
-		//	// 移動
-		//	if (direction == true) 
-		//		posX += 5;
-		//	else if (direction == false)
-		//		posX -= 5;
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
 
-		//}
+		}
 
 		if (isMovingLeft)
 			posX += maxSpeed;
@@ -330,20 +362,20 @@ namespace game_framework {
 
 	void Rocket::OnMove() {
 		// 落地檢查
-		//if (posY < SIZE_Y - (Height() * DEFAULT_SCALE))
-		//	posY += 10;
-		//else {
-		//	// 方向檢查
-		//	if (posX < 0 || posX > SIZE_X - (Width() * DEFAULT_SCALE))
-		//		direction = !direction;
+		if (!isCollisingBottom)
+			posY += 10;
+		else {
+			// 方向檢查
+			if (isCollisingLeft || isCollisingRight)
+				direction = !direction;
 
-		//	// 移動
-		//	if (direction == true) 
-		//		posX += 5;
-		//	else if (direction == false)
-		//		posX -= 5;
+			// 移動
+			if (direction == true)
+				posX += 5;
+			else if (direction == false)
+				posX -= 5;
 
-		//}
+		}
 
 		if (isMovingLeft)
 			posX += maxSpeed;
@@ -355,7 +387,7 @@ namespace game_framework {
 			posY -= maxSpeed;
 
 		setTopLeft(posX, posY);
-		texture.OnMove();;
+		texture.OnMove();
 	}
 
 	void Rocket::OnShow(int scale) {

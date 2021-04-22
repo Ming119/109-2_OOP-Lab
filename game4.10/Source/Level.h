@@ -52,14 +52,13 @@ namespace game_framework {
 		void OnInit(int);
 		void OnMove();
 		void OnShow();
+		
+		Actor* currentActor();
 
 		void SetMoveLeft(bool);
 		void SetMoveRight(bool);
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
-
-		template <class obj1, class obj2>
-		void CollisionDetection(obj1&, obj2&);
 	};
 
 }

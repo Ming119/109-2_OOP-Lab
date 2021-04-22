@@ -3,25 +3,62 @@
 namespace game_framework {
 	class Actor {
 	private:
-		POINT position;
+		int posX, posY;
 		POINT spawnPoint;
 		POINT speed;
 
 		float maxSpeed;		// on x-axis
-		float acceleration;	// on x-axis
 		float angle;		// angle = ang(actor's x-axis, real x-axis)
 		float jumpStrength;
 		bool isJumping;
 		bool ignoreHorizontal;
+		bool isMovingLeft;
+		bool isMovingRight;
+		bool isLookingUp;
+		bool isLookingDown;
 
-		CAnimation* animation;
+		
+		const int gravity = 10;
+		int velocity;
+		int acceleration;
+
+		CAnimation idle;
+		CAnimation lookUp;
+		CAnimation lookDown;
+		CAnimation moving;
+		CAnimation jump;
 
 	public:
 		Actor();
 		~Actor();
 
-		void OnMove(Actor*, POINT);
-		void Onshow(Actor*, POINT);
+		void OnInit();
+		void OnMove();
+		void OnShow();
+
+		void setTopLeft(int, int);
+		void SetMoveLeft(bool);
+		void SetMoveRight(bool);
+		void SetIsLookingUp(bool);
+		void SetIsLookingDown(bool);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 		// Collision Detection
@@ -29,6 +66,21 @@ namespace game_framework {
 		bool orientedbox_collision(Actor*, Actor*);
 		bool poxelperfect_collision(Actor*, Actor*);
 		bool brick_collision(Actor*, Brick*);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		// Sensors
 		void render_corners(Actor*, float, float, POINT);

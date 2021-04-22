@@ -827,7 +827,6 @@ ENEMY_BLUE_8            BITMAP                  "..\\RES\\enemies\\machine1_blue
 
 ENEMY_SHIELD_1          BITMAP                  "..\\res\\ocean\\enemy_sh.bmp"
 
-
 ENEMY_RED_1             BITMAP                  "..\\RES\\enemies\\machine1_red1.bmp"
 
 ENEMY_RED_2             BITMAP                  "..\\RES\\enemies\\machine1_red2.bmp"
@@ -893,6 +892,107 @@ OCEAN_57                BITMAP                  "..\\RES\\ocean\\ocean_58.bmp"
 OCEAN_58                BITMAP                  "..\\RES\\ocean\\ocean_59.bmp"
 
 OCEAN_62_2              BITMAP                  "..\\RES\\ocean\\ocean_green2.bmp"
+
+IDB_BITMAP71            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_ball1.bmp"
+
+IDB_BITMAP93            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_ball2.bmp"
+
+IDB_BITMAP97            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_ball3.bmp"
+
+IDB_BITMAP178           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_ball4.bmp"
+
+IDB_BITMAP179           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_ball5.bmp"
+
+IDB_BITMAP180           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_ball6.bmp"
+
+IDB_BITMAP181           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_run1.bmp"
+
+IDB_BITMAP182           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_run2.bmp"
+
+IDB_BITMAP183           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_run3.bmp"
+
+IDB_BITMAP184           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_run4.bmp"
+
+IDB_BITMAP185           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_run5.bmp"
+
+IDB_BITMAP186           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_run6.bmp"
+
+IDB_BITMAP187           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_run7.bmp"
+
+IDB_BITMAP188           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_run8.bmp"
+
+IDB_BITMAP189           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_run9.bmp"
+
+IDB_BITMAP190           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_Injured1.bmp"
+
+IDB_BITMAP191           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_Injured2.bmp"
+
+IDB_BITMAP192           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_jump.bmp"
+
+IDB_BITMAP193           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_jump_off1.bmp"
+
+IDB_BITMAP194           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_jump_off2.bmp"
+
+ACTOR_1_RUN_1           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_normal_run1.bmp"
+
+ACTOR_1_RUN_2           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_normal_run2.bmp"
+
+ACTOR_1_RUN_3           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_normal_run3.bmp"
+
+ACTOR_1_RUN_4           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_normal_run4.bmp"
+
+ACTOR_1_RUN_5           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_normal_run5.bmp"
+
+ACTOR_1_RUN_6           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_normal_run6.bmp"
+
+ACTOR_1_RUN_7           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_normal_run7.bmp"
+
+IDB_BITMAP202           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_poss1.bmp"
+
+IDB_BITMAP203           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_poss2.bmp"
+
+IDB_BITMAP204           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_poss3.bmp"
+
+IDB_BITMAP205           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_poss4.bmp"
+
+IDB_BITMAP206           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_push1.bmp"
+
+IDB_BITMAP207           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_push2.bmp"
+
+IDB_BITMAP208           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_push3.bmp"
+
+IDB_BITMAP209           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_push4.bmp"
+
+IDB_BITMAP210           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_ready_roll1.bmp"
+
+IDB_BITMAP211           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_ready_roll2.bmp"
+
+IDB_BITMAP212           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_ready_roll3.bmp"
+
+IDB_BITMAP213           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_ready_roll4.bmp"
+
+IDB_BITMAP214           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_ready_roll5.bmp"
+
+IDB_BITMAP215           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_run_brakes1.bmp"
+
+IDB_BITMAP216           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_run_brakes2.bmp"
+
+IDB_BITMAP217           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_run_brakes3.bmp"
+
+ACTOR_1_LOOKDOWN_1      BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_squat_roll1.bmp"
+
+ACTOR_1_LOOKDOWN_2      BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_squat_roll2.bmp"
+
+ACTOR_1_STAND_1         BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x40\\play_blue_stand1.bmp"
+
+ACTOR_1_LOOKUP_1        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x40\\play_blue_stand2.bmp"
+
+ACTOR_1_LOOKUP_3        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x40\\play_blue_stand4.bmp"
+
+ACTOR_1_LOOKUP_4        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x40\\play_blue_stand5.bmp"
+
+ACTOR_1_LOOKUP_2        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x40\\play_blue_tand3.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
