@@ -537,6 +537,7 @@
     <Image Include="RES\logo\title_bule_character2.bmp" />
     <Image Include="RES\logo\title_bule_character3.bmp" />
     <Image Include="RES\logo\title_bule_character4.bmp" />
+    <Image Include="res\ocean\bitmap71.bmp" />
     <Image Include="res\ocean\enemy_sh.bmp" />
     <Image Include="RES\ocean\ocean_1.bmp" />
     <Image Include="RES\ocean\ocean_10.bmp" />

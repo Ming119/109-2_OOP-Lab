@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Chinese (Traditional, Taiwan) resources
+// 中文 (繁體，台灣) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -101,6 +101,7 @@ IDB_HELP                BITMAP                  "..\\res\\help.bmp"
 IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
 
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Cursor
@@ -108,12 +109,12 @@ IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // Chinese (Traditional, Taiwan) resources
+#endif    // 中文 (繁體，台灣) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// 英文 (美國) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -399,12 +400,12 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // English (United States) resources
+#endif    // 英文 (美國) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United Kingdom) resources
+// 英文 (英國) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
@@ -827,7 +828,6 @@ ENEMY_BLUE_8            BITMAP                  "..\\RES\\enemies\\machine1_blue
 
 ENEMY_SHIELD_1          BITMAP                  "..\\res\\ocean\\enemy_sh.bmp"
 
-
 ENEMY_RED_1             BITMAP                  "..\\RES\\enemies\\machine1_red1.bmp"
 
 ENEMY_RED_2             BITMAP                  "..\\RES\\enemies\\machine1_red2.bmp"
@@ -894,6 +894,7 @@ OCEAN_58                BITMAP                  "..\\RES\\ocean\\ocean_59.bmp"
 
 OCEAN_62_2              BITMAP                  "..\\RES\\ocean\\ocean_green2.bmp"
 
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Icon
@@ -903,7 +904,7 @@ OCEAN_62_2              BITMAP                  "..\\RES\\ocean\\ocean_green2.bm
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "..\\RES\\icon.ico"
 
-#endif    // English (United Kingdom) resources
+#endif    // 英文 (英國) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
