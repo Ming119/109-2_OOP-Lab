@@ -375,11 +375,9 @@
 #define ENEMY_LADYBUG_1                 458
 #define ENEMY_PENGUIN_2                 459
 #define ENEMY_PINKMONSTER_1             460
-#define ENEMY_ROCKET_1                  461
 #define ENEMY_RED_1                     462
 #define ENEMY_PINKMONSTER_2             463
 #define ENEMY_RED_2                     464
-#define ENEMY_SHARK_1                   465
 #define ENEMY_PENGUIN_4                 466
 #define ENEMY_SHIELD_1                  467
 #define ENEMY_GROUNDHOG_1               468
@@ -388,7 +386,6 @@
 #define ENEMY_CHEF_2                    471
 #define ENEMY_EARTHWORM_2               472
 #define ENEMY_CHEF_3                    473
-#define ENEMY_FLY_1                     474
 #define ENEMY_GROUNDHOG_2               475
 #define ENEMY_GROUNDHOG_3               476
 #define ENEMY_INSECT_3                  477
@@ -507,6 +504,10 @@
 #define ACTOR_1_LOOKUP_3                588
 #define ACTOR_1_LOOKUP_4                589
 #define ACTOR_1_LOOKUP_2                590
+#define ENEMY_FLY_1                     598
+#define ENEMY_ROCKET_1                  599
+#define IDB_BITMAP195                   600
+#define ENEMY_SHARK_1                   600
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -519,7 +520,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        591
+#define _APS_NEXT_RESOURCE_VALUE        601
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

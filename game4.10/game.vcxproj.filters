@@ -1323,5 +1323,11 @@
     <Image Include="RES\player\40x40\play_blue_tand3.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\ocean\bitmap19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ocean\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
