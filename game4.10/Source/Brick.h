@@ -24,9 +24,9 @@ namespace game_framework {
 	class Brick {
 	private:
 		CAnimation texture;
+		POINT pos;
 
 		int id;
-		int posX, posY;
 		int angle;
 
 		int property;
@@ -48,7 +48,7 @@ namespace game_framework {
 		bool isCollisingBottom;
 
 	public:
-		Brick(int, int, int, POINT);
+		Brick(int, int, int);
 
 		int Top();
 		int Left();

@@ -8,10 +8,10 @@
 #include "Level.h"
 
 namespace game_framework {
-	Brick::Brick(int _id, int x, int y, POINT spawn) {
+	Brick::Brick(int _id, int x, int y) {
 		id = _id;
-		posX = (x) * DEFAULT_SCALE;
-		posY = (y - spawn.y) * DEFAULT_SCALE + SIZE_Y / 2;
+		pos.x = x;
+		pos.y = y;
 
 		maxSpeed = 50;
 		speed = 0;
@@ -1073,15 +1073,15 @@ namespace game_framework {
 
 	void Brick::OnMove() {
 		if (isMovingLeft) 
-			posX += maxSpeed;
+			pos.x += maxSpeed;
 		if (isMovingRight)
-			posX -= maxSpeed;
+			pos.x -= maxSpeed;
 		if (isMovingUp)
-			posY += maxSpeed;
+			pos.y += maxSpeed;
 		if (isMovingDown)
-			posY -= maxSpeed;
+			pos.y -= maxSpeed;
 
-		texture.SetTopLeft(posX, posY);
+		texture.SetTopLeft(pos.x, pos.y);
 		texture.OnMove();
 	}
 

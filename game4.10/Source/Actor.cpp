@@ -22,7 +22,7 @@ namespace game_framework {
 		acceleration = 0;
 		isMovingLeft = isMovingRight = isLookingUp = isLookingDown = false;
 		posX = 100;
-		posY = SIZE_Y / 2;
+		posY = SIZE_Y / 3+40;
 	}
 
 	Actor::~Actor() {
@@ -55,7 +55,18 @@ namespace game_framework {
 		moving.SetDelayCount(3);
 		moving.SetTopLeft(posX, posY);
 
-		
+		/*jump.AddBitmap(ACTOR_1_ROLL_1);
+		jump.AddBitmap(ACTOR_1_ROLL_2);
+		jump.AddBitmap(ACTOR_1_ROLL_3);
+		jump.AddBitmap(ACTOR_1_ROLL_4);
+		jump.AddBitmap(ACTOR_1_ROLL_5);*/
+		jump.AddBitmap(IDB_BITMAP210);
+		jump.AddBitmap(IDB_BITMAP211);
+		jump.AddBitmap(IDB_BITMAP212);
+		jump.AddBitmap(IDB_BITMAP213);
+		jump.AddBitmap(IDB_BITMAP214);
+		jump.SetDelayCount(3);
+		jump.SetTopLeft(posX, posY);
 
 	}
 
@@ -79,10 +90,15 @@ namespace game_framework {
 			if (!lookDown.IsFinalBitmap())
 				lookDown.OnMove();
 		}
+		else if (isJumping) {
+			speed.y -= 10;
+			jump.OnMove();
+		}
 		else {
 			moving.Reset();
 			lookUp.Reset();
 			lookDown.Reset();
+			jump.Reset();
 			idle.OnMove();
 		}
 		/*if (isMovingUp)
@@ -104,6 +120,9 @@ namespace game_framework {
 		}
 		else if (isLookingDown) {
 			lookDown.OnShow();
+		}
+		else if (isJumping) {
+			jump.OnShow();
 		}
 		else 
 			idle.OnShow();
@@ -129,6 +148,14 @@ namespace game_framework {
 
 	void Actor::SetIsLookingDown(bool m) {
 		isLookingDown = m;
+	}
+
+	void Actor::SetIsJumping(bool m) {
+		isJumping = m;
+	}
+
+	bool Actor::IsJumping() {
+		return isJumping;
 	}
 
 }

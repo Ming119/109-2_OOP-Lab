@@ -101,7 +101,6 @@ IDB_HELP                BITMAP                  "..\\res\\help.bmp"
 IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
 
-
 /////////////////////////////////////////////////////////////////////////////
 //
 // Cursor
@@ -964,15 +963,15 @@ IDB_BITMAP208           BITMAP                  "..\\RES\\player\\40x45\\play_bl
 
 IDB_BITMAP209           BITMAP                  "..\\RES\\player\\40x45\\play_blue_push4.bmp"
 
-IDB_BITMAP210           BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll1.bmp"
+ACTOR_1_ROLL_1          BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll1.bmp"
 
-IDB_BITMAP211           BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll2.bmp"
+ACTOR_1_ROLL_2          BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll2.bmp"
 
-IDB_BITMAP212           BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll3.bmp"
+ACTOR_1_ROLL_3          BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll3.bmp"
 
-IDB_BITMAP213           BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll4.bmp"
+ACTOR_1_ROLL_4          BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll4.bmp"
 
-IDB_BITMAP214           BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll5.bmp"
+ACTOR_1_ROLL_5          BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll5.bmp"
 
 IDB_BITMAP215           BITMAP                  "..\\RES\\player\\40x45\\play_blue_run_brakes1.bmp"
 
@@ -993,6 +992,7 @@ ACTOR_1_LOOKUP_3        BITMAP                  "..\\RES\\player\\40x40\\play_bl
 ACTOR_1_LOOKUP_4        BITMAP                  "..\\RES\\player\\40x40\\play_blue_stand5.bmp"
 
 ACTOR_1_LOOKUP_2        BITMAP                  "..\\RES\\player\\40x40\\play_blue_tand3.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

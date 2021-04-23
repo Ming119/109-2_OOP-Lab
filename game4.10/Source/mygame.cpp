@@ -548,7 +548,10 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		level->CurrentActor()->SetIsLookingDown(true);
 		level->SetMoveDown(true);
 	}
-	//if (nChar == KEY_SPACE)
+	if (nChar == KEY_SPACE) {
+		level->CurrentActor()->SetIsJumping(true);
+
+	}
 		
 }
 
@@ -558,6 +561,7 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	const char KEY_UP    = 0x26; // keyboard上箭頭
 	const char KEY_RIGHT = 0x27; // keyboard右箭頭
 	const char KEY_DOWN  = 0x28; // keyboard下箭頭
+	const char KEY_SPACE = 0x20;
 
 	if (nChar == KEY_LEFT)
 		level->SetMoveLeft(false);
@@ -571,10 +575,15 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 		level->CurrentActor()->SetIsLookingDown(false);
 		level->SetMoveDown(false);
 	}
+	if (nChar == KEY_SPACE) {
+		level->CurrentActor()->SetIsJumping(false);
+	}
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
 {
+	
+
 	/*
 	//
 	// 如果希望修改cursor的樣式，則將下面程式的commment取消即可

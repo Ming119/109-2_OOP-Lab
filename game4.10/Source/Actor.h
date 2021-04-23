@@ -10,13 +10,13 @@ namespace game_framework {
 		float maxSpeed;		// on x-axis
 		float angle;		// angle = ang(actor's x-axis, real x-axis)
 		float jumpStrength;
-		bool isJumping;
+		
 		bool ignoreHorizontal;
 		bool isMovingLeft;
 		bool isMovingRight;
 		bool isLookingUp;
 		bool isLookingDown;
-
+		bool isJumping;
 		
 		const int   gravity  = 10;
 		const float friction = 0.95f;
@@ -42,22 +42,9 @@ namespace game_framework {
 		void SetMoveRight(bool);
 		void SetIsLookingUp(bool);
 		void SetIsLookingDown(bool);
+		void SetIsJumping(bool);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		bool IsJumping();
 
 
 

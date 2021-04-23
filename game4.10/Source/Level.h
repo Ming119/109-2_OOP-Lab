@@ -56,7 +56,10 @@ namespace game_framework {
 		
 		Actor* CurrentActor();
 
+
 		void SetMoveLeft(bool);
+		void SetMoveUp(int);
+		void SetMoveDown(int);
 		void SetMoveRight(bool);
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
