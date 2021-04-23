@@ -40,6 +40,7 @@ namespace game_framework {
 		Actor actor1;
 		Actor actor2;
 		Actor actor3;
+		Actor* currentActor;
 
 		vector<Brick*>	bricks;
 		vector<Item*>	items;
@@ -53,7 +54,7 @@ namespace game_framework {
 		void OnMove();
 		void OnShow();
 		
-		Actor* currentActor();
+		Actor* CurrentActor();
 
 		void SetMoveLeft(bool);
 		void SetMoveRight(bool);
