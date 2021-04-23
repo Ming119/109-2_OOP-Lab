@@ -86,8 +86,11 @@ namespace game_framework {
 
 		if (brick->Property() != OBSTACLE) return false;
 		
-		int Woffset = (int)((this->Left() + this->Width() * DEFAULT_SCALE) * 0.05);
-		int Hoffset = (int)((this->Top() + this->Height() * DEFAULT_SCALE) * 0.05);
+		/*int Woffset = (int)((this->Left() + this->Width() * DEFAULT_SCALE) * 0.05);
+		int Hoffset = (int)((this->Top() + this->Height() * DEFAULT_SCALE) * 0.05);*/
+		int Woffset = 1;
+		int Hoffset = 1;
+
 		if ((this->Left()+Woffset) < (brick->Left() + brick->Width() * DEFAULT_SCALE)-Woffset &&
 			(this->Left() + this->Width() * DEFAULT_SCALE)-Woffset > (brick->Left()+Woffset) &&
 			(this->Top()+Hoffset) < (brick->Top() + brick->Height() * DEFAULT_SCALE)-Hoffset &&

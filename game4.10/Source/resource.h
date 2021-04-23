@@ -452,8 +452,6 @@
 #define OCEAN_58                        535
 #define OCEAN_62_2                      537
 #define IDB_BITMAP71                    541
-<<<<<<< HEAD
-=======
 #define IDB_BITMAP93                    542
 #define IDB_BITMAP97                    543
 #define IDB_BITMAP178                   544
@@ -504,7 +502,6 @@
 #define ACTOR_1_LOOKUP_3                588
 #define ACTOR_1_LOOKUP_4                589
 #define ACTOR_1_LOOKUP_2                590
->>>>>>> 857f6edb8394dfff247806dc81baec50951130a1
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772

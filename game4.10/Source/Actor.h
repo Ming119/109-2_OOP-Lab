@@ -18,8 +18,9 @@ namespace game_framework {
 		bool isLookingDown;
 
 		
-		const int gravity = 10;
-		int velocity;
+		const int   gravity  = 10;
+		const float friction = 0.95f;
+		POINT velocity;
 		int acceleration;
 
 		CAnimation idle;

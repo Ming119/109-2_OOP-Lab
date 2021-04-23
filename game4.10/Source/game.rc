@@ -894,8 +894,6 @@ OCEAN_58                BITMAP                  "..\\RES\\ocean\\ocean_59.bmp"
 
 OCEAN_62_2              BITMAP                  "..\\RES\\ocean\\ocean_green2.bmp"
 
-<<<<<<< HEAD
-=======
 IDB_BITMAP71            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_ball1.bmp"
 
 IDB_BITMAP93            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x45\\play_blue_accelerate_ball2.bmp"
@@ -995,8 +993,6 @@ ACTOR_1_LOOKUP_3        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582
 ACTOR_1_LOOKUP_4        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x40\\play_blue_stand5.bmp"
 
 ACTOR_1_LOOKUP_2        BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\player\\40x40\\play_blue_tand3.bmp"
-
->>>>>>> 857f6edb8394dfff247806dc81baec50951130a1
 
 /////////////////////////////////////////////////////////////////////////////
 //

@@ -1692,7 +1692,6 @@ namespace game_framework {
 	}
 
 	void Level::OnShow() {
-		
 
 		// Background
 		background.ShowBitmap();
@@ -1715,6 +1714,7 @@ namespace game_framework {
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->OnShow();
 		}
+
 		actor1.OnShow();
 	}
 

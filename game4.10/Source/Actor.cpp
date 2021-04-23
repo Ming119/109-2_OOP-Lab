@@ -60,6 +60,9 @@ namespace game_framework {
 	}
 
 	void Actor::OnMove() {
+		velocity.x = (long)(velocity.x * friction);
+		velocity.y += gravity;
+
 		if (isMovingLeft) {
 			acceleration--;
 			moving.OnMove();
