@@ -757,8 +757,6 @@ ENEMY_EARTHWORM_1       BITMAP                  "..\\RES\\enemies\\machine_earth
 
 ENEMY_EARTHWORM_2       BITMAP                  "..\\RES\\enemies\\machine_earthworm2.bmp"
 
-ENEMY_FLY_1             BITMAP                  "..\\RES\\enemies\\machine_fly_red2.bmp"
-
 ENEMY_GROUNDHOG_1       BITMAP                  "..\\RES\\enemies\\machine_Groundhog1.bmp"
 
 ENEMY_GROUNDHOG_2       BITMAP                  "..\\RES\\enemies\\machine_Groundhog2.bmp"
@@ -796,10 +794,6 @@ ENEMY_PINKMONSTER_1     BITMAP                  "..\\RES\\enemies\\machine_Pink_
 ENEMY_PINKMONSTER_2     BITMAP                  "..\\RES\\enemies\\machine_Pink_monster2.bmp"
 
 ENEMY_PINKMONSTER_3     BITMAP                  "..\\RES\\enemies\\machine_Pink_monster3.bmp"
-
-ENEMY_ROCKET_1          BITMAP                  "..\\RES\\enemies\\machine_rocket2.bmp"
-
-ENEMY_SHARK_1           BITMAP                  "..\\RES\\enemies\\machine_shark2.bmp"
 
 ENEMY_SNAILS_1          BITMAP                  "..\\RES\\enemies\\machine_snails1.bmp"
 
@@ -992,6 +986,12 @@ ACTOR_1_LOOKUP_3        BITMAP                  "..\\RES\\player\\40x40\\play_bl
 ACTOR_1_LOOKUP_4        BITMAP                  "..\\RES\\player\\40x40\\play_blue_stand5.bmp"
 
 ACTOR_1_LOOKUP_2        BITMAP                  "..\\RES\\player\\40x40\\play_blue_tand3.bmp"
+
+ENEMY_FLY_1             BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\enemies\\machine_fly_red1.bmp"
+
+ENEMY_ROCKET_1          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\enemies\\machine_rocket1.bmp"
+
+ENEMY_SHARK_1           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\enemies\\machine_shark1.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
