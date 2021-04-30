@@ -180,25 +180,23 @@ namespace game_framework {
 	}
 
 	void Ladybug::OnMove() {
-			// 方向檢查
-		//	if (pos.x > spawn.x + movingRange) {
-		//		direction = !direction;
-		//		pos.x -= speed;
-		//	} 
-		//	if (pos.x < spawn.x - movingRange){
-		//		direction = !direction;
-		//		pos.x += speed;
-		//	}
-		//		
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if ((pos.x + Width() * DEFAULT_SCALE) >= (refBrick->Left() + refBrick->Width() * DEFAULT_SCALE)) {
+			direction = !direction;
+			pos.x -= speed;
+		}	
 
-		//	// 移動
-		//	if (direction == true) 
-		//		pos.x += speed;
-		//	else if (direction == false)
-		//		pos.x -= speed;
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
+	
 
-
+		// Camera Move
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -216,22 +214,8 @@ namespace game_framework {
 			spawn.y -= cameraSpeed;
 		}
 
-
 		setTopLeft(pos);
 		texture.OnMove();
-		
-
-		//// 碰撞檢查
-		//if () {
-
-		//}
-
-		//// 死亡檢查
-		//if () {
-
-		//}
-
-		
 	}
 
 	void Ladybug::OnShow(int scale) {
