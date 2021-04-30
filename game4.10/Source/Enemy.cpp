@@ -90,7 +90,7 @@ namespace game_framework {
 
 	bool Enemy::CollisionDetection(Brick* brick) {
 
-		if (brick->Property() != OBSTACLE) return false;
+		if (brick->Property() != OBSTACLE && brick->Property() != CLOUD) return false;
 		
 		/*int Woffset = (int)((this->Left() + this->Width() * DEFAULT_SCALE) * 0.05);
 		int Hoffset = (int)((this->Top() + this->Height() * DEFAULT_SCALE) * 0.05);*/
@@ -149,24 +149,21 @@ namespace game_framework {
 		
 	}
 
-	void Enemy::LookingForRefBrick() {
-	
-		/*const int bs = bricks.size();
+	void Enemy::LookingForRefBrick(vector<Brick*> bricks) {
 
-		do {
-			for (int b = 0; b < bs; b++) {
-				if (CollisionDetection(bricks.at(b))) {
-					this->refBrick = bricks.at(b);
-					break;
-				}
+		const int bs = bricks.size();
+
+		for (int b = 0; b < bs; b++) {
+			if (CollisionDetection(bricks.at(b))) {
+				this->refBrick = bricks.at(b);
+				TRACE("this: %d, %d. that pos: (%d, %d)\n", spawn.y, this->Height(), refBrick->Top(), refBrick->Left());
+				spawn.y -= (spawn.y + Height() * DEFAULT_SCALE) - refBrick->Top();
+				break;
 			}
-
-			if (this->refBrick == nullptr) spawn.y++;
-		} while (this->refBrick == nullptr);*/
-
+		}
 		
-		
-
+		setTopLeft(spawn);
+			
 	}
 
 	// Ladybug
@@ -177,29 +174,28 @@ namespace game_framework {
 		texture.AddBitmap(ENEMY_LADYBUG_2);
 		texture.AddBitmap(ENEMY_LADYBUG_3);
 		texture.SetDelayCount(3);
+		setTopLeft(spawn);
 
-		LookingForRefBrick();
-
-		setTopLeft(pos);
+		LookingForRefBrick(b);
 	}
 
 	void Ladybug::OnMove() {
 			// 方向檢查
-			if (pos.x > spawn.x + movingRange) {
-				direction = !direction;
-				pos.x -= speed;
-			} 
-			if (pos.x < spawn.x - movingRange){
-				direction = !direction;
-				pos.x += speed;
-			}
-				
+		//	if (pos.x > spawn.x + movingRange) {
+		//		direction = !direction;
+		//		pos.x -= speed;
+		//	} 
+		//	if (pos.x < spawn.x - movingRange){
+		//		direction = !direction;
+		//		pos.x += speed;
+		//	}
+		//		
 
-			// 移動
-			if (direction == true) 
-				pos.x += speed;
-			else if (direction == false)
-				pos.x -= speed;
+		//	// 移動
+		//	if (direction == true) 
+		//		pos.x += speed;
+		//	else if (direction == false)
+		//		pos.x -= speed;
 
 
 
@@ -247,11 +243,12 @@ namespace game_framework {
 	// Fly
 	Fly::Fly(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Fly::OnInit(vector<Brick*>) {
+	void Fly::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_FLY_1);
 		texture.AddBitmap(ENEMY_FLY_2);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Fly::OnMove() {
@@ -310,39 +307,35 @@ namespace game_framework {
 	// Bamboo
 	Bamboo::Bamboo(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Bamboo::OnInit(vector<Brick*>) {
+	void Bamboo::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_BAMBOO_1);
 		texture.AddBitmap(ENEMY_BAMBOO_2);
 		texture.AddBitmap(ENEMY_BAMBOO_3);
 		texture.AddBitmap(ENEMY_BAMBOO_4);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Bamboo::OnMove() {
-		// 落地檢查
-		if (!isCollisingBottom)
-			pos.y += 10;
-
-		else {
-			// 方向檢查
-			if (pos.x > spawn.x + movingRange) {
-				direction = !direction;
-				pos.x -= speed;
-			}
-			if (pos.x < spawn.x - movingRange) {
-				direction = !direction;
-				pos.x += speed;
-			}
-
-
-			// 移動
-			if (direction == true)
-				pos.x += speed;
-			else if (direction == false)
-				pos.x -= speed;
-
+		// 方向檢查
+		if (pos.x > spawn.x + movingRange) {
+			direction = !direction;
+			pos.x -= speed;
 		}
+		if (pos.x < spawn.x - movingRange) {
+			direction = !direction;
+			pos.x += speed;
+		}
+
+
+		// 移動
+		if (direction == true)
+			pos.x += speed;
+		else if (direction == false)
+			pos.x -= speed;
+
+
 
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
@@ -375,11 +368,12 @@ namespace game_framework {
 	// Spider
 	Spider::Spider(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Spider::OnInit(vector<Brick*>) {
+	void Spider::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_SPIDER_1);
 		texture.AddBitmap(ENEMY_SPIDER_2);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Spider::OnMove() {
@@ -438,38 +432,35 @@ namespace game_framework {
 	// Rocket
 	Rocket::Rocket(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Rocket::OnInit(vector<Brick*>) {
+	void Rocket::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_ROCKET_1);
 		texture.AddBitmap(ENEMY_ROCKET_2);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Rocket::OnMove() {
 		// 落地檢查
-		if (!isCollisingBottom)
-			pos.y += 10;
 
-		else {
-			// 方向檢查
-			if (pos.x > spawn.x + movingRange) {
-				direction = !direction;
-				pos.x -= speed;
-			}
-			if (pos.x < spawn.x - movingRange) {
-				direction = !direction;
-				pos.x += speed;
-			}
-
-
-			// 移動
-			if (direction == true)
-				pos.x += speed;
-			else if (direction == false)
-				pos.x -= speed;
-
+		// 方向檢查
+		if (pos.x > spawn.x + movingRange) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+		if (pos.x < spawn.x - movingRange) {
+			direction = !direction;
+			pos.x += speed;
 		}
 
+
+		// 移動
+		if (direction == true)
+			pos.x += speed;
+		else if (direction == false)
+			pos.x -= speed;
+
+		
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -501,11 +492,12 @@ namespace game_framework {
 	// Shark
 	Shark::Shark(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Shark::OnInit(vector<Brick*>) {
+	void Shark::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_SHARK_1);
 		texture.AddBitmap(ENEMY_SHARK_2);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Shark::OnMove() {
@@ -564,11 +556,12 @@ namespace game_framework {
 	// Mosquito
 	Mosquito::Mosquito(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Mosquito::OnInit(vector<Brick*>) {
+	void Mosquito::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_MOSQUITO_1);
 		texture.AddBitmap(ENEMY_MOSQUITO_2);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Mosquito::OnMove() {
@@ -627,12 +620,13 @@ namespace game_framework {
 	// Groundhog
 	Groundhog::Groundhog(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Groundhog::OnInit(vector<Brick*>) {
+	void Groundhog::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_GROUNDHOG_1);
 		texture.AddBitmap(ENEMY_GROUNDHOG_2);
 		texture.AddBitmap(ENEMY_GROUNDHOG_3);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Groundhog::OnMove() {
@@ -691,12 +685,13 @@ namespace game_framework {
 	// Red
 	Red::Red(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Red::OnInit(vector<Brick*>) {
+	void Red::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_RED_1);
 		texture.AddBitmap(ENEMY_RED_2);
 		texture.AddBitmap(ENEMY_RED_3);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Red::OnMove() {
@@ -754,10 +749,13 @@ namespace game_framework {
 	// Chef
 	Chef::Chef(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Chef::OnInit(vector<Brick*>) {
+	void Chef::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_CHEF_1);
 		texture.AddBitmap(ENEMY_CHEF_2);
 		texture.AddBitmap(ENEMY_CHEF_3);
+		texture.SetDelayCount(3);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Chef::OnMove() {
@@ -816,9 +814,12 @@ namespace game_framework {
 	// Earthworm
 	Earthworm::Earthworm(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Earthworm::OnInit(vector<Brick*>) {
+	void Earthworm::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_EARTHWORM_1);
 		texture.AddBitmap(ENEMY_EARTHWORM_2);
+		texture.SetDelayCount(3);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Earthworm::OnMove() {
@@ -877,12 +878,13 @@ namespace game_framework {
 	// Insect
 	Insect::Insect(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Insect::OnInit(vector<Brick*>) {
+	void Insect::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_INSECT_1, RGB(0,128,128));
 		texture.AddBitmap(ENEMY_INSECT_2, RGB(0,128,128));
 		texture.AddBitmap(ENEMY_INSECT_3, RGB(0,128,128));
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Insect::OnMove() {
@@ -941,14 +943,15 @@ namespace game_framework {
 	// Penguin
 	Penguin::Penguin(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Penguin::OnInit(vector<Brick*>) {
+	void Penguin::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(IDB_BITMAP127);
 		texture.AddBitmap(IDB_BITMAP128);
 		texture.AddBitmap(IDB_BITMAP129);
 		texture.AddBitmap(IDB_BITMAP130);
 		texture.AddBitmap(IDB_BITMAP131);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Penguin::OnMove() {
@@ -1007,12 +1010,13 @@ namespace game_framework {
 	// PinkMonster
 	PinkMonster::PinkMonster(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void PinkMonster::OnInit(vector<Brick*>) {
+	void PinkMonster::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(IDB_BITMAP132, RGB(0,128,64));
 		texture.AddBitmap(IDB_BITMAP133, RGB(0,128,64));
 		texture.AddBitmap(IDB_BITMAP134, RGB(0,128,64));
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void PinkMonster::OnMove() {
@@ -1071,11 +1075,12 @@ namespace game_framework {
 	// Snails
 	Snails::Snails(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Snails::OnInit(vector<Brick*>) {
+	void Snails::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(IDB_BITMAP139, RGB(0,128,64));
 		texture.AddBitmap(IDB_BITMAP140, RGB(0,128,64));
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Snails::OnMove() {
@@ -1134,7 +1139,7 @@ namespace game_framework {
 	// Blue
 	Blue::Blue(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Blue::OnInit(vector<Brick*>) {
+	void Blue::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(IDB_BITMAP143);
 		texture.AddBitmap(IDB_BITMAP144);
 		texture.AddBitmap(IDB_BITMAP145);
@@ -1144,7 +1149,8 @@ namespace game_framework {
 		texture.AddBitmap(IDB_BITMAP149);
 		texture.AddBitmap(IDB_BITMAP150);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void Blue::OnMove() {
@@ -1203,11 +1209,12 @@ namespace game_framework {
 	// FlyShield
 	FlyShield::FlyShield(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void FlyShield::OnInit(vector<Brick*>) {
+	void FlyShield::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(IDB_BITMAP151, RGB(0,128,128));
 		texture.AddBitmap(IDB_BITMAP152, RGB(0,128,128));
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+		setTopLeft(spawn);
+		LookingForRefBrick(b);
 	}
 
 	void FlyShield::OnMove() {

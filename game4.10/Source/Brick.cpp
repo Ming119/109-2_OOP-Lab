@@ -10,8 +10,8 @@
 namespace game_framework {
 	Brick::Brick(int _id, int x, int y) {
 		id = _id;
-		pos.x = x;
-		pos.y = y;
+		posX = x;
+		posY = y;
 
 		maxSpeed = 50;
 		speed = 0;
@@ -20,10 +20,12 @@ namespace game_framework {
 
 	int Brick::Top() {
 		return texture.Top();
+		//return posY;
 	}
 
 	int Brick::Left() {
 		return texture.Left();
+		//return posX;
 	}
 
 	int Brick::Angle() {
@@ -1069,19 +1071,22 @@ namespace game_framework {
 
 			}*/
 		}
+
+
+		texture.SetTopLeft(posX, posY);
 	}
 
 	void Brick::OnMove() {
 		if (isMovingLeft) 
-			pos.x += maxSpeed;
+			posX += maxSpeed;
 		if (isMovingRight)
-			pos.x -= maxSpeed;
+			posX -= maxSpeed;
 		if (isMovingUp)
-			pos.y += maxSpeed;
+			posY += maxSpeed;
 		if (isMovingDown)
-			pos.y -= maxSpeed;
+			posY -= maxSpeed;
 
-		texture.SetTopLeft(pos.x, pos.y);
+		texture.SetTopLeft(posX, posY);
 		texture.OnMove();
 	}
 

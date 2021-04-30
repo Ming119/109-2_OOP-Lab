@@ -8,13 +8,15 @@ namespace game_framework {
 	};
 
 	class Item {
+	protected:
+		CAnimation texture;
+		int posX, posY;
+		int angle;
+
 	public:
 		Item();
 		Item(int, int, int);
 		~Item();
-
-		int posX, posY;
-		int angle;
 
 		void setPos(int, int);
 		void setAngle(int);
@@ -25,11 +27,6 @@ namespace game_framework {
 	};
 	
 	class Ring: public Item {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
 	public: 
 		Ring();
 		Ring(int, int, int);

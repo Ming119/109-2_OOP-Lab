@@ -68,7 +68,7 @@ namespace game_framework {
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
 
-		void LookingForRefBrick();
+		void LookingForRefBrick(vector<Brick*>);
 		bool CollisionDetection(Brick*);
 
 		void SetCollisionLeft(bool);
