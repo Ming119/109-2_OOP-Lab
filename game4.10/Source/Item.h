@@ -8,28 +8,25 @@ namespace game_framework {
 	};
 
 	class Item {
+	protected:
+		CAnimation texture;
+		int posX, posY;
+		int angle;
+
 	public:
 		Item();
 		Item(int, int, int);
 		~Item();
-
-		int posX, posY;
-		int angle;
 
 		void setPos(int, int);
 		void setAngle(int);
 
 		virtual void OnInit() = 0;
 		virtual void OnMove() = 0;
-		virtual void OnShow() = 0;
+		virtual void OnShow(int scale = DEFAULT_SCALE) = 0;
 	};
 	
 	class Ring: public Item {
-	private:
-		CAnimation texture;
-		int posX, posY;
-		int angle;
-
 	public: 
 		Ring();
 		Ring(int, int, int);
@@ -37,8 +34,9 @@ namespace game_framework {
 
 		void OnInit() override;
 		void OnMove() override;
-		void OnShow() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
+
 
 }
 

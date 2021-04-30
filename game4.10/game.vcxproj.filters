@@ -1329,5 +1329,29 @@
     <Image Include="res\ocean\bmp00001.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="..\Document\images\items\items_coin1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Document\images\items\items_coin2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Document\images\items\items_coin3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Document\images\items\items_coin4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Document\images\items\items_coin5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Document\images\items\items_coin6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Document\images\items\items_coin7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Document\images\items\items_coin8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

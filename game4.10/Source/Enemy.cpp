@@ -1260,5 +1260,4 @@ namespace game_framework {
 	void FlyShield::OnShow(int scale) {
 		texture.OnShow(scale);
 	}
-
 }

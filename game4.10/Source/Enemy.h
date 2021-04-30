@@ -268,7 +268,6 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
-
 }
 
 #endif
