@@ -10,33 +10,47 @@
 namespace game_framework {
 	// Item
 	Item::Item() {
-		posX = 0;
-		posY = 0;
+		pos.x = 0;
+		pos.y = 0;
 		angle = 0;
-
+		cameraSpeed = 50;
 	}
 
-	Item::Item(int x, int y, int ang) {
-		posX = x;
-		posY = y;
-		angle = ang;
-
+	Item::Item(int x, int y) {
+		pos.x = x;
+		pos.y = y;
+		angle = 0;
+		cameraSpeed = 50;
 
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
-	Item::~Item() {
+	Item::~Item() { }
+
+	int Item::Top() {
+		return texture.Top();
 	}
 
-	void Item::setPos(int x, int y) {
-		posX = x;
-		posY = y;
+	int Item::Left() {
+		return texture.Left();
+	}
+
+	void Item::setTopLeft(int x, int y) {
+		pos.x = x;
+		pos.y = y;
+
+		texture.SetTopLeft(pos.x, pos.y);
+	}
+
+	void Item::setTopLeft(POINT xy) {
+		pos = xy;
+
+		texture.SetTopLeft(pos.x, pos.y);
 	}
 
 	void Item::setAngle(int ang) {
 		angle = ang;
 	}
-
 
 	void Item::SetMoveLeft(bool m) {
 		isMovingLeft = m;
@@ -56,12 +70,13 @@ namespace game_framework {
 
 
 	// Ring
-	//Ring::Ring() : Item::Item() {}
+	Ring::Ring() : Item::Item() {}
 
-	Ring::Ring(int x, int y, int ang) : Item::Item(x, y, ang) {}
+	Ring::Ring(int x, int y) : Item::Item(x, y) {}
+
+	Ring::~Ring() {}
 
 	void Ring::OnInit() {
-
 		texture.AddBitmap(ITEMS_YELLOW_RING_1);
 		texture.AddBitmap(ITEMS_YELLOW_RING_2);
 		texture.AddBitmap(ITEMS_YELLOW_RING_3);
@@ -70,39 +85,36 @@ namespace game_framework {
 		texture.AddBitmap(ITEMS_YELLOW_RING_6);
 		texture.AddBitmap(ITEMS_YELLOW_RING_7);
 		texture.AddBitmap(ITEMS_YELLOW_RING_8);
-		texture.SetDelayCount(8);
-		texture.SetTopLeft(posX, posY);
-		//LookingForRefBrick(b);
+		texture.SetDelayCount(3);
 
+		setTopLeft(pos);
 	}
 
 	void Ring::OnMove() {
 
 		// Camera Move
 		if (isMovingLeft) {
-			posX += cameraSpeed;
-			spawn.x += cameraSpeed;
+			pos.x += cameraSpeed;
 		}
 		if (isMovingRight) {
-			posX -= cameraSpeed;
-			spawn.x -= cameraSpeed;
+			pos.x -= cameraSpeed;
 		}
 		if (isMovingUp) {
-			posY += cameraSpeed;
-			spawn.y += cameraSpeed;
+			pos.y += cameraSpeed;
 		}
 		if (isMovingDown) {
-			posY -= cameraSpeed;
-			spawn.y -= cameraSpeed;
+			pos.y -= cameraSpeed;
 		}
-		//texture.SetTopLeft(pos);
+		
+		setTopLeft(pos);
 		texture.OnMove();
 	}
 
 	void Ring::OnShow(int scale) {
+		//TRACE("%d, %d\n", Top(), Left());
 		texture.OnShow(scale);
 	}
 
-	// 
+	
 }
 

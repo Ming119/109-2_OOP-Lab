@@ -100,21 +100,21 @@ IDB_HELP                BITMAP                  "..\\res\\help.bmp"
 
 IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
-ITEMS_YELLOW_RING_1     BITMAP                  "D:\\OOP-2\\Project\\Document\\images\\items\\items_coin1.bmp"
+ITEMS_YELLOW_RING_1     BITMAP                  "..\\res\\items\\items_coin1.bmp"
 
-ITEMS_YELLOW_RING_2     BITMAP                  "D:\\OOP-2\\Project\\Document\\images\\items\\items_coin2.bmp"
+ITEMS_YELLOW_RING_2     BITMAP                  "..\\res\\items\\items_coin2.bmp"
 
-ITEMS_YELLOW_RING_3     BITMAP                  "D:\\OOP-2\\Project\\Document\\images\\items\\items_coin3.bmp"
+ITEMS_YELLOW_RING_3     BITMAP                  "..\\res\\items\\items_coin3.bmp"
 
-ITEMS_YELLOW_RING_4     BITMAP                  "D:\\OOP-2\\Project\\Document\\images\\items\\items_coin4.bmp"
+ITEMS_YELLOW_RING_4     BITMAP                  "..\\res\\items\\items_coin4.bmp"
 
-ITEMS_YELLOW_RING_5     BITMAP                  "D:\\OOP-2\\Project\\Document\\images\\items\\items_coin5.bmp"
+ITEMS_YELLOW_RING_5     BITMAP                  "..\\res\\items\\items_coin5.bmp"
 
-ITEMS_YELLOW_RING_6     BITMAP                  "D:\\OOP-2\\Project\\Document\\images\\items\\items_coin6.bmp"
+ITEMS_YELLOW_RING_6     BITMAP                  "..\\res\\items\\items_coin6.bmp"
 
-ITEMS_YELLOW_RING_7     BITMAP                  "D:\\OOP-2\\Project\\Document\\images\\items\\items_coin7.bmp"
+ITEMS_YELLOW_RING_7     BITMAP                  "..\\res\\items\\items_coin7.bmp"
 
-ITEMS_YELLOW_RING_8     BITMAP                  "D:\\OOP-2\\Project\\Document\\images\\items\\items_coin8.bmp"
+ITEMS_YELLOW_RING_8     BITMAP                  "..\\res\\items\\items_coin8.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

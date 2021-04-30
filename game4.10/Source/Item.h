@@ -10,10 +10,8 @@ namespace game_framework {
 	class Item {
 	protected:
 		CAnimation texture;
-		POINT spawn;
 		POINT pos;
 
-		int posX, posY;
 		int angle;
 		int speed;
 		int cameraSpeed;
@@ -25,10 +23,14 @@ namespace game_framework {
 
 	public:
 		Item();
-		Item(int, int, int);
+		Item(int, int);
 		~Item();
 
-		void setPos(int, int);
+		int Top();
+		int Left();
+
+		void setTopLeft(int, int);
+		void setTopLeft(POINT);
 		void setAngle(int);
 
 
@@ -45,7 +47,7 @@ namespace game_framework {
 	class Ring: public Item {
 	public: 
 		Ring();
-		Ring(int, int, int);
+		Ring(int, int);
 		~Ring();
 
 		void OnInit() override;

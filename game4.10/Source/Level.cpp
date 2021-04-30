@@ -47,14 +47,14 @@ namespace game_framework {
 				}
 				
 				// Item
-				for (int i = 0; i < sizeof(items)/sizeof(items[0]); i++) {
+				for (int i = 0; i < sizeof(Level1Items)/sizeof(Level1Items[0]); i++) {
 					int id = Level1Items[i][0];
 					int x = Level1Items[i][1] * DEFAULT_SCALE;
-					int y = (Level1Items[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y/2;
+					int y = (Level1Items[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
 
 					switch (id) {
 					case 0:
-						items.push_back(new Ring(id, x, y));
+						items.push_back(new Ring(x, y));
 						break;
 					}
 					/*
@@ -72,43 +72,43 @@ namespace game_framework {
 
 					switch (id) {
 					case static_cast<int>(ENEMIES_LIST::LADYBUG) :
-						enemies.push_back(new Ladybug(x, y, 0));
+						enemies.push_back(new Ladybug(x, y));
 						break;
 
 					case static_cast<int>(ENEMIES_LIST::FLY) :
-						enemies.push_back(new Fly(x, y, 0));
+						enemies.push_back(new Fly(x, y));
 						break;
 
 					case static_cast<int>(ENEMIES_LIST::BAMBOO) :
-						enemies.push_back(new Bamboo(x, y, 0));
+						enemies.push_back(new Bamboo(x, y));
 						break;
 
 					case static_cast<int>(ENEMIES_LIST::SPIDER) :
-						enemies.push_back(new Spider(x, y, 0));
+						enemies.push_back(new Spider(x, y));
 						break;
 
 					case static_cast<int>(ENEMIES_LIST::ROCKET) :
-						enemies.push_back(new Rocket(x, y, 0));
+						enemies.push_back(new Rocket(x, y));
 						break;
 
 					case static_cast<int>(ENEMIES_LIST::SHARK) :
-						enemies.push_back(new Shark(x, y, 0));
+						enemies.push_back(new Shark(x, y));
 						break;
 
 					case static_cast<int>(ENEMIES_LIST::MOSQUITO) :
-						enemies.push_back(new Mosquito(x, y, 0));
+						enemies.push_back(new Mosquito(x, y));
 						break;
 
 					case static_cast<int>(ENEMIES_LIST::GROUNDHOG) :
-						enemies.push_back(new Groundhog(x, y, 0));
+						enemies.push_back(new Groundhog(x, y));
 						break;
 
 					case static_cast<int>(ENEMIES_LIST::RED) :
-						enemies.push_back(new Red(x, y, 0));
+						enemies.push_back(new Red(x, y));
 						break;
 
 					case static_cast<int>(ENEMIES_LIST::CHEF) :
-						enemies.push_back(new Chef(x, y, 0));
+						enemies.push_back(new Chef(x, y));
 						break;
 					}
 
@@ -156,11 +156,13 @@ namespace game_framework {
 		int bs = bricks.size();
 		int es = enemies.size();
 		
+		/*
 		for (int b = 0; b < bs; b++) {
 			for (int e = 0; e < es; e++) {
 				enemies.at(e)->CollisionDetection(bricks.at(b));
 			}
 		}
+		*/
 
 
 
@@ -250,7 +252,7 @@ namespace game_framework {
 
 		/*int is = items.size();
 		for (int i = 0; i < is; i++) {
-			items.at(i)->MoveLeft(speed);
+			items.at(i)->SetMoveL(speed);
 		}*/
 
 		int es = enemies.size();

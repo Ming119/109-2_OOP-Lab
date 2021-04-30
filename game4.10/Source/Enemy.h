@@ -6,7 +6,6 @@
 namespace game_framework {
 
 	enum class ENEMIES_LIST {
-		// *ID (115 ~ 155) Needed to be changed*
 		LADYBUG,
 		FLY,
 		BAMBOO,
@@ -52,9 +51,10 @@ namespace game_framework {
 		bool isCollisingBottom;
 
 	public:
-		Enemy(int, int, int);
+		Enemy(int, int);
 
 		void setTopLeft(POINT);
+		void setTopLeft(int, int);
 		void setAngle(int);
 
 		int Top();
@@ -84,7 +84,7 @@ namespace game_framework {
 	class Bamboo : public Enemy {
 	public:
 		Bamboo();
-		Bamboo(int, int, int);
+		Bamboo(int, int);
 		~Bamboo();
 
 		void OnInit(vector<Brick*>) ;
@@ -95,7 +95,7 @@ namespace game_framework {
 	class Chef : public Enemy {
 	public:
 		Chef();
-		Chef(int, int, int);
+		Chef(int, int);
 		~Chef();
 
 		void OnInit(vector<Brick*>);
@@ -106,7 +106,7 @@ namespace game_framework {
 	class Earthworm : public Enemy {
 	public:
 		Earthworm();
-		Earthworm(int, int, int);
+		Earthworm(int, int);
 		~Earthworm();
 
 		void OnInit(vector<Brick*>) ;
@@ -117,7 +117,7 @@ namespace game_framework {
 	class Fly : public Enemy {
 	public:
 		Fly();
-		Fly(int, int, int);
+		Fly(int, int);
 		~Fly();
 
 		void OnInit(vector<Brick*>) ;
@@ -128,7 +128,7 @@ namespace game_framework {
 	class Groundhog : public Enemy {
 	public:
 		Groundhog();
-		Groundhog(int, int, int);
+		Groundhog(int, int);
 		~Groundhog();
 
 		void OnInit(vector<Brick*>) ;
@@ -139,7 +139,7 @@ namespace game_framework {
 	class Insect : public Enemy {
 	public:
 		Insect();
-		Insect(int, int, int);
+		Insect(int, int);
 		~Insect();
 
 		void OnInit(vector<Brick*>) ;
@@ -150,7 +150,7 @@ namespace game_framework {
 	class Ladybug : public Enemy {
 	public:
 		Ladybug();
-		Ladybug(int, int, int);
+		Ladybug(int, int);
 		~Ladybug();
 
 		void OnInit(vector<Brick*>);
@@ -161,7 +161,7 @@ namespace game_framework {
 	class Mosquito : public Enemy {
 	public:
 		Mosquito();
-		Mosquito(int, int, int);
+		Mosquito(int, int);
 		~Mosquito();
 
 		void OnInit(vector<Brick*>) ;
@@ -172,7 +172,7 @@ namespace game_framework {
 	class Penguin : public Enemy {
 	public:
 		Penguin();
-		Penguin(int, int, int);
+		Penguin(int, int);
 		~Penguin();
 
 		void OnInit(vector<Brick*>) ;
@@ -183,7 +183,7 @@ namespace game_framework {
 	class PinkMonster : public Enemy {
 	public:
 		PinkMonster();
-		PinkMonster(int, int, int);
+		PinkMonster(int, int);
 		~PinkMonster();
 
 		void OnInit(vector<Brick*>) ;
@@ -194,7 +194,7 @@ namespace game_framework {
 	class Rocket : public Enemy {
 	public:
 		Rocket();
-		Rocket(int, int, int);
+		Rocket(int, int);
 		~Rocket();
 
 		void OnInit(vector<Brick*>) ;
@@ -205,7 +205,7 @@ namespace game_framework {
 	class Shark : public Enemy {
 	public:
 		Shark();
-		Shark(int, int, int);
+		Shark(int, int);
 		~Shark();
 
 		void OnInit(vector<Brick*>);
@@ -216,7 +216,7 @@ namespace game_framework {
 	class Snails : public Enemy {
 	public:
 		Snails();
-		Snails(int, int, int);
+		Snails(int, int);
 		~Snails();
 
 		void OnInit(vector<Brick*>);
@@ -228,7 +228,7 @@ namespace game_framework {
 	private:
 	public:
 		Spider();
-		Spider(int, int, int);
+		Spider(int, int);
 		~Spider();
 
 		void OnInit(vector<Brick*>);
@@ -239,7 +239,7 @@ namespace game_framework {
 	class Blue : public Enemy {
 	public:
 		Blue();
-		Blue(int, int, int);
+		Blue(int, int);
 		~Blue();
 
 		void OnInit(vector<Brick*>);
@@ -250,7 +250,7 @@ namespace game_framework {
 	class FlyShield : public Enemy {
 	public:
 		FlyShield();
-		FlyShield(int, int, int);
+		FlyShield(int, int);
 		~FlyShield();
 
 		void OnInit(vector<Brick*>);
@@ -261,7 +261,7 @@ namespace game_framework {
 	class Red : public Enemy {
 	public:
 		Red();
-		Red(int, int, int);
+		Red(int, int);
 		~Red();
 
 		void OnInit(vector<Brick*>);
