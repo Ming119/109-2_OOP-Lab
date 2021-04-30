@@ -508,6 +508,15 @@
 #define ENEMY_ROCKET_1                  599
 #define IDB_BITMAP195                   600
 #define ENEMY_SHARK_1                   600
+#define ITEMS_YELLOW_RING_1             601
+#define ITEMS_YELLOW_RING_2             602
+#define ITEMS_YELLOW_RING_3             603
+#define ITEMS_YELLOW_RING_4             604
+#define ITEMS_YELLOW_RING_5             605
+#define ITEMS_YELLOW_RING_6             606
+#define ITEMS_YELLOW_RING_7             607
+#define ITEMS_YELLOW_RING8              608
+#define ITEMS_YELLOW_RING_8             608
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -520,7 +529,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        601
+#define _APS_NEXT_RESOURCE_VALUE        609
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

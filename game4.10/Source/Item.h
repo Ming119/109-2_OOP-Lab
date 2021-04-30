@@ -23,7 +23,7 @@ namespace game_framework {
 
 		virtual void OnInit() = 0;
 		virtual void OnMove() = 0;
-		virtual void OnShow() = 0;
+		virtual void OnShow(int scale = DEFAULT_SCALE) = 0;
 	};
 	
 	class Ring: public Item {
@@ -34,8 +34,9 @@ namespace game_framework {
 
 		void OnInit() override;
 		void OnMove() override;
-		void OnShow() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
+
 
 }
 
