@@ -87,7 +87,7 @@ namespace game_framework {
 		Bamboo(int, int, int);
 		~Bamboo();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>) ;
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};

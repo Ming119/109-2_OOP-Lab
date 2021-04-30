@@ -41,7 +41,7 @@ namespace game_framework {
 		Actor actor3;
 		Actor* currentActor;
 
-		vector<Brick*> bricks;
+		vector<Brick*>  bricks;
 		vector<Item*>	items;
 		vector<Enemy*>	enemies;
 
@@ -61,8 +61,6 @@ namespace game_framework {
 		void SetMoveRight(bool);
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
-
-		static vector<Brick*> GetBricks(Level);
 	};
 
 }

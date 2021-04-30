@@ -219,11 +219,6 @@ namespace game_framework {
 		return currentActor;
 	}
 
-	vector<Brick*> Level::GetBricks(Level l)
-	{
-		return l.bricks;
-	}
-
 	void Level::SetMoveLeft(bool m) {
 		actor1.SetMoveLeft(m);
 

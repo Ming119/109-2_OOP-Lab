@@ -180,7 +180,7 @@ namespace game_framework {
 
 		LookingForRefBrick();
 
-		setTopLeft(spawn);
+		setTopLeft(pos);
 	}
 
 	void Ladybug::OnMove() {
@@ -310,7 +310,7 @@ namespace game_framework {
 	// Bamboo
 	Bamboo::Bamboo(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Bamboo::OnInit() {
+	void Bamboo::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_BAMBOO_1);
 		texture.AddBitmap(ENEMY_BAMBOO_2);
 		texture.AddBitmap(ENEMY_BAMBOO_3);
