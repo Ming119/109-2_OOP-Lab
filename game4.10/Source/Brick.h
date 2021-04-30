@@ -24,9 +24,9 @@ namespace game_framework {
 	class Brick {
 	private:
 		CAnimation texture;
-		POINT pos;
-
-		int id;
+		
+		int id; 
+		int posX, posY;
 		int angle;
 
 		int property;
