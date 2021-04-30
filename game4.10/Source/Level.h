@@ -32,7 +32,6 @@ namespace game_framework {
 		int max_x;
 		int max_y;
 
-
 		POINT spawnPoint;
 
 		CMovingBitmap background;
@@ -42,7 +41,7 @@ namespace game_framework {
 		Actor actor3;
 		Actor* currentActor;
 
-		vector<Brick*>	bricks;
+		vector<Brick*> bricks;
 		vector<Item*>	items;
 		vector<Enemy*>	enemies;
 
@@ -56,13 +55,14 @@ namespace game_framework {
 		
 		Actor* CurrentActor();
 
-
 		void SetMoveLeft(bool);
 		void SetMoveUp(int);
 		void SetMoveDown(int);
 		void SetMoveRight(bool);
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
+
+		static vector<Brick*> GetBricks(Level);
 	};
 
 }

@@ -33,6 +33,7 @@ namespace game_framework {
 		CAnimation texture;
 		POINT spawn;
 		POINT pos;
+		Brick* refBrick;
 
 		int angle;
 		int speed;
@@ -67,6 +68,7 @@ namespace game_framework {
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
 
+		void LookingForRefBrick();
 		bool CollisionDetection(Brick*);
 
 		void SetCollisionLeft(bool);
@@ -74,7 +76,7 @@ namespace game_framework {
 		void SetCollisionTop(bool);
 		void SetCollisionBottom(bool);
 
-		virtual void OnInit()=0;
+		virtual void OnInit(vector<Brick*>) {};
 		virtual void OnMove()=0;
 		virtual void OnShow(int scale = DEFAULT_SCALE)=0;
 	};
@@ -96,7 +98,7 @@ namespace game_framework {
 		Chef(int, int, int);
 		~Chef();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>);
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
@@ -107,7 +109,7 @@ namespace game_framework {
 		Earthworm(int, int, int);
 		~Earthworm();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>) ;
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
@@ -118,7 +120,7 @@ namespace game_framework {
 		Fly(int, int, int);
 		~Fly();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>) ;
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
@@ -129,7 +131,7 @@ namespace game_framework {
 		Groundhog(int, int, int);
 		~Groundhog();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>) ;
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
@@ -140,7 +142,7 @@ namespace game_framework {
 		Insect(int, int, int);
 		~Insect();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>) ;
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
@@ -151,7 +153,7 @@ namespace game_framework {
 		Ladybug(int, int, int);
 		~Ladybug();
 
-		void OnInit();
+		void OnInit(vector<Brick*>);
 		void OnMove();
 		void OnShow(int scale = DEFAULT_SCALE);
 	};
@@ -162,7 +164,7 @@ namespace game_framework {
 		Mosquito(int, int, int);
 		~Mosquito();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>) ;
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
@@ -173,7 +175,7 @@ namespace game_framework {
 		Penguin(int, int, int);
 		~Penguin();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>) ;
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
@@ -184,7 +186,7 @@ namespace game_framework {
 		PinkMonster(int, int, int);
 		~PinkMonster();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>) ;
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
@@ -195,7 +197,7 @@ namespace game_framework {
 		Rocket(int, int, int);
 		~Rocket();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>) ;
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
@@ -206,7 +208,7 @@ namespace game_framework {
 		Shark(int, int, int);
 		~Shark();
 
-		void OnInit() ;
+		void OnInit(vector<Brick*>);
 		void OnMove() ;
 		void OnShow(int scale = DEFAULT_SCALE) ;
 	};
@@ -217,7 +219,7 @@ namespace game_framework {
 		Snails(int, int, int);
 		~Snails();
 
-		void OnInit();
+		void OnInit(vector<Brick*>);
 		void OnMove();
 		void OnShow(int scale = DEFAULT_SCALE);
 	};
@@ -229,7 +231,7 @@ namespace game_framework {
 		Spider(int, int, int);
 		~Spider();
 
-		void OnInit();
+		void OnInit(vector<Brick*>);
 		void OnMove();
 		void OnShow(int scale = DEFAULT_SCALE);
 	};
@@ -240,7 +242,7 @@ namespace game_framework {
 		Blue(int, int, int);
 		~Blue();
 
-		void OnInit() override;
+		void OnInit(vector<Brick*>);
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
@@ -251,7 +253,7 @@ namespace game_framework {
 		FlyShield(int, int, int);
 		~FlyShield();
 
-		void OnInit() override;
+		void OnInit(vector<Brick*>);
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
@@ -262,7 +264,7 @@ namespace game_framework {
 		Red(int, int, int);
 		~Red();
 
-		void OnInit() override;
+		void OnInit(vector<Brick*>);
 		void OnMove() override;
 		void OnShow(int scale=DEFAULT_SCALE) override;
 	};

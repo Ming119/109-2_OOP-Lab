@@ -5,6 +5,8 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "Enemy.h"
+#include "Level.h"
+
 
 namespace game_framework {
 	// Enemy
@@ -16,6 +18,7 @@ namespace game_framework {
 		speed = 5;
 		cameraSpeed = 50;
 		movingRange = 100;
+		refBrick = nullptr;
 
 		direction = false;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
@@ -146,25 +149,41 @@ namespace game_framework {
 		
 	}
 
+	void Enemy::LookingForRefBrick() {
+	
+		/*const int bs = bricks.size();
 
+		do {
+			for (int b = 0; b < bs; b++) {
+				if (CollisionDetection(bricks.at(b))) {
+					this->refBrick = bricks.at(b);
+					break;
+				}
+			}
+
+			if (this->refBrick == nullptr) spawn.y++;
+		} while (this->refBrick == nullptr);*/
+
+		
+		
+
+	}
 
 	// Ladybug
 	Ladybug::Ladybug(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Ladybug::OnInit() {
+	void Ladybug::OnInit(vector<Brick*> b) {
 		texture.AddBitmap(ENEMY_LADYBUG_1);
 		texture.AddBitmap(ENEMY_LADYBUG_2);
 		texture.AddBitmap(ENEMY_LADYBUG_3);
 		texture.SetDelayCount(3);
-		setTopLeft(pos);
+
+		LookingForRefBrick();
+
+		setTopLeft(spawn);
 	}
 
 	void Ladybug::OnMove() {
-		// 落地檢查
-		if (!isCollisingBottom)
-			pos.y += 10;
-
-		else {
 			// 方向檢查
 			if (pos.x > spawn.x + movingRange) {
 				direction = !direction;
@@ -182,7 +201,7 @@ namespace game_framework {
 			else if (direction == false)
 				pos.x -= speed;
 
-		}
+
 
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
@@ -228,7 +247,7 @@ namespace game_framework {
 	// Fly
 	Fly::Fly(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Fly::OnInit() {
+	void Fly::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_FLY_1);
 		texture.AddBitmap(ENEMY_FLY_2);
 		texture.SetDelayCount(3);
@@ -356,7 +375,7 @@ namespace game_framework {
 	// Spider
 	Spider::Spider(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Spider::OnInit() {
+	void Spider::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_SPIDER_1);
 		texture.AddBitmap(ENEMY_SPIDER_2);
 		texture.SetDelayCount(3);
@@ -419,7 +438,7 @@ namespace game_framework {
 	// Rocket
 	Rocket::Rocket(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Rocket::OnInit() {
+	void Rocket::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_ROCKET_1);
 		texture.AddBitmap(ENEMY_ROCKET_2);
 		texture.SetDelayCount(3);
@@ -482,7 +501,7 @@ namespace game_framework {
 	// Shark
 	Shark::Shark(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Shark::OnInit() {
+	void Shark::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_SHARK_1);
 		texture.AddBitmap(ENEMY_SHARK_2);
 		texture.SetDelayCount(3);
@@ -545,7 +564,7 @@ namespace game_framework {
 	// Mosquito
 	Mosquito::Mosquito(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Mosquito::OnInit() {
+	void Mosquito::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_MOSQUITO_1);
 		texture.AddBitmap(ENEMY_MOSQUITO_2);
 		texture.SetDelayCount(3);
@@ -608,7 +627,7 @@ namespace game_framework {
 	// Groundhog
 	Groundhog::Groundhog(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Groundhog::OnInit() {
+	void Groundhog::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_GROUNDHOG_1);
 		texture.AddBitmap(ENEMY_GROUNDHOG_2);
 		texture.AddBitmap(ENEMY_GROUNDHOG_3);
@@ -672,7 +691,7 @@ namespace game_framework {
 	// Red
 	Red::Red(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Red::OnInit() {
+	void Red::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_RED_1);
 		texture.AddBitmap(ENEMY_RED_2);
 		texture.AddBitmap(ENEMY_RED_3);
@@ -735,7 +754,7 @@ namespace game_framework {
 	// Chef
 	Chef::Chef(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Chef::OnInit() {
+	void Chef::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_CHEF_1);
 		texture.AddBitmap(ENEMY_CHEF_2);
 		texture.AddBitmap(ENEMY_CHEF_3);
@@ -797,7 +816,7 @@ namespace game_framework {
 	// Earthworm
 	Earthworm::Earthworm(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Earthworm::OnInit() {
+	void Earthworm::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_EARTHWORM_1);
 		texture.AddBitmap(ENEMY_EARTHWORM_2);
 	}
@@ -858,7 +877,7 @@ namespace game_framework {
 	// Insect
 	Insect::Insect(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Insect::OnInit() {
+	void Insect::OnInit(vector<Brick*>) {
 		texture.AddBitmap(ENEMY_INSECT_1, RGB(0,128,128));
 		texture.AddBitmap(ENEMY_INSECT_2, RGB(0,128,128));
 		texture.AddBitmap(ENEMY_INSECT_3, RGB(0,128,128));
@@ -922,7 +941,7 @@ namespace game_framework {
 	// Penguin
 	Penguin::Penguin(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Penguin::OnInit() {
+	void Penguin::OnInit(vector<Brick*>) {
 		texture.AddBitmap(IDB_BITMAP127);
 		texture.AddBitmap(IDB_BITMAP128);
 		texture.AddBitmap(IDB_BITMAP129);
@@ -988,7 +1007,7 @@ namespace game_framework {
 	// PinkMonster
 	PinkMonster::PinkMonster(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void PinkMonster::OnInit() {
+	void PinkMonster::OnInit(vector<Brick*>) {
 		texture.AddBitmap(IDB_BITMAP132, RGB(0,128,64));
 		texture.AddBitmap(IDB_BITMAP133, RGB(0,128,64));
 		texture.AddBitmap(IDB_BITMAP134, RGB(0,128,64));
@@ -1052,7 +1071,7 @@ namespace game_framework {
 	// Snails
 	Snails::Snails(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Snails::OnInit() {
+	void Snails::OnInit(vector<Brick*>) {
 		texture.AddBitmap(IDB_BITMAP139, RGB(0,128,64));
 		texture.AddBitmap(IDB_BITMAP140, RGB(0,128,64));
 		texture.SetDelayCount(3);
@@ -1115,7 +1134,7 @@ namespace game_framework {
 	// Blue
 	Blue::Blue(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void Blue::OnInit() {
+	void Blue::OnInit(vector<Brick*>) {
 		texture.AddBitmap(IDB_BITMAP143);
 		texture.AddBitmap(IDB_BITMAP144);
 		texture.AddBitmap(IDB_BITMAP145);
@@ -1184,7 +1203,7 @@ namespace game_framework {
 	// FlyShield
 	FlyShield::FlyShield(int x, int y, int ang) : Enemy::Enemy(x, y, ang) {}
 
-	void FlyShield::OnInit() {
+	void FlyShield::OnInit(vector<Brick*>) {
 		texture.AddBitmap(IDB_BITMAP151, RGB(0,128,128));
 		texture.AddBitmap(IDB_BITMAP152, RGB(0,128,128));
 		texture.SetDelayCount(3);

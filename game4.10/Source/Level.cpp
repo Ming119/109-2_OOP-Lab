@@ -15,6 +15,7 @@ namespace game_framework {
 	Level::~Level() { }
 
 	void Level::OnInit(int level) {
+
 		//  
 		bricks.clear();
 		items.clear();
@@ -135,7 +136,7 @@ namespace game_framework {
 		
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
-			enemies.at(i)->OnInit();
+			enemies.at(i)->OnInit(bricks);
 		}
 
 	}
@@ -216,6 +217,11 @@ namespace game_framework {
 	Actor* Level::CurrentActor()
 	{
 		return currentActor;
+	}
+
+	vector<Brick*> Level::GetBricks(Level l)
+	{
+		return l.bricks;
 	}
 
 	void Level::SetMoveLeft(bool m) {
