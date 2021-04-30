@@ -20,7 +20,9 @@ namespace game_framework {
 		posX = x;
 		posY = y;
 		angle = ang;
-	
+
+
+		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
 	Item::~Item() {
@@ -76,6 +78,7 @@ namespace game_framework {
 
 	void Ring::OnMove() {
 
+		// Camera Move
 		if (isMovingLeft) {
 			posX += cameraSpeed;
 			spawn.x += cameraSpeed;
