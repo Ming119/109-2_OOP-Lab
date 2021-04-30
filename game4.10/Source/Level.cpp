@@ -52,11 +52,12 @@ namespace game_framework {
 					int x = Level1Items[i][1] * DEFAULT_SCALE;
 					int y = (Level1Items[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y/2;
 
-					/*switch (id) {
+					switch (id) {
 					case 0:
 						items.push_back(new Ring(id, x, y));
 						break;
-					
+					}
+					/*
 					case 1:
 						break;
 					}*/
@@ -129,10 +130,10 @@ namespace game_framework {
 			bricks.at(i)->OnInit(level);
 		}
 
-		//int is = items.size();
-		//for (int i = 0; i < is; i++) {
-		//	items.at(i)->OnInit();
-		//}
+		int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->OnInit();
+		}
 		
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
@@ -170,12 +171,12 @@ namespace game_framework {
 
 
 
-		/*
+		
 		// Item
 		int is = items.size();
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnMove();
-		}*/
+		}
 
 
 
@@ -195,12 +196,12 @@ namespace game_framework {
 			bricks.at(i)->OnShow();
 		}
 
-		/*
-		* // Item
+		
+		// Item
 		int is = items.size();
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnShow();
-		}*/
+		}
 
 		// Enemy
 		int es = enemies.size();
@@ -227,10 +228,10 @@ namespace game_framework {
 			bricks.at(i)->SetMoveLeft(m);
 		}
 
-		//int is = items.size();
-		//for (int i = 0; i < is; i++) {
-		//	items.at(i)->MoveLeft(speed);
-		//}
+		int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->SetMoveLeft(m);
+		}
 
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
@@ -247,10 +248,10 @@ namespace game_framework {
 			enemies.at(i)->setTopLeft(newPoint);
 		}
 
-		//int is = items.size();
-		//for (int i = 0; i < is; i++) {
-		//	items.at(i)->MoveLeft(speed);
-		//}
+		/*int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->MoveLeft(speed);
+		}*/
 
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
@@ -270,10 +271,10 @@ namespace game_framework {
 			enemies.at(i)->setTopLeft(newPoint);
 		}
 
-		//int is = items.size();
-		//for (int i = 0; i < is; i++) {
-		//	items.at(i)->MoveLeft(speed);
-		//}
+		/*int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->MoveLeft(speed);
+		}*/
 
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
@@ -292,10 +293,10 @@ namespace game_framework {
 			bricks.at(i)->SetMoveRight(m);
 		}
 
-		//int is = items.size();
-		//for (int i = 0; i < is; i++) {
-		//	items.at(i)->MoveRight();
-		//}
+		int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->SetMoveRight(m);
+		}
 
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
@@ -309,10 +310,10 @@ namespace game_framework {
 			bricks.at(i)->SetMoveUp(m);
 		}
 
-		//int is = items.size();
-		//for (int i = 0; i < is; i++) {
-		//	items.at(i)->MoveUp(speed);
-		//}
+		int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->SetMoveUp(m);
+		}
 
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
@@ -326,10 +327,10 @@ namespace game_framework {
 			bricks.at(i)->SetMoveDown(m);
 		}
 
-		//int is = items.size();
-		//for (int i = 0; i < is; i++) {
-		//	items.at(i)->MoveDown(speed);
-		//}
+		int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->SetMoveDown(m);
+		}
 
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {

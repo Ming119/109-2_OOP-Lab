@@ -10,8 +10,18 @@ namespace game_framework {
 	class Item {
 	protected:
 		CAnimation texture;
+		POINT spawn;
+		POINT pos;
+
 		int posX, posY;
 		int angle;
+		int speed;
+		int cameraSpeed;
+
+		bool isMovingLeft;
+		bool isMovingRight;
+		bool isMovingUp;
+		bool isMovingDown;
 
 	public:
 		Item();
@@ -20,6 +30,12 @@ namespace game_framework {
 
 		void setPos(int, int);
 		void setAngle(int);
+
+
+		void SetMoveLeft(bool);
+		void SetMoveRight(bool);
+		void SetMoveUp(bool);
+		void SetMoveDown(bool);
 
 		virtual void OnInit() = 0;
 		virtual void OnMove() = 0;
