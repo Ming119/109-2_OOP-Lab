@@ -178,6 +178,9 @@ namespace game_framework {
 		int is = items.size();
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnMove();
+			if (items.at(i)->IsDead()) {
+				items.erase(items.begin()+i);
+			}
 		}
 
 

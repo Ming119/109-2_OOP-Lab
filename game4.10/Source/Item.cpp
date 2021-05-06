@@ -25,7 +25,6 @@ namespace game_framework {
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
-	Item::~Item() { }
 
 	int Item::Top() {
 		return texture.Top();
@@ -33,6 +32,14 @@ namespace game_framework {
 
 	int Item::Left() {
 		return texture.Left();
+	}
+
+	int Item::Height() {
+		return texture.Height();
+	}
+
+	int Item::Width() {
+		return texture.Width();
 	}
 
 	void Item::setTopLeft(int x, int y) {
@@ -69,6 +76,22 @@ namespace game_framework {
 	}
 
 
+	bool Item::CollisionDetection(Actor* actor) {
+		if ((this->Left()) < (actor->Left() + actor->Width() * DEFAULT_SCALE) &&
+			(this->Left() + this->Width() * DEFAULT_SCALE) > (actor->Left()) &&
+			(this->Top()) < (actor->Top() + actor->Height() * DEFAULT_SCALE) &&
+			(this->Top() + this->Height() * DEFAULT_SCALE) > (actor->Top())) {
+
+				return true;
+		}
+		
+		return false;
+	}
+
+	bool Item::IsDead() {
+		return isDead;
+	}
+
 	// Ring
 	Ring::Ring() : Item::Item() {}
 
@@ -91,6 +114,9 @@ namespace game_framework {
 	}
 
 	void Ring::OnMove() {
+		if (CollisionDetection(currnetActor)) {
+			isDead = true;
+		}
 
 		// Camera Move
 		if (isMovingLeft) {
@@ -111,7 +137,6 @@ namespace game_framework {
 	}
 
 	void Ring::OnShow(int scale) {
-		//TRACE("%d, %d\n", Top(), Left());
 		texture.OnShow(scale);
 	}
 

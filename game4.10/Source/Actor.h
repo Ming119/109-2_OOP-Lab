@@ -1,3 +1,6 @@
+#ifndef _ACTOR_
+#define _ACTOR_
+
 #include "Brick.h"
 
 namespace game_framework {
@@ -36,6 +39,11 @@ namespace game_framework {
 		void OnInit();
 		void OnMove();
 		void OnShow();
+		
+		int Top();
+		int Left();
+		int Width();
+		int Height();
 
 		void setTopLeft(int, int);
 		void SetMoveLeft(bool);
@@ -101,3 +109,5 @@ namespace game_framework {
 	};
 
 }
+
+#endif // !_ACTOR_

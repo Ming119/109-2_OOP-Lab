@@ -1,6 +1,8 @@
 #ifndef _ITEM_H_
 #define _ITEM_H_
 
+#include "Actor.h"
+
 namespace game_framework {
 
 	enum class ITEMS_LIST {
@@ -12,10 +14,13 @@ namespace game_framework {
 		CAnimation texture;
 		POINT pos;
 
+		Actor* currnetActor;
+
 		int angle;
 		int speed;
 		int cameraSpeed;
 
+		bool isDead;
 		bool isMovingLeft;
 		bool isMovingRight;
 		bool isMovingUp;
@@ -24,26 +29,34 @@ namespace game_framework {
 	public:
 		Item();
 		Item(int, int);
-		~Item();
 
 		int Top();
 		int Left();
+		int Height();
+		int Width();
+
+
 
 		void setTopLeft(int, int);
 		void setTopLeft(POINT);
 		void setAngle(int);
 
-
 		void SetMoveLeft(bool);
 		void SetMoveRight(bool);
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
+	
+
+		bool CollisionDetection(Actor*);
+		bool IsDead();
 
 		virtual void OnInit() = 0;
 		virtual void OnMove() = 0;
 		virtual void OnShow(int scale = DEFAULT_SCALE) = 0;
 	};
 	
+
+	// Ring
 	class Ring: public Item {
 	public: 
 		Ring();

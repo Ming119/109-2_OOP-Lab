@@ -128,6 +128,21 @@ namespace game_framework {
 			idle.OnShow();
 	}
 
+	int Actor::Top() {
+		return idle.Top();;
+	}
+
+	int Actor::Left() {
+		return idle.Left();
+	}
+
+	int Actor::Height() {
+		return idle.Height();
+	}
+
+	int Actor::Width() {
+		return idle.Width();
+	}
 
 	void Actor::setTopLeft(int x, int y) {
 		posX = x;
