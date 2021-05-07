@@ -45,7 +45,7 @@ namespace game_framework {
 		void SetMoveRight(bool);
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
-	
+		void SetCurrentActor(Actor*);
 
 		bool CollisionDetection(Actor*);
 		bool IsDead();

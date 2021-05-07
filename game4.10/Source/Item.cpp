@@ -22,6 +22,7 @@ namespace game_framework {
 		angle = 0;
 		cameraSpeed = 50;
 
+		isDead = false;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
@@ -75,7 +76,10 @@ namespace game_framework {
 		isMovingDown = m;
 	}
 
-
+	void Item::SetCurrentActor(Actor* actor) {
+		currnetActor = actor;
+	}
+	
 	bool Item::CollisionDetection(Actor* actor) {
 		if ((this->Left()) < (actor->Left() + actor->Width() * DEFAULT_SCALE) &&
 			(this->Left() + this->Width() * DEFAULT_SCALE) > (actor->Left()) &&
@@ -87,6 +91,7 @@ namespace game_framework {
 		
 		return false;
 	}
+	
 
 	bool Item::IsDead() {
 		return isDead;

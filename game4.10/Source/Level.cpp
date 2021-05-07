@@ -133,6 +133,7 @@ namespace game_framework {
 		int is = items.size();
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnInit();
+			items.at(i)->SetCurrentActor(&actor1);
 		}
 		
 		int es = enemies.size();
@@ -180,6 +181,8 @@ namespace game_framework {
 			items.at(i)->OnMove();
 			if (items.at(i)->IsDead()) {
 				items.erase(items.begin()+i);
+				is--;
+				i--;
 			}
 		}
 
