@@ -34,6 +34,8 @@ namespace game_framework {
 			case static_cast<int>(LEVELS::BULE_OCEAN_1) :
 				spawnPoint.x = 40;
 				spawnPoint.y = 2550;
+				CAudio::Instance()->Stop(AUDIO_TITLE);
+				CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 
 				// Background
 				background.LoadBitmap(LEVEL1_BG);
@@ -197,7 +199,6 @@ namespace game_framework {
 
 	void Level::OnShow() {
 		// Background
-		CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 		background.ShowBitmap();
 
 		// Brick
