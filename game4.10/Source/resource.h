@@ -533,12 +533,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_3D_CONTROLS                     1
-<<<<<<< HEAD
-#define _APS_NEXT_RESOURCE_VALUE        610
-=======
+#define _APS_3D_CONTROLS                1
+/// #define _APS_NEXT_RESOURCE_VALUE        610
 #define _APS_NEXT_RESOURCE_VALUE        613
->>>>>>> 7c11db763b23cbd7ae4d4ca1e590c1cbeb101530
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
