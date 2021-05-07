@@ -150,6 +150,7 @@ namespace game_framework {
 		if (isDead) {
 			if (deadAnimate.IsFinalBitmap()) {
 				isDeadFinish = true;
+				//
 			}
 			deadAnimate.OnMove();
 		} else {
