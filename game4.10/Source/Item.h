@@ -12,6 +12,7 @@ namespace game_framework {
 	class Item {
 	protected:
 		CAnimation texture;
+		CAnimation deadAnimate;
 		POINT pos;
 
 		Actor* currnetActor;
@@ -21,6 +22,7 @@ namespace game_framework {
 		int cameraSpeed;
 
 		bool isDead;
+		bool isDeadFinish;
 		bool isMovingLeft;
 		bool isMovingRight;
 		bool isMovingUp;

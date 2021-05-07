@@ -180,9 +180,9 @@ namespace game_framework {
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnMove();
 			if (items.at(i)->IsDead()) {
+				
 				items.erase(items.begin()+i);
-				is--;
-				i--;
+				is--; i--;
 			}
 		}
 
