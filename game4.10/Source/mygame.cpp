@@ -112,7 +112,7 @@ void CGameStateInit::OnInit()
 	CAudio::Instance()->Load(AUDIO_CHOOSE, "sounds\\choose.wav");
 	CAudio::Instance()->Load(AUDIO_SELECT, "sounds\\select.wav");
 	CAudio::Instance()->Load(AUDIO_RETURN, "sounds\\return.wav");
-
+	CAudio::Instance()->Load(AUDIO_RING, "sounds\\ring.wav");
 
 	//
 	// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
@@ -123,8 +123,11 @@ void CGameStateInit::OnBeginState()
 {
 	CAudio::Instance()->Load(AUDIO_TITLE, "sounds\\title.mp3");
 	CAudio::Instance()->Load(AUDIO_OPTIONS, "sounds\\options.mp3");
+	CAudio::Instance()->Load(AUDIO_CRUSADER, "sounds\\crusader.mp3");
 	CAudio::Instance()->Play(AUDIO_TITLE, true);
+	
 	CAudio::Instance()->Stop(AUDIO_OPTIONS);
+
 
 	page = static_cast<int>(MENU::START_GAME);
 	current_select = 0;
@@ -153,7 +156,7 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 				case static_cast<int>(MENU::START_GAME) :
 					GotoGameState(GAME_STATE_RUN);
 					break;
-
+				
 				case static_cast<int>(MENU::TUTORIAL) :
 					break;
 

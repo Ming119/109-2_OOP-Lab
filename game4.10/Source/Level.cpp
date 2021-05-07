@@ -7,6 +7,7 @@
 #include "gamelib.h"
 #include "Level.h"
 #include "Data.h"
+#include "mygame.h"
 
 namespace game_framework {	
 
@@ -196,6 +197,7 @@ namespace game_framework {
 
 	void Level::OnShow() {
 		// Background
+		CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 		background.ShowBitmap();
 
 		// Brick
