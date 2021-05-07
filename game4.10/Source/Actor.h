@@ -4,15 +4,21 @@
 #include "Brick.h"
 
 namespace game_framework {
+	enum CHARACTERS {
+		SONIC,
+		MILES,
+		KNUCKLES
+	};
+
 	class Actor {
-	private:
-		int posX, posY;
+	protected:
+		POINT pos;
 		POINT spawnPoint;
 		POINT speed;
 
-		float maxSpeed;		// on x-axis
-		float angle;		// angle = ang(actor's x-axis, real x-axis)
-		float jumpStrength;
+		int maxSpeed;		// on x-axis
+		int angle;		// angle = ang(actor's x-axis, real x-axis)
+		int jumpStrength;
 		
 		bool ignoreHorizontal;
 		bool isMovingLeft;
@@ -36,16 +42,19 @@ namespace game_framework {
 		Actor();
 		~Actor();
 
-		void OnInit();
-		void OnMove();
-		void OnShow();
+		virtual void OnInit() = 0;
+		virtual void OnMove() = 0;
+		virtual void OnShow() = 0;
 		
 		int Top();
 		int Left();
+		int Buttom();
+		int Right();
 		int Width();
 		int Height();
 
 		void setTopLeft(int, int);
+		void setTopLeft(POINT);
 		void SetMoveLeft(bool);
 		void SetMoveRight(bool);
 		void SetIsLookingUp(bool);
@@ -108,6 +117,35 @@ namespace game_framework {
 
 	};
 
+	class Sonic : public Actor {
+	public:
+		Sonic();
+		~Sonic();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow() override;
+	};
+
+	class Miles : public Actor {
+	public:
+		Miles();
+		~Miles();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow() override;
+	};
+
+	class Knuckles : public Actor {
+	public:
+		Knuckles();
+		~Knuckles();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow() override;
+	};
 }
 
 #endif // !_ACTOR_

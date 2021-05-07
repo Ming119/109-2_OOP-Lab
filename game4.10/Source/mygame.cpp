@@ -482,7 +482,7 @@ CGameStateRun::~CGameStateRun()
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
 	stringHandler.LoadBitmap();
-	
+	current_actor = 0;
 	
 	/*
 	//
@@ -530,11 +530,18 @@ void CGameStateRun::OnBeginState()
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	const char KEY_LEFT = 0x25; // keyboard左箭頭
-	const char KEY_UP = 0x26; // keyboard上箭頭
+	const char KEY_LEFT  = 0x25; // keyboard左箭頭
+	const char KEY_UP    = 0x26; // keyboard上箭頭
 	const char KEY_RIGHT = 0x27; // keyboard右箭頭
-	const char KEY_DOWN = 0x28; // keyboard下箭頭
-	const char KEY_SPACE = 0x20;
+	const char KEY_DOWN  = 0x28; // keyboard下箭頭
+	const char KEY_SPACE = 0x20; // keyboard SPACE
+	const char KEY_Z     = 0x5A; // keyboard z
+	
+	if (nChar == KEY_Z) {
+		++current_actor %= 3;
+		TRACE("current Actor: %d\n", current_actor);
+		level->SetCurrentActor(current_actor);
+	}
 
 	if (nChar == KEY_LEFT)
 		level->SetMoveLeft(true);
@@ -542,11 +549,11 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		level->SetMoveRight(true);
 	if (nChar == KEY_UP) {
 		level->CurrentActor()->SetIsLookingUp(true);
-		level->SetMoveUp(true);
+		// level->SetMoveUp(true);
 	}
 	if (nChar == KEY_DOWN) {
 		level->CurrentActor()->SetIsLookingDown(true);
-		level->SetMoveDown(true);
+		// level->SetMoveDown(true);
 	}
 	if (nChar == KEY_SPACE) {
 		level->CurrentActor()->SetIsJumping(true);

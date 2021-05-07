@@ -20,10 +20,11 @@ namespace game_framework {
 		bricks.clear();
 		items.clear();
 		enemies.clear();
-
+		
 		actor1.OnInit();
 		actor2.OnInit();
 		actor3.OnInit();
+
 		currentActor = &actor1;
 
 
@@ -180,7 +181,6 @@ namespace game_framework {
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnMove();
 			if (items.at(i)->IsDead()) {
-				
 				items.erase(items.begin()+i);
 				is--; i--;
 			}
@@ -221,6 +221,8 @@ namespace game_framework {
 
 		// Actor
 		actor1.OnShow();
+		actor2.OnShow();
+		actor3.OnShow();
 	}
 
 	Actor* Level::CurrentActor()
@@ -228,8 +230,14 @@ namespace game_framework {
 		return currentActor;
 	}
 
+	void Level::SetCurrentActor(int actor) {
+		if (actor == SONIC)    currentActor = &actor1;
+		if (actor == MILES)	   currentActor = &actor2;
+		if (actor == KNUCKLES) currentActor = &actor3;
+	}
+
 	void Level::SetMoveLeft(bool m) {
-		actor1.SetMoveLeft(m);
+		currentActor->SetMoveLeft(m);
 
 		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
@@ -294,7 +302,7 @@ namespace game_framework {
 	}
 
 	void Level::SetMoveRight(bool m) {
-		actor1.SetMoveRight(m);
+		currentActor->SetMoveRight(m);
 
 		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
@@ -330,6 +338,8 @@ namespace game_framework {
 	}
 
 	void Level::SetMoveDown(bool m) {
+		
+
 		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->SetMoveDown(m);

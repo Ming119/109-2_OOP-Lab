@@ -312,7 +312,7 @@ namespace game_framework {
 			direction = !direction;
 			pos.y -= speed;
 		}
-		if (pos.y <= (spawn.y - Height()*DEFAULT_SCALE*2)) {
+		if (pos.y <= (spawn.y - Height()*DEFAULT_SCALE)) {
 			direction = !direction;
 			pos.y += speed;
 		}

@@ -36,10 +36,10 @@ namespace game_framework {
 
 		CMovingBitmap background;
 		
-		Actor actor1;
-		Actor actor2;
-		Actor actor3;
-		Actor* currentActor;
+		Sonic	 actor1;
+		Miles	 actor2;
+		Knuckles actor3;
+		Actor*	 currentActor;
 
 		vector<Brick*>  bricks;
 		vector<Item*>	items;
@@ -54,6 +54,7 @@ namespace game_framework {
 		void OnShow();
 		
 		Actor* CurrentActor();
+		void SetCurrentActor(int);
 
 		void SetMoveLeft(bool);
 		void SetMoveUp(int);

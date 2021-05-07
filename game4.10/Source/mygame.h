@@ -177,6 +177,7 @@ namespace game_framework {
 		CString stringHandler;
 
 		Level* level;
+		int current_actor;
 		int current_level;
 
 
