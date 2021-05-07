@@ -1353,5 +1353,41 @@
     <Image Include="..\Document\images\items\items_coin8.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\items\items_coin9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_coin10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_coin11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_coin12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\items\items_coin1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\items\items_coin2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\items\items_coin3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\items\items_coin4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\items\items_coin5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\items\items_coin6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\items\items_coin7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\items\items_coin8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

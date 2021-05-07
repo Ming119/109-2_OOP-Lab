@@ -22,7 +22,7 @@ namespace game_framework {
 		angle = 0;
 		cameraSpeed = 50;
 
-		isDead = false;
+		isDead = isDeadFinish =false;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
@@ -48,12 +48,14 @@ namespace game_framework {
 		pos.y = y;
 
 		texture.SetTopLeft(pos.x, pos.y);
+		deadAnimate.SetTopLeft(pos.x, pos.y);
 	}
 
 	void Item::setTopLeft(POINT xy) {
 		pos = xy;
 
 		texture.SetTopLeft(pos.x, pos.y);
+		deadAnimate.SetTopLeft(pos.x, pos.y);
 	}
 
 	void Item::setAngle(int ang) {
@@ -94,7 +96,7 @@ namespace game_framework {
 	
 
 	bool Item::IsDead() {
-		return isDead;
+		return isDeadFinish;
 	}
 
 	// Ring
@@ -115,14 +117,16 @@ namespace game_framework {
 		texture.AddBitmap(ITEMS_YELLOW_RING_8);
 		texture.SetDelayCount(3);
 
+		deadAnimate.AddBitmap(ITEM_YELLOW_RING_DEAD_1);
+		deadAnimate.AddBitmap(ITEM_YELLOW_RING_DEAD_2);
+		deadAnimate.AddBitmap(ITEM_YELLOW_RING_DEAD_3);
+		deadAnimate.AddBitmap(ITEM_YELLOW_RING_DEAD_4);
+		deadAnimate.SetDelayCount(3);
+
 		setTopLeft(pos);
 	}
 
 	void Ring::OnMove() {
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-		}
-
 		// Camera Move
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
@@ -136,13 +140,33 @@ namespace game_framework {
 		if (isMovingDown) {
 			pos.y -= cameraSpeed;
 		}
-		
+
+		if (CollisionDetection(currnetActor)) {
+			isDead = true;
+		}
+
 		setTopLeft(pos);
-		texture.OnMove();
+		if (isDead) {
+			if (deadAnimate.IsFinalBitmap()) {
+				isDeadFinish = true;
+			}
+			deadAnimate.OnMove();
+		} else {
+			texture.OnMove();
+		}
+
+		
+		
+		
+		
 	}
 
 	void Ring::OnShow(int scale) {
-		texture.OnShow(scale);
+		if (isDead) {
+			deadAnimate.OnShow(scale);
+		} else {
+			texture.OnShow(scale);
+		}
 	}
 
 	
