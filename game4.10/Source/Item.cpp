@@ -143,6 +143,7 @@ namespace game_framework {
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
+
 		}
 
 		setTopLeft(pos);

@@ -537,12 +537,9 @@
     <Image Include="RES\integer\gui_white_9.bmp" />
     <Image Include="RES\intro.bmp" />
     <Image Include="res\items\items_coin1.bmp" />
-<<<<<<< HEAD
-=======
     <Image Include="RES\items\items_coin10.bmp" />
     <Image Include="RES\items\items_coin11.bmp" />
     <Image Include="RES\items\items_coin12.bmp" />
->>>>>>> 7c11db763b23cbd7ae4d4ca1e590c1cbeb101530
     <Image Include="res\items\items_coin2.bmp" />
     <Image Include="res\items\items_coin3.bmp" />
     <Image Include="res\items\items_coin4.bmp" />
@@ -550,10 +547,7 @@
     <Image Include="res\items\items_coin6.bmp" />
     <Image Include="res\items\items_coin7.bmp" />
     <Image Include="res\items\items_coin8.bmp" />
-<<<<<<< HEAD
-=======
     <Image Include="RES\items\items_coin9.bmp" />
->>>>>>> 7c11db763b23cbd7ae4d4ca1e590c1cbeb101530
     <Image Include="RES\logo\logo_1.bmp" />
     <Image Include="RES\logo\logo_2.bmp" />
     <Image Include="RES\logo\title_black_character1.bmp" />
