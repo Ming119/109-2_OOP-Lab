@@ -60,7 +60,76 @@ namespace game_framework {
 					case 0:
 						items.push_back(new Ring(x, y));
 						break;
+
+					case 20:
+						items.push_back(new YELLOW_SPRING_PADS_UP(x, y));
+						break;
+
+					case 21:
+						items.push_back(new RED_SPRING_PADS_UP(x, y));
+						break;
+
+					case 22:
+						items.push_back(new RED_SPRING_PADS_LEFT(x, y));
+						break;
+
+					case 23:
+						items.push_back(new RED_SPRING_PADS_RING(x, y));
+						break;
+
+					case 50:
+						items.push_back(new YELLOW_SPRING_PADS_LEFT_U(x, y));
+						break;
+
+					case 51:
+						items.push_back(new YELLOW_SPRING_PADS_RING_U(x, y));
+						break;
+
+					case 52:
+						items.push_back(new YELLOW_SPRING_PADS_LEFT_D(x, y));
+						break;
+
+					case 53:
+						items.push_back(new YELLOW_SPRING_PADS_RING_D(x, y));
+						break;
+					
+					case 54:
+						items.push_back(new YELLOW_SPRING_PADS_DOWN(x, y));
+						break;
+					
+					case 55:
+						items.push_back(new BULE_SPRING_PADS_UP(x, y));
+						break;
+					
+					case 56:
+						items.push_back(new BULE_SPRING_PADS_LEFT(x, y));
+						break;
+					
+					case 57:
+						items.push_back(new BULE_SPRING_PADS_RING(x, y));
+						break;
+					
+					case 58:
+						items.push_back(new BULE_SPRING_PADS_LEFT_U(x, y));
+						break;
+					
+					case 59:
+						items.push_back(new BULE_SPRING_PADS_RING_U(x, y));
+						break;
+					
+					case 60:
+						items.push_back(new BULE_SPRING_PADS_LEFT_D(x, y));
+						break;
+					
+					case 61:
+						items.push_back(new BULE_SPRING_PADS_RING_D(x, y));
+						break;
+					
+					case 62:
+						items.push_back(new BULE_SPRING_PADS_DOWN(x, y));
+						break;
 					}
+
 					/*
 					case 1:
 						break;

@@ -113,6 +113,8 @@ void CGameStateInit::OnInit()
 	CAudio::Instance()->Load(AUDIO_SELECT, "sounds\\select.wav");
 	CAudio::Instance()->Load(AUDIO_RETURN, "sounds\\return.wav");
 	CAudio::Instance()->Load(AUDIO_RING, "sounds\\ring.wav");
+	CAudio::Instance()->Load(AUDIO_SPRING, "sounds\\spring.wav");
+	
 
 	//
 	// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%

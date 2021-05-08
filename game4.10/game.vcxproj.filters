@@ -1500,5 +1500,152 @@
     <Image Include="RES\player\50x50\play_red_squat2.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\ocean\bitmap10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_left__spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_left_uder1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_left_uder2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_left_up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_left_up2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_right__spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_right__uder1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_right__uder2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_right__up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_right__up2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_uder_spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_under.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_blue_up_spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_left__spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_left_uder1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_left_uder2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_left_up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_left_up2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_right__spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_right__uder1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_right__uder2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_right__up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_right__up2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_uder_spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_under.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_red_up_spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yell_left_uder1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yell_left_uder2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yell_left_up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yell_left_up2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yell_right__uder1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yell_right__uder2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yell_right__up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yell_right__up2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yellow_left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yellow_left__spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yellow_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yellow_right__spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yellow_uder_spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yellow_under.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yellow_up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\item_spring_pads\spring_pads_yellow_up_spring.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
