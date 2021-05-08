@@ -60,15 +60,15 @@ namespace game_framework {
 					case 0:
 						items.push_back(new Ring(x, y));
 						break;
-
+					}
+					/*
 					case 20:
-						items.push_back(new YELLOW_SPRING_PADS_UP(x, y));
-						break;
-
+							items.push_back(new YELLOW_SPRING_PADS_UP(x, y));
+							break;
 					case 21:
 						items.push_back(new RED_SPRING_PADS_UP(x, y));
 						break;
-
+					
 					case 22:
 						items.push_back(new RED_SPRING_PADS_LEFT(x, y));
 						break;
@@ -129,7 +129,7 @@ namespace game_framework {
 						items.push_back(new BULE_SPRING_PADS_DOWN(x, y));
 						break;
 					}
-
+*/
 					/*
 					case 1:
 						break;

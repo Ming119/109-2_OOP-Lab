@@ -18,8 +18,7 @@ namespace game_framework {
 
 		delta = POINT();
 
-		isDead = isDeadFinish =false;
-		isBounce = isBounceFinish = false;
+		isDead = isDeadFinish = false;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
@@ -46,7 +45,6 @@ namespace game_framework {
 
 		texture.SetTopLeft(pos.x, pos.y);
 		deadAnimate.SetTopLeft(pos.x, pos.y);
-		bounceAnimate.SetTopLeft(pos.x, pos.y);
 	}
 
 	void Item::setTopLeft(POINT xy) {
@@ -54,7 +52,6 @@ namespace game_framework {
 
 		texture.SetTopLeft(pos.x, pos.y);
 		deadAnimate.SetTopLeft(pos.x, pos.y);
-		bounceAnimate.SetTopLeft(pos.x, pos.y);
 	}
 
 	void Item::setAngle(int ang) {
@@ -84,26 +81,22 @@ namespace game_framework {
 	void Item::SetCurrentActor(Actor* actor) {
 		currnetActor = actor;
 	}
-	
+
 	bool Item::CollisionDetection(Actor* actor) {
 		if ((this->Left()) < (actor->Left() + actor->Width() * DEFAULT_SCALE) &&
 			(this->Left() + this->Width() * DEFAULT_SCALE) > (actor->Left()) &&
 			(this->Top()) < (actor->Top() + actor->Height() * DEFAULT_SCALE) &&
 			(this->Top() + this->Height() * DEFAULT_SCALE) > (actor->Top())) {
 
-				return true;
+			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 
 	bool Item::IsDead() {
 		return isDeadFinish;
-	}
-
-	bool Item::IsBounce() {
-		return isBounceFinish;
 	}
 
 	// Ring
@@ -158,44 +151,41 @@ namespace game_framework {
 		if (isDead) {
 			if (deadAnimate.IsFinalBitmap()) {
 				isDeadFinish = true;
-				
+
 			}
-			else if (deadAnimate.GetCurrentBitmapNumber() == 1){
+			else if (deadAnimate.GetCurrentBitmapNumber() == 1) {
 				CAudio::Instance()->Play(AUDIO_RING, false);
 			}
 			deadAnimate.OnMove();
 		}
 		else {
 			texture.OnMove();
-		}		
-		
+		}
+
 	}
 
 	void Ring::OnShow(int scale) {
 		if (isDead) {
 			deadAnimate.OnShow(scale);
-		} else {
+		}
+		else {
 			texture.OnShow(scale);
 		}
 	}
 
+
+	/*
 	// RED_SPRING_PADS_UP
-	RED_SPRING_PADS_UP::RED_SPRING_PADS_UP() : Item::Item() {}
-
 	RED_SPRING_PADS_UP::RED_SPRING_PADS_UP(int x, int y) : Item::Item(x, y) {}
-
-	RED_SPRING_PADS_UP::~RED_SPRING_PADS_UP() {}
 
 	void RED_SPRING_PADS_UP::OnInit() {
 		texture.AddBitmap(ITEM_RED_SPRING_PADS_UP_21);
+		texture.AddBitmap(ITEM_RED_SPRING_PADS_UP_21_1);
 		texture.SetDelayCount(3);
-
-		bounceAnimate.AddBitmap(ITEM_RED_SPRING_PADS_UP_21_1);
-		bounceAnimate.SetDelayCount(3);
 
 		setTopLeft(pos);
 	}
-
+	
 	void RED_SPRING_PADS_UP::OnMove() {
 		// Camera Move
 		if (isMovingLeft) {
@@ -212,39 +202,16 @@ namespace game_framework {
 
 		}
 
-		if (CollisionDetection(currnetActor)) {
-			isBounce = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isBounce) {
-			if (bounceAnimate.IsFinalBitmap()) {
-				isBounceFinish = true;
-
-			}
-			else if (bounceAnimate.GetCurrentBitmapNumber() == 1) {
-				CAudio::Instance()->Play(AUDIO_SPRING, false);
-			}
-			bounceAnimate.OnMove();
-		}
-		else {
-			texture.OnMove();
-		}
-
 
 
 	}
 
 	void RED_SPRING_PADS_UP::OnShow(int scale) {
-		if (isBounce) {
-			bounceAnimate.OnShow(scale);
-		}
-		else {
-			texture.OnShow(scale);
-		}
+
 	}
-	
+	*/
+
+	/*
 	// RED_SPRING_PADS_DOWN
 	RED_SPRING_PADS_DOWN::RED_SPRING_PADS_DOWN() : Item::Item() {}
 
@@ -1769,7 +1736,7 @@ namespace game_framework {
 			texture.OnShow(scale);
 		}
 	}
-
+	*/
 }
 
 

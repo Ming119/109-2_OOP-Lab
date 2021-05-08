@@ -7,6 +7,7 @@ namespace game_framework {
 
 	enum class ITEMS_LIST {
 		RING,
+		/*
 		RED_SPRING_PADS_UP,
 		RED_SPRING_PADS_DOWN,
 		RED_SPRING_PADS_LEFT,
@@ -31,14 +32,13 @@ namespace game_framework {
 		BULE_SPRING_PADS_RING,
 		BULE_SPRING_PADS_RING_U,
 		BULE_SPRING_PADS_RING_D,
-
+		*/
 	};
 
 	class Item {
 	protected:
 		CAnimation texture;
 		CAnimation deadAnimate;
-		CAnimation bounceAnimate;
 		POINT pos;
 		POINT delta;
 
@@ -50,8 +50,6 @@ namespace game_framework {
 
 		bool isDead;
 		bool isDeadFinish;
-		bool isBounce;
-		bool isBounceFinish;
 		bool isMovingLeft;
 		bool isMovingRight;
 		bool isMovingUp;
@@ -81,7 +79,6 @@ namespace game_framework {
 
 		bool CollisionDetection(Actor*);
 		bool IsDead();
-		bool IsBounce();
 
 		virtual void OnInit() = 0;
 		virtual void OnMove() = 0;
@@ -100,6 +97,9 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
+
+
+	/*
 	// RED_SPRING_PADS_UP
 	class RED_SPRING_PADS_UP : public Item {
 	public:
@@ -111,7 +111,7 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
-
+	
 	// RED_SPRING_PADS_DOWN
 	class RED_SPRING_PADS_DOWN : public Item {
 	public:
@@ -387,6 +387,7 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
+	*/
 
 }
 
