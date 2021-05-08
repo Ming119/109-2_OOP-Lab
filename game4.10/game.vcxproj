@@ -814,6 +814,10 @@
     <Image Include="RES\player\50x50\play_yellow_normal_run9.bmp" />
     <Image Include="RES\player\50x50\play_yellow_run_squat1.bmp" />
     <Image Include="RES\player\50x50\play_yellow_run_squat_station.bmp" />
+    <Image Include="RES\spikes\spikes_left.bmp" />
+    <Image Include="RES\spikes\spikes_right.bmp" />
+    <Image Include="RES\spikes\spikes_under.bmp" />
+    <Image Include="RES\spikes\spikes_up.bmp" />
     <Image Include="RES\squarebg.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

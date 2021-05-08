@@ -596,6 +596,11 @@
 #define ITEM_YELLOW_SPRING_PADS_DOWN_54 699
 #define ITEM_YELLOW_SPRING_PADS_UP_20   700
 #define ITEM_YELLOW_SPRING_PADS_UP_20_1 701
+#define ITEM_SPIKES_LEFT                702
+#define ITEM_SPIKES_RING                703
+#define ITEM_SPIKES_DOWN                704
+#define IDB_BITMAP109                   705
+#define ITEM_SPIKES_UP                  705
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -608,7 +613,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        702
+#define _APS_NEXT_RESOURCE_VALUE        706
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
