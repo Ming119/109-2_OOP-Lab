@@ -1389,5 +1389,116 @@
     <Image Include="res\items\items_coin8.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\player\40x46\play_blue_before_jump.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_normal_run12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_normal_run1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_normal_run5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_normal_run6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_normal_run7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_normal_run8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_normal_run9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_normal_run10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_normal_run11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_normal_run2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_normal_run3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_run_squat_station.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_run_squat1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_look_up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_look_up2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_ready_roll1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_ready_roll2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_ready_roll3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_ready_roll4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_accelerate_ball4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_accelerate_ball5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_accelerate_ball6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_yellow_accelerate_ball7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_squat1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\50x50\play_red_squat2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
