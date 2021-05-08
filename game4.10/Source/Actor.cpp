@@ -8,11 +8,11 @@
 
 namespace game_framework {
 	Actor::Actor() {
+		POINT zero;
+		zero.x = zero.y = 0;
+
 		angle = 0;
-		velocity.x = 0;
-		velocity.y = 0;
-		acceleration.x = 0;
-		acceleration.y = 0;
+		velocity = acceleration = delta= zero;
 		jumpStrength = 0;
 
 		isJumping = false;
@@ -44,6 +44,10 @@ namespace game_framework {
 
 	int Actor::Height() {
 		return idle.Height();
+	}
+
+	POINT Actor::getDelta() {
+		return delta;
 	}
 
 	int Actor::Width() {
@@ -125,22 +129,32 @@ namespace game_framework {
 		jump.SetTopLeft(pos.x, pos.y);
 	}
 
-	POINT Sonic::OnMove() {
-		velocity.x = (velocity.x * friction);
-		velocity.y += gravity;
-
+	void Sonic::OnMove() {
 		if (isMovingLeft) {
-			if (acceleration.x < maxAcceleration) acceleration.x++;
-			if (velocity.x < maxVelocity) velocity.x += acceleration.x;
-			else velocity.x += maxAcceleration;
+			moving.OnMove();
+			
+			if (abs(acceleration.x) < maxAcceleration) acceleration.x--;
 
+			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
+
+		} else if (isMovingRight) {
 			moving.OnMove();
+
+			if (abs(acceleration.x) < maxAcceleration) acceleration.x++;
+
+			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
+ 
+		} else {
+			if (velocity.x) moving.OnMove();
+
+			if (abs(acceleration.x) > 0 && acceleration.x > 0) acceleration.x--;
+			else if (abs(acceleration.x) > 0 && acceleration.x < 0) acceleration.x++;
+
+			velocity.x = (long)(velocity.x * friction);
 		}
-		else if (isMovingRight) {
-			velocity.x++;
-			moving.OnMove();
-		}
-		else if (isLookingUp) {
+		delta = velocity;
+
+		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
 				lookUp.OnMove();
 		}
@@ -153,7 +167,6 @@ namespace game_framework {
 			jump.OnMove();
 		}
 		else {
-			moving.Reset();
 			lookUp.Reset();
 			lookDown.Reset();
 			jump.Reset();
@@ -227,7 +240,7 @@ namespace game_framework {
 		jump.SetTopLeft(pos.x, pos.y);
 	}
 	
-	POINT Miles::OnMove() {
+	void Miles::OnMove() {
 		velocity.x = (long)(velocity.x * friction);
 		velocity.y += gravity;
 
@@ -292,7 +305,7 @@ namespace game_framework {
 	Knuckles::~Knuckles() {	}
 
 	void Knuckles::OnInit() {
-		pos.x -= 70;
+		pos.x -= 100;
 		idle.AddBitmap(ACTOR_3_STAND_1);
 		idle.SetTopLeft(pos.x, pos.y);
 
@@ -327,7 +340,7 @@ namespace game_framework {
 	
 	}
 
-	POINT Knuckles::OnMove() {
+	void Knuckles::OnMove() {
 
 		if (isMovingLeft) {
 			velocity.x--;

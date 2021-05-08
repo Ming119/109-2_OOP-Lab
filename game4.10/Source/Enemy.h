@@ -32,6 +32,8 @@ namespace game_framework {
 		CAnimation texture;
 		POINT spawn;
 		POINT pos;
+		POINT delta;
+
 		Brick* refBrick;
 
 		int angle;
@@ -67,6 +69,7 @@ namespace game_framework {
 		void SetMoveRight(bool);
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
+		void SetMoving(POINT);
 
 		void LookingForRefBrick(vector<Brick*>);
 		bool CollisionDetection(Brick*);

@@ -14,6 +14,7 @@ namespace game_framework {
 		CAnimation texture;
 		CAnimation deadAnimate;
 		POINT pos;
+		POINT delta;
 
 		Actor* currnetActor;
 
@@ -29,7 +30,6 @@ namespace game_framework {
 		bool isMovingDown;
 
 	public:
-		Item();
 		Item(int, int);
 
 		int Top();
@@ -47,6 +47,8 @@ namespace game_framework {
 		void SetMoveRight(bool);
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
+		void SetMoving(POINT);
+
 		void SetCurrentActor(Actor*);
 
 		bool CollisionDetection(Actor*);
@@ -61,7 +63,6 @@ namespace game_framework {
 	// Ring
 	class Ring: public Item {
 	public: 
-		Ring();
 		Ring(int, int);
 		~Ring();
 

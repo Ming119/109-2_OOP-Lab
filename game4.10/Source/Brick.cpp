@@ -10,11 +10,10 @@
 namespace game_framework {
 	Brick::Brick(int _id, int x, int y) {
 		id = _id;
-		posX = x;
-		posY = y;
+		pos.x = x;
+		pos.y = y;
+		delta = POINT();
 
-		maxSpeed = 50;
-		speed = 0;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
@@ -1073,20 +1072,23 @@ namespace game_framework {
 		}
 
 
-		texture.SetTopLeft(posX, posY);
+		texture.SetTopLeft(pos.x, pos.y);
 	}
 
 	void Brick::OnMove() {
-		if (isMovingLeft) 
-			posX += maxSpeed;
-		if (isMovingRight)
-			posX -= maxSpeed;
-		if (isMovingUp)
-			posY += maxSpeed;
-		if (isMovingDown)
-			posY -= maxSpeed;
+		pos.x -= delta.x;
+		//pos.y += delta.y;
 
-		texture.SetTopLeft(posX, posY);
+		if (isMovingLeft) 
+			pos.x += maxSpeed;
+		if (isMovingRight)
+			pos.x -= maxSpeed;
+		if (isMovingUp)
+			pos.y += maxSpeed;
+		if (isMovingDown)
+			pos.y -= maxSpeed;
+
+		texture.SetTopLeft(pos.x, pos.y);
 		texture.OnMove();
 	}
 
@@ -1108,6 +1110,10 @@ namespace game_framework {
 
 	void Brick::SetMoveDown(bool m) {
 		isMovingDown = m;
+	}
+
+	void Brick::SetMoving(POINT _delta) {
+		delta = _delta;
 	}
 
 	void Brick::setProperty(int p) {

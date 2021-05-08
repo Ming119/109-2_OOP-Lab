@@ -12,16 +12,17 @@ namespace game_framework {
 
 	class Actor {
 	protected:
-		const int maxVelocity = 5;	// only on x-axis
-		const int maxAcceleration = 5;	// only on x-axis
+		const int maxVelocity = 40;	// only on x-axis
+		const int maxAcceleration = 4;	// only on x-axis
 
 		const int   gravity = 10;
-		const float friction = 0.95f;
+		const float friction = 0.9f;
 
 		POINT pos;
 
 		POINT velocity;
 		POINT acceleration;
+		POINT delta;
 
 		CAnimation idle;
 		CAnimation lookUp;
@@ -46,7 +47,7 @@ namespace game_framework {
 		~Actor();
 
 		virtual void OnInit() = 0;
-		virtual POINT OnMove() = 0;
+		virtual void OnMove() = 0;
 		virtual void OnShow() = 0;
 		
 		int Top();
@@ -55,6 +56,8 @@ namespace game_framework {
 		int Right();
 		int Width();
 		int Height();
+
+		POINT getDelta();
 
 		void setTopLeft(int, int);
 		void setTopLeft(POINT);
@@ -68,25 +71,12 @@ namespace game_framework {
 
 
 
-
+		/*
 		// Collision Detection
 		bool Collision(Actor*, Actor*);
 		bool orientedbox_collision(Actor*, Actor*);
 		bool poxelperfect_collision(Actor*, Actor*);
 		bool brick_collision(Actor*, Brick*);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -117,6 +107,7 @@ namespace game_framework {
 		POINT particle_movement(Actor*, float);
 		POINT eightdirections_movement(Actor*);
 		POINT bullet_movement(Actor*);
+		*/
 
 	};
 
@@ -125,9 +116,9 @@ namespace game_framework {
 		Sonic();
 		~Sonic();
 
-		void  OnInit() override;
-		POINT OnMove() override;
-		void  OnShow() override;
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow() override;
 	};
 
 	class Miles : public Actor {
@@ -135,9 +126,9 @@ namespace game_framework {
 		Miles();
 		~Miles();
 
-		void  OnInit() override;
-		POINT OnMove() override;
-		void  OnShow() override;
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow() override;
 	};
 
 	class Knuckles : public Actor {
@@ -145,9 +136,9 @@ namespace game_framework {
 		Knuckles();
 		~Knuckles();
 
-		void  OnInit() override;
-		POINT OnMove() override;
-		void  OnShow() override;
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow() override;
 	};
 }
 

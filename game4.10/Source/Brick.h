@@ -24,9 +24,8 @@ namespace game_framework {
 	class Brick {
 	private:
 		CAnimation texture;
-		
-		int id; 
-		int posX, posY;
+		POINT pos;
+		int id;
 		int angle;
 
 		int property;
@@ -36,6 +35,8 @@ namespace game_framework {
 		int maxX, maxY;
 		// double speed, gravity;
 		int maxSpeed, speed;
+
+		POINT delta;
 
 		bool isMovingLeft;
 		bool isMovingRight;
@@ -65,6 +66,7 @@ namespace game_framework {
 		void SetMoveRight(bool);
 		void SetMoveUp(bool);
 		void SetMoveDown(bool);
+		void SetMoving(POINT);
 
 		void setProperty(int);
 		void setBehavior(int);

@@ -116,67 +116,67 @@ ITEMS_YELLOW_RING_7     BITMAP                  "..\\res\\items\\items_coin7.bmp
 
 ITEMS_YELLOW_RING_8     BITMAP                  "..\\res\\items\\items_coin8.bmp"
 
-ACTOR_2_STAND_1         BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run1.bmp"
+ACTOR_2_STAND_1         BITMAP                  "..\\RES\\player\\50x50\\play_yellow_normal_run1.bmp"
 
-ACTOR_2_STAND_2         BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run2.bmp"
+ACTOR_2_STAND_2         BITMAP                  "..\\RES\\player\\50x50\\play_yellow_normal_run2.bmp"
 
-ACTOR_2_STAND_3         BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run3.bmp"
+ACTOR_2_STAND_3         BITMAP                  "..\\RES\\player\\50x50\\play_yellow_normal_run3.bmp"
 
-ACTOR_2_STAND_4         BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run4.bmp"
+ACTOR_2_STAND_4         BITMAP                  "..\\RES\\player\\50x50\\play_yellow_normal_run4.bmp"
 
-ACTOR_2_RUN_1           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run5.bmp"
+ACTOR_2_RUN_1           BITMAP                  "..\\RES\\player\\50x50\\play_yellow_normal_run5.bmp"
 
-ACTOR_2_RUN_2           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run6.bmp"
+ACTOR_2_RUN_2           BITMAP                  "..\\RES\\player\\50x50\\play_yellow_normal_run6.bmp"
 
-ACTOR_2_RUN_3           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run7.bmp"
+ACTOR_2_RUN_3           BITMAP                  "..\\RES\\player\\50x50\\play_yellow_normal_run7.bmp"
 
-ACTOR_2_RUN_4           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run8.bmp"
+ACTOR_2_RUN_4           BITMAP                  "..\\RES\\player\\50x50\\play_yellow_normal_run8.bmp"
 
-ACTOR_2_RUN_5           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run9.bmp"
+ACTOR_2_RUN_5           BITMAP                  "..\\RES\\player\\50x50\\play_yellow_normal_run9.bmp"
 
-ACTOR_3_STAND_1         BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run1.bmp"
+ACTOR_3_STAND_1         BITMAP                  "..\\RES\\player\\50x50\\play_red_normal_run1.bmp"
 
-ACTOR_3_RUN_1           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run5.bmp"
+ACTOR_3_RUN_1           BITMAP                  "..\\RES\\player\\50x50\\play_red_normal_run5.bmp"
 
-ACTOR_3_RUN_2           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run6.bmp"
+ACTOR_3_RUN_2           BITMAP                  "..\\RES\\player\\50x50\\play_red_normal_run6.bmp"
 
-ACTOR_3_RUN_3           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run7.bmp"
+ACTOR_3_RUN_3           BITMAP                  "..\\RES\\player\\50x50\\play_red_normal_run7.bmp"
 
-ACTOR_3_RUN_4           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run8.bmp"
+ACTOR_3_RUN_4           BITMAP                  "..\\RES\\player\\50x50\\play_red_normal_run8.bmp"
 
-ACTOR_3_RUN_5           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run9.bmp"
+ACTOR_3_RUN_5           BITMAP                  "..\\RES\\player\\50x50\\play_red_normal_run9.bmp"
 
-ACTOR_3_RUN_6           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run10.bmp"
+ACTOR_3_RUN_6           BITMAP                  "..\\RES\\player\\50x50\\play_red_normal_run10.bmp"
 
-ACTOR_3_RUN_7           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run11.bmp"
+ACTOR_3_RUN_7           BITMAP                  "..\\RES\\player\\50x50\\play_red_normal_run11.bmp"
 
-ACTOR_2_LOOKUP_1        BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_run_squat_station.bmp"
+ACTOR_2_LOOKUP_1        BITMAP                  "..\\RES\\player\\50x50\\play_yellow_run_squat_station.bmp"
 
-ACTOR_2_LOOKDOWN_1      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_run_squat1.bmp"
+ACTOR_2_LOOKDOWN_1      BITMAP                  "..\\RES\\player\\50x50\\play_yellow_run_squat1.bmp"
 
-ACTOR_3_LOOKUP_1        BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_look_up1.bmp"
+ACTOR_3_LOOKUP_1        BITMAP                  "..\\RES\\player\\50x50\\play_red_look_up1.bmp"
 
-ACTOR_3_LOOKUP_2        BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_look_up2.bmp"
+ACTOR_3_LOOKUP_2        BITMAP                  "..\\RES\\player\\50x50\\play_red_look_up2.bmp"
 
-ACTOR_3_ROLL_1          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_ready_roll1.bmp"
+ACTOR_3_ROLL_1          BITMAP                  "..\\RES\\player\\50x50\\play_red_ready_roll1.bmp"
 
-ACTOR_3_ROLL_2          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_ready_roll2.bmp"
+ACTOR_3_ROLL_2          BITMAP                  "..\\RES\\player\\50x50\\play_red_ready_roll2.bmp"
 
-ACTOR_3_ROLL_3          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_ready_roll3.bmp"
+ACTOR_3_ROLL_3          BITMAP                  "..\\RES\\player\\50x50\\play_red_ready_roll3.bmp"
 
-ACTOR_3_ROLL_4          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_ready_roll4.bmp"
+ACTOR_3_ROLL_4          BITMAP                  "..\\RES\\player\\50x50\\play_red_ready_roll4.bmp"
 
-ACTOR_2_ROLL_1          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_accelerate_ball4.bmp"
+ACTOR_2_ROLL_1          BITMAP                  "..\\RES\\player\\50x50\\play_yellow_accelerate_ball4.bmp"
 
-ACTOR_2_ROLL_2          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_accelerate_ball5.bmp"
+ACTOR_2_ROLL_2          BITMAP                  "..\\RES\\player\\50x50\\play_yellow_accelerate_ball5.bmp"
 
-ACTOR_2_ROLL_3          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_accelerate_ball6.bmp"
+ACTOR_2_ROLL_3          BITMAP                  "..\\RES\\player\\50x50\\play_yellow_accelerate_ball6.bmp"
 
-ACTOR_2_ROLL_4          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_accelerate_ball7.bmp"
+ACTOR_2_ROLL_4          BITMAP                  "..\\RES\\player\\50x50\\play_yellow_accelerate_ball7.bmp"
 
-ACTOR_3_LOOKDOWN_1      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_squat1.bmp"
+ACTOR_3_LOOKDOWN_1      BITMAP                  "..\\RES\\player\\50x50\\play_red_squat1.bmp"
 
-ACTOR_3_LOOKDOWN_2      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_squat2.bmp"
+ACTOR_3_LOOKDOWN_2      BITMAP                  "..\\RES\\player\\50x50\\play_red_squat2.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

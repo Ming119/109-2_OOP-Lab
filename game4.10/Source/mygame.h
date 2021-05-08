@@ -175,6 +175,7 @@ namespace game_framework {
 
 	private:
 		CString stringHandler;
+		POINT delta;
 
 		Level* level;
 		int current_actor;

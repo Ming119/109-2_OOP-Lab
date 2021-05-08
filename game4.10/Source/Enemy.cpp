@@ -20,6 +20,8 @@ namespace game_framework {
 		movingRange = 100;
 		refBrick = nullptr;
 
+		delta = POINT();
+
 		direction = false;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 		isCollisingLeft = isCollisingRight = isCollisingTop = isCollisingBottom = false;
@@ -77,6 +79,10 @@ namespace game_framework {
 		isMovingDown = m;
 	}
 	
+	void Enemy::SetMoving(POINT _delta) {
+		delta = _delta;
+	}
+
 	void Enemy::SetCollisionLeft(bool collide) {
 		isCollisingLeft = collide;
 	}
@@ -200,7 +206,7 @@ namespace game_framework {
 			pos.x -= speed;
 
 	
-
+		pos.x -= delta.x;
 		// Camera Move
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
@@ -265,6 +271,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -324,7 +331,7 @@ namespace game_framework {
 		
 
 
-
+		pos.x -= delta.x;
 		// Camera Move
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
@@ -389,6 +396,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -446,6 +454,7 @@ namespace game_framework {
 
 
 
+		pos.x -= delta.x;
 		// Camera Move
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
@@ -510,6 +519,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -574,6 +584,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -639,6 +650,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -704,6 +716,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -768,6 +781,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -832,6 +846,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -897,6 +912,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -964,6 +980,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -1028,7 +1045,8 @@ namespace game_framework {
 				pos.x -= speed;
 
 		}
-
+		
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -1093,6 +1111,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -1163,6 +1182,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
@@ -1227,6 +1247,7 @@ namespace game_framework {
 
 		}
 
+		pos.x -= delta.x;
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
 			spawn.x += cameraSpeed;
