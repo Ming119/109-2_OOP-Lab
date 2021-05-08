@@ -12,11 +12,24 @@ namespace game_framework {
 
 	class Actor {
 	protected:
-		POINT pos;
-		POINT spawnPoint;
-		POINT speed;
+		const int maxVelocity = 40;	// only on x-axis
+		const int maxAcceleration = 4;	// only on x-axis
 
-		int maxSpeed;		// on x-axis
+		const int   gravity = 10;
+		const float friction = 0.9f;
+
+		POINT pos;
+
+		POINT velocity;
+		POINT acceleration;
+		POINT delta;
+
+		CAnimation idle;
+		CAnimation lookUp;
+		CAnimation lookDown;
+		CAnimation moving;
+		CAnimation jump;
+
 		int angle;		// angle = ang(actor's x-axis, real x-axis)
 		int jumpStrength;
 		
@@ -25,18 +38,9 @@ namespace game_framework {
 		bool isMovingRight;
 		bool isLookingUp;
 		bool isLookingDown;
-		bool isJumping;
-		
-		const int   gravity  = 10;
-		const float friction = 0.95f;
-		POINT velocity;
-		int acceleration;
+		bool isJumping;		
 
-		CAnimation idle;
-		CAnimation lookUp;
-		CAnimation lookDown;
-		CAnimation moving;
-		CAnimation jump;
+		
 
 	public:
 		Actor();
@@ -53,6 +57,8 @@ namespace game_framework {
 		int Width();
 		int Height();
 
+		POINT getDelta();
+
 		void setTopLeft(int, int);
 		void setTopLeft(POINT);
 		void SetMoveLeft(bool);
@@ -65,25 +71,12 @@ namespace game_framework {
 
 
 
-
+		/*
 		// Collision Detection
 		bool Collision(Actor*, Actor*);
 		bool orientedbox_collision(Actor*, Actor*);
 		bool poxelperfect_collision(Actor*, Actor*);
 		bool brick_collision(Actor*, Brick*);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -114,6 +107,7 @@ namespace game_framework {
 		POINT particle_movement(Actor*, float);
 		POINT eightdirections_movement(Actor*);
 		POINT bullet_movement(Actor*);
+		*/
 
 	};
 

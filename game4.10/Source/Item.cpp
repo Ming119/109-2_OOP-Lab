@@ -10,18 +10,13 @@
 
 namespace game_framework {
 	// Item
-	Item::Item() {
-		pos.x = 0;
-		pos.y = 0;
-		angle = 0;
-		cameraSpeed = 50;
-	}
-
 	Item::Item(int x, int y) {
 		pos.x = x;
 		pos.y = y;
 		angle = 0;
 		cameraSpeed = 50;
+
+		delta = POINT();
 
 		isDead = isDeadFinish =false;
 		isBounce = isBounceFinish = false;
@@ -82,6 +77,10 @@ namespace game_framework {
 		isMovingDown = m;
 	}
 
+	void Item::SetMoving(POINT _delta) {
+		delta = _delta;
+	}
+
 	void Item::SetCurrentActor(Actor* actor) {
 		currnetActor = actor;
 	}
@@ -108,8 +107,6 @@ namespace game_framework {
 	}
 
 	// Ring
-	Ring::Ring() : Item::Item() {}
-
 	Ring::Ring(int x, int y) : Item::Item(x, y) {}
 
 	Ring::~Ring() {}
@@ -135,6 +132,8 @@ namespace game_framework {
 	}
 
 	void Ring::OnMove() {
+		pos.x -= delta.x;
+
 		// Camera Move
 		if (isMovingLeft) {
 			pos.x += cameraSpeed;
@@ -165,13 +164,10 @@ namespace game_framework {
 				CAudio::Instance()->Play(AUDIO_RING, false);
 			}
 			deadAnimate.OnMove();
-		} else {
-			texture.OnMove();
 		}
-
-		
-		
-		
+		else {
+			texture.OnMove();
+		}		
 		
 	}
 

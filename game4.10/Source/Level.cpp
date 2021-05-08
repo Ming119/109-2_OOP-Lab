@@ -218,7 +218,9 @@ namespace game_framework {
 	
 	void Level::OnMove() {
 		// Actor
-		CurrentActor()->OnMove();
+		actor1.OnMove();
+		actor2.OnMove();
+		actor3.OnMove();
 
 		if (CurrentActor()->IsJumping()) {
 			
@@ -230,23 +232,10 @@ namespace game_framework {
 		int bs = bricks.size();
 		int es = enemies.size();
 		
-		/*
-		for (int b = 0; b < bs; b++) {
-			for (int e = 0; e < es; e++) {
-				enemies.at(e)->CollisionDetection(bricks.at(b));
-			}
-		}
-		*/
-
-
-
 		// Brick
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->OnMove();
 		}
-
-
-
 		
 		// Item
 		int is = items.size();
@@ -257,8 +246,6 @@ namespace game_framework {
 				is--; i--;
 			}
 		}
-
-
 
 		// Enemy
 		for (int i = 0; i < es; i++) {
@@ -297,10 +284,7 @@ namespace game_framework {
 		actor3.OnShow();
 	}
 
-	Actor* Level::CurrentActor()
-	{
-		return currentActor;
-	}
+	Actor* Level::CurrentActor() { return currentActor; }
 
 	void Level::SetCurrentActor(int actor) {
 		if (actor == SONIC)    currentActor = &actor1;
@@ -309,8 +293,6 @@ namespace game_framework {
 	}
 
 	void Level::SetMoveLeft(bool m) {
-		currentActor->SetMoveLeft(m);
-
 		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->SetMoveLeft(m);
@@ -327,55 +309,7 @@ namespace game_framework {
 		}
 	}
 
-	void Level::SetMoveUp(int speed) {
-		int bs = bricks.size();
-		for (int i = 0; i < bs; i++) {
-			POINT newPoint;
-			newPoint.x = enemies.at(i)->Left();
-			newPoint.y = enemies.at(i)->Top() + speed;
-			enemies.at(i)->setTopLeft(newPoint);
-		}
-
-		/*int is = items.size();
-		for (int i = 0; i < is; i++) {
-			items.at(i)->SetMoveL(speed);
-		}*/
-
-		int es = enemies.size();
-		for (int i = 0; i < es; i++) {
-			POINT newPoint;
-			newPoint.x = enemies.at(i)->Left();
-			newPoint.y = enemies.at(i)->Top() + speed;
-			enemies.at(i)->setTopLeft(newPoint);
-		}
-	}
-
-	void Level::SetMoveDown(int speed) {
-		int bs = bricks.size();
-		for (int i = 0; i < bs; i++) {
-			POINT newPoint;
-			newPoint.x = enemies.at(i)->Left();
-			newPoint.y = enemies.at(i)->Top() - speed;
-			enemies.at(i)->setTopLeft(newPoint);
-		}
-
-		/*int is = items.size();
-		for (int i = 0; i < is; i++) {
-			items.at(i)->MoveLeft(speed);
-		}*/
-
-		int es = enemies.size();
-		for (int i = 0; i < es; i++) {
-			POINT newPoint;
-			newPoint.x = enemies.at(i)->Left();
-			newPoint.y = enemies.at(i)->Top() - speed;
-			enemies.at(i)->setTopLeft(newPoint);
-		}
-	}
-
 	void Level::SetMoveRight(bool m) {
-		currentActor->SetMoveRight(m);
-
 		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {
 			bricks.at(i)->SetMoveRight(m);
@@ -425,6 +359,23 @@ namespace game_framework {
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->SetMoveDown(m);
+		}
+	}
+
+	void Level::SetMoving(POINT delta) {
+		int bs = bricks.size();
+		for (int i = 0; i < bs; i++) {
+			bricks.at(i)->SetMoving(delta);
+		}
+
+		int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->SetMoving(delta);
+		}
+
+		int es = enemies.size();
+		for (int i = 0; i < es; i++) {
+			enemies.at(i)->SetMoving(delta);
 		}
 	}
 
