@@ -12,11 +12,23 @@ namespace game_framework {
 
 	class Actor {
 	protected:
-		POINT pos;
-		POINT spawnPoint;
-		POINT speed;
+		const int maxVelocity = 5;	// only on x-axis
+		const int maxAcceleration = 5;	// only on x-axis
 
-		int maxSpeed;		// on x-axis
+		const int   gravity = 10;
+		const float friction = 0.95f;
+
+		POINT pos;
+
+		POINT velocity;
+		POINT acceleration;
+
+		CAnimation idle;
+		CAnimation lookUp;
+		CAnimation lookDown;
+		CAnimation moving;
+		CAnimation jump;
+
 		int angle;		// angle = ang(actor's x-axis, real x-axis)
 		int jumpStrength;
 		
@@ -25,25 +37,16 @@ namespace game_framework {
 		bool isMovingRight;
 		bool isLookingUp;
 		bool isLookingDown;
-		bool isJumping;
-		
-		const int   gravity  = 10;
-		const float friction = 0.95f;
-		POINT velocity;
-		int acceleration;
+		bool isJumping;		
 
-		CAnimation idle;
-		CAnimation lookUp;
-		CAnimation lookDown;
-		CAnimation moving;
-		CAnimation jump;
+		
 
 	public:
 		Actor();
 		~Actor();
 
 		virtual void OnInit() = 0;
-		virtual void OnMove() = 0;
+		virtual POINT OnMove() = 0;
 		virtual void OnShow() = 0;
 		
 		int Top();
@@ -122,9 +125,9 @@ namespace game_framework {
 		Sonic();
 		~Sonic();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void  OnInit() override;
+		POINT OnMove() override;
+		void  OnShow() override;
 	};
 
 	class Miles : public Actor {
@@ -132,9 +135,9 @@ namespace game_framework {
 		Miles();
 		~Miles();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void  OnInit() override;
+		POINT OnMove() override;
+		void  OnShow() override;
 	};
 
 	class Knuckles : public Actor {
@@ -142,9 +145,9 @@ namespace game_framework {
 		Knuckles();
 		~Knuckles();
 
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow() override;
+		void  OnInit() override;
+		POINT OnMove() override;
+		void  OnShow() override;
 	};
 }
 
