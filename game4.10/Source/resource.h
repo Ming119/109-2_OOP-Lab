@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by game.rc
+// Microsoft Visual C++ 產生的 Include 檔案。
+// 由 game.rc 使用
 //
 #define IDD_ABOUTBOX                    100
 #define IDP_SOCKETS_INIT_FAILED         104
@@ -522,6 +522,38 @@
 #define ITEM_YELLOW_RING_DEAD_3         611
 #define IDB_BITMAP199                   612
 #define ITEM_YELLOW_RING_DEAD_4         612
+#define ACTOR_2_STAND_1                 614
+#define ACTOR_2_STAND_2                 615
+#define ACTOR_2_STAND_3                 616
+#define ACTOR_2_STAND_4                 617
+#define ACTOR_2_RUN_1                   618
+#define ACTOR_2_RUN_2                   619
+#define ACTOR_2_RUN_3                   620
+#define ACTOR_2_RUN_4                   621
+#define ACTOR_2_RUN_5                   622
+#define ACTOR_3_STAND_1                 627
+#define ACTOR_3_RUN_1                   628
+#define ACTOR_3_RUN_2                   629
+#define ACTOR_3_RUN_3                   630
+#define ACTOR_3_RUN_4                   631
+#define ACTOR_3_RUN_5                   632
+#define ACTOR_3_RUN_6                   633
+#define ACTOR_3_RUN_7                   634
+#define ACTOR_2_LOOKUP_1                638
+#define ACTOR_2_LOOKDOWN_1              639
+#define ACTOR_3_LOOKUP_1                640
+#define ACTOR_3_LOOKUP_2                641
+#define ACTOR_3_ROLL_1                  642
+#define ACTOR_3_ROLL_2                  643
+#define ACTOR_3_ROLL_3                  644
+#define ACTOR_3_ROLL_4                  645
+#define ACTOR_2_ROLL_1                  646
+#define ACTOR_2_ROLL_2                  647
+#define ACTOR_2_ROLL_3                  648
+#define ACTOR_2_ROLL_4                  649
+#define ACTOR_13_LOOKDOWN_1             650
+#define ACTOR_3_LOOKDOWN_2              651
+#define ACTOR_3_LOOKDOWN_1              652
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -533,9 +565,8 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_3D_CONTROLS                1
-/// #define _APS_NEXT_RESOURCE_VALUE        610
-#define _APS_NEXT_RESOURCE_VALUE        613
+#define _APS_3D_CONTROLS                     1
+#define _APS_NEXT_RESOURCE_VALUE        653
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

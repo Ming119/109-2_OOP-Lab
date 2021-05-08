@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Chinese (Traditional, Taiwan) resources
+// 中文 (繁體，台灣) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -116,6 +116,68 @@ ITEMS_YELLOW_RING_7     BITMAP                  "..\\res\\items\\items_coin7.bmp
 
 ITEMS_YELLOW_RING_8     BITMAP                  "..\\res\\items\\items_coin8.bmp"
 
+ACTOR_2_STAND_1         BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run1.bmp"
+
+ACTOR_2_STAND_2         BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run2.bmp"
+
+ACTOR_2_STAND_3         BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run3.bmp"
+
+ACTOR_2_STAND_4         BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run4.bmp"
+
+ACTOR_2_RUN_1           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run5.bmp"
+
+ACTOR_2_RUN_2           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run6.bmp"
+
+ACTOR_2_RUN_3           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run7.bmp"
+
+ACTOR_2_RUN_4           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run8.bmp"
+
+ACTOR_2_RUN_5           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_normal_run9.bmp"
+
+ACTOR_3_STAND_1         BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run1.bmp"
+
+ACTOR_3_RUN_1           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run5.bmp"
+
+ACTOR_3_RUN_2           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run6.bmp"
+
+ACTOR_3_RUN_3           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run7.bmp"
+
+ACTOR_3_RUN_4           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run8.bmp"
+
+ACTOR_3_RUN_5           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run9.bmp"
+
+ACTOR_3_RUN_6           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run10.bmp"
+
+ACTOR_3_RUN_7           BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_normal_run11.bmp"
+
+ACTOR_2_LOOKUP_1        BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_run_squat_station.bmp"
+
+ACTOR_2_LOOKDOWN_1      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_run_squat1.bmp"
+
+ACTOR_3_LOOKUP_1        BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_look_up1.bmp"
+
+ACTOR_3_LOOKUP_2        BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_look_up2.bmp"
+
+ACTOR_3_ROLL_1          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_ready_roll1.bmp"
+
+ACTOR_3_ROLL_2          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_ready_roll2.bmp"
+
+ACTOR_3_ROLL_3          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_ready_roll3.bmp"
+
+ACTOR_3_ROLL_4          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_ready_roll4.bmp"
+
+ACTOR_2_ROLL_1          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_accelerate_ball4.bmp"
+
+ACTOR_2_ROLL_2          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_accelerate_ball5.bmp"
+
+ACTOR_2_ROLL_3          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_accelerate_ball6.bmp"
+
+ACTOR_2_ROLL_4          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_yellow_accelerate_ball7.bmp"
+
+ACTOR_3_LOOKDOWN_1      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_squat1.bmp"
+
+ACTOR_3_LOOKDOWN_2      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\player\\50x50\\play_red_squat2.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -124,12 +186,12 @@ ITEMS_YELLOW_RING_8     BITMAP                  "..\\res\\items\\items_coin8.bmp
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // Chinese (Traditional, Taiwan) resources
+#endif    // 中文 (繁體，台灣) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// 英文 (美國) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -415,12 +477,12 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // English (United States) resources
+#endif    // 英文 (美國) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United Kingdom) resources
+// 英文 (英國) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
@@ -1027,7 +1089,7 @@ ITEM_YELLOW_RING_DEAD_4 BITMAP                  "..\\RES\\items\\items_coin12.bm
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "..\\RES\\icon.ico"
 
-#endif    // English (United Kingdom) resources
+#endif    // 英文 (英國) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
