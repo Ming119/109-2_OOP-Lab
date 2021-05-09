@@ -145,13 +145,12 @@ namespace game_framework {
 			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
  
 		} else {
-			if (velocity.x) moving.OnMove();
-
 			if (abs(acceleration.x) > 0 && acceleration.x > 0) acceleration.x--;
 			else if (abs(acceleration.x) > 0 && acceleration.x < 0) acceleration.x++;
 
 			velocity.x = (long)(velocity.x * friction);
 		}
+		if (velocity.x) moving.OnMove();
 		delta = velocity;
 
 		if (isLookingUp) {

@@ -178,101 +178,101 @@ ACTOR_3_LOOKDOWN_1      BITMAP                  "..\\RES\\player\\50x50\\play_re
 
 ACTOR_3_LOOKDOWN_2      BITMAP                  "..\\RES\\player\\50x50\\play_red_squat2.bmp"
 
-ITEM_BULE_SPRING_PADS_LEFT_56 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_left.bmp"
+ITEM_BULE_SPRING_PADS_LEFT_56 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_left.bmp"
 
-ITEM_BULE_SPRING_PADS_LEFT_56_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_left__spring.bmp"
+ITEM_BULE_SPRING_PADS_LEFT_56_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_left__spring.bmp"
 
-ITEM_BULE_SPRING_PADS_LEFT_U_58 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_left_uder1.bmp"
+ITEM_BULE_SPRING_PADS_LEFT_U_58 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_left_uder1.bmp"
 
-ITEM_BULE_SPRING_PADS_LEFT_U_58_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_left_uder2.bmp"
+ITEM_BULE_SPRING_PADS_LEFT_U_58_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_left_uder2.bmp"
 
-ITEM_BULE_SPRING_PADS_LEFT_D_60 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_left_up1.bmp"
+ITEM_BULE_SPRING_PADS_LEFT_D_60 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_left_up1.bmp"
 
-ITEM_BULE_SPRING_PADS_LEFT_D_60_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_left_up2.bmp"
+ITEM_BULE_SPRING_PADS_LEFT_D_60_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_left_up2.bmp"
 
-ITEM_BULE_SPRING_PADS_RING_57 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_right.bmp"
+ITEM_BULE_SPRING_PADS_RING_57 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_right.bmp"
 
-ITEM_BULE_SPRING_PADS_RING_57_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_right__spring.bmp"
+ITEM_BULE_SPRING_PADS_RING_57_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_right__spring.bmp"
 
-ITEM_BULE_SPRING_PADS_RING_U_59 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_right__uder1.bmp"
+ITEM_BULE_SPRING_PADS_RING_U_59 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_right__uder1.bmp"
 
-ITEM_BULE_SPRING_PADS_RING_U_59_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_right__uder2.bmp"
+ITEM_BULE_SPRING_PADS_RING_U_59_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_right__uder2.bmp"
 
-ITEM_BULE_SPRING_PADS_RING_D_61 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_right__up1.bmp"
+ITEM_BULE_SPRING_PADS_RING_D_61 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_right__up1.bmp"
 
-ITEM_BULE_SPRING_PADS_RING_D_61_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_right__up2.bmp"
+ITEM_BULE_SPRING_PADS_RING_D_61_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_right__up2.bmp"
 
-ITEM_BULE_SPRING_PADS_DOWN_62_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_uder_spring.bmp"
+ITEM_BULE_SPRING_PADS_DOWN_62_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_uder_spring.bmp"
 
-ITEM_BULE_SPRING_PADS_DOWN_62 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_under.bmp"
+ITEM_BULE_SPRING_PADS_DOWN_62 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_under.bmp"
 
-ITEM_BULE_SPRING_PADS_UP_55 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_up.bmp"
+ITEM_BULE_SPRING_PADS_UP_55 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_up.bmp"
 
-ITEM_BULE_SPRING_PADS_UP_55_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_blue_up_spring.bmp"
+ITEM_BULE_SPRING_PADS_UP_55_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_blue_up_spring.bmp"
 
-ITEM_RED_SPRING_PADS_LEFT_22 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_left.bmp"
+ITEM_RED_SPRING_PADS_LEFT_22 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_left.bmp"
 
-ITEM_RED_SPRING_PADS_LEFT_22_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_left__spring.bmp"
+ITEM_RED_SPRING_PADS_LEFT_22_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_left__spring.bmp"
 
-ITEM_RED_SPRING_PADS_LEFT_U_43 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_left_uder1.bmp"
+ITEM_RED_SPRING_PADS_LEFT_U_43 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_left_uder1.bmp"
 
-ITEM_RED_SPRING_PADS_LEFT_U_43_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_left_uder2.bmp"
+ITEM_RED_SPRING_PADS_LEFT_U_43_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_left_uder2.bmp"
 
-ITEM_RED_SPRING_PADS_LEFT_D_45 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_left_up1.bmp"
+ITEM_RED_SPRING_PADS_LEFT_D_45 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_left_up1.bmp"
 
-ITEM_RED_SPRING_PADS_LEFT_D_45_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_left_up2.bmp"
+ITEM_RED_SPRING_PADS_LEFT_D_45_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_left_up2.bmp"
 
-ITEM_RED_SPRING_PADS_RING_23 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_right.bmp"
+ITEM_RED_SPRING_PADS_RING_23 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_right.bmp"
 
-ITEM_RED_SPRING_PADS_RING_23_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_right__spring.bmp"
+ITEM_RED_SPRING_PADS_RING_23_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_right__spring.bmp"
 
-ITEM_RED_SPRING_PADS_RING_U_44 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_right__uder1.bmp"
+ITEM_RED_SPRING_PADS_RING_U_44 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_right__uder1.bmp"
 
-ITEM_RED_SPRING_PADS_RING_U_44_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_right__uder2.bmp"
+ITEM_RED_SPRING_PADS_RING_U_44_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_right__uder2.bmp"
 
-ITEM_RED_SPRING_PADS_RING_D_46 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_right__up1.bmp"
+ITEM_RED_SPRING_PADS_RING_D_46 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_right__up1.bmp"
 
-ITEM_RED_SPRING_PADS_RING_D_46_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_right__up2.bmp"
+ITEM_RED_SPRING_PADS_RING_D_46_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_right__up2.bmp"
 
-ITEM_RED_SPRING_PADS_DOWN_47_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_uder_spring.bmp"
+ITEM_RED_SPRING_PADS_DOWN_47_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_uder_spring.bmp"
 
-ITEM_RED_SPRING_PADS_DOWN_47 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_under.bmp"
+ITEM_RED_SPRING_PADS_DOWN_47 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_under.bmp"
 
-ITEM_RED_SPRING_PADS_UP_21 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_up.bmp"
+ITEM_RED_SPRING_PADS_UP_21 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_up.bmp"
 
-ITEM_RED_SPRING_PADS_UP_21_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_red_up_spring.bmp"
+ITEM_RED_SPRING_PADS_UP_21_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_red_up_spring.bmp"
 
-ITEM_YELLOW_SPRING_PADS_LEFT_U_50 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yell_left_uder1.bmp"
+ITEM_YELLOW_SPRING_PADS_LEFT_U_50 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yell_left_uder1.bmp"
 
-ITEM_YELLOW_SPRING_PADS_LEFT_U_50_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yell_left_uder2.bmp"
+ITEM_YELLOW_SPRING_PADS_LEFT_U_50_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yell_left_uder2.bmp"
 
-ITEM_YELLOW_SPRING_PADS_LEFT_D_52 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yell_left_up1.bmp"
+ITEM_YELLOW_SPRING_PADS_LEFT_D_52 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yell_left_up1.bmp"
 
-ITEM_YELLOW_SPRING_PADS_LEFT_D_52_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yell_left_up2.bmp"
+ITEM_YELLOW_SPRING_PADS_LEFT_D_52_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yell_left_up2.bmp"
 
-ITEM_YELLOW_SPRING_PADS_RING_U_51 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yell_right__uder1.bmp"
+ITEM_YELLOW_SPRING_PADS_RING_U_51 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yell_right__uder1.bmp"
 
-ITEM_YELLOW_SPRING_PADS_RING_U_51_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yell_right__uder2.bmp"
+ITEM_YELLOW_SPRING_PADS_RING_U_51_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yell_right__uder2.bmp"
 
-ITEM_YELLOW_SPRING_PADS_RING_D_53 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yell_right__up1.bmp"
+ITEM_YELLOW_SPRING_PADS_RING_D_53 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yell_right__up1.bmp"
 
-ITEM_YELLOW_SPRING_PADS_RING_D_53_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yell_right__up2.bmp"
+ITEM_YELLOW_SPRING_PADS_RING_D_53_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yell_right__up2.bmp"
 
-ITEM_YELLOW_SPRING_PADS_LEFT_48 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yellow_left.bmp"
+ITEM_YELLOW_SPRING_PADS_LEFT_48 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yellow_left.bmp"
 
-ITEM_YELLOW_SPRING_PADS_LEFT_48_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yellow_left__spring.bmp"
+ITEM_YELLOW_SPRING_PADS_LEFT_48_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yellow_left__spring.bmp"
 
-ITEM_YELLOW_SPRING_PADS_RING_49 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yellow_right.bmp"
+ITEM_YELLOW_SPRING_PADS_RING_49 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yellow_right.bmp"
 
-ITEM_YELLOW_SPRING_PADS_RING_49_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yellow_right__spring.bmp"
+ITEM_YELLOW_SPRING_PADS_RING_49_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yellow_right__spring.bmp"
 
-ITEM_YELLOW_SPRING_PADS_DOWN_54_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yellow_uder_spring.bmp"
+ITEM_YELLOW_SPRING_PADS_DOWN_54_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yellow_uder_spring.bmp"
 
-ITEM_YELLOW_SPRING_PADS_DOWN_54 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yellow_under.bmp"
+ITEM_YELLOW_SPRING_PADS_DOWN_54 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yellow_under.bmp"
 
-ITEM_YELLOW_SPRING_PADS_UP_20 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yellow_up.bmp"
+ITEM_YELLOW_SPRING_PADS_UP_20 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yellow_up.bmp"
 
-ITEM_YELLOW_SPRING_PADS_UP_20_1 BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\item_spring_pads\\spring_pads_yellow_up_spring.bmp"
+ITEM_YELLOW_SPRING_PADS_UP_20_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yellow_up_spring.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
