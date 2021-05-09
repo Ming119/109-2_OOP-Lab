@@ -7,7 +7,7 @@ namespace game_framework {
 
 	enum class ITEMS_LIST {
 		RING,
-		/*
+		//SPIKES_RING,
 		RED_SPRING_PADS_UP,
 		RED_SPRING_PADS_DOWN,
 		RED_SPRING_PADS_LEFT,
@@ -32,7 +32,7 @@ namespace game_framework {
 		BULE_SPRING_PADS_RING,
 		BULE_SPRING_PADS_RING_U,
 		BULE_SPRING_PADS_RING_D,
-		*/
+
 	};
 
 	class Item {
@@ -85,7 +85,7 @@ namespace game_framework {
 		virtual void OnShow(int scale = DEFAULT_SCALE) = 0;
 	};
 	
-
+	
 	// Ring
 	class Ring: public Item {
 	public: 
@@ -97,13 +97,21 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
+	// SPIKES_RING
+	class SPIKES_RING : public Item {
+	public:
+		SPIKES_RING(int, int);
+		~SPIKES_RING();
 
-
-	/*
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+	
 	// RED_SPRING_PADS_UP
 	class RED_SPRING_PADS_UP : public Item {
 	public:
-		RED_SPRING_PADS_UP();
+		//RED_SPRING_PADS_UP();
 		RED_SPRING_PADS_UP(int, int);
 		~RED_SPRING_PADS_UP();
 
@@ -111,11 +119,10 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
-	
+
 	// RED_SPRING_PADS_DOWN
 	class RED_SPRING_PADS_DOWN : public Item {
 	public:
-		RED_SPRING_PADS_DOWN();
 		RED_SPRING_PADS_DOWN(int, int);
 		~RED_SPRING_PADS_DOWN();
 
@@ -127,7 +134,6 @@ namespace game_framework {
 	// RED_SPRING_PADS_LEFT
 	class RED_SPRING_PADS_LEFT : public Item {
 	public:
-		RED_SPRING_PADS_LEFT();
 		RED_SPRING_PADS_LEFT(int, int);
 		~RED_SPRING_PADS_LEFT();
 
@@ -387,7 +393,7 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
-	*/
+
 
 }
 

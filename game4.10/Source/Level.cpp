@@ -55,16 +55,18 @@ namespace game_framework {
 					int id = Level1Items[i][0];
 					int x = Level1Items[i][1] * DEFAULT_SCALE;
 					int y = (Level1Items[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+					TRACE("id = %d\n",id);
 
 					switch (id) {
+
 					case 0:
 						items.push_back(new Ring(x, y));
 						break;
-					}
-					/*
+
 					case 20:
 							items.push_back(new YELLOW_SPRING_PADS_UP(x, y));
 							break;
+
 					case 21:
 						items.push_back(new RED_SPRING_PADS_UP(x, y));
 						break;
@@ -129,7 +131,7 @@ namespace game_framework {
 						items.push_back(new BULE_SPRING_PADS_DOWN(x, y));
 						break;
 					}
-*/
+
 					/*
 					case 1:
 						break;

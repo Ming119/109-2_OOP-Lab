@@ -1647,5 +1647,17 @@
     <Image Include="RES\item_spring_pads\spring_pads_yellow_up_spring.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\spikes\spikes_left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\spikes\spikes_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\spikes\spikes_under.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\spikes\spikes_up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
