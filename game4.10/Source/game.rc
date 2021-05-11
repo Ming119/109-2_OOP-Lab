@@ -274,13 +274,13 @@ ITEM_YELLOW_SPRING_PADS_UP_20 BITMAP                  "..\\RES\\item_spring_pads
 
 ITEM_YELLOW_SPRING_PADS_UP_20_1 BITMAP                  "..\\RES\\item_spring_pads\\spring_pads_yellow_up_spring.bmp"
 
-ITEM_SPIKES_LEFT        BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\spikes\\spikes_left.bmp"
+ITEM_SPIKES_LEFT        BITMAP                  "..\\RES\\spikes\\spikes_left.bmp"
 
-ITEM_SPIKES_RING        BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\spikes\\spikes_right.bmp"
+ITEM_SPIKES_RING        BITMAP                  "..\\RES\\spikes\\spikes_right.bmp"
 
-ITEM_SPIKES_DOWN        BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\spikes\\spikes_under.bmp"
+ITEM_SPIKES_DOWN        BITMAP                  "..\\RES\\spikes\\spikes_under.bmp"
 
-ITEM_SPIKES_UP          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\spikes\\spikes_up.bmp"
+ITEM_SPIKES_UP          BITMAP                  "..\\RES\\spikes\\spikes_up.bmp"
 
 ITEM_SEND_BUTTON_1      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\items\\items_butten1.bmp"
 
