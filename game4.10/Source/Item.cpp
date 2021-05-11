@@ -174,22 +174,7 @@ namespace game_framework {
 	}
 
 	void BIG_Ring::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
@@ -235,10 +220,8 @@ namespace game_framework {
 		CameraMove();
 	}
 
-		}
 
 
-	}
 
 	void RED_SPRING_PADS_UP::OnShow(int scale) {
 		if (isDead) {
@@ -1499,5 +1482,3 @@ namespace game_framework {
 	}
 
 }
-
-
