@@ -176,6 +176,67 @@ namespace game_framework {
 	void BIG_Ring::OnMove() {
 		CameraMove();
 
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		setTopLeft(pos);
+		texture.OnMove();
+	}
+
+	
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
 
@@ -218,10 +279,11 @@ namespace game_framework {
 	
 	void RED_SPRING_PADS_UP::OnMove() {
 		CameraMove();
+
+		}
+
+
 	}
-
-
-
 
 	void RED_SPRING_PADS_UP::OnShow(int scale) {
 		if (isDead) {
@@ -937,22 +999,7 @@ namespace game_framework {
 	}
 
 	void GATE_YELLOW::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -983,22 +1030,7 @@ namespace game_framework {
 	}
 
 	void SEND::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -1029,22 +1061,7 @@ namespace game_framework {
 	}
 
 	void SEND_BUTTON::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -1076,22 +1093,7 @@ namespace game_framework {
 	}
 
 	void LOOP_LEFT::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
@@ -1136,22 +1138,7 @@ namespace game_framework {
 	}
 
 	void LOOR_RING::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
@@ -1197,22 +1184,7 @@ namespace game_framework {
 	}
 
 	void LOOP_TOP::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
@@ -1257,22 +1229,7 @@ namespace game_framework {
 	}
 
 	void LOOP_TOP_HIED::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
@@ -1318,22 +1275,7 @@ namespace game_framework {
 	}
 
 	void LOOP_OFF::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
@@ -1378,22 +1320,7 @@ namespace game_framework {
 	}
 
 	void LOOP_TOP_NOT_U_D::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
@@ -1438,22 +1365,7 @@ namespace game_framework {
 	}
 
 	void LOOP_TOP_UP_DOWN::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
