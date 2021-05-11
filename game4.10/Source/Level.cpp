@@ -220,9 +220,10 @@ namespace game_framework {
 	
 	void Level::OnMove() {
 		// Actor
-		actor1.OnMove();
+		/*actor1.OnMove();
 		actor2.OnMove();
-		actor3.OnMove();
+		actor3.OnMove();*/
+		CurrentActor()->OnMove(bricks);
 
 		if (CurrentActor()->IsJumping()) {
 			

@@ -2,6 +2,7 @@
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
+#include <algorithm>
 #include "audio.h"
 #include "gamelib.h"
 #include "Actor.h"
@@ -20,39 +21,115 @@ namespace game_framework {
 
 		isMovingLeft = isMovingRight = isLookingUp = isLookingDown = false;
 
+		refBrick = nullptr;
+
 		pos.x = 100;
 		pos.y = SIZE_Y / 3;
 	}
 
 	Actor::~Actor() { }
 
-	int Actor::Top() {
-		return idle.Top();
+	POINT Actor::Moving(vector<Brick*> b) {
+		// x-axis
+		if (isMovingLeft) {
+			moving.OnMove();
+
+			if (abs(acceleration.x) < maxAcceleration) acceleration.x--;
+
+			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
+
+		}
+		else if (isMovingRight) {
+			moving.OnMove();
+
+			if (abs(acceleration.x) < maxAcceleration) acceleration.x++;
+
+			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
+
+		}
+		else {
+			if (abs(acceleration.x) > 0 && acceleration.x > 0) acceleration.x--;
+			else if (abs(acceleration.x) > 0 && acceleration.x < 0) acceleration.x++;
+
+			velocity.x = (long)(velocity.x * friction);
+		}
+		if (velocity.x != 0) moving.OnMove();
+
+		
+
+		// y-axis
+
+		checkLevingRefBrick();
+		if (refBrick == nullptr) {
+			LookingForRefBrick(b);
+		} else {
+			TRACE("ref (%d %d)\n", refBrick->Top(), refBrick->Left());
+			velocity.y = 0;
+		}
+
+		return velocity;
 	}
 
-	int Actor::Left() {
-		return idle.Left();
+	void Actor::LookingForRefBrick(vector<Brick*> bricks) {
+
+		const int bs = bricks.size();
+
+		vector<Brick*> tmpb;
+		for (int b = 0; b < bs; b++) {
+			if (this->Right() > bricks.at(b)->Left() &&
+				this->Left() < (bricks.at(b)->Left() + bricks.at(b)->Width() * DEFAULT_SCALE)) {
+				if (this->Buttom() < bricks.at(b)->Top()) {
+					tmpb.push_back(bricks.at(b));
+				}
+			}
+		}
+
+		std::sort(tmpb.begin(), tmpb.end());
+		if (tmpb.size())
+			refBrick = tmpb.at(0);
+
 	}
 
-	int Actor::Buttom() {
-		return Top() + Height();
+	void Actor::checkLevingRefBrick() {
+		if (this != nullptr && refBrick != nullptr)
+			if (this->Left() > refBrick->Left() + refBrick->Width() * DEFAULT_SCALE || this->Right() < refBrick->Left()) refBrick = nullptr;
 	}
 
-	int Actor::Right() {
-		return Left() + Width();
+	int Actor::FallingCollision(vector<Brick*> b) {
+		int bs = b.size();
+		for (int i = 0; i < bs; i++) {
+			if (b.at(i)->Property() == OBSTACLE || b.at(i)->Property() == CLOUD) {
+				if (this->Left() < (b.at(i)->Left() + b.at(i)->Width() * DEFAULT_SCALE) &&
+					this->Right() * DEFAULT_SCALE > b.at(i)->Left() &&
+					this->Top() + 10 < (b.at(i)->Top() + b.at(i)->Height() * DEFAULT_SCALE) &&
+					this->Buttom() * DEFAULT_SCALE + 10 > b.at(i)->Top()) {
+
+				}
+			}
+
+		}
+
+		return gravity;
+
 	}
 
-	int Actor::Height() {
-		return idle.Height();
+	bool Actor::CollisionDection(Brick*) {
+		return false;
 	}
 
-	POINT Actor::getDelta() {
-		return delta;
-	}
+	int Actor::Top() { return idle.Top(); }
 
-	int Actor::Width() {
-		return idle.Width();
-	}
+	int Actor::Left() {	return idle.Left(); }
+
+	int Actor::Buttom() { return Top() + Height(); }
+
+	int Actor::Right() { return Left() + Width(); }
+	
+	int Actor::Width() { return idle.Width() * DEFAULT_SCALE; }
+
+	int Actor::Height() { return idle.Height() * DEFAULT_SCALE; }
+
+	POINT Actor::getDelta() { return delta; }
 
 	void Actor::setTopLeft(int x, int y) {
 		pos.x = x;
@@ -86,6 +163,8 @@ namespace game_framework {
 	bool Actor::IsJumping() {
 		return isJumping;
 	}
+
+	
 
 
 
@@ -131,32 +210,8 @@ namespace game_framework {
 		jump.SetTopLeft(pos.x, pos.y);
 	}
 
-
-
-
-	void Sonic::OnMove() {
-		if (isMovingLeft) {
-			moving.OnMove();
-			
-			if (abs(acceleration.x) < maxAcceleration) acceleration.x--;
-
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
-
-		} else if (isMovingRight) {
-			moving.OnMove();
-
-			if (abs(acceleration.x) < maxAcceleration) acceleration.x++;
-
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
- 
-		} else {
-			if (abs(acceleration.x) > 0 && acceleration.x > 0) acceleration.x--;
-			else if (abs(acceleration.x) > 0 && acceleration.x < 0) acceleration.x++;
-
-			velocity.x = (long)(velocity.x * friction);
-		}
-		if (velocity.x) moving.OnMove();
-		delta = velocity;
+	void Sonic::OnMove(vector<Brick*> b) {
+		delta = Moving(b);
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
@@ -244,31 +299,8 @@ namespace game_framework {
 		jump.SetTopLeft(pos.x, pos.y);
 	}
 	
-	void Miles::OnMove() {
-		if (isMovingLeft) {
-			moving.OnMove();
-
-			if (abs(acceleration.x) < maxAcceleration) acceleration.x--;
-
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
-
-		}
-		else if (isMovingRight) {
-			moving.OnMove();
-
-			if (abs(acceleration.x) < maxAcceleration) acceleration.x++;
-
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
-
-		}
-		else {
-			if (abs(acceleration.x) > 0 && acceleration.x > 0) acceleration.x--;
-			else if (abs(acceleration.x) > 0 && acceleration.x < 0) acceleration.x++;
-
-			velocity.x = (long)(velocity.x * friction);
-		}
-		if (velocity.x) moving.OnMove();
-		delta = velocity;
+	void Miles::OnMove(vector<Brick*> b) {
+		delta = Moving(b);
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
@@ -357,31 +389,8 @@ namespace game_framework {
 	
 	}
 
-	void Knuckles::OnMove() {
-		if (isMovingLeft) {
-			moving.OnMove();
-
-			if (abs(acceleration.x) < maxAcceleration) acceleration.x--;
-
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
-
-		}
-		else if (isMovingRight) {
-			moving.OnMove();
-
-			if (abs(acceleration.x) < maxAcceleration) acceleration.x++;
-
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
-
-		}
-		else {
-			if (abs(acceleration.x) > 0 && acceleration.x > 0) acceleration.x--;
-			else if (abs(acceleration.x) > 0 && acceleration.x < 0) acceleration.x++;
-
-			velocity.x = (long)(velocity.x * friction);
-		}
-		if (velocity.x) moving.OnMove();
-		delta = velocity;
+	void Knuckles::OnMove(vector<Brick*> b) {
+		delta = Moving(b);
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())

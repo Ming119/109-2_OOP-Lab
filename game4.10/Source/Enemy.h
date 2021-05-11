@@ -59,11 +59,14 @@ namespace game_framework {
 		void setTopLeft(int, int);
 		void setAngle(int);
 
+		int Angle();
+		int Height();
+		int Width();
 		int Top();
 		int Left();
-		int Angle();
-		int Height();	
-		int Width();
+		int Buttom();
+		int Right();
+		
 
 		void SetMoveLeft(bool);
 		void SetMoveRight(bool);
@@ -78,6 +81,10 @@ namespace game_framework {
 		void SetCollisionRight(bool);
 		void SetCollisionTop(bool);
 		void SetCollisionBottom(bool);
+
+		void CameraMove();
+
+
 
 		virtual void OnInit(vector<Brick*>) {};
 		virtual void OnMove()=0;

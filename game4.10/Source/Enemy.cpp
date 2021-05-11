@@ -28,6 +28,21 @@ namespace game_framework {
 
 	}
 
+	int Enemy::Angle() { return angle; }
+
+	int Enemy::Height() { return texture.Height() * DEFAULT_SCALE; }
+
+	int Enemy::Width() { return texture.Width() * DEFAULT_SCALE; }
+
+	int Enemy::Top() { return texture.Top(); }
+
+	int Enemy::Left() { return texture.Left(); }
+
+	int Enemy::Buttom() { return this->Top() + this->Height(); }
+
+	int Enemy::Right() { return this->Left() + this->Width(); }
+
+
 	void Enemy::setTopLeft(POINT xy) {
 		pos = xy;
 		texture.SetTopLeft(pos.x, pos.y);
@@ -39,49 +54,17 @@ namespace game_framework {
 		texture.SetTopLeft(pos.x, pos.y);
 	}
 
-	void Enemy::setAngle(int ang) {
-		angle = ang;
-	}
+	void Enemy::setAngle(int ang) { angle = ang; }
 
-	int Enemy::Top() {
-		return texture.Top();
-	}
+	void Enemy::SetMoveLeft(bool m) { isMovingLeft = m; }
 
-	int Enemy::Left() {
-		return texture.Left();
-	}
+	void Enemy::SetMoveRight(bool m) { isMovingRight = m; }
 
-	int Enemy::Angle() {
-		return angle;
-	}
+	void Enemy::SetMoveUp(bool m) { isMovingUp = m; }
 
-	int Enemy::Height() {
-		return texture.Height();
-	}
-
-	int Enemy::Width() {
-		return texture.Width();
-	}
-
-	void Enemy::SetMoveLeft(bool m) {
-		isMovingLeft = m;
-	}
-
-	void Enemy::SetMoveRight(bool m) {
-		isMovingRight = m;
-	}
-
-	void Enemy::SetMoveUp(bool m) {
-		isMovingUp = m;
-	}
-
-	void Enemy::SetMoveDown(bool m) {
-		isMovingDown = m;
-	}
+	void Enemy::SetMoveDown(bool m) { isMovingDown = m; }
 	
-	void Enemy::SetMoving(POINT _delta) {
-		delta = _delta;
-	}
+	void Enemy::SetMoving(POINT _delta) { delta = _delta; }
 
 	void Enemy::SetCollisionLeft(bool collide) {
 		isCollisingLeft = collide;
@@ -99,6 +82,31 @@ namespace game_framework {
 		isCollisingBottom = collide;
 	}
 
+	void Enemy::CameraMove() {
+		// Camera Move
+		pos.x -= delta.x;
+		pos.y += delta.y;
+		
+		/*if (isMovingLeft) {
+			pos.x += cameraSpeed;
+			spawn.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+			spawn.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+			spawn.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+			spawn.y -= cameraSpeed;
+		}*/
+
+		setTopLeft(pos);
+	}
+
 	bool Enemy::CollisionDetection(Brick* brick) {
 
 		if (brick->Property() != OBSTACLE && brick->Property() != CLOUD) return false;
@@ -114,50 +122,11 @@ namespace game_framework {
 			(this->Top() + this->Height() * DEFAULT_SCALE)-Hoffset > (brick->Top()+Hoffset)) {
 			
 			this->SetCollisionBottom(true);
-
-			if ((this->Top() + Hoffset) < (brick->Top() + brick->Height() * DEFAULT_SCALE) - Hoffset &&
-				(this->Top() + this->Height() * DEFAULT_SCALE) - Hoffset > (brick->Top() + Hoffset))
-				
 			
-
-
 			return true;
 		}
-		else {
-			/*this->SetCollisionLeft(false);
-			this->SetCollisionRight(false);
-			this->SetCollisionTop(false);
-			this->SetCollisionBottom(false);
-			return false;*/
-		}
 		return false;
-		
-
-		/*if (a->Left() < b->Left() + b->Width() * DEFAULT_SCALE &&
-			a->Left() + a->Width() * DEFAULT_SCALE > b->Left() &&
-			a->Top() < b->Top() + b->Height() * DEFAULT_SCALE &&
-			a->Top() + a->Height() * DEFAULT_SCALE > b->Top())
-		{
-			a->SetCollisionBottom(true);
-			if (a->Left() < b->Left() + b->Width() * DEFAULT_SCALE && a->Left() + a->Width() * DEFAULT_SCALE > b->Left()) {
-				a->SetCollisionRight(true);
-				b->SetCollisionLeft(true);
-			}
-			else {
-				a->SetCollisionLeft(true);
-				b->SetCollisionRight(true);
-			}
-
-			if (a->Top() < b->Top() + b->Height() * DEFAULT_SCALE && a->Top() + a->Height() * DEFAULT_SCALE > b->Top()) {
-				a->SetCollisionBottom(true);
-				b->SetCollisionTop(true);
-			}
-			else {
-				a->SetCollisionTop(true);
-				b->SetCollisionBottom(true);
-			}
-		}*/
-		
+			
 	}
 
 	void Enemy::LookingForRefBrick(vector<Brick*> bricks) {
@@ -167,8 +136,7 @@ namespace game_framework {
 		for (int b = 0; b < bs; b++) {
 			if (CollisionDetection(bricks.at(b))) {
 				this->refBrick = bricks.at(b);
-				//TRACE("this: %d, %d. that pos: (%d, %d)\n", spawn.y, this->Height(), refBrick->Top(), refBrick->Left());
-				spawn.y -= (spawn.y + Height() * DEFAULT_SCALE) - refBrick->Top();
+				spawn.y -= (spawn.y + Height()) - refBrick->Top();
 				break;
 			}
 		}
@@ -191,11 +159,13 @@ namespace game_framework {
 	}
 
 	void Ladybug::OnMove() {
+		CameraMove();
+
 		if (pos.x <= refBrick->Left()) {
 			direction = !direction;
 			pos.x += speed;
 		}
-		if ((pos.x + Width() * DEFAULT_SCALE) >= (refBrick->Left() + refBrick->Width() * DEFAULT_SCALE)) {
+		if (pos.x + Width() >= refBrick->Right()) {
 			direction = !direction;
 			pos.x -= speed;
 		}	
@@ -204,26 +174,6 @@ namespace game_framework {
 			pos.x += speed;
 		else
 			pos.x -= speed;
-
-	
-		pos.x -= delta.x;
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-			spawn.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-			spawn.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-			spawn.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-			spawn.y -= cameraSpeed;
-		}
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -247,6 +197,8 @@ namespace game_framework {
 	}
 
 	void Fly::OnMove() {
+		CameraMove();
+
 		// 落地檢查
 		if (!isCollisingBottom)
 			pos.y += 10;
@@ -270,25 +222,6 @@ namespace game_framework {
 				pos.x -= speed;
 
 		}
-
-		pos.x -= delta.x;
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-			spawn.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-			spawn.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-			spawn.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-			spawn.y -= cameraSpeed;
-		}
-
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -314,7 +247,8 @@ namespace game_framework {
 	}
 
 	void Bamboo::OnMove() {
-		
+		CameraMove();
+
 		if ((pos.y + Height() * DEFAULT_SCALE) >= refBrick->Top()) {
 			direction = !direction;
 			pos.y -= speed;
@@ -328,27 +262,6 @@ namespace game_framework {
 			pos.y -= speed;
 		else
 			pos.y += speed;
-		
-
-
-		pos.x -= delta.x;
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-			spawn.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-			spawn.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-			spawn.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-			spawn.y -= cameraSpeed;
-		}
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -372,6 +285,8 @@ namespace game_framework {
 	}
 
 	void Spider::OnMove() {
+		CameraMove();
+
 		// 落地檢查
 		if (!isCollisingBottom)
 			pos.y += 10;
@@ -395,25 +310,6 @@ namespace game_framework {
 				pos.x -= speed;
 
 		}
-
-		pos.x -= delta.x;
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-			spawn.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-			spawn.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-			spawn.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-			spawn.y -= cameraSpeed;
-		}
-
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -495,6 +391,8 @@ namespace game_framework {
 	}
 
 	void Shark::OnMove() {
+		CameraMove();
+
 		// 落地檢查
 		if (!isCollisingBottom)
 			pos.y += 10;
@@ -518,25 +416,6 @@ namespace game_framework {
 				pos.x -= speed;
 
 		}
-
-		pos.x -= delta.x;
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-			spawn.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-			spawn.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-			spawn.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-			spawn.y -= cameraSpeed;
-		}
-
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -560,6 +439,8 @@ namespace game_framework {
 	}
 
 	void Mosquito::OnMove() {
+		CameraMove();
+
 		// 落地檢查
 		if (!isCollisingBottom)
 			pos.y += 10;
@@ -583,25 +464,6 @@ namespace game_framework {
 				pos.x -= speed;
 
 		}
-
-		pos.x -= delta.x;
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-			spawn.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-			spawn.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-			spawn.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-			spawn.y -= cameraSpeed;
-		}
-
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -626,6 +488,8 @@ namespace game_framework {
 	}
 
 	void Groundhog::OnMove() {
+		CameraMove();
+
 		// 落地檢查
 		if (!isCollisingBottom)
 			pos.y += 10;
@@ -649,25 +513,6 @@ namespace game_framework {
 				pos.x -= speed;
 
 		}
-
-		pos.x -= delta.x;
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-			spawn.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-			spawn.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-			spawn.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-			spawn.y -= cameraSpeed;
-		}
-
 
 		setTopLeft(pos);
 		texture.OnMove();

@@ -8,6 +8,8 @@
 #include "Level.h"
 
 namespace game_framework {
+	bool Brick::operator<(const Brick& brs) const{ return pos.y < brs.pos.y; }
+
 	Brick::Brick(int _id, int x, int y) {
 		id = _id;
 		pos.x = x;
@@ -17,31 +19,22 @@ namespace game_framework {
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
-	int Brick::Top() {
-		return texture.Top();
-		//return posY;
-	}
+	int Brick::Angle() { return angle; }
 
-	int Brick::Left() {
-		return texture.Left();
-		//return posX;
-	}
+	int Brick::Property() { return property; }
 
-	int Brick::Angle() {
-		return angle;
-	}
+	int Brick::Height() { return texture.Height() * DEFAULT_SCALE; }
 
-	int Brick::Height() {
-		return texture.Height();
-	}
+	int Brick::Width() { return texture.Width() * DEFAULT_SCALE; }
 
-	int Brick::Width() {
-		return texture.Width();
-	}
+	int Brick::Top() { return texture.Top(); }
 
-	int Brick::Property() {
-		return property;
-	}
+	int Brick::Left() { return texture.Left(); }
+
+	int Brick::Buttom() { return this->Top() + this->Height(); }
+
+	int Brick::Right() { return this->Left() + this->Width(); }
+
 
 	void Brick::OnInit(int level) {
 		if (level == static_cast<int>(LEVELS::BULE_OCEAN_1) || level == static_cast<int>(LEVELS::BULE_OCEAN_2) || level == static_cast<int>(LEVELS::SUPER_BOSS_1) || level == static_cast<int>(LEVELS::TEST)) {
@@ -1077,16 +1070,7 @@ namespace game_framework {
 
 	void Brick::OnMove() {
 		pos.x -= delta.x;
-		//pos.y += delta.y;
-
-		if (isMovingLeft) 
-			pos.x += maxSpeed;
-		if (isMovingRight)
-			pos.x -= maxSpeed;
-		if (isMovingUp)
-			pos.y += maxSpeed;
-		if (isMovingDown)
-			pos.y -= maxSpeed;
+		pos.y -= delta.y;
 
 		texture.SetTopLeft(pos.x, pos.y);
 		texture.OnMove();
@@ -1096,63 +1080,23 @@ namespace game_framework {
 		texture.OnShow(scale);
 	}
 
-	void Brick::SetMoveLeft(bool m) {
-		isMovingLeft = m;
-	}
+	void Brick::SetAngle(int ang) { angle = ang; }
 
-	void Brick::SetMoveRight(bool m) {
-		isMovingRight = m;
-	}
+	void Brick::SetProperty(int p) { property = p; }
 
-	void Brick::SetMoveUp(bool m) {
-		isMovingUp = m;
-	}
+	void Brick::SetMoving(POINT _delta) { delta = _delta; }
 
-	void Brick::SetMoveDown(bool m) {
-		isMovingDown = m;
-	}
-
-	void Brick::SetMoving(POINT _delta) {
-		delta = _delta;
-	}
-
-	void Brick::setProperty(int p) {
-		property = p;
-	}
-
-	void Brick::setBehavior(int b) {
+	void Brick::SetBehavior(int b) {
 		behavior = b;
 		maxX = 0;
 		maxY = 0;
-		speed = 0;
-		//gravity = 0;
 	}
 
-	void Brick::setBehavior(int b, int x, int y, double s, int g) {
+	void Brick::SetBehavior(int b, int x, int y) {
 		behavior = b;
 		maxX = x;
 		maxY = y;
-		//speed = s;
-		//gravity = g;
 	}
 
-	void Brick::setAngle(int ang) {
-		angle = ang;
-	}
-
-	void Brick::SetCollisionLeft(bool collide) {
-		isCollisingLeft = collide;
-	}
-
-	void Brick::SetCollisionRight(bool collide) {
-		isCollisingRight = collide;
-	}
-
-	void Brick::SetCollisionTop(bool collide) {
-		isCollisingTop = collide;
-	}
-
-	void Brick::SetCollisionBottom(bool collide) {
-		isCollisingBottom = collide;
-	}
+	
 }

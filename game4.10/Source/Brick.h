@@ -25,58 +25,43 @@ namespace game_framework {
 	private:
 		CAnimation texture;
 		POINT pos;
-		int id;
-		int angle;
-
-		int property;
-		int behavior;
-		int angel;		// Degrees, 0 <= angle <= 360
-		
-		int maxX, maxY;
-		// double speed, gravity;
-		int maxSpeed, speed;
-
 		POINT delta;
 
-		bool isMovingLeft;
-		bool isMovingRight;
-		bool isMovingUp;
-		bool isMovingDown;
+		int id;
+		int angel;
+		int property;
+		int behavior;
+		
+		int maxX, maxY;
 
-		bool isCollisingLeft;
-		bool isCollisingRight;
-		bool isCollisingTop;
-		bool isCollisingBottom;
+		bool operator<(const Brick& brs) const;
 
 	public:
+		// Constructor
 		Brick(int, int, int);
+		~Brick();
 
-		int Top();
-		int Left();
+		// Getter
 		int Angle();
+		int Property();
 		int Height();
 		int Width();
-		int Property();
+		int Top();
+		int Left();
+		int Buttom();
+		int Right();
+		
+		// Setter
+		void SetAngle(int);
+		void SetProperty(int);
+		void SetMoving(POINT);
+		void SetBehavior(int);
+		void SetBehavior(int, int, int);
 
+		//
 		void OnInit(int);
 		void OnMove();
-		void OnShow(int scale=DEFAULT_SCALE);
-
-		void SetMoveLeft(bool);
-		void SetMoveRight(bool);
-		void SetMoveUp(bool);
-		void SetMoveDown(bool);
-		void SetMoving(POINT);
-
-		void setProperty(int);
-		void setBehavior(int);
-		void setBehavior(int, int, int, double, int);
-		void setAngle(int);
-
-		void SetCollisionLeft(bool);
-		void SetCollisionRight(bool);
-		void SetCollisionTop(bool);
-		void SetCollisionBottom(bool);
+		void OnShow(int scale = DEFAULT_SCALE);
 	};
 
 }

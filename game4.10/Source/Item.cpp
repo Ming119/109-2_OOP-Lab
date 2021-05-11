@@ -151,7 +151,6 @@ namespace game_framework {
 		if (isDead) {
 			if (deadAnimate.IsFinalBitmap()) {
 				isDeadFinish = true;
-
 			}
 			else if (deadAnimate.GetCurrentBitmapNumber() == 1) {
 				CAudio::Instance()->Play(AUDIO_RING, false);

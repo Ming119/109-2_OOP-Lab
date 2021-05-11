@@ -24,6 +24,8 @@ namespace game_framework {
 		POINT acceleration;
 		POINT delta;
 
+		Brick* refBrick;
+
 		CAnimation idle;
 		CAnimation lookUp;
 		CAnimation lookDown;
@@ -47,9 +49,11 @@ namespace game_framework {
 		~Actor();
 
 		virtual void OnInit() = 0;
-		virtual void OnMove() = 0;
+		virtual void OnMove(vector<Brick*>) = 0;
 		virtual void OnShow() = 0;
 		
+		POINT Moving(vector<Brick*>);
+
 		int Top();
 		int Left();
 		int Buttom();
@@ -69,6 +73,12 @@ namespace game_framework {
 
 		bool IsJumping();
 
+		void LookingForRefBrick(vector<Brick*>);
+		void checkLevingRefBrick();
+		int FallingCollision(vector<Brick*>);
+		bool CollisionDection(Brick*);
+
+		
 
 
 		/*
@@ -117,7 +127,7 @@ namespace game_framework {
 		~Sonic();
 
 		void OnInit() override;
-		void OnMove() override;
+		void OnMove(vector<Brick*>) override;
 		void OnShow() override;
 	};
 
@@ -127,7 +137,7 @@ namespace game_framework {
 		~Miles();
 
 		void OnInit() override;
-		void OnMove() override;
+		void OnMove(vector<Brick*>) override;
 		void OnShow() override;
 	};
 
@@ -137,7 +147,7 @@ namespace game_framework {
 		~Knuckles();
 
 		void OnInit() override;
-		void OnMove() override;
+		void OnMove(vector<Brick*>) override;
 		void OnShow() override;
 	};
 }
