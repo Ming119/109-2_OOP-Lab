@@ -62,10 +62,14 @@ namespace game_framework {
 					case 0:
 						items.push_back(new Ring(x, y));
 						break;
-
+					
+					case 28:
+						items.push_back(new BIG_Ring(x, y));
+						break;
+					
 					case 20:
-							items.push_back(new YELLOW_SPRING_PADS_UP(x, y));
-							break;
+						items.push_back(new YELLOW_SPRING_PADS_UP(x, y));
+						break;
 
 					case 21:
 						items.push_back(new RED_SPRING_PADS_UP(x, y));
@@ -129,6 +133,14 @@ namespace game_framework {
 					
 					case 62:
 						items.push_back(new BULE_SPRING_PADS_DOWN(x, y));
+						break;
+					
+					case 26:
+						items.push_back(new GATE_YELLOW(x, y));
+						break;
+
+					case 27:
+						items.push_back(new SEND(x, y));
 						break;
 					}
 
@@ -248,6 +260,8 @@ namespace game_framework {
 				items.erase(items.begin()+i);
 				is--; i--;
 			}
+
+
 		}
 
 		// Enemy

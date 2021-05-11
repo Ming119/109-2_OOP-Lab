@@ -1659,5 +1659,74 @@
     <Image Include="RES\spikes\spikes_up.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\items\items_butten1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_butten2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_Send1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_Send2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_big_coin_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_big_coin_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_big_coin_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_big_coin_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_big_coin_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_big_coin_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_big_coin_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_big_coin_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_big_coin_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_big_coin_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_gate_yellow.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\ITEMS_LOOP_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\ITEMS_LOOP_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\ITEMS_LOOP_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\ITEMS_LOOP_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\ITEMS_LOOP_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\ITEMS_LOOP_BLUE.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\ITEMS_LOOP_GREEN.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\ITEMS_LOOP_off.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

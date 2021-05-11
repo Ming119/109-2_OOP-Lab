@@ -7,6 +7,7 @@ namespace game_framework {
 
 	enum class ITEMS_LIST {
 		RING,
+		BIG_RING,
 		//SPIKES_RING,
 		RED_SPRING_PADS_UP,
 		RED_SPRING_PADS_DOWN,
@@ -32,6 +33,16 @@ namespace game_framework {
 		BULE_SPRING_PADS_RING,
 		BULE_SPRING_PADS_RING_U,
 		BULE_SPRING_PADS_RING_D,
+		GATE_YELLOW,
+		SEND,
+		SEND_BUTTON,
+		LOOP_LEFT,
+		LOOR_RING,
+		LOOP_TOP,
+		LOOP_TOP_HIED,
+		LOOP_OFF,
+		LOOP_TOP_NOT_U_D,
+		LOOP_TOP_UP_DOWN,
 
 	};
 
@@ -89,6 +100,17 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
+	// BIG_Ring
+	class BIG_Ring : public Item {
+	public:
+		BIG_Ring(int, int);
+		~BIG_Ring();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+	/*
 	// SPIKES_RING
 	class SPIKES_RING : public Item {
 	public:
@@ -99,7 +121,8 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
-	
+	*/
+
 	// RED_SPRING_PADS_UP
 	class RED_SPRING_PADS_UP : public Item {
 	public:
@@ -385,8 +408,127 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
+	
+	//GATE_YELLOW
+	class GATE_YELLOW : public Item {
+	public:
+		GATE_YELLOW();
+		GATE_YELLOW(int, int);
+		~GATE_YELLOW();
 
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
 
+	//SEND
+	class SEND : public Item {
+	public:
+		SEND();
+		SEND(int,int);
+		~SEND();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	//SEND_BUTTON
+	class SEND_BUTTON : public Item {
+	public:
+		SEND_BUTTON();
+		SEND_BUTTON(int, int);
+		~SEND_BUTTON();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	//LOOP_LEFT
+	class LOOP_LEFT : public Item {
+	public:
+		LOOP_LEFT();
+		LOOP_LEFT(int, int);
+		~LOOP_LEFT();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	//LOOR_RING
+	class LOOR_RING : public Item {
+	public:
+		LOOR_RING();
+		LOOR_RING(int, int);
+		~LOOR_RING();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	//LOOP_TOP
+	class LOOP_TOP : public Item {
+	public:
+		LOOP_TOP();
+		LOOP_TOP(int, int);
+		~LOOP_TOP();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	//LOOP_TOP_HIED
+	class LOOP_TOP_HIED : public Item {
+	public:
+		LOOP_TOP_HIED();
+		LOOP_TOP_HIED(int, int);
+		~LOOP_TOP_HIED();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	//LOOP_OFF
+	class LOOP_OFF : public Item {
+	public:
+		LOOP_OFF();
+		LOOP_OFF(int, int);
+		~LOOP_OFF();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	//LOOP_TOP_NOT_U_D
+	class LOOP_TOP_NOT_U_D : public Item {
+	public:
+		LOOP_TOP_NOT_U_D();
+		LOOP_TOP_NOT_U_D(int, int);
+		~LOOP_TOP_NOT_U_D();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	
+	//LOOP_TOP_UP_DOWN
+	class LOOP_TOP_UP_DOWN : public Item {
+	public:
+		LOOP_TOP_UP_DOWN();
+		LOOP_TOP_UP_DOWN(int, int);
+		~LOOP_TOP_UP_DOWN();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
 }
 
 #endif
