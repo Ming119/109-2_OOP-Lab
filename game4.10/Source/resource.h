@@ -599,8 +599,30 @@
 #define ITEM_SPIKES_LEFT                702
 #define ITEM_SPIKES_RING                703
 #define ITEM_SPIKES_DOWN                704
-#define IDB_BITMAP109                   705
 #define ITEM_SPIKES_UP                  705
+#define ITEM_SEND_BUTTON_1              706
+#define ITEM_SEND_BUTTON_2              707
+#define ITEM_SEND_1                     708
+#define ITEM_SEND_2                     709
+#define ITEMS_BIG_RING_1                710
+#define ITEMS_BIG_RING_2                711
+#define ITEMS_BIG_RING_3                712
+#define ITEMS_BIG_RING_4                713
+#define ITEMS_BIG_RING_5                714
+#define ITEMS_BIG_RING_6                715
+#define ITEMS_BIG_RING_7                716
+#define ITEMS_BIG_RING_8                717
+#define ITEMS_BIG_RING_9                718
+#define ITEMS_BIG_RING_10               719
+#define ITEMS_GATE_YELLOW               720
+#define ITEMS_LOOP_TOP_HIED             722
+#define ITEMS_LOOP_TOP_UP_DOWN          723
+#define ITEMS_LOOP_TOP_NOT_U_D          724
+#define ITEMS_LOOP_TOP                  725
+#define ITEMS_LOOP_LEFT                 726
+#define ITEMS_LOOP_TOP_RING             727
+#define ITEMS_LOOP_RING                 727
+#define ITEMS_LOOP_OFF                  728
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -613,7 +635,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        706
+#define _APS_NEXT_RESOURCE_VALUE        729
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

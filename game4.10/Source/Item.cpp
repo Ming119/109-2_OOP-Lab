@@ -172,13 +172,82 @@ namespace game_framework {
 			texture.OnShow(scale);
 		}
 	}
+	
+	// BIG_Ring
+	BIG_Ring::BIG_Ring(int x, int y) : Item::Item(x, y) {}
 
+	BIG_Ring::~BIG_Ring() {}
+
+	void BIG_Ring::OnInit() {
+		texture.AddBitmap(ITEMS_BIG_RING_1);
+		texture.AddBitmap(ITEMS_BIG_RING_2);
+		texture.AddBitmap(ITEMS_BIG_RING_3);
+		texture.AddBitmap(ITEMS_BIG_RING_4);
+		texture.AddBitmap(ITEMS_BIG_RING_5);
+		texture.AddBitmap(ITEMS_BIG_RING_6);
+		texture.AddBitmap(ITEMS_BIG_RING_7);
+		texture.AddBitmap(ITEMS_BIG_RING_8);
+		texture.AddBitmap(ITEMS_BIG_RING_9);
+		texture.AddBitmap(ITEMS_BIG_RING_10);
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEM_YELLOW_RING_DEAD_1);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+
+	}
+
+	void BIG_Ring::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		if (CollisionDetection(currnetActor)) {
+			isDead = true;
+
+		}
+
+		setTopLeft(pos);
+		if (isDead) {
+			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
+				CAudio::Instance()->Play(AUDIO_RING, false);
+			}
+		}
+		else {
+			texture.OnMove();
+		}
+
+	}
+	
+	void BIG_Ring::OnShow(int scale) {
+		if (isDead) {
+			deadAnimate.OnShow(scale);
+		}
+		else {
+			texture.OnShow(scale);
+		}
+	}
+	
 	// RED_SPRING_PADS_UP
 	RED_SPRING_PADS_UP::RED_SPRING_PADS_UP(int x, int y) : Item::Item(x, y) {}
 
 	void RED_SPRING_PADS_UP::OnInit() {
 		texture.AddBitmap(ITEM_RED_SPRING_PADS_UP_21);
-		//texture.AddBitmap(ITEM_RED_SPRING_PADS_UP_21_1);
+		texture.AddBitmap(ITEM_RED_SPRING_PADS_UP_21_1);
 		texture.SetDelayCount(3);
 
 
@@ -204,13 +273,20 @@ namespace game_framework {
 			pos.y -= cameraSpeed;
 
 		}
-
+				
+		setTopLeft(pos);
+		texture.OnMove();
 
 	}
 
 	void RED_SPRING_PADS_UP::OnShow(int scale) {
-
-		texture.OnShow(scale);
+		if (isDead) {
+			deadAnimate.OnShow(scale);
+		}
+		else {
+			texture.OnShow(scale);
+		}
+		//texture.OnShow(scale);
 	}
 
 	
@@ -1243,6 +1319,567 @@ namespace game_framework {
 
 		texture.OnShow(scale);
 		
+	}
+
+	// GATE_YELLOW
+
+	GATE_YELLOW::GATE_YELLOW(int x, int y) : Item::Item(x, y) {}
+
+	GATE_YELLOW::~GATE_YELLOW() {}
+
+	void GATE_YELLOW::OnInit() {
+		texture.AddBitmap(ITEMS_GATE_YELLOW);
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEMS_GATE_YELLOW);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+	}
+
+	void GATE_YELLOW::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		setTopLeft(pos);
+		texture.OnMove();
+
+
+	}
+
+	void GATE_YELLOW::OnShow(int scale) {
+
+		texture.OnShow(scale);
+
+	}
+
+	// SEND
+
+	SEND::SEND(int x, int y) : Item::Item(x, y) {}
+
+	SEND::~SEND() {}
+
+	void SEND::OnInit() {
+		texture.AddBitmap(ITEM_SEND_1);
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEM_SEND_2);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+	}
+
+	void SEND::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		setTopLeft(pos);
+		texture.OnMove();
+
+
+	}
+
+	void SEND::OnShow(int scale) {
+
+		texture.OnShow(scale);
+		
+	}
+
+	// SEND_BUTTON
+
+	SEND_BUTTON::SEND_BUTTON(int x, int y) : Item::Item(x, y) {}
+
+	SEND_BUTTON::~SEND_BUTTON() {}
+
+	void SEND_BUTTON::OnInit() {
+		texture.AddBitmap(ITEM_SEND_BUTTON_1);
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEM_SEND_BUTTON_2);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+	}
+
+	void SEND_BUTTON::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		setTopLeft(pos);
+		texture.OnMove();
+
+
+	}
+
+	void SEND_BUTTON::OnShow(int scale) {
+
+		texture.OnShow(scale);
+
+	}
+
+	// LOOP_LEFT
+	LOOP_LEFT::LOOP_LEFT(int x, int y) : Item::Item(x, y) {}
+
+	LOOP_LEFT::~LOOP_LEFT() {}
+
+	void LOOP_LEFT::OnInit() {
+		texture.AddBitmap(ITEMS_LOOP_LEFT);
+
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEMS_LOOP_LEFT);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+
+	}
+
+	void LOOP_LEFT::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		if (CollisionDetection(currnetActor)) {
+			isDead = true;
+
+		}
+
+		setTopLeft(pos);
+		if (isDead) {
+			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
+				CAudio::Instance()->Play(AUDIO_RING, false);
+			}
+		}
+		else {
+			texture.OnMove();
+		}
+
+	}
+
+	void LOOP_LEFT::OnShow(int scale) {
+		if (isDead) {
+			deadAnimate.OnShow(scale);
+		}
+		else {
+			texture.OnShow(scale);
+		}
+	}
+	
+	// LOOR_RING
+	LOOR_RING::LOOR_RING(int x, int y) : Item::Item(x, y) {}
+
+	LOOR_RING::~LOOR_RING() {}
+
+	void LOOR_RING::OnInit() {
+		texture.AddBitmap(ITEMS_LOOP_RING);
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEMS_LOOP_RING);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+
+	}
+
+	void LOOR_RING::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		if (CollisionDetection(currnetActor)) {
+			isDead = true;
+
+		}
+
+		setTopLeft(pos);
+		if (isDead) {
+			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
+				CAudio::Instance()->Play(AUDIO_RING, false);
+			}
+		}
+		else {
+			texture.OnMove();
+		}
+
+	}
+
+	void LOOR_RING::OnShow(int scale) {
+		if (isDead) {
+			deadAnimate.OnShow(scale);
+		}
+		else {
+			texture.OnShow(scale);
+		}
+	}
+	
+	// LOOP_TOP
+	LOOP_TOP::LOOP_TOP(int x, int y) : Item::Item(x, y) {}
+
+	LOOP_TOP::~LOOP_TOP() {}
+
+	void LOOP_TOP::OnInit() {
+		texture.AddBitmap(ITEMS_LOOP_TOP);
+		
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEMS_LOOP_TOP);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+
+	}
+
+	void LOOP_TOP::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		if (CollisionDetection(currnetActor)) {
+			isDead = true;
+
+		}
+
+		setTopLeft(pos);
+		if (isDead) {
+			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
+				CAudio::Instance()->Play(AUDIO_RING, false);
+			}
+		}
+		else {
+			texture.OnMove();
+		}
+
+	}
+
+	void LOOP_TOP::OnShow(int scale) {
+		if (isDead) {
+			deadAnimate.OnShow(scale);
+		}
+		else {
+			texture.OnShow(scale);
+		}
+	}
+
+	// LOOP_TOP_HIED
+	LOOP_TOP_HIED::LOOP_TOP_HIED(int x, int y) : Item::Item(x, y) {}
+
+	LOOP_TOP_HIED::~LOOP_TOP_HIED() {}
+
+	void LOOP_TOP_HIED::OnInit() {
+		texture.AddBitmap(ITEMS_LOOP_TOP_HIED);
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEMS_LOOP_TOP_HIED);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+
+	}
+
+	void LOOP_TOP_HIED::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		if (CollisionDetection(currnetActor)) {
+			isDead = true;
+
+		}
+
+		setTopLeft(pos);
+		if (isDead) {
+			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
+				CAudio::Instance()->Play(AUDIO_RING, false);
+			}
+		}
+		else {
+			texture.OnMove();
+		}
+
+	}
+
+	void LOOP_TOP_HIED::OnShow(int scale) {
+		if (isDead) {
+			deadAnimate.OnShow(scale);
+		}
+		else {
+			texture.OnShow(scale);
+		}
+	}
+
+	// LOOP_OFF
+	LOOP_OFF::LOOP_OFF(int x, int y) : Item::Item(x, y) {}
+
+	LOOP_OFF::~LOOP_OFF() {}
+
+	void LOOP_OFF::OnInit() {
+		texture.AddBitmap(ITEMS_LOOP_OFF);
+		
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEMS_LOOP_OFF);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+
+	}
+
+	void LOOP_OFF::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		if (CollisionDetection(currnetActor)) {
+			isDead = true;
+
+		}
+
+		setTopLeft(pos);
+		if (isDead) {
+			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
+				CAudio::Instance()->Play(AUDIO_RING, false);
+			}
+		}
+		else {
+			texture.OnMove();
+		}
+
+	}
+
+	void LOOP_OFF::OnShow(int scale) {
+		if (isDead) {
+			deadAnimate.OnShow(scale);
+		}
+		else {
+			texture.OnShow(scale);
+		}
+	}
+	
+	// LOOP_TOP_NOT_U_D
+	LOOP_TOP_NOT_U_D::LOOP_TOP_NOT_U_D(int x, int y) : Item::Item(x, y) {}
+
+	LOOP_TOP_NOT_U_D::~LOOP_TOP_NOT_U_D() {}
+
+	void LOOP_TOP_NOT_U_D::OnInit() {
+		texture.AddBitmap(ITEMS_LOOP_TOP_NOT_U_D);
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEMS_LOOP_TOP_NOT_U_D);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+
+	}
+
+	void LOOP_TOP_NOT_U_D::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		if (CollisionDetection(currnetActor)) {
+			isDead = true;
+
+		}
+
+		setTopLeft(pos);
+		if (isDead) {
+			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
+				CAudio::Instance()->Play(AUDIO_RING, false);
+			}
+		}
+		else {
+			texture.OnMove();
+		}
+
+	}
+
+	void LOOP_TOP_NOT_U_D::OnShow(int scale) {
+		if (isDead) {
+			deadAnimate.OnShow(scale);
+		}
+		else {
+			texture.OnShow(scale);
+		}
+	}
+
+	//LOOP_TOP_UP_DOWN
+	LOOP_TOP_UP_DOWN::LOOP_TOP_UP_DOWN(int x, int y) : Item::Item(x, y) {}
+
+	LOOP_TOP_UP_DOWN::~LOOP_TOP_UP_DOWN() {}
+
+	void LOOP_TOP_UP_DOWN::OnInit() {
+		texture.AddBitmap(ITEMS_LOOP_TOP_UP_DOWN);
+		texture.SetDelayCount(3);
+
+		deadAnimate.AddBitmap(ITEMS_LOOP_TOP_UP_DOWN);
+		deadAnimate.SetDelayCount(3);
+
+		setTopLeft(pos);
+
+	}
+
+	void LOOP_TOP_UP_DOWN::OnMove() {
+		pos.x -= delta.x;
+
+		// Camera Move
+		if (isMovingLeft) {
+			pos.x += cameraSpeed;
+		}
+		if (isMovingRight) {
+			pos.x -= cameraSpeed;
+		}
+		if (isMovingUp) {
+			pos.y += cameraSpeed;
+		}
+		if (isMovingDown) {
+			pos.y -= cameraSpeed;
+
+		}
+
+		if (CollisionDetection(currnetActor)) {
+			isDead = true;
+
+		}
+
+		setTopLeft(pos);
+		if (isDead) {
+			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
+				CAudio::Instance()->Play(AUDIO_RING, false);
+			}
+		}
+		else {
+			texture.OnMove();
+		}
+
+	}
+
+	void LOOP_TOP_UP_DOWN::OnShow(int scale) {
+		if (isDead) {
+			deadAnimate.OnShow(scale);
+		}
+		else {
+			texture.OnShow(scale);
+		}
 	}
 
 }
