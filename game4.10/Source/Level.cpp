@@ -142,6 +142,35 @@ namespace game_framework {
 					case 27:
 						items.push_back(new SEND(x, y));
 						break;
+					
+					case 16:
+						items.push_back(new LOOR_RING(x, y));
+						break;
+
+					case 17:
+						items.push_back(new LOOP_TOP_HIED(x, y));
+						break;
+
+					case 18:
+						items.push_back(new LOOP_LEFT(x, y));
+						break;
+
+					case 19:
+						items.push_back(new LOOP_OFF(x, y));
+						break;
+
+					case 33:
+						items.push_back(new LOOP_TOP_UP_DOWN(x, y));
+						break;
+
+					case 34:
+						items.push_back(new LOOP_TOP_NOT_U_D(x, y));
+						break;
+
+					case 35:
+						items.push_back(new LOOP_TOP(x, y));
+						break;
+
 					}
 
 					/*
