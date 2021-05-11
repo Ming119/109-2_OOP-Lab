@@ -38,23 +38,13 @@ namespace game_framework {
 
 		int angle;
 		int speed;
-		int cameraSpeed;
-		int movingRange;
 		bool direction;
-		
-		bool isMovingLeft;
-		bool isMovingRight;
-		bool isMovingUp;
-		bool isMovingDown;
-
-		bool isCollisingLeft;
-		bool isCollisingRight;
-		bool isCollisingTop;
-		bool isCollisingBottom;
 
 	public:
+		/* Constructor */
 		Enemy(int, int);
 
+		/* Getter */
 		int Angle();
 		int Height();
 		int Width();
@@ -62,21 +52,34 @@ namespace game_framework {
 		int Left();
 		int Buttom();
 		int Right();
+		/* End of Getter */
 		
-		void setTopLeft(POINT);
-		void setTopLeft(int, int);
-		void setAngle(int);
-		void SetMoving(POINT);
 
+		/* Setter */
+		void SetAngle(int);
+		void SetSpeed(int);
+		void SetMoving(POINT);
+		void SetTopLeft(int, int);
+		void SetTopLeft(POINT);
+		/* End of Setter */
+		
+
+		/* Member Function */
 		void LookingForRefBrick(vector<Brick*>);
 		bool CollisionDetection(Brick*);
 		void CameraMove();
+		/* End of Member Function*/
 
-		virtual void OnInit(vector<Brick*>) {};
-		virtual void OnMove()=0;
-		virtual void OnShow(int scale = DEFAULT_SCALE)=0;
+		//
+		virtual void OnInit(vector<Brick*>) = 0;
+		virtual void OnMove() = 0;
+		virtual void OnShow(int scale = DEFAULT_SCALE) = 0;
+		//
 	};
 
+
+
+	/* Inheritance Enemy Class */
 	class Bamboo : public Enemy {
 	public:
 		Bamboo();
@@ -264,6 +267,7 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
+	/* End of Inheritance Enemy Class */
 }
 
 #endif

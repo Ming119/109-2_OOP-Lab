@@ -77,7 +77,7 @@ namespace game_framework {
 		vector<Brick*> tmpb;
 		for (int b = 0; b < bs; b++) {
 			if (this->Right() > bricks.at(b)->Left() &&
-				this->Left() < (bricks.at(b)->Left() + bricks.at(b)->Width() * DEFAULT_SCALE)) {
+				this->Left() < bricks.at(b)->Right()) {
 				if (this->Buttom() < bricks.at(b)->Top()) {
 					tmpb.push_back(bricks.at(b));
 				}
@@ -92,17 +92,17 @@ namespace game_framework {
 
 	void Actor::checkLevingRefBrick() {
 		if (this != nullptr && refBrick != nullptr)
-			if (this->Left() > refBrick->Left() + refBrick->Width() * DEFAULT_SCALE || this->Right() < refBrick->Left()) refBrick = nullptr;
+			if (this->Left() > refBrick->Right() || this->Right() < refBrick->Left()) refBrick = nullptr;
 	}
 
 	int Actor::FallingCollision(vector<Brick*> b) {
 		int bs = b.size();
 		for (int i = 0; i < bs; i++) {
 			if (b.at(i)->Property() == OBSTACLE || b.at(i)->Property() == CLOUD) {
-				if (this->Left() < (b.at(i)->Left() + b.at(i)->Width() * DEFAULT_SCALE) &&
-					this->Right() * DEFAULT_SCALE > b.at(i)->Left() &&
-					this->Top() + 10 < (b.at(i)->Top() + b.at(i)->Height() * DEFAULT_SCALE) &&
-					this->Buttom() * DEFAULT_SCALE + 10 > b.at(i)->Top()) {
+				if (this->Left() < b.at(i)->Right() &&
+					this->Right() > b.at(i)->Left() &&
+					this->Top() + 10 < b.at(i)->Buttom() &&
+					this->Buttom() + 10 > b.at(i)->Top()) {
 
 				}
 			}

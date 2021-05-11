@@ -37,30 +37,39 @@ namespace game_framework {
 		bool operator<(const Brick& brs) const;
 
 	public:
-		// Constructor
+		/* Constructor */
 		Brick(int, int, int);
 
-		// Getter
+
+		/* Getter */
 		int Angle();
 		int Property();
+		int Behavior();
 		int Height();
-		int Width();
+		int Width();	
 		int Top();
 		int Left();
 		int Buttom();
 		int Right();
+		/* End of Getter */
 		
-		// Setter
+
+		/* Setter */
 		void SetAngle(int);
 		void SetProperty(int);
 		void SetMoving(POINT);
+		void SetTopLeft(int, int);
+		void SetTopLeft(POINT);
 		void SetBehavior(int);
 		void SetBehavior(int, int, int, double, int);
+		/* End of Setter */
+
 
 		//
 		void OnInit(int);
 		void OnMove();
 		void OnShow(int scale = DEFAULT_SCALE);
+		// 
 	};
 
 }

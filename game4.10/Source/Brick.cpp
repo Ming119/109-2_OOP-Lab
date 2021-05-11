@@ -10,6 +10,7 @@
 namespace game_framework {
 	bool Brick::operator<(const Brick& brs) const{ return pos.y < brs.pos.y; }
 
+	/* Constructor */
 	Brick::Brick(int _id, int x, int y) {
 		id = _id;
 		pos.x = x;
@@ -17,9 +18,13 @@ namespace game_framework {
 		delta = POINT();
 	}
 
+
+	/* Getter */
 	int Brick::Angle() { return angle; }
 
 	int Brick::Property() { return property; }
+
+	int Brick::Behavior() { return behavior; }
 
 	int Brick::Height() { return texture.Height() * DEFAULT_SCALE; }
 
@@ -32,8 +37,44 @@ namespace game_framework {
 	int Brick::Buttom() { return this->Top() + this->Height(); }
 
 	int Brick::Right() { return this->Left() + this->Width(); }
+	/* End of Getter */
 
+	/* Setter */
+	void Brick::SetAngle(int ang) { angle = ang; }
 
+	void Brick::SetProperty(int p) { property = p; }
+
+	void Brick::SetMoving(POINT _delta) { delta = _delta; }
+
+	void Brick::SetTopLeft(int x, int y) {
+		pos.x = x;
+		pos.y = y;
+
+		texture.SetTopLeft(pos.x, pos.y);
+	}
+
+	void Brick::SetTopLeft(POINT xy) {
+		pos = xy;
+
+		texture.SetTopLeft(pos.x, pos.y);
+	}
+
+	void Brick::SetBehavior(int b) {
+		behavior = b;
+		maxX = 0;
+		maxY = 0;
+	}
+
+	// Non finish
+	void Brick::SetBehavior(int b, int x, int y, double g, int speed) {
+		behavior = b;
+		maxX = x;
+		maxY = y;
+
+	}
+	/* End of Setter */
+	
+	//
 	void Brick::OnInit(int level) {
 		if (level == static_cast<int>(LEVELS::BULE_OCEAN_1) || level == static_cast<int>(LEVELS::BULE_OCEAN_2) || level == static_cast<int>(LEVELS::SUPER_BOSS_1) || level == static_cast<int>(LEVELS::TEST)) {
 			// OCEAN
@@ -1067,36 +1108,16 @@ namespace game_framework {
 	}
 
 	void Brick::OnMove() {
+		// Camera Move
 		pos.x -= delta.x;
 		pos.y -= delta.y;
 
-		texture.SetTopLeft(pos.x, pos.y);
+		SetTopLeft(pos);
 		texture.OnMove();
 	}
 
 	void Brick::OnShow(int scale) {
 		texture.OnShow(scale);
 	}
-
-	void Brick::SetAngle(int ang) { angle = ang; }
-
-	void Brick::SetProperty(int p) { property = p; }
-
-	void Brick::SetMoving(POINT _delta) { delta = _delta; }
-
-	void Brick::SetBehavior(int b) {
-		behavior = b;
-		maxX = 0;
-		maxY = 0;
-	}
-
-	// Non finish
-	void Brick::SetBehavior(int b, int x, int y, double g, int speed) {
-		behavior = b;
-		maxX = x;
-		maxY = y;
-
-	}
-
-	
+	//
 }
