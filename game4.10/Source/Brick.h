@@ -28,7 +28,7 @@ namespace game_framework {
 		POINT delta;
 
 		int id;
-		int angel;
+		int angle;
 		int property;
 		int behavior;
 		
@@ -39,7 +39,6 @@ namespace game_framework {
 	public:
 		// Constructor
 		Brick(int, int, int);
-		~Brick();
 
 		// Getter
 		int Angle();
@@ -56,7 +55,7 @@ namespace game_framework {
 		void SetProperty(int);
 		void SetMoving(POINT);
 		void SetBehavior(int);
-		void SetBehavior(int, int, int);
+		void SetBehavior(int, int, int, double, int);
 
 		//
 		void OnInit(int);

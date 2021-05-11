@@ -23,9 +23,6 @@ namespace game_framework {
 		delta = POINT();
 
 		direction = false;
-		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
-		isCollisingLeft = isCollisingRight = isCollisingTop = isCollisingBottom = false;
-
 	}
 
 	int Enemy::Angle() { return angle; }
@@ -55,32 +52,8 @@ namespace game_framework {
 	}
 
 	void Enemy::setAngle(int ang) { angle = ang; }
-
-	void Enemy::SetMoveLeft(bool m) { isMovingLeft = m; }
-
-	void Enemy::SetMoveRight(bool m) { isMovingRight = m; }
-
-	void Enemy::SetMoveUp(bool m) { isMovingUp = m; }
-
-	void Enemy::SetMoveDown(bool m) { isMovingDown = m; }
 	
 	void Enemy::SetMoving(POINT _delta) { delta = _delta; }
-
-	void Enemy::SetCollisionLeft(bool collide) {
-		isCollisingLeft = collide;
-	}
-
-	void Enemy::SetCollisionRight(bool collide) {
-		isCollisingRight = collide;
-	}
-
-	void Enemy::SetCollisionTop(bool collide) {
-		isCollisingTop = collide;
-	}
-
-	void Enemy::SetCollisionBottom(bool collide) {
-		isCollisingBottom = collide;
-	}
 
 	void Enemy::CameraMove() {
 		// Camera Move
@@ -120,9 +93,7 @@ namespace game_framework {
 			(this->Left() + this->Width() * DEFAULT_SCALE)-Woffset > (brick->Left()+Woffset) &&
 			(this->Top()+Hoffset) < (brick->Top() + brick->Height() * DEFAULT_SCALE)-Hoffset &&
 			(this->Top() + this->Height() * DEFAULT_SCALE)-Hoffset > (brick->Top()+Hoffset)) {
-			
-			this->SetCollisionBottom(true);
-			
+						
 			return true;
 		}
 		return false;
@@ -144,6 +115,8 @@ namespace game_framework {
 		setTopLeft(spawn);
 			
 	}
+
+
 
 	// Ladybug
 	Ladybug::Ladybug(int x, int y) : Enemy::Enemy(x, y) {}

@@ -29,8 +29,7 @@ namespace game_framework {
 	
 	class Level {
 	private:
-		int max_x;
-		int max_y;
+		int max_x, max_y;
 
 		POINT spawnPoint;
 
@@ -48,21 +47,16 @@ namespace game_framework {
 	public:
 		Level();
 		~Level();
+		
+		Actor* CurrentActor();
+
+		void SetCurrentActor(int);
+		void SetMoving(POINT);
 
 		void OnInit(int);
 		void OnMove();
 		void OnShow();
-		
-		Actor* CurrentActor();
-		void SetCurrentActor(int);
-
-		void SetMoveLeft(bool);
-		void SetMoveRight(bool);
-		void SetMoveUp(bool);
-		void SetMoveDown(bool);
-		void SetMoving(POINT);
 	};
-
 }
 
 #endif

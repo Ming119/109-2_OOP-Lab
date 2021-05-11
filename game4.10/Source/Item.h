@@ -50,10 +50,6 @@ namespace game_framework {
 
 		bool isDead;
 		bool isDeadFinish;
-		bool isMovingLeft;
-		bool isMovingRight;
-		bool isMovingUp;
-		bool isMovingDown;
 
 	public:
 		Item(int, int);
@@ -68,17 +64,13 @@ namespace game_framework {
 		void setTopLeft(int, int);
 		void setTopLeft(POINT);
 		void setAngle(int);
-
-		void SetMoveLeft(bool);
-		void SetMoveRight(bool);
-		void SetMoveUp(bool);
-		void SetMoveDown(bool);
 		void SetMoving(POINT);
-
 		void SetCurrentActor(Actor*);
 
 		bool CollisionDetection(Actor*);
 		bool IsDead();
+
+		void CameraMove();
 
 		virtual void OnInit() = 0;
 		virtual void OnMove() = 0;

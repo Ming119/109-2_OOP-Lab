@@ -19,7 +19,6 @@ namespace game_framework {
 		delta = POINT();
 
 		isDead = isDeadFinish = false;
-		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
 
@@ -58,22 +57,6 @@ namespace game_framework {
 		angle = ang;
 	}
 
-	void Item::SetMoveLeft(bool m) {
-		isMovingLeft = m;
-	}
-
-	void Item::SetMoveRight(bool m) {
-		isMovingRight = m;
-	}
-
-	void Item::SetMoveUp(bool m) {
-		isMovingUp = m;
-	}
-
-	void Item::SetMoveDown(bool m) {
-		isMovingDown = m;
-	}
-
 	void Item::SetMoving(POINT _delta) {
 		delta = _delta;
 	}
@@ -97,6 +80,14 @@ namespace game_framework {
 
 	bool Item::IsDead() {
 		return isDeadFinish;
+	}
+
+	void Item::CameraMove() {
+		// Camera Move
+		pos.x -= delta.x;
+		pos.y -= delta.y;
+
+		setTopLeft(pos);
 	}
 
 	// Ring
@@ -125,22 +116,7 @@ namespace game_framework {
 	}
 	
 	void Ring::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
@@ -187,24 +163,7 @@ namespace game_framework {
 	}
 	
 	void RED_SPRING_PADS_UP::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
-
-
+		CameraMove();
 	}
 
 	void RED_SPRING_PADS_UP::OnShow(int scale) {
@@ -230,22 +189,7 @@ namespace game_framework {
 	}
 
 	void RED_SPRING_PADS_DOWN::OnMove() {
-		pos.x -= delta.x;
-		
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -275,22 +219,7 @@ namespace game_framework {
 	}
 	
 	void RED_SPRING_PADS_LEFT::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 
 		setTopLeft(pos);
@@ -322,22 +251,7 @@ namespace game_framework {
 	}
 
 	void RED_SPRING_PADS_LEFT_U::OnMove() {
-		pos.x -= delta.x;
-		
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -367,22 +281,7 @@ namespace game_framework {
 	}
 
 	void RED_SPRING_PADS_LEFT_D::OnMove() {
-		pos.x -= delta.x;
-		
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 		setTopLeft(pos);
 		
 		texture.OnMove();
@@ -412,22 +311,7 @@ namespace game_framework {
 	}
 
 	void RED_SPRING_PADS_RING::OnMove() {
-		pos.x -= delta.x;
-		
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		
@@ -457,22 +341,7 @@ namespace game_framework {
 	}
 
 	void RED_SPRING_PADS_RING_U::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -502,22 +371,7 @@ namespace game_framework {
 	}
 
 	void RED_SPRING_PADS_RING_D::OnMove() {
-		pos.x -= delta.x;
-		
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -545,22 +399,7 @@ namespace game_framework {
 	}
 
 	void YELLOW_SPRING_PADS_UP::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -588,22 +427,7 @@ namespace game_framework {
 	}
 
 	void YELLOW_SPRING_PADS_DOWN::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -633,22 +457,7 @@ namespace game_framework {
 	}
 
 	void YELLOW_SPRING_PADS_LEFT::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -677,22 +486,7 @@ namespace game_framework {
 	}
 
 	void YELLOW_SPRING_PADS_LEFT_U::OnMove() {
-		pos.x -= delta.x;
-		
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -722,22 +516,7 @@ namespace game_framework {
 	}
 
 	void YELLOW_SPRING_PADS_LEFT_D::OnMove() {
-		pos.x -= delta.x;
-		
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -766,22 +545,7 @@ namespace game_framework {
 	}
 
 	void YELLOW_SPRING_PADS_RING::OnMove() {
-		pos.x -= delta.x;
-		
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		
@@ -813,22 +577,7 @@ namespace game_framework {
 	}
 
 	void YELLOW_SPRING_PADS_RING_U::OnMove() {
-		pos.x -= delta.x;
-		
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -859,22 +608,7 @@ namespace game_framework {
 	}
 
 	void YELLOW_SPRING_PADS_RING_D::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -905,22 +639,7 @@ namespace game_framework {
 	}
 
 	void BULE_SPRING_PADS_UP::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -949,22 +668,7 @@ namespace game_framework {
 	}
 
 	void BULE_SPRING_PADS_DOWN::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -993,22 +697,7 @@ namespace game_framework {
 	}
 
 	void BULE_SPRING_PADS_LEFT::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -1037,22 +726,7 @@ namespace game_framework {
 	}
 
 	void BULE_SPRING_PADS_LEFT_U::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -1081,22 +755,7 @@ namespace game_framework {
 	}
 
 	void BULE_SPRING_PADS_LEFT_D::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -1125,22 +784,7 @@ namespace game_framework {
 	}
 
 	void BULE_SPRING_PADS_RING::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -1170,22 +814,7 @@ namespace game_framework {
 	}
 
 	void BULE_SPRING_PADS_RING_U::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();
@@ -1215,22 +844,7 @@ namespace game_framework {
 	}
 
 	void BULE_SPRING_PADS_RING_D::OnMove() {
-		pos.x -= delta.x;
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		setTopLeft(pos);
 		texture.OnMove();

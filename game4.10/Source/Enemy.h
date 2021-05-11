@@ -55,10 +55,6 @@ namespace game_framework {
 	public:
 		Enemy(int, int);
 
-		void setTopLeft(POINT);
-		void setTopLeft(int, int);
-		void setAngle(int);
-
 		int Angle();
 		int Height();
 		int Width();
@@ -67,24 +63,14 @@ namespace game_framework {
 		int Buttom();
 		int Right();
 		
-
-		void SetMoveLeft(bool);
-		void SetMoveRight(bool);
-		void SetMoveUp(bool);
-		void SetMoveDown(bool);
+		void setTopLeft(POINT);
+		void setTopLeft(int, int);
+		void setAngle(int);
 		void SetMoving(POINT);
 
 		void LookingForRefBrick(vector<Brick*>);
 		bool CollisionDetection(Brick*);
-
-		void SetCollisionLeft(bool);
-		void SetCollisionRight(bool);
-		void SetCollisionTop(bool);
-		void SetCollisionBottom(bool);
-
 		void CameraMove();
-
-
 
 		virtual void OnInit(vector<Brick*>) {};
 		virtual void OnMove()=0;

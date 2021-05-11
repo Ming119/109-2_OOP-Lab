@@ -12,14 +12,11 @@ namespace game_framework {
 // 這個class為遊戲的遊戲開頭畫面物件
 /////////////////////////////////////////////////////////////////////////////
 
-CGameStateInit::CGameStateInit(CGame *g)
-: CGameState(g)
-{
+CGameStateInit::CGameStateInit(CGame *g) : CGameState(g) {
 	intro_done = false;
 }
 
-void CGameStateInit::OnInit()
-{
+void CGameStateInit::OnInit() {
 	//
 	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
 	//   等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
@@ -121,8 +118,7 @@ void CGameStateInit::OnInit()
 	//
 }
 
-void CGameStateInit::OnBeginState()
-{
+void CGameStateInit::OnBeginState() {
 	CAudio::Instance()->Load(AUDIO_TITLE, "sounds\\title.mp3");
 	CAudio::Instance()->Load(AUDIO_OPTIONS, "sounds\\options.mp3");
 	CAudio::Instance()->Load(AUDIO_CRUSADER, "sounds\\crusader.mp3");
@@ -137,8 +133,8 @@ void CGameStateInit::OnBeginState()
 	
 }
 
-void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
-{
+void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
+
 	const char KEY_ENTER	= 0x0D;	// keyboard ENTER
 	const char KEY_ESC		= 0x1B;	// keyboard ESC
 	const char KEY_SPACE	= 0x20; // keyboard SPACE
@@ -338,8 +334,7 @@ void CGameStateInit::OnMove() {
 	}
 }
 
-void CGameStateInit::OnShow()
-{
+void CGameStateInit::OnShow() {
 
 	// 1280*960
 	if (!intro_done) {
@@ -480,9 +475,8 @@ CGameStateRun::CGameStateRun(CGame *g)
 	// ball = new CBall [NUMBALLS];
 }
 
-CGameStateRun::~CGameStateRun()
-{
-	// delete [] ball;
+CGameStateRun::~CGameStateRun() {
+	
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -527,8 +521,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 }
 
-void CGameStateRun::OnBeginState()
-{
+void CGameStateRun::OnBeginState() {
 	TRACE("%d\n", current_level);
 	level = new Level();
 	level->OnInit(current_level);
@@ -549,24 +542,21 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		level->SetCurrentActor(current_actor);
 	}
 
-	if (nChar == KEY_LEFT) {
+	if (nChar == KEY_LEFT) 
 		level->CurrentActor()->SetMoveLeft(true);
-	}
-	if (nChar == KEY_RIGHT) {
+	
+	if (nChar == KEY_RIGHT) 
 		level->CurrentActor()->SetMoveRight(true);
-	}
-	if (nChar == KEY_UP) {
+	
+	if (nChar == KEY_UP) 
 		level->CurrentActor()->SetIsLookingUp(true);
-		// level->SetMoveUp(true);
-	}
-	if (nChar == KEY_DOWN) {
+	
+	if (nChar == KEY_DOWN) 
 		level->CurrentActor()->SetIsLookingDown(true);
-		// level->SetMoveDown(true);
-	}
-	if (nChar == KEY_SPACE) {
+	
+	if (nChar == KEY_SPACE) 
 		level->CurrentActor()->SetIsJumping(true);
-	}
-		
+
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -579,25 +569,23 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 	if (nChar == KEY_LEFT)
 		level->CurrentActor()->SetMoveLeft(false);
+
 	if (nChar == KEY_RIGHT)
 		level->CurrentActor()->SetMoveRight(false);
-	if (nChar == KEY_UP) {
+
+	if (nChar == KEY_UP)
 		level->CurrentActor()->SetIsLookingUp(false);
-		level->SetMoveUp(false);
-	}
-	if (nChar == KEY_DOWN) {
+
+	if (nChar == KEY_DOWN) 
 		level->CurrentActor()->SetIsLookingDown(false);
-		level->SetMoveDown(false);
-	}
-	if (nChar == KEY_SPACE) {
+
+	if (nChar == KEY_SPACE) 
 		level->CurrentActor()->SetIsJumping(false);
-	}
+
 }
 
-void CGameStateRun::OnMove()							// 移動遊戲元素
-{
+void CGameStateRun::OnMove() {
 	
-
 	/*
 	//
 	// 如果希望修改cursor的樣式，則將下面程式的commment取消即可
@@ -647,31 +635,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 
 }
 
-void CGameStateRun::OnShow()
-{
-	/*CInteger test;
-	test.LoadBitmapA();
-	test.SetTopLeft(0,0);
-	test.SetInteger(static_cast<int>(OPTION_SELECT::YES));
-	test.ShowBitmap();
-	test.SetTopLeft(20, 0);
-	test.SetInteger(static_cast<int>(OPTION_SELECT::NO));
-	test.ShowBitmap();
-	test.SetTopLeft(40, 0);
-	test.SetInteger(static_cast<int>(OPTION_SELECT::TINY));
-	test.ShowBitmap();
-	test.SetTopLeft(60, 0);
-	test.SetInteger(static_cast<int>(OPTION_SELECT::NORMAL));
-	test.ShowBitmap();
-	test.SetTopLeft(80, 0);
-	test.SetInteger(static_cast<int>(OPTION_SELECT::MAX));
-	test.ShowBitmap();
-
-	stringHandler.SetFocus(true);
-	stringHandler.SetTopLeft(SIZE_X/2 -200, SIZE_Y/2-50);
-	stringHandler.ShowBitmap("COMMING SOON");*/
-
-
+void CGameStateRun::OnShow() {
 	level->OnShow();
 
 	/*
@@ -706,13 +670,9 @@ void CGameStateRun::OnShow()
 // 這個class為遊戲的結束狀態(Game Over)
 /////////////////////////////////////////////////////////////////////////////
 
-CGameStateOver::CGameStateOver(CGame* g)
-	: CGameState(g)
-{
-}
+CGameStateOver::CGameStateOver(CGame* g) : CGameState(g) { }
 
-void CGameStateOver::OnInit()
-{
+void CGameStateOver::OnInit() {
 	/*
 	//
 	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
@@ -730,13 +690,11 @@ void CGameStateOver::OnInit()
 	*/
 }
 
-void CGameStateOver::OnBeginState()
-{
-	// counter = 30 * 5; // 5 seconds
+void CGameStateOver::OnBeginState() {
+
 }
 
-void CGameStateOver::OnMove()
-{
+void CGameStateOver::OnMove() {
 	/*
 	counter--;
 	if (counter < 0)
@@ -744,8 +702,7 @@ void CGameStateOver::OnMove()
 	*/
 }
 
-void CGameStateOver::OnShow()
-{
+void CGameStateOver::OnShow() {
 	/*
 	CDC* pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC 
 	CFont f, * fp;
