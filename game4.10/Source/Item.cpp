@@ -175,67 +175,7 @@ namespace game_framework {
 
 	void BIG_Ring::OnMove() {
 		CameraMove();
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
-
-		// Camera Move
-		if (isMovingLeft) {
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		setTopLeft(pos);
-		texture.OnMove();
-	}
-
-	
-			pos.x += cameraSpeed;
-		}
-		if (isMovingRight) {
-			pos.x -= cameraSpeed;
-		}
-		if (isMovingUp) {
-			pos.y += cameraSpeed;
-		}
-		if (isMovingDown) {
-			pos.y -= cameraSpeed;
-
-		}
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
@@ -244,16 +184,20 @@ namespace game_framework {
 
 		setTopLeft(pos);
 		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
+			if (deadAnimate.IsFinalBitmap()) {
+				isDeadFinish = true;
+			}
+			else if (deadAnimate.GetCurrentBitmapNumber() == 1) {
 				CAudio::Instance()->Play(AUDIO_RING, false);
 			}
+			deadAnimate.OnMove();
 		}
 		else {
 			texture.OnMove();
-		}
 
+		}
 	}
-	
+
 	void BIG_Ring::OnShow(int scale) {
 		if (isDead) {
 			deadAnimate.OnShow(scale);
@@ -280,10 +224,8 @@ namespace game_framework {
 	void RED_SPRING_PADS_UP::OnMove() {
 		CameraMove();
 
-		}
-
-
 	}
+
 
 	void RED_SPRING_PADS_UP::OnShow(int scale) {
 		if (isDead) {
