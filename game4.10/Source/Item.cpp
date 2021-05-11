@@ -175,6 +175,7 @@ namespace game_framework {
 
 	void BIG_Ring::OnMove() {
 		CameraMove();
+		CameraMove();
 
 		if (CollisionDetection(currnetActor)) {
 			isDead = true;
@@ -183,16 +184,20 @@ namespace game_framework {
 
 		setTopLeft(pos);
 		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
+			if (deadAnimate.IsFinalBitmap()) {
+				isDeadFinish = true;
+			}
+			else if (deadAnimate.GetCurrentBitmapNumber() == 1) {
 				CAudio::Instance()->Play(AUDIO_RING, false);
 			}
+			deadAnimate.OnMove();
 		}
 		else {
 			texture.OnMove();
-		}
 
+		}
 	}
-	
+
 	void BIG_Ring::OnShow(int scale) {
 		if (isDead) {
 			deadAnimate.OnShow(scale);
@@ -219,11 +224,8 @@ namespace game_framework {
 	void RED_SPRING_PADS_UP::OnMove() {
 		CameraMove();
 
-		setTopLeft(pos);
-		texture.OnMove();
 	}
 
-	
 
 	void RED_SPRING_PADS_UP::OnShow(int scale) {
 		if (isDead) {
@@ -1334,5 +1336,3 @@ namespace game_framework {
 	}
 
 }
-
-
