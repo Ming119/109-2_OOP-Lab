@@ -620,6 +620,8 @@ namespace game_framework {
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
+			default:
+				break;
 			}
 		}
 

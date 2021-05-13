@@ -30,6 +30,8 @@ namespace game_framework {
 	Actor::~Actor() { }
 
 	POINT Actor::Moving(vector<Brick*> b) {
+		// checkLevingRefBrick();
+
 		// x-axis
 		if (isMovingLeft) {
 			moving.OnMove();
@@ -56,16 +58,22 @@ namespace game_framework {
 		if (velocity.x != 0) moving.OnMove();
 
 		
+		if (refBrick == nullptr) 
+			LookingForRefBrick(b);
 
 		// y-axis
-
-		checkLevingRefBrick();
-		if (refBrick == nullptr) {
-			LookingForRefBrick(b);
-		} else {
-			TRACE("ref (%d %d)\n", refBrick->Top(), refBrick->Left());
-			velocity.y = 0;
+		if (refBrick != nullptr) {
+			if (this->Buttom() == refBrick->Top())
+				velocity.y = 0;
+			else if (this->Buttom() + gravity > refBrick->Top()) {
+				velocity.y = refBrick->Top() - this->Buttom();
+			}
+			else {
+				velocity.y = gravity;
+			}
 		}
+		
+
 
 		return velocity;
 	}
@@ -77,8 +85,9 @@ namespace game_framework {
 		vector<Brick*> tmpb;
 		for (int b = 0; b < bs; b++) {
 			if (this->Right() > bricks.at(b)->Left() &&
-				this->Left() < bricks.at(b)->Right()) {
-				if (this->Buttom() < bricks.at(b)->Top()) {
+				this->Left() < bricks.at(b)->Right() && 
+				bricks.at(b)->Property() == OBSTACLE) {
+				if (this->Top() < bricks.at(b)->Buttom()) {
 					tmpb.push_back(bricks.at(b));
 				}
 			}
@@ -93,28 +102,6 @@ namespace game_framework {
 	void Actor::checkLevingRefBrick() {
 		if (this != nullptr && refBrick != nullptr)
 			if (this->Left() > refBrick->Right() || this->Right() < refBrick->Left()) refBrick = nullptr;
-	}
-
-	int Actor::FallingCollision(vector<Brick*> b) {
-		int bs = b.size();
-		for (int i = 0; i < bs; i++) {
-			if (b.at(i)->Property() == OBSTACLE || b.at(i)->Property() == CLOUD) {
-				if (this->Left() < b.at(i)->Right() &&
-					this->Right() > b.at(i)->Left() &&
-					this->Top() + 10 < b.at(i)->Buttom() &&
-					this->Buttom() + 10 > b.at(i)->Top()) {
-
-				}
-			}
-
-		}
-
-		return gravity;
-
-	}
-
-	bool Actor::CollisionDection(Brick*) {
-		return false;
 	}
 
 	int Actor::Top() { return idle.Top(); }

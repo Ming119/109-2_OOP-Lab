@@ -75,10 +75,7 @@ namespace game_framework {
 
 		void LookingForRefBrick(vector<Brick*>);
 		void checkLevingRefBrick();
-		int FallingCollision(vector<Brick*>);
-		bool CollisionDection(Brick*);
 
-		
 
 
 		/*
