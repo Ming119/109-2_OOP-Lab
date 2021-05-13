@@ -34,14 +34,13 @@ namespace game_framework {
 		
 		int maxX, maxY;
 
-		bool operator<(const Brick& brs) const;
-
 	public:
 		/* Constructor */
 		Brick(int, int, int);
 
 
 		/* Getter */
+		int ID();
 		int Angle();
 		int Property();
 		int Behavior();

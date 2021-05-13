@@ -30,7 +30,7 @@ namespace game_framework {
 		CAnimation lookUp;
 		CAnimation lookDown;
 		CAnimation moving;
-		CAnimation jump;
+		CAnimation jumping;
 
 		int angle;		// angle = ang(actor's x-axis, real x-axis)
 		int jumpStrength;
