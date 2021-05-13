@@ -8,7 +8,6 @@ namespace game_framework {
 	enum class ITEMS_LIST {
 		RING,
 		BIG_RING,
-		//SPIKES_RING,
 		RED_SPRING_PADS_UP,
 		RED_SPRING_PADS_DOWN,
 		RED_SPRING_PADS_LEFT,
@@ -43,7 +42,10 @@ namespace game_framework {
 		LOOP_OFF,
 		LOOP_TOP_NOT_U_D,
 		LOOP_TOP_UP_DOWN,
-
+		SPIKES_UP,
+		SPIKES_DOWN,
+		SPIKES_LEFT,
+		SPIKES_RING,
 	};
 
 	class Item {
@@ -110,18 +112,6 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
-	/*
-	// SPIKES_RING
-	class SPIKES_RING : public Item {
-	public:
-		SPIKES_RING(int, int);
-		~SPIKES_RING();
-
-		void OnInit() override;
-		void OnMove() override;
-		void OnShow(int scale = DEFAULT_SCALE) override;
-	};
-	*/
 
 	// RED_SPRING_PADS_UP
 	class RED_SPRING_PADS_UP : public Item {
@@ -409,7 +399,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 	
-	//GATE_YELLOW
+	// GATE_YELLOW
 	class GATE_YELLOW : public Item {
 	public:
 		GATE_YELLOW();
@@ -421,7 +411,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-	//SEND
+	// SEND
 	class SEND : public Item {
 	public:
 		SEND();
@@ -433,7 +423,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-	//SEND_BUTTON
+	// SEND_BUTTON
 	class SEND_BUTTON : public Item {
 	public:
 		SEND_BUTTON();
@@ -445,7 +435,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-	//LOOP_LEFT
+	// LOOP_LEFT
 	class LOOP_LEFT : public Item {
 	public:
 		LOOP_LEFT();
@@ -457,7 +447,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-	//LOOR_RING
+	// LOOR_RING
 	class LOOR_RING : public Item {
 	public:
 		LOOR_RING();
@@ -469,7 +459,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-	//LOOP_TOP
+	// LOOP_TOP
 	class LOOP_TOP : public Item {
 	public:
 		LOOP_TOP();
@@ -481,7 +471,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-	//LOOP_TOP_HIED
+	// LOOP_TOP_HIED
 	class LOOP_TOP_HIED : public Item {
 	public:
 		LOOP_TOP_HIED();
@@ -493,7 +483,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-	//LOOP_OFF
+	// LOOP_OFF
 	class LOOP_OFF : public Item {
 	public:
 		LOOP_OFF();
@@ -505,7 +495,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-	//LOOP_TOP_NOT_U_D
+	// LOOP_TOP_NOT_U_D
 	class LOOP_TOP_NOT_U_D : public Item {
 	public:
 		LOOP_TOP_NOT_U_D();
@@ -517,8 +507,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-	
-	//LOOP_TOP_UP_DOWN
+	// LOOP_TOP_UP_DOWN
 	class LOOP_TOP_UP_DOWN : public Item {
 	public:
 		LOOP_TOP_UP_DOWN();
@@ -529,6 +518,55 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
+
+	// SPIKES_UP
+	class SPIKES_UP : public Item {
+	public:
+		SPIKES_UP();
+		SPIKES_UP(int, int);
+		~SPIKES_UP();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	// SPIKES_DOWN
+	class SPIKES_DOWN : public Item {
+	public:
+		SPIKES_DOWN();
+		SPIKES_DOWN(int, int);
+		~SPIKES_DOWN();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	// SPIKES_LEFT
+	class SPIKES_LEFT : public Item {
+	public:
+		SPIKES_LEFT();
+		SPIKES_LEFT(int, int);
+		~SPIKES_LEFT();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
+	// SPIKES_RING
+	class SPIKES_RING : public Item {
+	public:
+		SPIKES_RING();
+		SPIKES_RING(int, int);
+		~SPIKES_RING();
+
+		void OnInit() override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
+	};
+
 }
 
 #endif
