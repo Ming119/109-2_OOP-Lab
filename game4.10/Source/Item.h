@@ -63,26 +63,33 @@ namespace game_framework {
 		bool isDeadFinish;
 
 	public:
+		/* Contrustor */
 		Item(int, int);
 
+		/* Getter */
+		int Width();
+		int Height();
 		int Top();
 		int Left();
-		int Height();
-		int Width();
-
-
-
-		void setTopLeft(int, int);
-		void setTopLeft(POINT);
+		int Buttom();
+		int Right();
+		bool IsDead();
+		/* End of Getter */
+		
+		/* Setter */
 		void setAngle(int);
 		void SetMoving(POINT);
 		void SetCurrentActor(Actor*);
+		void setTopLeft(int, int);
+		void setTopLeft(POINT);
+		/* End of Setter */
 
-		bool CollisionDetection(Actor*);
-		bool IsDead();
-
+		/* Member Function */
 		void CameraMove();
+		bool CollisionDetection(Actor*);
+		/* End of Member Function */
 
+		//
 		virtual void OnInit() = 0;
 		virtual void OnMove() = 0;
 		virtual void OnShow(int scale = DEFAULT_SCALE) = 0;

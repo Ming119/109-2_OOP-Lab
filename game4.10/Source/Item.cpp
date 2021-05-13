@@ -9,34 +9,41 @@
 #include "Level.h"
 
 namespace game_framework {
+	/* Constructor */
 	// Item
 	Item::Item(int x, int y) {
 		pos.x = x;
 		pos.y = y;
 		angle = 0;
 		cameraSpeed = 50;
-
 		delta = POINT();
 
 		isDead = isDeadFinish = false;
 	}
 
+	/* Getter */
+	int Item::Height() { return texture.Height(); }
 
-	int Item::Top() {
-		return texture.Top();
-	}
+	int Item::Width() { return texture.Width(); }
 
-	int Item::Left() {
-		return texture.Left();
-	}
+	int Item::Top() { return texture.Top(); }
 
-	int Item::Height() {
-		return texture.Height();
-	}
+	int Item::Left() { return texture.Left(); }
 
-	int Item::Width() {
-		return texture.Width();
-	}
+	int Item::Buttom() { return this->Top() + this->Height() * DEFAULT_SCALE; }
+
+	int Item::Right() { return this->Left() + this->Width() * DEFAULT_SCALE; }
+
+	bool Item::IsDead() { return isDeadFinish; }
+	/* End of Getter */
+
+
+	/* Setter */
+	void Item::setAngle(int ang) { angle = ang; }
+
+	void Item::SetMoving(POINT _delta) { delta = _delta; }
+
+	void Item::SetCurrentActor(Actor* actor) { currnetActor = actor; }
 
 	void Item::setTopLeft(int x, int y) {
 		pos.x = x;
@@ -52,43 +59,31 @@ namespace game_framework {
 		texture.SetTopLeft(pos.x, pos.y);
 		deadAnimate.SetTopLeft(pos.x, pos.y);
 	}
+	/* End of Setter */
 
-	void Item::setAngle(int ang) {
-		angle = ang;
-	}
 
-	void Item::SetMoving(POINT _delta) {
-		delta = _delta;
-	}
+	/* Member Function */
+	void Item::CameraMove() {
+		pos.x -= delta.x;
+		pos.y -= delta.y;
 
-	void Item::SetCurrentActor(Actor* actor) {
-		currnetActor = actor;
+		setTopLeft(pos);
 	}
 
 	bool Item::CollisionDetection(Actor* actor) {
-		if ((this->Left()) < (actor->Left() + actor->Width() * DEFAULT_SCALE) &&
-			(this->Left() + this->Width() * DEFAULT_SCALE) > (actor->Left()) &&
-			(this->Top()) < (actor->Top() + actor->Height() * DEFAULT_SCALE) &&
-			(this->Top() + this->Height() * DEFAULT_SCALE) > (actor->Top())) {
+		if (this->Left() < actor->Right() &&
+			this->Right() > actor->Left() &&
+			this->Top() < actor->Buttom() &&
+			this->Buttom() > actor->Top()) {
 
 			return true;
 		}
 
 		return false;
 	}
+	/* End of Member Function */
 
 
-	bool Item::IsDead() {
-		return isDeadFinish;
-	}
-
-	void Item::CameraMove() {
-		// Camera Move
-		pos.x -= delta.x;
-		pos.y -= delta.y;
-
-		setTopLeft(pos);
-	}
 
 	// Ring
 	Ring::Ring(int x, int y) : Item::Item(x, y) {}
