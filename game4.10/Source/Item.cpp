@@ -99,7 +99,7 @@ namespace game_framework {
 		texture.AddBitmap(ITEMS_YELLOW_RING_6);
 		texture.AddBitmap(ITEMS_YELLOW_RING_7);
 		texture.AddBitmap(ITEMS_YELLOW_RING_8);
-		texture.SetDelayCount(3);
+		texture.SetDelayCount(2);
 
 		deadAnimate.AddBitmap(ITEM_YELLOW_RING_DEAD_1);
 		deadAnimate.AddBitmap(ITEM_YELLOW_RING_DEAD_2);

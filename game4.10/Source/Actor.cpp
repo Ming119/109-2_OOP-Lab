@@ -3,17 +3,16 @@
 #include <mmsystem.h>
 #include <ddraw.h>
 #include <algorithm>
+#include <cmath>
 #include "audio.h"
 #include "gamelib.h"
 #include "Actor.h"
 
+
 namespace game_framework {
 	Actor::Actor() {
-		POINT zero;
-		zero.x = zero.y = 0;
-
 		angle = 0;
-		velocity = acceleration = delta= zero;
+		velocity = acceleration = delta= POINT();
 		jumpStrength = 0;
 
 		isJumping = false;
@@ -32,49 +31,75 @@ namespace game_framework {
 	POINT Actor::Moving(vector<Brick*> b) {
 		// checkLevingRefBrick();
 		LookingForRefBrick(b);
-
-		// TRACE("RefBrick:\n\tID: %d\n\tAngle: %d\n\tProperty: %d\n", refBrick->ID(), refBrick->Angle(), refBrick->Property());
+		//TRACE("RefBrick:\n\tID: %d\n\tAngle: %d\n\tProperty: %d\n", refBrick->ID(), refBrick->Angle(), refBrick->Property());
+		
 
 
 		// x-axis
+		// dx = v_0 dt + 1/2 a dt^(2)
+
 		if (isMovingLeft) {
 			moving.OnMove();
-
 			if (abs(acceleration.x) < maxAcceleration) acceleration.x--;
+			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x/2;
 
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
-
-		}
-		else if (isMovingRight) {
+		} else if (isMovingRight) {
 			moving.OnMove();
-
 			if (abs(acceleration.x) < maxAcceleration) acceleration.x++;
+			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x/2;
 
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x;
-
-		}
-		else {
+		} else {
 			if (abs(acceleration.x) > 0 && acceleration.x > 0) acceleration.x--;
 			else if (abs(acceleration.x) > 0 && acceleration.x < 0) acceleration.x++;
 
+
+			// Friction Drug: F_d = 1/2 pv^(2) C_d A
 			velocity.x = (long)(velocity.x * friction);
 		}
-		if (velocity.x != 0) moving.OnMove();
-
-		
+			
 
 		// y-axis
 		if (refBrick != nullptr) {
-			if (this->Buttom() == refBrick->Top())
-				velocity.y = 0;
-			else if (this->Buttom() + gravity > refBrick->Top()) {
-				velocity.y = refBrick->Top() - this->Buttom();
-			}
-			else {
-				velocity.y = gravity;
+			if (refBrick->Angle() == 0) {
+				if (this->Buttom() == refBrick->Top())
+					velocity.y = 0;
+				else if (this->Buttom() + gravity > refBrick->Top()) 
+					velocity.y = refBrick->Top() - this->Buttom();
+				else 
+					velocity.y += gravity/2;	// g = 1/2gt
+			} else {
+
+				double theta = (double)refBrick->Angle() * M_PI / 180;
+				
+				TRACE("\n\ttheta: %d\n\trad: %f\n\tsin: %f\n\tcos: %f\n\ttan: %f\n", refBrick->Angle(), theta, std::sin(theta), std::cos(theta), std::tan(theta));
+
+				velocity.y = -(long)(velocity.x * std::tan(theta));
+
+				//if (0 <= refBrick->Angle() && refBrick->Angle() < 90) {
+				//	//velocity.x = (long)(velocity.x * std::cos(theta));
+				//	velocity.y = -(long)(velocity.x * std::tan(theta));
+				//}
+
+				//if (90 < refBrick->Angle() && refBrick->Angle() <= 180) {
+				//	velocity.x = -velocity.x;
+				//	velocity.y = -(long)(velocity.x * std::tan(theta));
+				//}
+				//
+				//if (180 < refBrick->Angle() && refBrick->Angle() <= 270) {
+				//	velocity.x = -velocity.x;
+				//	velocity.y = -(long)(velocity.x * std::tan(theta));
+				//}
+
+				//if (270 < refBrick->Angle() && refBrick->Angle() <= 360) {
+				//	//velocity.x = (long)(velocity.x * std::cos(theta));
+				//	velocity.y = -(long)(velocity.x * std::tan(theta));
+				//}
+				
 			}
 		}
 
+
+		if (velocity.x != 0) moving.OnMove();
 		return velocity;
 	}
 
@@ -183,6 +208,7 @@ namespace game_framework {
 	void Sonic::OnMove(vector<Brick*> b) {
 		delta = Moving(b);
 
+		
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
 				lookUp.OnMove();

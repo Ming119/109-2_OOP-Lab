@@ -16,7 +16,7 @@ namespace game_framework {
 		const int maxAcceleration = 4;	// only on x-axis
 
 		const int   gravity = 10;
-		const float friction = 0.9f;
+		const float friction = 0.8f;
 
 		POINT pos;
 

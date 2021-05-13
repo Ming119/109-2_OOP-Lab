@@ -13,6 +13,7 @@
 #define ENABLE_AUDIO		 true		// 啟動音效介面
 #define DEFAULT_BG_ALPHA	RGB(255,0,255)	// Set the default Background Alpha to (255,0,255)
 #define DEFAULT_SCALE		SIZE_X/320	//
+#define M_PI           3.14159265358979323846
 
 /////////////////////////////////////////////////////////////////////////////
 // 定義CGame及CGameState所使用的三個狀態常數
