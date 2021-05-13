@@ -281,8 +281,7 @@ namespace game_framework {
 		/*actor1.OnMove();
 		actor2.OnMove();
 		actor3.OnMove();*/
-		CurrentActor()->OnMove(bricks);
-
+		
 		if (CurrentActor()->IsJumping()) {
 			
 		}
@@ -314,6 +313,8 @@ namespace game_framework {
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->OnMove();
 		}
+
+		CurrentActor()->OnMove(bricks);
 	}
 
 	void Level::OnShow() {

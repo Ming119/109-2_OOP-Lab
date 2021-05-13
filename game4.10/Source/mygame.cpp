@@ -544,9 +544,8 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 }
 
 void CGameStateRun::OnMove() {
-	level->OnMove();
 	level->SetMoving(level->CurrentActor()->getDelta());
-
+	level->OnMove();
 }
 
 void CGameStateRun::OnShow() {

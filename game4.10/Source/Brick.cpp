@@ -8,8 +8,6 @@
 #include "Level.h"
 
 namespace game_framework {
-	bool Brick::operator<(const Brick& brs) const{ return pos.y < brs.pos.y; }
-
 	/* Constructor */
 	Brick::Brick(int _id, int x, int y) {
 		id = _id;
@@ -20,6 +18,8 @@ namespace game_framework {
 
 
 	/* Getter */
+	int Brick::ID() { return id; }
+
 	int Brick::Angle() { return angle; }
 
 	int Brick::Property() { return property; }

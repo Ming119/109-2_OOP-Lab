@@ -31,6 +31,10 @@ namespace game_framework {
 
 	POINT Actor::Moving(vector<Brick*> b) {
 		// checkLevingRefBrick();
+		LookingForRefBrick(b);
+
+		// TRACE("RefBrick:\n\tID: %d\n\tAngle: %d\n\tProperty: %d\n", refBrick->ID(), refBrick->Angle(), refBrick->Property());
+
 
 		// x-axis
 		if (isMovingLeft) {
@@ -58,8 +62,6 @@ namespace game_framework {
 		if (velocity.x != 0) moving.OnMove();
 
 		
-		if (refBrick == nullptr) 
-			LookingForRefBrick(b);
 
 		// y-axis
 		if (refBrick != nullptr) {
@@ -72,11 +74,11 @@ namespace game_framework {
 				velocity.y = gravity;
 			}
 		}
-		
-
 
 		return velocity;
 	}
+
+	bool comparetor(Brick b1, Brick b2) { return (b1.Top() < b2.Top()); }
 
 	void Actor::LookingForRefBrick(vector<Brick*> bricks) {
 
@@ -87,13 +89,12 @@ namespace game_framework {
 			if (this->Right() > bricks.at(b)->Left() &&
 				this->Left() < bricks.at(b)->Right() && 
 				bricks.at(b)->Property() == OBSTACLE) {
-				if (this->Top() < bricks.at(b)->Buttom()) {
+				if (this->Top() <= bricks.at(b)->Buttom())
 					tmpb.push_back(bricks.at(b));
-				}
 			}
 		}
 
-		std::sort(tmpb.begin(), tmpb.end());
+		std::sort(tmpb.begin(), tmpb.end(), [](Brick* b1, Brick* b2) -> bool { return b1->Top() < b2->Top(); });
 		if (tmpb.size())
 			refBrick = tmpb.at(0);
 
@@ -123,39 +124,21 @@ namespace game_framework {
 		pos.y = y;
 	}
 
-	void Actor::setTopLeft(POINT xy) {
-		pos = xy;
-	}
+	void Actor::setTopLeft(POINT xy) { pos = xy; }
 
-	void Actor::SetMoveLeft(bool m) {
-		isMovingLeft = m;
-	}
+	void Actor::SetMoveLeft(bool m) { isMovingLeft = m; }
 
-	void Actor::SetMoveRight(bool m) {
-		isMovingRight = m;
-	}
+	void Actor::SetMoveRight(bool m) { isMovingRight = m; }
 
-	void Actor::SetIsLookingUp(bool m) {
-		isLookingUp = m;
-	}
+	void Actor::SetIsLookingUp(bool m) { isLookingUp = m; }
 
-	void Actor::SetIsLookingDown(bool m) {
-		isLookingDown = m;
-	}
+	void Actor::SetIsLookingDown(bool m) { isLookingDown = m; }
 
-	void Actor::SetIsJumping(bool m) {
-		isJumping = m;
-	}
+	void Actor::SetIsJumping(bool m) { isJumping = m; }
 
-	bool Actor::IsJumping() {
-		return isJumping;
-	}
+	bool Actor::IsJumping() { return isJumping; }
 
 	
-
-
-
-
 
 	// Sonic
 	Sonic::Sonic() : Actor::Actor() {
@@ -189,12 +172,12 @@ namespace game_framework {
 		moving.SetDelayCount(3);
 		moving.SetTopLeft(pos.x, pos.y);
 
-		jump.AddBitmap(ACTOR_1_ROLL_1);
-		jump.AddBitmap(ACTOR_1_ROLL_2);
-		jump.AddBitmap(ACTOR_1_ROLL_3);
-		jump.AddBitmap(ACTOR_1_ROLL_4);
-		jump.SetDelayCount(3);
-		jump.SetTopLeft(pos.x, pos.y);
+		jumping.AddBitmap(ACTOR_1_ROLL_1);
+		jumping.AddBitmap(ACTOR_1_ROLL_2);
+		jumping.AddBitmap(ACTOR_1_ROLL_3);
+		jumping.AddBitmap(ACTOR_1_ROLL_4);
+		jumping.SetDelayCount(3);
+		jumping.SetTopLeft(pos.x, pos.y);
 	}
 
 	void Sonic::OnMove(vector<Brick*> b) {
@@ -210,25 +193,22 @@ namespace game_framework {
 		}
 		else if (isJumping) {
 			velocity.y -= 10;
-			jump.OnMove();
+			jumping.OnMove();
 		}
 		else {
 			lookUp.Reset();
 			lookDown.Reset();
-			jump.Reset();
+			jumping.Reset();
 			idle.OnMove();
 		}
-		/*if (isMovingUp)
-			position.y += maxSpeed;
-		if (isMovingDown)
-			position.y -= maxSpeed;*/
 	}
 
 	void Sonic::OnShow() {
+		idle.SetTopLeft(pos.x, pos.y);
 		lookUp.SetTopLeft(pos.x, pos.y);
 		lookDown.SetTopLeft(pos.x, pos.y);
 		moving.SetTopLeft(pos.x, pos.y);
-		idle.SetTopLeft(pos.x, pos.y);
+		jumping.SetTopLeft(pos.x, pos.y);
 
 		if (isMovingLeft || isMovingRight)
 			moving.OnShow();
@@ -239,7 +219,7 @@ namespace game_framework {
 			lookDown.OnShow();
 		}
 		else if (isJumping) {
-			jump.OnShow();
+			jumping.OnShow();
 		}
 		else
 			idle.OnShow();
@@ -278,12 +258,12 @@ namespace game_framework {
 		moving.SetDelayCount(3);
 		moving.SetTopLeft(pos.x, pos.y);
 
-		jump.AddBitmap(ACTOR_2_ROLL_1);
-		jump.AddBitmap(ACTOR_2_ROLL_2);
-		jump.AddBitmap(ACTOR_2_ROLL_3);
-		jump.AddBitmap(ACTOR_2_ROLL_4);
-		jump.SetDelayCount(3);
-		jump.SetTopLeft(pos.x, pos.y);
+		jumping.AddBitmap(ACTOR_2_ROLL_1);
+		jumping.AddBitmap(ACTOR_2_ROLL_2);
+		jumping.AddBitmap(ACTOR_2_ROLL_3);
+		jumping.AddBitmap(ACTOR_2_ROLL_4);
+		jumping.SetDelayCount(3);
+		jumping.SetTopLeft(pos.x, pos.y);
 	}
 	
 	void Miles::OnMove(vector<Brick*> b) {
@@ -299,25 +279,22 @@ namespace game_framework {
 		}
 		else if (isJumping) {
 			velocity.y -= 10;
-			jump.OnMove();
+			jumping.OnMove();
 		}
 		else {
 			lookUp.Reset();
 			lookDown.Reset();
-			jump.Reset();
+			jumping.Reset();
 			idle.OnMove();
 		}
-		/*if (isMovingUp)
-			position.y += maxSpeed;
-		if (isMovingDown)
-			position.y -= maxSpeed;*/
 	}
 
 	void Miles::OnShow() {
+		idle.SetTopLeft(pos.x, pos.y);
 		lookUp.SetTopLeft(pos.x, pos.y);
 		lookDown.SetTopLeft(pos.x, pos.y);
 		moving.SetTopLeft(pos.x, pos.y);
-		idle.SetTopLeft(pos.x, pos.y);
+		jumping.SetTopLeft(pos.x, pos.y);
 
 		if (isMovingLeft || isMovingRight)
 			moving.OnShow();
@@ -328,7 +305,7 @@ namespace game_framework {
 			lookDown.OnShow();
 		}
 		else if (isJumping) {
-			jump.OnShow();
+			jumping.OnShow();
 		}
 		else
 			idle.OnShow();
@@ -367,12 +344,12 @@ namespace game_framework {
 		moving.SetDelayCount(3);
 		moving.SetTopLeft(pos.x, pos.y);
 
-		jump.AddBitmap(ACTOR_3_ROLL_1);
-		jump.AddBitmap(ACTOR_3_ROLL_2);
-		jump.AddBitmap(ACTOR_3_ROLL_3);
-		jump.AddBitmap(ACTOR_3_ROLL_4);
-		jump.SetDelayCount(3);
-		jump.SetTopLeft(pos.x, pos.y);
+		jumping.AddBitmap(ACTOR_3_ROLL_1);
+		jumping.AddBitmap(ACTOR_3_ROLL_2);
+		jumping.AddBitmap(ACTOR_3_ROLL_3);
+		jumping.AddBitmap(ACTOR_3_ROLL_4);
+		jumping.SetDelayCount(3);
+		jumping.SetTopLeft(pos.x, pos.y);
 	
 	}
 
@@ -389,25 +366,22 @@ namespace game_framework {
 		}
 		else if (isJumping) {
 			velocity.y -= 10;
-			jump.OnMove();
+			jumping.OnMove();
 		}
 		else {
 			lookUp.Reset();
 			lookDown.Reset();
-			jump.Reset();
+			jumping.Reset();
 			idle.OnMove();
 		}
-		/*if (isMovingUp)
-			position.y += maxSpeed;
-		if (isMovingDown)
-			position.y -= maxSpeed;*/
 	}
 
 	void Knuckles::OnShow() {
+		idle.SetTopLeft(pos.x, pos.y);
 		lookUp.SetTopLeft(pos.x, pos.y);
 		lookDown.SetTopLeft(pos.x, pos.y);
 		moving.SetTopLeft(pos.x, pos.y);
-		idle.SetTopLeft(pos.x, pos.y);
+		jumping.SetTopLeft(pos.x, pos.y);
 
 		if (isMovingLeft || isMovingRight)
 			moving.OnShow();
@@ -418,7 +392,7 @@ namespace game_framework {
 			lookDown.OnShow();
 		}
 		else if (isJumping) {
-			jump.OnShow();
+			jumping.OnShow();
 		}
 		else
 			idle.OnShow();
