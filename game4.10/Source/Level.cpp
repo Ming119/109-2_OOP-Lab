@@ -171,6 +171,23 @@ namespace game_framework {
 						items.push_back(new LOOP_TOP(x, y));
 						break;
 
+					case 66:
+						items.push_back(new SPIKES_UP(x, y));
+						break;
+
+					case 63:
+						items.push_back(new SPIKES_DOWN(x, y));
+						break;
+
+					case 64:
+						items.push_back(new SPIKES_LEFT(x, y));
+						break;
+
+					case 65:
+						items.push_back(new SPIKES_RING(x, y));
+						break;
+
+					
 					}
 
 					/*
