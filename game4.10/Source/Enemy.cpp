@@ -62,8 +62,9 @@ namespace game_framework {
 	void Enemy::CameraMove() {
 		// Camera Move
 		pos.x -= delta.x;
-		pos.y += delta.y;
-
+		pos.y -= delta.y;
+		spawn.x -= delta.x;
+		spawn.y -= delta.y;
 		SetTopLeft(pos);
 	}
 
