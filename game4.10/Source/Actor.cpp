@@ -52,13 +52,14 @@ namespace game_framework {
 			if (abs(acceleration.x) > 0 && acceleration.x > 0) acceleration.x--;
 			else if (abs(acceleration.x) > 0 && acceleration.x < 0) acceleration.x++;
 
-
 			// Friction Drug: F_d = 1/2 pv^(2) C_d A
 			velocity.x = (long)(velocity.x * friction);
 		}
 			
 
 		// y-axis
+		// h = 1/2gt
+
 		if (refBrick != nullptr) {
 			if (refBrick->Angle() == 0) {
 				if (this->Buttom() == refBrick->Top())
@@ -66,36 +67,38 @@ namespace game_framework {
 				else if (this->Buttom() + gravity > refBrick->Top()) 
 					velocity.y = refBrick->Top() - this->Buttom();
 				else 
-					velocity.y += gravity/2;	// g = 1/2gt
+					velocity.y += gravity/2;	
 			} else {
-
+				long r = velocity.x;
 				double theta = (double)refBrick->Angle() * M_PI / 180;
 				
 				TRACE("\n\ttheta: %d\n\trad: %f\n\tsin: %f\n\tcos: %f\n\ttan: %f\n", refBrick->Angle(), theta, std::sin(theta), std::cos(theta), std::tan(theta));
 
-				/*
-					!!! BUG here !!!
-				*/
-				
-				if (0 <= refBrick->Angle() && refBrick->Angle() < 90) {
-					velocity.x = (long)(velocity.x * std::cos(theta/2));
-					velocity.y = -(long)(velocity.x * std::tan(theta));
-				}
+				velocity.x = (long)(r * std::cos(theta));
+				velocity.y = -(long)(r * std::sin(theta));
 
-				if (90 < refBrick->Angle() && refBrick->Angle() <= 180) {
-					velocity.x = (long)(velocity.x * std::cos(theta / 2));
-					velocity.y = (long)(velocity.x * std::tan(theta));
-				}
-				
-				if (180 < refBrick->Angle() && refBrick->Angle() <= 270) {
-					velocity.x = -(long)(velocity.x * std::cos(theta / 2));
-					velocity.y = (long)(velocity.x * std::tan(theta));
-				}
+				///*
+				//	!!! BUG here !!!
+				//*/
+				//if (0 <= refBrick->Angle() && refBrick->Angle() < 90) {
+				//	velocity.x = (long)(velocity.x * std::cos(theta/2));
+				//	velocity.y = -(long)(velocity.x * std::tan(theta));
+				//}
 
-				if (270 < refBrick->Angle() && refBrick->Angle() <= 360) {
-					velocity.x = -(long)(velocity.x * std::cos(theta/2));
-					velocity.y = -(long)(velocity.x * std::tan(theta));
-				}
+				//if (90 < refBrick->Angle() && refBrick->Angle() < 180) {
+				//	velocity.x = (long)(velocity.x * std::cos(theta / 2));
+				//	velocity.y = (long)(velocity.x * std::tan(theta));
+				//}
+				//
+				//if (180 < refBrick->Angle() && refBrick->Angle() < 270) {
+				//	velocity.x = -(long)(velocity.x * std::cos(theta / 2));
+				//	velocity.y = (long)(velocity.x * std::tan(theta));
+				//}
+
+				//if (270 < refBrick->Angle() && refBrick->Angle() < 360) {
+				//	velocity.x = -(long)(velocity.x * std::cos(theta/2));
+				//	velocity.y = -(long)(velocity.x * std::tan(theta));
+				//}
 				
 			}
 		}
