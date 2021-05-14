@@ -175,6 +175,9 @@ namespace game_framework {
 
 	private:
 		CString stringHandler;
+		CMovingBitmap Score;
+		CMovingBitmap Time;
+		CMovingBitmap Rings;
 
 		Level* level;
 		int current_actor;

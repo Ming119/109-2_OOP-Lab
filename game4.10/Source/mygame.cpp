@@ -478,6 +478,9 @@ CGameStateRun::~CGameStateRun() {
 void CGameStateRun::OnInit() {
 	stringHandler.LoadBitmap();
 	current_actor = 0;
+	Score.LoadBitmap(GUI_SCORE);
+	Time.LoadBitmap(GUI_TIME);
+	Rings.LoadBitmap(GUI_RING);
 }
 
 void CGameStateRun::OnBeginState() {
@@ -546,10 +549,16 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 void CGameStateRun::OnMove() {
 	level->SetMoving(level->CurrentActor()->getDelta());
 	level->OnMove();
+	Score.SetTopLeft(32, 20);
+	Time.SetTopLeft(32, 50);
+	Rings.SetTopLeft(32, 80);
 }
 
 void CGameStateRun::OnShow() {
 	level->OnShow();
+	Score.ShowBitmap();
+	Time.ShowBitmap();
+	Rings.ShowBitmap();
 }
 
 
