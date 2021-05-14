@@ -15,6 +15,7 @@ namespace game_framework {
 		pos.x = x;
 		pos.y = y;
 		angle = 0;
+
 		cameraSpeed = 50;
 		delta = POINT();
 

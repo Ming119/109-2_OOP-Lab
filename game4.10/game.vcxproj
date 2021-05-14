@@ -524,6 +524,9 @@
     <Image Include="RES\font\gui_yellow_numX.bmp" />
     <Image Include="RES\font\gui_yellow_numY.bmp" />
     <Image Include="RES\font\gui_yellow_numZ.bmp" />
+    <Image Include="RES\gui\Rings.bmp" />
+    <Image Include="RES\gui\SCORE1.bmp" />
+    <Image Include="RES\gui\TIME1.bmp" />
     <Image Include="RES\icon.ico" />
     <Image Include="RES\integer\gui_white_0.bmp" />
     <Image Include="RES\integer\gui_white_1.bmp" />

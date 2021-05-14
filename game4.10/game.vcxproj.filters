@@ -1728,5 +1728,14 @@
     <Image Include="RES\items\ITEMS_LOOP_off.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\gui\Rings.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\gui\SCORE1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\gui\TIME1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
