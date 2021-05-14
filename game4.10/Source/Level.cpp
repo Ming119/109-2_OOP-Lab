@@ -28,8 +28,6 @@ namespace game_framework {
 
 		currentActor = &actor1;
 
-
-
 		switch (level) {
 			// Level 1
 			case static_cast<int>(LEVELS::BULE_OCEAN_1) :
@@ -54,19 +52,30 @@ namespace game_framework {
 				for (int i = 0; i < sizeof(Level1Items)/sizeof(Level1Items[0]); i++) {
 					int id = Level1Items[i][0];
 					int x = Level1Items[i][1] * DEFAULT_SCALE;
-					int y = (Level1Items[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
-					TRACE("id = %d\n",id);
+					int y = (Level1Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
 
 					switch (id) {
 
 					case 0:
 						items.push_back(new Ring(x, y));
 						break;
-					
-					case 28:
-						items.push_back(new BIG_Ring(x, y));
+
+					case 16:
+						items.push_back(new LOOR_RING(x, y));
 						break;
-					
+
+					case 17:
+						items.push_back(new LOOP_TOP_HIED(x, y));
+						break;
+
+					case 18:
+						items.push_back(new LOOP_LEFT(x, y));
+						break;
+
+					case 19:
+						items.push_back(new LOOP_OFF(x, y));
+						break;
+
 					case 20:
 						items.push_back(new YELLOW_SPRING_PADS_UP(x, y));
 						break;
@@ -81,6 +90,30 @@ namespace game_framework {
 
 					case 23:
 						items.push_back(new RED_SPRING_PADS_RING(x, y));
+						break;
+
+					case 26:
+						items.push_back(new GATE_YELLOW(x, y));
+						break;
+
+					case 27:
+						items.push_back(new SEND(x, y));
+						break;
+
+					case 28:
+						items.push_back(new BIG_Ring(x, y));
+						break;
+
+					case 33:
+						items.push_back(new LOOP_TOP_UP_DOWN(x, y));
+						break;
+
+					case 34:
+						items.push_back(new LOOP_TOP_NOT_U_D(x, y));
+						break;
+
+					case 35:
+						items.push_back(new LOOP_TOP(x, y));
 						break;
 
 					case 50:
@@ -134,42 +167,6 @@ namespace game_framework {
 					case 62:
 						items.push_back(new BULE_SPRING_PADS_DOWN(x, y));
 						break;
-					
-					case 26:
-						items.push_back(new GATE_YELLOW(x, y));
-						break;
-
-					case 27:
-						items.push_back(new SEND(x, y));
-						break;
-					
-					case 16:
-						items.push_back(new LOOR_RING(x, y));
-						break;
-
-					case 17:
-						items.push_back(new LOOP_TOP_HIED(x, y));
-						break;
-
-					case 18:
-						items.push_back(new LOOP_LEFT(x, y));
-						break;
-
-					case 19:
-						items.push_back(new LOOP_OFF(x, y));
-						break;
-
-					case 33:
-						items.push_back(new LOOP_TOP_UP_DOWN(x, y));
-						break;
-
-					case 34:
-						items.push_back(new LOOP_TOP_NOT_U_D(x, y));
-						break;
-
-					case 35:
-						items.push_back(new LOOP_TOP(x, y));
-						break;
 
 					case 66:
 						items.push_back(new SPIKES_UP(x, y));
@@ -189,11 +186,6 @@ namespace game_framework {
 
 					
 					}
-
-					/*
-					case 1:
-						break;
-					}*/
 					
 				}
 
