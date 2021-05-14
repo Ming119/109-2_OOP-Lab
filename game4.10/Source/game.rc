@@ -326,11 +326,13 @@ ITEMS_LOOP_RING         BITMAP                  "..\\RES\\items\\ITEMS_LOOP_GREE
 
 ITEMS_LOOP_OFF          BITMAP                  "..\\RES\\items\\ITEMS_LOOP_off.bmp"
 
-GUI_RING                BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\gui\\Rings.bmp"
+GUI_RING                BITMAP                  "..\\RES\\gui\\Rings.bmp"
 
-GUI_SCORE               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\gui\\SCORE1.bmp"
+GUI_SCORE               BITMAP                  "..\\RES\\gui\\SCORE1.bmp"
 
-GUI_TIME                BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\gui\\TIME1.bmp"
+GUI_TIME                BITMAP                  "..\\RES\\gui\\TIME1.bmp"
+
+GUI_RED_RING            BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\gui\\RINGS1.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

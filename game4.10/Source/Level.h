@@ -30,6 +30,8 @@ namespace game_framework {
 	class Level {
 	private:
 		int max_x, max_y;
+		int count_ring=0;
+
 
 		POINT spawnPoint;
 
@@ -56,6 +58,7 @@ namespace game_framework {
 		void OnInit(int);
 		void OnMove();
 		void OnShow();
+		int getCountRing();
 	};
 }
 

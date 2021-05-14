@@ -1,6 +1,8 @@
 //#include "Brick.h"
 #include "Level.h"
 //#include "Actor.h"
+#include <cmath>
+class Level;
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -177,11 +179,13 @@ namespace game_framework {
 		CString stringHandler;
 		CMovingBitmap Score;
 		CMovingBitmap Time;
-		CMovingBitmap Rings;
+		CMovingBitmap Rings, count_Rings[3];
+		CInteger count;
 
-		Level* level;
+		Level *level;
 		int current_actor;
 		int current_level;
+
 	};
 
 

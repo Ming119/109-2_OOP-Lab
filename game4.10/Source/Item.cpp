@@ -109,6 +109,7 @@ namespace game_framework {
 		deadAnimate.SetDelayCount(3);
 
 		setTopLeft(pos);
+		
 	}
 	
 	void Ring::OnMove() {
@@ -126,6 +127,7 @@ namespace game_framework {
 			}
 			else if (deadAnimate.GetCurrentBitmapNumber() == 1) {
 				CAudio::Instance()->Play(AUDIO_RING, false);
+				
 			}
 			deadAnimate.OnMove();
 		}
