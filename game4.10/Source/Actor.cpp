@@ -73,27 +73,29 @@ namespace game_framework {
 				
 				TRACE("\n\ttheta: %d\n\trad: %f\n\tsin: %f\n\tcos: %f\n\ttan: %f\n", refBrick->Angle(), theta, std::sin(theta), std::cos(theta), std::tan(theta));
 
-				velocity.y = -(long)(velocity.x * std::tan(theta));
+				/*
+					!!! BUG here !!!
+				*/
+				
+				if (0 <= refBrick->Angle() && refBrick->Angle() < 90) {
+					velocity.x = (long)(velocity.x * std::cos(theta/2));
+					velocity.y = -(long)(velocity.x * std::tan(theta));
+				}
 
-				//if (0 <= refBrick->Angle() && refBrick->Angle() < 90) {
-				//	//velocity.x = (long)(velocity.x * std::cos(theta));
-				//	velocity.y = -(long)(velocity.x * std::tan(theta));
-				//}
+				if (90 < refBrick->Angle() && refBrick->Angle() <= 180) {
+					velocity.x = (long)(velocity.x * std::cos(theta / 2));
+					velocity.y = (long)(velocity.x * std::tan(theta));
+				}
+				
+				if (180 < refBrick->Angle() && refBrick->Angle() <= 270) {
+					velocity.x = -(long)(velocity.x * std::cos(theta / 2));
+					velocity.y = (long)(velocity.x * std::tan(theta));
+				}
 
-				//if (90 < refBrick->Angle() && refBrick->Angle() <= 180) {
-				//	velocity.x = -velocity.x;
-				//	velocity.y = -(long)(velocity.x * std::tan(theta));
-				//}
-				//
-				//if (180 < refBrick->Angle() && refBrick->Angle() <= 270) {
-				//	velocity.x = -velocity.x;
-				//	velocity.y = -(long)(velocity.x * std::tan(theta));
-				//}
-
-				//if (270 < refBrick->Angle() && refBrick->Angle() <= 360) {
-				//	//velocity.x = (long)(velocity.x * std::cos(theta));
-				//	velocity.y = -(long)(velocity.x * std::tan(theta));
-				//}
+				if (270 < refBrick->Angle() && refBrick->Angle() <= 360) {
+					velocity.x = -(long)(velocity.x * std::cos(theta/2));
+					velocity.y = -(long)(velocity.x * std::tan(theta));
+				}
 				
 			}
 		}
