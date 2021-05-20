@@ -77,7 +77,6 @@ namespace game_framework {
 	//
 	void Brick::OnInit(int level) {
 		if (level == static_cast<int>(LEVELS::BULE_OCEAN_1) || level == static_cast<int>(LEVELS::BULE_OCEAN_2) || level == static_cast<int>(LEVELS::SUPER_BOSS_1) || level == static_cast<int>(LEVELS::TEST)) {
-			// OCEAN
 			switch (id) {
 			case 0:
 				texture.AddBitmap(OCEAN_0);
@@ -626,7 +625,6 @@ namespace game_framework {
 		}
 
 		if (level == static_cast<int>(LEVELS::BULE_OCEAN_3)) {
-			// OCEAN 2
 			//switch (id) {
 			//case 0:
 			//	setProperty(OBSTACLE);
