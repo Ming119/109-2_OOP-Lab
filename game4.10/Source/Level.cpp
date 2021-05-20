@@ -11,7 +11,9 @@
 
 namespace game_framework {	
 
-	Level::Level() { }
+	Level::Level() {
+		count_ring = 0;
+	}
 
 	Level::~Level() { }
 
@@ -27,6 +29,8 @@ namespace game_framework {
 		actor3.OnInit();
 
 		currentActor = &actor1;
+		count_ring = 0;
+
 
 		switch (level) {
 			// Level 1
@@ -686,7 +690,9 @@ namespace game_framework {
 		}
 
 	}
-	
+	int Level::getCountRing() {
+		return count_ring;
+	}
 	void Level::OnMove() {
 		// Actor
 		/*actor1.OnMove();
@@ -715,6 +721,8 @@ namespace game_framework {
 			if (items.at(i)->IsDead()) {
 				items.erase(items.begin()+i);
 				is--; i--;
+				count_ring++;
+				//TRACE("ring = %d\n", count_ring);
 			}
 
 

@@ -5,6 +5,9 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "mygame.h"
+#include "Item.h"
+
+using namespace std;
 
 namespace game_framework {
 
@@ -481,6 +484,8 @@ void CGameStateRun::OnInit() {
 	Score.LoadBitmap(GUI_SCORE);
 	Time.LoadBitmap(GUI_TIME);
 	Rings.LoadBitmap(GUI_RING);
+	count.LoadBitmap();
+	count.SetInteger(0);
 }
 
 void CGameStateRun::OnBeginState() {
@@ -547,11 +552,54 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 }
 
 void CGameStateRun::OnMove() {
+	for (int i = 0; i < 3; i++) {
+		int x = int(pow(10, i + 1)), y = int(pow(10, i));
+		int index = int((level->getCountRing() % x) / y);
+		TRACE("index = %d\n",index);
+		switch (index) {
+		case 0:
+			count_Rings[i].LoadBitmapA(INTEGER_WHITE_0);
+			break;
+		case 1:
+			count_Rings[i].LoadBitmapA(INTEGER_WHITE_1);
+			break;
+		case 2:
+			count_Rings[i].LoadBitmapA(INTEGER_WHITE_2);
+			break;
+		case 3:
+			count_Rings[i].LoadBitmapA(INTEGER_WHITE_3);
+			break;
+		case 4:
+			count_Rings[i].LoadBitmapA(INTEGER_WHITE_4);
+			break;
+		case 5:
+			count_Rings[i].LoadBitmapA(INTEGER_WHITE_5);
+			break;
+		case 6:
+			count_Rings[i].LoadBitmapA(INTEGER_WHITE_6);
+			break;
+		case 7:
+			count_Rings[i].LoadBitmapA(INTEGER_WHITE_7);
+			break;
+		case 8:
+			count_Rings[i].LoadBitmapA(INTEGER_WHITE_8);
+			break;
+		case 9:
+			count_Rings[i].LoadBitmapA(INTEGER_WHITE_9);
+			break;
+		default:
+			break;
+		}
+	}
 	level->SetMoving(level->CurrentActor()->getDelta());
 	level->OnMove();
 	Score.SetTopLeft(32, 20);
 	Time.SetTopLeft(32, 50);
+	
 	Rings.SetTopLeft(32, 80);
+	for (int i = 0; i < 3; i++) {
+		count_Rings[i].SetTopLeft(120+(count_Rings[i].Width()+7)*i,79);
+	}
 }
 
 void CGameStateRun::OnShow() {
@@ -559,6 +607,9 @@ void CGameStateRun::OnShow() {
 	Score.ShowBitmap();
 	Time.ShowBitmap();
 	Rings.ShowBitmap();
+	for (int i = 0; i < 3; i++) {
+		//count_Rings[i].ShowBitmap();
+	}
 }
 
 

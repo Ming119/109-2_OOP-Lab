@@ -332,6 +332,8 @@ GUI_SCORE               BITMAP                  "..\\RES\\gui\\SCORE1.bmp"
 
 GUI_TIME                BITMAP                  "..\\RES\\gui\\TIME1.bmp"
 
+GUO_RED_RING            BITMAP                  "..\\RES\\gui\\RINGS1.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

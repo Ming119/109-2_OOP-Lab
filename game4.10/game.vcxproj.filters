@@ -1737,5 +1737,8 @@
     <Image Include="RES\gui\TIME1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\gui\RINGS1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

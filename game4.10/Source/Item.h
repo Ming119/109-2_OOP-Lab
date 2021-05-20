@@ -60,6 +60,7 @@ namespace game_framework {
 		int angle;
 		int speed;
 		int cameraSpeed;
+		
 
 		bool isDead;
 		bool isDeadFinish;
