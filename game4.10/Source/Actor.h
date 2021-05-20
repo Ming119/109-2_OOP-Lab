@@ -21,8 +21,9 @@ namespace game_framework {
 		POINT pos;
 
 		POINT velocity;
-		POINT acceleration;
 		POINT delta;
+		int acceleration;
+		int maxSpeed;
 
 		Brick* refBrick;
 

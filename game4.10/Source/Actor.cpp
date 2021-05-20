@@ -11,8 +11,8 @@
 
 namespace game_framework {
 	Actor::Actor() {
-		angle = 0;
-		velocity = acceleration = delta= POINT();
+		angle = acceleration = 0;
+		velocity = delta= POINT();
 		jumpStrength = 0;
 
 		isJumping = false;
@@ -40,17 +40,17 @@ namespace game_framework {
 
 		if (isMovingLeft) {
 			moving.OnMove();
-			if (abs(acceleration.x) < maxAcceleration) acceleration.x--;
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x/2;
+			if (abs(acceleration) < maxAcceleration) acceleration--;
+			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration/2;
 
 		} else if (isMovingRight) {
 			moving.OnMove();
-			if (abs(acceleration.x) < maxAcceleration) acceleration.x++;
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration.x/2;
+			if (abs(acceleration) < maxAcceleration) acceleration++;
+			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration/2;
 
 		} else {
-			if (abs(acceleration.x) > 0 && acceleration.x > 0) acceleration.x--;
-			else if (abs(acceleration.x) > 0 && acceleration.x < 0) acceleration.x++;
+			if (abs(acceleration) > 0 && acceleration > 0) acceleration--;
+			else if (abs(acceleration) > 0 && acceleration < 0) acceleration++;
 
 			// Friction Drug: F_d = 1/2 pv^(2) C_d A
 			velocity.x = (long)(velocity.x * friction);
@@ -59,7 +59,6 @@ namespace game_framework {
 
 		// y-axis
 		// h = 1/2gt
-
 		if (refBrick != nullptr) {
 			if (refBrick->Angle() == 0) {
 				if (this->Buttom() == refBrick->Top())
@@ -116,9 +115,10 @@ namespace game_framework {
 
 		vector<Brick*> tmpb;
 		for (int b = 0; b < bs; b++) {
+			if (bricks.at(b)->Property() != OBSTACLE) continue;
+
 			if (this->Right() > bricks.at(b)->Left() &&
-				this->Left() < bricks.at(b)->Right() && 
-				bricks.at(b)->Property() == OBSTACLE) {
+				this->Left() < bricks.at(b)->Right()) {
 				if (this->Top() <= bricks.at(b)->Buttom())
 					tmpb.push_back(bricks.at(b));
 			}
@@ -208,6 +208,11 @@ namespace game_framework {
 		jumping.AddBitmap(ACTOR_1_ROLL_4);
 		jumping.SetDelayCount(3);
 		jumping.SetTopLeft(pos.x, pos.y);
+
+		acceleration = 250;
+		maxSpeed = 700;
+		jumpStrength = 400;
+
 	}
 
 	void Sonic::OnMove(vector<Brick*> b) {
@@ -295,6 +300,12 @@ namespace game_framework {
 		jumping.AddBitmap(ACTOR_2_ROLL_4);
 		jumping.SetDelayCount(3);
 		jumping.SetTopLeft(pos.x, pos.y);
+
+
+		acceleration = 200;
+		maxSpeed = 600;
+		jumpStrength = 360;
+
 	}
 	
 	void Miles::OnMove(vector<Brick*> b) {
@@ -381,6 +392,10 @@ namespace game_framework {
 		jumping.AddBitmap(ACTOR_3_ROLL_4);
 		jumping.SetDelayCount(3);
 		jumping.SetTopLeft(pos.x, pos.y);
+
+		acceleration = 200;
+		maxSpeed = 600;
+		jumpStrength = 360;
 	
 	}
 

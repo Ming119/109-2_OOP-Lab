@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文 (繁體，台灣) resources
+// Chinese (Traditional, Taiwan) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -342,12 +342,12 @@ GUO_RED_RING            BITMAP                  "..\\RES\\gui\\RINGS1.bmp"
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // 中文 (繁體，台灣) resources
+#endif    // Chinese (Traditional, Taiwan) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英文 (美國) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -633,12 +633,12 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // 英文 (美國) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英文 (英國) resources
+// English (United Kingdom) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
@@ -941,8 +941,6 @@ OCEAN_72_6              BITMAP                  "..\\RES\\ocean\\ocean_road6_1.b
 
 IDB_BITMAP99            BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_1.bmp"
 
-OCEAN_TURN_AROUND_LEFT_1_1 BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_1_1.bmp"
-
 OCEAN_22                BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_1_2.bmp"
 
 OCEAN_16                BITMAP                  "..\\RES\\ocean\\ocean_turn_around_left_2.bmp"
@@ -1223,6 +1221,146 @@ ITEM_YELLOW_RING_DEAD_3 BITMAP                  "..\\RES\\items\\items_coin11.bm
 
 ITEM_YELLOW_RING_DEAD_4 BITMAP                  "..\\RES\\items\\items_coin12.bmp"
 
+IDB_BITMAP105           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean_background_1.bmp"
+
+IDB_BITMAP107           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean_background_2.bmp"
+
+IDB_BITMAP109           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean_background_3.bmp"
+
+IDB_BITMAP112           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean_background_bottom.bmp"
+
+IDB_BITMAP113           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean_background_top.bmp"
+
+OCEAN2_0                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_1.bmp"
+
+OCEAN2_2                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_2.bmp"
+
+OCEAN2_3                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_3.bmp"
+
+OCEAN2_4                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_4.bmp"
+
+OCEAN2_5                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_5.bmp"
+
+OCEAN2_6                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_6.bmp"
+
+OCEAN2_8                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_8.bmp"
+
+OCEAN2_9                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_9.bmp"
+
+OCEAN2_12               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_10.bmp"
+
+OCEAN2_11               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_11.bmp"
+
+OCEAN2_13               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_12.bmp"
+
+OCEAN2_14               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_13.bmp"
+
+OCEAN2_15               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_14.bmp"
+
+OCEAN2_1                BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_15.bmp"
+
+OCEAN2_16               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_16.bmp"
+
+OCEAN2_17               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_17.bmp"
+
+OCEAN2_18               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_18.bmp"
+
+OCEAN2_19               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_19.bmp"
+
+OCEAN2_21               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_21.bmp"
+
+OCEAN2_22               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_22.bmp"
+
+OCEAN2_23               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_23.bmp"
+
+OCEAN2_24               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_24.bmp"
+
+OCEAN2_25               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_25.bmp"
+
+OCEAN2_26               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_26.bmp"
+
+OCEAN2_27               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_27.bmp"
+
+OCEAN2_28               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_28.bmp"
+
+OCEAN2_29               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_29.bmp"
+
+OCEAN2_30               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_30.bmp"
+
+OCEAN2_31               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_31.bmp"
+
+OCEAN2_32               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_32.bmp"
+
+OCEAN2_33               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_33.bmp"
+
+OCEAN2_34               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_34.bmp"
+
+OCEAN2_35               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_35.bmp"
+
+OCEAN2_36               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_36.bmp"
+
+OCEAN2_37               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_37.bmp"
+
+OCEAN2_38               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_38.bmp"
+
+OCEAN2_39               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_39.bmp"
+
+OCEAN2_40               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_40.bmp"
+
+OCEAN2_41               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_41.bmp"
+
+OCEAN2_42               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_42.bmp"
+
+OCEAN2_43               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_43.bmp"
+
+OCEAN2_44               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_44.bmp"
+
+OCEAN2_45               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_45.bmp"
+
+OCEAN2_46               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_46.bmp"
+
+OCEAN2_47               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_47.bmp"
+
+OCEAN2_48               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_48.bmp"
+
+OCEAN2_49               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_49.bmp"
+
+OCEAN2_50               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_50.bmp"
+
+OCEAN2_51               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_51.bmp"
+
+OCEAN2_52               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_52.bmp"
+
+OCEAN2_53               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_53.bmp"
+
+OCEAN2_55               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_54.bmp"
+
+OCEAN2_56               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_56.bmp"
+
+OCEAN2_57               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_57.bmp"
+
+OCEAN2_58               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_58.bmp"
+
+OCEAN2_59               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_59.bmp"
+
+OCEAN2_60               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_60.bmp"
+
+OCEAN2_63               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_63.bmp"
+
+OCEAN2_64               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_64.bmp"
+
+OCEAN2_65               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_65.bmp"
+
+OCEAN2_66               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_66.bmp"
+
+OCEAN2_67               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_67.bmp"
+
+OCEAN2_68               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_68.bmp"
+
+OCEAN2_69               BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_69.bmp"
+
+IDB_BITMAP283           BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean2\\ocean2_background_ferry.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1233,7 +1371,7 @@ ITEM_YELLOW_RING_DEAD_4 BITMAP                  "..\\RES\\items\\items_coin12.bm
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "..\\RES\\icon.ico"
 
-#endif    // 英文 (英國) resources
+#endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

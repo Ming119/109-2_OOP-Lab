@@ -1740,5 +1740,230 @@
     <Image Include="RES\gui\RINGS1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\ocean2\ocean_background_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean_background_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean_background_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean_background_bottom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean_background_top.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_20.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_21.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_22.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_23.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_24.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_25.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_26.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_27.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_28.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_29.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_30.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_31.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_32.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_33.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_34.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_35.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_36.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_37.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_38.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_39.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_40.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_41.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_42.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_43.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_44.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_45.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_46.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_47.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_48.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_49.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_50.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_51.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_52.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_53.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_54.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_55.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_56.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_57.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_58.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_59.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_60.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_61.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_62.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_63.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_64.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_65.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_66.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_67.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_68.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_69.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_background_ferry.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

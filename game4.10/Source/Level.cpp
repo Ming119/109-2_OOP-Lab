@@ -240,7 +240,6 @@ namespace game_framework {
 						enemies.push_back(new Chef(x, y));
 						break;
 					}
-					default: break;
 				}
 			break;
 

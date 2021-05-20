@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ 產生的 Include 檔案。
-// 由 game.rc 使用
+// Microsoft Visual C++ generated include file.
+// Used by game.rc
 //
 #define IDD_ABOUTBOX                    100
 #define IDP_SOCKETS_INIT_FAILED         104
@@ -227,7 +227,6 @@
 #define OCEAN_ROAD_6                    312
 #define IDB_BITMAP98                    313
 #define IDB_BITMAP99                    314
-#define OCEAN_TURN_AROUND_LEFT_1_1      315
 #define IDB_BITMAP101                   316
 #define IDB_BITMAP102                   317
 #define IDB_BITMAP103                   318
@@ -629,6 +628,77 @@
 #define GUI_RED_RING                    735
 #define IDB_BITMAP104                   736
 #define GUO_RED_RING                    736
+#define IDB_BITMAP105                   737
+#define IDB_BITMAP107                   738
+#define IDB_BITMAP109                   739
+#define IDB_BITMAP112                   740
+#define IDB_BITMAP113                   741
+#define OCEAN2_0                        742
+#define OCEAN2_2                        743
+#define OCEAN2_3                        744
+#define OCEAN2_4                        745
+#define OCEAN2_5                        746
+#define OCEAN2_                         747
+#define OCEAN2_6                        747
+#define OCEAN2_8                        749
+#define OCEAN2_9                        750
+#define OCEAN2_12                       751
+#define OCEAN2_11                       752
+#define OCEAN2_13                       753
+#define OCEAN2_14                       754
+#define OCEAN2_15                       755
+#define OCEAN2_1                        756
+#define OCEAN2_16                       757
+#define OCEAN2_17                       758
+#define OCEAN2_18                       759
+#define OCEAN2_19                       760
+#define OCEAN2_21                       762
+#define OCEAN2_22                       763
+#define OCEAN2_23                       764
+#define OCEAN2_24                       765
+#define OCEAN2_25                       766
+#define OCEAN2_26                       767
+#define OCEAN2_27                       768
+#define OCEAN2_28                       769
+#define OCEAN2_29                       770
+#define OCEAN2_30                       771
+#define OCEAN2_31                       772
+#define OCEAN2_32                       773
+#define OCEAN2_33                       774
+#define OCEAN2_34                       775
+#define OCEAN2_35                       776
+#define OCEAN2_36                       777
+#define OCEAN2_37                       778
+#define OCEAN2_38                       779
+#define OCEAN2_39                       780
+#define OCEAN2_40                       781
+#define OCEAN2_41                       782
+#define OCEAN2_42                       783
+#define OCEAN2_43                       784
+#define OCEAN2_44                       785
+#define OCEAN2_45                       786
+#define OCEAN2_46                       787
+#define OCEAN2_47                       788
+#define OCEAN2_48                       789
+#define OCEAN2_49                       790
+#define OCEAN2_50                       791
+#define OCEAN2_51                       792
+#define OCEAN2_52                       793
+#define OCEAN2_53                       794
+#define OCEAN2_55                       795
+#define OCEAN2_56                       797
+#define OCEAN2_57                       798
+#define OCEAN2_58                       799
+#define OCEAN2_59                       800
+#define OCEAN2_60                       801
+#define OCEAN2_63                       804
+#define OCEAN2_64                       805
+#define OCEAN2_65                       806
+#define OCEAN2_66                       807
+#define OCEAN2_67                       808
+#define OCEAN2_68                       809
+#define OCEAN2_69                       810
+#define IDB_BITMAP283                   811
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -641,7 +711,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        737
+#define _APS_NEXT_RESOURCE_VALUE        814
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
