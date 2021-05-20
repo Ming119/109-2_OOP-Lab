@@ -13,8 +13,7 @@ namespace game_framework {
 	class Actor {
 	protected:
 		const int maxVelocity = 40;	// only on x-axis
-		const int maxAcceleration = 4;	// only on x-axis
-
+		const int acceleration = 4;
 		const int   gravity = 10;
 		const float friction = 0.8f;
 
@@ -22,7 +21,7 @@ namespace game_framework {
 
 		POINT velocity;
 		POINT delta;
-		int acceleration;
+		
 		int maxSpeed;
 
 		Brick* refBrick;
