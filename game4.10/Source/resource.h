@@ -708,8 +708,15 @@
 #define OCEAN2_62_2                     820
 #define OCEAN2_62_3                     821
 #define OCEAN2_62_4                     822
-#define IDB_BITMAP222                   823
 #define OCEAN2_62_5                     823
+#define OCEAN2_7_1                      829
+#define OCEAN2_7_2                      831
+#define OCEAN2_7_3                      832
+#define IDB_BITMAP201                   833
+#define OCEAN2_7_4                      833
+#define IDB_BITMAP219                   834
+#define OCEAN2_7_5                      835
+#define OCEAN2_7_6                      836
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -722,7 +729,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        824
+#define _APS_NEXT_RESOURCE_VALUE        837
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

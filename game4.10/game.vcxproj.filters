@@ -1989,5 +1989,23 @@
     <Image Include="RES\ocean2\ocean2_62_5.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\ocean2\ocean2_7_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_7_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_7_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_7_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_7_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_7_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

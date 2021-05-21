@@ -334,25 +334,37 @@ GUI_TIME                BITMAP                  "..\\RES\\gui\\TIME1.bmp"
 
 GUO_RED_RING            BITMAP                  "..\\RES\\gui\\RINGS1.bmp"
 
-OCEAN2_54               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ocean2\\ocean2_54.bmp"
+OCEAN2_54               BITMAP                  "..\\RES\\ocean2\\ocean2_54.bmp"
 
-OCEAN2_20               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ocean2\\ocean2_20.bmp"
+OCEAN2_20               BITMAP                  "..\\RES\\ocean2\\ocean2_20.bmp"
 
-OCEAN2_61_2             BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ocean2\\ocean2_61_2.bmp"
+OCEAN2_61_2             BITMAP                  "..\\RES\\ocean2\\ocean2_61_2.bmp"
 
-OCEAN2_61_1             BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ocean2\\ocean2_61_1.bmp"
+OCEAN2_61_1             BITMAP                  "..\\RES\\ocean2\\ocean2_61_1.bmp"
 
-OCEAN2_61_3             BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ocean2\\ocean2_61_3.bmp"
+OCEAN2_61_3             BITMAP                  "..\\RES\\ocean2\\ocean2_61_3.bmp"
 
-OCEAN2_62_1             BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ocean2\\ocean2_62_1.bmp"
+OCEAN2_62_1             BITMAP                  "..\\RES\\ocean2\\ocean2_62_1.bmp"
 
-OCEAN2_62_2             BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ocean2\\ocean2_62_2.bmp"
+OCEAN2_62_2             BITMAP                  "..\\RES\\ocean2\\ocean2_62_2.bmp"
 
-OCEAN2_62_3             BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ocean2\\ocean2_62_3.bmp"
+OCEAN2_62_3             BITMAP                  "..\\RES\\ocean2\\ocean2_62_3.bmp"
 
-OCEAN2_62_4             BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ocean2\\ocean2_62_4.bmp"
+OCEAN2_62_4             BITMAP                  "..\\RES\\ocean2\\ocean2_62_4.bmp"
 
-OCEAN2_62_5             BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ocean2\\ocean2_62_5.bmp"
+OCEAN2_62_5             BITMAP                  "..\\RES\\ocean2\\ocean2_62_5.bmp"
+
+OCEAN2_7_1              BITMAP                  "..\\RES\\ocean2\\ocean2_7_1.bmp"
+
+OCEAN2_7_2              BITMAP                  "..\\RES\\ocean2\\ocean2_7_2.bmp"
+
+OCEAN2_7_3              BITMAP                  "..\\RES\\ocean2\\ocean2_7_3.bmp"
+
+OCEAN2_7_4              BITMAP                  "..\\RES\\ocean2\\ocean2_7_4.bmp"
+
+OCEAN2_7_5              BITMAP                  "..\\RES\\ocean2\\ocean2_7_5.bmp"
+
+OCEAN2_7_6              BITMAP                  "..\\RES\\ocean2\\ocean2_7_6.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
