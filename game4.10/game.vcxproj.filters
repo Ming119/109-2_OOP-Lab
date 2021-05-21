@@ -1965,5 +1965,29 @@
     <Image Include="RES\ocean2\ocean2_background_ferry.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\ocean2\ocean2_61_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_61_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_61_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_62_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_62_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_62_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_62_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ocean2\ocean2_62_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

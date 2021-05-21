@@ -557,38 +557,38 @@ void CGameStateRun::OnMove() {
 		int index = int((level->getCountRing() % x) / y);
 		TRACE("index = %d\n",index);
 		switch (index) {
-		case 0:
-			count_Rings[i].LoadBitmapA(INTEGER_WHITE_0);
-			break;
-		case 1:
-			count_Rings[i].LoadBitmapA(INTEGER_WHITE_1);
-			break;
-		case 2:
-			count_Rings[i].LoadBitmapA(INTEGER_WHITE_2);
-			break;
-		case 3:
-			count_Rings[i].LoadBitmapA(INTEGER_WHITE_3);
-			break;
-		case 4:
-			count_Rings[i].LoadBitmapA(INTEGER_WHITE_4);
-			break;
-		case 5:
-			count_Rings[i].LoadBitmapA(INTEGER_WHITE_5);
-			break;
-		case 6:
-			count_Rings[i].LoadBitmapA(INTEGER_WHITE_6);
-			break;
-		case 7:
-			count_Rings[i].LoadBitmapA(INTEGER_WHITE_7);
-			break;
-		case 8:
-			count_Rings[i].LoadBitmapA(INTEGER_WHITE_8);
-			break;
-		case 9:
-			count_Rings[i].LoadBitmapA(INTEGER_WHITE_9);
-			break;
-		default:
-			break;
+			case 0:
+				count_Rings[i].LoadBitmapA(INTEGER_WHITE_0);
+				break;
+			case 1:
+				count_Rings[i].LoadBitmapA(INTEGER_WHITE_1);
+				break;
+			case 2:
+				count_Rings[i].LoadBitmapA(INTEGER_WHITE_2);
+				break;
+			case 3:
+				count_Rings[i].LoadBitmapA(INTEGER_WHITE_3);
+				break;
+			case 4:
+				count_Rings[i].LoadBitmapA(INTEGER_WHITE_4);
+				break;
+			case 5:
+				count_Rings[i].LoadBitmapA(INTEGER_WHITE_5);
+				break;
+			case 6:
+				count_Rings[i].LoadBitmapA(INTEGER_WHITE_6);
+				break;
+			case 7:
+				count_Rings[i].LoadBitmapA(INTEGER_WHITE_7);
+				break;
+			case 8:
+				count_Rings[i].LoadBitmapA(INTEGER_WHITE_8);
+				break;
+			case 9:
+				count_Rings[i].LoadBitmapA(INTEGER_WHITE_9);
+				break;
+			default:
+				break;
 		}
 	}
 	level->SetMoving(level->CurrentActor()->getDelta());

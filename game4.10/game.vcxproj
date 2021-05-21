@@ -691,7 +691,15 @@
     <Image Include="RES\ocean2\ocean2_6.bmp" />
     <Image Include="RES\ocean2\ocean2_60.bmp" />
     <Image Include="RES\ocean2\ocean2_61.bmp" />
+    <Image Include="RES\ocean2\ocean2_61_1.bmp" />
+    <Image Include="RES\ocean2\ocean2_61_2.bmp" />
+    <Image Include="RES\ocean2\ocean2_61_3.bmp" />
     <Image Include="RES\ocean2\ocean2_62.bmp" />
+    <Image Include="RES\ocean2\ocean2_62_1.bmp" />
+    <Image Include="RES\ocean2\ocean2_62_2.bmp" />
+    <Image Include="RES\ocean2\ocean2_62_3.bmp" />
+    <Image Include="RES\ocean2\ocean2_62_4.bmp" />
+    <Image Include="RES\ocean2\ocean2_62_5.bmp" />
     <Image Include="RES\ocean2\ocean2_63.bmp" />
     <Image Include="RES\ocean2\ocean2_64.bmp" />
     <Image Include="RES\ocean2\ocean2_65.bmp" />
