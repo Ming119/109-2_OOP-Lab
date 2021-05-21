@@ -11,7 +11,6 @@
 
 namespace game_framework {
 	Actor::Actor() {
-		angle = acceleration = 0;
 		velocity = delta= POINT();
 		jumpStrength = 0;
 
@@ -29,29 +28,23 @@ namespace game_framework {
 	Actor::~Actor() { }
 
 	POINT Actor::Moving(vector<Brick*> b) {
-		// checkLevingRefBrick();
-		LookingForRefBrick(b);
-		//TRACE("RefBrick:\n\tID: %d\n\tAngle: %d\n\tProperty: %d\n", refBrick->ID(), refBrick->Angle(), refBrick->Property());
-		
+		POINT dt = POINT();
+		double theta = 0;
 
+		LookingForRefBrick(b);
+		TRACE("ref %d\n", refBrick->Angle());
 
 		// x-axis
 		// dx = v_0 dt + 1/2 a dt^(2)
-
 		if (isMovingLeft) {
 			moving.OnMove();
-			if (abs(acceleration) < maxAcceleration) acceleration--;
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration/2;
+			if (abs(velocity.x) < maxVelocity) velocity.x -= acceleration;
 
 		} else if (isMovingRight) {
 			moving.OnMove();
-			if (abs(acceleration) < maxAcceleration) acceleration++;
-			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration/2;
+			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration;
 
 		} else {
-			if (abs(acceleration) > 0 && acceleration > 0) acceleration--;
-			else if (abs(acceleration) > 0 && acceleration < 0) acceleration++;
-
 			// Friction Drug: F_d = 1/2 pv^(2) C_d A
 			velocity.x = (long)(velocity.x * friction);
 		}
@@ -68,13 +61,12 @@ namespace game_framework {
 				else 
 					velocity.y += gravity/2;	
 			} else {
-				long r = velocity.x;
-				double theta = (double)refBrick->Angle() * M_PI / 180;
+				
+				theta = (double)refBrick->Angle() * M_PI / 180;
 				
 				TRACE("\n\ttheta: %d\n\trad: %f\n\tsin: %f\n\tcos: %f\n\ttan: %f\n", refBrick->Angle(), theta, std::sin(theta), std::cos(theta), std::tan(theta));
 
-				velocity.x = (long)(r * std::cos(theta));
-				velocity.y = -(long)(r * std::sin(theta));
+				
 
 				///*
 				//	!!! BUG here !!!
@@ -104,7 +96,10 @@ namespace game_framework {
 
 
 		if (velocity.x != 0) moving.OnMove();
-		return velocity;
+
+		dt.x = (long)(velocity.x * std::cos(theta) + velocity.y * std::sin(theta));
+		dt.y = (long)(velocity.y * std::cos(theta) - velocity.x * std::sin(theta));
+		return dt;
 	}
 
 	bool comparetor(Brick b1, Brick b2) { return (b1.Top() < b2.Top()); }
@@ -115,10 +110,9 @@ namespace game_framework {
 
 		vector<Brick*> tmpb;
 		for (int b = 0; b < bs; b++) {
-			if (bricks.at(b)->Property() != OBSTACLE) continue;
-
 			if (this->Right() > bricks.at(b)->Left() &&
-				this->Left() < bricks.at(b)->Right()) {
+				this->Left() < bricks.at(b)->Right() && 
+				bricks.at(b)->Property() == OBSTACLE) {
 				if (this->Top() <= bricks.at(b)->Buttom())
 					tmpb.push_back(bricks.at(b));
 			}
@@ -209,7 +203,7 @@ namespace game_framework {
 		jumping.SetDelayCount(3);
 		jumping.SetTopLeft(pos.x, pos.y);
 
-		acceleration = 250;
+		//acceleration = 250;
 		maxSpeed = 700;
 		jumpStrength = 400;
 
@@ -302,7 +296,7 @@ namespace game_framework {
 		jumping.SetTopLeft(pos.x, pos.y);
 
 
-		acceleration = 200;
+		//acceleration = 200;
 		maxSpeed = 600;
 		jumpStrength = 360;
 
@@ -393,7 +387,7 @@ namespace game_framework {
 		jumping.SetDelayCount(3);
 		jumping.SetTopLeft(pos.x, pos.y);
 
-		acceleration = 200;
+		//acceleration = 200;
 		maxSpeed = 600;
 		jumpStrength = 360;
 	
