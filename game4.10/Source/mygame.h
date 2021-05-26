@@ -148,10 +148,11 @@ namespace game_framework {
 		vector<string> option;
 		vector<string> bin_select;
 		vector<string> tri_select;
-			
-		// Test
-		CInteger test_int = CInteger(2);
-		// CInteger test_int2 = CInteger(3);
+		
+		// stages
+		vector<string> stages;
+		bool onStageSelect;
+		int stageSelect;
 	};
 
 
@@ -171,6 +172,8 @@ namespace game_framework {
 		void OnKeyDown(UINT, UINT, UINT);
 		void OnKeyUp(UINT, UINT, UINT);
 
+		void SetLevel(int);
+
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
@@ -179,7 +182,7 @@ namespace game_framework {
 		CString stringHandler;
 		CMovingBitmap Score;
 		CMovingBitmap Time;
-		CMovingBitmap Rings, count_Rings[3];
+		CMovingBitmap Rings;
 		CInteger count;
 
 		Level *level;
@@ -208,5 +211,9 @@ namespace game_framework {
 	private:
 		int counter;			// 倒數之計數器
 	};
+	
+
+	
+	
 
 }

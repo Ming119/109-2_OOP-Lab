@@ -162,8 +162,6 @@ namespace game_framework {
 	void Fly::OnMove() {
 		CameraMove();
 
-	
-
 		SetTopLeft(pos);
 		texture.OnMove();
 	}

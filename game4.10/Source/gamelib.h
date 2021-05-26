@@ -175,37 +175,6 @@ private:
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 這個class提供顯示XX圖形的能力
-// 每個Public Interface的用法都要懂，Implementation可以不懂
-/////////////////////////////////////////////////////////////////////////////
-/*
-class MultiLayerBitmap {
-public:
-	MultiLayerBitmap(const int col=1, const int);
-	~MultiLayerBitmap();
-
-	int Height();					// 取得圖形的高度
-	int Width();					// 取得圖形的寬度
-	int Top();						// 取得圖形的左上角的 y 座標
-	int Left();						// 取得圖形的左上角的 x 座標
-	int	Size();
-
-	void LoadBitmap(COLORREF = DEFAULT_BG_ALPHA);		// 載入圖，指定圖的編號(resource)及透明色
-	void SetTopLeft(int, int);			// 將圖的左上角座標移至 (x,y)
-	void ShowBitmap(double factor = DEFAULT_SCALE);	// 將圖貼到螢幕 factor < 1時縮小，>1時放大。注意：需要VGA卡硬體的支援，否則會很慢
-
-
-private:
-	CMovingBitmap** layer;
-
-	const int row, col;
-	int x, y
-
-};
-*/
-
-
-/////////////////////////////////////////////////////////////////////////////
 // 這個class提供時間、錯誤等控制
 // 一般的遊戲並不需直接操作這個物件，因此可以不管這個class的使用方法
 /////////////////////////////////////////////////////////////////////////////
@@ -278,7 +247,16 @@ private:
 	static int					size_x, size_y;
 };
 
+class S {
+public:
+	S();
 
+	void SetLevel(int);
+	int GetLevel();
+
+private:
+	int level;
+};
 
 /////////////////////////////////////////////////////////////////////////////
 // 宣告尚未定義的class
@@ -288,7 +266,6 @@ class CGame;
 class CGameStateInit;
 class CGameStateRun;
 class CGameStateOver;
-
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -323,6 +300,7 @@ protected:
 	//
 	virtual void OnMove() {}								// 移動這個狀態的遊戲元素
 	virtual void OnShow() = 0;								// 顯示這個狀態的遊戲畫面
+
 	CGame *game;
 };
 
@@ -355,12 +333,19 @@ public:
 	void OnSetFocus();								// 處理Focus
 	void OnSuspend();								// 處理「待命」的動作
 	void SetGameState(int);
+
+	void SetLevel(int);
+	int GetLevel();
+
 	static CGame *Instance();
+	CGameState& GameStateTable(int);
+
 
 private:
 	bool			running;			// 遊戲是否正在進行中(未被Pause)
 	bool            suspended;			// 遊戲是否被suspended
 	const int		NUM_GAME_STATES;	// 遊戲的狀態數(3個狀態)
+	int				level;
 	CGameState		*gameState;			// pointer指向目前的遊戲狀態
 	CGameState		*gameStateTable[3];	// 遊戲狀態物件的pointer
 	static CGame	instance;			// 遊戲唯一的instance

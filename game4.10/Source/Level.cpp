@@ -689,19 +689,8 @@ namespace game_framework {
 		}
 
 	}
-	int Level::getCountRing() {
-		return count_ring;
-	}
-	void Level::OnMove() {
-		// Actor
-		/*actor1.OnMove();
-		actor2.OnMove();
-		actor3.OnMove();*/
 		
-		if (CurrentActor()->IsJumping()) {
-			
-		}
-
+	void Level::OnMove() {		
 		// Background
 		background.SetTopLeft(0, 0);
 
@@ -729,8 +718,21 @@ namespace game_framework {
 
 		// Enemy
 		for (int i = 0; i < es; i++) {
-			enemies.at(i)->OnMove();
+			try {
+				enemies.at(i)->OnMove();
+			}
+			catch (exception e) {
+				TRACE("%s\n", e);
+			}
 		}
+
+	// 阿現在的BUG是
+	// 上面那個for
+	// 第二關的enemies跑到3就不行了
+	// 變成nullptr
+
+
+		// Actor
 
 		CurrentActor()->OnMove(bricks);
 	}
@@ -791,4 +793,7 @@ namespace game_framework {
 		}
 	}
 
+	int Level::getCountRing() {
+		return count_ring;
+	}
 }
