@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by game.rc
+// Microsoft Visual C++ 產生的 Include 檔案。
+// 由 game.rc 使用
 //
 #define IDD_ABOUTBOX                    100
 #define IDP_SOCKETS_INIT_FAILED         104
@@ -699,6 +699,24 @@
 #define OCEAN2_68                       809
 #define OCEAN2_69                       810
 #define IDB_BITMAP283                   811
+#define OCEAN2_54                       814
+#define OCEAN2_20                       815
+#define OCEAN2_61_2                     816
+#define OCEAN2_61_1                     817
+#define OCEAN2_61_3                     818
+#define OCEAN2_62_1                     819
+#define OCEAN2_62_2                     820
+#define OCEAN2_62_3                     821
+#define OCEAN2_62_4                     822
+#define OCEAN2_62_5                     823
+#define OCEAN2_7_1                      829
+#define OCEAN2_7_2                      831
+#define OCEAN2_7_3                      832
+#define IDB_BITMAP201                   833
+#define OCEAN2_7_4                      833
+#define IDB_BITMAP219                   834
+#define OCEAN2_7_5                      835
+#define OCEAN2_7_6                      836
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -711,7 +729,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        814
+#define _APS_NEXT_RESOURCE_VALUE        837
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

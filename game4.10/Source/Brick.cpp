@@ -676,12 +676,12 @@ namespace game_framework {
 				break;
 
 			case 7:
-				/*texture.AddBitmap(OCEAN2_7_1);
+				texture.AddBitmap(OCEAN2_7_1);
 				texture.AddBitmap(OCEAN2_7_2);
 				texture.AddBitmap(OCEAN2_7_3);
 				texture.AddBitmap(OCEAN2_7_4);
 				texture.AddBitmap(OCEAN2_7_5);
-				texture.AddBitmap(OCEAN2_7_6);*/
+				texture.AddBitmap(OCEAN2_7_6);
 				texture.SetDelayCount(3);
 
 				SetProperty(OBSTACLE);
@@ -775,7 +775,7 @@ namespace game_framework {
 				break;
 
 			case 20:
-				//texture.AddBitmap(OCEAN2_20);
+				texture.AddBitmap(OCEAN2_20);
 				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
@@ -1022,7 +1022,7 @@ namespace game_framework {
 				break;
 
 			case 54:
-				//texture.AddBitmap(OCEAN2_54);
+				texture.AddBitmap(OCEAN2_54);
 				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
@@ -1071,20 +1071,20 @@ namespace game_framework {
 				break;
 
 			case 61:
-				/*texture.AddBitmap(OCEAN2_61_1);
+				texture.AddBitmap(OCEAN2_61_1);
 				texture.AddBitmap(OCEAN2_61_2);
-				texture.AddBitmap(OCEAN2_61_3);*/
+				texture.AddBitmap(OCEAN2_61_3);
 				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 62:
-				/*texture.AddBitmap(OCEAN2_62_1);
+				texture.AddBitmap(OCEAN2_62_1);
 				texture.AddBitmap(OCEAN2_62_2);
 				texture.AddBitmap(OCEAN2_62_3);
 				texture.AddBitmap(OCEAN2_62_4);
-				texture.AddBitmap(OCEAN2_62_5);*/
+				texture.AddBitmap(OCEAN2_62_5);
 				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
