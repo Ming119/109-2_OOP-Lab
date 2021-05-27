@@ -692,6 +692,8 @@ namespace game_framework {
 	int Level::getCountRing() {
 		return count_ring;
 	}
+
+
 	void Level::OnMove() {
 		// Actor
 		/*actor1.OnMove();
@@ -721,6 +723,7 @@ namespace game_framework {
 				items.erase(items.begin()+i);
 				is--; i--;
 				count_ring++;
+				
 				//TRACE("ring = %d\n", count_ring);
 			}
 
