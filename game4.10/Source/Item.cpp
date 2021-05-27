@@ -1124,41 +1124,27 @@ namespace game_framework {
 
 	void GATE_YELLOW::OnInit() {
 		texture.AddBitmap(ITEMS_GATE_YELLOW);
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEMS_GATE_YELLOW);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
 	}
 
 	void GATE_YELLOW::OnMove() {
 		CameraMove();
-
 		setTopLeft(pos);
-		texture.OnMove();
-
-
 	}
 
 	void GATE_YELLOW::OnShow(int scale) {
-
 		texture.OnShow(scale);
-
 	}
 
 	// SEND
-
 	SEND::SEND(int x, int y) : Item::Item(x, y) {}
 
 	SEND::~SEND() {}
 
 	void SEND::OnInit() {
 		texture.AddBitmap(ITEM_SEND_1);
+		texture.AddBitmap(ITEM_SEND_2);
 		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEM_SEND_2);
-		deadAnimate.SetDelayCount(3);
 
 		setTopLeft(pos);
 	}
@@ -1169,17 +1155,14 @@ namespace game_framework {
 		setTopLeft(pos);
 		texture.OnMove();
 
-
 	}
 
 	void SEND::OnShow(int scale) {
-
 		texture.OnShow(scale);
-		
 	}
 
+	/*
 	// SEND_BUTTON
-
 	SEND_BUTTON::SEND_BUTTON(int x, int y) : Item::Item(x, y) {}
 
 	SEND_BUTTON::~SEND_BUTTON() {}
@@ -1200,14 +1183,12 @@ namespace game_framework {
 		setTopLeft(pos);
 		texture.OnMove();
 
-
 	}
 
 	void SEND_BUTTON::OnShow(int scale) {
-
 		texture.OnShow(scale);
-
 	}
+	*/
 
 	// LOOP_LEFT
 	LOOP_LEFT::LOOP_LEFT(int x, int y) : Item::Item(x, y) {}
@@ -1216,88 +1197,36 @@ namespace game_framework {
 
 	void LOOP_LEFT::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_LEFT);
-
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEMS_LOOP_LEFT);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
-
 	}
 
 	void LOOP_LEFT::OnMove() {
 		CameraMove();
 
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				CAudio::Instance()->Play(AUDIO_RING, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
-
 	}
 
 	void LOOP_LEFT::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
-			texture.OnShow(scale);
-		}
+
 	}
 	
-	// LOOR_RING
-	LOOR_RING::LOOR_RING(int x, int y) : Item::Item(x, y) {}
+	// LOOP_RIGHT
+	LOOP_RIGHT::LOOP_RIGHT(int x, int y) : Item::Item(x, y) {}
 
-	LOOR_RING::~LOOR_RING() {}
+	LOOP_RIGHT::~LOOP_RIGHT() {}
 
-	void LOOR_RING::OnInit() {
+	void LOOP_RIGHT::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_RING);
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEMS_LOOP_RING);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
 
 	}
 
-	void LOOR_RING::OnMove() {
+	void LOOP_RIGHT::OnMove() {
 		CameraMove();
 
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				CAudio::Instance()->Play(AUDIO_RING, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
-
 	}
 
-	void LOOR_RING::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
-			texture.OnShow(scale);
-		}
+	void LOOP_RIGHT::OnShow(int scale) {
+
 	}
 	
 	// LOOP_TOP
@@ -1307,43 +1236,16 @@ namespace game_framework {
 
 	void LOOP_TOP::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_TOP);
-		
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEMS_LOOP_TOP);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
 
 	}
 
 	void LOOP_TOP::OnMove() {
 		CameraMove();
-
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				CAudio::Instance()->Play(AUDIO_RING, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
-
 	}
 
 	void LOOP_TOP::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
-			texture.OnShow(scale);
-		}
+		texture.OnShow(scale);
 	}
 
 	// LOOP_TOP_HIED
@@ -1353,42 +1255,16 @@ namespace game_framework {
 
 	void LOOP_TOP_HIED::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_TOP_HIED);
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEMS_LOOP_TOP_HIED);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
 
 	}
 
 	void LOOP_TOP_HIED::OnMove() {
 		CameraMove();
-
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				CAudio::Instance()->Play(AUDIO_RING, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
-
 	}
 
 	void LOOP_TOP_HIED::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
-			texture.OnShow(scale);
-		}
+		texture.OnShow(scale);
 	}
 
 	// LOOP_OFF
@@ -1398,43 +1274,16 @@ namespace game_framework {
 
 	void LOOP_OFF::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_OFF);
-		
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEMS_LOOP_OFF);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
 
 	}
 
 	void LOOP_OFF::OnMove() {
 		CameraMove();
-
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				CAudio::Instance()->Play(AUDIO_RING, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
-
 	}
 
 	void LOOP_OFF::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
-			texture.OnShow(scale);
-		}
+		texture.OnShow(scale);
 	}
 	
 	// LOOP_TOP_NOT_U_D
@@ -1444,42 +1293,16 @@ namespace game_framework {
 
 	void LOOP_TOP_NOT_U_D::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_TOP_NOT_U_D);
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEMS_LOOP_TOP_NOT_U_D);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
 
 	}
 
 	void LOOP_TOP_NOT_U_D::OnMove() {
 		CameraMove();
-
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				CAudio::Instance()->Play(AUDIO_RING, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
-
 	}
 
 	void LOOP_TOP_NOT_U_D::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
-			texture.OnShow(scale);
-		}
+		texture.OnShow(scale);
 	}
 
 	// LOOP_TOP_UP_DOWN
@@ -1489,222 +1312,119 @@ namespace game_framework {
 
 	void LOOP_TOP_UP_DOWN::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_TOP_UP_DOWN);
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEMS_LOOP_TOP_UP_DOWN);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
 
 	}
 
 	void LOOP_TOP_UP_DOWN::OnMove() {
 		CameraMove();
-
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				CAudio::Instance()->Play(AUDIO_RING, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
-
 	}
 
 	void LOOP_TOP_UP_DOWN::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
-			texture.OnShow(scale);
-		}
+		texture.OnShow(scale);
+
 	}
 
+
+
 	// SPIKES_UP
-	SPIKES_UP::SPIKES_UP(int x, int y) : Item::Item(x, y) {}
+	SPIKES_UP::SPIKES_UP(int x, int y) : Item::Item(x, y) {
+		isShow = false;
+	}
 
 	SPIKES_UP::~SPIKES_UP() {}
 
 	void SPIKES_UP::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_UP);
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEM_SPIKES_UP);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
-
 	}
 
 	void SPIKES_UP::OnMove() {
 		CameraMove();
 
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				//CAudio::Instance()->Play(AUDIO_, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
+		// Handling when to show up.
+		// Counting the time.
 
 	}
 
 	void SPIKES_UP::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
+		if (isShow)
 			texture.OnShow(scale);
-		}
 	}
 
 	// SPIKES_DOWN
-	SPIKES_DOWN::SPIKES_DOWN(int x, int y) : Item::Item(x, y) {}
+	SPIKES_DOWN::SPIKES_DOWN(int x, int y) : Item::Item(x, y) {
+		isShow = false;
+	}
 
 	SPIKES_DOWN::~SPIKES_DOWN() {}
 
 	void SPIKES_DOWN::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_DOWN);
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEM_SPIKES_DOWN);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
-
 	}
 
 	void SPIKES_DOWN::OnMove() {
 		CameraMove();
 
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				//CAudio::Instance()->Play(AUDIO_, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
+		// Handling when to show up.
+		// Counting the time.
 
 	}
 
 	void SPIKES_DOWN::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
+		if (isShow)
 			texture.OnShow(scale);
-		}
 	}
 
 	// SPIKES_LEFT
-	SPIKES_LEFT::SPIKES_LEFT(int x, int y) : Item::Item(x, y) {}
+	SPIKES_LEFT::SPIKES_LEFT(int x, int y) : Item::Item(x, y) {
+		isShow = false;
+	}
 
 	SPIKES_LEFT::~SPIKES_LEFT() {}
 
 	void SPIKES_LEFT::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_LEFT);
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEM_SPIKES_LEFT);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
-
 	}
 
 	void SPIKES_LEFT::OnMove() {
 		CameraMove();
 
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				//CAudio::Instance()->Play(AUDIO_, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
+		// Handling when to show up.
+		// Counting the time.
 
 	}
 
 	void SPIKES_LEFT::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
+		if (isShow)
 			texture.OnShow(scale);
-		}
 	}
 
-	// SPIKES_RING
-	SPIKES_RING::SPIKES_RING(int x, int y) : Item::Item(x, y) {}
+	// SPIKES_RIGHT
+	SPIKES_RIGHT::SPIKES_RIGHT(int x, int y) : Item::Item(x, y) {
+		isShow = false;
+	}
 
-	SPIKES_RING::~SPIKES_RING() {}
+	SPIKES_RIGHT::~SPIKES_RIGHT() {}
 
-	void SPIKES_RING::OnInit() {
+	void SPIKES_RIGHT::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_RING);
-		texture.SetDelayCount(3);
-
-		deadAnimate.AddBitmap(ITEM_SPIKES_RING);
-		deadAnimate.SetDelayCount(3);
-
 		setTopLeft(pos);
-
 	}
 
-	void SPIKES_RING::OnMove() {
+	void SPIKES_RIGHT::OnMove() {
 		CameraMove();
 
-		if (CollisionDetection(currnetActor)) {
-			isDead = true;
-
-		}
-
-		setTopLeft(pos);
-		if (isDead) {
-			if (deadAnimate.GetCurrentBitmapNumber() == 1) {
-				//CAudio::Instance()->Play(AUDIO_, false);
-			}
-		}
-		else {
-			texture.OnMove();
-		}
+		// Handling when to show up.
+		// Counting the time.
 
 	}
 
-	void SPIKES_RING::OnShow(int scale) {
-		if (isDead) {
-			deadAnimate.OnShow(scale);
-		}
-		else {
+	void SPIKES_RIGHT::OnShow(int scale) {
+		if (isShow)
 			texture.OnShow(scale);
-		}
 	}
 
 }

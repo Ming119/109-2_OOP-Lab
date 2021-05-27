@@ -491,6 +491,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
+	/*
 	// SEND_BUTTON
 	class SEND_BUTTON : public Item {
 	public:
@@ -501,6 +502,7 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
+	*/
 
 	// LOOP_LEFT
 	class LOOP_LEFT : public Item {
@@ -513,11 +515,11 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-	// LOOR_RING
-	class LOOR_RING : public Item {
+	// LOOP_RIGHT
+	class LOOP_RIGHT : public Item {
 	public:
-		LOOR_RING(int, int);
-		~LOOR_RING();
+		LOOP_RIGHT(int, int);
+		~LOOP_RIGHT();
 
 		void OnInit() override;
 		void OnMove() override;
@@ -579,8 +581,13 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
+
+
 	// SPIKES_UP
 	class SPIKES_UP : public Item {
+	private:
+		bool isShow;
+
 	public:
 		SPIKES_UP(int, int);
 		~SPIKES_UP();
@@ -592,6 +599,9 @@ namespace game_framework {
 
 	// SPIKES_DOWN
 	class SPIKES_DOWN : public Item {
+	private:
+		bool isShow;
+
 	public:
 		SPIKES_DOWN(int, int);
 		~SPIKES_DOWN();
@@ -603,6 +613,9 @@ namespace game_framework {
 
 	// SPIKES_LEFT
 	class SPIKES_LEFT : public Item {
+	private:
+		bool isShow;
+
 	public:
 		SPIKES_LEFT(int, int);
 		~SPIKES_LEFT();
@@ -612,11 +625,14 @@ namespace game_framework {
 		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
-	// SPIKES_RING
-	class SPIKES_RING : public Item {
+	// SPIKES_RIGHT
+	class SPIKES_RIGHT : public Item {
+	private:
+		bool isShow;
+
 	public:
-		SPIKES_RING(int, int);
-		~SPIKES_RING();
+		SPIKES_RIGHT(int, int);
+		~SPIKES_RIGHT();
 
 		void OnInit() override;
 		void OnMove() override;
