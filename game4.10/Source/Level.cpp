@@ -64,7 +64,7 @@ namespace game_framework {
 			break;
 
 		case 16:
-			items.push_back(new LOOR_RING(x, y));
+			items.push_back(new LOOP_RIGHT(x, y));
 			break;
 
 		case 17:
@@ -184,7 +184,7 @@ namespace game_framework {
 			break;
 
 		case 65:
-			items.push_back(new SPIKES_RING(x, y));
+			items.push_back(new SPIKES_RIGHT(x, y));
 			break;
 
 		default: break;
