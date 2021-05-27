@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文 (繁體，台灣) resources
+// Chinese (Traditional, Taiwan) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -67,8 +67,6 @@ IDB_BALL                BITMAP                  "..\\res\\ball.bmp"
 IDB_ERASER1             BITMAP                  "..\\res\\eraser1.bmp"
 
 IDB_CORNER              BITMAP                  "..\\res\\corner.bmp"
-
-IDB_0                   BITMAP                  "..\\res\\bmp0.bmp"
 
 IDB_1                   BITMAP                  "..\\res\\bmp1.bmp"
 
@@ -374,12 +372,12 @@ OCEAN2_7_6              BITMAP                  "..\\RES\\ocean2\\ocean2_7_6.bmp
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // 中文 (繁體，台灣) resources
+#endif    // Chinese (Traditional, Taiwan) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英文 (美國) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -665,12 +663,12 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // 英文 (美國) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英文 (英國) resources
+// English (United Kingdom) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
@@ -680,6 +678,8 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
 //
 // Bitmap
 //
+
+IDB_0                   BITMAP                  "..\\res\\bmp0.bmp"
 
 LOGO_1                  BITMAP                  "..\\RES\\logo\\logo_1.bmp"
 
@@ -1403,7 +1403,7 @@ IDB_BITMAP283           BITMAP                  "..\\RES\\ocean2\\ocean2_backgro
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "..\\RES\\icon.ico"
 
-#endif    // 英文 (英國) resources
+#endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

@@ -448,7 +448,8 @@ void CString::ShowBitmap(string s, double factor)
 	for (int i = 0; i < len; i++) {
 		if (s.at(i) == ' ') {
 			nx += (int)(factor * alphabet[0].Width());
-		} else {
+		}
+		else {
 			int alphabet_num = int(s.at(i)) - int('A');
 			if (isFocus()) {
 				alphabet_num += 26;
@@ -460,66 +461,6 @@ void CString::ShowBitmap(string s, double factor)
 		}
 	}
 }
-
-
-
-/*
-MultiLayerBitmap::MultiLayerBitmap(const int col, const int row) :
-	row(row), col(col)
-{
-	layer = new CMovingBitmap*[col];
-	for (int i = 0; i < col; i++) {
-		layer[i] = new CMovingBitmap[row];
-	}
-}
-
-MultiLayerBitmap::~MultiLayerBitmap() {
-	for (int i = 0; i < row; i++) {
-		if (layer[i] != NULL)
-			delete layer[i];
-	}	
-}
-
-int MultiLayerBitmap::Height() {
-	return layer[0][0].Height();
-}
-
-int MultiLayerBitmap::Width() {
-	return layer[0][0].Width();
-}
-
-int MultiLayerBitmap::Top() {
-	return y;
-}
-
-int MultiLayerBitmap::Left() {
-	return x;
-}
-
-int	MultiLayerBitmap::Size() {
-	return row * col;
-}
-
-void MultiLayerBitmap::LoadBitmap(COLORREF = DEFAULT_BG_ALPHA) {
-
-}
-
-void MultiLayerBitmap::SetTopLeft(int _x, int _y) {
-	x = _x;
-	y = _y;
-	
-	for (int c = 0; c < col; c++) {
-		for (int r = 0; r < row; r++) {
-			layer[c][r]
-		}
-		
-	}
-}
-
-void MultiLayerBitmap::ShowBitmap(double factor = DEFAULT_SCALE) {
-
-}
-*/
 
 
 
@@ -613,6 +554,18 @@ void CGameState::OnCycle() // Template Method
 	OnShow();
 }
 
+S::S() {
+	level = 0;
+}
+
+void CGame::SetLevel(int l) {
+	level = l;
+}
+
+int CGame::GetLevel() {
+	return level;
+}
+
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -625,7 +578,8 @@ CGame CGame::instance;
 
 CGame::CGame()
 : NUM_GAME_STATES(3)
-{
+{	
+	level = 0;
 	running = true;
 	suspended = false;
 	gameStateTable[GAME_STATE_INIT] = new CGameStateInit(this);
@@ -643,6 +597,10 @@ CGame::~CGame()
 CGame *CGame::Instance()
 {
 	return &instance;
+}
+
+CGameState& CGame::GameStateTable(int game_stage) {
+	return *gameStateTable[game_stage];
 }
 
 bool CGame::IsRunning()

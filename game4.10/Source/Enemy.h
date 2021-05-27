@@ -16,7 +16,6 @@ namespace game_framework {
 		GROUNDHOG,
 		RED,
 		CHEF,
-
 		EARTHWORM,
 		INSECT,
 		PENGUIN,
@@ -52,8 +51,6 @@ namespace game_framework {
 		int Left();
 		int Buttom();
 		int Right();
-		/* End of Getter */
-		
 
 		/* Setter */
 		void SetAngle(int);
@@ -61,20 +58,16 @@ namespace game_framework {
 		void SetMoving(POINT);
 		void SetTopLeft(int, int);
 		void SetTopLeft(POINT);
-		/* End of Setter */
-		
 
 		/* Member Function */
 		void LookingForRefBrick(vector<Brick*>);
 		bool CollisionDetection(Brick*);
-		void CameraMove();
-		/* End of Member Function*/
+		void CameraMovement();
 
 		//
 		virtual void OnInit(vector<Brick*>) = 0;
 		virtual void OnMove() = 0;
-		virtual void OnShow(int scale = DEFAULT_SCALE) = 0;
-		//
+		virtual void OnShow(int scale=DEFAULT_SCALE) = 0;
 	};
 
 
@@ -82,192 +75,157 @@ namespace game_framework {
 	/* Inheritance Enemy Class */
 	class Bamboo : public Enemy {
 	public:
-		Bamboo();
 		Bamboo(int, int);
-		~Bamboo();
 
-		void OnInit(vector<Brick*>) ;
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Chef : public Enemy {
 	public:
-		Chef();
 		Chef(int, int);
-		~Chef();
 
-		void OnInit(vector<Brick*>);
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Earthworm : public Enemy {
 	public:
-		Earthworm();
 		Earthworm(int, int);
-		~Earthworm();
 
-		void OnInit(vector<Brick*>) ;
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Fly : public Enemy {
 	public:
-		Fly();
 		Fly(int, int);
-		~Fly();
 
-		void OnInit(vector<Brick*>) ;
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 	
 	class Groundhog : public Enemy {
 	public:
-		Groundhog();
 		Groundhog(int, int);
-		~Groundhog();
 
-		void OnInit(vector<Brick*>) ;
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Insect : public Enemy {
 	public:
-		Insect();
 		Insect(int, int);
-		~Insect();
 
-		void OnInit(vector<Brick*>) ;
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Ladybug : public Enemy {
 	public:
-		Ladybug();
 		Ladybug(int, int);
-		~Ladybug();
 
-		void OnInit(vector<Brick*>);
-		void OnMove();
-		void OnShow(int scale = DEFAULT_SCALE);
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
 	class Mosquito : public Enemy {
 	public:
-		Mosquito();
 		Mosquito(int, int);
-		~Mosquito();
 
-		void OnInit(vector<Brick*>) ;
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Penguin : public Enemy {
 	public:
-		Penguin();
 		Penguin(int, int);
-		~Penguin();
 
-		void OnInit(vector<Brick*>) ;
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class PinkMonster : public Enemy {
 	public:
-		PinkMonster();
 		PinkMonster(int, int);
-		~PinkMonster();
 
-		void OnInit(vector<Brick*>) ;
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Rocket : public Enemy {
 	public:
-		Rocket();
 		Rocket(int, int);
-		~Rocket();
 
-		void OnInit(vector<Brick*>) ;
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Shark : public Enemy {
 	public:
-		Shark();
 		Shark(int, int);
-		~Shark();
 
-		void OnInit(vector<Brick*>);
-		void OnMove() ;
-		void OnShow(int scale = DEFAULT_SCALE) ;
+		void OnInit(vector<Brick*>)override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Snails : public Enemy {
 	public:
-		Snails();
 		Snails(int, int);
-		~Snails();
 
-		void OnInit(vector<Brick*>);
-		void OnMove();
-		void OnShow(int scale = DEFAULT_SCALE);
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Spider : public Enemy {
-	private:
 	public:
-		Spider();
 		Spider(int, int);
-		~Spider();
 
-		void OnInit(vector<Brick*>);
-		void OnMove();
-		void OnShow(int scale = DEFAULT_SCALE);
+		void OnInit(vector<Brick*>) override;
+		void OnMove() override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Blue : public Enemy {
 	public:
-		Blue();
 		Blue(int, int);
-		~Blue();
 
-		void OnInit(vector<Brick*>);
+		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
-		void OnShow(int scale = DEFAULT_SCALE) override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class FlyShield : public Enemy {
 	public:
-		FlyShield();
 		FlyShield(int, int);
-		~FlyShield();
 
-		void OnInit(vector<Brick*>);
+		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
-		void OnShow(int scale = DEFAULT_SCALE) override;
+		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
 	class Red : public Enemy {
 	public:
-		Red();
 		Red(int, int);
-		~Red();
 
-		void OnInit(vector<Brick*>);
+		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
 		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
-	/* End of Inheritance Enemy Class */
+
 }
 
 #endif

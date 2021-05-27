@@ -30,8 +30,8 @@ namespace game_framework {
 	class Level {
 	private:
 		int max_x, max_y;
-		int count_ring=0;
-
+		int count_ring;
+		int level;
 
 		POINT spawnPoint;
 
@@ -47,18 +47,27 @@ namespace game_framework {
 		vector<Enemy*>	enemies;
 
 	public:
+		/* Constructor */
 		Level();
+		Level(int);
 		~Level();
-		
-		Actor* CurrentActor();
 
+		/* Getter */
+		Actor* CurrentActor();
+		int getCountRing();
+
+		/* Setter */
 		void SetCurrentActor(int);
 		void SetMoving(POINT);
+		
+		/* Member Function */
+		void addItem(int, int, int);
+		void addEnemy(int, int, int);
 
+		//
 		void OnInit(int);
 		void OnMove();
 		void OnShow();
-		int getCountRing();
 	};
 }
 
