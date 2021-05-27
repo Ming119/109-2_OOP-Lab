@@ -30,7 +30,7 @@ namespace game_framework {
 	class Level {
 	private:
 		int max_x, max_y;
-		int count_ring=0;
+		int count_ring;
 		int level;
 
 		POINT spawnPoint;

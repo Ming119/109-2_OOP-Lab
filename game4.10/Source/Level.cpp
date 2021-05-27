@@ -154,7 +154,7 @@ namespace game_framework {
 		case 58:
 			items.push_back(new BULE_SPRING_PADS_LEFT_U(x, y));
 			break;
-
+		
 		case 59:
 			items.push_back(new BULE_SPRING_PADS_RING_U(x, y));
 			break;
@@ -462,13 +462,8 @@ namespace game_framework {
 		// Enemy
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
-			TRACE("Level OnMove() Enemy: %d: %d\n", es, i);
 			enemies.at(i)->OnMove();
 		}
-		// 上面那個for
-		// 第二關的enemies跑到3就不行了
-		// 變成nullptr
-
 
 		// Actor
 		CurrentActor()->OnMove(bricks);
@@ -498,7 +493,5 @@ namespace game_framework {
 		actor2.OnShow();
 		actor3.OnShow();
 	}
-
-
 
 }
