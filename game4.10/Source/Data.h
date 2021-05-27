@@ -2742,7 +2742,7 @@ namespace game_framework {
 		{0, 196, 324}
 	};
 
-	int BULEOCEAN3Enemies[][3] = {{ }};
+	int BULEOCEAN3Enemies[][3] = {{-1, -1, -1}};
 
 	int DESERT1Brick[][3] = { {29, 1061, 5010},
 		{29, 1001, 5010},
@@ -8340,7 +8340,7 @@ namespace game_framework {
 		{32, 2434, 1533}
 	};
 
-	int EXOTIC3Enemies[][3] = {{ }};
+	int EXOTIC3Enemies[][3] = { {-1, -1, -1} };
 
 	int EXOTICHELL1Brick[][3] = {
 		{61, 2272, 5975},
@@ -10153,7 +10153,7 @@ namespace game_framework {
 		{2, 332, 377}
 	};
 
-	int SUPERBOSS1Enemies[][3] = {{ }};
+	int SUPERBOSS1Enemies[][3] = { {-1, -1, -1} };
 
 	int SUPERBOSS2Brick[][3] = {
 		{61, 1145, 1902},
@@ -10413,7 +10413,7 @@ namespace game_framework {
 		{2, 212, 533}
 	};
 
-	int SUPERBOSS2Enemies[][3] = {{ }};
+	int SUPERBOSS2Enemies[][3] = { {-1, -1, -1} };
 
 	int TEMPLATEBrick[][3] = {
 		{101, 6917, 1316},
@@ -12268,7 +12268,7 @@ namespace game_framework {
 		{19, 2232, 5348}
 	};
 
-	int TUTORIAL1Enemies[][3] = {{ }};
+	int TUTORIAL1Enemies[][3] = { {-1, -1, -1} };
 
 	int TUTORIAL2Brick[][3] = {
 		{62, 320, 6070},

@@ -16,7 +16,6 @@ namespace game_framework {
 		GROUNDHOG,
 		RED,
 		CHEF,
-
 		EARTHWORM,
 		INSECT,
 		PENGUIN,

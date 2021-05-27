@@ -31,7 +31,7 @@ namespace game_framework {
 	private:
 		int max_x, max_y;
 		int count_ring=0;
-
+		int level;
 
 		POINT spawnPoint;
 
@@ -48,6 +48,7 @@ namespace game_framework {
 
 	public:
 		Level();
+		Level(int);
 		~Level();
 		
 		Actor* CurrentActor();
@@ -59,6 +60,9 @@ namespace game_framework {
 		void OnMove();
 		void OnShow();
 		int getCountRing();
+
+		void addItem(int, int, int);
+		void addEnemy(int, int, int);
 	};
 }
 

@@ -314,12 +314,12 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 				else if (nChar == KEY_UP) {
 					CAudio::Instance()->Play(AUDIO_CHOOSE, false);
 					stageSelect--;
-					if (stageSelect < 0) stageSelect = 13;
+					if (stageSelect < 0) stageSelect = static_cast<int>(LEVELS::COUNT) - 1;
 				}
 				else if (nChar == KEY_DOWN) {
 					CAudio::Instance()->Play(AUDIO_CHOOSE, false);
 					stageSelect++;
-					stageSelect %= 14;
+					stageSelect %= static_cast<int>(LEVELS::COUNT);
 				}
 				else if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
 					CAudio::Instance()->Play(AUDIO_SELECT, false);
@@ -493,7 +493,7 @@ void CGameStateRun::OnInit() {
 void CGameStateRun::OnBeginState() {
 	current_level = CGame::Instance()->GetLevel();
 	TRACE("%d\n", current_level);
-	level = new Level();
+	level = new Level(current_level);
 	level->OnInit(current_level);
 }
 
@@ -555,7 +555,7 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 }
 
 void CGameStateRun::OnMove() {
-	
+
 	int rings = level->getCountRing();
 	
 	
