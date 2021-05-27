@@ -36,7 +36,6 @@ namespace game_framework {
 	int Enemy::Buttom() { return this->Top() + this->Height(); }
 
 	int Enemy::Right() { return this->Left() + this->Width(); }
-	/* End of Getter */
 
 	/* Setter */
 	void Enemy::SetAngle(int a) { angle = a; }
@@ -56,11 +55,9 @@ namespace game_framework {
 		pos = xy;
 		texture.SetTopLeft(pos.x, pos.y);
 	}
-	/* End of Setter */
 
 	/* Member Function */
-	void Enemy::CameraMove() {
-		// Camera Move
+	void Enemy::CameraMovement() {
 		pos.x -= delta.x;
 		pos.y -= delta.y;
 		spawn.x -= delta.x;
@@ -71,19 +68,15 @@ namespace game_framework {
 	bool Enemy::CollisionDetection(Brick* brick) {
 
 		if (brick->Property() != OBSTACLE && brick->Property() != CLOUD) return false;
-		
-		/*int Woffset = (int)((this->Left() + this->Width() * DEFAULT_SCALE) * 0.05);
-		int Hoffset = (int)((this->Top() + this->Height() * DEFAULT_SCALE) * 0.05);*/
-		int Woffset = 1;
-		int Hoffset = 1;
 
-		if ((this->Left()+Woffset) < (brick->Left() + brick->Width() * DEFAULT_SCALE)-Woffset &&
-			(this->Left() + this->Width() * DEFAULT_SCALE)-Woffset > (brick->Left()+Woffset) &&
-			(this->Top()+Hoffset) < (brick->Top() + brick->Height() * DEFAULT_SCALE)-Hoffset &&
-			(this->Top() + this->Height() * DEFAULT_SCALE)-Hoffset > (brick->Top()+Hoffset)) {
+		if (this->Left() < brick->Right() &&
+			this->Right() > brick->Left() &&
+			this->Top() < brick->Buttom() &&
+			this->Buttom() > brick->Top()) {
 						
 			return true;
 		}
+
 		return false;
 			
 	}
@@ -101,13 +94,12 @@ namespace game_framework {
 		}
 		
 		SetTopLeft(spawn);
-			
 	}
-	/* End of Member Function */
 
 
 
 	/* Inheritance Enemy Class */
+
 	// Ladybug
 	Ladybug::Ladybug(int x, int y) : Enemy::Enemy(x, y) {}
 
@@ -122,7 +114,7 @@ namespace game_framework {
 	}
 
 	void Ladybug::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 		if (pos.x <= refBrick->Left()) {
 			direction = !direction;
@@ -160,7 +152,7 @@ namespace game_framework {
 	}
 
 	void Fly::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -186,7 +178,7 @@ namespace game_framework {
 	}
 
 	void Bamboo::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 		if ((pos.y + Height() * DEFAULT_SCALE) >= refBrick->Top()) {
 			direction = !direction;
@@ -224,7 +216,7 @@ namespace game_framework {
 	}
 
 	void Spider::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -249,7 +241,7 @@ namespace game_framework {
 	}
 
 	void Rocket::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 		if (pos.x <= refBrick->Left()) {
 			direction = !direction;
@@ -288,7 +280,7 @@ namespace game_framework {
 	}
 
 	void Shark::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -312,7 +304,7 @@ namespace game_framework {
 	}
 
 	void Mosquito::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -337,7 +329,7 @@ namespace game_framework {
 	}
 
 	void Groundhog::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 
 		SetTopLeft(pos);
@@ -363,7 +355,7 @@ namespace game_framework {
 	}
 
 	void Red::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 
 		SetTopLeft(pos);
@@ -388,7 +380,7 @@ namespace game_framework {
 	}
 
 	void Chef::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 
 		SetTopLeft(pos);
@@ -413,9 +405,7 @@ namespace game_framework {
 	}
 
 	void Earthworm::OnMove() {
-		CameraMove();
-
-
+		CameraMovement();
 		SetTopLeft(pos);
 		texture.OnMove();
 	}
@@ -439,7 +429,7 @@ namespace game_framework {
 	}
 
 	void Insect::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 
 		SetTopLeft(pos);
@@ -467,7 +457,7 @@ namespace game_framework {
 	}
 
 	void Penguin::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 
 		SetTopLeft(pos);
@@ -493,7 +483,7 @@ namespace game_framework {
 	}
 
 	void PinkMonster::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 
 		SetTopLeft(pos);
@@ -518,7 +508,7 @@ namespace game_framework {
 	}
 
 	void Snails::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 
 		SetTopLeft(pos);
@@ -549,7 +539,7 @@ namespace game_framework {
 	}
 
 	void Blue::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 
 		SetTopLeft(pos);
@@ -574,7 +564,7 @@ namespace game_framework {
 	}
 
 	void FlyShield::OnMove() {
-		CameraMove();
+		CameraMovement();
 
 
 		SetTopLeft(pos);
@@ -584,6 +574,4 @@ namespace game_framework {
 	void FlyShield::OnShow(int scale) {
 		texture.OnShow(scale);
 	}
-
-	/* End of Inheritance Enemy Class*/
 }

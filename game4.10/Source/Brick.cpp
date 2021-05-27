@@ -8,6 +8,7 @@
 #include "Level.h"
 
 namespace game_framework {
+
 	/* Constructor */
 	Brick::Brick(int _id, int x, int y) {
 		id = _id;
@@ -15,7 +16,6 @@ namespace game_framework {
 		pos.y = y;
 		delta = POINT();
 	}
-
 
 	/* Getter */
 	int Brick::ID() { return id; }
@@ -37,7 +37,6 @@ namespace game_framework {
 	int Brick::Buttom() { return this->Top() + this->Height(); }
 
 	int Brick::Right() { return this->Left() + this->Width(); }
-	/* End of Getter */
 
 	/* Setter */
 	void Brick::SetAngle(int ang) { angle = ang; }
@@ -72,7 +71,6 @@ namespace game_framework {
 		maxY = y;
 
 	}
-	/* End of Setter */
 	
 	//
 	void Brick::OnInit(int level) {
@@ -1193,7 +1191,7 @@ namespace game_framework {
 	}
 
 	void Brick::OnMove() {
-		// Camera Move
+		// Camera Movement
 		pos.x -= delta.x;
 		pos.y -= delta.y;
 
@@ -1204,5 +1202,4 @@ namespace game_framework {
 	void Brick::OnShow(int scale) {
 		texture.OnShow(scale);
 	}
-	//
 }

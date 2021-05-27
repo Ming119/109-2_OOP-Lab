@@ -11,6 +11,7 @@
 
 namespace game_framework {	
 
+	/* Constructor */
 	Level::Level() {
 		count_ring = 0;
 		level = 0;
@@ -21,256 +22,18 @@ namespace game_framework {
 		level = l;
 	}
 
-	Level::~Level() { }
-
-	void Level::OnInit(int l) {
-		level = l;
-
-		//  
+	Level::~Level() {
 		bricks.clear();
 		items.clear();
 		enemies.clear();
-		
-		actor1.OnInit();
-		actor2.OnInit();
-		actor3.OnInit();
-
-		currentActor = &actor1;
-		count_ring = 0;
-
-
-		switch (level) {
-			// Level 1
-		case static_cast<int>(LEVELS::BULE_OCEAN_1) :
-			spawnPoint.x = 40;
-			spawnPoint.y = 2550;
-			CAudio::Instance()->Stop(AUDIO_TITLE);
-			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
-
-			// Background
-			background.LoadBitmap(LEVEL1_BG);
-
-			// Brick
-			for (int i = 0; i < sizeof(BULEOCEAN1Brick) / sizeof(BULEOCEAN1Brick[0]); i++) {
-					const int id = BULEOCEAN1Brick[i][0];
-					const int x = BULEOCEAN1Brick[i][1] * DEFAULT_SCALE;
-					const int y = (BULEOCEAN1Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
-
-					if (id != -1)
-						bricks.push_back(new Brick(id, x, y));
-				}
-				
-			// Item
-			for (int i = 0; i < sizeof(BULEOCEAN1Items)/sizeof(BULEOCEAN1Items[0]); i++) {
-				const int id = BULEOCEAN1Items[i][0];
-				const int x = BULEOCEAN1Items[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN1Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					addItem(id, x, y);
-					
-			}
-
-			// Enemy
-			for (int i = 0; i < sizeof(BULEOCEAN1Enemies) / sizeof(BULEOCEAN1Enemies[0]); i++) {
-				const int id = BULEOCEAN1Enemies[i][0];
-				const int x = BULEOCEAN1Enemies[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN1Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y/2;
-
-				if (id != -1)
-					addEnemy(id, x, y);
-			}
-		break;
-
-		case static_cast<int>(LEVELS::BULE_OCEAN_2) :
-			spawnPoint.x = 40;
-			spawnPoint.y = 3000;
-			CAudio::Instance()->Stop(AUDIO_TITLE);
-			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
-
-			// Background
-			background.LoadBitmap(LEVEL1_BG);
-
-			// Brick
-			for (int i = 0; i < sizeof(BULEOCEAN2Brick) / sizeof(BULEOCEAN2Brick[0]); i++) {
-				const int id = BULEOCEAN2Brick[i][0];
-				const int x = BULEOCEAN2Brick[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN2Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					bricks.push_back(new Brick(id, x, y));
-			}
-
-			// Item
-			for (int i = 0; i < sizeof(BULEOCEAN2Items) / sizeof(BULEOCEAN2Items[0]); i++) {
-				const int id = BULEOCEAN2Items[i][0];
-				const int x = BULEOCEAN2Items[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN2Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					addItem(id, x, y);
-			}
-
-			// Enemy
-			for (int i = 0; i < sizeof(BULEOCEAN2Enemies) / sizeof(BULEOCEAN2Enemies[0]); i++) {
-				const int id = BULEOCEAN2Enemies[i][0];
-				const int x = BULEOCEAN2Enemies[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN2Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					addEnemy(id, x, y);
-
-			}
-			break;
-
-		case  static_cast<int>(LEVELS::BULE_OCEAN_3) :
-			spawnPoint.x = 35;
-			spawnPoint.y = 280;
-			CAudio::Instance()->Stop(AUDIO_TITLE);
-			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
-
-			// Background
-			background.LoadBitmap(LEVEL1_BG);
-
-			// Brick
-			for (int i = 0; i < sizeof(BULEOCEAN3Brick) / sizeof(BULEOCEAN3Brick[0]); i++) {
-				const int id = BULEOCEAN3Brick[i][0];
-				const int x = BULEOCEAN3Brick[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN3Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				bricks.push_back(new Brick(id, x, y));
-			}
-
-			// Item
-			for (int i = 0; i < sizeof(BULEOCEAN3Items) / sizeof(BULEOCEAN3Items[0]); i++) {
-				const int id = BULEOCEAN3Items[i][0];
-				const int x = BULEOCEAN3Items[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN3Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					addItem(id, x, y);
-			}
-
-			// Enemy
-			for (int i = 0; i < sizeof(BULEOCEAN3Enemies) / sizeof(BULEOCEAN3Enemies[0]); i++) {
-				const int id = BULEOCEAN3Enemies[i][0];
-				const int x = BULEOCEAN3Enemies[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN3Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					addEnemy(id, x, y);
-			}
-			break;
-
-		case 3:
-			break;
-
-		}
-
-		int bs = bricks.size();
-		for (int i = 0; i < bs; i++) {
-			bricks.at(i)->OnInit(level);
-		}
-
-		int is = items.size();
-		for (int i = 0; i < is; i++) {
-			items.at(i)->OnInit();
-			items.at(i)->SetCurrentActor(&actor1);
-		}
-		
-		int es = enemies.size();
-		for (int i = 0; i < es; i++) {
-			enemies.at(i)->OnInit(bricks);
-		}
-
-	}
-		
-	void Level::OnMove() {
-		
-		// Background
-		background.SetTopLeft(0, 0);
-
-		int bs = bricks.size();
-		int is = items.size();
-		int es = enemies.size();
-
-		
-		
-		// Brick
-		for (int i = 0; i < bs; i++) {
-			bricks.at(i)->OnMove();
-			
-		}
-		
-		// Item
-		for (int i = 0; i < is; i++) {
-			items.at(i)->OnMove();
-			if (items.at(i)->IsDead()) {
-				items.erase(items.begin()+i);
-				is--; i--;
-				count_ring++;
-				//TRACE("ring = %d\n", count_ring);
-			}
-			
-
-		}
-
-		// Enemy
-		for (int i = 0; i < es; i++) {
-			TRACE("Level OnMove() Enemy: %d: %d\n", es, i);
-			try {
-				enemies.at(i)->OnMove();
-			}
-			catch (exception e) {
-				TRACE("%s\n", e);
-			}
-
-		}
-
-	// 阿現在的BUG是
-	// 上面那個for
-	// 第二關的enemies跑到3就不行了
-	// 變成nullptr
-
-
-		// Actor
-
-		CurrentActor()->OnMove(bricks);
 	}
 
-	void Level::OnShow() {
-		// Background
-		background.ShowBitmap();
-
-		// Brick
-		int bs = bricks.size();
-		for (int i = 0; i < bs; i++) {
-			bricks.at(i)->OnShow();
-		}
-
-		
-		// Item
-		int is = items.size();
-		for (int i = 0; i < is; i++) {
-			items.at(i)->OnShow();
-		}
-
-		// Enemy
-		int es = enemies.size();
-		for (int i = 0; i < es; i++) {
-			enemies.at(i)->OnShow();
-		}
-
-
-
-		// Actor
-		actor1.OnShow();
-		actor2.OnShow();
-		actor3.OnShow();
-	}
-
+	/* Getter */
 	Actor* Level::CurrentActor() { return currentActor; }
 
+	int Level::getCountRing() { return count_ring; }
+
+	/* Setter */
 	void Level::SetCurrentActor(int actor) {
 		if (actor == SONIC)    currentActor = &actor1;
 		if (actor == MILES)	   currentActor = &actor2;
@@ -279,25 +42,19 @@ namespace game_framework {
 
 	void Level::SetMoving(POINT delta) {
 		int bs = bricks.size();
-		for (int i = 0; i < bs; i++) {
+		for (int i = 0; i < bs; i++)
 			bricks.at(i)->SetMoving(delta);
-		}
 
 		int is = items.size();
-		for (int i = 0; i < is; i++) {
+		for (int i = 0; i < is; i++)
 			items.at(i)->SetMoving(delta);
-		}
 
 		int es = enemies.size();
-		for (int i = 0; i < es; i++) {
+		for (int i = 0; i < es; i++)
 			enemies.at(i)->SetMoving(delta);
-		}
 	}
 
-	int Level::getCountRing() {
-		return count_ring;
-	}
-
+	/* Member Function */
 	void Level::addItem(int id, int x, int y) {
 		switch (id) {
 		case -1: break;
@@ -509,5 +266,239 @@ namespace game_framework {
 		default: break;
 		}
 	}
+
+	//
+	void Level::OnInit(int l) {
+		level = l;
+		count_ring = 0;
+
+		bricks.clear();
+		items.clear();
+		enemies.clear();
+		
+		actor1.OnInit();
+		actor2.OnInit();
+		actor3.OnInit();
+
+		currentActor = &actor1;
+		
+		switch (level) {
+		// Level 1
+		case static_cast<int>(LEVELS::BULE_OCEAN_1) :
+			CAudio::Instance()->Stop(AUDIO_TITLE);
+			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
+
+			spawnPoint.x = 40;
+			spawnPoint.y = 2550;
+
+			// Background
+			background.LoadBitmap(LEVEL1_BG);
+
+			// Brick
+			for (int i = 0; i < sizeof(BULEOCEAN1Brick) / sizeof(BULEOCEAN1Brick[0]); i++) {
+					const int id = BULEOCEAN1Brick[i][0];
+					const int x = BULEOCEAN1Brick[i][1] * DEFAULT_SCALE;
+					const int y = (BULEOCEAN1Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+					if (id != -1)
+						bricks.push_back(new Brick(id, x, y));
+				}
+				
+			// Item
+			for (int i = 0; i < sizeof(BULEOCEAN1Items)/sizeof(BULEOCEAN1Items[0]); i++) {
+				const int id = BULEOCEAN1Items[i][0];
+				const int x = BULEOCEAN1Items[i][1] * DEFAULT_SCALE;
+				const int y = (BULEOCEAN1Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addItem(id, x, y);
+					
+			}
+
+			// Enemy
+			for (int i = 0; i < sizeof(BULEOCEAN1Enemies) / sizeof(BULEOCEAN1Enemies[0]); i++) {
+				const int id = BULEOCEAN1Enemies[i][0];
+				const int x = BULEOCEAN1Enemies[i][1] * DEFAULT_SCALE;
+				const int y = (BULEOCEAN1Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y/2;
+
+				if (id != -1)
+					addEnemy(id, x, y);
+			}
+			
+			break;
+
+		// Level 2
+		case static_cast<int>(LEVELS::BULE_OCEAN_2) :
+			CAudio::Instance()->Stop(AUDIO_TITLE);
+			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
+
+			spawnPoint.x = 40;
+			spawnPoint.y = 3000;
+
+			// Background
+			background.LoadBitmap(LEVEL1_BG);
+
+			// Brick
+			for (int i = 0; i < sizeof(BULEOCEAN2Brick) / sizeof(BULEOCEAN2Brick[0]); i++) {
+				const int id = BULEOCEAN2Brick[i][0];
+				const int x = BULEOCEAN2Brick[i][1] * DEFAULT_SCALE;
+				const int y = (BULEOCEAN2Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					bricks.push_back(new Brick(id, x, y));
+			}
+
+			// Item
+			for (int i = 0; i < sizeof(BULEOCEAN2Items) / sizeof(BULEOCEAN2Items[0]); i++) {
+				const int id = BULEOCEAN2Items[i][0];
+				const int x = BULEOCEAN2Items[i][1] * DEFAULT_SCALE;
+				const int y = (BULEOCEAN2Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addItem(id, x, y);
+			}
+
+			// Enemy
+			for (int i = 0; i < sizeof(BULEOCEAN2Enemies) / sizeof(BULEOCEAN2Enemies[0]); i++) {
+				const int id = BULEOCEAN2Enemies[i][0];
+				const int x = BULEOCEAN2Enemies[i][1] * DEFAULT_SCALE;
+				const int y = (BULEOCEAN2Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addEnemy(id, x, y);
+
+			}
+			
+			break;
+
+		// Level 3
+		case static_cast<int>(LEVELS::BULE_OCEAN_3) :
+			CAudio::Instance()->Stop(AUDIO_TITLE);
+			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
+
+			spawnPoint.x = 35;
+			spawnPoint.y = 280;
+
+			// Background
+			background.LoadBitmap(LEVEL1_BG);
+
+			// Brick
+			for (int i = 0; i < sizeof(BULEOCEAN3Brick) / sizeof(BULEOCEAN3Brick[0]); i++) {
+				const int id = BULEOCEAN3Brick[i][0];
+				const int x = BULEOCEAN3Brick[i][1] * DEFAULT_SCALE;
+				const int y = (BULEOCEAN3Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					bricks.push_back(new Brick(id, x, y));
+			}
+
+			// Item
+			for (int i = 0; i < sizeof(BULEOCEAN3Items) / sizeof(BULEOCEAN3Items[0]); i++) {
+				const int id = BULEOCEAN3Items[i][0];
+				const int x = BULEOCEAN3Items[i][1] * DEFAULT_SCALE;
+				const int y = (BULEOCEAN3Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addItem(id, x, y);
+			}
+
+			// Enemy
+			for (int i = 0; i < sizeof(BULEOCEAN3Enemies) / sizeof(BULEOCEAN3Enemies[0]); i++) {
+				const int id = BULEOCEAN3Enemies[i][0];
+				const int x = BULEOCEAN3Enemies[i][1] * DEFAULT_SCALE;
+				const int y = (BULEOCEAN3Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addEnemy(id, x, y);
+			}
+
+			break;
+
+
+		default: break;
+		}
+
+		int bs = bricks.size();
+		for (int i = 0; i < bs; i++) {
+			bricks.at(i)->OnInit(level);
+		}
+
+		int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->OnInit();
+			items.at(i)->SetCurrentActor(currentActor);
+		}
+		
+		int es = enemies.size();
+		for (int i = 0; i < es; i++) {
+			enemies.at(i)->OnInit(bricks);
+		}
+
+	}
+		
+	void Level::OnMove() {
+		
+		// Background
+		background.SetTopLeft(0, 0);
+		
+		// Brick
+		int bs = bricks.size();
+		for (int i = 0; i < bs; i++) {
+			bricks.at(i)->OnMove();
+			
+		}
+		
+		// Item
+		int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->OnMove();
+			if (items.at(i)->IsDead()) {
+				items.erase(items.begin()+i);
+				is--; i--;
+				count_ring++;
+			}
+		}
+
+		// Enemy
+		int es = enemies.size();
+		for (int i = 0; i < es; i++) {
+			TRACE("Level OnMove() Enemy: %d: %d\n", es, i);
+			enemies.at(i)->OnMove();
+		}
+		// 上面那個for
+		// 第二關的enemies跑到3就不行了
+		// 變成nullptr
+
+
+		// Actor
+		CurrentActor()->OnMove(bricks);
+	}
+
+	void Level::OnShow() {
+		// Background
+		background.ShowBitmap();
+
+		// Brick
+		int bs = bricks.size();
+		for (int i = 0; i < bs; i++)
+			bricks.at(i)->OnShow();
+
+		// Item
+		int is = items.size();
+		for (int i = 0; i < is; i++)
+			items.at(i)->OnShow();
+		
+		// Enemy
+		int es = enemies.size();
+		for (int i = 0; i < es; i++)
+			enemies.at(i)->OnShow();
+
+		// Actor
+		actor1.OnShow();
+		actor2.OnShow();
+		actor3.OnShow();
+	}
+
+
 
 }
