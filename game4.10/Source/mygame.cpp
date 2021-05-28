@@ -24,15 +24,12 @@ CGameStateInit::CGameStateInit(CGame *g) : CGameState(g) {
 }
 
 void CGameStateInit::OnInit() {
-<<<<<<< HEAD
+
 	//
 	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
 	//   等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
 	//
 	ShowInitProgress(0);	// 一開始的loading進度為0%
-=======
-	ShowInitProgress(0);	// �@�}�l��loading�i�׬�0%
->>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 
 	//
 	// 開始載入資料
@@ -474,30 +471,6 @@ void CGameStateInit::OnShow() {
 			break;
 		}
 	}
-
-<<<<<<< HEAD
-	/*
-	//
-	// Demo螢幕字型的使用，不過開發時請盡量避免直接使用字型，改用CMovingBitmap比較好
-	//
-	CDC *pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC 
-	CFont f,*fp;
-	f.CreatePointFont(160,"Times New Roman");	// 產生 font f; 160表示16 point的字
-	fp=pDC->SelectObject(&f);					// 選用 font f
-	pDC->SetBkColor(RGB(0,0,0));
-	pDC->SetTextColor(RGB(255,255,0));
-	pDC->TextOut(120,220,"Please click mouse or press SPACE to begin.");
-	pDC->TextOut(5,395,"Press Ctrl-F to switch in between window mode and full screen mode.");
-	if (ENABLE_GAME_PAUSE)
-		pDC->TextOut(5,425,"Press Ctrl-Q to pause the Game.");
-	pDC->TextOut(5,455,"Press Alt-F4 or ESC to Quit.");
-	pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
-	CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
-	*/
-
-
-=======
->>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 }								
 
 
@@ -562,9 +535,6 @@ void CGameStateRun::OnInit() {
 
 	count.LoadBitmap();
 	count.SetInteger(0);
-	for (int i = 0; i < 3; i++) {
-		count_Rings[i].LoadBitmapA(INTEGER_WHITE_0);
-	}
 
 }
 
@@ -633,68 +603,15 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 }
 
 void CGameStateRun::OnMove() {
-<<<<<<< HEAD
-	for (int i = 0; i < 3; i++) {
-		int x = int(pow(10, i + 1)), y = int(pow(10, i));
-		int index = int((level->getCountRing() % x) / y);
-
-		TRACE("index = %d\n",index);
-		switch (index) {
-			case 0:
-				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_0);
-				break;
-			case 1:
-				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_1);
-				break;
-			case 2:
-				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_2);
-				break;
-			case 3:
-				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_3);
-				break;
-			case 4:
-				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_4);
-				break;
-			case 5:
-				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_5);
-				break;
-			case 6:
-				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_6);
-				break;
-			case 7:
-				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_7);
-				break;
-			case 8:
-				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_8);
-				break;
-			case 9:
-				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_9);
-				break;
-			default:
-				break;
-		}
-	}
-=======
-
 	int rings = level->getCountRing();
 	
-	
->>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 	level->SetMoving(level->CurrentActor()->getDelta());
 	level->OnMove();
+
 	Score.SetTopLeft(32, 20);
 	Time.SetTopLeft(32, 50);
 	Rings.SetTopLeft(32, 80);
-<<<<<<< HEAD
-	for (int i = 0; i < 3; i++) {
-		count_Rings[i].SetTopLeft(120+(count_Rings[i].Width()+7)*i,79);
-	}
 
-=======
-	//for (int i = 0; i < 3; i++) {
-	//	count_Rings[i].SetTopLeft(120+(count_Rings[i].Width()+7)*i,79);
-	//}
->>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 }
 
 void CGameStateRun::OnShow() {
@@ -702,20 +619,11 @@ void CGameStateRun::OnShow() {
 	Score.ShowBitmap();
 	Time.ShowBitmap();
 	Rings.ShowBitmap();
-<<<<<<< HEAD
 
-	for (int i = 0; i < 3; i++) {
-		count_Rings[i].ShowBitmap();
-	}
-=======
-	//for (int i = 0; i < 3; i++) {
-	//	//count_Rings[i].ShowBitmap();
-	//}
 }
 
 void CGameStateRun::SetLevel(int level) {
 	current_level = level;
->>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 }
 
 
