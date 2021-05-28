@@ -11,7 +11,8 @@
 namespace game_framework {
 	/* Constructor */
 	// Item
-	Item::Item(int x, int y) {
+	Item::Item(int _id, int x, int y) {
+		id = _id;
 		pos.x = x;
 		pos.y = y;
 		angle = 0;
@@ -22,6 +23,8 @@ namespace game_framework {
 	}
 
 	/* Getter */
+	int Item::ID() { return id; }
+
 	int Item::Height() { return texture.Height(); }
 
 	int Item::Width() { return texture.Width(); }
@@ -34,10 +37,10 @@ namespace game_framework {
 
 	int Item::Right() { return this->Left() + this->Width() * DEFAULT_SCALE; }
 
-	bool Item::IsDead() { return false; }
-
 	/* Setter */
-	void Item::setAngle(int ang) { angle = ang; }
+	void Item::SetID(int _id) { id = _id; }
+
+	void Item::SetAngle(int ang) { angle = ang; }
 
 	void Item::SetMoving(POINT _delta) { delta = _delta; }
 
@@ -76,14 +79,15 @@ namespace game_framework {
 		return false;
 	}
 
+
 	// Ring
-	Ring::Ring(int x, int y) : Item::Item(x, y) {
+	Ring::Ring(int id, int x, int y) : Item::Item(id, x, y) {
 		isDead = isDeadFinish = false;
 	}
 
 	Ring::~Ring() {}
 
-	bool Ring::IsDead() { return isDeadFinish; }
+	bool Ring::IsChange() { return isDeadFinish; }
 
 	void Ring::OnInit() {
 		texture.AddBitmap(ITEMS_YELLOW_RING_1);
@@ -133,11 +137,13 @@ namespace game_framework {
 	}
 	
 	// BIG_Ring
-	BIG_Ring::BIG_Ring(int x, int y) : Item::Item(x, y) {
+	BIG_Ring::BIG_Ring(int id, int x, int y) : Item::Item(id, x, y) {
 		isDead = isDeadFinish = false;
 	}
 
 	BIG_Ring::~BIG_Ring() {}
+
+	bool BIG_Ring::IsChange() { return isDeadFinish; }
 
 	void BIG_Ring::OnInit() {
 		texture.AddBitmap(ITEMS_BIG_RING_1);
@@ -159,8 +165,6 @@ namespace game_framework {
 		setTopLeft(pos);
 
 	}
-
-	bool BIG_Ring::IsDead() { return isDeadFinish; }
 
 	void BIG_Ring::OnMove() {
 		CameraMove();
@@ -188,9 +192,11 @@ namespace game_framework {
 	}
 	
 	// RED_SPRING_PADS_UP
-	RED_SPRING_PADS_UP::RED_SPRING_PADS_UP(int x, int y) : Item::Item(x, y) {
+	RED_SPRING_PADS_UP::RED_SPRING_PADS_UP(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
+
+	bool RED_SPRING_PADS_UP::IsChange() { return isTouch; }
 
 	void RED_SPRING_PADS_UP::OnInit() {
 		texture.AddBitmap(ITEM_RED_SPRING_PADS_UP_21);
@@ -226,11 +232,13 @@ namespace game_framework {
 	
 	// RED_SPRING_PADS_DOWN
 
-	RED_SPRING_PADS_DOWN::RED_SPRING_PADS_DOWN(int x, int y) : Item::Item(x, y) {
+	RED_SPRING_PADS_DOWN::RED_SPRING_PADS_DOWN(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	RED_SPRING_PADS_DOWN::~RED_SPRING_PADS_DOWN() {}
+
+	bool RED_SPRING_PADS_DOWN::IsChange() { return isTouch; }
 
 	void RED_SPRING_PADS_DOWN::OnInit() {
 		texture.AddBitmap(ITEM_RED_SPRING_PADS_DOWN_47);
@@ -265,11 +273,13 @@ namespace game_framework {
 	}
 
 	// RED_SPRING_PADS_LEFT
-	RED_SPRING_PADS_LEFT::RED_SPRING_PADS_LEFT(int x, int y) : Item::Item(x, y) {
+	RED_SPRING_PADS_LEFT::RED_SPRING_PADS_LEFT(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	RED_SPRING_PADS_LEFT::~RED_SPRING_PADS_LEFT() {}
+
+	bool RED_SPRING_PADS_LEFT::IsChange() { return isTouch; }
 
 	void RED_SPRING_PADS_LEFT::OnInit() {
 		texture.AddBitmap(ITEM_RED_SPRING_PADS_LEFT_22);
@@ -305,11 +315,13 @@ namespace game_framework {
 
 	// RED_SPRING_PADS_LEFT_U
 
-	RED_SPRING_PADS_LEFT_U::RED_SPRING_PADS_LEFT_U(int x, int y) : Item::Item(x, y) {
+	RED_SPRING_PADS_LEFT_U::RED_SPRING_PADS_LEFT_U(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	RED_SPRING_PADS_LEFT_U::~RED_SPRING_PADS_LEFT_U() {}
+
+	bool RED_SPRING_PADS_LEFT_U::IsChange() { return isTouch; }
 
 	void RED_SPRING_PADS_LEFT_U::OnInit() {
 		texture.AddBitmap(ITEM_RED_SPRING_PADS_LEFT_U_43);
@@ -344,11 +356,13 @@ namespace game_framework {
 	}
 
 	// RED_SPRING_PADS_LEFT_D
-	RED_SPRING_PADS_LEFT_D::RED_SPRING_PADS_LEFT_D(int x, int y) : Item::Item(x, y) {
+	RED_SPRING_PADS_LEFT_D::RED_SPRING_PADS_LEFT_D(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	RED_SPRING_PADS_LEFT_D::~RED_SPRING_PADS_LEFT_D() {}
+
+	bool RED_SPRING_PADS_LEFT_D::IsChange() { return isTouch; }
 
 	void RED_SPRING_PADS_LEFT_D::OnInit() {
 		texture.AddBitmap(ITEM_RED_SPRING_PADS_LEFT_D_45);
@@ -383,11 +397,13 @@ namespace game_framework {
 	}
 
 	// RED_SPRING_PADS_RING
-	RED_SPRING_PADS_RING::RED_SPRING_PADS_RING(int x, int y) : Item::Item(x, y) {
+	RED_SPRING_PADS_RING::RED_SPRING_PADS_RING(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	RED_SPRING_PADS_RING::~RED_SPRING_PADS_RING() {}
+
+	bool RED_SPRING_PADS_RING::IsChange() { return isTouch; }
 
 	void RED_SPRING_PADS_RING::OnInit() {
 		texture.AddBitmap(ITEM_RED_SPRING_PADS_RING_23);
@@ -400,8 +416,19 @@ namespace game_framework {
 	void RED_SPRING_PADS_RING::OnMove() {
 		CameraMove();
 
-		setTopLeft(pos);
-		texture.OnMove();
+		if (CollisionDetection(currnetActor)) {
+			isTouch = true;
+		}
+		else {
+			isTouch = false;
+		}
+
+		if (isTouch && !texture.IsFinalBitmap()) {
+			texture.OnMove();
+		}
+		else {
+			texture.Reset();
+		}
 
 	}
 
@@ -410,11 +437,13 @@ namespace game_framework {
 	}
 
 	// RED_SPRING_PADS_RING_U
-	RED_SPRING_PADS_RING_U::RED_SPRING_PADS_RING_U(int x, int y) : Item::Item(x, y) {
+	RED_SPRING_PADS_RING_U::RED_SPRING_PADS_RING_U(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	RED_SPRING_PADS_RING_U::~RED_SPRING_PADS_RING_U() {}
+
+	bool RED_SPRING_PADS_RING_U::IsChange() { return isTouch; }
 
 	void RED_SPRING_PADS_RING_U::OnInit() {
 		texture.AddBitmap(ITEM_RED_SPRING_PADS_RING_U_44);
@@ -449,11 +478,13 @@ namespace game_framework {
 	}
 
 	// RED_SPRING_PADS_RING_D
-	RED_SPRING_PADS_RING_D::RED_SPRING_PADS_RING_D(int x, int y) : Item::Item(x, y) {
+	RED_SPRING_PADS_RING_D::RED_SPRING_PADS_RING_D(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	RED_SPRING_PADS_RING_D::~RED_SPRING_PADS_RING_D() {}
+
+	bool RED_SPRING_PADS_RING_D::IsChange() { return isTouch; }
 
 	void RED_SPRING_PADS_RING_D::OnInit() {
 		texture.AddBitmap(ITEM_RED_SPRING_PADS_RING_D_46);
@@ -488,11 +519,13 @@ namespace game_framework {
 	}
 
 	// YELLOW_SPRING_PADS_UP
-	YELLOW_SPRING_PADS_UP::YELLOW_SPRING_PADS_UP(int x, int y) : Item::Item(x, y) {
+	YELLOW_SPRING_PADS_UP::YELLOW_SPRING_PADS_UP(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	YELLOW_SPRING_PADS_UP::~YELLOW_SPRING_PADS_UP() {}
+
+	bool YELLOW_SPRING_PADS_UP::IsChange() { return isTouch; }
 
 	void YELLOW_SPRING_PADS_UP::OnInit() {
 		texture.AddBitmap(ITEM_YELLOW_SPRING_PADS_UP_20);
@@ -527,11 +560,13 @@ namespace game_framework {
 	}
 
 	// YELLOW_SPRING_PADS_DOWN
-	YELLOW_SPRING_PADS_DOWN::YELLOW_SPRING_PADS_DOWN(int x, int y) : Item::Item(x, y) {
+	YELLOW_SPRING_PADS_DOWN::YELLOW_SPRING_PADS_DOWN(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	YELLOW_SPRING_PADS_DOWN::~YELLOW_SPRING_PADS_DOWN() {}
+
+	bool YELLOW_SPRING_PADS_DOWN::IsChange() { return isTouch; }
 
 	void YELLOW_SPRING_PADS_DOWN::OnInit() {
 		texture.AddBitmap(ITEM_YELLOW_SPRING_PADS_DOWN_54);
@@ -566,11 +601,13 @@ namespace game_framework {
 	}
 
 	// YELLOW_SPRING_PADS_LEFT
-	YELLOW_SPRING_PADS_LEFT::YELLOW_SPRING_PADS_LEFT(int x, int y) : Item::Item(x, y) {
+	YELLOW_SPRING_PADS_LEFT::YELLOW_SPRING_PADS_LEFT(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	YELLOW_SPRING_PADS_LEFT::~YELLOW_SPRING_PADS_LEFT() {}
+
+	bool YELLOW_SPRING_PADS_LEFT::IsChange() { return isTouch; }
 
 	void YELLOW_SPRING_PADS_LEFT::OnInit() {
 		texture.AddBitmap(ITEM_YELLOW_SPRING_PADS_LEFT_48);
@@ -605,11 +642,13 @@ namespace game_framework {
 	}
 
 	// YELLOW_SPRING_PADS_LEFT_U
-	YELLOW_SPRING_PADS_LEFT_U::YELLOW_SPRING_PADS_LEFT_U(int x, int y) : Item::Item(x, y) {
+	YELLOW_SPRING_PADS_LEFT_U::YELLOW_SPRING_PADS_LEFT_U(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	YELLOW_SPRING_PADS_LEFT_U::~YELLOW_SPRING_PADS_LEFT_U() {}
+
+	bool YELLOW_SPRING_PADS_LEFT_U::IsChange() { return isTouch; }
 
 	void YELLOW_SPRING_PADS_LEFT_U::OnInit() {
 		texture.AddBitmap(ITEM_YELLOW_SPRING_PADS_LEFT_U_50);
@@ -644,11 +683,13 @@ namespace game_framework {
 	}
 
 	// YELLOW_SPRING_PADS_LEFT_D
-	YELLOW_SPRING_PADS_LEFT_D::YELLOW_SPRING_PADS_LEFT_D(int x, int y) : Item::Item(x, y) {
+	YELLOW_SPRING_PADS_LEFT_D::YELLOW_SPRING_PADS_LEFT_D(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	YELLOW_SPRING_PADS_LEFT_D::~YELLOW_SPRING_PADS_LEFT_D() {}
+
+	bool YELLOW_SPRING_PADS_LEFT_D::IsChange() { return isTouch; }
 
 	void YELLOW_SPRING_PADS_LEFT_D::OnInit() {
 		texture.AddBitmap(ITEM_YELLOW_SPRING_PADS_LEFT_D_52);
@@ -683,11 +724,13 @@ namespace game_framework {
 	}
 
 	// YELLOW_SPRING_PADS_RING
-	YELLOW_SPRING_PADS_RING::YELLOW_SPRING_PADS_RING(int x, int y) : Item::Item(x, y) {
+	YELLOW_SPRING_PADS_RING::YELLOW_SPRING_PADS_RING(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	YELLOW_SPRING_PADS_RING::~YELLOW_SPRING_PADS_RING() {}
+
+	bool YELLOW_SPRING_PADS_RING::IsChange() { return isTouch; }
 
 	void YELLOW_SPRING_PADS_RING::OnInit() {
 		texture.AddBitmap(ITEM_YELLOW_SPRING_PADS_RING_49);
@@ -722,11 +765,13 @@ namespace game_framework {
 
 
 	// YELLOW_SPRING_PADS_RING_U
-	YELLOW_SPRING_PADS_RING_U::YELLOW_SPRING_PADS_RING_U(int x, int y) : Item::Item(x, y) {
+	YELLOW_SPRING_PADS_RING_U::YELLOW_SPRING_PADS_RING_U(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	YELLOW_SPRING_PADS_RING_U::~YELLOW_SPRING_PADS_RING_U() {}
+
+	bool YELLOW_SPRING_PADS_RING_U::IsChange() { return isTouch; }
 
 	void YELLOW_SPRING_PADS_RING_U::OnInit() {
 		texture.AddBitmap(ITEM_YELLOW_SPRING_PADS_RING_U_51);
@@ -762,11 +807,13 @@ namespace game_framework {
 
 
 	// YELLOW_SPRING_PADS_RING_D
-	YELLOW_SPRING_PADS_RING_D::YELLOW_SPRING_PADS_RING_D(int x, int y) : Item::Item(x, y) {
+	YELLOW_SPRING_PADS_RING_D::YELLOW_SPRING_PADS_RING_D(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	YELLOW_SPRING_PADS_RING_D::~YELLOW_SPRING_PADS_RING_D() {}
+
+	bool YELLOW_SPRING_PADS_RING_D::IsChange() { return isTouch; }
 
 	void YELLOW_SPRING_PADS_RING_D::OnInit() {
 		texture.AddBitmap(ITEM_YELLOW_SPRING_PADS_RING_D_53);
@@ -802,11 +849,13 @@ namespace game_framework {
 
 
 	// BULE_SPRING_PADS_UP
-	BULE_SPRING_PADS_UP::BULE_SPRING_PADS_UP(int x, int y) : Item::Item(x, y) {
+	BULE_SPRING_PADS_UP::BULE_SPRING_PADS_UP(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	BULE_SPRING_PADS_UP::~BULE_SPRING_PADS_UP() {}
+
+	bool BULE_SPRING_PADS_UP::IsChange() { return isTouch; }
 
 	void BULE_SPRING_PADS_UP::OnInit() {
 		texture.AddBitmap(ITEM_BULE_SPRING_PADS_UP_55);
@@ -841,11 +890,13 @@ namespace game_framework {
 	}
 
 	// BULE_SPRING_PADS_DOWN
-	BULE_SPRING_PADS_DOWN::BULE_SPRING_PADS_DOWN(int x, int y) : Item::Item(x, y) {
+	BULE_SPRING_PADS_DOWN::BULE_SPRING_PADS_DOWN(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	BULE_SPRING_PADS_DOWN::~BULE_SPRING_PADS_DOWN() {}
+
+	bool BULE_SPRING_PADS_DOWN::IsChange() { return isTouch; }
 
 	void BULE_SPRING_PADS_DOWN::OnInit() {
 		texture.AddBitmap(ITEM_BULE_SPRING_PADS_DOWN_62);
@@ -880,11 +931,13 @@ namespace game_framework {
 	}
 
 	// BULE_SPRING_PADS_LEFT
-	BULE_SPRING_PADS_LEFT::BULE_SPRING_PADS_LEFT(int x, int y) : Item::Item(x, y) {
+	BULE_SPRING_PADS_LEFT::BULE_SPRING_PADS_LEFT(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	BULE_SPRING_PADS_LEFT::~BULE_SPRING_PADS_LEFT() {}
+
+	bool BULE_SPRING_PADS_LEFT::IsChange() { return isTouch; }
 
 	void BULE_SPRING_PADS_LEFT::OnInit() {
 		texture.AddBitmap(ITEM_BULE_SPRING_PADS_LEFT_56);
@@ -919,11 +972,13 @@ namespace game_framework {
 	}
 
 	// BULE_SPRING_PADS_LEFT_U
-	BULE_SPRING_PADS_LEFT_U::BULE_SPRING_PADS_LEFT_U(int x, int y) : Item::Item(x, y) {
+	BULE_SPRING_PADS_LEFT_U::BULE_SPRING_PADS_LEFT_U(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	BULE_SPRING_PADS_LEFT_U::~BULE_SPRING_PADS_LEFT_U() {}
+
+	bool BULE_SPRING_PADS_LEFT_U::IsChange() { return isTouch; }
 
 	void BULE_SPRING_PADS_LEFT_U::OnInit() {
 		texture.AddBitmap(ITEM_BULE_SPRING_PADS_LEFT_U_58);
@@ -958,11 +1013,13 @@ namespace game_framework {
 	}
 
 	// BULE_SPRING_PADS_LEFT_D
-	BULE_SPRING_PADS_LEFT_D::BULE_SPRING_PADS_LEFT_D(int x, int y) : Item::Item(x, y) {
+	BULE_SPRING_PADS_LEFT_D::BULE_SPRING_PADS_LEFT_D(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	BULE_SPRING_PADS_LEFT_D::~BULE_SPRING_PADS_LEFT_D() {}
+
+	bool BULE_SPRING_PADS_LEFT_D::IsChange() { return isTouch; }
 
 	void BULE_SPRING_PADS_LEFT_D::OnInit() {
 		texture.AddBitmap(ITEM_BULE_SPRING_PADS_LEFT_D_60);
@@ -997,11 +1054,13 @@ namespace game_framework {
 	}
 
 	// BULE_SPRING_PADS_RING
-	BULE_SPRING_PADS_RING::BULE_SPRING_PADS_RING(int x, int y) : Item::Item(x, y) {
+	BULE_SPRING_PADS_RING::BULE_SPRING_PADS_RING(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	BULE_SPRING_PADS_RING::~BULE_SPRING_PADS_RING() {}
+
+	bool BULE_SPRING_PADS_RING::IsChange() { return isTouch; }
 
 	void BULE_SPRING_PADS_RING::OnInit() {
 		texture.AddBitmap(ITEM_BULE_SPRING_PADS_RING_57);
@@ -1037,11 +1096,13 @@ namespace game_framework {
 
 
 	// BULE_SPRING_PADS_RING_U
-	BULE_SPRING_PADS_RING_U::BULE_SPRING_PADS_RING_U(int x, int y) : Item::Item(x, y) {
+	BULE_SPRING_PADS_RING_U::BULE_SPRING_PADS_RING_U(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	BULE_SPRING_PADS_RING_U::~BULE_SPRING_PADS_RING_U() {}
+
+	bool BULE_SPRING_PADS_RING_U::IsChange() { return isTouch; }
 
 	void BULE_SPRING_PADS_RING_U::OnInit() {
 		texture.AddBitmap(ITEM_BULE_SPRING_PADS_RING_U_59);
@@ -1077,11 +1138,13 @@ namespace game_framework {
 
 	// BULE_SPRING_PADS_RING_D
 
-	BULE_SPRING_PADS_RING_D::BULE_SPRING_PADS_RING_D(int x, int y) : Item::Item(x, y) {
+	BULE_SPRING_PADS_RING_D::BULE_SPRING_PADS_RING_D(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
 	}
 
 	BULE_SPRING_PADS_RING_D::~BULE_SPRING_PADS_RING_D() {}
+
+	bool BULE_SPRING_PADS_RING_D::IsChange() { return isTouch; }
 
 	void BULE_SPRING_PADS_RING_D::OnInit() {
 		texture.AddBitmap(ITEM_BULE_SPRING_PADS_RING_D_61);
@@ -1118,9 +1181,11 @@ namespace game_framework {
 
 
 	// GATE_YELLOW
-	GATE_YELLOW::GATE_YELLOW(int x, int y) : Item::Item(x, y) {}
+	GATE_YELLOW::GATE_YELLOW(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	GATE_YELLOW::~GATE_YELLOW() {}
+
+	bool GATE_YELLOW::IsChange() { return false; }
 
 	void GATE_YELLOW::OnInit() {
 		texture.AddBitmap(ITEMS_GATE_YELLOW);
@@ -1137,9 +1202,11 @@ namespace game_framework {
 	}
 
 	// SEND
-	SEND::SEND(int x, int y) : Item::Item(x, y) {}
+	SEND::SEND(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	SEND::~SEND() {}
+
+	bool SEND::IsChange() { return false; }
 
 	void SEND::OnInit() {
 		texture.AddBitmap(ITEM_SEND_1);
@@ -1163,7 +1230,7 @@ namespace game_framework {
 
 	/*
 	// SEND_BUTTON
-	SEND_BUTTON::SEND_BUTTON(int x, int y) : Item::Item(x, y) {}
+	SEND_BUTTON::SEND_BUTTON(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	SEND_BUTTON::~SEND_BUTTON() {}
 
@@ -1191,9 +1258,11 @@ namespace game_framework {
 	*/
 
 	// LOOP_LEFT
-	LOOP_LEFT::LOOP_LEFT(int x, int y) : Item::Item(x, y) {}
+	LOOP_LEFT::LOOP_LEFT(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	LOOP_LEFT::~LOOP_LEFT() {}
+
+	bool LOOP_LEFT::IsChange() { return false; }
 
 	void LOOP_LEFT::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_LEFT);
@@ -1210,9 +1279,11 @@ namespace game_framework {
 	}
 	
 	// LOOP_RIGHT
-	LOOP_RIGHT::LOOP_RIGHT(int x, int y) : Item::Item(x, y) {}
+	LOOP_RIGHT::LOOP_RIGHT(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	LOOP_RIGHT::~LOOP_RIGHT() {}
+
+	bool LOOP_RIGHT::IsChange() { return false; }
 
 	void LOOP_RIGHT::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_RING);
@@ -1230,9 +1301,11 @@ namespace game_framework {
 	}
 	
 	// LOOP_TOP
-	LOOP_TOP::LOOP_TOP(int x, int y) : Item::Item(x, y) {}
+	LOOP_TOP::LOOP_TOP(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	LOOP_TOP::~LOOP_TOP() {}
+
+	bool LOOP_TOP::IsChange() { return false; }
 
 	void LOOP_TOP::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_TOP);
@@ -1249,9 +1322,11 @@ namespace game_framework {
 	}
 
 	// LOOP_TOP_HIED
-	LOOP_TOP_HIED::LOOP_TOP_HIED(int x, int y) : Item::Item(x, y) {}
+	LOOP_TOP_HIED::LOOP_TOP_HIED(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	LOOP_TOP_HIED::~LOOP_TOP_HIED() {}
+
+	bool LOOP_TOP_HIED::IsChange() { return false; }
 
 	void LOOP_TOP_HIED::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_TOP_HIED);
@@ -1268,9 +1343,11 @@ namespace game_framework {
 	}
 
 	// LOOP_OFF
-	LOOP_OFF::LOOP_OFF(int x, int y) : Item::Item(x, y) {}
+	LOOP_OFF::LOOP_OFF(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	LOOP_OFF::~LOOP_OFF() {}
+
+	bool LOOP_OFF::IsChange() { return false; }
 
 	void LOOP_OFF::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_OFF);
@@ -1287,9 +1364,11 @@ namespace game_framework {
 	}
 	
 	// LOOP_TOP_NOT_U_D
-	LOOP_TOP_NOT_U_D::LOOP_TOP_NOT_U_D(int x, int y) : Item::Item(x, y) {}
+	LOOP_TOP_NOT_U_D::LOOP_TOP_NOT_U_D(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	LOOP_TOP_NOT_U_D::~LOOP_TOP_NOT_U_D() {}
+
+	bool LOOP_TOP_NOT_U_D::IsChange() { return false; }
 
 	void LOOP_TOP_NOT_U_D::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_TOP_NOT_U_D);
@@ -1306,9 +1385,11 @@ namespace game_framework {
 	}
 
 	// LOOP_TOP_UP_DOWN
-	LOOP_TOP_UP_DOWN::LOOP_TOP_UP_DOWN(int x, int y) : Item::Item(x, y) {}
+	LOOP_TOP_UP_DOWN::LOOP_TOP_UP_DOWN(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	LOOP_TOP_UP_DOWN::~LOOP_TOP_UP_DOWN() {}
+
+	bool LOOP_TOP_UP_DOWN::IsChange() { return false; }
 
 	void LOOP_TOP_UP_DOWN::OnInit() {
 		texture.AddBitmap(ITEMS_LOOP_TOP_UP_DOWN);
@@ -1328,11 +1409,13 @@ namespace game_framework {
 
 
 	// SPIKES_UP
-	SPIKES_UP::SPIKES_UP(int x, int y) : Item::Item(x, y) {
+	SPIKES_UP::SPIKES_UP(int id, int x, int y) : Item::Item(id, x, y) {
 		isShow = false;
 	}
 
 	SPIKES_UP::~SPIKES_UP() {}
+
+	bool SPIKES_UP::IsChange() { return isShow; }
 
 	void SPIKES_UP::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_UP);
@@ -1353,11 +1436,13 @@ namespace game_framework {
 	}
 
 	// SPIKES_DOWN
-	SPIKES_DOWN::SPIKES_DOWN(int x, int y) : Item::Item(x, y) {
+	SPIKES_DOWN::SPIKES_DOWN(int id, int x, int y) : Item::Item(id, x, y) {
 		isShow = false;
 	}
 
 	SPIKES_DOWN::~SPIKES_DOWN() {}
+
+	bool SPIKES_DOWN::IsChange() { return isShow; }
 
 	void SPIKES_DOWN::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_DOWN);
@@ -1378,11 +1463,13 @@ namespace game_framework {
 	}
 
 	// SPIKES_LEFT
-	SPIKES_LEFT::SPIKES_LEFT(int x, int y) : Item::Item(x, y) {
+	SPIKES_LEFT::SPIKES_LEFT(int id, int x, int y) : Item::Item(id, x, y) {
 		isShow = false;
 	}
 
 	SPIKES_LEFT::~SPIKES_LEFT() {}
+
+	bool SPIKES_LEFT::IsChange() { return isShow; }
 
 	void SPIKES_LEFT::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_LEFT);
@@ -1403,11 +1490,13 @@ namespace game_framework {
 	}
 
 	// SPIKES_RIGHT
-	SPIKES_RIGHT::SPIKES_RIGHT(int x, int y) : Item::Item(x, y) {
+	SPIKES_RIGHT::SPIKES_RIGHT(int id, int x, int y) : Item::Item(id, x, y) {
 		isShow = false;
 	}
 
 	SPIKES_RIGHT::~SPIKES_RIGHT() {}
+
+	bool SPIKES_RIGHT::IsChange() { return isShow; }
 
 	void SPIKES_RIGHT::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_RING);

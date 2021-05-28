@@ -57,28 +57,27 @@ namespace game_framework {
 
 		Actor* currnetActor;
 
+		int id;
 		int angle;
 		int speed;
 		int cameraSpeed;
 		
-
-
-
 	public:
 		/* Contrustor */
-		Item(int, int);
+		Item(int, int, int);
 
 		/* Getter */
+		int ID();
 		int Width();
 		int Height();
 		int Top();
 		int Left();
 		int Buttom();
 		int Right();
-		bool IsDead();
 		
 		/* Setter */
-		void setAngle(int);
+		void SetID(int);
+		void SetAngle(int);
 		void SetMoving(POINT);
 		void SetCurrentActor(Actor*);
 		void setTopLeft(int, int);
@@ -87,6 +86,9 @@ namespace game_framework {
 		/* Member Function */
 		void CameraMove();
 		bool CollisionDetection(Actor*);
+
+		//
+		virtual bool IsChange() = 0;
 
 		//
 		virtual void OnInit() = 0;
@@ -104,10 +106,10 @@ namespace game_framework {
 		bool isDeadFinish;
 
 	public: 
-		Ring(int, int);
+		Ring(int, int, int);
 		~Ring();
 
-		bool IsDead();
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -123,10 +125,10 @@ namespace game_framework {
 		bool isDeadFinish;
 
 	public:
-		BIG_Ring(int, int);
+		BIG_Ring(int, int, int);
 		~BIG_Ring();
 		
-		bool IsDead();
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -139,8 +141,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		RED_SPRING_PADS_UP(int, int);
+		RED_SPRING_PADS_UP(int, int, int);
 		~RED_SPRING_PADS_UP();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -153,8 +157,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		RED_SPRING_PADS_DOWN(int, int);
+		RED_SPRING_PADS_DOWN(int, int, int);
 		~RED_SPRING_PADS_DOWN();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -167,8 +173,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		RED_SPRING_PADS_LEFT(int, int);
+		RED_SPRING_PADS_LEFT(int, int, int);
 		~RED_SPRING_PADS_LEFT();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -181,8 +189,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		RED_SPRING_PADS_LEFT_U(int, int);
+		RED_SPRING_PADS_LEFT_U(int, int, int);
 		~RED_SPRING_PADS_LEFT_U();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -195,8 +205,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		RED_SPRING_PADS_LEFT_D(int, int);
+		RED_SPRING_PADS_LEFT_D(int, int, int);
 		~RED_SPRING_PADS_LEFT_D();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -209,8 +221,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		RED_SPRING_PADS_RING(int, int);
+		RED_SPRING_PADS_RING(int, int, int);
 		~RED_SPRING_PADS_RING();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -223,8 +237,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		RED_SPRING_PADS_RING_U(int, int);
+		RED_SPRING_PADS_RING_U(int, int, int);
 		~RED_SPRING_PADS_RING_U();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -237,8 +253,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		RED_SPRING_PADS_RING_D(int, int);
+		RED_SPRING_PADS_RING_D(int, int, int);
 		~RED_SPRING_PADS_RING_D();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -251,8 +269,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		YELLOW_SPRING_PADS_UP(int, int);
+		YELLOW_SPRING_PADS_UP(int, int, int);
 		~YELLOW_SPRING_PADS_UP();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -265,8 +285,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		YELLOW_SPRING_PADS_DOWN(int, int);
+		YELLOW_SPRING_PADS_DOWN(int, int, int);
 		~YELLOW_SPRING_PADS_DOWN();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -279,8 +301,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		YELLOW_SPRING_PADS_LEFT(int, int);
+		YELLOW_SPRING_PADS_LEFT(int, int, int);
 		~YELLOW_SPRING_PADS_LEFT();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -293,8 +317,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		YELLOW_SPRING_PADS_LEFT_U(int, int);
+		YELLOW_SPRING_PADS_LEFT_U(int, int, int);
 		~YELLOW_SPRING_PADS_LEFT_U();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -307,8 +333,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		YELLOW_SPRING_PADS_LEFT_D(int, int);
+		YELLOW_SPRING_PADS_LEFT_D(int, int, int);
 		~YELLOW_SPRING_PADS_LEFT_D();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -321,8 +349,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		YELLOW_SPRING_PADS_RING(int, int);
+		YELLOW_SPRING_PADS_RING(int, int, int);
 		~YELLOW_SPRING_PADS_RING();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -335,8 +365,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		YELLOW_SPRING_PADS_RING_U(int, int);
+		YELLOW_SPRING_PADS_RING_U(int, int, int);
 		~YELLOW_SPRING_PADS_RING_U();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -349,8 +381,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		YELLOW_SPRING_PADS_RING_D(int, int);
+		YELLOW_SPRING_PADS_RING_D(int, int, int);
 		~YELLOW_SPRING_PADS_RING_D();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -363,8 +397,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		BULE_SPRING_PADS_UP(int, int);
+		BULE_SPRING_PADS_UP(int, int, int);
 		~BULE_SPRING_PADS_UP();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -377,8 +413,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		BULE_SPRING_PADS_DOWN(int, int);
+		BULE_SPRING_PADS_DOWN(int, int, int);
 		~BULE_SPRING_PADS_DOWN();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -391,8 +429,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		BULE_SPRING_PADS_LEFT(int, int);
+		BULE_SPRING_PADS_LEFT(int, int, int);
 		~BULE_SPRING_PADS_LEFT();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -405,8 +445,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		BULE_SPRING_PADS_LEFT_U(int, int);
+		BULE_SPRING_PADS_LEFT_U(int, int, int);
 		~BULE_SPRING_PADS_LEFT_U();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -419,8 +461,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		BULE_SPRING_PADS_LEFT_D(int, int);
+		BULE_SPRING_PADS_LEFT_D(int, int, int);
 		~BULE_SPRING_PADS_LEFT_D();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -433,8 +477,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		BULE_SPRING_PADS_RING(int, int);
+		BULE_SPRING_PADS_RING(int, int, int);
 		~BULE_SPRING_PADS_RING();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -447,8 +493,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		BULE_SPRING_PADS_RING_U(int, int);
+		BULE_SPRING_PADS_RING_U(int, int, int);
 		~BULE_SPRING_PADS_RING_U();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -461,8 +509,10 @@ namespace game_framework {
 		bool isTouch;
 
 	public:
-		BULE_SPRING_PADS_RING_D(int, int);
+		BULE_SPRING_PADS_RING_D(int, int, int);
 		~BULE_SPRING_PADS_RING_D();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -472,8 +522,10 @@ namespace game_framework {
 	// GATE_YELLOW
 	class GATE_YELLOW : public Item {
 	public:
-		GATE_YELLOW(int, int);
+		GATE_YELLOW(int, int, int);
 		~GATE_YELLOW();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -483,8 +535,10 @@ namespace game_framework {
 	// SEND
 	class SEND : public Item {
 	public:
-		SEND(int,int);
+		SEND(int, int,int);
 		~SEND();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -495,7 +549,7 @@ namespace game_framework {
 	// SEND_BUTTON
 	class SEND_BUTTON : public Item {
 	public:
-		SEND_BUTTON(int, int);
+		SEND_BUTTON(int, int, int);
 		~SEND_BUTTON();
 
 		void OnInit() override;
@@ -507,8 +561,10 @@ namespace game_framework {
 	// LOOP_LEFT
 	class LOOP_LEFT : public Item {
 	public:
-		LOOP_LEFT(int, int);
+		LOOP_LEFT(int, int, int);
 		~LOOP_LEFT();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -518,8 +574,10 @@ namespace game_framework {
 	// LOOP_RIGHT
 	class LOOP_RIGHT : public Item {
 	public:
-		LOOP_RIGHT(int, int);
+		LOOP_RIGHT(int, int, int);
 		~LOOP_RIGHT();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -529,8 +587,10 @@ namespace game_framework {
 	// LOOP_TOP
 	class LOOP_TOP : public Item {
 	public:
-		LOOP_TOP(int, int);
+		LOOP_TOP(int, int, int);
 		~LOOP_TOP();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -540,8 +600,10 @@ namespace game_framework {
 	// LOOP_TOP_HIED
 	class LOOP_TOP_HIED : public Item {
 	public:
-		LOOP_TOP_HIED(int, int);
+		LOOP_TOP_HIED(int, int, int);
 		~LOOP_TOP_HIED();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -551,8 +613,10 @@ namespace game_framework {
 	// LOOP_OFF
 	class LOOP_OFF : public Item {
 	public:
-		LOOP_OFF(int, int);
+		LOOP_OFF(int, int, int);
 		~LOOP_OFF();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -562,8 +626,10 @@ namespace game_framework {
 	// LOOP_TOP_NOT_U_D
 	class LOOP_TOP_NOT_U_D : public Item {
 	public:
-		LOOP_TOP_NOT_U_D(int, int);
+		LOOP_TOP_NOT_U_D(int, int, int);
 		~LOOP_TOP_NOT_U_D();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -573,8 +639,10 @@ namespace game_framework {
 	// LOOP_TOP_UP_DOWN
 	class LOOP_TOP_UP_DOWN : public Item {
 	public:
-		LOOP_TOP_UP_DOWN(int, int);
+		LOOP_TOP_UP_DOWN(int, int, int);
 		~LOOP_TOP_UP_DOWN();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -589,8 +657,10 @@ namespace game_framework {
 		bool isShow;
 
 	public:
-		SPIKES_UP(int, int);
+		SPIKES_UP(int, int, int);
 		~SPIKES_UP();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -603,8 +673,10 @@ namespace game_framework {
 		bool isShow;
 
 	public:
-		SPIKES_DOWN(int, int);
+		SPIKES_DOWN(int, int, int);
 		~SPIKES_DOWN();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -617,8 +689,10 @@ namespace game_framework {
 		bool isShow;
 
 	public:
-		SPIKES_LEFT(int, int);
+		SPIKES_LEFT(int, int, int);
 		~SPIKES_LEFT();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;
@@ -631,8 +705,10 @@ namespace game_framework {
 		bool isShow;
 
 	public:
-		SPIKES_RIGHT(int, int);
+		SPIKES_RIGHT(int, int, int);
 		~SPIKES_RIGHT();
+
+		bool IsChange() override;
 
 		void OnInit() override;
 		void OnMove() override;

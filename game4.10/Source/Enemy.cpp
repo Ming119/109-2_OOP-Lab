@@ -179,19 +179,20 @@ namespace game_framework {
 	void Bamboo::OnMove() {
 		CameraMovement();
 
-			if ((pos.y + Height()) >= refBrick->Top()) {
-				direction = !direction;
-				pos.y -= speed;
-			}
-			if (pos.y <= spawn.y - Height()) {
-				direction = !direction;
-				pos.y += speed;
-			}
+		if ((pos.y + Height()) >= refBrick->Top()) {
+			direction = !direction;
+			pos.y -= speed;
+		}
+		if (pos.y <= spawn.y - Height()) {
+			direction = !direction;
+			pos.y += speed;
+		}
 
-			if (direction)
-				pos.y -= speed;
-			else
-				pos.y += speed;
+		if (direction)
+			pos.y -= speed;
+		else
+			pos.y += speed;
+		
 		SetTopLeft(pos);
 		texture.OnMove();
 	}
@@ -241,26 +242,19 @@ namespace game_framework {
 	void Rocket::OnMove() {
 		CameraMovement();
 
-		if (refBrick != nullptr) {
-			TRACE("refBrick: (%d, %d)\n", Left(), Top());
-			if (pos.x <= refBrick->Left()) {
-				direction = !direction;
-				pos.x += speed;
-			}
-			if ((pos.x + Width()) >= refBrick->Right()) {
-				direction = !direction;
-				pos.x -= speed;
-			}
-
-			if (direction)
-				pos.x += speed;
-			else
-				pos.x -= speed;
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
 		}
-		else {
-		TRACE("nullptr: (%d, %d)\n", Left(), Top());
+		if ((pos.x + Width()) >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
 		}
 
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
 		SetTopLeft(pos);
 		texture.OnMove();
