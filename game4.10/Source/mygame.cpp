@@ -490,57 +490,32 @@ CGameStateRun::~CGameStateRun() {
 void CGameStateRun::OnInit() {
 	stringHandler.LoadBitmap();
 	
-	current_actor = 0;
-
 	Score.LoadBitmap(GUI_SCORE);
 	Time.LoadBitmap(GUI_TIME);
 	Rings.LoadBitmap(GUI_RING);
 	
-	struct tm {
-		int tm_sec;   // 秒，正常范围从 0 到 59，但允许至 61
-		int tm_min;   // 分，范围从 0 到 59
-		int tm_hour;  // 小时，范围从 0 到 23
-	};
+	score.LoadBitmap();
+	t_min.LoadBitmap();
+	t_sec.LoadBitmap();
+	rings.LoadBitmap();
 
-	/*
-	time_t now = time(0);
-	TRACE("Time =  %d\n", now);
-	
-	struct tm* localtime(const time_t* now);
-	*/
-	
-	time_t t1, t2;
-	t1 = time(NULL);
-	Sleep(1234);
-	t2 = time(NULL);
-	TRACE("Time =  %d\n", t2 - t1);
-
-	clock_t c1, c2;
-	c1 = clock();
-	Sleep(1234);
-	c2 = clock();
-	TRACE("Time_Clock =  %d\n", (c2 - c1) / (double)(CLOCKS_PER_SEC));
-
-	long     i = 10000000L;
-	clock_t start, finish;
-	double   duration;
-	/* 測量一個事件持續的時間*/
-	TRACE("Time to do %ld empty loops is = ", i);
-	start = clock();
-	while (i--);
-	finish = clock();
-	duration = (double)(finish - start) / CLOCKS_PER_SEC;
-	TRACE("%f seconds = \n", duration);
-	
-
-	ringsCount.LoadBitmap();
-	ringsCount.SetInteger(0);
+	current_actor = 0;
+	game_time = 0;
+	score.SetInteger(0);
+	t_min.SetInteger(0);
+	t_sec.SetInteger(0);
+	rings.SetInteger(0);
 
 }
 
 void CGameStateRun::OnBeginState() {
 	current_level = CGame::Instance()->GetLevel();
-	TRACE("%d\n", current_level);
+
+	game_time = 0;
+	t_min.SetInteger(0);
+	t_sec.SetInteger(0);
+	rings.SetInteger(0);
+
 	level = new Level(current_level);
 	level->OnInit(current_level);
 }
@@ -603,30 +578,40 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 }
 
 void CGameStateRun::OnMove() {
-	int rings = level->getCountRing();
-	
+
 	level->SetMoving(level->CurrentActor()->getDelta());
 	level->OnMove();
 
-	ringsCount.SetInteger(rings);
+	game_time++;
+	int t_time = game_time / GAME_CYCLE_TIME;
+	int mins = t_time / 60;
+	int sec = t_time % 60;
 
-	Score.SetTopLeft(32, 20);
-	Time.SetTopLeft(32, 50);
-	Rings.SetTopLeft(32, 80);
-	ringsCount.SetTopLeft(64, 80);
+	t_min.SetInteger(mins);
+	t_sec.SetInteger(sec);
+	score.SetInteger(level->getScore());
+	rings.SetInteger(level->getRings());
 }
 
 void CGameStateRun::OnShow() {
 	level->OnShow();
+
+	Score.SetTopLeft(32, 20);
+	score.SetTopLeft(64, 20);
+	Time.SetTopLeft(32, 50);
+	t_min.SetTopLeft(50, 50);
+	t_sec.SetTopLeft(72, 50);
+	Rings.SetTopLeft(32, 80);
+	rings.SetTopLeft(64, 80);
+
 	Score.ShowBitmap();
 	Time.ShowBitmap();
 	Rings.ShowBitmap();
 
-	ringsCount.ShowBitmap();
-}
-
-void CGameStateRun::SetLevel(int level) {
-	current_level = level;
+	score.ShowBitmap();
+	t_min.ShowBitmap();
+	t_sec.ShowBitmap();
+	rings.ShowBitmap();
 }
 
 

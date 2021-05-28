@@ -554,10 +554,6 @@ void CGameState::OnCycle() // Template Method
 	OnShow();
 }
 
-S::S() {
-	level = 0;
-}
-
 void CGame::SetLevel(int l) {
 	level = l;
 }

@@ -172,23 +172,27 @@ namespace game_framework {
 		void OnKeyDown(UINT, UINT, UINT);
 		void OnKeyUp(UINT, UINT, UINT);
 
-		void SetLevel(int);
-
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 
 	private:
 		CString stringHandler;
+
 		CMovingBitmap Score;
 		CMovingBitmap Time;
 		CMovingBitmap Rings;
-		CInteger ringsCount = CInteger(3);
+
+		CInteger score = CInteger(5);
+		CInteger rings = CInteger(3);
+		CInteger t_min = CInteger(2);
+		CInteger t_sec = CInteger(2);
 
 		Level *level;
 		int current_actor;
 		int current_level;
 		int game_time;
+		
 	};
 
 

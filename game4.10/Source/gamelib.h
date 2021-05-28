@@ -157,11 +157,11 @@ private:
 /////////////////////////////////////////////////////////////////////////////
 class CString {
 public:
-	CString();			// default 5 digits
-	CMovingBitmap *GetAlphabet();			// 回傳整數值
-	void LoadBitmap();			// 載入A..Z之圖形
-	void SetTopLeft(int, int);	// 將動畫的左上角座標移至 (x,y)
-	void ShowBitmap(string, double factor = DEFAULT_SCALE);			// 將動畫貼到螢幕
+	CString();			
+	CMovingBitmap *GetAlphabet();		// 回傳字母
+	void LoadBitmap();					// 載入A..Z之圖形
+	void SetTopLeft(int, int);			// 將動畫的左上角座標移至 (x,y)
+	void ShowBitmap(string, double factor = DEFAULT_SCALE);		// 將動畫貼到螢幕
 	bool isFocus();
 	void SetFocus(bool);
 
@@ -245,17 +245,6 @@ private:
 	static bool					fullscreen;
 	static CDDraw				ddraw;
 	static int					size_x, size_y;
-};
-
-class S {
-public:
-	S();
-
-	void SetLevel(int);
-	int GetLevel();
-
-private:
-	int level;
 };
 
 /////////////////////////////////////////////////////////////////////////////

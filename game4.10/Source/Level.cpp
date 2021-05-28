@@ -13,12 +13,14 @@ namespace game_framework {
 
 	/* Constructor */
 	Level::Level() {
-		count_ring = 0;
+		rings = 0;
+		score = 0;
 		level = 0;
 	}
 
 	Level::Level(int l) {
-		count_ring = 0;
+		rings = 0;
+		score = 0;
 		level = l;
 	}
 
@@ -31,7 +33,9 @@ namespace game_framework {
 	/* Getter */
 	Actor* Level::CurrentActor() { return currentActor; }
 
-	int Level::getCountRing() { return count_ring; }
+	int Level::getRings() { return rings; }
+
+	int Level::getScore() { return score; }
 
 	/* Setter */
 	void Level::SetCurrentActor(int actor) {
@@ -270,7 +274,8 @@ namespace game_framework {
 	//
 	void Level::OnInit(int l) {
 		level = l;
-		count_ring = 0;
+		rings = 0;
+		score = 0;
 
 		bricks.clear();
 		items.clear();
@@ -452,10 +457,11 @@ namespace game_framework {
 		int is = items.size();
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnMove();
+			
 			if (items.at(i)->IsChange() && items.at(i)->ID() == 0) {
 				items.erase(items.begin()+i);
 				is--; i--;
-				count_ring++;
+				rings++;
 			}
 		}
 
@@ -463,6 +469,13 @@ namespace game_framework {
 		int es = enemies.size();
 		for (int i = 0; i < es; i++) {
 			enemies.at(i)->OnMove();
+
+			/* Handling enemy die and score.
+			if (enemies.IsDead()) {
+				items.erase(items.begin() + i);
+				is--; i--;
+				score += 100;
+			}*/
 		}
 
 		// Actor

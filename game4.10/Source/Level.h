@@ -30,7 +30,8 @@ namespace game_framework {
 	class Level {
 	private:
 		int max_x, max_y;
-		int count_ring;
+		int rings;
+		int score;
 		int level;
 
 		POINT spawnPoint;
@@ -54,7 +55,8 @@ namespace game_framework {
 
 		/* Getter */
 		Actor* CurrentActor();
-		int getCountRing();
+		int getRings();
+		int getScore();
 
 		/* Setter */
 		void SetCurrentActor(int);
