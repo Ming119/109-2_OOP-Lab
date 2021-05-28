@@ -608,7 +608,7 @@ void CGameStateRun::OnMove() {
 	level->SetMoving(level->CurrentActor()->getDelta());
 	level->OnMove();
 
-	ringsCount.SetInteger(level->getCountRing());
+	ringsCount.SetInteger(rings);
 
 	Score.SetTopLeft(32, 20);
 	Time.SetTopLeft(32, 50);
