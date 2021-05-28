@@ -183,9 +183,7 @@ namespace game_framework {
 		CMovingBitmap Score;
 		CMovingBitmap Time;
 		CMovingBitmap Rings;
-		CInteger count;
-		
-
+		CInteger ringsCount;
 
 		Level *level;
 		int current_actor;

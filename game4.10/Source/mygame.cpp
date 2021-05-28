@@ -533,8 +533,8 @@ void CGameStateRun::OnInit() {
 	TRACE("%f seconds = \n", duration);
 	
 
-	count.LoadBitmap();
-	count.SetInteger(0);
+	ringsCount.LoadBitmap();
+	ringsCount.SetInteger(0);
 
 }
 
@@ -608,10 +608,12 @@ void CGameStateRun::OnMove() {
 	level->SetMoving(level->CurrentActor()->getDelta());
 	level->OnMove();
 
+	ringsCount.SetInteger(level->getCountRing());
+
 	Score.SetTopLeft(32, 20);
 	Time.SetTopLeft(32, 50);
 	Rings.SetTopLeft(32, 80);
-
+	ringsCount.SetTopLeft(64, 80);
 }
 
 void CGameStateRun::OnShow() {
@@ -620,6 +622,7 @@ void CGameStateRun::OnShow() {
 	Time.ShowBitmap();
 	Rings.ShowBitmap();
 
+	ringsCount.ShowBitmap();
 }
 
 void CGameStateRun::SetLevel(int level) {

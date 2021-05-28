@@ -435,15 +435,7 @@ namespace game_framework {
 		}
 
 	}
-<<<<<<< HEAD
-	int Level::getCountRing() {
-		return count_ring;
-	}
 
-
-=======
-		
->>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 	void Level::OnMove() {
 		
 		// Background
@@ -464,11 +456,6 @@ namespace game_framework {
 				items.erase(items.begin()+i);
 				is--; i--;
 				count_ring++;
-<<<<<<< HEAD
-				
-				//TRACE("ring = %d\n", count_ring);
-=======
->>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 			}
 		}
 
