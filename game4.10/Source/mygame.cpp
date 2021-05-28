@@ -524,6 +524,7 @@ void CGameStateRun::OnInit() {
 	long     i = 10000000L;
 	clock_t start, finish;
 	double   duration;
+
 	/* 測量一個事件持續的時間*/
 	TRACE("Time to do %ld empty loops is = ", i);
 	start = clock();
