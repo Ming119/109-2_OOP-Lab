@@ -423,7 +423,7 @@ void CGameStateInit::OnShow() {
 				}
 			}
 
-			// Option
+		// Option
 		if (!onStageSelect) {
 			stringHandler.SetFocus(false);
 			stringHandler.SetTopLeft(SIZE_X * 7 / 100, SIZE_Y * 19 / 100);
@@ -493,7 +493,9 @@ void CGameStateRun::OnInit() {
 	Score.LoadBitmap(GUI_SCORE);
 	Time.LoadBitmap(GUI_TIME);
 	Rings.LoadBitmap(GUI_RING);
-	
+	colon.LoadBitmap(T_TIME_COLON);
+
+
 	score.LoadBitmap();
 	t_min.LoadBitmap();
 	t_sec.LoadBitmap();
@@ -600,6 +602,7 @@ void CGameStateRun::OnShow() {
 	score.SetTopLeft(64, 20);
 	Time.SetTopLeft(32, 50);
 	t_min.SetTopLeft(50, 50);
+	colon.SetTopLeft(137, 56);
 	t_sec.SetTopLeft(72, 50);
 	Rings.SetTopLeft(32, 80);
 	rings.SetTopLeft(64, 80);
@@ -607,7 +610,7 @@ void CGameStateRun::OnShow() {
 	Score.ShowBitmap();
 	Time.ShowBitmap();
 	Rings.ShowBitmap();
-
+	colon.ShowBitmap();
 	score.ShowBitmap();
 	t_min.ShowBitmap();
 	t_sec.ShowBitmap();

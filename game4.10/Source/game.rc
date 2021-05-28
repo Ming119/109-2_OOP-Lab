@@ -1393,6 +1393,8 @@ OCEAN2_69               BITMAP                  "..\\RES\\ocean2\\ocean2_69.bmp"
 
 IDB_BITMAP283           BITMAP                  "..\\RES\\ocean2\\ocean2_background_ferry.bmp"
 
+T_TIME_COLON            BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\font\\gui_semicolon.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

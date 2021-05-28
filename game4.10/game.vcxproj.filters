@@ -2007,5 +2007,8 @@
     <Image Include="RES\ocean2\ocean2_7_6.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\font\gui_semicolon.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
