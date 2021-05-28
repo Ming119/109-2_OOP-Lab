@@ -472,6 +472,7 @@
     <Image Include="RES\enemies\machine_snails2.bmp" />
     <Image Include="RES\enemies\machine_spider1.bmp" />
     <Image Include="RES\enemies\machine_spider2.bmp" />
+    <Image Include="RES\font\gui_semicolon.bmp" />
     <Image Include="RES\font\gui_white_numA.bmp" />
     <Image Include="RES\font\gui_white_numB.bmp" />
     <Image Include="RES\font\gui_white_numC.bmp" />
