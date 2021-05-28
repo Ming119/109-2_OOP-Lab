@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -6,13 +6,16 @@
 #include "gamelib.h"
 #include "mygame.h"
 #include "Item.h"
+#include <iostream>
+#include <time.h>
+#include <ctime>
 
 using namespace std;
 
 namespace game_framework {
 
 /////////////////////////////////////////////////////////////////////////////
-// ³o­Óclass¬°¹CÀ¸ªº¹CÀ¸¶}ÀYµe­±ª«¥ó
+// é€™å€‹classç‚ºéŠæˆ²çš„éŠæˆ²é–‹é ­ç•«é¢ç‰©ä»¶
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateInit::CGameStateInit(CGame *g) : CGameState(g) {
@@ -21,10 +24,18 @@ CGameStateInit::CGameStateInit(CGame *g) : CGameState(g) {
 }
 
 void CGameStateInit::OnInit() {
+<<<<<<< HEAD
+	//
+	// ç•¶åœ–å¾ˆå¤šæ™‚ï¼ŒOnInitè¼‰å…¥æ‰€æœ‰çš„åœ–è¦èŠ±å¾ˆå¤šæ™‚é–“ã€‚ç‚ºé¿å…ç©éŠæˆ²çš„äºº
+	//   ç­‰çš„ä¸è€ç…©ï¼ŒéŠæˆ²æœƒå‡ºç¾ã€ŒLoading ...ã€ï¼Œé¡¯ç¤ºLoadingçš„é€²åº¦ã€‚
+	//
+	ShowInitProgress(0);	// ä¸€é–‹å§‹çš„loadingé€²åº¦ç‚º0%
+=======
 	ShowInitProgress(0);	// ¤@¶}©lªºloading¶i«×¬°0%
+>>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 
 	//
-	// ¶}©l¸ü¤J¸ê®Æ
+	// é–‹å§‹è¼‰å…¥è³‡æ–™
 	//
 	// Loading Images
 
@@ -121,7 +132,7 @@ void CGameStateInit::OnInit() {
 	
 
 	//
-	// ¦¹OnInit°Ê§@·|±µ¨ìCGameStaterRun::OnInit()¡A©Ò¥H¶i«×ÁÙ¨S¨ì100%
+	// æ­¤OnInitå‹•ä½œæœƒæ¥åˆ°CGameStaterRun::OnInit()ï¼Œæ‰€ä»¥é€²åº¦é‚„æ²’åˆ°100%
 	//
 }
 
@@ -145,10 +156,10 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 	const char KEY_ENTER	= 0x0D;	// keyboard ENTER
 	const char KEY_ESC		= 0x1B;	// keyboard ESC
 	const char KEY_SPACE	= 0x20; // keyboard SPACE
-	const char KEY_LEFT		= 0x25; // keyboard¥ª½bÀY
-	const char KEY_UP		= 0x26; // keyboard¤W½bÀY
-	const char KEY_RIGHT	= 0x27; // keyboard¥k½bÀY
-	const char KEY_DOWN		= 0x28; // keyboard¤U½bÀY
+	const char KEY_LEFT		= 0x25; // keyboardå·¦ç®­é ­
+	const char KEY_UP		= 0x26; // keyboardä¸Šç®­é ­
+	const char KEY_RIGHT	= 0x27; // keyboardå³ç®­é ­
+	const char KEY_DOWN		= 0x28; // keyboardä¸‹ç®­é ­
 	
 	switch (page) {
 
@@ -464,12 +475,35 @@ void CGameStateInit::OnShow() {
 		}
 	}
 
+<<<<<<< HEAD
+	/*
+	//
+	// Demoè¢å¹•å­—å‹çš„ä½¿ç”¨ï¼Œä¸éé–‹ç™¼æ™‚è«‹ç›¡é‡é¿å…ç›´æ¥ä½¿ç”¨å­—å‹ï¼Œæ”¹ç”¨CMovingBitmapæ¯”è¼ƒå¥½
+	//
+	CDC *pDC = CDDraw::GetBackCDC();			// å–å¾— Back Plain çš„ CDC 
+	CFont f,*fp;
+	f.CreatePointFont(160,"Times New Roman");	// ç”¢ç”Ÿ font f; 160è¡¨ç¤º16 pointçš„å­—
+	fp=pDC->SelectObject(&f);					// é¸ç”¨ font f
+	pDC->SetBkColor(RGB(0,0,0));
+	pDC->SetTextColor(RGB(255,255,0));
+	pDC->TextOut(120,220,"Please click mouse or press SPACE to begin.");
+	pDC->TextOut(5,395,"Press Ctrl-F to switch in between window mode and full screen mode.");
+	if (ENABLE_GAME_PAUSE)
+		pDC->TextOut(5,425,"Press Ctrl-Q to pause the Game.");
+	pDC->TextOut(5,455,"Press Alt-F4 or ESC to Quit.");
+	pDC->SelectObject(fp);						// æ”¾æ‰ font f (åƒè¬ä¸è¦æ¼äº†æ”¾æ‰)
+	CDDraw::ReleaseBackCDC();					// æ”¾æ‰ Back Plain çš„ CDC
+	*/
+
+
+=======
+>>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 }								
 
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ³o­Óclass¬°¹CÀ¸ªº¹CÀ¸°õ¦æª«¥ó¡A¥D­nªº¹CÀ¸µ{¦¡³£¦b³o¸Ì
+// é€™å€‹classç‚ºéŠæˆ²çš„éŠæˆ²åŸ·è¡Œç‰©ä»¶ï¼Œä¸»è¦çš„éŠæˆ²ç¨‹å¼éƒ½åœ¨é€™è£¡
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateRun::CGameStateRun(CGame *g) : CGameState(g) {	
@@ -482,12 +516,56 @@ CGameStateRun::~CGameStateRun() {
 
 void CGameStateRun::OnInit() {
 	stringHandler.LoadBitmap();
+	
 	current_actor = 0;
+
 	Score.LoadBitmap(GUI_SCORE);
 	Time.LoadBitmap(GUI_TIME);
 	Rings.LoadBitmap(GUI_RING);
+	
+	struct tm {
+		int tm_sec;   // ç§’ï¼Œæ­£å¸¸èŒƒå›´ä» 0 åˆ° 59ï¼Œä½†å…è®¸è‡³ 61
+		int tm_min;   // åˆ†ï¼ŒèŒƒå›´ä» 0 åˆ° 59
+		int tm_hour;  // å°æ—¶ï¼ŒèŒƒå›´ä» 0 åˆ° 23
+	};
+
+	/*
+	time_t now = time(0);
+	TRACE("Time =  %d\n", now);
+	
+	struct tm* localtime(const time_t* now);
+	*/
+	
+	time_t t1, t2;
+	t1 = time(NULL);
+	Sleep(1234);
+	t2 = time(NULL);
+	TRACE("Time =  %d\n", t2 - t1);
+
+	clock_t c1, c2;
+	c1 = clock();
+	Sleep(1234);
+	c2 = clock();
+	TRACE("Time_Clock =  %d\n", (c2 - c1) / (double)(CLOCKS_PER_SEC));
+
+	long     i = 10000000L;
+	clock_t start, finish;
+	double   duration;
+	/* æ¸¬é‡ä¸€å€‹äº‹ä»¶æŒçºŒçš„æ™‚é–“*/
+	TRACE("Time to do %ld empty loops is = ", i);
+	start = clock();
+	while (i--);
+	finish = clock();
+	duration = (double)(finish - start) / CLOCKS_PER_SEC;
+	TRACE("%f seconds = \n", duration);
+	
+
 	count.LoadBitmap();
 	count.SetInteger(0);
+	for (int i = 0; i < 3; i++) {
+		count_Rings[i].LoadBitmapA(INTEGER_WHITE_0);
+	}
+
 }
 
 void CGameStateRun::OnBeginState() {
@@ -499,10 +577,10 @@ void CGameStateRun::OnBeginState() {
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	const char KEY_LEFT  = 0x25; // keyboard¥ª½bÀY
-	const char KEY_UP    = 0x26; // keyboard¤W½bÀY
-	const char KEY_RIGHT = 0x27; // keyboard¥k½bÀY
-	const char KEY_DOWN  = 0x28; // keyboard¤U½bÀY
+	const char KEY_LEFT  = 0x25; // keyboardå·¦ç®­é ­
+	const char KEY_UP    = 0x26; // keyboardä¸Šç®­é ­
+	const char KEY_RIGHT = 0x27; // keyboardå³ç®­é ­
+	const char KEY_DOWN  = 0x28; // keyboardä¸‹ç®­é ­
 	const char KEY_SPACE = 0x20; // keyboard SPACE
 	const char KEY_Z     = 0x5A; // keyboard z
 	
@@ -531,10 +609,10 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	const char KEY_LEFT  = 0x25; // keyboard¥ª½bÀY
-	const char KEY_UP    = 0x26; // keyboard¤W½bÀY
-	const char KEY_RIGHT = 0x27; // keyboard¥k½bÀY
-	const char KEY_DOWN  = 0x28; // keyboard¤U½bÀY
+	const char KEY_LEFT  = 0x25; // keyboardå·¦ç®­é ­
+	const char KEY_UP    = 0x26; // keyboardä¸Šç®­é ­
+	const char KEY_RIGHT = 0x27; // keyboardå³ç®­é ­
+	const char KEY_DOWN  = 0x28; // keyboardä¸‹ç®­é ­
 	const char KEY_SPACE = 0x20; // keyboard SPACE
 
 	if (nChar == KEY_LEFT)
@@ -555,19 +633,68 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 }
 
 void CGameStateRun::OnMove() {
+<<<<<<< HEAD
+	for (int i = 0; i < 3; i++) {
+		int x = int(pow(10, i + 1)), y = int(pow(10, i));
+		int index = int((level->getCountRing() % x) / y);
+
+		TRACE("index = %d\n",index);
+		switch (index) {
+			case 0:
+				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_0);
+				break;
+			case 1:
+				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_1);
+				break;
+			case 2:
+				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_2);
+				break;
+			case 3:
+				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_3);
+				break;
+			case 4:
+				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_4);
+				break;
+			case 5:
+				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_5);
+				break;
+			case 6:
+				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_6);
+				break;
+			case 7:
+				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_7);
+				break;
+			case 8:
+				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_8);
+				break;
+			case 9:
+				count_Rings[2 - i].LoadBitmapA(INTEGER_WHITE_9);
+				break;
+			default:
+				break;
+		}
+	}
+=======
 
 	int rings = level->getCountRing();
 	
 	
+>>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 	level->SetMoving(level->CurrentActor()->getDelta());
 	level->OnMove();
 	Score.SetTopLeft(32, 20);
 	Time.SetTopLeft(32, 50);
-	
 	Rings.SetTopLeft(32, 80);
+<<<<<<< HEAD
+	for (int i = 0; i < 3; i++) {
+		count_Rings[i].SetTopLeft(120+(count_Rings[i].Width()+7)*i,79);
+	}
+
+=======
 	//for (int i = 0; i < 3; i++) {
 	//	count_Rings[i].SetTopLeft(120+(count_Rings[i].Width()+7)*i,79);
 	//}
+>>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 }
 
 void CGameStateRun::OnShow() {
@@ -575,6 +702,12 @@ void CGameStateRun::OnShow() {
 	Score.ShowBitmap();
 	Time.ShowBitmap();
 	Rings.ShowBitmap();
+<<<<<<< HEAD
+
+	for (int i = 0; i < 3; i++) {
+		count_Rings[i].ShowBitmap();
+	}
+=======
 	//for (int i = 0; i < 3; i++) {
 	//	//count_Rings[i].ShowBitmap();
 	//}
@@ -582,12 +715,13 @@ void CGameStateRun::OnShow() {
 
 void CGameStateRun::SetLevel(int level) {
 	current_level = level;
+>>>>>>> eed026ecb8759f549fd16ea87c54482c39e0e141
 }
 
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ³o­Óclass¬°¹CÀ¸ªºµ²§ôª¬ºA(Game Over)
+// é€™å€‹classç‚ºéŠæˆ²çš„çµæŸç‹€æ…‹(Game Over)
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateOver::CGameStateOver(CGame* g) : CGameState(g) {
