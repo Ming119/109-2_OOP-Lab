@@ -493,7 +493,7 @@ void CGameStateRun::OnInit() {
 	Score.LoadBitmap(GUI_SCORE);
 	Time.LoadBitmap(GUI_TIME);
 	Rings.LoadBitmap(GUI_RING);
-<<<<<<< HEAD
+
 	
 	struct tm {
 		int tm_sec;   // 秒，正常范围从 0 到 59，但允许至 61
@@ -532,9 +532,8 @@ void CGameStateRun::OnInit() {
 	duration = (double)(finish - start) / CLOCKS_PER_SEC;
 	TRACE("%f seconds = \n", duration);
 	
-=======
+
 	colon.LoadBitmap(T_TIME_COLON);
->>>>>>> 98ddb75bf7dbf4e640b88b7f04531fdee0abd3b2
 
 
 	score.LoadBitmap();

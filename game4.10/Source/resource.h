@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by game.rc
+// Microsoft Visual C++ 產生的 Include 檔案。
+// 由 game.rc 使用
 //
 #define IDD_ABOUTBOX                    100
 #define IDP_SOCKETS_INIT_FAILED         104
@@ -168,7 +168,6 @@
 #define IDB_BITMAP44                    259
 #define IDB_BITMAP45                    260
 #define IDB_BITMAP46                    261
-#define IDB_BITMAP47                    262
 #define IDB_BITMAP48                    263
 #define IDB_BITMAP49                    264
 #define IDB_BITMAP50                    265
