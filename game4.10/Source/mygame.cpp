@@ -98,17 +98,10 @@ void CGameStateInit::OnInit() {
 	// stages
 	stages.push_back("BULE OCEAN ZONE ACT ONE");
 	stages.push_back("BULE OCEAN ZONE ACT TWO");
-	stages.push_back("BULE OCENA ZONE ACT THREE");
 	stages.push_back("CHILPOCTLI TEMPLE ZONE ACT ONE");
 	stages.push_back("EXOTIC HELL ACT ONE");
 	stages.push_back("EXOTIC PARADISE ACT ONE");
 	stages.push_back("EXOTIC PARADISE ACT TWO");
-	stages.push_back("EXOTIC PARADISE ACT THREE");
-	stages.push_back("PROTOTYPE ACT ONE");
-	stages.push_back("SUPER BOSS ACT ONE");
-	stages.push_back("SUPER BOSS ACT TWO");
-	stages.push_back("TEMPLATE ACT ONE");
-	stages.push_back("TEST ZONE ACT ONE");
 	stages.push_back("TUTORIAL ACT ONE");
 	stages.push_back("TUTORIAL ACT TWO");
 
@@ -490,9 +483,9 @@ void CGameStateInit::OnShow() {
 
 			case 1:
 				stringHandler.SetFocus(false);
-				for (int i = 0; i < 14; i++) {
+				for (int i = 0; i < static_cast<int>(LEVELS::COUNT); i++) {
 					stringHandler.SetFocus(i == stageSelect);
-					stringHandler.SetTopLeft(25, 30 + SIZE_Y * (6 * i) / 100);
+					stringHandler.SetTopLeft(25, 50 + SIZE_Y * (8 * i) / 100);
 					stringHandler.ShowBitmap(stages.at(i));
 				}
 
@@ -546,7 +539,8 @@ void CGameStateRun::OnInit() {
 
 }
 
-void CGameStateRun::OnBeginState() {
+void CGameStateRun::OnBeginState() 
+{
 	current_level = CGame::Instance()->GetLevel();
 
 	game_time = 0;
@@ -673,6 +667,5 @@ void CGameStateOver::OnMove() {
 void CGameStateOver::OnShow() {
 
 }
-
 
 }

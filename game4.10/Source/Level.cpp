@@ -376,50 +376,6 @@ namespace game_framework {
 			
 			break;
 
-		// Level 3
-		case static_cast<int>(LEVELS::BULE_OCEAN_3) :
-			CAudio::Instance()->Stop(AUDIO_TITLE);
-			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
-
-			spawnPoint.x = 35;
-			spawnPoint.y = 280;
-
-			// Background
-			background.LoadBitmap(LEVEL1_BG);
-
-			// Brick
-			for (int i = 0; i < sizeof(BULEOCEAN3Brick) / sizeof(BULEOCEAN3Brick[0]); i++) {
-				const int id = BULEOCEAN3Brick[i][0];
-				const int x = BULEOCEAN3Brick[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN3Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					bricks.push_back(new Brick(id, x, y));
-			}
-
-			// Item
-			for (int i = 0; i < sizeof(BULEOCEAN3Items) / sizeof(BULEOCEAN3Items[0]); i++) {
-				const int id = BULEOCEAN3Items[i][0];
-				const int x = BULEOCEAN3Items[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN3Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					addItem(id, x, y);
-			}
-
-			// Enemy
-			for (int i = 0; i < sizeof(BULEOCEAN3Enemies) / sizeof(BULEOCEAN3Enemies[0]); i++) {
-				const int id = BULEOCEAN3Enemies[i][0];
-				const int x = BULEOCEAN3Enemies[i][1] * DEFAULT_SCALE;
-				const int y = (BULEOCEAN3Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					addEnemy(id, x, y);
-			}
-
-			break;
-
-
 		default: break;
 		}
 
