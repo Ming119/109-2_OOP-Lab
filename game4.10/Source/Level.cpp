@@ -471,10 +471,10 @@ namespace game_framework {
 			enemies.at(i)->OnMove();
 
 			/* Handling enemy die and score.
-			if (enemies.IsDead()) {
+			if (enemies.at(i)->IsDead()) {
 				items.erase(items.begin() + i);
 				is--; i--;
-				score += 100;
+				score += enmies.at(i)->score();
 			}*/
 		}
 

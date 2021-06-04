@@ -151,7 +151,7 @@ namespace game_framework {
 		
 		// stages
 		vector<string> stages;
-		bool onStageSelect;
+		int optionStage;
 		int stageSelect;
 	};
 
