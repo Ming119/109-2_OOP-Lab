@@ -400,52 +400,96 @@ namespace game_framework {
 			
 			break;
 
-			// PARADISE 1
-			case static_cast<int>(LEVELS::EXOTIC_PARADISE_1) :
-				CAudio::Instance()->Stop(AUDIO_TITLE);
-				CAudio::Instance()->Play(AUDIO_CRUSADER, true);
+		// PARADISE 1
+		case static_cast<int>(LEVELS::EXOTIC_PARADISE_1) :
+			CAudio::Instance()->Stop(AUDIO_TITLE);
+			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 
-				spawnPoint.x = 40;
-				spawnPoint.y = 3000;
+			spawnPoint.x = 25;
+			spawnPoint.y = 5900;
 
-				// Background
-				background.LoadBitmap(LEVEL1_BG);
+			// Background
+			background.LoadBitmap(LEVEL1_BG);
 
-				// Brick
-				for (int i = 0; i < sizeof(EXOTIC1Brick) / sizeof(EXOTIC1Brick[0]); i++) {
-					const int id = EXOTIC1Brick[i][0];
-					const int x = EXOTIC1Brick[i][1] * DEFAULT_SCALE;
-					const int y = (EXOTIC1Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+			// Brick
+			for (int i = 0; i < sizeof(EXOTIC1Brick) / sizeof(EXOTIC1Brick[0]); i++) {
+				const int id = EXOTIC1Brick[i][0];
+				const int x = EXOTIC1Brick[i][1] * DEFAULT_SCALE;
+				const int y = (EXOTIC1Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
 
-					if (id != -1)
-						bricks.push_back(new Brick(id, x, y));
-				}
+				if (id != -1)
+					bricks.push_back(new Brick(id, x, y));
+			}
 
-				// Item
-				for (int i = 0; i < sizeof(EXOTIC1Itmes) / sizeof(EXOTIC1Itmes[0]); i++) {
-					const int id = EXOTIC1Itmes[i][0];
-					const int x = EXOTIC1Itmes[i][1] * DEFAULT_SCALE;
-					const int y = (EXOTIC1Itmes[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
+			// Item
+			for (int i = 0; i < sizeof(EXOTIC1Itmes) / sizeof(EXOTIC1Itmes[0]); i++) {
+				const int id = EXOTIC1Itmes[i][0];
+				const int x = EXOTIC1Itmes[i][1] * DEFAULT_SCALE;
+				const int y = (EXOTIC1Itmes[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
 
-					if (id != -1)
-						addItem(id, x, y);
-				}
+				if (id != -1)
+					addItem(id, x, y);
+			}
 
-				// Enemy
-				for (int i = 0; i < sizeof(EXOTIC1Enemies) / sizeof(EXOTIC1Enemies[0]); i++) {
-					const int id = EXOTIC1Enemies[i][0];
-					const int x = EXOTIC1Enemies[i][1] * DEFAULT_SCALE;
-					const int y = (EXOTIC1Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+			// Enemy
+			for (int i = 0; i < sizeof(EXOTIC1Enemies) / sizeof(EXOTIC1Enemies[0]); i++) {
+				const int id = EXOTIC1Enemies[i][0];
+				const int x = EXOTIC1Enemies[i][1] * DEFAULT_SCALE;
+				const int y = (EXOTIC1Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
 
-					if (id != -1)
-						addEnemy(id, x, y);
+				if (id != -1)
+					addEnemy(id, x, y);
 
-				}
+			}
+			break;
+/*
+		// PARADISE 2
+		case static_cast<int>(LEVELS::EXOTIC_PARADISE_2) :
+			CAudio::Instance()->Stop(AUDIO_TITLE);
+			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 
-				break;
+			spawnPoint.x = 25;
+			spawnPoint.y = 720;
 
+			// Background
+			background.LoadBitmap(LEVEL1_BG);
+
+			// Brick
+			for (int i = 0; i < sizeof(EXOTIC2Brick) / sizeof(EXOTIC2Brick[0]); i++) {
+				const int id = EXOTIC2Brick[i][0];
+				const int x = EXOTIC2Brick[i][1] * DEFAULT_SCALE;
+				const int y = (EXOTIC2Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					bricks.push_back(new Brick(id, x, y));
+			}
+
+			// Item
+			for (int i = 0; i < sizeof(EXOTIC2Itmes) / sizeof(EXOTIC2Itmes[0]); i++) {
+				const int id = EXOTIC2Itmes[i][0];
+				const int x = EXOTIC2Itmes[i][1] * DEFAULT_SCALE;
+				const int y = (EXOTIC2Itmes[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addItem(id, x, y);
+			}
+
+			// Enemy
+			for (int i = 0; i < sizeof(EXOTIC2Enemies) / sizeof(EXOTIC2Enemies[0]); i++) {
+				const int id = EXOTIC2Enemies[i][0];
+				const int x = EXOTIC2Enemies[i][1] * DEFAULT_SCALE;
+				const int y = (EXOTIC2Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addEnemy(id, x, y);
+
+			}
+
+			break;
+*/
 		default: break;
-		}
+		
+}
 
 		int bs = bricks.size();
 		for (int i = 0; i < bs; i++) {

@@ -626,14 +626,494 @@ namespace game_framework {
 		if (level == static_cast<int>(LEVELS::CHILPOCTLI_TEMPLE)) {
 			// DESERT
 			/*switch (id) {
-			}*/
+			}*/	 
 		}
 
 		if (level == static_cast<int>(LEVELS::EXOTIC_PARADISE_1) || level == static_cast<int>(LEVELS::EXOTIC_PARADISE_2) || level == static_cast<int>(LEVELS::TUTORIAL_1)) {
 			// INLAND
+			switch (id) {
+			case 0:
+				texture.AddBitmap(ISLAND_PARADISE_0);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
 
-			/*switch (id) {
-			}*/	 
+			case 1:
+				texture.AddBitmap(ISLAND_PARADISE_1);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 2:
+				texture.AddBitmap(ISLAND_PARADISE_2);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 3:
+				texture.AddBitmap(ISLAND_PARADISE_3);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(340);
+				break;
+
+			case 4:
+				texture.AddBitmap(ISLAND_PARADISE_4);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 5:
+				texture.AddBitmap(ISLAND_PARADISE_5);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(20);
+				break;
+
+			case 6:
+				texture.AddBitmap(ISLAND_PARADISE_6);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 7:
+				texture.AddBitmap(ISLAND_PARADISE_7);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 8:
+				texture.AddBitmap(ISLAND_PARADISE_8);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 9:
+				texture.AddBitmap(ISLAND_PARADISE_9);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 10:
+				texture.AddBitmap(ISLAND_PARADISE_10);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 11:
+				texture.AddBitmap(ISLAND_PARADISE_11);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 12:
+				texture.AddBitmap(ISLAND_PARADISE_12);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(317);
+				break;
+
+			case 13:
+				texture.AddBitmap(ISLAND_PARADISE_13);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 14:
+				texture.AddBitmap(ISLAND_PARADISE_14);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 15:
+				texture.AddBitmap(ISLAND_PARADISE_15);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 16:
+				texture.AddBitmap(ISLAND_PARADISE_16);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(43);
+				break;
+
+			case 17:
+				texture.AddBitmap(ISLAND_PARADISE_17);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 18:
+				texture.AddBitmap(ISLAND_PARADISE_18);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 20:
+				texture.AddBitmap(ISLAND_PARADISE_20);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 21:
+				texture.AddBitmap(ISLAND_PARADISE_21);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 22:
+				texture.AddBitmap(ISLAND_PARADISE_22);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 23:
+				texture.AddBitmap(ISLAND_PARADISE_23);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 24:
+				texture.AddBitmap(ISLAND_PARADISE_24);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 25:
+				texture.AddBitmap(ISLAND_PARADISE_25);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 26:
+				texture.AddBitmap(ISLAND_PARADISE_26);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 27:
+				texture.AddBitmap(ISLAND_PARADISE_27);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 28:
+				texture.AddBitmap(ISLAND_PARADISE_28);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(285);
+				break;
+
+			case 29:
+				texture.AddBitmap(ISLAND_PARADISE_29);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 30:
+				texture.AddBitmap(ISLAND_PARADISE_30);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 31:
+				texture.AddBitmap(ISLAND_PARADISE_31);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 32:
+				texture.AddBitmap(ISLAND_PARADISE_32);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 33:
+				texture.AddBitmap(ISLAND_PARADISE_33);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(17);
+				break;
+
+			case 34:
+				texture.AddBitmap(ISLAND_PARADISE_34);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 35:
+				texture.AddBitmap(ISLAND_PARADISE_35);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(45);
+				break;
+
+			case 36:
+				texture.AddBitmap(ISLAND_PARADISE_36);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 37:
+				texture.AddBitmap(ISLAND_PARADISE_37);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(73);
+				break;
+
+			case 38:
+				texture.AddBitmap(ISLAND_PARADISE_38);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 39:
+				texture.AddBitmap(ISLAND_PARADISE_39);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(90);
+				break;
+
+			case 40:
+				texture.AddBitmap(ISLAND_PARADISE_40);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(107);
+				break;
+
+			case 41:
+				texture.AddBitmap(ISLAND_PARADISE_41);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 42:
+				texture.AddBitmap(ISLAND_PARADISE_42);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(135);
+				break;
+
+			case 43:
+				texture.AddBitmap(ISLAND_PARADISE_43);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 44:
+				texture.AddBitmap(ISLAND_PARADISE_44);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(163);
+				break;
+
+			case 45:
+				texture.AddBitmap(ISLAND_PARADISE_45);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 46:
+				texture.AddBitmap(ISLAND_PARADISE_46);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(180);
+				break;
+
+			case 47:
+				texture.AddBitmap(ISLAND_PARADISE_47);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+
+
+			case 48:
+				texture.AddBitmap(ISLAND_PARADISE_48);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(197);
+				break;
+
+			case 49:
+				texture.AddBitmap(ISLAND_PARADISE_49);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 50:
+				texture.AddBitmap(ISLAND_PARADISE_50);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 51:
+				texture.AddBitmap(ISLAND_PARADISE_51);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(225);
+				break;
+
+			case 52:
+				texture.AddBitmap(ISLAND_PARADISE_52);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(253);
+				break;
+
+			case 53:
+				texture.AddBitmap(ISLAND_PARADISE_53);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 54:
+				texture.AddBitmap(ISLAND_PARADISE_54);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(270);
+				break;
+
+			case 55:
+				texture.AddBitmap(ISLAND_PARADISE_55);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(287);
+				break;
+
+			case 56:
+				texture.AddBitmap(ISLAND_PARADISE_56);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 57:
+				texture.AddBitmap(ISLAND_PARADISE_57);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(315);
+				break;
+
+			case 58:
+				texture.AddBitmap(ISLAND_PARADISE_58);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 59:
+				texture.AddBitmap(ISLAND_PARADISE_59);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(343);
+				break;
+
+			case 60:
+				texture.AddBitmap(ISLAND_PARADISE_60);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 61:
+				texture.AddBitmap(ISLAND_PARADISE_61);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 62:
+				texture.AddBitmap(ISLAND_PARADISE_62);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 63:
+				texture.AddBitmap(ISLAND_PARADISE_63);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 64:
+				texture.AddBitmap(ISLAND_PARADISE_64);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 65:
+				texture.AddBitmap(ISLAND_PARADISE_65);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 66:
+				texture.AddBitmap(ISLAND_PARADISE_65);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 67:
+				texture.AddBitmap(ISLAND_PARADISE_32);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 68:
+				texture.AddBitmap(ISLAND_PARADISE_32);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			default:
+				break;
+
+			}
 		}
 
 		if (level == static_cast<int>(LEVELS::EXOTIC_HELL) || level == static_cast<int>(LEVELS::TUTORIAL_2)) {
