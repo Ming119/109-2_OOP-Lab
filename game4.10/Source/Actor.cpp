@@ -12,7 +12,6 @@
 namespace game_framework {
 	Actor::Actor() {
 		velocity = delta= POINT();
-		jumpStrength = 0;
 
 		isJumping = false;
 		ignoreHorizontal = false;
@@ -54,7 +53,8 @@ namespace game_framework {
 		// h = 1/2gt
 		if (refBrick != nullptr) {
 			if (refBrick->Angle() == 0) {
-				if (this->Buttom() == refBrick->Top())
+				if (IsJumping()) velocity.y -= jumpStrength;
+				else if (this->Buttom() == refBrick->Top())
 					velocity.y = 0;
 				else if (this->Buttom() + gravity > refBrick->Top()) 
 					velocity.y = refBrick->Top() - this->Buttom();
@@ -114,6 +114,8 @@ namespace game_framework {
 	int Actor::Width() { return idle.Width() * DEFAULT_SCALE; }
 
 	int Actor::Height() { return idle.Height() * DEFAULT_SCALE; }
+	
+	int Actor::Character() { return character; }
 
 	POINT Actor::getDelta() { return delta; }
 
@@ -136,12 +138,17 @@ namespace game_framework {
 
 	bool Actor::IsJumping() { return isJumping; }
 
-	
+	void Actor::CameraMove(POINT d) {
+		pos.x -= d.x;
+		pos.y -= d.y;
+	}
 
 	// Sonic
 	Sonic::Sonic() : Actor::Actor() {
 		pos.y += 5 * DEFAULT_SCALE;
+		character = static_cast<int>(CHARACTERS::SONIC);
 	}
+
 	Sonic::~Sonic() { }
 
 	void Sonic::OnInit() {
@@ -179,14 +186,13 @@ namespace game_framework {
 
 		//acceleration = 250;
 		maxSpeed = 700;
-		jumpStrength = 400;
+		jumpStrength = 5;
 
 	}
 
-	void Sonic::OnMove(vector<Brick*> b) {
-		delta = Moving(b);
+	void Sonic::OnMove(vector<Brick*> b, int a) {
+		if (character == static_cast<int>(CHARACTERS::SONIC)) delta = Moving(b);
 
-		
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
 				lookUp.OnMove();
@@ -232,7 +238,10 @@ namespace game_framework {
 
 
 	// Miles
-	Miles::Miles() : Actor::Actor() { }
+	Miles::Miles() : Actor::Actor() {
+		character = static_cast<int>(CHARACTERS::MILES);
+	}
+
 	Miles::~Miles() { }
 
 	void Miles::OnInit() {
@@ -272,12 +281,12 @@ namespace game_framework {
 
 		//acceleration = 200;
 		maxSpeed = 600;
-		jumpStrength = 360;
+		jumpStrength = 5;
 
 	}
 	
-	void Miles::OnMove(vector<Brick*> b) {
-		delta = Moving(b);
+	void Miles::OnMove(vector<Brick*> b, int a) {
+		if (character == static_cast<int>(CHARACTERS::MILES))delta = Moving(b);
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
@@ -324,7 +333,9 @@ namespace game_framework {
 
 
 	//Knuckles
-	Knuckles::Knuckles() : Actor::Actor() { }
+	Knuckles::Knuckles() : Actor::Actor() {
+		character = static_cast<int>(CHARACTERS::KNUCKLES);
+	}
 	Knuckles::~Knuckles() {	}
 
 	void Knuckles::OnInit() {
@@ -363,12 +374,12 @@ namespace game_framework {
 
 		//acceleration = 200;
 		maxSpeed = 600;
-		jumpStrength = 360;
+		jumpStrength = 5;
 	
 	}
 
-	void Knuckles::OnMove(vector<Brick*> b) {
-		delta = Moving(b);
+	void Knuckles::OnMove(vector<Brick*> b, int a) {
+		if (character == static_cast<int>(CHARACTERS::KNUCKLES)) delta = Moving(b);
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())

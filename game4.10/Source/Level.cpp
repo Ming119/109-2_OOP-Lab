@@ -16,12 +16,16 @@ namespace game_framework {
 		rings = 0;
 		score = 0;
 		level = 0;
+		character = 0;
+		delta = POINT();
 	}
 
 	Level::Level(int l) {
 		rings = 0;
 		score = 0;
 		level = l;
+		character = 0;
+		delta = POINT();
 	}
 
 	Level::~Level() {
@@ -39,9 +43,29 @@ namespace game_framework {
 
 	/* Setter */
 	void Level::SetCurrentActor(int actor) {
+		character = actor;
+		POINT pre = POINT();
+		pre.x = currentActor->Left();
+		pre.y = currentActor->Top();
+
 		if (actor == SONIC)    currentActor = &actor1;
 		if (actor == MILES)	   currentActor = &actor2;
 		if (actor == KNUCKLES) currentActor = &actor3;
+
+		POINT offset = POINT();
+		offset.x = currentActor->Left() - pre.x;
+		offset.y = currentActor->Top() - pre.y;
+
+		int is = items.size();
+		for (int i = 0; i < is; i++) {
+			items.at(i)->SetCurrentActor(currentActor);
+		}
+
+		
+		actor1.CameraMove(offset);
+		actor2.CameraMove(offset);
+		actor3.CameraMove(offset);
+		SetMoving(offset);
 	}
 
 	void Level::SetMoving(POINT delta) {
@@ -442,7 +466,9 @@ namespace game_framework {
 	}
 
 	void Level::OnMove() {
-		
+		delta = CurrentActor()->getDelta();
+		SetMoving(delta);
+
 		// Background
 		background.SetTopLeft(0, 0);
 		
@@ -479,7 +505,33 @@ namespace game_framework {
 		}
 
 		// Actor
-		CurrentActor()->OnMove(bricks);
+		CurrentActor()->OnMove(bricks, character);
+		switch (CurrentActor()->Character())
+		{
+			case static_cast<int>(CHARACTERS::SONIC) :
+				actor2.CameraMove(delta);
+				actor2.OnMove(bricks, character);
+				actor3.CameraMove(delta);
+				actor3.OnMove(bricks, character);
+				break;
+
+			case static_cast<int>(CHARACTERS::MILES) :
+				actor1.CameraMove(delta);
+				actor1.OnMove(bricks, character);
+				actor3.CameraMove(delta);
+				actor3.OnMove(bricks, character);
+				break;
+			
+			case static_cast<int>(CHARACTERS::KNUCKLES) :
+				actor1.CameraMove(delta);
+				actor1.OnMove(bricks, character);
+				actor2.CameraMove(delta);
+				actor2.OnMove(bricks, character);
+				break;
+
+			default:
+				break;
+		}
 	}
 
 	void Level::OnShow() {

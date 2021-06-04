@@ -604,14 +604,10 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	if (nChar == KEY_DOWN) 
 		level->CurrentActor()->SetIsLookingDown(false);
 
-	if (nChar == KEY_SPACE) 
-		level->CurrentActor()->SetIsJumping(false);
-
 }
 
-void CGameStateRun::OnMove() {
-
-	level->SetMoving(level->CurrentActor()->getDelta());
+void CGameStateRun::OnMove()
+{
 	level->OnMove();
 
 	game_time++;
