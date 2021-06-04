@@ -191,7 +191,7 @@ namespace game_framework {
 	}
 
 	void Sonic::OnMove(vector<Brick*> b, int a) {
-		delta = Moving(b);
+		if (character == static_cast<int>(CHARACTERS::SONIC)) delta = Moving(b);
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
@@ -286,7 +286,7 @@ namespace game_framework {
 	}
 	
 	void Miles::OnMove(vector<Brick*> b, int a) {
-		delta = Moving(b);
+		if (character == static_cast<int>(CHARACTERS::MILES))delta = Moving(b);
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
@@ -379,7 +379,7 @@ namespace game_framework {
 	}
 
 	void Knuckles::OnMove(vector<Brick*> b, int a) {
-		delta = Moving(b);
+		if (character == static_cast<int>(CHARACTERS::KNUCKLES)) delta = Moving(b);
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
