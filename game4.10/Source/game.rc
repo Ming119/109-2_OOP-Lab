@@ -364,6 +364,138 @@ OCEAN2_7_5              BITMAP                  "..\\RES\\ocean2\\ocean2_7_5.bmp
 
 OCEAN2_7_6              BITMAP                  "..\\RES\\ocean2\\ocean2_7_6.bmp"
 
+ISLAND_PARADISE_8       BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island.bmp"
+
+ISLAND_PARADISE_7       BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island__.bmp"
+
+ISLAND_PARADISE_0       BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_0.bmp"
+
+ISLAND_PARADISE_1       BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_1.bmp"
+
+ISLAND_PARADISE_2       BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_2.bmp"
+
+ISLAND_PARADISE_3       BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_3.bmp"
+
+ISLAND_PARADISE_4       BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_3_2.bmp"
+
+ISLAND_PARADISE_10      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_5.bmp"
+
+ISLAND_PARADISE_5       BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_8_1.bmp"
+
+ISLAND_PARADISE_6       BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_8_2.bmp"
+
+ISLAND_PARADISE_20      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_9.bmp"
+
+ISLAND_PARADISE_62      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_10.bmp"
+
+ISLAND_PARADISE_21      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_11.bmp"
+
+ISLAND_PARADISE_46      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_12.bmp"
+
+ISLAND_PARADISE_47      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_13.bmp"
+
+ISLAND_PARADISE_61      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_14.bmp"
+
+ISLAND_PARADISE_65      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_15.bmp"
+
+ISLAND_PARADISE_22      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_16.bmp"
+
+ISLAND_PARADISE_23      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_17.bmp"
+
+ISLAND_PARADISE_24      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_18.bmp"
+
+ISLAND_PARADISE_25      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_19.bmp"
+
+ISLAND_PARADISE_27      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_20.bmp"
+
+ISLAND_PARADISE_26      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_21.bmp"
+
+ISLAND_PARADISE_29      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_arrow_left.bmp"
+
+ISLAND_PARADISE_28      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_arrow_right.bmp"
+
+ISLAND_PARADISE_31      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_arrow_under.bmp"
+
+ISLAND_PARADISE_30      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_arrow_up.bmp"
+
+ISLAND_PARADISE_19      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_grass.bmp"
+
+ISLAND_PARADISE_54      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_1.bmp"
+
+ISLAND_PARADISE_9       BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_4.bmp"
+
+ISLAND_PARADISE_55      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_2_1.bmp"
+
+ISLAND_PARADISE_56      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_2_2.bmp"
+
+ISLAND_PARADISE_57      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_2_3.bmp"
+
+ISLAND_PARADISE_58      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_2_4.bmp"
+
+ISLAND_PARADISE_59      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_2_5.bmp"
+
+ISLAND_PARADISE_52      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_3_1.bmp"
+
+ISLAND_PARADISE_51      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_3_2.bmp"
+
+ISLAND_PARADISE_50      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_3_3.bmp"
+
+ISLAND_PARADISE_49      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_3_4.bmp"
+
+ISLAND_PARADISE_48      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_3_5.bmp"
+
+ISLAND_PARADISE_60      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_4.bmp"
+
+ISLAND_PARADISE_53      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_5.bmp"
+
+ISLAND_PARADISE_16      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_7_2.bmp"
+
+ISLAND_PARADISE_17      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_7_3.bmp"
+
+ISLAND_PARADISE_11      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_machine_8.bmp"
+
+ISLAND_PARADISE_14      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_left_machine_9.bmp"
+
+ISLAND_PARADISE_32      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_machine_1.bmp"
+
+ISLAND_PARADISE_39      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_1.bmp"
+
+ISLAND_PARADISE_37      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_2_1.bmp"
+
+ISLAND_PARADISE_36      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_2_2.bmp"
+
+ISLAND_PARADISE_35      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_2_3.bmp"
+
+ISLAND_PARADISE_34      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_2_4.bmp"
+
+ISLAND_PARADISE_33      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_2_5.bmp"
+
+ISLAND_PARADISE_40      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_3_1.bmp"
+
+ISLAND_PARADISE_41      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_3_2.bmp"
+
+ISLAND_PARADISE_42      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_3_3.bmp"
+
+ISLAND_PARADISE_43      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_3_4.bmp"
+
+ISLAND_PARADISE_44      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_3_5.bmp"
+
+ISLAND_PARADISE_38      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_4.bmp"
+
+ISLAND_PARADISE_45      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_5.bmp"
+
+ISLAND_PARADISE_12      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_7_2.bmp"
+
+ISLAND_PARADISE_13      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_7_3.bmp"
+
+ISLAND_PARADISE_15      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_machine_8.bmp"
+
+ISLAND_PARADISE_18      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_right_machine_9.bmp"
+
+ISLAND_PARADISE_63      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_1_1.bmp"
+
+ISLAND_PARADISE_64      BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\island\\island_9_1.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1118,10 +1250,6 @@ OCEAN_41                BITMAP                  "..\\RES\\ocean\\ocean_42.bmp"
 OCEAN_42                BITMAP                  "..\\RES\\ocean\\ocean_43.bmp"
 
 OCEAN_43                BITMAP                  "..\\RES\\ocean\\ocean_44.bmp"
-
-IDB_BITMAP173           BITMAP                  "..\\RES\\ocean\\ocean_58.bmp"
-
-IDB_BITMAP174           BITMAP                  "..\\RES\\ocean\\ocean_59.bmp"
 
 OCEAN_17                BITMAP                  "..\\RES\\ocean\\ocean_621.bmp"
 
