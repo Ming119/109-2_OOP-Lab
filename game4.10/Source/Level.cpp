@@ -456,7 +456,7 @@ namespace game_framework {
 			if (enemies.at(i)->IsDead()) {
 				items.erase(items.begin() + i);
 				is--; i--;
-				score += enmies.at(i)->score();
+				score += enmies.at(i)->Score();
 			}*/
 		}
 
