@@ -28,9 +28,11 @@ namespace game_framework {
 		int level;
 
 		POINT spawnPoint;
+		POINT delta;
 
 		CMovingBitmap background;
 		
+		int character;
 		Sonic	 actor1;
 		Miles	 actor2;
 		Knuckles actor3;

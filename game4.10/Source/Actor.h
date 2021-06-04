@@ -17,6 +17,8 @@ namespace game_framework {
 		const int   gravity = 10;
 		const float friction = 0.8f;
 
+		int character;
+
 		POINT pos;
 
 		POINT velocity;
@@ -49,7 +51,7 @@ namespace game_framework {
 		~Actor();
 
 		virtual void OnInit() = 0;
-		virtual void OnMove(vector<Brick*>) = 0;
+		virtual void OnMove(vector<Brick*>, int) = 0;
 		virtual void OnShow() = 0;
 		
 		POINT Moving(vector<Brick*>);
@@ -60,6 +62,7 @@ namespace game_framework {
 		int Right();
 		int Width();
 		int Height();
+		int Character();
 
 		POINT getDelta();
 
@@ -75,7 +78,7 @@ namespace game_framework {
 
 		void LookingForRefBrick(vector<Brick*>);
 		void checkLevingRefBrick();
-
+		void CameraMove(POINT);
 
 
 		/*
@@ -124,7 +127,7 @@ namespace game_framework {
 		~Sonic();
 
 		void OnInit() override;
-		void OnMove(vector<Brick*>) override;
+		void OnMove(vector<Brick*>, int) override;
 		void OnShow() override;
 	};
 
@@ -134,7 +137,7 @@ namespace game_framework {
 		~Miles();
 
 		void OnInit() override;
-		void OnMove(vector<Brick*>) override;
+		void OnMove(vector<Brick*>, int) override;
 		void OnShow() override;
 	};
 
@@ -144,7 +147,7 @@ namespace game_framework {
 		~Knuckles();
 
 		void OnInit() override;
-		void OnMove(vector<Brick*>) override;
+		void OnMove(vector<Brick*>, int) override;
 		void OnShow() override;
 	};
 }

@@ -184,7 +184,7 @@ namespace game_framework {
 		CMovingBitmap Rings;
 		CMovingBitmap colon;
 
-		CInteger score = CInteger(5);
+		CInteger score = CInteger(4);
 		CInteger rings = CInteger(3);
 		CInteger t_min = CInteger(2);
 		CInteger t_sec = CInteger(2);
