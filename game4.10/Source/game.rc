@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文 (繁體，台灣) resources
+// Chinese (Traditional, Taiwan) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -31,6 +31,7 @@ BEGIN
 END
 
 2 TEXTINCLUDE 
+BEGIN
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
@@ -504,12 +505,12 @@ ISLAND_PARADISE_64      BITMAP                  "..\\RES\\island\\island_9_1.bmp
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // 中文 (繁體，台灣) resources
+#endif    // Chinese (Traditional, Taiwan) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英文 (美國) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -795,12 +796,12 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // 英文 (美國) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英文 (英國) resources
+// English (United Kingdom) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
@@ -1521,6 +1522,8 @@ IDB_BITMAP283           BITMAP                  "..\\RES\\ocean2\\ocean2_backgro
 
 T_TIME_COLON            BITMAP                  "..\\RES\\font\\gui_semicolon.bmp"
 
+IDB_DEBUG         		BITMAP                  "..\\res\\debug.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1531,7 +1534,7 @@ T_TIME_COLON            BITMAP                  "..\\RES\\font\\gui_semicolon.bm
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "..\\RES\\icon.ico"
 
-#endif    // 英文 (英國) resources
+#endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

@@ -65,6 +65,7 @@ namespace game_framework {
 		int Character();
 
 		POINT getDelta();
+		POINT pt;
 
 		void setTopLeft(int, int);
 		void setTopLeft(POINT);
@@ -77,9 +78,12 @@ namespace game_framework {
 		bool IsJumping();
 
 		void LookingForRefBrick(vector<Brick*>);
-		void checkLevingRefBrick();
+		void checkLeavingBrick();
+		void UpdateRefBrick(vector<Brick*>);
 		void CameraMove(POINT);
 
+
+		CMovingBitmap debug;
 
 		/*
 		// Collision Detection

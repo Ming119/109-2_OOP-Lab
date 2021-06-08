@@ -318,7 +318,7 @@ namespace game_framework {
 			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 
 			spawnPoint.x = 40;
-			spawnPoint.y = 2550;
+			spawnPoint.y = 2560;
 
 			// Background
 			background.LoadBitmap(LEVEL1_BG);

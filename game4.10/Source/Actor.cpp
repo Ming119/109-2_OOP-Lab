@@ -22,6 +22,8 @@ namespace game_framework {
 
 		pos.x = 100;
 		pos.y = SIZE_Y / 3;
+
+		debug.LoadBitmap(IDB_CORNER);
 	}
 
 	Actor::~Actor() { }
@@ -29,9 +31,10 @@ namespace game_framework {
 	POINT Actor::Moving(vector<Brick*> b) {
 		POINT dt = POINT();
 		double theta = 0;
-
-		LookingForRefBrick(b);
-		TRACE("ref %d\n", refBrick->Angle());
+		
+		checkLeavingBrick();
+		UpdateRefBrick(b);
+		// TRACE("ref %d\n", refBrick->Angle());
 
 		// x-axis
 		// dx = v_0 dt + 1/2 a dt^(2)
@@ -52,6 +55,7 @@ namespace game_framework {
 		// y-axis
 		// h = 1/2gt
 		if (refBrick != nullptr) {
+			TRACE("\n\ttheta: %d\n", refBrick->Angle());
 			if (refBrick->Angle() == 0) {
 				if (IsJumping()) velocity.y -= jumpStrength;
 				else if (this->Buttom() == refBrick->Top())
@@ -59,33 +63,34 @@ namespace game_framework {
 				else if (this->Buttom() + gravity > refBrick->Top()) 
 					velocity.y = refBrick->Top() - this->Buttom();
 				else 
-					velocity.y += gravity/2;	
+					velocity.y += gravity/2;
+
+				dt.y = velocity.y;
 			} else {
 				
 				theta = (double)refBrick->Angle() * M_PI / 180;
-				
-				TRACE("\n\ttheta: %d\n\trad: %f\n\tsin: %f\n\tcos: %f\n\ttan: %f\n", refBrick->Angle(), theta, std::sin(theta), std::cos(theta), std::tan(theta));	
-			}
-		}
+				dt.y = (long)(velocity.x * std::tan(theta));
 
+				// TRACE("\n\ttheta: %d\n\trad: %f\n\tsin: %f\n\tcos: %f\n\ttan: %f\n", refBrick->Angle(), theta, std::sin(theta), std::cos(theta), std::tan(theta));	
+			}
+		} else
+			velocity.y += gravity / 2;
 
 		if (velocity.x != 0) moving.OnMove();
 
 		dt.x = (long)(velocity.x * std::cos(theta) + velocity.y * std::sin(theta));
-		dt.y = (long)(velocity.y * std::cos(theta) - velocity.x * std::sin(theta));
+		// dt.y = (long)(velocity.y * std::cos(theta) - velocity.x * std::sin(theta));
+
 		return dt;
 	}
 
-	bool comparetor(Brick b1, Brick b2) { return (b1.Top() < b2.Top()); }
-
 	void Actor::LookingForRefBrick(vector<Brick*> bricks) {
-
 		const int bs = bricks.size();
 
 		vector<Brick*> tmpb;
 		for (int b = 0; b < bs; b++) {
 			if (this->Right() > bricks.at(b)->Left() &&
-				this->Left() < bricks.at(b)->Right() && 
+				this->Left() < bricks.at(b)->Right() &&
 				bricks.at(b)->Property() == OBSTACLE) {
 				if (this->Top() <= bricks.at(b)->Buttom())
 					tmpb.push_back(bricks.at(b));
@@ -95,12 +100,79 @@ namespace game_framework {
 		std::sort(tmpb.begin(), tmpb.end(), [](Brick* b1, Brick* b2) -> bool { return b1->Top() < b2->Top(); });
 		if (tmpb.size())
 			refBrick = tmpb.at(0);
-
 	}
 
-	void Actor::checkLevingRefBrick() {
-		if (this != nullptr && refBrick != nullptr)
-			if (this->Left() > refBrick->Right() || this->Right() < refBrick->Left()) refBrick = nullptr;
+	void Actor::checkLeavingBrick() {
+		if (refBrick != nullptr) {
+			if (refBrick->Left() > pt.x || pt.x > refBrick->Right() ||
+				refBrick->Top() > pt.y || pt.y > refBrick->Buttom())
+				refBrick = nullptr;
+		}
+	}
+
+	void Actor::UpdateRefBrick(vector<Brick*> bricks) {
+		const int bs = bricks.size();
+		
+		if (refBrick == nullptr) {
+			// LookingForRefBrick(bricks);
+			pt.x = (this->Left() + this->Right()) / 2;
+			pt.y = this->Buttom();
+
+		} else {
+			const int angle = refBrick->Angle();
+
+			if (343 < angle && angle < 17) {
+				pt.x = (this->Left() + this->Right()) / 2;
+				pt.y = this->Buttom();
+			}
+
+			if (17 <= angle && angle <= 75) {
+				pt.x = this->Right();
+				pt.y = this->Buttom();
+			}
+
+			if (75 < angle && angle < 105) {
+				pt.x = this->Right();
+				pt.y = (this->Top() + this->Buttom()) / 2;
+			}
+
+			if (105 <= angle && angle <= 163) {
+				pt.x = this->Right();
+				pt.y = this->Top();
+			}
+
+			if (163 < angle && angle < 97) {
+				pt.x = (this->Left() + this->Right()) / 2;
+				pt.y = this->Top();
+			}
+
+			if (197 <= angle && angle <= 255) {
+				pt.x = this->Left();
+				pt.y = this->Top();
+			}
+			
+			if (255 < angle && angle < 285) {
+				pt.x = this->Left();
+				pt.y = (this->Top() + this->Buttom()) / 2;
+			}
+
+			if (285 <= angle && angle <= 343) {
+				pt.x = this->Left();
+				pt.y = this->Buttom();
+			}
+		}
+		
+		
+		
+		debug.SetTopLeft(pt.x, pt.y);
+		
+
+		for (int b = 0; b < bs; b++) {
+			if (bricks.at(b)->Left() < pt.x && pt.x < bricks.at(b)->Right() &&
+				bricks.at(b)->Top() < pt.y && pt.y < bricks.at(b)->Buttom() && 
+				bricks.at(b)->Property() == OBSTACLE)
+				refBrick = bricks.at(b);
+		}
 	}
 
 	int Actor::Top() { return idle.Top(); }
@@ -233,6 +305,8 @@ namespace game_framework {
 		}
 		else
 			idle.OnShow();
+
+		debug.ShowBitmap();
 	}
 
 
