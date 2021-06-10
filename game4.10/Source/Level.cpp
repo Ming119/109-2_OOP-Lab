@@ -405,11 +405,12 @@ namespace game_framework {
 			CAudio::Instance()->Stop(AUDIO_TITLE);
 			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 
+
 			spawnPoint.x = 25;
 			spawnPoint.y = 5900;
 
 			// Background
-			background.LoadBitmap(LEVEL1_BG);
+			background.LoadBitmap(EXOTIC_PARADISE_ACT1_BG);
 
 			// Brick
 			for (int i = 0; i < sizeof(EXOTIC1Brick) / sizeof(EXOTIC1Brick[0]); i++) {
@@ -452,7 +453,7 @@ namespace game_framework {
 			spawnPoint.y = 720;
 
 			// Background
-			background.LoadBitmap(LEVEL1_BG);
+			background.LoadBitmap(EXOTIC_PARADISE_ACT1_BG);
 
 			// Brick
 			for (int i = 0; i < sizeof(EXOTIC2Brick) / sizeof(EXOTIC2Brick[0]); i++) {
@@ -484,9 +485,9 @@ namespace game_framework {
 					addEnemy(id, x, y);
 
 			}
-
-			break;
 */
+			break;
+
 		default: break;
 		
 }
