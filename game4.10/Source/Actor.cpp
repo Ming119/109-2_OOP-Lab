@@ -11,7 +11,7 @@
 
 namespace game_framework {
 	Actor::Actor() {
-		velocity = delta= POINT();
+		velocity = delta = POINT();
 
 		isJumping = false;
 		ignoreHorizontal = false;
@@ -31,8 +31,7 @@ namespace game_framework {
 	POINT Actor::Moving(vector<Brick*> b) {
 		POINT dt = POINT();
 		double theta = 0;
-		
-		checkLeavingBrick();
+
 		UpdateRefBrick(b);
 		// TRACE("ref %d\n", refBrick->Angle());
 
@@ -42,44 +41,66 @@ namespace game_framework {
 			moving.OnMove();
 			if (abs(velocity.x) < maxVelocity) velocity.x -= acceleration;
 
-		} else if (isMovingRight) {
+		}
+		else if (isMovingRight) {
 			moving.OnMove();
 			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration;
 
-		} else {
+		}
+		else {
 			// Friction Drug: F_d = 1/2 pv^(2) C_d A
 			velocity.x = (long)(velocity.x * friction);
 		}
-			
+
 
 		// y-axis
 		// h = 1/2gt
+		velocity.y += gravity / 2;
 		if (refBrick != nullptr) {
-			TRACE("\n\ttheta: %d\n", refBrick->Angle());
+			
+			// DEBUG
+			if (this->character == 0)
+				TRACE("\n\tid: %d\ttheta: %d\t(x, y): (%d, %d)\n", refBrick->ID(), refBrick->Angle(), refBrick->Left(), refBrick->Top());
+			
 			if (refBrick->Angle() == 0) {
 				if (IsJumping()) velocity.y -= jumpStrength;
+				
 				else if (this->Buttom() == refBrick->Top())
 					velocity.y = 0;
-				else if (this->Buttom() + gravity > refBrick->Top()) 
-					velocity.y = refBrick->Top() - this->Buttom();
-				else 
-					velocity.y += gravity/2;
-
-				dt.y = velocity.y;
-			} else {
 				
+				else if (this->Buttom() + gravity > refBrick->Top())
+					velocity.y = refBrick->Top() - this->Buttom();
+				
+			} else {
 				theta = (double)refBrick->Angle() * M_PI / 180;
-				dt.y = (long)(velocity.x * std::tan(theta));
+				velocity.y = 0;
+				//velocity.y = (long)(velocity.x * std::tan(theta));
 
 				// TRACE("\n\ttheta: %d\n\trad: %f\n\tsin: %f\n\tcos: %f\n\ttan: %f\n", refBrick->Angle(), theta, std::sin(theta), std::cos(theta), std::tan(theta));	
 			}
-		} else
-			velocity.y += gravity / 2;
-
+		}
+		else {
+			TRACE("\n\tNULL REFBRICK\n");
+		}
 		if (velocity.x != 0) moving.OnMove();
+		
 
-		dt.x = (long)(velocity.x * std::cos(theta) + velocity.y * std::sin(theta));
-		// dt.y = (long)(velocity.y * std::cos(theta) - velocity.x * std::sin(theta));
+		
+
+		//dt.x = velocity.x;
+		//dt.y = (long)(velocity.x * std::tan(theta));
+
+		// if (angle = 0) {
+		// dt.x = (long)(velocity.x * std::cos(theta));
+		// dt.y = -(long)(velocity.x * std::sin(theta));
+
+			dt.x = (long)(velocity.x * std::cos(theta) + velocity.y * std::sin(theta));
+			dt.y = (long)(velocity.y * std::cos(theta) - velocity.x * std::sin(theta));
+		// }
+		// else {
+		//	dt.x = velocity.x;
+		//	dt.y = (long)(velocity.x * std::tan(theta));
+		// }
 
 		return dt;
 	}
@@ -103,23 +124,29 @@ namespace game_framework {
 	}
 
 	void Actor::checkLeavingBrick() {
+
 		if (refBrick != nullptr) {
-			if (refBrick->Left() > pt.x || pt.x > refBrick->Right() ||
-				refBrick->Top() > pt.y || pt.y > refBrick->Buttom())
+			if (pt.x < refBrick->Left() || pt.x > refBrick->Right() ||
+				pt.y < refBrick->Top() || pt.y > refBrick->Buttom())
 				refBrick = nullptr;
 		}
 	}
 
 	void Actor::UpdateRefBrick(vector<Brick*> bricks) {
+		checkLeavingBrick();
+
 		const int bs = bricks.size();
-		
+		boolean ang = false;
+
 		if (refBrick == nullptr) {
 			// LookingForRefBrick(bricks);
 			pt.x = (this->Left() + this->Right()) / 2;
 			pt.y = this->Buttom();
 
-		} else {
+		}
+		else {
 			const int angle = refBrick->Angle();
+			if (angle != 0) ang = true;
 
 			if (343 < angle && angle < 17) {
 				pt.x = (this->Left() + this->Right()) / 2;
@@ -150,7 +177,7 @@ namespace game_framework {
 				pt.x = this->Left();
 				pt.y = this->Top();
 			}
-			
+
 			if (255 < angle && angle < 285) {
 				pt.x = this->Left();
 				pt.y = (this->Top() + this->Buttom()) / 2;
@@ -161,32 +188,33 @@ namespace game_framework {
 				pt.y = this->Buttom();
 			}
 		}
-		
-		
-		
+
+
 		debug.SetTopLeft(pt.x, pt.y);
-		
 
 		for (int b = 0; b < bs; b++) {
 			if (bricks.at(b)->Left() < pt.x && pt.x < bricks.at(b)->Right() &&
-				bricks.at(b)->Top() < pt.y && pt.y < bricks.at(b)->Buttom() && 
-				bricks.at(b)->Property() == OBSTACLE)
+				bricks.at(b)->Top() < pt.y && pt.y < bricks.at(b)->Buttom() &&
+				bricks.at(b)->Property() != PASSABLE) {
+				if (ang && bricks.at(b)->Angle() == 0) continue;
 				refBrick = bricks.at(b);
+				break;
+			}
 		}
 	}
 
 	int Actor::Top() { return idle.Top(); }
 
-	int Actor::Left() {	return idle.Left(); }
+	int Actor::Left() { return idle.Left(); }
 
 	int Actor::Buttom() { return Top() + Height(); }
 
 	int Actor::Right() { return Left() + Width(); }
-	
+
 	int Actor::Width() { return idle.Width() * DEFAULT_SCALE; }
 
 	int Actor::Height() { return idle.Height() * DEFAULT_SCALE; }
-	
+
 	int Actor::Character() { return character; }
 
 	POINT Actor::getDelta() { return delta; }
@@ -358,7 +386,7 @@ namespace game_framework {
 		jumpStrength = 5;
 
 	}
-	
+
 	void Miles::OnMove(vector<Brick*> b, int a) {
 		if (character == static_cast<int>(CHARACTERS::MILES))delta = Moving(b);
 
@@ -449,7 +477,7 @@ namespace game_framework {
 		//acceleration = 200;
 		maxSpeed = 600;
 		jumpStrength = 5;
-	
+
 	}
 
 	void Knuckles::OnMove(vector<Brick*> b, int a) {
