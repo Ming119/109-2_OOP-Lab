@@ -33,7 +33,7 @@ namespace game_framework {
 
 	int Item::Left() { return texture.Left(); }
 
-	int Item::Buttom() { return this->Top() + this->Height() * DEFAULT_SCALE; }
+	int Item::Bottom() { return this->Top() + this->Height() * DEFAULT_SCALE; }
 
 	int Item::Right() { return this->Left() + this->Width() * DEFAULT_SCALE; }
 
@@ -70,8 +70,8 @@ namespace game_framework {
 	bool Item::CollisionDetection(Actor* actor) {
 		if (this->Left() < actor->Right() &&
 			this->Right() > actor->Left() &&
-			this->Top() < actor->Buttom() &&
-			this->Buttom() > actor->Top()) {
+			this->Top() < actor->Bottom() &&
+			this->Bottom() > actor->Top()) {
 
 			return true;
 		}

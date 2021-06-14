@@ -34,7 +34,7 @@ namespace game_framework {
 
 	int Brick::Left() { return texture.Left(); }
 
-	int Brick::Buttom() { return this->Top() + this->Height(); }
+	int Brick::Bottom() { return this->Top() + this->Height(); }
 
 	int Brick::Right() { return this->Left() + this->Width(); }
 

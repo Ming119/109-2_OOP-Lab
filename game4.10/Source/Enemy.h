@@ -49,7 +49,7 @@ namespace game_framework {
 		int Width();
 		int Top();
 		int Left();
-		int Buttom();
+		int Bottom();
 		int Right();
 
 		/* Setter */

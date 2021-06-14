@@ -27,6 +27,14 @@ namespace game_framework {
 		int maxSpeed;
 
 		Brick* refBrick;
+		POINT left;
+		POINT right;
+		POINT top;
+		POINT bottom;
+		POINT topleft;
+		POINT topright;
+		POINT botleft;
+		POINT botright;
 
 		CAnimation idle;
 		CAnimation lookUp;
@@ -36,13 +44,13 @@ namespace game_framework {
 
 		int angle;		// angle = ang(actor's x-axis, real x-axis)
 		int jumpStrength;
-		
-		bool ignoreHorizontal;
+
 		bool isMovingLeft;
 		bool isMovingRight;
 		bool isLookingUp;
 		bool isLookingDown;
 		bool isJumping;		
+		bool isRotating;
 
 		
 
@@ -58,14 +66,14 @@ namespace game_framework {
 
 		int Top();
 		int Left();
-		int Buttom();
+		int Bottom();
 		int Right();
 		int Width();
 		int Height();
 		int Character();
 
 		POINT getDelta();
-		POINT pt;
+		
 
 		void setTopLeft(int, int);
 		void setTopLeft(POINT);
@@ -80,6 +88,10 @@ namespace game_framework {
 		void LookingForRefBrick(vector<Brick*>);
 		void checkLeavingBrick();
 		void UpdateRefBrick(vector<Brick*>);
+
+		void HandleLeftCollision(vector<Brick*>);
+		void HandleRightCollision(vector<Brick*>);
+
 		void CameraMove(POINT);
 
 

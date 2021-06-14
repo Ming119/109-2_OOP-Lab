@@ -19,6 +19,7 @@ namespace game_framework {
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateInit::CGameStateInit(CGame *g) : CGameState(g) {
+	
 	intro_done = false;
 	optionStage = -1;
 }
@@ -130,6 +131,7 @@ void CGameStateInit::OnBeginState() {
 	CAudio::Instance()->Load(AUDIO_TITLE, "sounds\\title.mp3");
 	CAudio::Instance()->Load(AUDIO_OPTIONS, "sounds\\options.mp3");
 	CAudio::Instance()->Load(AUDIO_CRUSADER, "sounds\\crusader.mp3");
+
 	CAudio::Instance()->Play(AUDIO_TITLE, true);
 	
 	CAudio::Instance()->Stop(AUDIO_OPTIONS);
@@ -554,6 +556,7 @@ void CGameStateRun::OnBeginState()
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
+	const char KEY_ESC   = 0x1B; // keyboard ESC
 	const char KEY_LEFT  = 0x25; // keyboard左箭頭
 	const char KEY_UP    = 0x26; // keyboard上箭頭
 	const char KEY_RIGHT = 0x27; // keyboard右箭頭
@@ -582,6 +585,10 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	if (nChar == KEY_SPACE) 
 		level->CurrentActor()->SetIsJumping(true);
 
+	if (nChar == KEY_ESC) {
+		CAudio::Instance()->Play(AUDIO_RETURN, false);
+		CGameState::GotoGameState(GAME_STATE_INIT);
+	}
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)

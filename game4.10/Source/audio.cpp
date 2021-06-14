@@ -125,7 +125,7 @@ void CAudio::ExecuteMciCommand(char *command)
 		//
 		if (!success) {
 			string error("MCI command error: the following command does not work\n\n\"");
-			GAME_ASSERT(false, error.append(command).append("\"").c_str());
+			// GAME_ASSERT(false, error.append(command).append("\"").c_str());
 		}
 	}
 }
@@ -222,7 +222,7 @@ bool CAudio::Load(unsigned id, char *lpzFileName)
 	if (i != info.end()) {
 		string str;
 		str.append("Can not load audio file \"").append(lpzFileName);
-		GAME_ASSERT(false, str.append("\": the same audio ID cannot be loaded twice!").c_str());
+		// GAME_ASSERT(false, str.append("\": the same audio ID cannot be loaded twice!").c_str());
 	}
 	//
 	// Get the file type and convert it to upper case letters

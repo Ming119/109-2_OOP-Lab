@@ -33,7 +33,7 @@ namespace game_framework {
 
 	int Enemy::Left() { return texture.Left(); }
 
-	int Enemy::Buttom() { return this->Top() + this->Height(); }
+	int Enemy::Bottom() { return this->Top() + this->Height(); }
 
 	int Enemy::Right() { return this->Left() + this->Width(); }
 
@@ -71,8 +71,8 @@ namespace game_framework {
 
 		if (this->Left() < brick->Right() &&
 			this->Right() > brick->Left() &&
-			this->Top() < brick->Buttom() &&
-			this->Buttom() > brick->Top()) {
+			this->Top() < brick->Bottom() &&
+			this->Bottom() > brick->Top()) {
 						
 			return true;
 		}
