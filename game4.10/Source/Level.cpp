@@ -222,7 +222,7 @@ namespace game_framework {
 	void Level::addEnemy(int id, int x, int y) {
 		switch (id) {
 		case -1: break;
-
+		
 		case static_cast<int>(ENEMIES_LIST::LADYBUG) :
 			enemies.push_back(new Ladybug(x, y));
 			break;
@@ -250,7 +250,7 @@ namespace game_framework {
 		case static_cast<int>(ENEMIES_LIST::MOSQUITO) :
 			enemies.push_back(new Mosquito(x, y));
 			break;
-
+		
 		case static_cast<int>(ENEMIES_LIST::GROUNDHOG) :
 			enemies.push_back(new Groundhog(x, y));
 			break;
@@ -290,7 +290,7 @@ namespace game_framework {
 		case static_cast<int>(ENEMIES_LIST::FLYSHIELD) :
 			enemies.push_back(new FlyShield(x, y));
 			break;
-
+			
 		default: break;
 		}
 	}
@@ -410,8 +410,8 @@ namespace game_framework {
 			spawnPoint.y = 5900;
 
 			// Background
-			background.LoadBitmap(EXOTIC_PARADISE_ACT1_BG);
-
+			background.LoadBitmap(BG_EXOTIC_PARADISE_ACT1);
+			
 			// Brick
 			for (int i = 0; i < sizeof(EXOTIC1Brick) / sizeof(EXOTIC1Brick[0]); i++) {
 				const int id = EXOTIC1Brick[i][0];
@@ -421,7 +421,7 @@ namespace game_framework {
 				if (id != -1)
 					bricks.push_back(new Brick(id, x, y));
 			}
-
+			
 			// Item
 			for (int i = 0; i < sizeof(EXOTIC1Itmes) / sizeof(EXOTIC1Itmes[0]); i++) {
 				const int id = EXOTIC1Itmes[i][0];
@@ -431,7 +431,7 @@ namespace game_framework {
 				if (id != -1)
 					addItem(id, x, y);
 			}
-
+			
 			// Enemy
 			for (int i = 0; i < sizeof(EXOTIC1Enemies) / sizeof(EXOTIC1Enemies[0]); i++) {
 				const int id = EXOTIC1Enemies[i][0];

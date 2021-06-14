@@ -13,7 +13,6 @@
 #define IDR_MAINFRAME                   128
 #define IDB_BALL                        130
 #define IDB_RACKET                      131
-#define IDB_ERASER1                     131
 #define IDB_BITMAP1                     132
 #define IDB_CORNER                      133
 #define IDB_BALL1                       134
@@ -30,10 +29,6 @@
 #define IDB_7                           145
 #define IDB_8                           146
 #define IDB_9                           147
-#define IDB_CENTER                      149
-#define IDB_ERASER2                     150
-#define IDB_ERASER3                     151
-#define IDB_CONTINUE                    152
 #define IDC_GAMECURSOR                  153
 #define IDB_HELP                        155
 #define IDB_BITMAP2                     156
@@ -919,9 +914,33 @@
 #define DESERT_96                       1057
 #define DESERT_99                       1058
 #define DESERT_98                       1059
-#define DESERT_100                      1060
-#define IDB_BITMAP97                    1062
+#define DESERT_100_118                  1060
 #define DESERT_101                      1062
+#define DESERT_106                      1063
+#define DESERT_107                      1064
+#define DESERT_108                      1065
+#define DESERT_109                      1066
+#define DESERT_105                      1067
+#define DESERT_104                      1068
+#define DESERT_103                      1069
+#define DESERT_102                      1070
+#define DESERT_113                      1071
+#define DESERT_116                      1072
+#define DESERT_117                      1073
+#define DESERT_115                      1074
+#define DESERT_112                      1075
+#define DESERT_114                      1076
+#define DESERT_111                      1077
+#define DESERT_110                      1078
+#define DESERT_33                       1079
+#define DESERT_34                       1080
+#define DESERT_35                       1081
+#define DESERT_36                       1082
+#define DESERT_63                       1083
+#define IDB_BITMAP93                    1084
+#define DESERT_66                       1084
+#define DESERT_65                       1085
+#define DESERT_64                       1086
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
 #define ID_BUTTON_FULLSCREEN            32773
@@ -933,7 +952,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        1063
+#define _APS_NEXT_RESOURCE_VALUE        1087
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
