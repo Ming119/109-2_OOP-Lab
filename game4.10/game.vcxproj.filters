@@ -2220,5 +2220,470 @@
     <Image Include="RES\island\island_9_1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\debug.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ocean\bitmap34.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_black_tiles1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_black_tiles2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_black_tiles3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_black_tiles4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_black_tiles5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_black_tiles6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_lift.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_lift1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_right1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_star.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_star1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_under.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_under1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_X.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brand_X1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brown1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brown2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brown3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brown4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_fence1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_fence2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_fence3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_fence4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_owl1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_root1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_root2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_triangle1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_triangle2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall1_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall1_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall1_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall1_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall_square16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall7_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brown5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brown6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brown7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_brown8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_triangle2_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_triangle2_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_triangle2_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_triangle2_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_triangle2_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_6_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_6_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_7_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_7_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_8_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_8_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_6_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_6_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_7_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_7_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_8_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_8_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_rdown_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_rdown_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_rdown_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_rdown_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_rdown_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_rdown_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_rdown_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_rdown_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ron_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ron_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ron_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ron_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ron_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ron_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ron_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ron_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall8_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall8_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall8_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_lon_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_lon_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_lon_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_lon_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_lon_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_lon_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_lon_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_lon_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ldowm_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ldown_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ldown_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ldown_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ldown_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ldown_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ldown_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_ldown_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_1_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_left_1_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_1_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_1_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall11_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall11_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall11_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_wall11_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

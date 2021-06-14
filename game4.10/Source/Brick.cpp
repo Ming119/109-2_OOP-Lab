@@ -697,14 +697,14 @@ namespace game_framework {
 
 			case 9:
 				texture.AddBitmap(ISLAND_PARADISE_9);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 10:
 				texture.AddBitmap(ISLAND_PARADISE_10);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
@@ -765,65 +765,72 @@ namespace game_framework {
 				SetAngle(0);
 				break;
 
+			case 19:
+				texture.AddBitmap(ISLAND_PARADISE_19);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
 			case 20:
 				texture.AddBitmap(ISLAND_PARADISE_20);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 21:
 				texture.AddBitmap(ISLAND_PARADISE_21);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 22:
 				texture.AddBitmap(ISLAND_PARADISE_22);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 23:
 				texture.AddBitmap(ISLAND_PARADISE_23);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 24:
 				texture.AddBitmap(ISLAND_PARADISE_24);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 25:
 				texture.AddBitmap(ISLAND_PARADISE_25);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 26:
 				texture.AddBitmap(ISLAND_PARADISE_26);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 27:
 				texture.AddBitmap(ISLAND_PARADISE_27);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
-
+			// arrows
 			case 28:
 				texture.AddBitmap(ISLAND_PARADISE_28);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(285);
 				break;
@@ -844,18 +851,18 @@ namespace game_framework {
 
 			case 31:
 				texture.AddBitmap(ISLAND_PARADISE_31);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
-
+			// moveable platform
 			case 32:
 				texture.AddBitmap(ISLAND_PARADISE_32);
-				SetProperty(OBSTACLE);
+				SetProperty(CLOUD);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
-
+			// loop (right -> up)
 			case 33:
 				texture.AddBitmap(ISLAND_PARADISE_33);
 				SetProperty(OBSTACLE);
@@ -865,7 +872,7 @@ namespace game_framework {
 
 			case 34:
 				texture.AddBitmap(ISLAND_PARADISE_34);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
@@ -893,7 +900,7 @@ namespace game_framework {
 
 			case 38:
 				texture.AddBitmap(ISLAND_PARADISE_38);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
@@ -905,6 +912,7 @@ namespace game_framework {
 				SetAngle(90);
 				break;
 
+			// loop (up -> left)
 			case 40:
 				texture.AddBitmap(ISLAND_PARADISE_40);
 				SetProperty(OBSTACLE);
@@ -914,7 +922,7 @@ namespace game_framework {
 
 			case 41:
 				texture.AddBitmap(ISLAND_PARADISE_41);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
@@ -942,7 +950,7 @@ namespace game_framework {
 
 			case 45:
 				texture.AddBitmap(ISLAND_PARADISE_45);
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
@@ -961,8 +969,7 @@ namespace game_framework {
 				SetAngle(0);
 				break;
 
-
-
+			// loop (left -> down)
 			case 48:
 				texture.AddBitmap(ISLAND_PARADISE_48);
 				SetProperty(OBSTACLE);
@@ -979,7 +986,7 @@ namespace game_framework {
 
 			case 50:
 				texture.AddBitmap(ISLAND_PARADISE_50);
-				SetProperty(PASSABLE);
+				SetProperty(OBSTACLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
@@ -993,7 +1000,7 @@ namespace game_framework {
 
 			case 52:
 				texture.AddBitmap(ISLAND_PARADISE_52);
-				SetProperty(PASSABLE);
+				SetProperty(OBSTACLE);
 				SetBehavior(DEFAULT);
 				SetAngle(253);
 				break;
@@ -1004,17 +1011,18 @@ namespace game_framework {
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
-
+			
 			case 54:
 				texture.AddBitmap(ISLAND_PARADISE_54);
-				SetProperty(PASSABLE);
+				SetProperty(OBSTACLE);
 				SetBehavior(DEFAULT);
 				SetAngle(270);
 				break;
-
+			
+			// loop (down -> right)
 			case 55:
 				texture.AddBitmap(ISLAND_PARADISE_55);
-				SetProperty(PASSABLE);
+				SetProperty(OBSTACLE);
 				SetBehavior(DEFAULT);
 				SetAngle(287);
 				break;
@@ -1028,7 +1036,7 @@ namespace game_framework {
 
 			case 57:
 				texture.AddBitmap(ISLAND_PARADISE_57);
-				SetProperty(PASSABLE);
+				SetProperty(OBSTACLE);
 				SetBehavior(DEFAULT);
 				SetAngle(315);
 				break;
@@ -1042,7 +1050,7 @@ namespace game_framework {
 
 			case 59:
 				texture.AddBitmap(ISLAND_PARADISE_59);
-				SetProperty(PASSABLE);
+				SetProperty(OBSTACLE);
 				SetBehavior(DEFAULT);
 				SetAngle(343);
 				break;
@@ -1053,60 +1061,62 @@ namespace game_framework {
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
-
+			
+			// misc
 			case 61:
 				texture.AddBitmap(ISLAND_PARADISE_61);
-				SetProperty(PASSABLE);
+				SetProperty(OBSTACLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 62:
 				texture.AddBitmap(ISLAND_PARADISE_62);
-				SetProperty(PASSABLE);
+				SetProperty(OBSTACLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
 			case 63:
 				texture.AddBitmap(ISLAND_PARADISE_63);
-				SetProperty(PASSABLE);
+				SetProperty(OBSTACLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
+			// special
+			// behavior BREAKABLE (int x-partition) (int y-partition)
 			case 64:
 				texture.AddBitmap(ISLAND_PARADISE_64);
-				SetProperty(PASSABLE);
-				SetBehavior(DEFAULT);
+				SetProperty(OBSTACLE);
+				SetBehavior(BREAKABLE,3,3,0,0);
 				SetAngle(0);
 				break;
 
 			case 65:
 				texture.AddBitmap(ISLAND_PARADISE_65);
-				SetProperty(PASSABLE);
-				SetBehavior(DEFAULT);
+				SetProperty(CLOUD);
+				SetBehavior(FALL,6,3,1,0);
 				SetAngle(0);
 				break;
 
 			case 66:
 				texture.AddBitmap(ISLAND_PARADISE_65);
-				SetProperty(PASSABLE);
-				SetBehavior(DEFAULT);
+				SetProperty(CLOUD);
+				SetBehavior(FALL,6,3,0,0);
 				SetAngle(0);
 				break;
 
 			case 67:
 				texture.AddBitmap(ISLAND_PARADISE_32);
-				SetProperty(PASSABLE);
-				SetBehavior(DEFAULT);
+				SetProperty(CLOUD);
+				SetBehavior(CIRCULAR, 100, 200, 0.1,0);
 				SetAngle(0);
 				break;
-
 			case 68:
 				texture.AddBitmap(ISLAND_PARADISE_32);
-				SetProperty(PASSABLE);
-				SetBehavior(DEFAULT);
+				SetProperty(CLOUD);
+				SetBehavior(CIRCULAR,100,200,0.1,0);
 				SetAngle(0);
 				break;
 
