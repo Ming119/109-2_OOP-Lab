@@ -26,6 +26,7 @@ namespace game_framework {
 		int rings;
 		int score;
 		int level;
+		bool debugMODE;
 
 		POINT spawnPoint;
 		POINT delta;
@@ -52,11 +53,13 @@ namespace game_framework {
 		Actor* CurrentActor();
 		int getRings();
 		int getScore();
+		bool getDebug();
 
 		/* Setter */
 		void SetCurrentActor(int);
 		void SetMoving(POINT);
-		
+		void SetDebug(bool);
+
 		/* Member Function */
 		void addItem(int, int, int);
 		void addEnemy(int, int, int);

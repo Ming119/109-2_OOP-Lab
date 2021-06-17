@@ -16,7 +16,7 @@ namespace game_framework {
 		const int acceleration = 4;
 		const int   gravity = 10;
 		const float friction = 0.8f;
-
+		bool debugMODE;
 		int character;
 
 		POINT pos;
@@ -38,6 +38,7 @@ namespace game_framework {
 		POINT botleft;
 		POINT botright;
 
+		CMovingBitmap debug;
 		CAnimation idle;
 		CAnimation lookUp;
 		CAnimation lookDown;
@@ -49,6 +50,8 @@ namespace game_framework {
 
 		bool isMovingLeft;
 		bool isMovingRight;
+		bool isMovingUp;
+		bool isMovingDown;
 		bool isLookingUp;
 		bool isLookingDown;
 		bool isJumping;		
@@ -65,6 +68,7 @@ namespace game_framework {
 		virtual void OnShow() = 0;
 		
 		POINT Moving(vector<Brick*>);
+		POINT debugMoveing();
 
 		int Top();
 		int Left();
@@ -80,6 +84,8 @@ namespace game_framework {
 		void setTopLeft(POINT);
 		void SetMoveLeft(bool);
 		void SetMoveRight(bool);
+		void SetMoveDown(bool);
+		void SetMoveUp(bool);
 		void SetIsLookingUp(bool);
 		void SetIsLookingDown(bool);
 		void SetIsJumping(bool);
@@ -94,8 +100,7 @@ namespace game_framework {
 		void HandleRightCollision(vector<Brick*>);
 
 		void CameraMove(POINT);
-
-		CMovingBitmap debug;
+		void SetDebug(bool);
 
 		/*
 		// Collision Detection
