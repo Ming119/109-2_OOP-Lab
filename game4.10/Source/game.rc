@@ -576,147 +576,147 @@ DESERT_7                BITMAP                  "..\\RES\\desert1\\desert_wall1_
 
 DESERT_8                BITMAP                  "..\\RES\\desert1\\desert_wall1_4.bmp"
 
-DESERT_10               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall_square1.bmp"
+DESERT_10               BITMAP                  "..\\RES\\desert1\\desert_wall_square1.bmp"
 
-DESERT_11               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall_square2.bmp"
+DESERT_11               BITMAP                  "..\\RES\\desert1\\desert_wall_square2.bmp"
 
-DESERT_12               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall_square7.bmp"
+DESERT_12               BITMAP                  "..\\RES\\desert1\\desert_wall_square7.bmp"
 
-DESERT_13               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall_square8.bmp"
+DESERT_13               BITMAP                  "..\\RES\\desert1\\desert_wall_square8.bmp"
 
-DESERT_82               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall_square9.bmp"
+DESERT_82               BITMAP                  "..\\RES\\desert1\\desert_wall_square9.bmp"
 
-DESERT_83               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall_square10.bmp"
+DESERT_83               BITMAP                  "..\\RES\\desert1\\desert_wall_square10.bmp"
 
-DESERT_31               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall7_1.bmp"
+DESERT_31               BITMAP                  "..\\RES\\desert1\\desert_wall7_1.bmp"
 
-DESERT_26               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_brown5.bmp"
+DESERT_26               BITMAP                  "..\\RES\\desert1\\desert_brown5.bmp"
 
-DESERT_29               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_brown6.bmp"
+DESERT_29               BITMAP                  "..\\RES\\desert1\\desert_brown6.bmp"
 
-DESERT_28               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_brown7.bmp"
+DESERT_28               BITMAP                  "..\\RES\\desert1\\desert_brown7.bmp"
 
-DESERT_27               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_brown8.bmp"
+DESERT_27               BITMAP                  "..\\RES\\desert1\\desert_brown8.bmp"
 
-DESERT_58               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_triangle2_1.bmp"
+DESERT_58               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle2_1.bmp"
 
-DESERT_59               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_triangle2_2.bmp"
+DESERT_59               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle2_2.bmp"
 
-DESERT_60               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_triangle2_3.bmp"
+DESERT_60               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle2_3.bmp"
 
-DESERT_61               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_triangle2_4.bmp"
+DESERT_61               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle2_4.bmp"
 
-DESERT_62               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_triangle2_5.bmp"
+DESERT_62               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle2_5.bmp"
 
-DESERT_42               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_left_6_1.bmp"
+DESERT_42               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_6_1.bmp"
 
-DESERT_41               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_left_6_2.bmp"
+DESERT_41               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_6_2.bmp"
 
-DESERT_45               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_left_7_1.bmp"
+DESERT_45               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_7_1.bmp"
 
-DESERT_46               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_left_7_2.bmp"
+DESERT_46               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_7_2.bmp"
 
-DESERT_49               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_left_8_1.bmp"
+DESERT_49               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_8_1.bmp"
 
-DESERT_50               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_left_8_2.bmp"
+DESERT_50               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_8_2.bmp"
 
-DESERT_44               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_right_6_1.bmp"
+DESERT_44               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_6_1.bmp"
 
-DESERT_43               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_right_6_2.bmp"
+DESERT_43               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_6_2.bmp"
 
-DESERT_47               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_right_7_1.bmp"
+DESERT_47               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_7_1.bmp"
 
-DESERT_48               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_right_7_2.bmp"
+DESERT_48               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_7_2.bmp"
 
-DESERT_51               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_right_8_1.bmp"
+DESERT_51               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_8_1.bmp"
 
-DESERT_52               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_right_8_2.bmp"
+DESERT_52               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_8_2.bmp"
 
-DESERT_84               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_rdown_1.bmp"
+DESERT_84               BITMAP                  "..\\RES\\desert1\\desert_rdown_1.bmp"
 
-DESERT_85               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_rdown_2.bmp"
+DESERT_85               BITMAP                  "..\\RES\\desert1\\desert_rdown_2.bmp"
 
-DESERT_87               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_rdown_3.bmp"
+DESERT_87               BITMAP                  "..\\RES\\desert1\\desert_rdown_3.bmp"
 
-DESERT_91               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_rdown_4.bmp"
+DESERT_91               BITMAP                  "..\\RES\\desert1\\desert_rdown_4.bmp"
 
-DESERT_90               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_rdown_5.bmp"
+DESERT_90               BITMAP                  "..\\RES\\desert1\\desert_rdown_5.bmp"
 
-DESERT_86               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_rdown_6.bmp"
+DESERT_86               BITMAP                  "..\\RES\\desert1\\desert_rdown_6.bmp"
 
-DESERT_89               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_rdown_7.bmp"
+DESERT_89               BITMAP                  "..\\RES\\desert1\\desert_rdown_7.bmp"
 
-DESERT_88               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_rdown_8.bmp"
+DESERT_88               BITMAP                  "..\\RES\\desert1\\desert_rdown_8.bmp"
 
-DESERT_92               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ron_1.bmp"
+DESERT_92               BITMAP                  "..\\RES\\desert1\\desert_ron_1.bmp"
 
-DESERT_93               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ron_2.bmp"
+DESERT_93               BITMAP                  "..\\RES\\desert1\\desert_ron_2.bmp"
 
-DESERT_94               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ron_3.bmp"
+DESERT_94               BITMAP                  "..\\RES\\desert1\\desert_ron_3.bmp"
 
-DESERT_95               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ron_4.bmp"
+DESERT_95               BITMAP                  "..\\RES\\desert1\\desert_ron_4.bmp"
 
-DESERT_97               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ron_5.bmp"
+DESERT_97               BITMAP                  "..\\RES\\desert1\\desert_ron_5.bmp"
 
-DESERT_96               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ron_6.bmp"
+DESERT_96               BITMAP                  "..\\RES\\desert1\\desert_ron_6.bmp"
 
-DESERT_99               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ron_7.bmp"
+DESERT_99               BITMAP                  "..\\RES\\desert1\\desert_ron_7.bmp"
 
-DESERT_98               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ron_8.bmp"
+DESERT_98               BITMAP                  "..\\RES\\desert1\\desert_ron_8.bmp"
 
-DESERT_100_118          BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall8_1.bmp"
+DESERT_100_118          BITMAP                  "..\\RES\\desert1\\desert_wall8_1.bmp"
 
-DESERT_101              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall8_3.bmp"
+DESERT_101              BITMAP                  "..\\RES\\desert1\\desert_wall8_3.bmp"
 
-DESERT_106              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_lon_1.bmp"
+DESERT_106              BITMAP                  "..\\RES\\desert1\\desert_lon_1.bmp"
 
-DESERT_107              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_lon_2.bmp"
+DESERT_107              BITMAP                  "..\\RES\\desert1\\desert_lon_2.bmp"
 
-DESERT_108              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_lon_3.bmp"
+DESERT_108              BITMAP                  "..\\RES\\desert1\\desert_lon_3.bmp"
 
-DESERT_109              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_lon_4.bmp"
+DESERT_109              BITMAP                  "..\\RES\\desert1\\desert_lon_4.bmp"
 
-DESERT_105              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_lon_5.bmp"
+DESERT_105              BITMAP                  "..\\RES\\desert1\\desert_lon_5.bmp"
 
-DESERT_104              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_lon_6.bmp"
+DESERT_104              BITMAP                  "..\\RES\\desert1\\desert_lon_6.bmp"
 
-DESERT_103              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_lon_7.bmp"
+DESERT_103              BITMAP                  "..\\RES\\desert1\\desert_lon_7.bmp"
 
-DESERT_102              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_lon_8.bmp"
+DESERT_102              BITMAP                  "..\\RES\\desert1\\desert_lon_8.bmp"
 
-DESERT_113              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ldowm_4.bmp"
+DESERT_113              BITMAP                  "..\\RES\\desert1\\desert_ldowm_4.bmp"
 
-DESERT_116              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ldown_1.bmp"
+DESERT_116              BITMAP                  "..\\RES\\desert1\\desert_ldown_1.bmp"
 
-DESERT_117              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ldown_2.bmp"
+DESERT_117              BITMAP                  "..\\RES\\desert1\\desert_ldown_2.bmp"
 
-DESERT_115              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ldown_3.bmp"
+DESERT_115              BITMAP                  "..\\RES\\desert1\\desert_ldown_3.bmp"
 
-DESERT_112              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ldown_5.bmp"
+DESERT_112              BITMAP                  "..\\RES\\desert1\\desert_ldown_5.bmp"
 
-DESERT_114              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ldown_6.bmp"
+DESERT_114              BITMAP                  "..\\RES\\desert1\\desert_ldown_6.bmp"
 
-DESERT_111              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ldown_7.bmp"
+DESERT_111              BITMAP                  "..\\RES\\desert1\\desert_ldown_7.bmp"
 
-DESERT_110              BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_ldown_8.bmp"
+DESERT_110              BITMAP                  "..\\RES\\desert1\\desert_ldown_8.bmp"
 
-DESERT_33               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_left_1_1.bmp"
+DESERT_33               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_1_1.bmp"
 
-DESERT_34               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_left_1_2.bmp"
+DESERT_34               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_1_2.bmp"
 
-DESERT_35               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_right_1_1.bmp"
+DESERT_35               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_1_1.bmp"
 
-DESERT_36               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_right_1_2.bmp"
+DESERT_36               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_1_2.bmp"
 
-DESERT_63               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall11_1.bmp"
+DESERT_63               BITMAP                  "..\\RES\\desert1\\desert_wall11_1.bmp"
 
-DESERT_66               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall11_2.bmp"
+DESERT_66               BITMAP                  "..\\RES\\desert1\\desert_wall11_2.bmp"
 
-DESERT_65               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall11_3.bmp"
+DESERT_65               BITMAP                  "..\\RES\\desert1\\desert_wall11_3.bmp"
 
-DESERT_64               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_wall11_4.bmp"
+DESERT_64               BITMAP                  "..\\RES\\desert1\\desert_wall11_4.bmp"
 
-IDB_CONTINUE            BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\continue.bmp"
+IDB_CONTINUE            BITMAP                  "..\\RES\\continue.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

@@ -26,6 +26,8 @@ namespace game_framework {
 		
 		int maxSpeed;
 
+		int turn;
+
 		Brick* refBrick;
 		POINT left;
 		POINT right;
@@ -74,7 +76,6 @@ namespace game_framework {
 
 		POINT getDelta();
 		
-
 		void setTopLeft(int, int);
 		void setTopLeft(POINT);
 		void SetMoveLeft(bool);
@@ -93,7 +94,6 @@ namespace game_framework {
 		void HandleRightCollision(vector<Brick*>);
 
 		void CameraMove(POINT);
-
 
 		CMovingBitmap debug;
 
