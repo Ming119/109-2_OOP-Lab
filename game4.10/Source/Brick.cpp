@@ -618,12 +618,11 @@ namespace game_framework {
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
-
-<<<<<<< HEAD
+			/*/
 			case 90:
 				texture.AddBitmap(Ping);
 				SetProperty(CLOUD);
-=======
+*/
 			case 101:
 				texture.AddBitmap(Ping);
 				SetProperty(PASSABLE);
@@ -683,7 +682,6 @@ namespace game_framework {
 			case 110:
 				texture.AddBitmap(Ping);
 				SetProperty(PASSABLE);
->>>>>>> 8a6a57ac5562e8914ed22af559400a2eef6e7987
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
