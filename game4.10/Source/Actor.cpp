@@ -119,9 +119,14 @@ namespace game_framework {
 	void Actor::LookingForRefBrick(vector<Brick*> bricks) {
 		const int bs = bricks.size();
 		for (int b = 0; b < bs; b++) {
+			if (bricks.at(b)->ID() < 100) continue;
 			if (this->Right() > bricks.at(b)->Left() &&
+<<<<<<< HEAD
 				this->Left() < bricks.at(b)->Right() &&
 				bricks.at(b)->ID() > 100) {
+=======
+				this->Left() < bricks.at(b)->Right()) {
+>>>>>>> 8a6a57ac5562e8914ed22af559400a2eef6e7987
 				switch (bricks.at(b)->ID()) {
 				case 101:	// Right Up
 					turn = 1;
@@ -321,6 +326,11 @@ namespace game_framework {
 		pos.y -= d.y;
 	}
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8a6a57ac5562e8914ed22af559400a2eef6e7987
 	// Sonic
 	Sonic::Sonic() : Actor::Actor() {
 		pos.y += 5 * DEFAULT_SCALE;
