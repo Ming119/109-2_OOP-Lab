@@ -937,10 +937,11 @@
 #define DESERT_35                       1081
 #define DESERT_36                       1082
 #define DESERT_63                       1083
-#define IDB_BITMAP93                    1084
 #define DESERT_66                       1084
 #define DESERT_65                       1085
 #define DESERT_64                       1086
+#define IDB_BITMAP71                    1087
+#define IDB_CONTINUE                    1087
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
 #define ID_BUTTON_FULLSCREEN            32773
@@ -952,7 +953,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        1087
+#define _APS_NEXT_RESOURCE_VALUE        1088
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
