@@ -618,6 +618,70 @@ namespace game_framework {
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
+
+			case 101:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 102:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 103:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 104:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 105:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 106:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 107:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 108:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 110:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
 			default:
 				break;
 			}
