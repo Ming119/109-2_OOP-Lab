@@ -193,7 +193,7 @@ namespace game_framework {
 		int current_actor;
 		int current_level;
 		int game_time;
-		
+		bool debugMODE;
 	};
 
 

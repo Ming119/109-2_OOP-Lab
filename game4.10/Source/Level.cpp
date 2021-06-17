@@ -41,6 +41,8 @@ namespace game_framework {
 
 	int Level::getScore() { return score; }
 
+	bool Level::getDebug() { return debugMODE; }
+
 	/* Setter */
 	void Level::SetCurrentActor(int actor) {
 		character = actor;
@@ -80,6 +82,11 @@ namespace game_framework {
 		int es = enemies.size();
 		for (int i = 0; i < es; i++)
 			enemies.at(i)->SetMoving(delta);
+	}
+
+	void Level::SetDebug(bool flag) { 
+		this->debugMODE = flag;
+		CurrentActor()->SetDebug(debugMODE);
 	}
 
 	/* Member Function */

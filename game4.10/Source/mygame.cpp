@@ -538,6 +538,7 @@ void CGameStateRun::OnInit() {
 	t_min.SetInteger(0);
 	t_sec.SetInteger(0);
 	rings.SetInteger(0);
+	debugMODE = false;
 
 }
 
@@ -563,10 +564,15 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	const char KEY_DOWN  = 0x28; // keyboard下箭頭
 	const char KEY_SPACE = 0x20; // keyboard SPACE
 	const char KEY_Z     = 0x5A; // keyboard z
+	const char KEY_Q     = 0x51;
 	
+	if (nChar == KEY_Q) {
+		debugMODE = !debugMODE;
+		level->SetDebug(true);
+	}
+
 	if (nChar == KEY_Z) {
 		++current_actor %= 3;
-		TRACE("current Actor: %d\n", current_actor);
 		level->SetCurrentActor(current_actor);
 	}
 
@@ -578,12 +584,18 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	
 	if (nChar == KEY_UP) 
 		level->CurrentActor()->SetIsLookingUp(true);
-	
+
 	if (nChar == KEY_DOWN) 
 		level->CurrentActor()->SetIsLookingDown(true);
-	
-	if (nChar == KEY_SPACE) 
+
+	if (!debugMODE && nChar == KEY_SPACE) 
 		level->CurrentActor()->SetIsJumping(true);
+
+	if (debugMODE && nChar == KEY_UP)
+		level->CurrentActor()->SetMoveUp(true);
+
+	if (debugMODE && nChar == KEY_DOWN)
+		level->CurrentActor()->SetMoveDown(true);
 
 	if (nChar == KEY_ESC) {
 		CAudio::Instance()->Play(AUDIO_RETURN, false);
@@ -611,8 +623,14 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	if (nChar == KEY_DOWN)
 		level->CurrentActor()->SetIsLookingDown(false);
 
-	if (nChar == KEY_SPACE)
+	if (!debugMODE && nChar == KEY_SPACE)
 		level->CurrentActor()->SetIsJumping(false);
+
+	if (debugMODE && nChar == KEY_DOWN)
+		level->CurrentActor()->SetMoveDown(false);
+
+	if (debugMODE && nChar == KEY_UP)
+		level->CurrentActor()->SetMoveUp(false);
 }
 
 void CGameStateRun::OnMove()

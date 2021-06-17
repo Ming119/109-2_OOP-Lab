@@ -16,8 +16,10 @@ namespace game_framework {
 		isJumping = isRotating = false;
 
 		isMovingLeft = isMovingRight = isLookingUp = isLookingDown = false;
+		isMovingDown = isMovingUp = false;
 
 		refBrick = nullptr;
+		debugMODE = false;
 
 		turn = 0;
 		pos.x = 100;
@@ -28,13 +30,26 @@ namespace game_framework {
 
 	Actor::~Actor() { }
 
+	POINT Actor::debugMoveing() {
+		POINT dt = POINT();
+
+		if (isMovingLeft)
+			dt.x = -50;
+		if (isMovingRight)
+			dt.x = 50;
+		if (isMovingUp)
+			dt.y = -50;
+		if (isMovingDown)
+			dt.y = 50;
+
+		return dt;
+	}
+
 	POINT Actor::Moving(vector<Brick*> b) {
 		POINT dt = POINT();
 		double theta = 0;
 
 		UpdateRefBrick(b);
-		// TRACE("ref %d\n", refBrick->Angle());
-
 		// x-axis
 		// dx = v_0 dt + 1/2 a dt^(2)
 		if (isMovingLeft) {
@@ -308,6 +323,10 @@ namespace game_framework {
 
 	void Actor::SetMoveRight(bool m) { isMovingRight = m; }
 
+	void Actor::SetMoveUp(bool m) { isMovingUp = m; }
+
+	void Actor::SetMoveDown(bool m) { isMovingDown = m; }
+
 	void Actor::SetIsLookingUp(bool m) { isLookingUp = m; }
 
 	void Actor::SetIsLookingDown(bool m) { isLookingDown = m; }
@@ -319,6 +338,10 @@ namespace game_framework {
 	void Actor::CameraMove(POINT d) {
 		pos.x -= d.x;
 		pos.y -= d.y;
+	}
+
+	void Actor::SetDebug(bool flag) {
+		this->debugMODE = flag;
 	}
 
 
@@ -370,7 +393,10 @@ namespace game_framework {
 	}
 
 	void Sonic::OnMove(vector<Brick*> b, int a) {
-		if (character == static_cast<int>(CHARACTERS::SONIC)) delta = Moving(b);
+		if (character == static_cast<int>(CHARACTERS::SONIC)) {
+			if (debugMODE) delta = debugMoveing();
+			else delta = Moving(b);
+		}
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
@@ -467,7 +493,10 @@ namespace game_framework {
 	}
 
 	void Miles::OnMove(vector<Brick*> b, int a) {
-		if (character == static_cast<int>(CHARACTERS::MILES))delta = Moving(b);
+		if (character == static_cast<int>(CHARACTERS::MILES)) {
+			if (debugMODE) delta = debugMoveing();
+			else delta = Moving(b);
+		}
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
@@ -560,7 +589,10 @@ namespace game_framework {
 	}
 
 	void Knuckles::OnMove(vector<Brick*> b, int a) {
-		if (character == static_cast<int>(CHARACTERS::KNUCKLES)) delta = Moving(b);
+		if (character == static_cast<int>(CHARACTERS::KNUCKLES)) {
+			if (debugMODE) delta = debugMoveing();
+			else delta = Moving(b);
+		}
 
 		if (isLookingUp) {
 			if (!lookUp.IsFinalBitmap())
