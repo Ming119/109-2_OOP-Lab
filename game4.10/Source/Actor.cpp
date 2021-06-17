@@ -19,6 +19,7 @@ namespace game_framework {
 
 		refBrick = nullptr;
 
+		turn = 0;
 		pos.x = 100;
 		pos.y = SIZE_Y / 3;
 
@@ -51,37 +52,63 @@ namespace game_framework {
 
 		//HandleLeftCollision(b);
 		//HandleRightCollision(b);
-
-		
-		// y-axis
-		// h = 1/2gt
-		velocity.y += gravity / 2;
-		if (refBrick != nullptr) {
-			if (character == 0) {
-				TRACE("RefBrick: (x, y): (%d, %d)\n", refBrick->Top(), refBrick->Left());
-				TRACE("bottom: %d, %d\n", bottom.x, bottom.y);
-			}
-			if (refBrick->Angle() == 0) {
-				if (IsJumping()) velocity.y -= jumpStrength;
-				
-				else if (this->Bottom() == refBrick->Top())
-					velocity.y = 0;
-				
-				else if (this->Bottom() + gravity > refBrick->Top())
-					velocity.y = refBrick->Top() - this->Bottom();
-				
-			} else {
-				theta = (double)refBrick->Angle() * M_PI / 180;
-				velocity.y = 0;
-			}
-
-			dt.x = (long)(velocity.x * std::cos(theta) + velocity.y * std::sin(theta));
-			dt.y = (long)(velocity.y * std::cos(theta) - velocity.x * std::sin(theta));
-		} else {
-			TRACE("NULL RefBrick\n");
-
+		if (turn == 1) {		// Right Up
 			dt.x = velocity.x;
-			dt.y = velocity.y;
+			dt.y = -velocity.x;
+		} else if (turn == 2) {	// Left Up
+			dt.x = -velocity.x;
+			dt.y = -velocity.x;
+		}
+		else if (turn == 3) {	// Left Down
+			dt.x = -velocity.x;
+			dt.y = velocity.x;
+		}
+		else if (turn == 4) {	// Right Down
+			dt.x = velocity.x;
+			dt.y = velocity.x;
+		}
+		else if (turn == 5 || turn == 6) {	// Right or Left
+			dt.x = velocity.x;
+			dt.y = 0;
+		}
+		else if (turn == 7 || turn == 8) {	// Up or Down
+			dt.x = 0;
+			dt.y = velocity.x;
+		}
+		else if (turn == 0) {	// Leave
+
+			// y-axis
+			// h = 1/2gt
+			velocity.y += gravity / 2;
+			if (refBrick != nullptr) {
+				if (character == 0) {
+					TRACE("RefBrick: (x, y): (%d, %d)\n", refBrick->Top(), refBrick->Left());
+					TRACE("bottom: %d, %d\n", bottom.x, bottom.y);
+				}
+				if (refBrick->Angle() == 0) {
+					if (IsJumping() && refBrick != nullptr) velocity.y -= jumpStrength;
+
+					else if (this->Bottom() == refBrick->Top())
+						velocity.y = 0;
+
+					else if (this->Bottom() + gravity > refBrick->Top())
+						velocity.y = refBrick->Top() - this->Bottom();
+
+				}
+				else {
+					theta = (double)refBrick->Angle() * M_PI / 180;
+					velocity.y = 0;
+				}
+
+				dt.x = (long)(velocity.x * std::cos(theta) + velocity.y * std::sin(theta));
+				dt.y = (long)(velocity.y * std::cos(theta) - velocity.x * std::sin(theta));
+			}
+			else {
+				TRACE("NULL RefBrick\n");
+
+				dt.x = velocity.x;
+				dt.y = velocity.y;
+			}
 		}
 
 		if (dt.x != 0) moving.OnMove();
@@ -91,20 +118,53 @@ namespace game_framework {
 
 	void Actor::LookingForRefBrick(vector<Brick*> bricks) {
 		const int bs = bricks.size();
-
-		vector<Brick*> tmpb;
 		for (int b = 0; b < bs; b++) {
 			if (this->Right() > bricks.at(b)->Left() &&
 				this->Left() < bricks.at(b)->Right() &&
-				bricks.at(b)->Property() == OBSTACLE) {
-				if (this->Top() <= bricks.at(b)->Bottom())
-					tmpb.push_back(bricks.at(b));
+				bricks.at(b)->ID() > 100) {
+				switch (bricks.at(b)->ID()) {
+				case 101:	// Right Up
+					turn = 1;
+					break;
+
+				case 102:	// Left Up
+					turn = 2;
+					break;
+
+				case 103:	// Left Down
+					turn = 3;
+					break;
+
+				case 104:	//Right Down
+					turn = 4;
+					break;
+				
+				case 105:	// Right
+					turn = 5;
+					break;
+
+				case 106:	// Left
+					turn = 6;
+					break;
+
+				case 107:	// Up
+					turn = 7;
+					break;
+
+				case 108:	// Down
+					turn = 8;
+					break;
+
+				case 110:	// Leave
+					turn = 0;
+					break;
+
+				default:
+					turn = 0;
+					break;
+				}
 			}
 		}
-
-		std::sort(tmpb.begin(), tmpb.end(), [](Brick* b1, Brick* b2) -> bool { return b1->Top() < b2->Top(); });
-		if (tmpb.size())
-			refBrick = tmpb.at(0);
 	}
 
 	void Actor::checkLeavingBrick() {
@@ -221,7 +281,6 @@ namespace game_framework {
 		}
 	}
 
-
 	int Actor::Top() { return idle.Top(); }
 
 	int Actor::Left() { return idle.Left(); }
@@ -261,7 +320,6 @@ namespace game_framework {
 		pos.x -= d.x;
 		pos.y -= d.y;
 	}
-
 
 	// Sonic
 	Sonic::Sonic() : Actor::Actor() {
