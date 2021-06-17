@@ -443,7 +443,7 @@ namespace game_framework {
 
 			}
 			break;
-/*
+
 		// PARADISE 2
 		case static_cast<int>(LEVELS::EXOTIC_PARADISE_2) :
 			CAudio::Instance()->Stop(AUDIO_TITLE);
@@ -485,7 +485,7 @@ namespace game_framework {
 					addEnemy(id, x, y);
 
 			}
-*/
+
 			break;
 
 		default: break;
