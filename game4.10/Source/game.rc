@@ -718,6 +718,12 @@ DESERT_64               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\R
 
 IDB_CONTINUE            BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\continue.bmp"
 
+DESERT_39               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_right_5_1.bmp"
+
+DESERT_40               BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\desert1\\desert_tiles_right_5_2.bmp"
+
+Ping                    BITMAP                  "D:\\OOP-2\\Project\\game4.10\\RES\\ping.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

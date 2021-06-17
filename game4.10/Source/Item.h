@@ -715,6 +715,7 @@ namespace game_framework {
 		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
 
+	
 }
 
 #endif
