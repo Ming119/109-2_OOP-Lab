@@ -1409,13 +1409,11 @@ namespace game_framework {
 
 
 	// SPIKES_UP
-	SPIKES_UP::SPIKES_UP(int id, int x, int y) : Item::Item(id, x, y) {
-		isShow = false;
-	}
+	SPIKES_UP::SPIKES_UP(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	SPIKES_UP::~SPIKES_UP() {}
 
-	bool SPIKES_UP::IsChange() { return isShow; }
+	bool SPIKES_UP::IsChange() { return false; }
 
 	void SPIKES_UP::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_UP);
@@ -1431,18 +1429,15 @@ namespace game_framework {
 	}
 
 	void SPIKES_UP::OnShow(int scale) {
-		if (isShow)
-			texture.OnShow(scale);
+		texture.OnShow(scale);
 	}
 
 	// SPIKES_DOWN
-	SPIKES_DOWN::SPIKES_DOWN(int id, int x, int y) : Item::Item(id, x, y) {
-		isShow = false;
-	}
+	SPIKES_DOWN::SPIKES_DOWN(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	SPIKES_DOWN::~SPIKES_DOWN() {}
 
-	bool SPIKES_DOWN::IsChange() { return isShow; }
+	bool SPIKES_DOWN::IsChange() { return false; }
 
 	void SPIKES_DOWN::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_DOWN);
@@ -1458,18 +1453,15 @@ namespace game_framework {
 	}
 
 	void SPIKES_DOWN::OnShow(int scale) {
-		if (isShow)
-			texture.OnShow(scale);
+		texture.OnShow(scale);
 	}
 
 	// SPIKES_LEFT
-	SPIKES_LEFT::SPIKES_LEFT(int id, int x, int y) : Item::Item(id, x, y) {
-		isShow = false;
-	}
+	SPIKES_LEFT::SPIKES_LEFT(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	SPIKES_LEFT::~SPIKES_LEFT() {}
 
-	bool SPIKES_LEFT::IsChange() { return isShow; }
+	bool SPIKES_LEFT::IsChange() { return false; }
 
 	void SPIKES_LEFT::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_LEFT);
@@ -1485,18 +1477,15 @@ namespace game_framework {
 	}
 
 	void SPIKES_LEFT::OnShow(int scale) {
-		if (isShow)
-			texture.OnShow(scale);
+		texture.OnShow(scale);
 	}
 
 	// SPIKES_RIGHT
-	SPIKES_RIGHT::SPIKES_RIGHT(int id, int x, int y) : Item::Item(id, x, y) {
-		isShow = false;
-	}
+	SPIKES_RIGHT::SPIKES_RIGHT(int id, int x, int y) : Item::Item(id, x, y) {}
 
 	SPIKES_RIGHT::~SPIKES_RIGHT() {}
 
-	bool SPIKES_RIGHT::IsChange() { return isShow; }
+	bool SPIKES_RIGHT::IsChange() { return false; }
 
 	void SPIKES_RIGHT::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_RING);
@@ -1512,8 +1501,9 @@ namespace game_framework {
 	}
 
 	void SPIKES_RIGHT::OnShow(int scale) {
-		if (isShow)
-			texture.OnShow(scale);
+		texture.OnShow(scale);
 	}
+
+	
 
 }

@@ -147,6 +147,13 @@ namespace game_framework {
 			items.push_back(new LOOP_TOP(id, x, y));
 			break;
 
+		case 38:
+			items.push_back(new SPIKES_UP(id, x, y));
+			break;
+
+
+
+
 		case 50:
 			items.push_back(new YELLOW_SPRING_PADS_LEFT_U(id, x, y));
 			break;
@@ -199,10 +206,6 @@ namespace game_framework {
 			items.push_back(new BULE_SPRING_PADS_DOWN(id, x, y));
 			break;
 
-		case 66:
-			items.push_back(new SPIKES_UP(id, x, y));
-			break;
-
 		case 63:
 			items.push_back(new SPIKES_DOWN(id, x, y));
 			break;
@@ -214,6 +217,26 @@ namespace game_framework {
 		case 65:
 			items.push_back(new SPIKES_RIGHT(id, x, y));
 			break;
+
+
+
+		case 66:
+			items.push_back(new SPIKES_UP(id, x, y));
+			break;
+
+		case 67:
+			items.push_back(new SPIKES_DOWN(id, x, y));
+			break;
+
+		case 68:
+			items.push_back(new SPIKES_LEFT(id, x, y));
+			break;
+
+		case 69:
+			items.push_back(new SPIKES_RIGHT(id, x, y));
+			break;
+
+		
 
 		default: break;
 		}
@@ -400,6 +423,51 @@ namespace game_framework {
 			
 			break;
 
+		// Chilpoctli Temple zone
+		case static_cast<int>(LEVELS::CHILPOCTLI_TEMPLE) :
+			CAudio::Instance()->Stop(AUDIO_TITLE);
+			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
+
+
+			spawnPoint.x = 1000;
+			spawnPoint.y = 4000;
+
+			// Background
+			background.LoadBitmap(BG_DESERT);
+			
+			// Brick
+			for (int i = 0; i < sizeof(DESERT1Brick) / sizeof(DESERT1Brick[0]); i++) {
+				const int id = DESERT1Brick[i][0];
+				const int x = DESERT1Brick[i][1] * DEFAULT_SCALE;
+				const int y = (DESERT1Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					bricks.push_back(new Brick(id, x, y));
+			}
+			/*
+			// Item
+			for (int i = 0; i < sizeof(DESERT1Items) / sizeof(DESERT1Items[0]); i++) {
+				const int id = DESERT1Items[i][0];
+				const int x = DESERT1Items[i][1] * DEFAULT_SCALE;
+				const int y = (DESERT1Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addItem(id, x, y);
+			}
+			
+			// Enemy
+			for (int i = 0; i < sizeof(DESERT1Enemies) / sizeof(DESERT1Enemies[0]); i++) {
+				const int id = DESERT1Enemies[i][0];
+				const int x = DESERT1Enemies[i][1] * DEFAULT_SCALE;
+				const int y = (DESERT1Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addEnemy(id, x, y);
+
+			}
+			break;
+			*/
+
 		// PARADISE 1
 		case static_cast<int>(LEVELS::EXOTIC_PARADISE_1) :
 			CAudio::Instance()->Stop(AUDIO_TITLE);
@@ -487,6 +555,52 @@ namespace game_framework {
 			}
 
 			break;
+
+		// Tutorial
+		case static_cast<int>(LEVELS::TUTORIAL_1) :
+			CAudio::Instance()->Stop(AUDIO_TITLE);
+			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
+
+			spawnPoint.x = 25;
+			spawnPoint.y = 5900;
+
+			// Background
+			background.LoadBitmap(EXOTIC_PARADISE_ACT1_BG);
+
+			// Brick
+			for (int i = 0; i < sizeof(TUTORIAL1Brick) / sizeof(TUTORIAL1Brick[0]); i++) {
+				const int id = TUTORIAL1Brick[i][0];
+				const int x = TUTORIAL1Brick[i][1] * DEFAULT_SCALE;
+				const int y = (TUTORIAL1Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					bricks.push_back(new Brick(id, x, y));
+			}
+
+			// Item
+			for (int i = 0; i < sizeof(TUTORIAL1Items) / sizeof(TUTORIAL1Items[0]); i++) {
+				const int id = TUTORIAL1Items[i][0];
+				const int x = TUTORIAL1Items[i][1] * DEFAULT_SCALE;
+				const int y = (TUTORIAL1Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addItem(id, x, y);
+			}
+
+			// Enemy
+			for (int i = 0; i < sizeof(TUTORIAL1Enemies) / sizeof(TUTORIAL1Enemies[0]); i++) {
+				const int id = TUTORIAL1Enemies[i][0];
+				const int x = TUTORIAL1Enemies[i][1] * DEFAULT_SCALE;
+				const int y = (TUTORIAL1Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
+
+				if (id != -1)
+					addEnemy(id, x, y);
+
+			}
+
+			break;
+
+
 
 		default: break;
 		

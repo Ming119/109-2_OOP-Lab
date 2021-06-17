@@ -2685,5 +2685,14 @@
     <Image Include="RES\desert1\desert_wall11_4.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\desert1\desert_tiles_right_5_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\desert1\desert_tiles_right_5_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ping.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

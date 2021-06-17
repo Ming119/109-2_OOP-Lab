@@ -219,6 +219,7 @@
 #define OCEAN_ROAD_3_1                  307
 #define OCEAN_ROAD_4                    308
 #define IDB_BITMAP94                    309
+#define DESERT_40                       309
 #define IDB_BITMAP95                    310
 #define OCEAN_ROAD_5                    310
 #define IDB_BITMAP96                    311
@@ -940,8 +941,10 @@
 #define DESERT_66                       1084
 #define DESERT_65                       1085
 #define DESERT_64                       1086
-#define IDB_BITMAP71                    1087
 #define IDB_CONTINUE                    1087
+#define DESERT_39                       1088
+#define IDB_BITMAP71                    1090
+#define Ping                            1091
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
 #define ID_BUTTON_FULLSCREEN            32773
@@ -953,7 +956,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        1088
+#define _APS_NEXT_RESOURCE_VALUE        1092
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
