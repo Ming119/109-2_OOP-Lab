@@ -319,7 +319,7 @@ namespace game_framework {
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
-
+			
 			case 33:
 				texture.AddBitmap(OCEAN_33);
 				SetProperty(OBSTACLE);
@@ -618,11 +618,6 @@ namespace game_framework {
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
-			/*/
-			case 90:
-				texture.AddBitmap(Ping);
-				SetProperty(CLOUD);
-*/
 
 			case 90:
 				texture.AddBitmap(Ping);
@@ -1315,6 +1310,13 @@ namespace game_framework {
 				SetProperty(OBSTACLE);
 				SetBehavior(DEFAULT);
 				SetAngle(50);
+				break;
+
+			case 91:
+				texture.AddBitmap(DESERT_91);
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
 				break;
 
 			case 92:

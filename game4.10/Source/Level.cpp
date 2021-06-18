@@ -97,7 +97,7 @@ namespace game_framework {
 		case 0:
 			items.push_back(new Ring(id, x, y));
 			break;
-
+/*
 		case 16:
 			items.push_back(new LOOP_RIGHT(id, x, y));
 			break;
@@ -113,7 +113,7 @@ namespace game_framework {
 		case 19:
 			items.push_back(new LOOP_OFF(id, x, y));
 			break;
-
+*/
 		case 20:
 			items.push_back(new YELLOW_SPRING_PADS_UP(id, x, y));
 			break;
@@ -141,7 +141,7 @@ namespace game_framework {
 		case 28:
 			items.push_back(new BIG_Ring(id, x, y));
 			break;
-
+/*
 		case 33:
 			items.push_back(new LOOP_TOP_UP_DOWN(id, x, y));
 			break;
@@ -153,7 +153,7 @@ namespace game_framework {
 		case 35:
 			items.push_back(new LOOP_TOP(id, x, y));
 			break;
-
+*/
 		case 38:
 			items.push_back(new SPIKES_UP(id, x, y));
 			break;
@@ -435,9 +435,8 @@ namespace game_framework {
 			CAudio::Instance()->Stop(AUDIO_TITLE);
 			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 
-
-			spawnPoint.x = 1000;
-			spawnPoint.y = 4000;
+			spawnPoint.x = 40;
+			spawnPoint.y = 3000;
 
 			// Background
 			background.LoadBitmap(BG_DESERT);
@@ -451,7 +450,7 @@ namespace game_framework {
 				if (id != -1)
 					bricks.push_back(new Brick(id, x, y));
 			}
-			/*
+			
 			// Item
 			for (int i = 0; i < sizeof(DESERT1Items) / sizeof(DESERT1Items[0]); i++) {
 				const int id = DESERT1Items[i][0];
@@ -473,7 +472,7 @@ namespace game_framework {
 
 			}
 			break;
-			*/
+			
 
 		// PARADISE 1
 		case static_cast<int>(LEVELS::EXOTIC_PARADISE_1) :
