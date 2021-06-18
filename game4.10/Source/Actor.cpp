@@ -65,6 +65,9 @@ namespace game_framework {
 			velocity.x = (long)(velocity.x * friction);
 		}
 
+		LookingForRefBrick(b);
+		if (character == SONIC)
+			TRACE("TURN:%d\n", turn);
 		//HandleLeftCollision(b);
 		//HandleRightCollision(b);
 		if (turn == 1) {		// Right Up
@@ -82,8 +85,12 @@ namespace game_framework {
 			dt.x = velocity.x;
 			dt.y = velocity.x;
 		}
-		else if (turn == 5 || turn == 6) {	// Right or Left
+		else if (turn == 5) {	// Right
 			dt.x = velocity.x;
+			dt.y = 0;
+		}
+		else if (turn == 6) {	// Left
+			dt.x = -velocity.x;
 			dt.y = 0;
 		}
 		else if (turn == 7 || turn == 8) {	// Up or Down
@@ -132,18 +139,24 @@ namespace game_framework {
 	}
 
 	void Actor::LookingForRefBrick(vector<Brick*> bricks) {
+		POINT center;
+		center.x = (Left() + Right()) / 2;
+		center.y = (Top() + Bottom()) / 2;
+
 		const int bs = bricks.size();
 		for (int b = 0; b < bs; b++) {
 			if (bricks.at(b)->ID() < 100) continue;
-			if (this->Right() > bricks.at(b)->Left() &&
-				this->Left() < bricks.at(b)->Right()) {
+			if (bricks.at(b)->Left() < Right() && Left() < bricks.at(b)->Right() &&
+				bricks.at(b)->Top() < Bottom() && Top() < bricks.at(b)->Bottom()) {
 				switch (bricks.at(b)->ID()) {
 				case 101:	// Right Up
-					turn = 1;
+					if (turn == 0 && bricks.at(b)->Left() < center.x) turn = 1;
+					if (turn == 1 && center.x < bricks.at(b)->Right()) turn = 0;
 					break;
 
 				case 102:	// Left Up
-					turn = 2;
+					if (turn == 1 && bricks.at(b)->Left() < center.x) turn = 2;
+					//if (turn == 2 && center.x < bricks.at(b)->Right()) turn = 1;
 					break;
 
 				case 103:	// Left Down
@@ -171,10 +184,6 @@ namespace game_framework {
 					break;
 
 				case 110:	// Leave
-					turn = 0;
-					break;
-
-				default:
 					turn = 0;
 					break;
 				}
