@@ -66,16 +66,20 @@ namespace game_framework {
 		}
 
 		LookingForRefBrick(b);
-		if (character == SONIC)
-			TRACE("TURN:%d\n", turn);
-		//HandleLeftCollision(b);
-		//HandleRightCollision(b);
+		
 		if (turn == 1) {		// Right Up
 			dt.x = velocity.x;
 			dt.y = -velocity.x;
 		} else if (turn == 2) {	// Left Up
-			dt.x = -velocity.x;
-			dt.y = -velocity.x;
+			if (velocity.x > 0) {
+				dt.x = -velocity.x;
+				dt.y = -velocity.x;
+			}
+			else {
+				dt.x = velocity.x;
+				dt.y = velocity.x;
+			}
+			
 		}
 		else if (turn == 3) {	// Left Down
 			dt.x = -velocity.x;
@@ -93,11 +97,17 @@ namespace game_framework {
 			dt.x = -velocity.x;
 			dt.y = 0;
 		}
-		else if (turn == 7 || turn == 8) {	// Up or Down
+		else if (turn == 7) {	// Up
 			dt.x = 0;
-			dt.y = velocity.x;
+			dt.y = abs(velocity.x);
+		}
+		else if (turn == 8) {	// Down
+			dt.x = 0;
+			dt.y = -abs(velocity.x);
 		}
 		else if (turn == 0) {	// Leave
+			// HandleLeftCollision(b);
+			// HandleRightCollision(b);
 
 			// y-axis
 			// h = 1/2gt
@@ -150,13 +160,12 @@ namespace game_framework {
 				bricks.at(b)->Top() < Bottom() && Top() < bricks.at(b)->Bottom()) {
 				switch (bricks.at(b)->ID()) {
 				case 101:	// Right Up
-					if (turn == 0 && bricks.at(b)->Left() < center.x) turn = 1;
+					if (turn != 1 && bricks.at(b)->Left() < center.x) turn = 1;
 					if (turn == 1 && center.x < bricks.at(b)->Right()) turn = 0;
 					break;
 
 				case 102:	// Left Up
-					if (turn == 1 && bricks.at(b)->Left() < center.x) turn = 2;
-					//if (turn == 2 && center.x < bricks.at(b)->Right()) turn = 1;
+					turn = 2;
 					break;
 
 				case 103:	// Left Down
@@ -180,7 +189,8 @@ namespace game_framework {
 					break;
 
 				case 108:	// Down
-					turn = 8;
+					if (turn != 8) turn = 8;
+					if (turn == 8) turn = 0;
 					break;
 
 				case 110:	// Leave
