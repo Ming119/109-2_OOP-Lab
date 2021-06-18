@@ -618,6 +618,11 @@ namespace game_framework {
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
+			/*/
+			case 90:
+				texture.AddBitmap(Ping);
+				SetProperty(CLOUD);
+*/
 
 			case 90:
 				texture.AddBitmap(Ping);

@@ -353,8 +353,6 @@ namespace game_framework {
 		this->debugMODE = flag;
 	}
 
-
-
 	// Sonic
 	Sonic::Sonic() : Actor::Actor() {
 		pos.y += 5 * DEFAULT_SCALE;
