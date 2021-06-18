@@ -68,42 +68,35 @@ namespace game_framework {
 		LookingForRefBrick(b);
 		
 		if (turn == 1) {		// Right Up
-			dt.x = velocity.x;
-			dt.y = -velocity.x;
+			dt.x = abs(velocity.x);
+			dt.y = -abs(velocity.x);
 		} else if (turn == 2) {	// Left Up
-			if (velocity.x > 0) {
-				dt.x = -velocity.x;
-				dt.y = -velocity.x;
-			}
-			else {
-				dt.x = velocity.x;
-				dt.y = velocity.x;
-			}
-			
+			dt.x = -abs(velocity.x);
+			dt.y = -abs(velocity.x);
 		}
 		else if (turn == 3) {	// Left Down
-			dt.x = -velocity.x;
-			dt.y = velocity.x;
+			dt.x = -abs(velocity.x);
+			dt.y = abs(velocity.x);
 		}
 		else if (turn == 4) {	// Right Down
-			dt.x = velocity.x;
-			dt.y = velocity.x;
+			dt.x = abs(velocity.x);
+			dt.y = abs(velocity.x);
 		}
 		else if (turn == 5) {	// Right
-			dt.x = velocity.x;
+			dt.x = abs(velocity.x);
 			dt.y = 0;
 		}
 		else if (turn == 6) {	// Left
-			dt.x = -velocity.x;
+			dt.x = -abs(velocity.x);
 			dt.y = 0;
 		}
 		else if (turn == 7) {	// Up
 			dt.x = 0;
-			dt.y = abs(velocity.x);
+			dt.y = -abs(velocity.x);
 		}
 		else if (turn == 8) {	// Down
 			dt.x = 0;
-			dt.y = -abs(velocity.x);
+			dt.y = abs(velocity.x);
 		}
 		else if (turn == 0) {	// Leave
 			// HandleLeftCollision(b);
