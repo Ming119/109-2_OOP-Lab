@@ -99,8 +99,8 @@ namespace game_framework {
 			dt.y = abs(velocity.x);
 		}
 		else if (turn == 0) {	// Leave
-			// HandleLeftCollision(b);
-			// HandleRightCollision(b);
+			 HandleLeftCollision(b);
+			 HandleRightCollision(b);
 
 			// y-axis
 			// h = 1/2gt
