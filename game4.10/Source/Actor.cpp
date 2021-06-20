@@ -99,8 +99,8 @@ namespace game_framework {
 			dt.y = abs(velocity.x);
 		}
 		else if (turn == 0) {	// Leave
-			 HandleLeftCollision(b);
-			 HandleRightCollision(b);
+
+			HandleLeftRightCollision(b);
 
 			// y-axis
 			// h = 1/2gt
@@ -273,37 +273,19 @@ namespace game_framework {
 
 	}
 
-	void Actor::HandleLeftCollision(vector<Brick*> b) {
+	void Actor::HandleLeftRightCollision(vector<Brick*> b) {
 		if (angle != 0) return;
 
 		const int bs = b.size();
 		for (int i = 0; i < bs; i++) {
-			POINT p = POINT();
-			p.x = this->Left();
-			p.y = (this->Top() + this->Bottom()) / 2;
-			if (b.at(i)->Right() < p.x &&
-				b.at(i)->Top() < p.y && p.y < b.at(i)->Bottom() &&
-				b.at(i)->Property() == OBSTACLE) {
-				TRACE("left true\n");
-				velocity.x = 0;
-			}
-		}
-	}
-
-	void Actor::HandleRightCollision(vector<Brick*> b) {
-		if (angle != 0) return;
-
-		const int bs = b.size();
-		for (int i = 0; i < bs; i++) {
-			if (b.at(i)->Angle() != 0 || b.at(i)->Property() != OBSTACLE) return;
+			if (b.at(i)->Angle() != 0 || b.at(i)->Property() != OBSTACLE) continue;
 
 			POINT p = POINT();
-			p.x = this->Right();
 			p.y = (this->Top() + this->Bottom()) / 2;
-			if (b.at(i)->Left() < p.x &&
-				b.at(i)->Top() < p.y && p.y < b.at(i)->Bottom()) {
-				TRACE("right true\n");
-				velocity.x = 0;
+			if (Left() < b.at(i)->Right() && Right() > b.at(i)->Left() &&
+				b.at(i)->Top() < p.y && Top() < b.at(i)->Bottom()) {
+				velocity.x = -velocity.x;
+				break;
 			}
 		}
 	}

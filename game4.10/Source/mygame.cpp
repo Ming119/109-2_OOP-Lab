@@ -568,7 +568,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	
 	if (nChar == KEY_Q) {
 		debugMODE = !debugMODE;
-		level->SetDebug(true);
+		level->SetDebug(debugMODE);
 	}
 
 	if (nChar == KEY_Z) {

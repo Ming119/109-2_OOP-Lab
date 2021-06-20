@@ -96,8 +96,7 @@ namespace game_framework {
 		void checkLeavingBrick();
 		void UpdateRefBrick(vector<Brick*>);
 
-		void HandleLeftCollision(vector<Brick*>);
-		void HandleRightCollision(vector<Brick*>);
+		void HandleLeftRightCollision(vector<Brick*>);
 
 		void CameraMove(POINT);
 		void SetDebug(bool);
