@@ -2694,5 +2694,35 @@
     <Image Include="RES\ping.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\items\items_brand_blue.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_brand_left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_brand_null.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_brand_old_man.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_brand_old_man_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_brand_old_man_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_brand_old_man_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_brand_red.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_brand_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\items\items_brand_yellow.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -945,6 +945,16 @@
 #define DESERT_39                       1088
 #define IDB_BITMAP71                    1090
 #define Ping                            1091
+#define ITEMS_PASS_BLUE                 1092
+#define IDB_BITMAP97                    1093
+#define ITEMS_PASS_LEFT                 1093
+#define ITEMS_PASS_1                    1095
+#define ITEMS_PASS_2                    1096
+#define ITEMS_PASS_3                    1097
+#define ITEMS_PASS_4                    1098
+#define ITEMS_PASS_RED                  1099
+#define ITEMS_PASS_RIGHT                1100
+#define ITEMS_PASS_YELLOW               1101
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
 #define ID_BUTTON_FULLSCREEN            32773
@@ -956,7 +966,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        1092
+#define _APS_NEXT_RESOURCE_VALUE        1102
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
