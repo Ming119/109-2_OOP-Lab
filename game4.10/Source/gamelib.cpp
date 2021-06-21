@@ -558,8 +558,24 @@ void CGame::SetLevel(int l) {
 	level = l;
 }
 
+void CGame::SetDead(bool dead) {
+	this->dead = dead;
+}
+
+void CGame::SetFinish(bool finsih) {
+	this->finish = finish;
+}
+
 int CGame::GetLevel() {
 	return level;
+}
+
+bool CGame::GetDead() {
+	return dead;
+}
+
+bool CGame::GetFinish() {
+	return finish;
 }
 
 
@@ -576,6 +592,7 @@ CGame::CGame()
 : NUM_GAME_STATES(3)
 {	
 	level = 0;
+	dead = finish = false;
 	running = true;
 	suspended = false;
 	gameStateTable[GAME_STATE_INIT] = new CGameStateInit(this);

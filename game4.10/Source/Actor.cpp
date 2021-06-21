@@ -9,6 +9,7 @@
 #include "Actor.h"
 
 
+
 namespace game_framework {
 	Actor::Actor() {
 		velocity = delta = POINT();
@@ -45,7 +46,9 @@ namespace game_framework {
 		return dt;
 	}
 
-	POINT Actor::Moving(vector<Brick*> b) {
+	POINT Actor::Moving(vector<Brick*> b, vector<Enemy*> e) {
+		CheckEnemyCollision(e);
+
 		POINT dt = POINT();
 		double theta = 0;
 
@@ -97,6 +100,9 @@ namespace game_framework {
 		else if (turn == 8) {	// Down
 			dt.x = 0;
 			dt.y = abs(velocity.x);
+		}
+		else if (turn == 9) {
+			CGame::Instance()->SetFinish(true);
 		}
 		else if (turn == 0) {	// Leave
 
@@ -186,10 +192,29 @@ namespace game_framework {
 					if (turn == 8) turn = 0;
 					break;
 
+				case 109:
+					turn = 9;
+					break;
+
 				case 110:	// Leave
 					turn = 0;
 					break;
 				}
+			}
+		}
+	}
+
+	void Actor::CheckEnemyCollision(vector<Enemy*> e) {
+		const int es = e.size();
+
+		for (int i = 0; i < es; i++) {
+			POINT em = POINT();
+			em.x = (e.at(i)->Left() + e.at(i)->Right()) / 2;
+			em.y = (e.at(i)->Top() + e.at(i)->Bottom()) / 2;
+
+			if (Left() < em.x && em.x < Right()&&
+				Top() < em.y && em.y < Bottom()) {
+				CGame::Instance()->SetDead(true);
 			}
 		}
 	}
@@ -384,10 +409,10 @@ namespace game_framework {
 		jumpStrength = 5;
 	}
 
-	void Sonic::OnMove(vector<Brick*> b, int a) {
+	void Sonic::OnMove(vector<Brick*> b, vector<Enemy*> e, int a) {
 		if (character == static_cast<int>(CHARACTERS::SONIC)) {
 			if (debugMODE) delta = debugMoveing();
-			else delta = Moving(b);
+			else delta = Moving(b, e);
 		}
 
 		if (isLookingUp) {
@@ -484,10 +509,10 @@ namespace game_framework {
 
 	}
 
-	void Miles::OnMove(vector<Brick*> b, int a) {
+	void Miles::OnMove(vector<Brick*> b, vector<Enemy*> e, int a) {
 		if (character == static_cast<int>(CHARACTERS::MILES)) {
 			if (debugMODE) delta = debugMoveing();
-			else delta = Moving(b);
+			else delta = Moving(b, e);
 		}
 
 		if (isLookingUp) {
@@ -580,10 +605,10 @@ namespace game_framework {
 
 	}
 
-	void Knuckles::OnMove(vector<Brick*> b, int a) {
+	void Knuckles::OnMove(vector<Brick*> b, vector<Enemy*> e, int a) {
 		if (character == static_cast<int>(CHARACTERS::KNUCKLES)) {
 			if (debugMODE) delta = debugMoveing();
-			else delta = Moving(b);
+			else delta = Moving(b, e);
 		}
 
 		if (isLookingUp) {

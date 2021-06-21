@@ -634,7 +634,10 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 }
 
 void CGameStateRun::OnMove()
-{
+{	
+	if (CGame::Instance()->GetDead() || CGame::Instance()->GetFinish())
+		GotoGameState(GAME_STATE_OVER);
+
 	level->OnMove();
 
 	game_time++;
@@ -679,16 +682,34 @@ void CGameStateRun::OnShow() {
 CGameStateOver::CGameStateOver(CGame* g) : CGameState(g) {
 }
 
-void CGameStateOver::OnInit() { }
+void CGameStateOver::OnInit() {
+	stringHandler.LoadBitmap();
+}
 
-void CGameStateOver::OnBeginState() { }
+void CGameStateOver::OnBeginState() {
+	counter = 30 * 3;
+}
 
 void CGameStateOver::OnMove() {
-
+	if ((--counter) < 0) {
+		GotoGameState(GAME_STATE_INIT);
+		CGame::Instance()->SetDead(false);
+		CGame::Instance()->SetFinish(false);
+	}
 }
 
 void CGameStateOver::OnShow() {
-
+	stringHandler.SetFocus(true);
+	
+	
+	if (CGame::Instance()->GetDead()) {
+		stringHandler.SetTopLeft(SIZE_X/2, SIZE_Y/2);
+		stringHandler.ShowBitmap("YOU DIE");
+	}
+	else if (CGame::Instance()->GetFinish()) {
+		stringHandler.SetTopLeft(SIZE_X / 2, SIZE_Y / 2);
+		stringHandler.ShowBitmap("YOU WIN");
+	}
 }
 
 }

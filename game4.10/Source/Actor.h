@@ -2,6 +2,7 @@
 #define _ACTOR_
 
 #include "Brick.h"
+#include "Enemy.h"
 
 namespace game_framework {
 	enum CHARACTERS {
@@ -64,10 +65,10 @@ namespace game_framework {
 		~Actor();
 
 		virtual void OnInit() = 0;
-		virtual void OnMove(vector<Brick*>, int) = 0;
+		virtual void OnMove(vector<Brick*>, vector<Enemy*>, int) = 0;
 		virtual void OnShow() = 0;
 		
-		POINT Moving(vector<Brick*>);
+		POINT Moving(vector<Brick*>, vector<Enemy*>);
 		POINT debugMoveing();
 
 		int Top();
@@ -93,6 +94,7 @@ namespace game_framework {
 		bool IsJumping();
 
 		void LookingForRefBrick(vector<Brick*>);
+		void CheckEnemyCollision(vector<Enemy*>);
 		void checkLeavingBrick();
 		void UpdateRefBrick(vector<Brick*>);
 
@@ -147,7 +149,7 @@ namespace game_framework {
 		~Sonic();
 
 		void OnInit() override;
-		void OnMove(vector<Brick*>, int) override;
+		void OnMove(vector<Brick*>, vector<Enemy*>, int) override;
 		void OnShow() override;
 	};
 
@@ -157,7 +159,7 @@ namespace game_framework {
 		~Miles();
 
 		void OnInit() override;
-		void OnMove(vector<Brick*>, int) override;
+		void OnMove(vector<Brick*>, vector<Enemy*>, int) override;
 		void OnShow() override;
 	};
 
@@ -167,7 +169,7 @@ namespace game_framework {
 		~Knuckles();
 
 		void OnInit() override;
-		void OnMove(vector<Brick*>, int) override;
+		void OnMove(vector<Brick*>, vector<Enemy*>, int) override;
 		void OnShow() override;
 	};
 }

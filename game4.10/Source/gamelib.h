@@ -322,9 +322,12 @@ public:
 	void OnSetFocus();								// 處理Focus
 	void OnSuspend();								// 處理「待命」的動作
 	void SetGameState(int);
-
 	void SetLevel(int);
-	int GetLevel();
+	void SetDead(bool);
+	void SetFinish(bool);
+	int  GetLevel();
+	bool GetDead();
+	bool GetFinish();
 
 	static CGame *Instance();
 	CGameState& GameStateTable(int);
@@ -335,6 +338,8 @@ private:
 	bool            suspended;			// 遊戲是否被suspended
 	const int		NUM_GAME_STATES;	// 遊戲的狀態數(3個狀態)
 	int				level;
+	bool			dead;
+	bool			finish;
 	CGameState		*gameState;			// pointer指向目前的遊戲狀態
 	CGameState		*gameStateTable[3];	// 遊戲狀態物件的pointer
 	static CGame	instance;			// 遊戲唯一的instance

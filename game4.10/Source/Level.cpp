@@ -670,28 +670,28 @@ namespace game_framework {
 		}
 
 		// Actor
-		CurrentActor()->OnMove(bricks, character);
+		CurrentActor()->OnMove(bricks, enemies, character);
 		switch (CurrentActor()->Character())
 		{
 			case static_cast<int>(CHARACTERS::SONIC) :
 				actor2.CameraMove(delta);
-				actor2.OnMove(bricks, character);
+				actor2.OnMove(bricks, enemies, character);
 				actor3.CameraMove(delta);
-				actor3.OnMove(bricks, character);
+				actor3.OnMove(bricks, enemies, character);
 				break;
 
 			case static_cast<int>(CHARACTERS::MILES) :
 				actor1.CameraMove(delta);
-				actor1.OnMove(bricks, character);
+				actor1.OnMove(bricks, enemies, character);
 				actor3.CameraMove(delta);
-				actor3.OnMove(bricks, character);
+				actor3.OnMove(bricks, enemies, character);
 				break;
 			
 			case static_cast<int>(CHARACTERS::KNUCKLES) :
 				actor1.CameraMove(delta);
-				actor1.OnMove(bricks, character);
+				actor1.OnMove(bricks, enemies, character);
 				actor2.CameraMove(delta);
-				actor2.OnMove(bricks, character);
+				actor2.OnMove(bricks, enemies, character);
 				break;
 
 			default:
