@@ -679,6 +679,19 @@ namespace game_framework {
 				SetAngle(0);
 				break;
 
+			case 109:
+				texture.AddBitmap(ITEMS_PASS_1);
+				/*texture.AddBitmap(ITEMS_PASS_2);
+				texture.AddBitmap(ITEMS_PASS_3);
+				texture.AddBitmap(ITEMS_PASS_4);
+				texture.AddBitmap(ITEMS_PASS_BLUE);
+				texture.SetDelayCount(2);*/
+				SetProperty(OBSTACLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+
 			case 110:
 				texture.AddBitmap(Ping);
 				SetProperty(PASSABLE);
