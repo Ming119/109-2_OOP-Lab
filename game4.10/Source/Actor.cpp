@@ -185,8 +185,7 @@ namespace game_framework {
 					break;
 
 				case 108:	// Down
-					if (turn != 8) turn = 8;
-					if (turn == 8) turn = 0;
+					turn = 8;
 					break;
 
 				case 109:
