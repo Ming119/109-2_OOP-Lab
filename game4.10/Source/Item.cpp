@@ -1210,7 +1210,7 @@ namespace game_framework {
 
 	void SEND::OnInit() {
 		texture.AddBitmap(ITEM_SEND_1);
-		texture.AddBitmap(ITEM_SEND_2);
+		//texture.AddBitmap(ITEM_SEND_2);
 		texture.SetDelayCount(3);
 
 		setTopLeft(pos);
