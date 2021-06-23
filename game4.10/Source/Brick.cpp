@@ -686,7 +686,7 @@ namespace game_framework {
 				texture.AddBitmap(ITEMS_PASS_4);
 				texture.AddBitmap(ITEMS_PASS_BLUE);
 				texture.SetDelayCount(2);*/
-				SetProperty(OBSTACLE);
+				SetProperty(PASSABLE);
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;

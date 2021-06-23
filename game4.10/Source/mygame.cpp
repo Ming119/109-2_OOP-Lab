@@ -635,7 +635,7 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGameStateRun::OnMove()
 {	
-	if (CGame::Instance()->GetDead() || CGame::Instance()->GetFinish())
+	if (CGame::Instance()->GetFinish() || CGame::Instance()->GetDead())
 		GotoGameState(GAME_STATE_OVER);
 
 	level->OnMove();
@@ -706,7 +706,8 @@ void CGameStateOver::OnShow() {
 		stringHandler.SetTopLeft(SIZE_X/2, SIZE_Y/2);
 		stringHandler.ShowBitmap("YOU DIE");
 	}
-	else if (CGame::Instance()->GetFinish()) {
+	
+	if (CGame::Instance()->GetFinish()) {
 		stringHandler.SetTopLeft(SIZE_X / 2, SIZE_Y / 2);
 		stringHandler.ShowBitmap("YOU WIN");
 	}

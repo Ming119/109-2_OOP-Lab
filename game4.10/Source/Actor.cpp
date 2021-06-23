@@ -101,9 +101,6 @@ namespace game_framework {
 			dt.x = 0;
 			dt.y = abs(velocity.x);
 		}
-		else if (turn == 9) {
-			CGame::Instance()->SetFinish(true);
-		}
 		else if (turn == 0) {	// Leave
 
 			HandleLeftRightCollision(b);
@@ -193,7 +190,9 @@ namespace game_framework {
 					break;
 
 				case 109:
-					turn = 9;
+
+					TRACE("FINSIH TRUE\n");
+					CGame::Instance()->SetFinish(true);
 					break;
 
 				case 110:	// Leave

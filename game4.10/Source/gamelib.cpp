@@ -562,7 +562,7 @@ void CGame::SetDead(bool dead) {
 	this->dead = dead;
 }
 
-void CGame::SetFinish(bool finsih) {
+void CGame::SetFinish(bool finish) {
 	this->finish = finish;
 }
 
@@ -592,7 +592,8 @@ CGame::CGame()
 : NUM_GAME_STATES(3)
 {	
 	level = 0;
-	dead = finish = false;
+	dead = false;
+	finish = false;
 	running = true;
 	suspended = false;
 	gameStateTable[GAME_STATE_INIT] = new CGameStateInit(this);
