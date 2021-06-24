@@ -91,32 +91,26 @@ void CGameStateInit::OnInit() {
 	// stages
 	stages.push_back("BULE OCEAN ZONE ACT ONE");
 	stages.push_back("BULE OCEAN ZONE ACT TWO");
-	stages.push_back("CHILPOCTLI TEMPLE ZONE ACT ONE");
-	stages.push_back("EXOTIC HELL ACT ONE");
 	stages.push_back("EXOTIC PARADISE ACT ONE");
 	stages.push_back("EXOTIC PARADISE ACT TWO");
 	stages.push_back("TUTORIAL ACT ONE");
-	stages.push_back("TUTORIAL ACT TWO");
 
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 4; i++)
 		option_sel.push_back(1);
-	}
-	if (OPEN_AS_FULLSCREEN) {
+
+
+	if (OPEN_AS_FULLSCREEN)
 		option_sel.at(static_cast<int>(OPTION::FULLSCREEN)) = 0;
-	}
 
 
 	// Loading Audio
-	CAudio::Instance()->Load(AUDIO_CHOOSE, "sounds\\choose.wav");
-	CAudio::Instance()->Load(AUDIO_SELECT, "sounds\\select.wav");
-	CAudio::Instance()->Load(AUDIO_RETURN, "sounds\\return.wav");
-	CAudio::Instance()->Load(AUDIO_RING, "sounds\\ring.wav");
-	CAudio::Instance()->Load(AUDIO_SPRING, "sounds\\spring.wav");
-	CAudio::Instance()->Load(AUDIO_DEAD, "sounds\\dead.wav");
+	CAudio::Instance()->Load(AUDIO_CHOOSE,	"sounds\\choose.wav");
+	CAudio::Instance()->Load(AUDIO_SELECT,	"sounds\\select.wav");
+	CAudio::Instance()->Load(AUDIO_RETURN,	"sounds\\return.wav");
+	CAudio::Instance()->Load(AUDIO_RING,	"sounds\\ring.wav");
+	CAudio::Instance()->Load(AUDIO_SPRING,	"sounds\\spring.wav");
+	CAudio::Instance()->Load(AUDIO_DEAD,	"sounds\\dead.wav");
 
-	//
-	// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
-	//
 }
 
 void CGameStateInit::OnBeginState() {
@@ -220,6 +214,7 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 				CAudio::Instance()->Play(AUDIO_RETURN, false);
 				CAudio::Instance()->Stop(AUDIO_OPTIONS);
 				CAudio::Instance()->Play(AUDIO_TITLE, true);
+
 				intro_done = false;
 				current_select = 0;
 				page = static_cast<int>(MENU::START_GAME);
@@ -330,6 +325,7 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 			if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
 				CAudio::Instance()->Play(AUDIO_SELECT, false);
 				CGame::Instance()->SetLevel(stageSelect);
+				optionStage = -1;
 				GotoGameState(GAME_STATE_RUN);
 			}
 			
