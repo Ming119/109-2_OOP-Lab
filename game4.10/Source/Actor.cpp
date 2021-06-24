@@ -469,6 +469,7 @@ namespace game_framework {
 
 
 
+	/*
 	// Miles
 	Miles::Miles() : Actor::Actor() {
 		character = static_cast<int>(CHARACTERS::MILES);
@@ -660,5 +661,5 @@ namespace game_framework {
 		else
 			idle.OnShow();
 	}
-
+	*/
 }

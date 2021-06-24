@@ -153,6 +153,7 @@ namespace game_framework {
 		void OnShow() override;
 	};
 
+	/*
 	class Miles : public Actor {
 	public:
 		Miles();
@@ -172,6 +173,7 @@ namespace game_framework {
 		void OnMove(vector<Brick*>, vector<Enemy*>, int) override;
 		void OnShow() override;
 	};
+	*/
 }
 
 #endif // !_ACTOR_

@@ -11,12 +11,9 @@ namespace game_framework {
 	enum class LEVELS {
 		BULE_OCEAN_1,
 		BULE_OCEAN_2,
-		CHILPOCTLI_TEMPLE,
-		EXOTIC_HELL,
 		EXOTIC_PARADISE_1,
 		EXOTIC_PARADISE_2,
 		TUTORIAL_1,
-		TUTORIAL_2,
 		COUNT
 	};
 	
@@ -35,8 +32,8 @@ namespace game_framework {
 		
 		int character;
 		Sonic	 actor1;
-		Miles	 actor2;
-		Knuckles actor3;
+		// Miles	 actor2;
+		// Knuckles actor3;
 		Actor*	 currentActor;
 
 		vector<Brick*>  bricks;
