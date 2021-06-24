@@ -18,23 +18,15 @@ namespace game_framework {
 // 這個class為遊戲的遊戲開頭畫面物件
 /////////////////////////////////////////////////////////////////////////////
 
-CGameStateInit::CGameStateInit(CGame *g) : CGameState(g) {
-	
+CGameStateInit::CGameStateInit(CGame *g) : CGameState(g) 
+{
 	intro_done = false;
 	optionStage = -1;
 }
 
 void CGameStateInit::OnInit() {
+	ShowInitProgress(0);
 
-	//
-	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
-	//   等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
-	//
-	ShowInitProgress(0);	// 一開始的loading進度為0%
-
-	//
-	// 開始載入資料
-	//
 	// Loading Images
 
 	stringHandler.LoadBitmap();
@@ -167,7 +159,7 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 				break;
 
 			case static_cast<int>(MENU::TUTORIAL) :
-				CGame::Instance()->SetLevel(13);
+				CGame::Instance()->SetLevel(static_cast<int>(LEVELS::TUTORIAL_1));
 				GotoGameState(GAME_STATE_RUN);
 				break;
 
@@ -516,7 +508,7 @@ CGameStateRun::CGameStateRun(CGame *g) : CGameState(g) {
 }
 
 CGameStateRun::~CGameStateRun() {
-	
+	delete level;
 }
 
 void CGameStateRun::OnInit() {
@@ -571,10 +563,12 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		level->SetDebug(debugMODE);
 	}
 
+	/*
 	if (nChar == KEY_Z) {
 		++current_actor %= 3;
 		level->SetCurrentActor(current_actor);
 	}
+	*/
 
 	if (nChar == KEY_LEFT) 
 		level->CurrentActor()->SetMoveLeft(true);
@@ -684,6 +678,7 @@ CGameStateOver::CGameStateOver(CGame* g) : CGameState(g) {
 
 void CGameStateOver::OnInit() {
 	stringHandler.LoadBitmap();
+	bg.LoadBitmap(BG);
 }
 
 void CGameStateOver::OnBeginState() {
@@ -699,16 +694,18 @@ void CGameStateOver::OnMove() {
 }
 
 void CGameStateOver::OnShow() {
+	bg.SetTopLeft(0, 0);
+	bg.ShowBitmap();
 	stringHandler.SetFocus(true);
 	
 	
 	if (CGame::Instance()->GetDead()) {
-		stringHandler.SetTopLeft(SIZE_X/2, SIZE_Y/2);
-		stringHandler.ShowBitmap("YOU DIE");
+		stringHandler.SetTopLeft(SIZE_X / 2 - 4 * DEFAULT_SCALE * (stringHandler.GetAlphabet()->Width()), SIZE_Y / 2 - stringHandler.GetAlphabet()->Height());
+		stringHandler.ShowBitmap("YOU DEAD");
 	}
 	
 	if (CGame::Instance()->GetFinish()) {
-		stringHandler.SetTopLeft(SIZE_X / 2, SIZE_Y / 2);
+		stringHandler.SetTopLeft(SIZE_X / 2 -  4 * DEFAULT_SCALE * (stringHandler.GetAlphabet()->Width()), SIZE_Y / 2 - stringHandler.GetAlphabet()->Height());
 		stringHandler.ShowBitmap("YOU WIN");
 	}
 }

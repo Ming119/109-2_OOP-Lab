@@ -1409,11 +1409,16 @@ namespace game_framework {
 
 
 	// SPIKES_UP
-	SPIKES_UP::SPIKES_UP(int id, int x, int y) : Item::Item(id, x, y) {}
+	SPIKES_UP::SPIKES_UP(int id, int x, int y) : Item::Item(id, x, y) {
+		isShow = false;
+		counter = 30 * 3;
+	}
 
 	SPIKES_UP::~SPIKES_UP() {}
 
 	bool SPIKES_UP::IsChange() { return false; }
+
+	bool SPIKES_UP::IsShow() { return isShow; }
 
 	void SPIKES_UP::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_UP);
@@ -1423,21 +1428,33 @@ namespace game_framework {
 	void SPIKES_UP::OnMove() {
 		CameraMove();
 
-		// Handling when to show up.
-		// Counting the time.
+		counter--;
 
+		if (counter <= 0) {
+			counter = 30 * 3;
+			isShow = !isShow;
+		}
+
+		if (CollisionDetection(currnetActor) && isShow)
+			CGame::Instance()->SetDead(true);
 	}
 
 	void SPIKES_UP::OnShow(int scale) {
-		texture.OnShow(scale);
+		if (isShow)
+			texture.OnShow(scale);
 	}
 
 	// SPIKES_DOWN
-	SPIKES_DOWN::SPIKES_DOWN(int id, int x, int y) : Item::Item(id, x, y) {}
+	SPIKES_DOWN::SPIKES_DOWN(int id, int x, int y) : Item::Item(id, x, y) {
+		isShow = false;
+		counter = 30 * 3;
+	}
 
 	SPIKES_DOWN::~SPIKES_DOWN() {}
 
 	bool SPIKES_DOWN::IsChange() { return false; }
+
+	bool SPIKES_DOWN::IsShow() { return isShow; }
 
 	void SPIKES_DOWN::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_DOWN);
@@ -1447,21 +1464,33 @@ namespace game_framework {
 	void SPIKES_DOWN::OnMove() {
 		CameraMove();
 
-		// Handling when to show up.
-		// Counting the time.
+		counter--;
 
+		if (counter <= 0) {
+			counter = 30 * 3;
+			isShow = !isShow;
+		}
+
+		if (CollisionDetection(currnetActor) && isShow)
+			CGame::Instance()->SetDead(true);
 	}
 
 	void SPIKES_DOWN::OnShow(int scale) {
-		texture.OnShow(scale);
+		if (isShow)
+			texture.OnShow(scale);
 	}
 
 	// SPIKES_LEFT
-	SPIKES_LEFT::SPIKES_LEFT(int id, int x, int y) : Item::Item(id, x, y) {}
+	SPIKES_LEFT::SPIKES_LEFT(int id, int x, int y) : Item::Item(id, x, y) {
+		isShow = false;
+		counter = 30 * 3;
+	}
 
 	SPIKES_LEFT::~SPIKES_LEFT() {}
 
 	bool SPIKES_LEFT::IsChange() { return false; }
+
+	bool SPIKES_LEFT::IsShow() { return isShow; }
 
 	void SPIKES_LEFT::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_LEFT);
@@ -1471,21 +1500,33 @@ namespace game_framework {
 	void SPIKES_LEFT::OnMove() {
 		CameraMove();
 
-		// Handling when to show up.
-		// Counting the time.
+		counter--;
+		
+		if (counter <= 0) {
+			counter = 30 * 3;
+			isShow = !isShow;
+		}
 
+		if (CollisionDetection(currnetActor) && isShow)
+			CGame::Instance()->SetDead(true);
 	}
 
 	void SPIKES_LEFT::OnShow(int scale) {
-		texture.OnShow(scale);
+		if (isShow)
+			texture.OnShow(scale);
 	}
 
 	// SPIKES_RIGHT
-	SPIKES_RIGHT::SPIKES_RIGHT(int id, int x, int y) : Item::Item(id, x, y) {}
+	SPIKES_RIGHT::SPIKES_RIGHT(int id, int x, int y) : Item::Item(id, x, y) {
+		isShow = false;
+		counter = 30 * 3;
+	}
 
 	SPIKES_RIGHT::~SPIKES_RIGHT() {}
 
 	bool SPIKES_RIGHT::IsChange() { return false; }
+
+	bool SPIKES_RIGHT::IsShow() { return isShow; }
 
 	void SPIKES_RIGHT::OnInit() {
 		texture.AddBitmap(ITEM_SPIKES_RING);
@@ -1495,13 +1536,20 @@ namespace game_framework {
 	void SPIKES_RIGHT::OnMove() {
 		CameraMove();
 
-		// Handling when to show up.
-		// Counting the time.
+		counter--;
 
+		if (counter <= 0) {
+			counter = 30 * 3;
+			isShow = !isShow;
+		}
+		
+		if (CollisionDetection(currnetActor) && isShow)
+			CGame::Instance()->SetDead(true);
 	}
 
 	void SPIKES_RIGHT::OnShow(int scale) {
-		texture.OnShow(scale);
+		if (isShow)
+			texture.OnShow(scale);
 	}
 
 	

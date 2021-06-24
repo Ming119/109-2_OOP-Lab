@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ 產生的 Include 檔案。
-// 由 game.rc 使用
+// Microsoft Visual C++ generated include file.
+// Used by game.rc
 //
 #define ISLAND_PARADISE_2               2
 #define ISLAND_PARADISE_42              4
@@ -955,6 +955,9 @@
 #define ITEMS_PASS_RED                  1099
 #define ITEMS_PASS_RIGHT                1100
 #define ITEMS_PASS_YELLOW               1101
+#define IDB_DEBUG                       1102
+#define IDB_BITMAP93                    1103
+#define BG                              1103
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
 #define ID_BUTTON_FULLSCREEN            32773
@@ -966,7 +969,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        1102
+#define _APS_NEXT_RESOURCE_VALUE        1104
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

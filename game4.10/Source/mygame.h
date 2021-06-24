@@ -217,6 +217,7 @@ namespace game_framework {
 	private:
 		int counter;			// 倒數之計數器
 		CString stringHandler;
+		CMovingBitmap bg;
 	};
 	
 

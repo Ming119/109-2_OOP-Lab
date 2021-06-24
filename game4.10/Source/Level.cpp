@@ -51,8 +51,8 @@ namespace game_framework {
 		pre.y = currentActor->Top();
 
 		if (actor == SONIC)    currentActor = &actor1;
-		if (actor == MILES)	   currentActor = &actor2;
-		if (actor == KNUCKLES) currentActor = &actor3;
+		// if (actor == MILES)	   currentActor = &actor2;
+		// if (actor == KNUCKLES) currentActor = &actor3;
 
 		POINT offset = POINT();
 		offset.x = currentActor->Left() - pre.x;
@@ -65,8 +65,8 @@ namespace game_framework {
 
 		
 		actor1.CameraMove(offset);
-		actor2.CameraMove(offset);
-		actor3.CameraMove(offset);
+		// actor2.CameraMove(offset);
+		// actor3.CameraMove(offset);
 		SetMoving(offset);
 	}
 
@@ -333,8 +333,8 @@ namespace game_framework {
 		enemies.clear();
 		
 		actor1.OnInit();
-		actor2.OnInit();
-		actor3.OnInit();
+		// actor2.OnInit();
+		// actor3.OnInit();
 		
 		currentActor = &actor1;
 		
@@ -389,7 +389,7 @@ namespace game_framework {
 			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 
 			spawnPoint.x = 40;
-			spawnPoint.y = 3000;
+			spawnPoint.y = 3070;
 
 			// Background
 			background.LoadBitmap(LEVEL1_BG);
@@ -427,49 +427,7 @@ namespace game_framework {
 			
 			break;
 
-		// Chilpoctli Temple zone
-		case static_cast<int>(LEVELS::CHILPOCTLI_TEMPLE) :
-			CAudio::Instance()->Stop(AUDIO_TITLE);
-			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 
-			spawnPoint.x = 40;
-			spawnPoint.y = 3000;
-
-			// Background
-			background.LoadBitmap(BG_DESERT);
-			
-			// Brick
-			for (int i = 0; i < sizeof(DESERT1Brick) / sizeof(DESERT1Brick[0]); i++) {
-				const int id = DESERT1Brick[i][0];
-				const int x = DESERT1Brick[i][1] * DEFAULT_SCALE;
-				const int y = (DESERT1Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					bricks.push_back(new Brick(id, x, y));
-			}
-			
-			// Item
-			for (int i = 0; i < sizeof(DESERT1Items) / sizeof(DESERT1Items[0]); i++) {
-				const int id = DESERT1Items[i][0];
-				const int x = DESERT1Items[i][1] * DEFAULT_SCALE;
-				const int y = (DESERT1Items[i][2] - spawnPoint.y - 15) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					addItem(id, x, y);
-			}
-			
-			// Enemy
-			for (int i = 0; i < sizeof(DESERT1Enemies) / sizeof(DESERT1Enemies[0]); i++) {
-				const int id = DESERT1Enemies[i][0];
-				const int x = DESERT1Enemies[i][1] * DEFAULT_SCALE;
-				const int y = (DESERT1Enemies[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
-
-				if (id != -1)
-					addEnemy(id, x, y);
-
-			}
-			break;
-			
 
 		// PARADISE 1
 		case static_cast<int>(LEVELS::EXOTIC_PARADISE_1) :
@@ -671,24 +629,24 @@ namespace game_framework {
 		switch (CurrentActor()->Character())
 		{
 			case static_cast<int>(CHARACTERS::SONIC) :
-				actor2.CameraMove(delta);
-				actor2.OnMove(bricks, enemies, character);
-				actor3.CameraMove(delta);
-				actor3.OnMove(bricks, enemies, character);
+				// actor2.CameraMove(delta);
+				// actor2.OnMove(bricks, enemies, character);
+				// actor3.CameraMove(delta);
+				// actor3.OnMove(bricks, enemies, character);
 				break;
 
 			case static_cast<int>(CHARACTERS::MILES) :
 				actor1.CameraMove(delta);
 				actor1.OnMove(bricks, enemies, character);
-				actor3.CameraMove(delta);
-				actor3.OnMove(bricks, enemies, character);
+				// actor3.CameraMove(delta);
+				// actor3.OnMove(bricks, enemies, character);
 				break;
 			
 			case static_cast<int>(CHARACTERS::KNUCKLES) :
 				actor1.CameraMove(delta);
 				actor1.OnMove(bricks, enemies, character);
-				actor2.CameraMove(delta);
-				actor2.OnMove(bricks, enemies, character);
+				// actor2.CameraMove(delta);
+				// actor2.OnMove(bricks, enemies, character);
 				break;
 
 			default:
@@ -717,8 +675,8 @@ namespace game_framework {
 
 		// Actor
 		actor1.OnShow();
-		actor2.OnShow();
-		actor3.OnShow();
+		// actor2.OnShow();
+		// actor3.OnShow();
 	}
 
 }

@@ -655,12 +655,14 @@ namespace game_framework {
 	class SPIKES_UP : public Item {
 	private:
 		bool isShow;
+		int counter;
 
 	public:
 		SPIKES_UP(int, int, int);
 		~SPIKES_UP();
 
 		bool IsChange() override;
+		bool IsShow();
 
 		void OnInit() override;
 		void OnMove() override;
@@ -671,12 +673,14 @@ namespace game_framework {
 	class SPIKES_DOWN : public Item {
 	private:
 		bool isShow;
+		int counter;
 
 	public:
 		SPIKES_DOWN(int, int, int);
 		~SPIKES_DOWN();
 
 		bool IsChange() override;
+		bool IsShow();
 
 		void OnInit() override;
 		void OnMove() override;
@@ -687,12 +691,14 @@ namespace game_framework {
 	class SPIKES_LEFT : public Item {
 	private:
 		bool isShow;
+		int counter;
 
 	public:
 		SPIKES_LEFT(int, int, int);
 		~SPIKES_LEFT();
 
 		bool IsChange() override;
+		bool IsShow();
 
 		void OnInit() override;
 		void OnMove() override;
@@ -703,12 +709,14 @@ namespace game_framework {
 	class SPIKES_RIGHT : public Item {
 	private:
 		bool isShow;
+		int counter;
 
 	public:
 		SPIKES_RIGHT(int, int, int);
 		~SPIKES_RIGHT();
 
 		bool IsChange() override;
+		bool IsShow();
 
 		void OnInit() override;
 		void OnMove() override;
