@@ -167,7 +167,7 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 				break;
 
 			case static_cast<int>(MENU::TUTORIAL) :
-				CGame::Instance()->SetLevel(13);
+				CGame::Instance()->SetLevel(7);
 				GotoGameState(GAME_STATE_RUN);
 				break;
 
@@ -684,6 +684,7 @@ CGameStateOver::CGameStateOver(CGame* g) : CGameState(g) {
 
 void CGameStateOver::OnInit() {
 	stringHandler.LoadBitmap();
+	bg.LoadBitmap(BG);
 }
 
 void CGameStateOver::OnBeginState() {
@@ -699,16 +700,18 @@ void CGameStateOver::OnMove() {
 }
 
 void CGameStateOver::OnShow() {
+	bg.SetTopLeft(0, 0);
+	bg.ShowBitmap();
 	stringHandler.SetFocus(true);
 	
 	
 	if (CGame::Instance()->GetDead()) {
-		stringHandler.SetTopLeft(SIZE_X/2, SIZE_Y/2);
-		stringHandler.ShowBitmap("YOU DIE");
+		stringHandler.SetTopLeft(SIZE_X / 2 - 4 * DEFAULT_SCALE * (stringHandler.GetAlphabet()->Width()), SIZE_Y / 2 - stringHandler.GetAlphabet()->Height());
+		stringHandler.ShowBitmap("YOU DEAD");
 	}
 	
 	if (CGame::Instance()->GetFinish()) {
-		stringHandler.SetTopLeft(SIZE_X / 2, SIZE_Y / 2);
+		stringHandler.SetTopLeft(SIZE_X / 2 -  4 * DEFAULT_SCALE * (stringHandler.GetAlphabet()->Width()), SIZE_Y / 2 - stringHandler.GetAlphabet()->Height());
 		stringHandler.ShowBitmap("YOU WIN");
 	}
 }

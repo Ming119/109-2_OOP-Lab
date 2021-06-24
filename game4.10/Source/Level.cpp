@@ -392,7 +392,7 @@ namespace game_framework {
 			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 
 			spawnPoint.x = 40;
-			spawnPoint.y = 3000;
+			spawnPoint.y = 3070;
 
 			// Background
 			background.LoadBitmap(LEVEL1_BG);
@@ -435,8 +435,8 @@ namespace game_framework {
 			CAudio::Instance()->Stop(AUDIO_TITLE);
 			CAudio::Instance()->Play(AUDIO_CRUSADER, true);
 
-			spawnPoint.x = 40;
-			spawnPoint.y = 3000;
+			spawnPoint.x = 300;
+			spawnPoint.y = 3250;
 
 			// Background
 			background.LoadBitmap(BG_DESERT);
@@ -444,7 +444,7 @@ namespace game_framework {
 			// Brick
 			for (int i = 0; i < sizeof(DESERT1Brick) / sizeof(DESERT1Brick[0]); i++) {
 				const int id = DESERT1Brick[i][0];
-				const int x = DESERT1Brick[i][1] * DEFAULT_SCALE;
+				const int x = (DESERT1Brick[i][1] - spawnPoint.x) * DEFAULT_SCALE;
 				const int y = (DESERT1Brick[i][2] - spawnPoint.y) * DEFAULT_SCALE + SIZE_Y / 2;
 
 				if (id != -1)

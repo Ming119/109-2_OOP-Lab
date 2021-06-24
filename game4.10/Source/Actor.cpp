@@ -189,8 +189,6 @@ namespace game_framework {
 					break;
 
 				case 109:
-
-					TRACE("FINSIH TRUE\n");
 					CGame::Instance()->SetFinish(true);
 					break;
 
