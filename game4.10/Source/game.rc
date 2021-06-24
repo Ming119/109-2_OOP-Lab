@@ -1749,7 +1749,7 @@ T_TIME_COLON            BITMAP                  "..\\RES\\font\\gui_semicolon.bm
 
 IDB_DEBUG               BITMAP                  "..\\res\\debug.bmp"
 
-BG                      BITMAP                  "D:\\NTUT\\CSIE\\Year2-2\\283582_Object-Oriented Programming Labs\\Project\\game4.10\\RES\\ocean\\Untitled.bmp"
+BG                      BITMAP                  "..\\RES\\ocean\\Untitled.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
