@@ -158,9 +158,6 @@ namespace game_framework {
 			items.push_back(new SPIKES_UP(id, x, y));
 			break;
 
-
-
-
 		case 50:
 			items.push_back(new YELLOW_SPRING_PADS_LEFT_U(id, x, y));
 			break;
