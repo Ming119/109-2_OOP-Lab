@@ -26,7 +26,8 @@ namespace game_framework {
 		POINT delta;
 		
 		int maxSpeed;
-		int last_turn;
+
+		bool onCircle;
 		int turn;
 
 		Brick* refBrick;

@@ -20,9 +20,9 @@ namespace game_framework {
 		isMovingDown = isMovingUp = false;
 
 		refBrick = nullptr;
-		debugMODE = false;
+		onCircle = debugMODE = false;
 
-		last_turn = turn = 0;
+		turn = 0;
 		pos.x = 100;
 		pos.y = SIZE_Y / 3;
 
@@ -148,8 +148,6 @@ namespace game_framework {
 		POINT center;
 		center.x = (Left() + Right()) / 2;
 		center.y = (Top() + Bottom()) / 2;
-		
-		TRACE("last_turn: %d\n", last_turn);
 
 		const int bs = bricks.size();
 		for (int b = 0; b < bs; b++) {
@@ -158,44 +156,41 @@ namespace game_framework {
 				bricks.at(b)->Top() < Bottom() && Top() < bricks.at(b)->Bottom()) {
 				switch (bricks.at(b)->ID()) {
 				case 101:	// Right Up
-					if (last_turn != 1) last_turn = turn;
-					if (turn != 1 && bricks.at(b)->Left() < center.x) turn = 1;
+					if (onCircle) turn = 5;
+				
+					if (turn != 1 && bricks.at(b)->Left() < center.x && !onCircle) {
+						turn = 1;
+						onCircle = true;
+					}
+					
 
-					if (turn == 1 && last_turn == 4) turn = 5;
 					break;
 
 				case 102:	// Left Up
-					if (last_turn != 2) last_turn = turn;
 					turn = 2;
 					break;
 
 				case 103:	// Left Down
-					if (last_turn != 3)	last_turn = turn;
 					turn = 3;
 					break;
 
 				case 104:	//Right Down
-					if (last_turn != 4)	last_turn = turn;
 					turn = 4;
 					break;
 				
 				case 105:	// Right
-					if (last_turn != 5)last_turn = turn;
 					turn = 5;
 					break;
 
 				case 106:	// Left
-					if (last_turn != 6)	last_turn = turn;
 					turn = 6;
 					break;
 
 				case 107:	// Up
-					if (last_turn != 7)	last_turn = turn;
 					turn = 7;
 					break;
 
 				case 108:	// Down
-					if (last_turn != 8)	last_turn = turn;
 					turn = 8;
 					break;
 
@@ -204,7 +199,7 @@ namespace game_framework {
 					break;
 
 				case 110:	// Leave
-					last_turn = 0;
+					onCircle = false;
 					turn = 0;
 					break;
 				}
