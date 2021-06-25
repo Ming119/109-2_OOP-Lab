@@ -129,7 +129,8 @@ namespace game_framework {
 		case 23:
 			items.push_back(new RED_SPRING_PADS_RING(id, x, y));
 			break;
-*/
+*/;
+
 		case 26:
 			items.push_back(new GATE_YELLOW(id, x, y));
 			break;
@@ -142,73 +143,73 @@ namespace game_framework {
 			items.push_back(new BIG_Ring(id, x, y));
 			break;
 /*
-		case 33:
-			items.push_back(new LOOP_TOP_UP_DOWN(id, x, y));
-			break;
+        case 33:
+            items.push_back(new LOOP_TOP_UP_DOWN(id, x, y));
+            break;
 
-		case 34:
-			items.push_back(new LOOP_TOP_NOT_U_D(id, x, y));
-			break;
+        case 34:
+            items.push_back(new LOOP_TOP_NOT_U_D(id, x, y));
+            break;
 
-		case 35:
-			items.push_back(new LOOP_TOP(id, x, y));
-			break;
+        case 35:
+            items.push_back(new LOOP_TOP(id, x, y));
+            break;
 */
 		case 38:
 			items.push_back(new SPIKES_UP(id, x, y));
 			break;
 /*
-		case 50:
-			items.push_back(new YELLOW_SPRING_PADS_LEFT_U(id, x, y));
-			break;
+        case 50:
+            items.push_back(new YELLOW_SPRING_PADS_LEFT_U(id, x, y));
+            break;
 
-		case 51:
-			items.push_back(new YELLOW_SPRING_PADS_RING_U(id, x, y));
-			break;
+        case 51:
+            items.push_back(new YELLOW_SPRING_PADS_RING_U(id, x, y));
+            break;
 
-		case 52:
-			items.push_back(new YELLOW_SPRING_PADS_LEFT_D(id, x, y));
-			break;
+        case 52:
+            items.push_back(new YELLOW_SPRING_PADS_LEFT_D(id, x, y));
+            break;
 
-		case 53:
-			items.push_back(new YELLOW_SPRING_PADS_RING_D(id, x, y));
-			break;
+        case 53:
+            items.push_back(new YELLOW_SPRING_PADS_RING_D(id, x, y));
+            break;
 
-		case 54:
-			items.push_back(new YELLOW_SPRING_PADS_DOWN(id, x, y));
-			break;
+        case 54:
+            items.push_back(new YELLOW_SPRING_PADS_DOWN(id, x, y));
+            break;
 
-		case 55:
-			items.push_back(new BULE_SPRING_PADS_UP(id, x, y));
-			break;
+        case 55:
+            items.push_back(new BULE_SPRING_PADS_UP(id, x, y));
+            break;
 
-		case 56:
-			items.push_back(new BULE_SPRING_PADS_LEFT(id, x, y));
-			break;
+        case 56:
+            items.push_back(new BULE_SPRING_PADS_LEFT(id, x, y));
+            break;
 
-		case 57:
-			items.push_back(new BULE_SPRING_PADS_RING(id, x, y));
-			break;
+        case 57:
+            items.push_back(new BULE_SPRING_PADS_RING(id, x, y));
+            break;
 
-		case 58:
-			items.push_back(new BULE_SPRING_PADS_LEFT_U(id, x, y));
-			break;
-		
-		case 59:
-			items.push_back(new BULE_SPRING_PADS_RING_U(id, x, y));
-			break;
+        case 58:
+            items.push_back(new BULE_SPRING_PADS_LEFT_U(id, x, y));
+            break;
+        
+        case 59:
+            items.push_back(new BULE_SPRING_PADS_RING_U(id, x, y));
+            break;
 
-		case 60:
-			items.push_back(new BULE_SPRING_PADS_LEFT_D(id, x, y));
-			break;
+        case 60:
+            items.push_back(new BULE_SPRING_PADS_LEFT_D(id, x, y));
+            break;
 
-		case 61:
-			items.push_back(new BULE_SPRING_PADS_RING_D(id, x, y));
-			break;
+        case 61:
+            items.push_back(new BULE_SPRING_PADS_RING_D(id, x, y));
+            break;
 
-		case 62:
-			items.push_back(new BULE_SPRING_PADS_DOWN(id, x, y));
-			break;
+        case 62:
+            items.push_back(new BULE_SPRING_PADS_DOWN(id, x, y));
+            break;
 */
 		case 63:
 			items.push_back(new SPIKES_DOWN(id, x, y));
@@ -221,8 +222,6 @@ namespace game_framework {
 		case 65:
 			items.push_back(new SPIKES_RIGHT(id, x, y));
 			break;
-
-
 
 		case 66:
 			items.push_back(new SPIKES_UP(id, x, y));

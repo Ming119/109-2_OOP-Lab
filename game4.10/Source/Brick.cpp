@@ -697,14 +697,7 @@ namespace game_framework {
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
-/*
-			case 111: //108
-				texture.AddBitmap(Ping);
-				SetProperty(PASSABLE);
-				SetBehavior(DEFAULT);
-				SetAngle(0);
-				break;
-				*/
+
 			default:
 				break;
 			}
