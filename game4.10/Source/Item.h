@@ -8,7 +8,7 @@ namespace game_framework {
 	enum class ITEMS_LIST {
 		RING,
 		BIG_RING,
-		RED_SPRING_PADS_UP,
+		/*RED_SPRING_PADS_UP,
 		RED_SPRING_PADS_DOWN,
 		RED_SPRING_PADS_LEFT,
 		RED_SPRING_PADS_LEFT_U,
@@ -31,7 +31,7 @@ namespace game_framework {
 		BULE_SPRING_PADS_LEFT_D,
 		BULE_SPRING_PADS_RING,
 		BULE_SPRING_PADS_RING_U,
-		BULE_SPRING_PADS_RING_D,
+		BULE_SPRING_PADS_RING_D,*/
 		GATE_YELLOW,
 		SEND,
 		SEND_BUTTON,
@@ -134,7 +134,7 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
-
+	/*
 	// RED_SPRING_PADS_UP
 	class RED_SPRING_PADS_UP : public Item {
 	private:
@@ -518,7 +518,7 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
-	
+	*/
 	// GATE_YELLOW
 	class GATE_YELLOW : public Item {
 	public:

@@ -113,7 +113,7 @@ namespace game_framework {
 		case 19:
 			items.push_back(new LOOP_OFF(id, x, y));
 			break;
-*/
+
 		case 20:
 			items.push_back(new YELLOW_SPRING_PADS_UP(id, x, y));
 			break;
@@ -129,7 +129,7 @@ namespace game_framework {
 		case 23:
 			items.push_back(new RED_SPRING_PADS_RING(id, x, y));
 			break;
-
+*/
 		case 26:
 			items.push_back(new GATE_YELLOW(id, x, y));
 			break;
@@ -157,7 +157,7 @@ namespace game_framework {
 		case 38:
 			items.push_back(new SPIKES_UP(id, x, y));
 			break;
-
+/*
 		case 50:
 			items.push_back(new YELLOW_SPRING_PADS_LEFT_U(id, x, y));
 			break;
@@ -209,7 +209,7 @@ namespace game_framework {
 		case 62:
 			items.push_back(new BULE_SPRING_PADS_DOWN(id, x, y));
 			break;
-
+*/
 		case 63:
 			items.push_back(new SPIKES_DOWN(id, x, y));
 			break;

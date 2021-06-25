@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Chinese (Traditional, Taiwan) resources
+// 中文 (繁體，台灣) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -490,237 +490,7 @@ BG_EXOTIC_PARADISE_ACT1 BITMAP                  "..\\RES\\island\\island_Black.b
 
 BG_DESERT               BITMAP                  "..\\RES\\desert1\\desert.bmp"
 
-DESERT_72               BITMAP                  "..\\RES\\desert1\\desert_black_tiles1.bmp"
-
-DESERT_73               BITMAP                  "..\\RES\\desert1\\desert_black_tiles2.bmp"
-
-DESERT_74               BITMAP                  "..\\RES\\desert1\\desert_black_tiles3.bmp"
-
-DESERT_75               BITMAP                  "..\\RES\\desert1\\desert_black_tiles4.bmp"
-
-DESERT_76               BITMAP                  "..\\RES\\desert1\\desert_black_tiles5.bmp"
-
-DESERT_77               BITMAP                  "..\\RES\\desert1\\desert_black_tiles6.bmp"
-
-DESERT_16               BITMAP                  "..\\RES\\desert1\\desert_brand_lift.bmp"
-
-DESERT_55               BITMAP                  "..\\RES\\desert1\\desert_brand_lift1.bmp"
-
-DESERT_14               BITMAP                  "..\\RES\\desert1\\desert_brand_right.bmp"
-
-DESERT_53               BITMAP                  "..\\RES\\desert1\\desert_brand_right1.bmp"
-
-DESERT_18               BITMAP                  "..\\RES\\desert1\\desert_brand_star.bmp"
-
-DESERT_20               BITMAP                  "..\\RES\\desert1\\desert_brand_star1.bmp"
-
-DESERT_15               BITMAP                  "..\\RES\\desert1\\desert_brand_under.bmp"
-
-DESERT_54               BITMAP                  "..\\RES\\desert1\\desert_brand_under1.bmp"
-
-DESERT_17               BITMAP                  "..\\RES\\desert1\\desert_brand_up.bmp"
-
-DESERT_56               BITMAP                  "..\\RES\\desert1\\desert_brand_up1.bmp"
-
-DESERT_19               BITMAP                  "..\\RES\\desert1\\desert_brand_X.bmp"
-
-DESERT_21               BITMAP                  "..\\RES\\desert1\\desert_brand_X1.bmp"
-
-DESERT_23               BITMAP                  "..\\RES\\desert1\\desert_brown1.bmp"
-
-DESERT_24               BITMAP                  "..\\RES\\desert1\\desert_brown2.bmp"
-
-DESERT_25               BITMAP                  "..\\RES\\desert1\\desert_brown3.bmp"
-
-DESERT_22               BITMAP                  "..\\RES\\desert1\\desert_brown4.bmp"
-
-DESERT_78               BITMAP                  "..\\RES\\desert1\\desert_fence1.bmp"
-
-DESERT_79               BITMAP                  "..\\RES\\desert1\\desert_fence2.bmp"
-
-DESERT_80               BITMAP                  "..\\RES\\desert1\\desert_fence3.bmp"
-
-DESERT_81               BITMAP                  "..\\RES\\desert1\\desert_fence4.bmp"
-
-DESERT_69               BITMAP                  "..\\RES\\desert1\\desert_owl1.bmp"
-
-DESERT_67               BITMAP                  "..\\RES\\desert1\\desert_root1.bmp"
-
-DESERT_68               BITMAP                  "..\\RES\\desert1\\desert_root2.bmp"
-
-DESERT_57               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle1.bmp"
-
-DESERT_0                BITMAP                  "..\\RES\\desert1\\desert_wall2.bmp"
-
-DESERT_1                BITMAP                  "..\\RES\\desert1\\desert_wall3.bmp"
-
-DESERT_2                BITMAP                  "..\\RES\\desert1\\desert_wall4.bmp"
-
-DESERT_3                BITMAP                  "..\\RES\\desert1\\desert_wall5.bmp"
-
-DESERT_32               BITMAP                  "..\\RES\\desert1\\desert_wall6.bmp"
-
-DESERT_30               BITMAP                  "..\\RES\\desert1\\desert_wall7.bmp"
-
-DESERT_9                BITMAP                  "..\\RES\\desert1\\desert_wall9.bmp"
-
-DESERT_71               BITMAP                  "..\\RES\\desert1\\desert_wall10.bmp"
-
-DESERT_70               BITMAP                  "..\\RES\\desert1\\desert_wall12.bmp"
-
-DESERT_4                BITMAP                  "..\\RES\\desert1\\desert_wall1_1.bmp"
-
-DESERT_6                BITMAP                  "..\\RES\\desert1\\desert_wall1_2.bmp"
-
-DESERT_7                BITMAP                  "..\\RES\\desert1\\desert_wall1_3.bmp"
-
-DESERT_8                BITMAP                  "..\\RES\\desert1\\desert_wall1_4.bmp"
-
-DESERT_10               BITMAP                  "..\\RES\\desert1\\desert_wall_square1.bmp"
-
-DESERT_11               BITMAP                  "..\\RES\\desert1\\desert_wall_square2.bmp"
-
-DESERT_12               BITMAP                  "..\\RES\\desert1\\desert_wall_square7.bmp"
-
-DESERT_13               BITMAP                  "..\\RES\\desert1\\desert_wall_square8.bmp"
-
-DESERT_82               BITMAP                  "..\\RES\\desert1\\desert_wall_square9.bmp"
-
-DESERT_83               BITMAP                  "..\\RES\\desert1\\desert_wall_square10.bmp"
-
-DESERT_31               BITMAP                  "..\\RES\\desert1\\desert_wall7_1.bmp"
-
-DESERT_26               BITMAP                  "..\\RES\\desert1\\desert_brown5.bmp"
-
-DESERT_29               BITMAP                  "..\\RES\\desert1\\desert_brown6.bmp"
-
-DESERT_28               BITMAP                  "..\\RES\\desert1\\desert_brown7.bmp"
-
-DESERT_27               BITMAP                  "..\\RES\\desert1\\desert_brown8.bmp"
-
-DESERT_58               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle2_1.bmp"
-
-DESERT_59               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle2_2.bmp"
-
-DESERT_60               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle2_3.bmp"
-
-DESERT_61               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle2_4.bmp"
-
-DESERT_62               BITMAP                  "..\\RES\\desert1\\desert_tiles_triangle2_5.bmp"
-
-DESERT_42               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_6_1.bmp"
-
-DESERT_41               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_6_2.bmp"
-
-DESERT_45               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_7_1.bmp"
-
-DESERT_46               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_7_2.bmp"
-
-DESERT_49               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_8_1.bmp"
-
-DESERT_50               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_8_2.bmp"
-
-DESERT_44               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_6_1.bmp"
-
-DESERT_43               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_6_2.bmp"
-
-DESERT_47               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_7_1.bmp"
-
-DESERT_48               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_7_2.bmp"
-
-DESERT_51               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_8_1.bmp"
-
-DESERT_52               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_8_2.bmp"
-
-DESERT_84               BITMAP                  "..\\RES\\desert1\\desert_rdown_1.bmp"
-
-DESERT_85               BITMAP                  "..\\RES\\desert1\\desert_rdown_2.bmp"
-
-DESERT_87               BITMAP                  "..\\RES\\desert1\\desert_rdown_3.bmp"
-
-DESERT_91               BITMAP                  "..\\RES\\desert1\\desert_rdown_4.bmp"
-
-DESERT_90               BITMAP                  "..\\RES\\desert1\\desert_rdown_5.bmp"
-
-DESERT_86               BITMAP                  "..\\RES\\desert1\\desert_rdown_6.bmp"
-
-DESERT_89               BITMAP                  "..\\RES\\desert1\\desert_rdown_7.bmp"
-
-DESERT_88               BITMAP                  "..\\RES\\desert1\\desert_rdown_8.bmp"
-
-DESERT_92               BITMAP                  "..\\RES\\desert1\\desert_ron_1.bmp"
-
-DESERT_93               BITMAP                  "..\\RES\\desert1\\desert_ron_2.bmp"
-
-DESERT_94               BITMAP                  "..\\RES\\desert1\\desert_ron_3.bmp"
-
-DESERT_95               BITMAP                  "..\\RES\\desert1\\desert_ron_4.bmp"
-
-DESERT_97               BITMAP                  "..\\RES\\desert1\\desert_ron_5.bmp"
-
-DESERT_96               BITMAP                  "..\\RES\\desert1\\desert_ron_6.bmp"
-
-DESERT_99               BITMAP                  "..\\RES\\desert1\\desert_ron_7.bmp"
-
-DESERT_98               BITMAP                  "..\\RES\\desert1\\desert_ron_8.bmp"
-
-DESERT_100_118          BITMAP                  "..\\RES\\desert1\\desert_wall8_1.bmp"
-
-DESERT_101              BITMAP                  "..\\RES\\desert1\\desert_wall8_3.bmp"
-
-DESERT_106              BITMAP                  "..\\RES\\desert1\\desert_lon_1.bmp"
-
-DESERT_107              BITMAP                  "..\\RES\\desert1\\desert_lon_2.bmp"
-
-DESERT_108              BITMAP                  "..\\RES\\desert1\\desert_lon_3.bmp"
-
-DESERT_109              BITMAP                  "..\\RES\\desert1\\desert_lon_4.bmp"
-
-DESERT_105              BITMAP                  "..\\RES\\desert1\\desert_lon_5.bmp"
-
-DESERT_104              BITMAP                  "..\\RES\\desert1\\desert_lon_6.bmp"
-
-DESERT_103              BITMAP                  "..\\RES\\desert1\\desert_lon_7.bmp"
-
-DESERT_102              BITMAP                  "..\\RES\\desert1\\desert_lon_8.bmp"
-
-DESERT_113              BITMAP                  "..\\RES\\desert1\\desert_ldowm_4.bmp"
-
-DESERT_116              BITMAP                  "..\\RES\\desert1\\desert_ldown_1.bmp"
-
-DESERT_117              BITMAP                  "..\\RES\\desert1\\desert_ldown_2.bmp"
-
-DESERT_115              BITMAP                  "..\\RES\\desert1\\desert_ldown_3.bmp"
-
-DESERT_112              BITMAP                  "..\\RES\\desert1\\desert_ldown_5.bmp"
-
-DESERT_114              BITMAP                  "..\\RES\\desert1\\desert_ldown_6.bmp"
-
-DESERT_111              BITMAP                  "..\\RES\\desert1\\desert_ldown_7.bmp"
-
-DESERT_110              BITMAP                  "..\\RES\\desert1\\desert_ldown_8.bmp"
-
-DESERT_33               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_1_1.bmp"
-
-DESERT_34               BITMAP                  "..\\RES\\desert1\\desert_tiles_left_1_2.bmp"
-
-DESERT_35               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_1_1.bmp"
-
-DESERT_36               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_1_2.bmp"
-
-DESERT_63               BITMAP                  "..\\RES\\desert1\\desert_wall11_1.bmp"
-
-DESERT_66               BITMAP                  "..\\RES\\desert1\\desert_wall11_2.bmp"
-
-DESERT_65               BITMAP                  "..\\RES\\desert1\\desert_wall11_3.bmp"
-
-DESERT_64               BITMAP                  "..\\RES\\desert1\\desert_wall11_4.bmp"
-
 IDB_CONTINUE            BITMAP                  "..\\RES\\continue.bmp"
-
-DESERT_39               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_5_1.bmp"
-
-DESERT_40               BITMAP                  "..\\RES\\desert1\\desert_tiles_right_5_2.bmp"
 
 Ping                    BITMAP                  "..\\RES\\ping.bmp"
 
@@ -750,12 +520,12 @@ ITEMS_PASS_YELLOW       BITMAP                  "..\\RES\\items\\items_brand_yel
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // Chinese (Traditional, Taiwan) resources
+#endif    // 中文 (繁體，台灣) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// 英文 (美國) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -1041,12 +811,12 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // English (United States) resources
+#endif    // 英文 (美國) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United Kingdom) resources
+// 英文 (英國) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
@@ -1761,7 +1531,7 @@ BG                      BITMAP                  "..\\RES\\ocean\\Untitled.bmp"
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "..\\RES\\icon.ico"
 
-#endif    // English (United Kingdom) resources
+#endif    // 英文 (英國) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
