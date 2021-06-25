@@ -28,8 +28,8 @@ void CGameStateInit::OnInit() {
 	ShowInitProgress(0);
 
 	// Loading Images
-
 	stringHandler.LoadBitmap();
+	numberHandler.LoadBitmap();
 
 	// Intro
 	intro.AddBitmap(INTRO_1);
@@ -68,24 +68,16 @@ void CGameStateInit::OnInit() {
 	// Menu
 	menu.push_back("START GAME");
 	menu.push_back("TUTORIAL");
-	menu.push_back("EXTRAS");
+	menu.push_back("ABOUT");
 	menu.push_back("OPTION");
 	menu.push_back("EXIT");
 
-	option.push_back("  RESOLUTION");
 	option.push_back("  FULLSCREEN");
-	option.push_back("  SMOOTH GFX");
-	option.push_back("  SHOW FPS");
-	option.push_back("  CHANGE LANGUAGE");
 	option.push_back("  STAGE SELECT");
-	option.push_back("  CREDITS");
 	option.push_back("BACK");
 
 	bin_select.push_back("YES");
 	bin_select.push_back("NO");
-	tri_select.push_back("TINY");
-	tri_select.push_back("NORMAL");
-	tri_select.push_back("  MAX");
 
 
 	// stages
@@ -121,6 +113,7 @@ void CGameStateInit::OnBeginState() {
 	CAudio::Instance()->Play(AUDIO_TITLE, true);
 	
 	CAudio::Instance()->Stop(AUDIO_OPTIONS);
+	CAudio::Instance()->Stop(AUDIO_CRUSADER);
 
 
 	page = static_cast<int>(MENU::START_GAME);
@@ -198,8 +191,6 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 		if (nChar == KEY_ESC) {
 			CAudio::Instance()->Play(AUDIO_RETURN, false);
 			page = static_cast<int>(MENU::START_GAME);
-		} else {
-			// 
 		}
 
 		break;
@@ -247,18 +238,12 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 			
 			if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
 				CAudio::Instance()->Play(AUDIO_SELECT, false);
-				if (current_select < 4) {
+				if (current_select < 1) {
 					option_sel.at(current_select) += 1;
-					option_sel.at(current_select) %= (current_select == 0) ? 3 : 2;
+					option_sel.at(current_select) %= 2;
 				} else {
-					if (current_select == static_cast<int>(OPTION::CHANGE_LANGUAGE))
-						optionStage = 0;
-
 					if (current_select == static_cast<int>(OPTION::STAGE_SELECT))
 						optionStage = 1;
-
-					if (current_select == static_cast<int>(OPTION::CREDITS))
-						optionStage = 2;
 
 					if (current_select == static_cast<int>(OPTION::BACK)) {
 						CAudio::Instance()->Stop(AUDIO_OPTIONS);
@@ -273,20 +258,12 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 
 			// 
 			switch (current_select) {
-			case static_cast<int>(OPTION::RESOLUTION) :
-				break;
-				
+
 			case static_cast<int>(OPTION::FULLSCREEN) :
 				if (CDDraw::IsFullScreen() && option_sel.at(static_cast<int>(OPTION::FULLSCREEN)) ||
 				!CDDraw::IsFullScreen() && !option_sel.at(static_cast<int>(OPTION::FULLSCREEN)))
 				CDDraw::SetFullScreen(!(option_sel.at(static_cast<int>(OPTION::FULLSCREEN))));
 			break;
-				
-			case static_cast<int>(OPTION::SMOOTH_GFX) :
-				break;
-				
-			case static_cast<int>(OPTION::SHOW_FPS) :
-				break;
 			}
 
 			if (current_select < 0)
@@ -416,6 +393,41 @@ void CGameStateInit::OnShow() {
 			background4.ShowBitmap();
 			background5.ShowBitmap();
 
+			stringHandler.SetFocus(true);
+			stringHandler.SetTopLeft(SIZE_X/2 - (2*DEFAULT_SCALE*stringHandler.GetAlphabet()->Width()), 5 * SIZE_Y /100);
+			stringHandler.ShowBitmap("ABOUT");
+			stringHandler.SetFocus(false);
+
+
+			numberHandler.SetTopLeft(9 * SIZE_X / 100, 10 * SIZE_Y / 100);
+			numberHandler.SetInteger(2020);
+			numberHandler.ShowBitmap();
+			stringHandler.SetTopLeft(30 * SIZE_X / 100, 11 * SIZE_Y / 100);
+			stringHandler.ShowBitmap("SPRING CSIE NTUT");
+
+			stringHandler.SetFocus(true);
+			stringHandler.SetTopLeft(5 * SIZE_X / 100, 25 * SIZE_Y/100);
+			stringHandler.ShowBitmap("DEVELOPER");
+			stringHandler.SetTopLeft(15 * SIZE_X / 100, 30 * SIZE_Y / 100);
+			stringHandler.SetFocus(false);
+			stringHandler.ShowBitmap("MING ");
+			stringHandler.SetTopLeft(15 * SIZE_X / 100, 35 * SIZE_Y / 100);
+			stringHandler.ShowBitmap("HO MING LI");
+
+			stringHandler.SetFocus(true);
+			stringHandler.SetTopLeft(5 * SIZE_X / 100, 45 * SIZE_Y / 100);
+			stringHandler.ShowBitmap("INSTRUCTOR");
+			stringHandler.SetFocus(false);
+			stringHandler.SetTopLeft(15 * SIZE_X / 100, 50 * SIZE_Y / 100);
+			stringHandler.ShowBitmap("PROF SHUO HAN CHEN");
+
+			stringHandler.SetFocus(true);
+			stringHandler.SetTopLeft(5 * SIZE_X / 100, 60 * SIZE_Y / 100);
+			stringHandler.ShowBitmap("FRAMEWORK BY");
+			stringHandler.SetFocus(false);
+			stringHandler.SetTopLeft(15 * SIZE_X / 100, 65 * SIZE_Y / 100);
+			stringHandler.ShowBitmap("PROF WOEI KAE CHEN");
+
 			break;
 
 		// OPTION
@@ -434,41 +446,37 @@ void CGameStateInit::OnShow() {
 				stringHandler.SetFocus(false);
 				stringHandler.SetTopLeft(SIZE_X * 7 / 100, SIZE_Y * 19 / 100);
 				stringHandler.ShowBitmap("GRAPHICS");
-				stringHandler.SetTopLeft(SIZE_X * 7 / 100, SIZE_Y * 60 / 100);
+				stringHandler.SetTopLeft(SIZE_X * 7 / 100, SIZE_Y * 35 / 100);
 				stringHandler.ShowBitmap("GAME");
 
 				for (int i = 0; i < static_cast<int>(OPTION::COUNT); i++) {
-					if (i < 4)
+					const int size = bin_select.size();
+					switch (i) {
+					case 0:
 						stringHandler.SetTopLeft(SIZE_X * 7 / 100, SIZE_Y * (27 + 8 * i) / 100);
-					else
-						stringHandler.SetTopLeft(SIZE_X * 7 / 100, SIZE_Y * (37 + 8 * i) / 100);
-					
-					stringHandler.SetFocus(i == current_select);
-					stringHandler.ShowBitmap(option.at(i));
-
-					if (i == 0) {
-						const int size = tri_select.size();
-						for (int j = 0; j < size; j++) {
-							stringHandler.SetTopLeft(SIZE_X * (50 + 15 * j) / 100, SIZE_Y * (27 + 8 * i) / 100);
-							stringHandler.SetFocus(j == option_sel.at(i));
-							stringHandler.ShowBitmap(tri_select.at(j));
-						}
-					} else if (i < 4) {
-						const int size = bin_select.size();
+						stringHandler.SetFocus(i == current_select);
+						stringHandler.ShowBitmap(option.at(i));
 						for (int j = 0; j < size; j++) {
 							stringHandler.SetTopLeft(SIZE_X * (50 + 15 * j) / 100, SIZE_Y * (27 + 8 * i) / 100);
 							stringHandler.SetFocus(j == option_sel.at(i));
 							stringHandler.ShowBitmap(bin_select.at(j));
 						}
+
+						break;
+					case 1:
+						stringHandler.SetTopLeft(SIZE_X * 7 / 100, SIZE_Y * (37 + 8 * i) / 100);
+						stringHandler.SetFocus(i == current_select);
+						stringHandler.ShowBitmap(option.at(i));
+						break;
+					case 2:
+						stringHandler.SetTopLeft(SIZE_X * 5 / 100, SIZE_Y * 90/ 100);
+						stringHandler.SetFocus(i == current_select);
+						stringHandler.ShowBitmap(option.at(i));
+						break;
+
 					}
 				}
 				
-				break;
-
-			case 0:
-				stringHandler.SetFocus(false);
-				stringHandler.SetTopLeft(75, SIZE_Y / 2);
-				stringHandler.ShowBitmap("FUNCTION NOT IMPLEMENTED");
 				break;
 
 			case 1:
@@ -479,12 +487,6 @@ void CGameStateInit::OnShow() {
 					stringHandler.ShowBitmap(stages.at(i));
 				}
 
-				break;
-
-			case 2:
-				stringHandler.SetFocus(false);
-				stringHandler.SetTopLeft(SIZE_X / 2, SIZE_Y / 2);
-				stringHandler.ShowBitmap("A");
 				break;
 
 			default: break;
@@ -675,6 +677,7 @@ CGameStateOver::CGameStateOver(CGame* g) : CGameState(g) {
 void CGameStateOver::OnInit() {
 	stringHandler.LoadBitmap();
 	bg.LoadBitmap(BG);
+	CAudio::Instance()->Stop(AUDIO_CRUSADER);
 }
 
 void CGameStateOver::OnBeginState() {

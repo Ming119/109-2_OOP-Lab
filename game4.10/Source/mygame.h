@@ -75,18 +75,9 @@ namespace game_framework {
 		COUNT
 	};
 
-	enum class EXTRAS {
-		COUNT
-	};
-
 	enum class OPTION {
-		RESOLUTION,
 		FULLSCREEN,
-		SMOOTH_GFX,
-		SHOW_FPS,
-		CHANGE_LANGUAGE,
 		STAGE_SELECT,
-		CREDITS,
 		BACK,
 		COUNT
 	};
@@ -94,9 +85,7 @@ namespace game_framework {
 	enum class OPTION_SELECT {
 		NO,
 		YES,
-		TINY = 0,
-		NORMAL = 1,
-		MAX,
+		COUNT,
 	};
 
 
@@ -143,6 +132,7 @@ namespace game_framework {
 
 		// Menu
 		CString stringHandler;
+		CInteger numberHandler = CInteger(4);
 		vector<string> menu;
 		
 		// Option
