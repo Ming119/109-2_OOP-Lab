@@ -42,6 +42,7 @@ namespace game_framework {
 	public:
 		/* Constructor */
 		Enemy(int, int);
+		~Enemy();
 
 		/* Getter */
 		int Angle();
@@ -76,6 +77,7 @@ namespace game_framework {
 	class Bamboo : public Enemy {
 	public:
 		Bamboo(int, int);
+		~Bamboo();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -85,6 +87,7 @@ namespace game_framework {
 	class Chef : public Enemy {
 	public:
 		Chef(int, int);
+		~Chef();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -94,6 +97,7 @@ namespace game_framework {
 	class Earthworm : public Enemy {
 	public:
 		Earthworm(int, int);
+		~Earthworm();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -103,6 +107,7 @@ namespace game_framework {
 	class Fly : public Enemy {
 	public:
 		Fly(int, int);
+		~Fly();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -112,6 +117,7 @@ namespace game_framework {
 	class Groundhog : public Enemy {
 	public:
 		Groundhog(int, int);
+		~Groundhog();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -121,6 +127,7 @@ namespace game_framework {
 	class Insect : public Enemy {
 	public:
 		Insect(int, int);
+		~Insect();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -130,6 +137,7 @@ namespace game_framework {
 	class Ladybug : public Enemy {
 	public:
 		Ladybug(int, int);
+		~Ladybug();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -139,6 +147,7 @@ namespace game_framework {
 	class Mosquito : public Enemy {
 	public:
 		Mosquito(int, int);
+		~Mosquito();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -148,6 +157,7 @@ namespace game_framework {
 	class Penguin : public Enemy {
 	public:
 		Penguin(int, int);
+		~Penguin();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -157,6 +167,7 @@ namespace game_framework {
 	class PinkMonster : public Enemy {
 	public:
 		PinkMonster(int, int);
+		~PinkMonster();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -166,6 +177,7 @@ namespace game_framework {
 	class Rocket : public Enemy {
 	public:
 		Rocket(int, int);
+		~Rocket();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -175,6 +187,7 @@ namespace game_framework {
 	class Shark : public Enemy {
 	public:
 		Shark(int, int);
+		~Shark();
 
 		void OnInit(vector<Brick*>)override;
 		void OnMove() override;
@@ -184,6 +197,7 @@ namespace game_framework {
 	class Snails : public Enemy {
 	public:
 		Snails(int, int);
+		~Snails();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -193,6 +207,7 @@ namespace game_framework {
 	class Spider : public Enemy {
 	public:
 		Spider(int, int);
+		~Spider();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -202,6 +217,7 @@ namespace game_framework {
 	class Blue : public Enemy {
 	public:
 		Blue(int, int);
+		~Blue();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -211,6 +227,7 @@ namespace game_framework {
 	class FlyShield : public Enemy {
 	public:
 		FlyShield(int, int);
+		~FlyShield();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;
@@ -220,6 +237,7 @@ namespace game_framework {
 	class Red : public Enemy {
 	public:
 		Red(int, int);
+		~Red();
 
 		void OnInit(vector<Brick*>) override;
 		void OnMove() override;

@@ -60,6 +60,7 @@ namespace game_framework {
 		/* Member Function */
 		void addItem(int, int, int);
 		void addEnemy(int, int, int);
+		void clean();
 
 		//
 		void OnInit(int);

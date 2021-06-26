@@ -506,6 +506,7 @@ CGameStateRun::CGameStateRun(CGame *g) : CGameState(g) {
 }
 
 CGameStateRun::~CGameStateRun() {
+	level->clean();
 	delete level;
 }
 
@@ -529,6 +530,7 @@ void CGameStateRun::OnInit() {
 	t_sec.SetInteger(0);
 	rings.SetInteger(0);
 	debugMODE = false;
+	level = nullptr;
 
 }
 
@@ -592,6 +594,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	if (nChar == KEY_ESC) {
 		CAudio::Instance()->Play(AUDIO_RETURN, false);
 		CGameState::GotoGameState(GAME_STATE_INIT);
+		level->clean();
 	}
 }
 
