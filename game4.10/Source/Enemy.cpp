@@ -14,7 +14,6 @@ namespace game_framework {
 	Enemy::Enemy(int x, int y) {
 		pos.x = x;
 		pos.y = y;
-		angle = 0;
 		spawn = pos;
 		speed = 4;
 		refBrick = nullptr;
@@ -23,8 +22,6 @@ namespace game_framework {
 	}
 
 	/* Getter */
-	int Enemy::Angle() { return angle; }
-
 	int Enemy::Height() { return texture.Height() * DEFAULT_SCALE; }
 
 	int Enemy::Width() { return texture.Width() * DEFAULT_SCALE; }
@@ -38,8 +35,6 @@ namespace game_framework {
 	int Enemy::Right() { return this->Left() + this->Width(); }
 
 	/* Setter */
-	void Enemy::SetAngle(int a) { angle = a; }
-
 	void Enemy::SetSpeed(int s) { speed = s; }
 
 	void Enemy::SetMoving(POINT _delta) { delta = _delta; }

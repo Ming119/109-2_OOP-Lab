@@ -98,6 +98,8 @@ namespace game_framework {
 	class CGameStateInit : public CGameState {
 	public:
 		CGameStateInit(CGame *g);
+		~CGameStateInit();
+
 		void OnInit();  					// 遊戲的初值及圖形設定
 		void OnBeginState();				// 設定每次重玩所需的變數
 		void OnKeyDown(UINT, UINT, UINT);	// 處理鍵盤Up的動作
@@ -115,6 +117,9 @@ namespace game_framework {
 		// Intro animate
 		CAnimation	intro;
 		bool		intro_done;
+
+		CMovingBitmap img_tutro;
+		bool		  tutro;
 
 		// Background
 		CMovingBitmap background1;

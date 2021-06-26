@@ -19,9 +19,19 @@ namespace game_framework {
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateInit::CGameStateInit(CGame *g) : CGameState(g) 
-{
+{	
+	tutro = false;
 	intro_done = false;
 	optionStage = -1;
+}
+
+CGameStateInit::~CGameStateInit() {
+	option_sel.clear();
+	menu.clear();
+	option.clear();
+	bin_select.clear();
+	tri_select.clear();
+	stages.clear();
 }
 
 void CGameStateInit::OnInit() {
@@ -41,6 +51,7 @@ void CGameStateInit::OnInit() {
 	intro.AddBitmap(INTRO_4);
 	intro.SetDelayCount(3);
 
+	img_tutro.LoadBitmap(TUTRO);
 
 	// Background
 	background1.LoadBitmap(BG_OPENING_1);
@@ -132,84 +143,47 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 	const char KEY_RIGHT	= 0x27; // keyboard右箭頭
 	const char KEY_DOWN		= 0x28; // keyboard下箭頭
 
-	switch (page) {
+	if (!tutro) {
+		if (nChar) {
+			tutro = true;
+		}
+	}
+	else {
+		switch (page) {
 
-	// START GAME
-	case static_cast<int>(MENU::START_GAME) :
-		if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
-			CAudio::Instance()->Play(AUDIO_SELECT, false);
-
-			switch (current_select) {
+			// START GAME
 			case static_cast<int>(MENU::START_GAME) :
-				CGame::Instance()->SetLevel(0);
-				GotoGameState(GAME_STATE_RUN);
-				break;
+				if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
+					CAudio::Instance()->Play(AUDIO_SELECT, false);
 
-			case static_cast<int>(MENU::TUTORIAL) :
-				CGame::Instance()->SetLevel(static_cast<int>(LEVELS::TUTORIAL_1));
-				GotoGameState(GAME_STATE_RUN);
-				break;
+					switch (current_select) {
+						case static_cast<int>(MENU::START_GAME) :
+							CGame::Instance()->SetLevel(0);
+							GotoGameState(GAME_STATE_RUN);
+							break;
 
-			case static_cast<int>(MENU::EXTRAS) :
-				page = static_cast<int>(MENU::EXTRAS);
-				break;
+							case static_cast<int>(MENU::TUTORIAL) :
+								CGame::Instance()->SetLevel(static_cast<int>(LEVELS::TUTORIAL_1));
+								GotoGameState(GAME_STATE_RUN);
+								break;
 
-			case static_cast<int>(MENU::OPTION) :
-				CAudio::Instance()->Stop(AUDIO_TITLE);
-				CAudio::Instance()->Play(AUDIO_OPTIONS, true);
-				current_select = 0;
-				page = static_cast<int>(MENU::OPTION);
-				break;
+								case static_cast<int>(MENU::EXTRAS) :
+									page = static_cast<int>(MENU::EXTRAS);
+									break;
 
-			case static_cast<int>(MENU::EXIT) :
-				Sleep(500);
-				PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);
-				break;
-			}
-		}
-			
-		if (nChar == KEY_UP) {
-			CAudio::Instance()->Play(AUDIO_CHOOSE, false);
-			current_select -= 1;
-		}
+									case static_cast<int>(MENU::OPTION) :
+										CAudio::Instance()->Stop(AUDIO_TITLE);
+										CAudio::Instance()->Play(AUDIO_OPTIONS, true);
+										current_select = 0;
+										page = static_cast<int>(MENU::OPTION);
+										break;
 
-		if (nChar == KEY_DOWN) {
-			CAudio::Instance()->Play(AUDIO_CHOOSE, false);
-			current_select += 1;
-		}
-
-		if (current_select < 0)
-			current_select = static_cast<int>(MENU::COUNT) - 1;
-		else
-			current_select %= static_cast<int>(MENU::COUNT);
-
-		break;
-
-
-		// EXTRAS
-	case static_cast<int>(MENU::EXTRAS) :
-		if (nChar == KEY_ESC) {
-			CAudio::Instance()->Play(AUDIO_RETURN, false);
-			page = static_cast<int>(MENU::START_GAME);
-		}
-
-		break;
-
-
-	// OPTION
-	case static_cast<int>(MENU::OPTION) :
-			
-		switch (optionStage) {
-		case -1:
-			if (nChar == KEY_ESC) {
-				CAudio::Instance()->Play(AUDIO_RETURN, false);
-				CAudio::Instance()->Stop(AUDIO_OPTIONS);
-				CAudio::Instance()->Play(AUDIO_TITLE, true);
-
-				intro_done = false;
-				current_select = 0;
-				page = static_cast<int>(MENU::START_GAME);
-			}
+										case static_cast<int>(MENU::EXIT) :
+											Sleep(500);
+											PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);
+											break;
+					}
+				}
 
 			if (nChar == KEY_UP) {
 				CAudio::Instance()->Play(AUDIO_CHOOSE, false);
@@ -221,102 +195,147 @@ void CGameStateInit::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 				current_select += 1;
 			}
 
-			if (nChar == KEY_LEFT && current_select < 4) {
-				CAudio::Instance()->Play(AUDIO_SELECT, false);
-				option_sel.at(current_select) -= 1;
-				if (option_sel.at(current_select) < 0)
-					option_sel.at(current_select) = (current_select == 0) ? 2 : 1;
-				else
-					option_sel.at(current_select) %= (current_select == 0) ? 3 : 2;
-			}
+			if (current_select < 0)
+				current_select = static_cast<int>(MENU::COUNT) - 1;
+			else
+				current_select %= static_cast<int>(MENU::COUNT);
 
-			if (nChar == KEY_RIGHT && current_select < 4) {
-				CAudio::Instance()->Play(AUDIO_SELECT, false);
-				option_sel.at(current_select) += 1;
-				option_sel.at(current_select) %= (current_select == 0) ? 3 : 2;
-			}
-			
-			if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
-				CAudio::Instance()->Play(AUDIO_SELECT, false);
-				if (current_select < 1) {
-					option_sel.at(current_select) += 1;
-					option_sel.at(current_select) %= 2;
-				} else {
-					if (current_select == static_cast<int>(OPTION::STAGE_SELECT))
-						optionStage = 1;
+			break;
 
-					if (current_select == static_cast<int>(OPTION::BACK)) {
+
+			// EXTRAS
+			case static_cast<int>(MENU::EXTRAS) :
+				if (nChar == KEY_ESC) {
+					CAudio::Instance()->Play(AUDIO_RETURN, false);
+					page = static_cast<int>(MENU::START_GAME);
+				}
+
+			break;
+
+
+			// OPTION
+			case static_cast<int>(MENU::OPTION) :
+
+				switch (optionStage) {
+				case -1:
+					if (nChar == KEY_ESC) {
+						CAudio::Instance()->Play(AUDIO_RETURN, false);
 						CAudio::Instance()->Stop(AUDIO_OPTIONS);
 						CAudio::Instance()->Play(AUDIO_TITLE, true);
-						current_select = 0;
+
 						intro_done = false;
+						current_select = 0;
 						page = static_cast<int>(MENU::START_GAME);
 					}
+
+					if (nChar == KEY_UP) {
+						CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+						current_select -= 1;
+					}
+
+					if (nChar == KEY_DOWN) {
+						CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+						current_select += 1;
+					}
+
+					if (nChar == KEY_LEFT && current_select < 4) {
+						CAudio::Instance()->Play(AUDIO_SELECT, false);
+						option_sel.at(current_select) -= 1;
+						if (option_sel.at(current_select) < 0)
+							option_sel.at(current_select) = (current_select == 0) ? 2 : 1;
+						else
+							option_sel.at(current_select) %= (current_select == 0) ? 3 : 2;
+					}
+
+					if (nChar == KEY_RIGHT && current_select < 4) {
+						CAudio::Instance()->Play(AUDIO_SELECT, false);
+						option_sel.at(current_select) += 1;
+						option_sel.at(current_select) %= (current_select == 0) ? 3 : 2;
+					}
+
+					if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
+						CAudio::Instance()->Play(AUDIO_SELECT, false);
+						if (current_select < 1) {
+							option_sel.at(current_select) += 1;
+							option_sel.at(current_select) %= 2;
+						}
+						else {
+							if (current_select == static_cast<int>(OPTION::STAGE_SELECT))
+								optionStage = 1;
+
+							if (current_select == static_cast<int>(OPTION::BACK)) {
+								CAudio::Instance()->Stop(AUDIO_OPTIONS);
+								CAudio::Instance()->Play(AUDIO_TITLE, true);
+								current_select = 0;
+								intro_done = false;
+								page = static_cast<int>(MENU::START_GAME);
+							}
+						}
+					}
+
+
+					// 
+					switch (current_select) {
+
+						case static_cast<int>(OPTION::FULLSCREEN) :
+							if (CDDraw::IsFullScreen() && option_sel.at(static_cast<int>(OPTION::FULLSCREEN)) ||
+								!CDDraw::IsFullScreen() && !option_sel.at(static_cast<int>(OPTION::FULLSCREEN)))
+								CDDraw::SetFullScreen(!(option_sel.at(static_cast<int>(OPTION::FULLSCREEN))));
+							break;
+					}
+
+					if (current_select < 0)
+						current_select = static_cast<int>(OPTION::COUNT) - 1;
+					else
+						current_select %= static_cast<int>(OPTION::COUNT);
+
+					break;
+
+				case 0:
+					if (nChar == KEY_ESC || nChar == KEY_ENTER || nChar == KEY_SPACE) {
+						CAudio::Instance()->Play(AUDIO_RETURN, false);
+						optionStage = -1;
+					}
+
+					break;
+
+				case 1:
+					if (nChar == KEY_ESC) {
+						CAudio::Instance()->Play(AUDIO_RETURN, false);
+						optionStage = -1;
+					}
+
+					if (nChar == KEY_UP) {
+						CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+						stageSelect--;
+						if (stageSelect < 0) stageSelect = static_cast<int>(LEVELS::COUNT) - 1;
+					}
+
+					if (nChar == KEY_DOWN) {
+						CAudio::Instance()->Play(AUDIO_CHOOSE, false);
+						stageSelect++;
+						stageSelect %= static_cast<int>(LEVELS::COUNT);
+					}
+
+					if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
+						CAudio::Instance()->Play(AUDIO_SELECT, false);
+						CGame::Instance()->SetLevel(stageSelect);
+						optionStage = -1;
+						GotoGameState(GAME_STATE_RUN);
+					}
+
+					break;
+
+				case 2:
+					if (nChar == KEY_ESC || nChar == KEY_ENTER || nChar == KEY_SPACE) {
+						CAudio::Instance()->Play(AUDIO_RETURN, false);
+						optionStage = -1;
+					}
+
+					break;
+
+				default: break;
 				}
-			}
-
-
-			// 
-			switch (current_select) {
-
-			case static_cast<int>(OPTION::FULLSCREEN) :
-				if (CDDraw::IsFullScreen() && option_sel.at(static_cast<int>(OPTION::FULLSCREEN)) ||
-				!CDDraw::IsFullScreen() && !option_sel.at(static_cast<int>(OPTION::FULLSCREEN)))
-				CDDraw::SetFullScreen(!(option_sel.at(static_cast<int>(OPTION::FULLSCREEN))));
-			break;
-			}
-
-			if (current_select < 0)
-				current_select = static_cast<int>(OPTION::COUNT) - 1;
-			else
-				current_select %= static_cast<int>(OPTION::COUNT);
-
-			break;
-			
-		case 0:
-			if (nChar == KEY_ESC || nChar == KEY_ENTER || nChar == KEY_SPACE) {
-				CAudio::Instance()->Play(AUDIO_RETURN, false);
-				optionStage = -1;
-			}
-
-			break;
-
-		case 1:
-			if (nChar == KEY_ESC) {
-				CAudio::Instance()->Play(AUDIO_RETURN, false);
-				optionStage = -1;
-			}
-
-			if (nChar == KEY_UP) {
-				CAudio::Instance()->Play(AUDIO_CHOOSE, false);
-				stageSelect--;
-				if (stageSelect < 0) stageSelect = static_cast<int>(LEVELS::COUNT) - 1;
-			}
-			
-			if (nChar == KEY_DOWN) {
-				CAudio::Instance()->Play(AUDIO_CHOOSE, false);
-				stageSelect++;
-				stageSelect %= static_cast<int>(LEVELS::COUNT);
-			}
-			
-			if (nChar == KEY_ENTER || nChar == KEY_SPACE) {
-				CAudio::Instance()->Play(AUDIO_SELECT, false);
-				CGame::Instance()->SetLevel(stageSelect);
-				optionStage = -1;
-				GotoGameState(GAME_STATE_RUN);
-			}
-			
-			break;
-
-		case 2:
-			if (nChar == KEY_ESC || nChar == KEY_ENTER || nChar == KEY_SPACE) {
-				CAudio::Instance()->Play(AUDIO_RETURN, false);
-				optionStage = -1;
-			}
-
-			break;
-
-		default: break;
 		}
 	}
 }
@@ -346,8 +365,11 @@ void CGameStateInit::OnMove() {
 
 void CGameStateInit::OnShow() {
 
-	// 1280*960
-	if (!intro_done) {
+	if (!tutro) {
+		img_tutro.SetTopLeft(0, 0);
+		img_tutro.ShowBitmap();
+	}
+	else if (!intro_done) {
 		intro.SetTopLeft((SIZE_X - logo.Width() * DEFAULT_SCALE) / 2, SIZE_Y * 2 / 100);
 		intro.OnShow();
 
@@ -506,8 +528,10 @@ CGameStateRun::CGameStateRun(CGame *g) : CGameState(g) {
 }
 
 CGameStateRun::~CGameStateRun() {
-	level->clean();
-	delete level;
+	if (level != nullptr) {
+		level->clean();
+		delete level;
+	}
 }
 
 void CGameStateRun::OnInit() {
@@ -674,8 +698,7 @@ void CGameStateRun::OnShow() {
 // 這個class為遊戲的結束狀態(Game Over)
 /////////////////////////////////////////////////////////////////////////////
 
-CGameStateOver::CGameStateOver(CGame* g) : CGameState(g) {
-}
+CGameStateOver::CGameStateOver(CGame* g) : CGameState(g) { }
 
 void CGameStateOver::OnInit() {
 	stringHandler.LoadBitmap();

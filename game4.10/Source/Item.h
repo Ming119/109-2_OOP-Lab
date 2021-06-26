@@ -34,6 +34,7 @@ namespace game_framework {
 		BULE_SPRING_PADS_RING_D,*/
 		GATE_YELLOW,
 		SEND,
+		/*
 		SEND_BUTTON,
 		LOOP_LEFT,
 		LOOR_RING,
@@ -42,6 +43,7 @@ namespace game_framework {
 		LOOP_OFF,
 		LOOP_TOP_NOT_U_D,
 		LOOP_TOP_UP_DOWN,
+		*/
 		SPIKES_UP,
 		SPIKES_DOWN,
 		SPIKES_LEFT,
@@ -58,9 +60,6 @@ namespace game_framework {
 		Actor* currnetActor;
 
 		int id;
-		int angle;
-		int speed;
-		int cameraSpeed;
 		
 	public:
 		/* Contrustor */
@@ -78,7 +77,6 @@ namespace game_framework {
 		
 		/* Setter */
 		void SetID(int);
-		void SetAngle(int);
 		void SetMoving(POINT);
 		void SetCurrentActor(Actor*);
 		void setTopLeft(int, int);
@@ -98,6 +96,7 @@ namespace game_framework {
 	};
 	
 	
+
 	// Ring
 	class Ring: public Item {
 	private:
@@ -135,6 +134,7 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
+
 	/*
 	// RED_SPRING_PADS_UP
 	class RED_SPRING_PADS_UP : public Item {
@@ -520,6 +520,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 	*/
+
 	// GATE_YELLOW
 	class GATE_YELLOW : public Item {
 	public:
@@ -557,7 +558,7 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
-	*/
+	
 
 	// LOOP_LEFT
 	class LOOP_LEFT : public Item {
@@ -650,7 +651,7 @@ namespace game_framework {
 		void OnShow(int scale = DEFAULT_SCALE) override;
 	};
 
-
+	*/
 
 	// SPIKES_UP
 	class SPIKES_UP : public Item {
@@ -723,8 +724,6 @@ namespace game_framework {
 		void OnMove() override;
 		void OnShow(int scale=DEFAULT_SCALE) override;
 	};
-
-	
 }
 
 #endif

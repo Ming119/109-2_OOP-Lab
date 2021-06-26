@@ -15,16 +15,11 @@ namespace game_framework {
 		id = _id;
 		pos.x = x;
 		pos.y = y;
-		angle = 0;
 
-		cameraSpeed = 50;
 		delta = POINT();
-
 	}
 	
-	Item::~Item() {
-
-	}
+	Item::~Item() { delete currnetActor; }
 
 	/* Getter */
 	int Item::ID() { return id; }
@@ -43,8 +38,6 @@ namespace game_framework {
 
 	/* Setter */
 	void Item::SetID(int _id) { id = _id; }
-
-	void Item::SetAngle(int ang) { angle = ang; }
 
 	void Item::SetMoving(POINT _delta) { delta = _delta; }
 
@@ -84,12 +77,13 @@ namespace game_framework {
 	}
 
 
+
 	// Ring
 	Ring::Ring(int id, int x, int y) : Item::Item(id, x, y) {
 		isDead = isDeadFinish = false;
 	}
 
-	Ring::~Ring() {}
+	Ring::~Ring() { delete currnetActor; }
 
 	bool Ring::IsChange() { return isDeadFinish; }
 
@@ -145,7 +139,7 @@ namespace game_framework {
 		isDead = isDeadFinish = false;
 	}
 
-	BIG_Ring::~BIG_Ring() {}
+	BIG_Ring::~BIG_Ring() { delete currnetActor; }
 
 	bool BIG_Ring::IsChange() { return isDeadFinish; }
 
@@ -194,7 +188,8 @@ namespace game_framework {
 		else 
 			texture.OnShow(scale);
 	}
-/*
+
+	/*
 	// RED_SPRING_PADS_UP
 	RED_SPRING_PADS_UP::RED_SPRING_PADS_UP(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
@@ -1187,7 +1182,7 @@ namespace game_framework {
 	// GATE_YELLOW
 	GATE_YELLOW::GATE_YELLOW(int id, int x, int y) : Item::Item(id, x, y) {}
 
-	GATE_YELLOW::~GATE_YELLOW() {}
+	GATE_YELLOW::~GATE_YELLOW() { delete currnetActor; }
 
 	bool GATE_YELLOW::IsChange() { return false; }
 
@@ -1208,7 +1203,7 @@ namespace game_framework {
 	// SEND
 	SEND::SEND(int id, int x, int y) : Item::Item(id, x, y) {}
 
-	SEND::~SEND() {}
+	SEND::~SEND() { delete currnetActor; }
 
 	bool SEND::IsChange() { return false; }
 
@@ -1259,7 +1254,7 @@ namespace game_framework {
 	void SEND_BUTTON::OnShow(int scale) {
 		texture.OnShow(scale);
 	}
-	*/
+	
 
 	// LOOP_LEFT
 	LOOP_LEFT::LOOP_LEFT(int id, int x, int y) : Item::Item(id, x, y) {}
@@ -1410,7 +1405,7 @@ namespace game_framework {
 
 	}
 
-
+	*/
 
 	// SPIKES_UP
 	SPIKES_UP::SPIKES_UP(int id, int x, int y) : Item::Item(id, x, y) {
@@ -1418,7 +1413,7 @@ namespace game_framework {
 		counter = 30 * 3;
 	}
 
-	SPIKES_UP::~SPIKES_UP() {}
+	SPIKES_UP::~SPIKES_UP() { delete currnetActor; }
 
 	bool SPIKES_UP::IsChange() { return false; }
 
@@ -1454,7 +1449,7 @@ namespace game_framework {
 		counter = 30 * 3;
 	}
 
-	SPIKES_DOWN::~SPIKES_DOWN() {}
+	SPIKES_DOWN::~SPIKES_DOWN() { delete currnetActor; }
 
 	bool SPIKES_DOWN::IsChange() { return false; }
 
@@ -1490,7 +1485,7 @@ namespace game_framework {
 		counter = 30 * 3;
 	}
 
-	SPIKES_LEFT::~SPIKES_LEFT() {}
+	SPIKES_LEFT::~SPIKES_LEFT() { delete currnetActor; }
 
 	bool SPIKES_LEFT::IsChange() { return false; }
 
@@ -1526,7 +1521,7 @@ namespace game_framework {
 		counter = 30 * 3;
 	}
 
-	SPIKES_RIGHT::~SPIKES_RIGHT() {}
+	SPIKES_RIGHT::~SPIKES_RIGHT() { delete currnetActor; }
 
 	bool SPIKES_RIGHT::IsChange() { return false; }
 
@@ -1555,7 +1550,5 @@ namespace game_framework {
 		if (isShow)
 			texture.OnShow(scale);
 	}
-
-	
 
 }

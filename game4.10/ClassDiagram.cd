@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="game_framework::Actor" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQ4QggEHBKBwBcFAA2QAMgAAQAIIU5MHRSgAERMqTA=</HashCode>
+      <FileName>Source\Actor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Enemy" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAgAABBAAIBAAIAAQANABAAAIIwQECACAAEAEgAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Bamboo" Collapsed="true">
+    <Position X="13.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAABBAAAAQAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Blue" Collapsed="true">
+    <Position X="15.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Brick" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAABAAAgBAACgARAMgAAAEIAgQACECAAXBEggE=</HashCode>
+      <FileName>Source\Brick.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Chef" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAACAAQAAAAAAAQEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::BIG_Ring" Collapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAAAAAAAgiAAAAAAAAABAAAAQAAAAAACAEAAA=</HashCode>
+      <FileName>Source\Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Earthworm" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Fly" Collapsed="true">
+    <Position X="13.75" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="game_framework::Enemy" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="1.062" />
+        <Point X="15.5" Y="2.875" />
+        <Point X="14.375" Y="2.875" />
+        <Point X="14.375" Y="3.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAADAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::FlyShield" Collapsed="true">
+    <Position X="15.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAEABAAAAAAAAAAAAAAQAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::GATE_YELLOW" Collapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAAAAAAAAAACAAAAAAAAAAAAQIAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Groundhog" Collapsed="true">
+    <Position X="17.5" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="game_framework::Enemy" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="1.062" />
+        <Point X="15.5" Y="5.7" />
+        <Point X="18.312" Y="5.7" />
+        <Point X="18.312" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAQAAAAIAAAAAAAAAAQAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Insect" Collapsed="true">
+    <Position X="12" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgAAAAAAAAAACAAAAAAAAAAQAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Item" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIIAAAFDAAgAAQCAAQAMAEAAAIAwQACACAAEAEggA=</HashCode>
+      <FileName>Source\Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Ladybug" Collapsed="true">
+    <Position X="17.5" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="game_framework::Enemy" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="1.062" />
+        <Point X="15.5" Y="2.875" />
+        <Point X="18.312" Y="2.875" />
+        <Point X="18.312" Y="3.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAAAAAAAgAAAAAAAAAAAAAAQAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Mosquito" Collapsed="true">
+    <Position X="13.75" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="game_framework::Enemy" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="1.062" />
+        <Point X="15.5" Y="5.7" />
+        <Point X="14.5" Y="5.7" />
+        <Point X="14.5" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAQgAAAAAAAEAEA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Penguin" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="game_framework::Enemy" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="1.062" />
+        <Point X="15.5" Y="4.375" />
+        <Point X="14.438" Y="4.375" />
+        <Point X="14.438" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAQAAAAAAAAAAAAAAAAAAAAAAAAQAIAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::PinkMonster" Collapsed="true">
+    <Position X="15.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAGAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Red" Collapsed="true">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="game_framework::Enemy" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="1.062" />
+        <Point X="15.5" Y="4.375" />
+        <Point X="18.312" Y="4.375" />
+        <Point X="18.312" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Ring" Collapsed="true">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAQAAgAAAACAAAAAAAAABAAAAQAAAAAACAEAAA=</HashCode>
+      <FileName>Source\Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Rocket" Collapsed="true">
+    <Position X="12" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAABAAAAAIAAAAAAAAQAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SEND" Collapsed="true">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCIAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Shark" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAAAAAAAAAAAAAAAAAAAAAQAQAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Snails" Collapsed="true">
+    <Position X="15.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAUAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Sonic" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAEAAAAAAAAAAAAAAAAAUAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Actor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SPIKES_UP" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAICAAAAAAAAAAAAAAAAAAAIAAAAWAIAAAAAAEAAA=</HashCode>
+      <FileName>Source\Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SPIKES_RIGHT" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="game_framework::Item" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="1.062" />
+        <Point X="7.25" Y="3.115" />
+        <Point X="9.969" Y="3.115" />
+        <Point X="9.969" Y="3.5" />
+        <Point X="9.938" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAAAAAACAAAAAAAAAAAIAAAIWAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SPIKES_LEFT" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIQAAAAAAAAAAAAAAAAAAAIAAEAWAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::SPIKES_DOWN" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="game_framework::Item" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="1.062" />
+        <Point X="7.25" Y="3.115" />
+        <Point X="6.312" Y="3.115" />
+        <Point X="6.312" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAIAACAAAAAAAAAAAAAAAAAIAAAAWAAACAAAAEAAA=</HashCode>
+      <FileName>Source\Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::Spider" Collapsed="true">
+    <Position X="14.75" Y="7.5" Width="1.5" />
+    <InheritanceLine Type="game_framework::Enemy" ManuallyRouted="true">
+      <Path>
+        <Point X="15.5" Y="1.062" />
+        <Point X="15.5" Y="7.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAEAAA=</HashCode>
+      <FileName>Source\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

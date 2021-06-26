@@ -446,14 +446,13 @@ void CString::ShowBitmap(string s, double factor)
 	
 	int len = s.length();
 	for (int i = 0; i < len; i++) {
-		if (s.at(i) == ' ') {
+		if (s.at(i) == ' ') 	// Handling space
 			nx += (int)(factor * alphabet[0].Width());
-		}
+		
 		else {
-			int alphabet_num = int(s.at(i)) - int('A');
-			if (isFocus()) {
+			int alphabet_num = int(s.at(i)) - int('A');	// Encode input alphabet ASCII to number 0~26
+			if (isFocus()) 	// Handling focus, yellow alphabet
 				alphabet_num += 26;
-			}
 			
 			alphabet[alphabet_num].SetTopLeft(nx, y);
 			alphabet[alphabet_num].ShowBitmap();

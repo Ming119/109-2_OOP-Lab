@@ -31,8 +31,6 @@ namespace game_framework {
 		int angle;
 		int property;
 		int behavior;
-		
-		int maxX, maxY;
 
 	public:
 		/* Constructor */
