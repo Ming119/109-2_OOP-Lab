@@ -38,7 +38,6 @@ namespace game_framework {
 		/* Constructor */
 		Brick(int, int, int);
 
-
 		/* Getter */
 		int ID();
 		int Angle();

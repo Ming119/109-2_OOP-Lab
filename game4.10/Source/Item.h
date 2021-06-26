@@ -65,6 +65,7 @@ namespace game_framework {
 	public:
 		/* Contrustor */
 		Item(int, int, int);
+		~Item();
 
 		/* Getter */
 		int ID();

@@ -29,9 +29,8 @@ namespace game_framework {
 	}
 
 	Level::~Level() {
-		bricks.clear();
-		items.clear();
-		enemies.clear();
+		// delete currentActor;
+		clean();
 	}
 
 	/* Getter */
@@ -88,6 +87,7 @@ namespace game_framework {
 		this->debugMODE = flag;
 		CurrentActor()->SetDebug(debugMODE);
 	}
+
 
 	/* Member Function */
 	void Level::addItem(int id, int x, int y) {
@@ -321,15 +321,19 @@ namespace game_framework {
 		}
 	}
 
+	void Level::clean() {
+		bricks.clear();
+		items.clear();
+		enemies.clear();
+	}
+
 	//
 	void Level::OnInit(int l) {
 		level = l;
 		rings = 0;
 		score = 0;
 
-		bricks.clear();
-		items.clear();
-		enemies.clear();
+		clean();
 		
 		actor1.OnInit();
 		// actor2.OnInit();

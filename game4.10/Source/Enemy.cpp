@@ -153,6 +153,20 @@ namespace game_framework {
 	void Fly::OnMove() {
 		CameraMovement();
 
+		if (pos.y >= spawn.y + Height()) {
+			direction = !direction;
+			pos.y -= speed;
+		}
+		if (pos.y <= spawn.y - Height()) {
+			direction = !direction;
+			pos.y += speed;
+		}
+
+		if (direction)
+			pos.y -= speed;
+		else
+			pos.y += speed;
+
 		SetTopLeft(pos);
 		texture.OnMove();
 	}
@@ -216,7 +230,21 @@ namespace game_framework {
 
 	void Spider::OnMove() {
 		CameraMovement();
-		
+
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
+
 		SetTopLeft(pos);
 		texture.OnMove();
 	}
@@ -280,6 +308,20 @@ namespace game_framework {
 	void Shark::OnMove() {
 		CameraMovement();
 
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
+
 		SetTopLeft(pos);
 		texture.OnMove();
 	}
@@ -303,6 +345,20 @@ namespace game_framework {
 
 	void Mosquito::OnMove() {
 		CameraMovement();
+
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -329,6 +385,19 @@ namespace game_framework {
 	void Groundhog::OnMove() {
 		CameraMovement();
 
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -355,6 +424,19 @@ namespace game_framework {
 	void Red::OnMove() {
 		CameraMovement();
 
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -380,6 +462,19 @@ namespace game_framework {
 	void Chef::OnMove() {
 		CameraMovement();
 
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -404,6 +499,21 @@ namespace game_framework {
 
 	void Earthworm::OnMove() {
 		CameraMovement();
+
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
+
 		SetTopLeft(pos);
 		texture.OnMove();
 	}
@@ -428,6 +538,20 @@ namespace game_framework {
 
 	void Insect::OnMove() {
 		CameraMovement();
+
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
 
 		SetTopLeft(pos);
@@ -457,6 +581,20 @@ namespace game_framework {
 	void Penguin::OnMove() {
 		CameraMovement();
 
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
+
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -483,6 +621,19 @@ namespace game_framework {
 	void PinkMonster::OnMove() {
 		CameraMovement();
 
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -508,6 +659,19 @@ namespace game_framework {
 	void Snails::OnMove() {
 		CameraMovement();
 
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -539,6 +703,19 @@ namespace game_framework {
 	void Blue::OnMove() {
 		CameraMovement();
 
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
 		SetTopLeft(pos);
 		texture.OnMove();
@@ -564,6 +741,19 @@ namespace game_framework {
 	void FlyShield::OnMove() {
 		CameraMovement();
 
+		if (pos.x <= refBrick->Left()) {
+			direction = !direction;
+			pos.x += speed;
+		}
+		if (pos.x + Width() >= refBrick->Right()) {
+			direction = !direction;
+			pos.x -= speed;
+		}
+
+		if (direction)
+			pos.x += speed;
+		else
+			pos.x -= speed;
 
 		SetTopLeft(pos);
 		texture.OnMove();

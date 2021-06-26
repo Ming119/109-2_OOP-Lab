@@ -21,6 +21,10 @@ namespace game_framework {
 		delta = POINT();
 
 	}
+	
+	Item::~Item() {
+
+	}
 
 	/* Getter */
 	int Item::ID() { return id; }

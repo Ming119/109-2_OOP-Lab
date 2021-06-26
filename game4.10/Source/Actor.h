@@ -17,18 +17,28 @@ namespace game_framework {
 		const int acceleration = 4;
 		const int   gravity = 10;
 		const float friction = 0.8f;
-		bool debugMODE;
-		int character;
 
 		POINT pos;
-
 		POINT velocity;
 		POINT delta;
-		
-		int maxSpeed;
 
+		bool debugMODE;
 		bool onCircle;
+
+		bool isMovingLeft;
+		bool isMovingRight;
+		bool isMovingUp;
+		bool isMovingDown;
+		bool isLookingUp;
+		bool isLookingDown;
+		bool isJumping;
+		bool isRotating;
+
+		int character;
+		int maxSpeed;
 		int turn;
+		int angle;		// angle = ang(actor's x-axis, real x-axis)
+		int jumpStrength;
 
 		Brick* refBrick;
 		POINT left;
@@ -46,20 +56,6 @@ namespace game_framework {
 		CAnimation lookDown;
 		CAnimation moving;
 		CAnimation jumping;
-
-		int angle;		// angle = ang(actor's x-axis, real x-axis)
-		int jumpStrength;
-
-		bool isMovingLeft;
-		bool isMovingRight;
-		bool isMovingUp;
-		bool isMovingDown;
-		bool isLookingUp;
-		bool isLookingDown;
-		bool isJumping;		
-		bool isRotating;
-
-		
 
 	public:
 		Actor();
