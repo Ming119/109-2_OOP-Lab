@@ -410,7 +410,7 @@ void CGameStateInit::OnShow() {
 			stringHandler.ShowBitmap("DEVELOPER");
 			stringHandler.SetTopLeft(15 * SIZE_X / 100, 30 * SIZE_Y / 100);
 			stringHandler.SetFocus(false);
-			stringHandler.ShowBitmap("MING ");
+			stringHandler.ShowBitmap("MING HSUAN HUANG");
 			stringHandler.SetTopLeft(15 * SIZE_X / 100, 35 * SIZE_Y / 100);
 			stringHandler.ShowBitmap("HO MING LI");
 
