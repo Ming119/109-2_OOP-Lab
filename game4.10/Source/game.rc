@@ -488,8 +488,6 @@ ISLAND_PARADISE_64      BITMAP                  "..\\RES\\island\\island_9_1.bmp
 
 BG_EXOTIC_PARADISE_ACT1 BITMAP                  "..\\RES\\island\\island_Black.bmp"
 
-BG_DESERT               BITMAP                  "..\\RES\\desert1\\desert.bmp"
-
 IDB_CONTINUE            BITMAP                  "..\\RES\\continue.bmp"
 
 Ping                    BITMAP                  "..\\RES\\ping.bmp"
