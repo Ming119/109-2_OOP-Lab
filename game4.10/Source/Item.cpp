@@ -190,7 +190,7 @@ namespace game_framework {
 		else 
 			texture.OnShow(scale);
 	}
-	
+/*
 	// RED_SPRING_PADS_UP
 	RED_SPRING_PADS_UP::RED_SPRING_PADS_UP(int id, int x, int y) : Item::Item(id, x, y) {
 		isTouch = false;
@@ -1178,7 +1178,7 @@ namespace game_framework {
 		texture.OnShow(scale);
 	}
 
-
+*/
 
 	// GATE_YELLOW
 	GATE_YELLOW::GATE_YELLOW(int id, int x, int y) : Item::Item(id, x, y) {}

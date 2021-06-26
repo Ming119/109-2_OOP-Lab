@@ -697,14 +697,7 @@ namespace game_framework {
 				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
-/*
-			case 111: //108
-				texture.AddBitmap(Ping);
-				SetProperty(PASSABLE);
-				SetBehavior(DEFAULT);
-				SetAngle(0);
-				break;
-				*/
+
 			default:
 				break;
 			}
@@ -1198,6 +1191,81 @@ namespace game_framework {
 				texture.AddBitmap(ISLAND_PARADISE_32);
 				SetProperty(CLOUD);
 				SetBehavior(CIRCULAR,100,200,0.1,0);
+				SetAngle(0);
+				break;
+
+			case 101:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 102:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 103:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 104:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 105:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 106:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 107:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 108:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 109:
+				texture.AddBitmap(ITEMS_PASS_1);
+				/*texture.AddBitmap(ITEMS_PASS_2);
+				texture.AddBitmap(ITEMS_PASS_3);
+				texture.AddBitmap(ITEMS_PASS_4);
+				texture.AddBitmap(ITEMS_PASS_BLUE);
+				texture.SetDelayCount(2);*/
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
+				SetAngle(0);
+				break;
+
+			case 110:
+				texture.AddBitmap(Ping);
+				SetProperty(PASSABLE);
+				SetBehavior(DEFAULT);
 				SetAngle(0);
 				break;
 
