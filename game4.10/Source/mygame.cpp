@@ -101,7 +101,7 @@ void CGameStateInit::OnInit() {
 	CAudio::Instance()->Load(AUDIO_RETURN,	"sounds\\return.wav");
 	CAudio::Instance()->Load(AUDIO_RING,	"sounds\\ring.wav");
 	CAudio::Instance()->Load(AUDIO_SPRING,	"sounds\\spring.wav");
-	CAudio::Instance()->Load(AUDIO_DEAD,	"sounds\\dead.wav");
+	
 
 }
 

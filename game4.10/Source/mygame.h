@@ -58,7 +58,7 @@ namespace game_framework {
 		AUDIO_SWITCH,				// 45
 		AUDIO_TELEPORTER,			// 46
 		AUDIO_TITLE,				// 47
-		AUDIO_DEAD,					// 48
+		
 
 		// Test
 		AUDIO_DING,
