@@ -607,10 +607,22 @@ namespace game_framework {
 		for (int i = 0; i < is; i++) {
 			items.at(i)->OnMove();
 			
-			if (items.at(i)->IsChange() && items.at(i)->ID() == 0) {
-				items.erase(items.begin()+i);
-				is--; i--;
-				rings++;
+			if (items.at(i)->IsChange()) {
+				switch (items.at(i)->ID()) {
+				case 0:
+					items.erase(items.begin() + i);
+					is--; i--;
+					rings++;
+					break;
+
+				case 28:
+					items.erase(items.begin() + i);
+					is--; i--;
+					score += 100;
+					break;
+
+				}
+				
 			}
 		}
 
