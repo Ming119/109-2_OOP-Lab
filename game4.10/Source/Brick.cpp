@@ -60,16 +60,10 @@ namespace game_framework {
 
 	void Brick::SetBehavior(int b) {
 		behavior = b;
-		maxX = 0;
-		maxY = 0;
 	}
 
-	// Non finish
 	void Brick::SetBehavior(int b, int x, int y, double g, int speed) {
 		behavior = b;
-		maxX = x;
-		maxY = y;
-
 	}
 	
 	//

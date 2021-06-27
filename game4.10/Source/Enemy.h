@@ -35,7 +35,6 @@ namespace game_framework {
 
 		Brick* refBrick;
 
-		int angle;
 		int speed;
 		bool direction;
 
@@ -45,7 +44,6 @@ namespace game_framework {
 		~Enemy();
 
 		/* Getter */
-		int Angle();
 		int Height();
 		int Width();
 		int Top();
@@ -54,7 +52,6 @@ namespace game_framework {
 		int Right();
 
 		/* Setter */
-		void SetAngle(int);
 		void SetSpeed(int);
 		void SetMoving(POINT);
 		void SetTopLeft(int, int);

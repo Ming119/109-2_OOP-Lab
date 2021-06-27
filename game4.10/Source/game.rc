@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文 (繁體，台灣) resources
+// Chinese (Traditional, Taiwan) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -61,32 +61,6 @@ END
 //
 // Bitmap
 //
-
-IDB_BALL                BITMAP                  "..\\res\\ball.bmp"
-
-IDB_CORNER              BITMAP                  "..\\res\\corner.bmp"
-
-IDB_1                   BITMAP                  "..\\res\\bmp1.bmp"
-
-IDB_2                   BITMAP                  "..\\res\\bmp2.bmp"
-
-IDB_3                   BITMAP                  "..\\res\\bmp3.bmp"
-
-IDB_4                   BITMAP                  "..\\res\\bmp4.bmp"
-
-IDB_5                   BITMAP                  "..\\res\\bmp5.bmp"
-
-IDB_6                   BITMAP                  "..\\res\\bmp6.bmp"
-
-IDB_7                   BITMAP                  "..\\res\\bmp7.bmp"
-
-IDB_8                   BITMAP                  "..\\res\\bmp8.bmp"
-
-IDB_9                   BITMAP                  "..\\res\\bmp9.bmp"
-
-IDB_HELP                BITMAP                  "..\\res\\help.bmp"
-
-IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
 ITEMS_YELLOW_RING_1     BITMAP                  "..\\res\\items\\items_coin1.bmp"
 
@@ -488,8 +462,6 @@ ISLAND_PARADISE_64      BITMAP                  "..\\RES\\island\\island_9_1.bmp
 
 BG_EXOTIC_PARADISE_ACT1 BITMAP                  "..\\RES\\island\\island_Black.bmp"
 
-IDB_CONTINUE            BITMAP                  "..\\RES\\continue.bmp"
-
 Ping                    BITMAP                  "..\\RES\\ping.bmp"
 
 ITEMS_PASS_BLUE         BITMAP                  "..\\RES\\items\\items_brand_blue.bmp"
@@ -518,12 +490,12 @@ ITEMS_PASS_YELLOW       BITMAP                  "..\\RES\\items\\items_brand_yel
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // 中文 (繁體，台灣) resources
+#endif    // Chinese (Traditional, Taiwan) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英文 (美國) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -809,12 +781,12 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // 英文 (美國) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英文 (英國) resources
+// English (United Kingdom) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
@@ -824,8 +796,6 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
 //
 // Bitmap
 //
-
-IDB_0                   BITMAP                  "..\\res\\bmp0.bmp"
 
 LOGO_1                  BITMAP                  "..\\RES\\logo\\logo_1.bmp"
 
@@ -1034,18 +1004,6 @@ OCEAN_64                BITMAP                  "..\\RES\\ocean\\ocean_arrow_rig
 OCEAN_66                BITMAP                  "..\\RES\\ocean\\ocean_arrow_up.bmp"
 
 OCEAN_67                BITMAP                  "..\\RES\\ocean\\ocean_arrow_uuder.bmp"
-
-IDB_BITMAP61            BITMAP                  "..\\RES\\ocean\\ocean_background_bottom.bmp"
-
-IDB_BITMAP62            BITMAP                  "..\\RES\\ocean\\ocean_background_ferry.bmp"
-
-IDB_BITMAP63            BITMAP                  "..\\RES\\ocean\\ocean_background_sea1.bmp"
-
-IDB_BITMAP64            BITMAP                  "..\\RES\\ocean\\ocean_background_sea2.bmp"
-
-IDB_BITMAP65            BITMAP                  "..\\RES\\ocean\\ocean_background_sea3.bmp"
-
-IDB_BITMAP66            BITMAP                  "..\\RES\\ocean\\ocean_background_top.bmp"
 
 OCEAN_69                BITMAP                  "..\\RES\\ocean\\ocean_background1.bmp"
 
@@ -1271,34 +1229,6 @@ OCEAN_58                BITMAP                  "..\\RES\\ocean\\ocean_59.bmp"
 
 OCEAN_62_2              BITMAP                  "..\\RES\\ocean\\ocean_green2.bmp"
 
-IDB_BITMAP181           BITMAP                  "..\\RES\\player\\40x45\\play_blue_accelerate_run1.bmp"
-
-IDB_BITMAP182           BITMAP                  "..\\RES\\player\\40x45\\play_blue_accelerate_run2.bmp"
-
-IDB_BITMAP183           BITMAP                  "..\\RES\\player\\40x45\\play_blue_accelerate_run3.bmp"
-
-IDB_BITMAP184           BITMAP                  "..\\RES\\player\\40x45\\play_blue_accelerate_run4.bmp"
-
-IDB_BITMAP185           BITMAP                  "..\\RES\\player\\40x45\\play_blue_accelerate_run5.bmp"
-
-IDB_BITMAP186           BITMAP                  "..\\RES\\player\\40x45\\play_blue_accelerate_run6.bmp"
-
-IDB_BITMAP187           BITMAP                  "..\\RES\\player\\40x45\\play_blue_accelerate_run7.bmp"
-
-IDB_BITMAP188           BITMAP                  "..\\RES\\player\\40x45\\play_blue_accelerate_run8.bmp"
-
-IDB_BITMAP189           BITMAP                  "..\\RES\\player\\40x45\\play_blue_accelerate_run9.bmp"
-
-IDB_BITMAP190           BITMAP                  "..\\RES\\player\\40x45\\play_blue_Injured1.bmp"
-
-IDB_BITMAP191           BITMAP                  "..\\RES\\player\\40x45\\play_blue_Injured2.bmp"
-
-IDB_BITMAP192           BITMAP                  "..\\RES\\player\\40x45\\play_blue_jump.bmp"
-
-IDB_BITMAP193           BITMAP                  "..\\RES\\player\\40x45\\play_blue_jump_off1.bmp"
-
-IDB_BITMAP194           BITMAP                  "..\\RES\\player\\40x45\\play_blue_jump_off2.bmp"
-
 ACTOR_1_RUN_1           BITMAP                  "..\\RES\\player\\40x45\\play_blue_normal_run1.bmp"
 
 ACTOR_1_RUN_2           BITMAP                  "..\\RES\\player\\40x45\\play_blue_normal_run2.bmp"
@@ -1313,22 +1243,6 @@ ACTOR_1_RUN_6           BITMAP                  "..\\RES\\player\\40x45\\play_bl
 
 ACTOR_1_RUN_7           BITMAP                  "..\\RES\\player\\40x45\\play_blue_normal_run7.bmp"
 
-IDB_BITMAP202           BITMAP                  "..\\RES\\player\\40x45\\play_blue_poss1.bmp"
-
-IDB_BITMAP203           BITMAP                  "..\\RES\\player\\40x45\\play_blue_poss2.bmp"
-
-IDB_BITMAP204           BITMAP                  "..\\RES\\player\\40x45\\play_blue_poss3.bmp"
-
-IDB_BITMAP205           BITMAP                  "..\\RES\\player\\40x45\\play_blue_poss4.bmp"
-
-IDB_BITMAP206           BITMAP                  "..\\RES\\player\\40x45\\play_blue_push1.bmp"
-
-IDB_BITMAP207           BITMAP                  "..\\RES\\player\\40x45\\play_blue_push2.bmp"
-
-IDB_BITMAP208           BITMAP                  "..\\RES\\player\\40x45\\play_blue_push3.bmp"
-
-IDB_BITMAP209           BITMAP                  "..\\RES\\player\\40x45\\play_blue_push4.bmp"
-
 ACTOR_1_ROLL_1          BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll1.bmp"
 
 ACTOR_1_ROLL_2          BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll2.bmp"
@@ -1338,12 +1252,6 @@ ACTOR_1_ROLL_3          BITMAP                  "..\\RES\\player\\40x45\\play_bl
 ACTOR_1_ROLL_4          BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll4.bmp"
 
 ACTOR_1_ROLL_5          BITMAP                  "..\\RES\\player\\40x45\\play_blue_ready_roll5.bmp"
-
-IDB_BITMAP215           BITMAP                  "..\\RES\\player\\40x45\\play_blue_run_brakes1.bmp"
-
-IDB_BITMAP216           BITMAP                  "..\\RES\\player\\40x45\\play_blue_run_brakes2.bmp"
-
-IDB_BITMAP217           BITMAP                  "..\\RES\\player\\40x45\\play_blue_run_brakes3.bmp"
 
 ACTOR_1_LOOKDOWN_1      BITMAP                  "..\\RES\\player\\40x45\\play_blue_squat_roll1.bmp"
 
@@ -1372,16 +1280,6 @@ ITEM_YELLOW_RING_DEAD_2 BITMAP                  "..\\RES\\items\\items_coin10.bm
 ITEM_YELLOW_RING_DEAD_3 BITMAP                  "..\\RES\\items\\items_coin11.bmp"
 
 ITEM_YELLOW_RING_DEAD_4 BITMAP                  "..\\RES\\items\\items_coin12.bmp"
-
-IDB_BITMAP105           BITMAP                  "..\\RES\\ocean2\\ocean_background_1.bmp"
-
-IDB_BITMAP107           BITMAP                  "..\\RES\\ocean2\\ocean_background_2.bmp"
-
-IDB_BITMAP109           BITMAP                  "..\\RES\\ocean2\\ocean_background_3.bmp"
-
-IDB_BITMAP112           BITMAP                  "..\\RES\\ocean2\\ocean_background_bottom.bmp"
-
-IDB_BITMAP113           BITMAP                  "..\\RES\\ocean2\\ocean_background_top.bmp"
 
 OCEAN2_0                BITMAP                  "..\\RES\\ocean2\\ocean2_1.bmp"
 
@@ -1511,13 +1409,13 @@ OCEAN2_68               BITMAP                  "..\\RES\\ocean2\\ocean2_68.bmp"
 
 OCEAN2_69               BITMAP                  "..\\RES\\ocean2\\ocean2_69.bmp"
 
-IDB_BITMAP283           BITMAP                  "..\\RES\\ocean2\\ocean2_background_ferry.bmp"
-
 T_TIME_COLON            BITMAP                  "..\\RES\\font\\gui_semicolon.bmp"
 
 IDB_DEBUG               BITMAP                  "..\\res\\debug.bmp"
 
 BG                      BITMAP                  "..\\RES\\ocean\\Untitled.bmp"
+
+TUTRO                   BITMAP                  "..\\RES\\Operating_instructions.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1529,7 +1427,7 @@ BG                      BITMAP                  "..\\RES\\ocean\\Untitled.bmp"
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "..\\RES\\icon.ico"
 
-#endif    // 英文 (英國) resources
+#endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

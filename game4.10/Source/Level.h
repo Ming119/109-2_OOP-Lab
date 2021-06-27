@@ -19,7 +19,6 @@ namespace game_framework {
 	
 	class Level {
 	private:
-		int max_x, max_y;
 		int rings;
 		int score;
 		int level;
@@ -32,8 +31,8 @@ namespace game_framework {
 		
 		int character;
 		Sonic	 actor1;
-		// Miles	 actor2;
-		// Knuckles actor3;
+		// Miles	 actor2;	// Deprecated 
+		// Knuckles actor3;		// Deprecated 
 		Actor*	 currentActor;
 
 		vector<Brick*>  bricks;

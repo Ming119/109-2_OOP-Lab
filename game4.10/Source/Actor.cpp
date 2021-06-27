@@ -8,8 +8,6 @@
 #include "gamelib.h"
 #include "Actor.h"
 
-
-
 namespace game_framework {
 	Actor::Actor() {
 		velocity = delta = POINT();
@@ -26,7 +24,7 @@ namespace game_framework {
 		pos.x = 100;
 		pos.y = SIZE_Y / 3;
 
-		debug.LoadBitmap(IDB_CORNER);
+		debug.LoadBitmap(IDB_DEBUG);
 	}
 
 	Actor::~Actor() { }
@@ -459,10 +457,8 @@ namespace game_framework {
 		else
 			idle.OnShow();
 
-		debug.ShowBitmap();
+		// debug.ShowBitmap();
 	}
-
-
 
 	/*
 	// Miles

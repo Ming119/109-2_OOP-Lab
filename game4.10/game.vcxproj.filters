@@ -91,6 +91,7 @@
     <None Include="res\Toolbar.bmp">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp">
@@ -2722,6 +2723,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\items\items_brand_yellow.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Operating_instructions.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

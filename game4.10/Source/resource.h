@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ 產生的 Include 檔案。
-// 由 game.rc 使用
+// Microsoft Visual C++ generated include file.
+// Used by game.rc
 //
 #define ISLAND_PARADISE_2               2
 #define ISLAND_PARADISE_42              4
@@ -178,12 +178,6 @@
 #define IDB_BITMAP58                    273
 #define IDB_BITMAP59                    274
 #define IDB_BITMAP60                    275
-#define IDB_BITMAP61                    276
-#define IDB_BITMAP62                    277
-#define IDB_BITMAP63                    278
-#define IDB_BITMAP64                    279
-#define IDB_BITMAP65                    280
-#define IDB_BITMAP66                    281
 #define IDB_BITMAP67                    282
 #define OCEAN_BG_2                      283
 #define IDB_BITMAP69                    284
@@ -615,11 +609,6 @@
 #define GUI_RED_RING                    735
 #define IDB_BITMAP104                   736
 #define GUO_RED_RING                    736
-#define IDB_BITMAP105                   737
-#define IDB_BITMAP107                   738
-#define IDB_BITMAP109                   739
-#define IDB_BITMAP112                   740
-#define IDB_BITMAP113                   741
 #define OCEAN2_0                        742
 #define OCEAN2_2                        743
 #define OCEAN2_3                        744
@@ -685,7 +674,6 @@
 #define OCEAN2_67                       808
 #define OCEAN2_68                       809
 #define OCEAN2_69                       810
-#define IDB_BITMAP283                   811
 #define OCEAN2_54                       814
 #define OCEAN2_20                       815
 #define OCEAN2_61_2                     816
@@ -843,6 +831,7 @@
 #define IDB_DEBUG                       1102
 #define IDB_BITMAP93                    1103
 #define BG                              1103
+#define TUTRO                           1104
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
 #define ID_BUTTON_FULLSCREEN            32773
@@ -854,7 +843,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        1104
+#define _APS_NEXT_RESOURCE_VALUE        1105
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
