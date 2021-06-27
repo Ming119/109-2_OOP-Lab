@@ -57,21 +57,24 @@ namespace game_framework {
 			moving.OnMove();
 			if (abs(velocity.x) < maxVelocity) velocity.x -= acceleration;
 
-		} else if (isMovingRight) {
+		}
+		else if (isMovingRight) {
 			moving.OnMove();
 			if (abs(velocity.x) < maxVelocity) velocity.x += acceleration;
 
-		} else {
+		}
+		else {
 			// Friction Drug: F_d = 1/2 pv^(2) C_d A
 			velocity.x = (long)(velocity.x * friction);
 		}
 
 		LookingForRefBrick(b);
-		
+
 		if (turn == 1) {		// Right Up
 			dt.x = abs(velocity.x);
 			dt.y = -abs(velocity.x);
-		} else if (turn == 2) {	// Left Up
+		}
+		else if (turn == 2) {	// Left Up
 			dt.x = -abs(velocity.x);
 			dt.y = -abs(velocity.x);
 		}
@@ -104,16 +107,14 @@ namespace game_framework {
 			HandleLeftRightCollision(b);
 
 			// y-axis
-			// h = 1/2gt
-			velocity.y += gravity / 2;
-			if (refBrick != nullptr) {
-				if (character == 0) {
-					TRACE("RefBrick: (x, y): (%d, %d)\n", refBrick->Top(), refBrick->Left());
-					TRACE("bottom: %d, %d\n", bottom.x, bottom.y);
-				}
-				if (refBrick->Angle() == 0) {
-					if (IsJumping() && refBrick != nullptr) velocity.y -= jumpStrength;
+			// v = gt
+			
+			if (velocity.y < 40) velocity.y += gravity;
 
+			if (refBrick != nullptr) {
+				if (refBrick->Angle() == 0) {
+					if (IsJumping()) velocity.y -= jumpStrength;
+				
 					else if (this->Bottom() == refBrick->Top())
 						velocity.y = 0;
 
@@ -407,7 +408,7 @@ namespace game_framework {
 
 		//acceleration = 250;
 		maxSpeed = 700;
-		jumpStrength = 5;
+		jumpStrength = 40;
 	}
 
 	void Sonic::OnMove(vector<Brick*> b, vector<Enemy*> e, int a) {

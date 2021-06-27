@@ -1,6 +1,4 @@
-//#include "Brick.h"
 #include "Level.h"
-//#include "Actor.h"
 #include <cmath>
 class Level;
 
@@ -58,12 +56,6 @@ namespace game_framework {
 		AUDIO_SWITCH,				// 45
 		AUDIO_TELEPORTER,			// 46
 		AUDIO_TITLE,				// 47
-		
-
-		// Test
-		AUDIO_DING,
-		AUDIO_LAKE,
-		AUDIO_NTUT
 	};
 
 	enum class MENU {
@@ -215,8 +207,4 @@ namespace game_framework {
 		CMovingBitmap bg;
 	};
 	
-
-	
-	
-
 }
