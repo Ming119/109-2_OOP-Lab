@@ -18,27 +18,27 @@
 ### 遊戲說明
 
 #### 遊戲操作
-鍵盤上、下、左、右鍵控制角色方向的移動、空白建是跳躍。
+> 鍵盤上、下、左、右鍵控制角色方向的移動、空白建是跳躍。
 
 #### 闖關模式
-按照地圖跑到終點，會計時你花多久的時間，有金幣數量、分數。
+> 按照地圖跑到終點，會計時你花多久的時間，有金幣數量、分數。
 
 #### 關卡陷阱
-碰到怪物或踩到鋸齒都會game over，鋸齒會以三秒為一個循環出現。
+> 碰到怪物或踩到鋸齒都會game over，鋸齒會以三秒為一個循環出現。
 
 #### 密技
-鍵盤Q則可以隨意跑地圖。
+> 鍵盤Q則可以隨意跑地圖。
 
 ### 遊戲圖形
 
 ### 遊戲音效
-+ title.mp3	    - 遊戲進入選單畫面的音效
-+ options.mp3	- 進入選單option有不同的音效
-+ choose.wav	- 選單移動時的音效
-+ select.wav	- 選單確認時的音效
-+ return.wav	- Esc退出的音效
-+ crusader.mp3  - 每一關遊戲背景音效
-+ ring.wav	    - 遊戲裡吃金幣的音效
++ title.mp3	    - 遊戲進入選單畫面的音效  
++ options.mp3	- 進入選單option有不同的音效  
++ choose.wav	- 選單移動時的音效  
++ select.wav	- 選單確認時的音效  
++ return.wav	- Esc退出的音效  
++ crusader.mp3  - 每一關遊戲背景音效  
++ ring.wav	    - 遊戲裡吃金幣的音效  
 
 ## 程式設計
 
@@ -47,68 +47,68 @@
 
 #### Actor
 這個類別是角色的base-class，俱有angle角度、pos位置、velocity加速度、delta位移等主要變數，以及一個指向類別Bricks的指標refBrick。  
-在OnInit階段，載入各種動作的圖檔，並且設定座標。
-在OnMove階段，把delta位移計算出來，在3.3會詳述。  
-在OnShow階段，根據玩家的操縱顯示各種動作。  
+> 在OnInit階段，載入各種動作的圖檔，並且設定座標。
+> 在OnMove階段，把delta位移計算出來，在3.3會詳述。  
+> 在OnShow階段，根據玩家的操縱顯示各種動作。  
 
 #### Brick
 這個類別俱有id、angle角度、property屬性、behavior行為、texture材質、pos位置、delta位移等主要變數。  
-在OnInit階段，會根據當前的關卡，以及object的id，自動取得texture材質、angle角度、property屬性以及behavior行為。  
-在OnMove階段，會根據delta位移來進行移動。  
-在OnShow階段，會把object的texture材質顯示出來。
+> 在OnInit階段，會根據當前的關卡，以及object的id，自動取得texture材質、angle角度、property屬性以及behavior行為。  
+> 在OnMove階段，會根據delta位移來進行移動。  
+> 在OnShow階段，會把object的texture材質顯示出來。
 
 #### Enemy
 這個類別是怪物的base-class，俱有speed速度、direction方向、texture材質、spawn出生點、pos位置、delta位移等主要變數，以及一個指向類別Bricks的指標refBrick。共有17個derived-class。  
-在OnInit階段，戴入相應的圖檔到texture材質，並且設定spawn出生點，根據spawn出生點找出refBrick，再根據refBrick微調spawn出生點。  
-在OnMove階段，會根據delta位移來進行移動，然後再根據各個怪物的移動行為進行移動。  
-在OnShow階段，會根據各個怪物的顯示行為把texture材質顯示出來。
+> 在OnInit階段，戴入相應的圖檔到texture材質，並且設定spawn出生點，根據spawn出生點找出refBrick，再根據refBrick微調spawn出生點。  
+> 在OnMove階段，會根據delta位移來進行移動，然後再根據各個怪物的移動行為進行移動。  
+> 在OnShow階段，會根據各個怪物的顯示行為把texture材質顯示出來。
 
 #### Item
 這個類別是物品的base-class，俱有id、texture材質、pos位置、delta位移等主要變數，以及一個指向類別Actor的指標currentActor。共有8個derived-class。  
-在OnInit階段，戴入相應的圖檔到texture材質，並且設定座標。  
-在OnMove階段，會根據delta位移來進行移動。  
-在OnShow階段，會根據各個物品的顯示行為把texture材質顯示出來。
+> 在OnInit階段，戴入相應的圖檔到texture材質，並且設定座標。  
+> 在OnMove階段，會根據delta位移來進行移動。  
+> 在OnShow階段，會根據各個物品的顯示行為把texture材質顯示出來。
 
 #### Level
 這個類別是玩家與遊戲中各個object互動的橋樑，俱有rings戒指、score分數、delta位移等主要變數，並且有該關卡的Actor角色、所有Brick方塊、所有Item物品以及所有Enemy怪物的指標。  
-在OnInit階段，根據所選擇的關卡，載入該關卡的Actor角色、Brick方塊、Item物品以及Enemy怪物。  
-在OnMove階段，根據Actor的計算出來delta位移，控制Brick方塊、Item物品以及Enemy怪物進行移動。  
-在OnShow階段，控制Brick方塊、Item物品以及Enemy怪物把texture材質顯示出來。  
+> 在OnInit階段，根據所選擇的關卡，載入該關卡的Actor角色、Brick方塊、Item物品以及Enemy怪物。  
+> 在OnMove階段，根據Actor的計算出來delta位移，控制Brick方塊、Item物品以及Enemy怪物進行移動。  
+> 在OnShow階段，控制Brick方塊、Item物品以及Enemy怪物把texture材質顯示出來。  
 
 ### 程式類別
-Actor	        - 角色的Base Class
-Sonin	        - 角色1
-Miles	        - 角色2 (Deprecated 棄用)
-Knuckles        - 角色3 (Deprecated 棄用)
-Brick	      	- 方塊
-Enemy	      	- 敵人的Base Class
-Bamboo	        - 敵人1
-Chef		    - 敵人2
-Earthworm	    - 敵人3
-Fly		       	- 敵人4
-Groundhog   	- 敵人5
-Insect	 	    - 敵人6
-Ladybug	    	- 敵人7
-Mosquito	    - 敵人8
-Penguin	    	- 敵人9
-PinkMoster	    - 敵人10
-Rocket	 	    - 敵人11
-Shark	      	- 敵人12
-Snails	     	- 敵人13
-Spider	     	- 敵人14
-Blue		    - 敵人15
-FlyShield	    - 敵人16
-Red			    - 敵人17
-Item		    - 物品的Base Class
-Ring		    - 物品1
-BIG_Ring	    - 物品2
-GATE_YELLOW	    - 物品3
-SEND		    - 物品4
-SPIKES_UP	    - 物品5
-SPIKES_DOWN	    - 物品6
-SPIKES_LEFT	    - 物品7
-SPIKES_RIGHT    - 物品8
-Level	      	- 關卡
++ Actor	        - 角色的Base Class
++ Sonin	        - 角色1
++ Miles	        - 角色2 (Deprecated 棄用)
++ Knuckles      - 角色3 (Deprecated 棄用)
++ Brick	      	- 方塊
++ Enemy	      	- 敵人的Base Class
++ Bamboo	    - 敵人1
++ Chef		    - 敵人2
++ Earthworm	    - 敵人3
++ Fly		    - 敵人4
++ Groundhog   	- 敵人5
++ Insect	 	- 敵人6
++ Ladybug	    - 敵人7
++ Mosquito	    - 敵人8
++ Penguin	    - 敵人9
++ PinkMoster	- 敵人10
++ Rocket	 	- 敵人11
++ Shark	      	- 敵人12
++ Snails	    - 敵人13
++ Spider	    - 敵人14
++ Blue		    - 敵人15
++ FlyShield	    - 敵人16
++ Red			- 敵人17
++ Item		    - 物品的Base Class
++ Ring		    - 物品1
++ BIG_Ring	    - 物品2
++ GATE_YELLOW	- 物品3
++ SEND		    - 物品4
++ SPIKES_UP	    - 物品5
++ SPIKES_DOWN	- 物品6
++ SPIKES_LEFT	- 物品7
++ SPIKES_RIGHT  - 物品8
++ Level	      	- 關卡
 
 ### 程式技術
 我們參考了原framework中提供的CInteger類別，加入了一個名為CString的類別(.h檔共20行，.cpp檔共120行)，用以顯示字串圖形，原因在4.1問題三中詳述。算法如下：
@@ -132,8 +132,11 @@ for (int i = 0; i < len; i++) {
 ````
 
 角色的移動應該可以說是整個遊戲中最複雜的部分了，其分成四個階段：一檢查、二X軸移動，三Y軸移動，四計算delta位移。在一檢查階段，會檢查經過上一次的delta位移後，角色有沒有觸碰到怪物或陷阱。  
+
 在二X軸移動階段，會計算X軸移動的acceleration加速度及velocity速度，這裡我們使用比較簡單的constant acceleration，設定acceleration為4，公式為v = u+at，轉換成程式碼即為velocity.x += acceleration，之後在加上friction摩擦力以及drag風阻作為減速，因為這裡涉及到比較複雜物理計算，因此我們把減速簡化成一個少於1的係數。  
+
 在三Y軸移動階段，會計算Y軸移動的acceleration加速度及velocity速度，這裡我們使用自由落體的公式v = gt，轉換成程式碼即為velocity.y += gravity，因為我們簡化了friction摩擦力以及drag風阻，因此terminal velocity也簡化成一個常數。對於跳躍的部分，角色有一個jumpStrength，用於處理跳躍時velocity.y -= jumpStrength。  
+
 在四計算delta位移階段，會根據階段二和階段三計算出來的的velocity，以以下的公式的計算出delta位移，level會取得這個delta位移，然後傳入各個Brick，Item，和Enemy，把角色delta位移的轉換成鏡頭的delta位移。  
 > Δx = velovity.x∙cos⁡(angle) + velovity.y∙sin⁡(angle)  
 > Δy = velovity.y∙cos⁡(angle) - velovity.x∙sin⁡(angle)  
@@ -186,14 +189,14 @@ for (int i = 0; i < len; i++) {
 + 李浩銘：154小時，66.53%
 
 ### 自我檢核表
-[ ] 解決 Memory leak
-[x] 自定遊戲 Icon
-[x] 全螢幕啟動
-[x] 有 About 畫面
-[x] 初始畫面說明按鍵及滑鼠之用法與密技
-[x] 上傳 setup/apk/source 檔
-[x] setup 檔可正確執行
-[x] 報告字型、點數、對齊、行距、頁碼等格式正確
+- [ ] 解決 Memory leak
+- [x] 自定遊戲 Icon
+- [x] 全螢幕啟動
+- [x] 有 About 畫面
+- [x] 初始畫面說明按鍵及滑鼠之用法與密技
+- [x] 上傳 setup/apk/source 檔
+- [x] setup 檔可正確執行
+- [x] 報告字型、點數、對齊、行距、頁碼等格式正確
 
 ### 收獲
 + 黃明萱：
